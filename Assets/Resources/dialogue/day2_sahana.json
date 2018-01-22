@@ -1,0 +1,92 @@
+[
+	{
+		"title": "StartSahanaDay2",
+		"tags": "",
+		"body": "Customer: Hello!\nCustomer: Uhm...\nCustomer: I've never been here before...\n\n[[First time drinking?|1ASahanaDay2]]\n[[First time here?|1BSahanaDay2]]",
+		"position": {
+			"x": -332,
+			"y": 39
+		},
+		"colorID": 0
+	},
+	{
+		"title": "1ASahanaDay2",
+		"tags": "",
+		"body": "Customer: Haha, yes...\nCustomer: Uhm... give me anything, just no alcohol.\n\n\n\n",
+		"position": {
+			"x": 6,
+			"y": 19
+		},
+		"colorID": 0
+	},
+	{
+		"title": "1BSahanaDay2",
+		"tags": "",
+		"body": "Customer: Yes, but I mean I've never been to a bar in general.\nCustomer: Or drank anything alcoholic.\nCustomer: I might try it but...\nCustomer: Nevermind, give me anything, just no alcohol.",
+		"position": {
+			"x": -7,
+			"y": 321
+		},
+		"colorID": 0
+	},
+	{
+		"title": "GetDrink1SahanaDay2",
+		"tags": "",
+		"body": "Customer: I can't take this much of anything.\nCustomer: Can't you pour it in a cup? Glass? Something?\nCustomer: How does it work in bars...",
+		"position": {
+			"x": -190,
+			"y": 614
+		},
+		"colorID": 0
+	},
+	{
+		"title": "GetGlassDrink1ASahanaDay2",
+		"tags": "",
+		"body": "<<$set alcoholicaf to true>>\n\nCustomer: Mm.\nCustomer: This is pretty bitter...\nCustomer: I don't think I've tasted something like this before.\nCustomer: You didn't actually give me something alcoholic, did you?\n\n[[Nope. No alcohol.|2ASahanaDay2]]\n[[No promises.|2BSahanaDay2]]\n",
+		"position": {
+			"x": 345,
+			"y": 189
+		},
+		"colorID": 0
+	},
+	{
+		"title": "GetEmptyGlass1SahanaDay2",
+		"tags": "",
+		"body": "Customer: You're hilarious.\nCustomer: Please just get me anything. Not alcoholic.",
+		"position": {
+			"x": 55,
+			"y": 597
+		},
+		"colorID": 0
+	},
+	{
+		"title": "GetGlassDrink1BSahanaDay2",
+		"tags": "",
+		"body": "<<$set alcoholicaf to false>>\n\nCustomer: This doesn't taste bitter at all.\nCustomer: Thank you.\nCustomer: I know I'm kind of missing the point coming here to drink this but...\nCustomer: It's just nice to get what I ask for, for once.\nCustomer: I think that's all I needed right now.\nCustomer: Thank you again--bye.\n\n<<customerleave Dialogue>>",
+		"position": {
+			"x": 415,
+			"y": 484
+		},
+		"colorID": 0
+	},
+	{
+		"title": "2ASahanaDay2",
+		"tags": "",
+		"body": "Customer: Alright.\nCustomer: I mean...\nCustomer: What kind of a bartender would you be if you didn't do what I asked?\nCustomer: Then again, no one listens to what I say, so whatever.\nCustomer: Fuck you and fuck all of them.\nCustomer: Thinking I'm a fucking idiot.\nCustomer: You're the idiot.\nCustomer: ...\nCustomer: I'm so sorry, I don't know what I just said.\nCustomer: I'm going to leave now, bye!\n\n<<customerleave Dialogue>>",
+		"position": {
+			"x": 737,
+			"y": -29
+		},
+		"colorID": 0
+	},
+	{
+		"title": "2BSahanaDay2",
+		"tags": "",
+		"body": "Customer: You're kidding.\nCustomer: ...\nCustomer: I guess it's more interesting this way.\nCustomer: Better than my day job, at least.\nCustomer: Fuck everyone there, honestly.\nCustomer: Thinking they can just step all over me.\nCustomer: Fuuuck.\nCustomer: ...\nCustomer: I'm so sorry, I don't know what I just said.\nCustomer: I'm going to leave now, bye!\n\n<<customerleave Dialogue>>",
+		"position": {
+			"x": 724,
+			"y": 235
+		},
+		"colorID": 0
+	}
+]
