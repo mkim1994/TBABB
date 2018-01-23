@@ -32,7 +32,6 @@ public class GameManager : MonoBehaviour {
 	// Update is called once per frame
 	void Update()
 	{
-		Services.TaskManager.Update();
 
         if(Input.GetKeyUp(KeyCode.Escape)){
             Application.Quit();
@@ -47,7 +46,6 @@ public class GameManager : MonoBehaviour {
 	{
 		Services.GameManager = this;
 		Services.EventManager = new EventManager();
-		Services.TaskManager = new TaskManager();
 		Services.Prefabs = Resources.Load<PrefabDB>("Prefabs/Prefabs");
         //Services.Materials = Resources.Load<MaterialDB>("Art/Materials");
 		//Services.SceneStackManager = new SceneStackManager<TransitionData>(sceneRoot, Services.Prefabs.Scenes);
