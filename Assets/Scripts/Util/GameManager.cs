@@ -3,13 +3,18 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityStandardAssets.Characters.FirstPerson;
 using UnityEngine.SceneManagement;
+using Yarn.Unity;
 
 public class GameManager : MonoBehaviour {
 
 	public GameObject sceneRoot;
     public Camera currentCamera;
 
+
     public FirstPersonController player;
+
+    public DialogueRunner dialogue;
+    public NPC CustomerIvory;
 
     //public GameObject TestingScenes;
 	void Awake()

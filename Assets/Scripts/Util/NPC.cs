@@ -1,57 +1,60 @@
-﻿/*
-
-The MIT License (MIT)
-
-Copyright (c) 2015-2017 Secret Lab Pty. Ltd. and Yarn Spinner contributors.
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
-
-*/
+﻿
 
 using UnityEngine;
 using System.Collections;
 using UnityEngine.Serialization;
+using Yarn.Unity;
 /// attached to the non-player characters, and stores the name of the
 /// Yarn node that should be run when you talk to them.
-namespace Yarn.Unity.Example {
-    public class NPC : MonoBehaviour {
+public class NPC : MonoBehaviour
+{
 
-        public string characterName = "";
+    public string characterName = "";
 
-        [FormerlySerializedAs("startNode")]
-        public string talkToNode = "";
+    [FormerlySerializedAs("startNode")]
+    public string talkToNode = "";
 
-        [Header("Optional")]
-        public TextAsset scriptToLoad;
+    [Header("Optional")]
+    public TextAsset scriptToLoad;
 
-        // Use this for initialization
-        void Start () {
-            if (scriptToLoad != null) {
-                FindObjectOfType<Yarn.Unity.DialogueRunner>().AddScript(scriptToLoad);
-            }
-
+    // Use this for initialization
+    void Start()
+    {
+        if (scriptToLoad != null)
+        {
+            FindObjectOfType<DialogueRunner>().AddScript(scriptToLoad);
         }
 
-        // Update is called once per frame
-        void Update () {
-
-        }
     }
 
+    // Update is called once per frame
+    void Update()
+    {
+
+    }
+
+    public void SetCustomerVars(float type, float flavor, float alcohol, float drinkable){
+        //float f1 = Services.GameManager.dialogue.variableStorage.GetValue("$drinkType" + characterName).AsNumber;
+        var v1 = new Yarn.Value(type);
+        var v2 = new Yarn.Value(flavor);
+        var v3 = new Yarn.Value(alcohol);
+        var v4 = new Yarn.Value(drinkable);
+        Services.GameManager.dialogue.variableStorage.SetValue("$drinkType" + characterName, v1);
+        Services.GameManager.dialogue.variableStorage.SetValue("$drinkFlavor" + characterName, v2);
+        Services.GameManager.dialogue.variableStorage.SetValue("$drinkAlcohol" + characterName, v3);
+        Services.GameManager.dialogue.variableStorage.SetValue("$drinkable" + characterName, v4);
+        
+    } 
+
+    public void ResetCustomerVars(){
+        var defaultVar = new Yarn.Value(-1f);
+        Services.GameManager.dialogue.variableStorage.SetValue("$drinkType" + characterName, defaultVar);
+        Services.GameManager.dialogue.variableStorage.SetValue("$drinkFlavor" + characterName, defaultVar);
+        Services.GameManager.dialogue.variableStorage.SetValue("$drinkAlcohol" + characterName, defaultVar);
+        Services.GameManager.dialogue.variableStorage.SetValue("$drinkable" + characterName, defaultVar);
+
+        Services.GameManager.dialogue.variableStorage.SetValue("$content" + characterName, defaultVar);
+        Services.GameManager.dialogue.variableStorage.SetValue("$drunk" + characterName, defaultVar);
+    }
 }
+

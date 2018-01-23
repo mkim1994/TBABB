@@ -54,3 +54,5 @@ MonoBehaviour:
   sceneRoot: {fileID: 0}
   currentCamera: {fileID: 0}
   player: {fileID: 0}
+  dialogue: {fileID: 0}
+  CustomerIvory: {fileID: 0}

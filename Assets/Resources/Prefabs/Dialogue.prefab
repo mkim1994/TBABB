@@ -291,7 +291,37 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d58499b14d04432a8ed0dc432fd23bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  defaultVariables: []
+  defaultVariables:
+  - name: drinkTypeIvory
+    value: -1
+    type: 0
+  - name: drinkFlavorIvory
+    value: -1
+    type: 0
+  - name: drinkAlcoholIvory
+    value: -1
+    type: 0
+  - name: drinkableIvory
+    value: -1
+    type: 0
+  - name: contentIvory
+    value: -1
+    type: 0
+  - name: drunkIvory
+    value: -1
+    type: 0
+  - name: 
+    value: 
+    type: 0
+  - name: 
+    value: 
+    type: 0
+  - name: 
+    value: 
+    type: 0
+  - name: 
+    value: 
+    type: 0
   debugTextView: {fileID: 0}
 --- !u!114 &114415776459832788
 MonoBehaviour:
