@@ -178,9 +178,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d16bc231d7a9d4d4290ca16737e4fe57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 2
-  lookSensitivity: 3
-  smoothing: 2
+  moveSpeed: 5
+  lookSensitivity: 0.5
   playerId: 0
 --- !u!1 &154342589
 GameObject:
