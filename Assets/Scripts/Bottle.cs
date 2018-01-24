@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Bottle : MonoBehaviour {
+public class Bottle : Pickupable {
 
 	// Use this for initialization
 	void Start () {
