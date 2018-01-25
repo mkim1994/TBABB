@@ -183,7 +183,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 5
-  lookSensitivity: 7.5
+  lookSensitivity: 4
   playerId: 0
   layerMask:
     serializedVersion: 2

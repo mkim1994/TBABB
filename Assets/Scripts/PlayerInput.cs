@@ -32,9 +32,8 @@ public class PlayerInput : MonoBehaviour {
 	bool i_pickupLeft;
 	bool i_pickupRight;
 
-	bool i_dropLeft;
-	bool i_dropRight;
-
+	bool i_useLeft;
+	bool i_useRight;
 	bool i_restart;
 
 
@@ -60,6 +59,8 @@ public class PlayerInput : MonoBehaviour {
 		lookVector.y = player.GetAxis("Look Vertical");
 		i_pickupLeft = player.GetButtonDown("Pick Up Left");
 		i_pickupRight = player.GetButtonDown("Pick Up Right");
+		i_useLeft = player.GetButton("Use Left");
+		i_useRight = player.GetButton("Use Right");
 		i_restart = player.GetButtonDown("Restart");
 	}
 
@@ -112,6 +113,31 @@ public class PlayerInput : MonoBehaviour {
 		if(i_restart){
 			SceneManager.LoadScene("main");
 		}
+		#endregion
+
+		#region Use Left
+		if(i_useLeft){
+			if(pickupableInLeftHand != null){ //if you're holding something in your left hand
+				pickupableInLeftHand.UseLeftHand();
+			}
+		} else {
+			if(pickupableInLeftHand != null){
+				pickupableInLeftHand.ReversePourTween();
+			}
+		} 
+		#endregion
+
+		#region Use Right
+		if(i_useRight){
+			Debug.Log("using right !");
+			if(pickupableInRightHand != null){ //if you're holding something in your left hand
+				pickupableInRightHand.UseRightHand();
+			}
+		} else {
+			if(pickupableInRightHand != null){
+				pickupableInRightHand.ReversePourTween();
+			}
+		} 
 		#endregion
 	}
 
