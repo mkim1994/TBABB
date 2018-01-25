@@ -139,6 +139,7 @@ public class PlayerInput : MonoBehaviour {
 			}
 		} 
 		#endregion
+
 	}
 
 	private void InteractionRay(){

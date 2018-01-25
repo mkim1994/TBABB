@@ -12,7 +12,7 @@ public class GameManager : MonoBehaviour {
 
 
     public FirstPersonController player;
-
+	public PlayerInput playerInput;
     public DialogueRunner dialogue;
     public NPC CustomerIvory;
 

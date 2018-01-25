@@ -8,11 +8,19 @@ public class Bottle : Pickupable {
 	private Vector3 rightHandPourRot = new Vector3(87.7370f, 0, 6.915f);
 
 	public override void UseLeftHand(){
-		base.PourTween(leftHandPourRot);
+		if(Services.GameManager.playerInput.pickupable.GetComponent<Glass>() != null){
+			base.PourTween(leftHandPourRot);
+		} else {
+			//Do nothing
+		}
 	}
 
 	public override void UseRightHand(){
-		base.PourTween(rightHandPourRot);
+		if(Services.GameManager.playerInput.pickupable.GetComponent<Glass>() != null){
+			base.PourTween(rightHandPourRot);
+		} else {
+			//Do nothing
+		}
 	}
 
 }

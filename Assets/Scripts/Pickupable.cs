@@ -11,8 +11,8 @@ public class Pickupable : MonoBehaviour {
     public bool tweensAreActive = false;
     public bool pickedUp = false;
     public virtual void InteractLeftHand(){
-        if(!pickedUp)
-        {
+        if(!pickedUp){
+            transform.SetParent(Services.GameManager.player.transform.GetChild(0));
             Services.GameManager.player.GetComponent<PlayerInput>().pickupableInLeftHand = this;
             PickUpTween(leftHandPos);
         }
@@ -25,6 +25,7 @@ public class Pickupable : MonoBehaviour {
 
     public virtual void InteractRightHand(){
         if(!pickedUp){
+            transform.SetParent(Services.GameManager.player.transform.GetChild(0));
             Services.GameManager.player.GetComponent<PlayerInput>().pickupableInRightHand = this;
             PickUpTween(rightHandPos);
         }
@@ -44,7 +45,6 @@ public class Pickupable : MonoBehaviour {
 
 
     private void PickUpTween(Vector3 handPos){
-        transform.SetParent(Services.GameManager.player.transform);
         DeclareActiveTween();
         pickedUp = true;
         Sequence sequence = DOTween.Sequence();
