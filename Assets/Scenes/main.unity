@@ -160,6 +160,10 @@ Prefab:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2000000, guid: 002984101656d421a83f24c057d0eade, type: 2}
+      propertyPath: near clip plane
+      value: 0.01
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 002984101656d421a83f24c057d0eade, type: 2}
   m_IsPrefabParent: 0
@@ -179,8 +183,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 5
-  lookSensitivity: 0.5
+  lookSensitivity: 7.5
   playerId: 0
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 4294967291
+  pickupable: {fileID: 0}
+  pickupableInLeftHand: {fileID: 0}
+  pickupableInRightHand: {fileID: 0}
 --- !u!1 &154342589
 GameObject:
   m_ObjectHideFlags: 0
@@ -445,6 +455,15 @@ MonoBehaviour:
       _behaviorId: 0
       _userAssignable: 1
       _categoryId: 0
+    - _id: 11
+      _name: Restart
+      _type: 1
+      _descriptiveName: Restart
+      _positiveDescriptiveName: 
+      _negativeDescriptiveName: 
+      _behaviorId: 0
+      _userAssignable: 1
+      _categoryId: 0
     actionCategories:
     - _name: Default
       _descriptiveName: Default
@@ -454,7 +473,7 @@ MonoBehaviour:
     actionCategoryMap:
       list:
       - categoryId: 0
-        actionIds: 000000000100000002000000030000000400000005000000060000000700000008000000090000000a000000
+        actionIds: 000000000100000002000000030000000400000005000000060000000700000008000000090000000a0000000b000000
     inputBehaviors:
     - _id: 0
       _name: Default
@@ -666,7 +685,7 @@ MonoBehaviour:
         _modifierKey2: 0
         _modifierKey3: 0
       - _actionCategoryId: 0
-        _actionId: -1
+        _actionId: 11
         _elementType: 1
         _elementIdentifierId: 14
         _axisRange: 0
@@ -871,6 +890,17 @@ MonoBehaviour:
         _modifierKey1: 0
         _modifierKey2: 0
         _modifierKey3: 0
+      - _actionCategoryId: 0
+        _actionId: 11
+        _elementType: 1
+        _elementIdentifierId: -1
+        _axisRange: 0
+        _invert: 0
+        _axisContribution: 0
+        _keyboardKeyCode: 114
+        _modifierKey1: 0
+        _modifierKey2: 0
+        _modifierKey3: 0
     mouseMaps:
     - id: 0
       categoryId: 0
@@ -926,7 +956,7 @@ MonoBehaviour:
     customControllerMaps: []
     customControllers: []
     playerIdCounter: 2
-    actionIdCounter: 11
+    actionIdCounter: 12
     actionCategoryIdCounter: 1
     inputBehaviorIdCounter: 1
     mapCategoryIdCounter: 1
@@ -1282,7 +1312,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1411537443}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d22b0546f70a2ad4caea5625cf05afa1, type: 3}
   m_Name: 
@@ -1405,6 +1435,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99b9acb760e670a429ef08ffc808a5ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tweensAreActive: 0
+  pickedUp: 0
 --- !u!224 &1869595753 stripped
 RectTransform:
   m_PrefabParentObject: {fileID: 224296105126235574, guid: 0a12ea9eba71045608e38cf6b982c571,

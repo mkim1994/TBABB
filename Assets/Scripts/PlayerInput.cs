@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Rewired;
+using UnityEngine.SceneManagement;
 
 [RequireComponent(typeof(CharacterController))]
 public class PlayerInput : MonoBehaviour {
@@ -19,10 +20,23 @@ public class PlayerInput : MonoBehaviour {
 	private CharacterController cc;
 	private Camera myCam;
 	public LayerMask layerMask;
-	Pickupable pickupable;
+	public Pickupable pickupable;
+	public Pickupable pickupableInLeftHand;
+	public Pickupable pickupableInRightHand;
 	private float maxInteractionDist = 4f;
 
-	bool in_pickUpLeft;
+	private float lookSensitivityAtStart;
+	private float aimAssistSensitivity = 1f;
+	float verticalLook = 0f;
+
+	bool i_pickupLeft;
+	bool i_pickupRight;
+
+	bool i_dropLeft;
+	bool i_dropRight;
+
+	bool i_restart;
+
 
 	void Awake(){
 		Cursor.visible = false;
@@ -30,11 +44,13 @@ public class PlayerInput : MonoBehaviour {
 		player = ReInput.players.GetPlayer(playerId);
 		cc = GetComponent<CharacterController>();
 		myCam = GetComponentInChildren<Camera>();
+		lookSensitivityAtStart = lookSensitivity;
 	}
 
 	void Update(){
 		GetInput();
 		ProcessInput();
+		InteractionRay();
  	}
 
 	private void GetInput(){
@@ -42,9 +58,9 @@ public class PlayerInput : MonoBehaviour {
 		moveVector.z = player.GetAxis("Move Vertical");
 		lookVector.x = player.GetAxis("Look Horizontal");
 		lookVector.y = player.GetAxis("Look Vertical");
-		in_pickUpLeft = player.GetButtonDown("Pick Up Left");
-
-		// Debug.Log(lookVector.x + " " + lookVector.y);
+		i_pickupLeft = player.GetButtonDown("Pick Up Left");
+		i_pickupRight = player.GetButtonDown("Pick Up Right");
+		i_restart = player.GetButtonDown("Restart");
 	}
 
 	private void ProcessInput(){		
@@ -59,25 +75,48 @@ public class PlayerInput : MonoBehaviour {
 		#endregion
 
 		#region MouseLook
-		lookVector.y = Mathf.Clamp (lookVector.y, -90f, 90f);
-
-		myCam.transform.Rotate (-lookVector.y * lookSensitivity, 0, 0f);
+		verticalLook -= lookVector.y * lookSensitivity;
+		verticalLook = Mathf.Clamp (verticalLook, -90f, 90f);
+		Camera.main.transform.localRotation = Quaternion.Euler (verticalLook, 0, 0);
 		cc.transform.Rotate (0, lookVector.x * lookSensitivity, 0);
+
+		if(pickupable != null){ //aim assist
+			lookSensitivity = aimAssistSensitivity;
+		} else {
+			lookSensitivity = lookSensitivityAtStart;
+		}
+
 		#endregion
 		
 		#region Pick Up Left
-		if(in_pickUpLeft){
- 			Debug.Log("Picking up with left hand");
-			if(pickupable != null){
-				pickupable.TweenToPlayer();
+		if(i_pickupLeft){
+			if(pickupable != null){ //check if looking at pickupable
+				pickupable.InteractLeftHand();
+			} else if(pickupableInLeftHand != null){
+				pickupableInLeftHand.InteractLeftHand();
 			}
-		}       
+		}      
 		#endregion 
+		
+		#region Pick Up Right
+		if(i_pickupRight){
+			if(pickupable != null){ //check if looking at pickupable
+				pickupable.InteractRightHand();
+			} else if(pickupableInRightHand != null){
+				pickupableInRightHand.InteractRightHand();
+			}
+		}   
+		#endregion
 
+		#region Restart
+		if(i_restart){
+			SceneManager.LoadScene("main");
+		}
+		#endregion
 	}
 
 	private void InteractionRay(){
-		Ray ray = new Ray(transform.position, transform.forward);
+		Ray ray = new Ray(myCam.transform.position, myCam.transform.forward);
 		float rayDist = Mathf.Infinity;
 		RaycastHit hit = new RaycastHit();
 
@@ -86,12 +125,10 @@ public class PlayerInput : MonoBehaviour {
  			
 			if(hitObj.GetComponent<Pickupable>() != null && Vector3.Distance(transform.position, hitObj.transform.position) <= maxInteractionDist){ //check if object looked at can be picked up
 				pickupable = hitObj.GetComponent<Pickupable>(); //if it's Pickupable and close enough, assign it to pickupable.				  
- 			} 		
-		} else { //no hit
-			pickupable = null; //if you're not looking at anything, make this null
- 		}
-
-
+ 			} else if (hitObj.GetComponent<Pickupable>() == null || Vector3.Distance(transform.position, hitObj.transform.position) > maxInteractionDist ){
+				pickupable = null;
+			 } 		
+		} 
 	}
 
 }
