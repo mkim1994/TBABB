@@ -50,6 +50,7 @@ public class PlayerInput : MonoBehaviour {
 		GetInput();
 		ProcessInput();
 		InteractionRay();
+		Debug.Log("Pickupable is: " + pickupable);
  	}
 
 	private void GetInput(){
@@ -117,7 +118,7 @@ public class PlayerInput : MonoBehaviour {
 
 		#region Use Left
 		if(i_useLeft){
-			if(pickupableInLeftHand != null){ //if you're holding something in your left hand
+			if(pickupableInLeftHand != null && pickupable != null){ //if you're holding something in your left hand
 				pickupableInLeftHand.UseLeftHand();
 			}
 		} else {
@@ -130,7 +131,7 @@ public class PlayerInput : MonoBehaviour {
 		#region Use Right
 		if(i_useRight){
 			Debug.Log("using right !");
-			if(pickupableInRightHand != null){ //if you're holding something in your left hand
+			if(pickupableInRightHand != null && pickupable != null){ //if you're holding something in your left hand
 				pickupableInRightHand.UseRightHand();
 			}
 		} else {
