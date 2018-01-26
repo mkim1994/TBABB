@@ -4,11 +4,13 @@ using UnityEngine;
 using DG.Tweening;
 public class Pickupable : MonoBehaviour {
     #region Left Hand Positions/Rotations
-    private Vector3 leftHandPos = new Vector3 (-1.022f, 0, 1.241f);
+    private Vector3 leftHandPos = new Vector3 (-1.022f, -0.25f, 1.241f);
     
     #endregion
-    private Vector3 rightHandPos = new Vector3 (0.954f, 0, 1.473f);
+    private Vector3 rightHandPos = new Vector3 (0.954f, -0.25f, 1.473f);
     public bool tweensAreActive = false;
+
+    public Vector3 dropPos;
     public bool pickedUp = false;
     public virtual void InteractLeftHand(){
         if(!pickedUp){
@@ -19,6 +21,7 @@ public class Pickupable : MonoBehaviour {
         else if(pickedUp){
             transform.SetParent(null);
             Services.GameManager.player.GetComponent<PlayerInput>().pickupableInLeftHand = null;
+            DropTween(dropPos);
             pickedUp = false;
         }
 	}
@@ -32,6 +35,7 @@ public class Pickupable : MonoBehaviour {
         else if(pickedUp){
             transform.SetParent(null);
             Services.GameManager.player.GetComponent<PlayerInput>().pickupableInRightHand = null;
+            DropTween(dropPos);
             pickedUp = false;
         }
     }
@@ -49,6 +53,13 @@ public class Pickupable : MonoBehaviour {
         pickedUp = true;
         Sequence sequence = DOTween.Sequence();
         sequence.Append(transform.DOLocalMove(handPos, 0.25f, false));
+        sequence.OnComplete(() => DeclareInactiveTween());
+    }
+
+    private void DropTween(Vector3 dropPos){
+        DeclareActiveTween();
+        Sequence sequence = DOTween.Sequence();
+        sequence.Append(transform.DOLocalMove(dropPos, 0.25f, false));
         sequence.OnComplete(() => DeclareInactiveTween());
     }
 

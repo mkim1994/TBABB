@@ -12,21 +12,25 @@ public class PlayerInput : MonoBehaviour {
 	// [SerializeField]float smoothing = 2.0f;
 
 	Vector2 smoothV;
-
+	float t = 0;
 	private Vector3 moveVector;
 	private Vector2 lookVector;
 	public int playerId = 0; 
 	private Player player;
 	private CharacterController cc;
+
+	public Vector3 dropPos;
 	private Camera myCam;
 	public LayerMask layerMask;
+
+	public LayerMask dropzoneLayerMask;
 	public Pickupable pickupable;
 	public Pickupable pickupableInLeftHand;
 	public Pickupable pickupableInRightHand;
 	private float maxInteractionDist = 4f;
 
 	private float lookSensitivityAtStart;
-	private float aimAssistSensitivity = 1f;
+	private float aimAssistSensitivity = 0;
 	float verticalLook = 0f;
 
 	bool i_pickupLeft;
@@ -36,6 +40,7 @@ public class PlayerInput : MonoBehaviour {
 	bool i_useRight;
 	bool i_restart;
 
+	bool lookingAtDropzone;
 
 	void Awake(){
 		Cursor.visible = false;
@@ -44,14 +49,15 @@ public class PlayerInput : MonoBehaviour {
 		cc = GetComponent<CharacterController>();
 		myCam = GetComponentInChildren<Camera>();
 		lookSensitivityAtStart = lookSensitivity;
-	}
+		aimAssistSensitivity = lookSensitivity * 0.49f;
+ 	}
 
 	void Update(){
 		GetInput();
 		ProcessInput();
 		InteractionRay();
-		Debug.Log("Pickupable is: " + pickupable);
- 	}
+		DropzoneRay();
+  	}
 
 	private void GetInput(){
 		moveVector.x = player.GetAxis("Move Horizontal");
@@ -79,13 +85,32 @@ public class PlayerInput : MonoBehaviour {
 		#region MouseLook
 		verticalLook -= lookVector.y * lookSensitivity;
 		verticalLook = Mathf.Clamp (verticalLook, -90f, 90f);
-		Camera.main.transform.localRotation = Quaternion.Euler (verticalLook, 0, 0);
+		myCam.transform.localRotation = Quaternion.Euler (verticalLook, 0, 0);
 		cc.transform.Rotate (0, lookVector.x * lookSensitivity, 0);
-
-		if(pickupable != null){ //aim assist
-			lookSensitivity = aimAssistSensitivity;
+		
+ 		if(pickupable != null){ //aim assist
+			t += 2f * Time.deltaTime;
+			lookSensitivity = Mathf.Lerp(lookSensitivityAtStart, aimAssistSensitivity, t);
+			Vector3 aimAssistDir = myCam.transform.position - pickupable.transform.position;
+ 			//aim assist attempt (not working)
+ 			// if(Mathf.Abs){
+				// float aimY = verticalLook;
+				// aimY = Mathf.Lerp(verticalLook, aimAssistDir.y, t);
+				// float aimX = lookVector.x;
+				// aimX = Mathf.Lerp(lookVector.x, aimAssistDir.x, t);
+				// myCam.transform.localRotation = Quaternion.Euler(aimY, 0, 0);
+				// cc.transform.Rotate(0, aimX, 0);
+			// }  
+			// if(lookSensitivity == aimAssistSensitivity){
+			// 	t = 0;
+			// }
+			
 		} else {
-			lookSensitivity = lookSensitivityAtStart;
+ 			t += 4f * Time.deltaTime;
+			lookSensitivity = Mathf.Lerp(lookSensitivity, lookSensitivityAtStart, t);
+			// if(lookSensitivity == lookSensitivityAtStart){
+			// 	t = 0;
+			// }
 		}
 
 		#endregion
@@ -95,7 +120,10 @@ public class PlayerInput : MonoBehaviour {
 			if(pickupable != null){ //check if looking at pickupable
 				pickupable.InteractLeftHand();
 			} else if(pickupableInLeftHand != null){
-				pickupableInLeftHand.InteractLeftHand();
+				if(dropPos != Vector3.zero){
+					pickupableInLeftHand.dropPos = dropPos;
+					pickupableInLeftHand.InteractLeftHand();
+				}
 			}
 		}      
 		#endregion 
@@ -105,7 +133,10 @@ public class PlayerInput : MonoBehaviour {
 			if(pickupable != null){ //check if looking at pickupable
 				pickupable.InteractRightHand();
 			} else if(pickupableInRightHand != null){
-				pickupableInRightHand.InteractRightHand();
+				if(dropPos != Vector3.zero){
+					pickupableInRightHand.dropPos = dropPos;
+					pickupableInRightHand.InteractRightHand();
+				}
 			}
 		}   
 		#endregion
@@ -130,8 +161,7 @@ public class PlayerInput : MonoBehaviour {
 
 		#region Use Right
 		if(i_useRight){
-			Debug.Log("using right !");
-			if(pickupableInRightHand != null && pickupable != null){ //if you're holding something in your left hand
+ 			if(pickupableInRightHand != null && pickupable != null){ //if you're holding something in your left hand
 				pickupableInRightHand.UseRightHand();
 			}
 		} else {
@@ -147,16 +177,32 @@ public class PlayerInput : MonoBehaviour {
 		Ray ray = new Ray(myCam.transform.position, myCam.transform.forward);
 		float rayDist = Mathf.Infinity;
 		RaycastHit hit = new RaycastHit();
-
+		
 		if(Physics.Raycast(ray, out hit, rayDist, layerMask)){
 			GameObject hitObj = hit.transform.gameObject; //if you're actually looking at something
- 			
-			if(hitObj.GetComponent<Pickupable>() != null && Vector3.Distance(transform.position, hitObj.transform.position) <= maxInteractionDist){ //check if object looked at can be picked up
+ 			if(hitObj.GetComponent<Pickupable>() != null && Vector3.Distance(transform.position, hitObj.transform.position) <= maxInteractionDist){ //check if object looked at can be picked up
 				pickupable = hitObj.GetComponent<Pickupable>(); //if it's Pickupable and close enough, assign it to pickupable.				  
  			} else if (hitObj.GetComponent<Pickupable>() == null || Vector3.Distance(transform.position, hitObj.transform.position) > maxInteractionDist ){
 				pickupable = null;
-			 } 		
+				t = 0;
+			} 	
 		} 
 	}
 
+	private void DropzoneRay(){
+		Ray ray = new Ray(myCam.transform.position, myCam.transform.forward);
+		float rayDist = Mathf.Infinity;
+		RaycastHit hit = new RaycastHit();
+		
+		if(Physics.Raycast(ray, out hit, rayDist, dropzoneLayerMask)){
+			GameObject hitObj = hit.transform.gameObject; //if you're actually looking at something
+			if (hitObj.GetComponent<Dropzone>() != null && Vector3.Distance(transform.position, hitObj.transform.position) <= maxInteractionDist){
+				dropPos = hitObj.transform.position;
+				lookingAtDropzone = true;
+			} else{
+				dropPos = Vector3.zero;
+				lookingAtDropzone = false;
+			}
+		}
+	}
 }
