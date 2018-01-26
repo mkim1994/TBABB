@@ -9,18 +9,14 @@ public class Bottle : Pickupable {
 
 	public override void UseLeftHand(){
 		if(Services.GameManager.playerInput.pickupable.GetComponent<Glass>() != null){
-			base.PourTween(leftHandPourRot);
-		} else {
-			//Do nothing
-		}
+			base.RotateTween(leftHandPourRot);
+		} 
 	}
 
 	public override void UseRightHand(){
 		if(Services.GameManager.playerInput.pickupable.GetComponent<Glass>() != null){
-			base.PourTween(rightHandPourRot);
-		} else {
-			//Do nothing
-		}
+			base.RotateTween(rightHandPourRot);
+		} 
 	}
 
 }

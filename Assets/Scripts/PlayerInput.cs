@@ -18,6 +18,7 @@ public class PlayerInput : MonoBehaviour {
 	public int playerId = 0; 
 	private Player player;
 	private CharacterController cc;
+	public Dropzone targetDropzone;
 
 	public Vector3 dropPos;
 	private Camera myCam;
@@ -37,7 +38,10 @@ public class PlayerInput : MonoBehaviour {
 	bool i_pickupRight;
 
 	bool i_useLeft;
+	bool i_endUseLeft;
 	bool i_useRight;
+	bool i_endUseRight;
+
 	bool i_restart;
 
 	bool lookingAtDropzone;
@@ -67,7 +71,9 @@ public class PlayerInput : MonoBehaviour {
 		i_pickupLeft = player.GetButtonDown("Pick Up Left");
 		i_pickupRight = player.GetButtonDown("Pick Up Right");
 		i_useLeft = player.GetButton("Use Left");
+		i_endUseLeft = player.GetButtonUp("Use Left");
 		i_useRight = player.GetButton("Use Right");
+		i_endUseRight = player.GetButtonUp("Use Right");
 		i_restart = player.GetButtonDown("Restart");
 	}
 
@@ -115,26 +121,48 @@ public class PlayerInput : MonoBehaviour {
 
 		#endregion
 		
-		#region Pick Up Left
-		if(i_pickupLeft){
-			if(pickupable != null){ //check if looking at pickupable
+		#region Pick Up Left / Drop Left
+		if(i_pickupLeft && !Services.TweenManager.tweensAreActive){
+			if(pickupable != null && pickupableInLeftHand == null){ //PICK UP, CHECK IF LEFT HAND IS EMPTY
 				pickupable.InteractLeftHand();
-			} else if(pickupableInLeftHand != null){
+				targetDropzone.isOccupied = false;
+			} else if(pickupable == null && pickupableInLeftHand != null && !targetDropzone.isOccupied){ //DROP
 				if(dropPos != Vector3.zero){
 					pickupableInLeftHand.dropPos = dropPos;
+					pickupableInLeftHand.targetDropzone = targetDropzone;
 					pickupableInLeftHand.InteractLeftHand();
+				}		
+			} else if (pickupable != null && pickupableInLeftHand != null){ //swap
+				if(dropPos != Vector3.zero){
+					pickupableInLeftHand.dropPos = dropPos;
+					pickupableInLeftHand.targetDropzone = targetDropzone;
+					pickupableInLeftHand.SwapLeftHand();
+					pickupable.SwapLeftHand();		
 				}
 			}
+				// if(dropPos != Vector3.zero && targetDropzone != null){ //are we looking at a dropzone?
+				// 	if(!targetDropzone.isOccupied) { 	//if false, drop the object.
+				// 	} else if (targetDropzone.isOccupied){ //if true, swap with object in dropzone.
+				// 		if(pickupable!=null){
+				// 			pickupableInLeftHand.dropPos = dropPos;
+				// 			pickupableInLeftHand.targetDropzone = targetDropzone;
+				// 			pickupableInLeftHand.SwapLeftHand();
+				// 			// pickupable.SwapLeftHand();
+				// 		}
+				// 	}
+
+				// } 
 		}      
 		#endregion 
 		
-		#region Pick Up Right
-		if(i_pickupRight){
-			if(pickupable != null){ //check if looking at pickupable
+		#region Pick Up Right / Drop Right
+		if(i_pickupRight && !Services.TweenManager.tweensAreActive){
+			if(pickupable != null){ //PICK UP				
 				pickupable.InteractRightHand();
-			} else if(pickupableInRightHand != null){
-				if(dropPos != Vector3.zero){
+			} else if(pickupableInRightHand != null){ //DROP
+				if(dropPos != Vector3.zero && targetDropzone != null){
 					pickupableInRightHand.dropPos = dropPos;
+					pickupableInRightHand.targetDropzone = targetDropzone;
 					pickupableInRightHand.InteractRightHand();
 				}
 			}
@@ -148,25 +176,28 @@ public class PlayerInput : MonoBehaviour {
 		#endregion
 
 		#region Use Left
-		if(i_useLeft){
+		if(i_useLeft && !Services.TweenManager.tweensAreActive){
 			if(pickupableInLeftHand != null && pickupable != null){ //if you're holding something in your left hand
 				pickupableInLeftHand.UseLeftHand();
 			}
-		} else {
+		} 
+		
+		if(i_endUseLeft){
 			if(pickupableInLeftHand != null){
-				pickupableInLeftHand.ReversePourTween();
+				pickupableInLeftHand.RotateToZeroTween();
 			}
 		} 
 		#endregion
 
 		#region Use Right
-		if(i_useRight){
+		if(i_useRight && !Services.TweenManager.tweensAreActive){
  			if(pickupableInRightHand != null && pickupable != null){ //if you're holding something in your left hand
 				pickupableInRightHand.UseRightHand();
 			}
-		} else {
+		} 
+		if (i_endUseRight) {
 			if(pickupableInRightHand != null){
-				pickupableInRightHand.ReversePourTween();
+				pickupableInRightHand.RotateToZeroTween();
 			}
 		} 
 		#endregion
@@ -197,11 +228,19 @@ public class PlayerInput : MonoBehaviour {
 		if(Physics.Raycast(ray, out hit, rayDist, dropzoneLayerMask)){
 			GameObject hitObj = hit.transform.gameObject; //if you're actually looking at something
 			if (hitObj.GetComponent<Dropzone>() != null && Vector3.Distance(transform.position, hitObj.transform.position) <= maxInteractionDist){
-				dropPos = hitObj.transform.position;
-				lookingAtDropzone = true;
+				Dropzone hitDropzone = hitObj.GetComponent<Dropzone>(); // get a reference to the dropzone
+				dropPos = hitObj.transform.position;					
+				targetDropzone = hitDropzone;
+				// if (hitDropzone.Occupied()){
+				// 	dropPos = Vector3.zero;
+				// 	targetDropzone = null;
+				// } else {
+				// 	dropPos = hitObj.transform.position;					
+				// 	targetDropzone = hitDropzone;
+				// }
 			} else{
 				dropPos = Vector3.zero;
-				lookingAtDropzone = false;
+				targetDropzone = null;
 			}
 		}
 	}

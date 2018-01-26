@@ -6,9 +6,17 @@ public class Dropzone : MonoBehaviour {
 
 	public bool isOccupied;
 	// Use this for initialization
+	Pickupable[] pickupables; 
+
 	void Start () {
+		pickupables = FindObjectsOfType<Pickupable>();
 		transform.eulerAngles = new Vector3 (transform.eulerAngles.x, Random.Range(0, 359), transform.eulerAngles.z);
-		isOccupied = false;
+		foreach(var pickupable in pickupables){
+ 			if(Vector3.Distance(pickupable.transform.position, this.transform.position) <= 1f){
+				isOccupied = true;				
+			}
+		}
+		// isOccupied = false;
 	}
 	
 	// Update is called once per frame
@@ -16,7 +24,7 @@ public class Dropzone : MonoBehaviour {
 		
 	}
 
-	public void ToggleOccupiedStatus(){
+	public void Occupied(){
 		isOccupied = !isOccupied;
 	}
 }
