@@ -9,8 +9,7 @@ public class Pickupable : MonoBehaviour {
     #endregion
     private Vector3 rightHandPos = new Vector3 (0.954f, -0.25f, 1.473f);
     public Dropzone targetDropzone;
-    public bool tweensAreActive = false;
-
+ 
     public Vector3 dropPos;
     public bool pickedUp = false;
 
@@ -24,7 +23,6 @@ public class Pickupable : MonoBehaviour {
         if(!pickedUp){
             transform.SetParent(Services.GameManager.player.transform.GetChild(0));
             Services.GameManager.player.GetComponent<PlayerInput>().pickupableInLeftHand = this;
-            pickedUp = true;
             PickupTween(leftHandPos);
         } else if(pickedUp){
             transform.SetParent(null);
@@ -32,8 +30,7 @@ public class Pickupable : MonoBehaviour {
             if(targetDropzone != null){
                  DropTween(dropPos,targetDropzone);
             }
-            pickedUp = false;
-        }
+         }
 	}
 
     public virtual void InteractRightHand(){
@@ -48,7 +45,6 @@ public class Pickupable : MonoBehaviour {
             if(targetDropzone != null){
                 DropTween(dropPos, targetDropzone);
             }
-            pickedUp = false;
         }
     }
 
@@ -57,16 +53,32 @@ public class Pickupable : MonoBehaviour {
             transform.SetParent(null);
             Services.GameManager.player.GetComponent<PlayerInput>().pickupableInLeftHand = null;
             // if(targetDropzone != null){
-                DropTween(dropPos,targetDropzone);
+            DropTween(dropPos,targetDropzone);
             // }
             pickedUp = false;
         }
         else if(!pickedUp){
             Services.GameManager.player.GetComponent<PlayerInput>().pickupableInLeftHand = this;
             // StartCoroutine(SetNewParent(0.1f));
-            pickedUp = true;
             transform.SetParent(Services.GameManager.player.transform.GetChild(0));
             PickupTween(leftHandPos);
+        }
+    }
+
+    public virtual void SwapRightHand(){
+        if(pickedUp){
+            transform.SetParent(null);
+            Services.GameManager.player.GetComponent<PlayerInput>().pickupableInRightHand = null;
+            DropTween(dropPos,targetDropzone);
+            // }
+            pickedUp = false;
+        }
+        else if(!pickedUp){
+            Services.GameManager.player.GetComponent<PlayerInput>().pickupableInRightHand = this;
+            // StartCoroutine(SetNewParent(0.1f));
+            pickedUp = true;
+            transform.SetParent(Services.GameManager.player.transform.GetChild(0));
+            PickupTween(rightHandPos);
         }
     }
 
@@ -86,6 +98,7 @@ public class Pickupable : MonoBehaviour {
         sequence.Append(transform.DOLocalMove(moveToPos, 0.25f, false));
         transform.DOLocalRotate(Vector3.zero, 0.25f, RotateMode.Fast);
         sequence.OnComplete(() => DeclareInactiveTween());
+        pickedUp = true;
     }
 
     public virtual void DropTween(Vector3 dropPos, Dropzone _targetDropzone){
@@ -95,6 +108,7 @@ public class Pickupable : MonoBehaviour {
         sequence.Append(transform.DOLocalMove(dropPos, 0.25f, false));
         transform.DOLocalRotate(Vector3.zero, 0.25f, RotateMode.Fast);
         sequence.OnComplete(() => DeclareInactiveTween());
+        pickedUp = false;
     }
 
     public virtual void RotateTween(Vector3 rotation){
@@ -112,13 +126,9 @@ public class Pickupable : MonoBehaviour {
     } 
 
     public void DeclareActiveTween(){
-        Debug.Log("A tween is active!");
-        tweensAreActive = true;
         Services.TweenManager.tweensAreActive = true;
     }
     public void DeclareInactiveTween(){
-        Debug.Log("Tween now inactive!");
-        tweensAreActive = false;
         Services.TweenManager.tweensAreActive = false;
     }
 

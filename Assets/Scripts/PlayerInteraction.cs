@@ -45,7 +45,8 @@ public class PlayerInteraction : MonoBehaviour {
 			if(hitObj.GetComponent<Pickupable>() != null && Vector3.Distance(transform.position, hitObj.transform.position) <= maxInteractionDist){
 				//if the object you're looking at is close enough AND is an interactable, assign it to interactableCIRAL@. 
 				//BUT ONLY IF YOU CAN ACTUALLY PICK IT UP.
-				pickupable = hitObj.GetComponent<Pickupable>();   
+				pickupable = hitObj.GetComponent<Pickupable>(); 
+				  
  			} 		
 		} else {
 			//if you're not looking at anything, make this null.

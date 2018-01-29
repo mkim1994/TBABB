@@ -140,30 +140,34 @@ public class PlayerInput : MonoBehaviour {
 					pickupable.SwapLeftHand();		
 				}
 			}
-				// if(dropPos != Vector3.zero && targetDropzone != null){ //are we looking at a dropzone?
-				// 	if(!targetDropzone.isOccupied) { 	//if false, drop the object.
-				// 	} else if (targetDropzone.isOccupied){ //if true, swap with object in dropzone.
-				// 		if(pickupable!=null){
-				// 			pickupableInLeftHand.dropPos = dropPos;
-				// 			pickupableInLeftHand.targetDropzone = targetDropzone;
-				// 			pickupableInLeftHand.SwapLeftHand();
-				// 			// pickupable.SwapLeftHand();
-				// 		}
-				// 	}
-
-				// } 
 		}      
 		#endregion 
 		
 		#region Pick Up Right / Drop Right
 		if(i_pickupRight && !Services.TweenManager.tweensAreActive){
-			if(pickupable != null){ //PICK UP				
+			//Condition 1
+			if(pickupable != null && pickupableInRightHand == null){ //PICK UP, CHECK IF LEFT HAND IS EMPTY
+				Debug.Log("Condition 1!");
 				pickupable.InteractRightHand();
-			} else if(pickupableInRightHand != null){ //DROP
-				if(dropPos != Vector3.zero && targetDropzone != null){
+				targetDropzone.isOccupied = false;
+			} 
+			//Condition 2
+			else if(pickupable == null && pickupableInRightHand != null && !targetDropzone.isOccupied){ //DROP
+				if(dropPos != Vector3.zero){
 					pickupableInRightHand.dropPos = dropPos;
 					pickupableInRightHand.targetDropzone = targetDropzone;
 					pickupableInRightHand.InteractRightHand();
+					Debug.Log("Condition 2!");
+				}		
+			} 
+			//Condtion 3
+			else if (pickupable != null && pickupableInRightHand != null){ //swap
+				if(dropPos != Vector3.zero){
+					Debug.Log("Condition 3!");
+					pickupableInRightHand.dropPos = dropPos;
+					pickupableInRightHand.targetDropzone = targetDropzone;
+					pickupableInRightHand.SwapRightHand();
+					pickupable.SwapRightHand();		
 				}
 			}
 		}   
