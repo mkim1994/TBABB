@@ -12,13 +12,18 @@ public class Glass : Pickupable {
 
 	public void ReceivePourFromBottle(){
 		if(Services.GameManager.playerInput.pickupableInLeftHand == this){ //if the bottle is in the left hand
-		 	base.RotateTween(leftHandPourRot);
+		 	// base.RotateTween(leftHandPourRot);
 		} else {
-			base.RotateTween(rightHandPourRot);
+			// base.RotateTween(rightHandPourRot);
 		}
 
 		Liquid liquid = GetComponentInChildren<Liquid>();
 		liquid.isPouring = true;
 		// Services.GameManager.playerInput.pickupableInRightHand	
+	} 
+
+	public void EndPourFromBottle(){
+		Liquid liquid = GetComponentInChildren<Liquid>();
+		liquid.isPouring = false;
 	}
 }
