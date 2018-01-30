@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 114127420620283706}
   - component: {fileID: 114652257479172276}
   - component: {fileID: 114273037733688660}
+  - component: {fileID: 65103052466598304}
   m_Layer: 0
   m_Name: Ivory
   m_TagString: Untagged
@@ -220,6 +221,18 @@ Transform:
   m_Father: {fileID: 4425129954102608}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &65103052466598304
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1385666405802664}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.6914678, y: 3.1957512, z: 0.96059036}
+  m_Center: {x: 0.016318321, y: -0.3725524, z: 0.019704819}
 --- !u!108 &108503516719300078
 Light:
   m_ObjectHideFlags: 1
