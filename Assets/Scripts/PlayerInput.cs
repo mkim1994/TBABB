@@ -145,21 +145,18 @@ public class PlayerInput : MonoBehaviour {
 		
 		#region Pick Up Right / Drop Right
 		if(i_pickupRight && !Services.TweenManager.tweensAreActive){
-			//Condition 1
-			if(pickupable != null && pickupableInRightHand == null){ //PICK UP, CHECK IF LEFT HAND IS EMPTY
+ 			if(pickupable != null && pickupableInRightHand == null){ //PICK UP, CHECK IF LEFT HAND IS EMPTY
  				pickupable.InteractRightHand();
 				targetDropzone.isOccupied = false;
 			} 
-			//Condition 2
-			else if(pickupable == null && pickupableInRightHand != null && targetDropzone != null){ //DROP
+ 			else if(pickupable == null && pickupableInRightHand != null && targetDropzone != null){ //DROP
 				if(dropPos != Vector3.zero && !targetDropzone.isOccupied){
 					pickupableInRightHand.dropPos = dropPos;
 					pickupableInRightHand.targetDropzone = targetDropzone;
 					pickupableInRightHand.InteractRightHand();
  				}		
 			} 
-			//Condtion 3
-			else if (pickupable != null && pickupableInRightHand != null){ //swap
+ 			else if (pickupable != null && pickupableInRightHand != null){ //swap
 				if(dropPos != Vector3.zero){
  					pickupableInRightHand.dropPos = dropPos;
 					pickupableInRightHand.targetDropzone = targetDropzone;
@@ -176,18 +173,36 @@ public class PlayerInput : MonoBehaviour {
 		}
 		#endregion
 
+		#region Test
+		//hahaha
+
+		#endregion
+
 		#region Use Left
 		if(i_useLeft && !Services.TweenManager.tweensAreActive){
-			if(pickupableInLeftHand != null && pickupable != null){ //if you're holding something in your left hand
+			if (pickupableInLeftHand != null && pickupable != null){ //one-handed use on something on bar (prioritize this)
 				pickupableInLeftHand.UseLeftHand();
-			}
+			} else if (pickupableInLeftHand != null && pickupableInRightHand != null) { //two-handed use 
+                if (pickupableInLeftHand.GetComponent<Bottle>() != null && pickupableInRightHand.GetComponent<Glass>() != null) {
+                    Debug.Log("Pour time"); 
+					pickupableInLeftHand.GetComponent<Bottle>().PourIntoPickedUpGlass();
+					pickupableInRightHand.GetComponent<Glass>().ReceivePourFromBottle();
+                } else if (pickupableInLeftHand.GetComponent<Bottle>() != null && pickupableInRightHand.GetComponent<Rag>() != null){
+					Debug.Log("Cleaning time");
+				} 
+            } 
 		} 
-		
 		if(i_endUseLeft){
 			if(pickupableInLeftHand != null){
 				pickupableInLeftHand.RotateToZeroTween();
 			}
+			
+			if (pickupableInLeftHand != null && pickupableInRightHand != null){
+				pickupableInLeftHand.RotateToZeroTween();
+				pickupableInRightHand.RotateToZeroTween();
+			}
 		} 
+		
 		#endregion
 
 		#region Use Right
