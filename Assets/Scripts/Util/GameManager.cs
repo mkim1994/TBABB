@@ -15,6 +15,7 @@ public class GameManager : MonoBehaviour {
 	public PlayerInput playerInput;
     public DialogueRunner dialogue;
     public NPC CustomerIvory;
+    public DayCycleManager dayManager;
 
     //public GameObject TestingScenes;
 	void Awake()
