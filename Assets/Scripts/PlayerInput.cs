@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Rewired;
 using UnityEngine.SceneManagement;
-
+ 
 [RequireComponent(typeof(CharacterController))]
 public class PlayerInput : MonoBehaviour {
 	
@@ -275,8 +275,10 @@ public class PlayerInput : MonoBehaviour {
 
 		#region Talk
 		if(i_talk){
-			
-		}
+			if(npc != null){
+				npc.InitiateDialogue();
+			}
+ 		}
 		#endregion
 	}
 
