@@ -37,7 +37,11 @@ public class NPC : MonoBehaviour
     }
 
     public void InitiateDialogue(){
-        FindObjectOfType<DialogueRunner>().StartDialogue(characterName+Services.GameManager.dayManager.currentDay);
+        Debug.Log("hm");
+        if (!Services.GameManager.dialogue.isDialogueRunning)
+        {
+            Services.GameManager.dialogue.StartDialogue(characterName + Services.GameManager.dayManager.currentDay);
+        }
     }
 
     public void SetCustomerVars(float type, float flavor, float alcohol, float drinkable){
