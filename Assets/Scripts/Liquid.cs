@@ -6,6 +6,8 @@ public class Liquid : MonoBehaviour {
 
 	float totalVolume;
 	float alcoholVolume;
+	float typeVolume;
+	float flavorVolume;
 	// float 
 	public float height;
 	public bool isPouring;
@@ -28,6 +30,6 @@ public class Liquid : MonoBehaviour {
 	}
 
 	public void AddIngredient(){
-
+			
 	}
 }
