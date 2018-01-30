@@ -645,8 +645,9 @@ GameObject:
   - component: {fileID: 33248409993017322}
   - component: {fileID: 136467240515973000}
   - component: {fileID: 23728220387442898}
+  - component: {fileID: 114683072906242786}
   m_Layer: 0
-  m_Name: Cylinder
+  m_Name: Liquid
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8515,6 +8516,18 @@ MonoBehaviour:
   targetDropzone: {fileID: 0}
   dropPos: {x: 0, y: 0, z: 0}
   pickedUp: 0
+--- !u!114 &114683072906242786
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1369401570769474}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a433c2afe0a76e4bb72e41952f91ec8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  height: 0
 --- !u!114 &114697866510559260
 MonoBehaviour:
   m_ObjectHideFlags: 1

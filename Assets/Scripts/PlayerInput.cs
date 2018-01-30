@@ -318,4 +318,8 @@ public class PlayerInput : MonoBehaviour {
 			npc = null;
 		}
 	}
+
+	void EndPour(){
+		
+	}
 }

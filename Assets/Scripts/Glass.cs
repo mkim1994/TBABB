@@ -18,7 +18,7 @@ public class Glass : Pickupable {
 		}
 
 		Liquid liquid = GetComponentInChildren<Liquid>();
-		liquid.GrowVertical();
+		liquid.isPouring = true;
 		// Services.GameManager.playerInput.pickupableInRightHand	
 	}
 }

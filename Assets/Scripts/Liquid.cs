@@ -8,6 +8,8 @@ public class Liquid : MonoBehaviour {
 	float alcoholVolume;
 	// float 
 	public float height;
+	public bool isPouring;
+
 	// Use this for initialization
 	void Start () {
 		
@@ -15,7 +17,9 @@ public class Liquid : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
+		if(isPouring){
+			GrowVertical();
+		} 
 	}
 
 	public void GrowVertical(){
