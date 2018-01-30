@@ -117,8 +117,10 @@ public class DialogueUI : Yarn.Unity.DialogueUIBehaviour
             continuePrompt.SetActive(true);
 
         // Wait for any user input
-        while (Input.anyKeyDown == false)
-        {
+     /*   while (Input.anyKeyDown == false)
+        {*/
+        //wait for time
+        while(true){
             yield return null;
         }
 
