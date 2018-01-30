@@ -30,6 +30,7 @@ public class DayCycleManager : MonoBehaviour
     public void Start()
     {
 
+        currentDay = 1;
         resetPos = Services.GameManager.player.transform.position;
         resetRot = Services.GameManager.player.transform.rotation;
 
@@ -57,13 +58,13 @@ public class DayCycleManager : MonoBehaviour
 
     public void Update()
     {
-        if (currentDay < 3)
+       /* if (currentDay < 3)
         {
         }
         if (dayHasEnded && switchOff)
         {
             ResetDay();
-        }
+        }*/
 
 
     }
