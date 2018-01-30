@@ -12,24 +12,14 @@ public class DayCycleManager : MonoBehaviour
     public bool switchOff;
 
     public List<Day> day;
-    public GameObject player;
-    public int numCustomersThatLeft;
-    public int numCurrentCustomers;
-    public int currentDay;
-
-    public GameObject CustomerIvory;
-    public GameObject CustomerSahana;
-
-    public DialogueRunner dialogue;
 
     public GameObject blackPanel;
 
     public Vector3 resetPos;
     public Quaternion resetRot;
 
+    public int currentDay;
 
-    AudioController audioController;
-    public bool safeToEnableInteraction;
 
     // Use this for initialization
     public void Awake()
@@ -39,18 +29,10 @@ public class DayCycleManager : MonoBehaviour
     }
     public void Start()
     {
-        audioController = FindObjectOfType<AudioController>();
-        safeToEnableInteraction = false;
 
         resetPos = Services.GameManager.player.transform.position;
         resetRot = Services.GameManager.player.transform.rotation;
-        CustomerIvory = GameObject.Find("CustomerIvory");
-        CustomerSahana = GameObject.Find("CustomerSahana");
-        blackPanel = GameObject.Find("BarCanvas").transform.GetChild(2).gameObject;
 
-        dialogue = FindObjectOfType<DialogueRunner>();
-        CustomerIvory.SetActive(false);
-        CustomerSahana.SetActive(false);
         dayHasEnded = false;
 
         day = new List<Day>();
@@ -58,8 +40,6 @@ public class DayCycleManager : MonoBehaviour
         day.Add(new Day(2)); //two customers on the second day, etc.
         day.Add(new Day(1));
 
-        numCustomersThatLeft = 0;
-        currentDay = 0;
         switchOff = false;
 
         //currentNumCustomers = day[0].numCustomers;
@@ -68,17 +48,9 @@ public class DayCycleManager : MonoBehaviour
 
     public void ResetDay()
     {
-       // dialogue.dialogueCount = 0;
-        numCustomersThatLeft = 0;
-        numCurrentCustomers = 0;
-       // audioController.signhum.Stop();
         dayHasEnded = false;
-        //safeToEnableInteraction = false;
         switchOff = false;
         blackPanel.SetActive(true);
-       // audioController.bgm1.Stop();
-      //  audioController.bgm2.Stop();
-        //Invoke("WaitTillNextDay", 5f);
 
         WaitTillNextDay();
     }
@@ -87,30 +59,6 @@ public class DayCycleManager : MonoBehaviour
     {
         if (currentDay < 3)
         {
-            if (safeToEnableInteraction)
-            {
-                safeToEnableInteraction = false;
-                DayCycleTrueReset();
-            }
-            if (!dayHasEnded)
-            {
-
-                Day(currentDay);
-
-            }
-            if (numCustomersThatLeft == day[currentDay].numCustomers)
-            {
-                numCustomersThatLeft = 0;
-                currentDay++;
-                dayHasEnded = true;
-                Debug.Log(currentDay + ", " + dayHasEnded);
-
-            }
-
-            /*  if (dayHasEnded && switchOff)
-              {
-                  ResetDay();
-              }*/
         }
         if (dayHasEnded && switchOff)
         {
@@ -135,76 +83,10 @@ public class DayCycleManager : MonoBehaviour
     private void Day0()
     {
 
-        if (numCurrentCustomers == 0 && numCustomersThatLeft == 0)
-        {
-            Ray ray = new Ray(player.GetComponentInChildren<Camera>().transform.position, player.GetComponentInChildren<Camera>().transform.forward);
-            float rayDist = Mathf.Infinity;
-            RaycastHit hit = new RaycastHit();
-
-            if (Physics.Raycast(ray, out hit, rayDist))
-            {
-                if (hit.transform.name.Contains("InitialCustomerTrigger"))
-                {
-                    //for snaptriggerarea: if day == 1
-                    CustomerIvory.SetActive(true);
-                    dialogue.StartDialogue();
-                }
-            }
-        }
-        if (numCustomersThatLeft == 1)
-        {
-            CustomerIvory.SetActive(false);
-        }
     }
     private void Day1()
     {
-        if (numCurrentCustomers == 0 && numCustomersThatLeft == 0)
-        {
-            Ray ray = new Ray(player.GetComponentInChildren<Camera>().transform.position, player.GetComponentInChildren<Camera>().transform.forward);
-            float rayDist = Mathf.Infinity;
-            RaycastHit hit = new RaycastHit();
 
-            if (Physics.Raycast(ray, out hit, rayDist))
-            {
-                if (hit.transform.name.Contains("SecondCustomerTrigger"))
-                {
-                    //for snaptriggerarea: if day == 2 & sahana is active
-                    CustomerSahana.SetActive(true);
-                   // audioController.spotlightSfx.Play();
-
-                   // audioController.bgm2.Play();
-                    dialogue.StartDialogue("StartSahanaDay2");
-                    numCurrentCustomers++;
-                }
-            }
-        }
-        else if (numCustomersThatLeft == 1)
-        { //after sahana leaves
-            if (numCurrentCustomers == 0)
-            {
-
-                CustomerSahana.SetActive(false);
-                Ray ray = new Ray(player.GetComponentInChildren<Camera>().transform.position, player.GetComponentInChildren<Camera>().transform.forward);
-                float rayDist = Mathf.Infinity;
-                RaycastHit hit = new RaycastHit();
-
-                if (Physics.Raycast(ray, out hit, rayDist))
-                {
-                    if (hit.transform.name.Contains("InitialCustomerTrigger"))
-                    {
-                        //for snaptriggerarea: if day == 1
-                        CustomerIvory.SetActive(true);
-                       // audioController.spotlightSfx.Play();
-                        dialogue.StartDialogue("StartIvoryDay2");
-                        numCurrentCustomers++;
-                    }
-                }
-            }
-        }
-        if (numCustomersThatLeft == 2)
-        {
-            CustomerIvory.SetActive(false);
-        }
     }
 
     private void WaitTillNextDay()
@@ -216,9 +98,6 @@ public class DayCycleManager : MonoBehaviour
     public void DayCycleTrueReset()
     {
 
-      //  player.GetComponentInChildren<UnityEngine.XR.WSA.Input.InteractionManager>().enabled = true;
-        player.GetComponent<FirstPersonController>().enabled = true;
-      //  audioController.signhum.Play();
 
     }
 

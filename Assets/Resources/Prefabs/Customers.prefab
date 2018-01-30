@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4425129954102608}
   - component: {fileID: 114127420620283706}
   - component: {fileID: 114652257479172276}
+  - component: {fileID: 114273037733688660}
   m_Layer: 0
   m_Name: Ivory
   m_TagString: Untagged
@@ -302,6 +303,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f82a36dab282405bbb421a37a3ee5d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114273037733688660
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1385666405802664}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b6ada9ff16514e2da578fef52097e27, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  daysvisiting: 01010001000101
+  rankedseats: 0300000001000000000000000200000004000000
+  rankedtypes: 
+  rankedflavors: 
 --- !u!114 &114652257479172276
 MonoBehaviour:
   m_ObjectHideFlags: 1

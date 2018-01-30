@@ -8,7 +8,7 @@ using Yarn.Unity;
 /// Yarn node that should be run when you talk to them.
 public class NPC : MonoBehaviour
 {
-
+    private CustomerData customerData;
     public string characterName = "";
 
     [FormerlySerializedAs("startNode")]
@@ -17,6 +17,7 @@ public class NPC : MonoBehaviour
     [Header("Optional")]
     public TextAsset scriptToLoad;
 
+
     // Use this for initialization
     void Start()
     {
@@ -24,6 +25,8 @@ public class NPC : MonoBehaviour
         {
             FindObjectOfType<DialogueRunner>().AddScript(scriptToLoad);
         }
+
+        customerData = GetComponent<CustomerData>();
 
     }
 

@@ -1,0 +1,142 @@
+[
+	{
+		"title": "StartIvoryDay1",
+		"tags": "",
+		"body": "<<set $gameover to false>>\n\nCustomer: Ha...\nCustomer: Whiskey please.\n",
+		"position": {
+			"x": 337,
+			"y": 161
+		},
+		"colorID": 0
+	},
+	{
+		"title": "GetGlassDrink1IvoryDay1",
+		"tags": "",
+		"body": "<<set $rightdrink to 0>>\nCustomer: Thanks.\nCustomer: It's been a while since I ended up here.\nCustomer: I don't think I've seen you?\nCustomer: You new?\n\n[[Yes|2AIvoryDay1]]\n[[No, not really|2BIvoryDay1]]",
+		"position": {
+			"x": 598,
+			"y": 133
+		},
+		"colorID": 0
+	},
+	{
+		"title": "2AIvoryDay1",
+		"tags": "",
+		"body": "Customer: Oh. Okay.\nCustomer: Wonder what happened to the last bartender.\nCustomer: Doesn't matter though.\nCustomer: I've missed this.\nCustomer: ...Hey.\nCustomer: Can I get another?",
+		"position": {
+			"x": 880,
+			"y": 173
+		},
+		"colorID": 0
+	},
+	{
+		"title": "2BIvoryDay1",
+		"tags": "",
+		"body": "Customer: Huh.\nCustomer: I must've been away longer than I thought.\nCustomer: Though I find that hard to believe.\nCustomer: I'm pretty sure you're new...\nCustomer: ...\nCustomer: I've missed this.\nCustomer: ...Hey.\nCustomer: Can I get another?",
+		"position": {
+			"x": 882,
+			"y": 464
+		},
+		"colorID": 0
+	},
+	{
+		"title": "GetNotDrink1IvoryDay1",
+		"tags": "",
+		"body": "<<set $rightdrink to 2>>\n\nCustomer: Thanks...?\nCustomer: Sigh.\nCustomer: It's been a while since I ended up here.\nCustomer: I don't think I've seen you?\nCustomer: You new?\n\n[[Yes|2AIvoryDay1]]\n[[No, not really|2BIvoryDay1]]",
+		"position": {
+			"x": 574,
+			"y": 378
+		},
+		"colorID": 0
+	},
+	{
+		"title": "GetDrink1IvoryDay1",
+		"tags": "",
+		"body": "<<set $rightdrink to 1>>\n\nCustomer: Uh...this is a lot.\nCustomer: Can't you just give it to me in a glass? Or something?",
+		"position": {
+			"x": 329,
+			"y": 499
+		},
+		"colorID": 0
+	},
+	{
+		"title": "3AIvoryDay1",
+		"tags": "",
+		"body": "Customer: I don't know if I want to talk about it...\nCustomer: But thanks for asking.\nCustomer: Roommate troubles, et cetera.\nCustomer: Anyway, that's it for today then.\nCustomer: I'll be back, unfortunately.\nCustomer: See you around.\n\n<<set $gameover to true>>\n<<customerleave Dialogue>>",
+		"position": {
+			"x": 1652,
+			"y": 266
+		},
+		"colorID": 0
+	},
+	{
+		"title": "3BIvoryDay1",
+		"tags": "",
+		"body": "Customer: Bet I didn't help with that.\nCustomer: Haha...\nCustomer: Yep. You know it.\nCustomer: Anyway, that's it for today then.\nCustomer: I'll be back, unfortunately.\nCustomer: See you around.\n\n<<set $gameover to true>>\n<<customerleave Dialogue>>",
+		"position": {
+			"x": 1669,
+			"y": 518
+		},
+		"colorID": 0
+	},
+	{
+		"title": "GetGlassDrink2IvoryDay1",
+		"tags": "",
+		"body": "<<if $rightdrink < 2>>\nCustomer: Thanks.\n<<else>>\nCustomer: Hey, you got it right this time.\nCustomer: Haha.\n<<endif>>\n\n<<set $rightdrink to 0>>\n\nCustomer: This is some smooth whiskey.\nCustomer: Thanks again.\nCustomer: Nice break from all the shit that's been happening.\n\n[[What's been happening?|3AIvoryDay1]]\n[[You know it.|3BIvoryDay1]]",
+		"position": {
+			"x": 1166,
+			"y": 175
+		},
+		"colorID": 0
+	},
+	{
+		"title": "GetNotDrink2IvoryDay1",
+		"tags": "",
+		"body": "<<if $rightdrink < 2>>\nCustomer: Uhh.\nCustomer: Did I not order whiskey the first time...?\n<<else>>\nCustomer: Okay.\nCustomer: Uh.\nCustomer: I know you're new and all, but seriously?\n<<endif>>\n\n<<set $rightdrink to 2>>\n\nCustomer: Whatever.\nCustomer: It's not the worst thing that happened today, I guess.\n\n[[What's the worst thing?|3AIvoryDay1]]\n[[Sorry.|3CIvoryDay1]]\n\n",
+		"position": {
+			"x": 1165,
+			"y": 419
+		},
+		"colorID": 0
+	},
+	{
+		"title": "GetDrink2IvoryDay1",
+		"tags": "",
+		"body": "<<if $rightdrink is 1>>\nCustomer: Again?\nCustomer: C'mon, man. Just put it in a cup...\n<<else>>\nCustomer: Uh...this is a lot.\nCustomer: Can't you just give it to me in a glass? Or something?\n<<endif>>",
+		"position": {
+			"x": 1108,
+			"y": 748
+		},
+		"colorID": 0
+	},
+	{
+		"title": "3CIvoryDay1",
+		"tags": "",
+		"body": "Customer: Ah...\nCustomer: Sorry, I'm being an asshole, aren't I.\nCustomer: It's fine.\nCustomer: It's just some shit I'm going through.\nCustomer: Roommate's mad, no one likes me, boo hoo.\nCustomer: ...\nCustomer: Anyway, that's it for today then.\nCustomer: I'll be back, unfortunately.\nCustomer: See you around.\n\n<<set $gameover to true>>\n<<customerleave Dialogue>>",
+		"position": {
+			"x": 1399,
+			"y": 688
+		},
+		"colorID": 0
+	},
+	{
+		"title": "GetEmptyGlass1IvoryDay1",
+		"tags": "",
+		"body": "<<set $rightdrink to 2>>\n\nCustomer: Alright.\nCustomer: You take one of those bottles there...\nCustomer: And you pour it into a glass.\nCustomer: It's not that hard, is it?",
+		"position": {
+			"x": 549,
+			"y": 667
+		},
+		"colorID": 0
+	},
+	{
+		"title": "GetEmptyGlass2IvoryDay1",
+		"tags": "",
+		"body": "Customer: Haha, dude--you managed to give me something last time!\nCustomer: You take one of those bottles there...\nCustomer: And you pour it into a glass.\nCustomer: It's not that hard, is it?",
+		"position": {
+			"x": 775,
+			"y": 755
+		},
+		"colorID": 0
+	}
+]

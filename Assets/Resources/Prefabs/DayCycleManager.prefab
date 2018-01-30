@@ -19,6 +19,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4403678867025464}
+  - component: {fileID: 114710004018597254}
   m_Layer: 0
   m_Name: DayCycleManager
   m_TagString: Untagged
@@ -39,3 +40,27 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114710004018597254
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1474117167549338}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9ae620ff95244772ab498ba2db18947, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dayHasEnded: 0
+  switchOff: 0
+  player: {fileID: 0}
+  numCustomersThatLeft: 0
+  numCurrentCustomers: 0
+  currentDay: 0
+  CustomerIvory: {fileID: 0}
+  CustomerSahana: {fileID: 0}
+  dialogue: {fileID: 0}
+  blackPanel: {fileID: 0}
+  resetPos: {x: 0, y: 0, z: 0}
+  resetRot: {x: 0, y: 0, z: 0, w: 0}
+  safeToEnableInteraction: 0
