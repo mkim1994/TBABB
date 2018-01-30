@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Yarn.Unity;
-using UnityStandardAssets.Characters.FirstPerson;
 
 public class DayCycleManager : MonoBehaviour
 {

@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityStandardAssets.Characters.FirstPerson;
+//using UnityStandardAssets.Characters.FirstPerson;
 using UnityEngine.SceneManagement;
 using Yarn.Unity;
 
@@ -11,7 +11,7 @@ public class GameManager : MonoBehaviour {
     public Camera currentCamera;
 
 
-    public FirstPersonController player;
+    public GameObject player;
 	public PlayerInput playerInput;
     public DialogueRunner dialogue;
     public NPC CustomerIvory;
