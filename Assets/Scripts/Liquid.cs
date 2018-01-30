@@ -25,11 +25,12 @@ public class Liquid : MonoBehaviour {
 	}
 
 	public void GrowVertical(){
-		height += Time.deltaTime;
+		height += 1000 * Time.deltaTime;
 		transform.localScale = new Vector3 (transform.localScale.x, height, transform.localScale.z);
 	}
+	public DrinkBase myBase;
 
-	public void AddIngredient(){
-			
-	}
+	// public void AddIngredient(DrinkBase ,){
+
+	// }
 }
