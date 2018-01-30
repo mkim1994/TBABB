@@ -126,8 +126,8 @@ public class PlayerInput : MonoBehaviour {
 			if(pickupable != null && pickupableInLeftHand == null){ //PICK UP, CHECK IF LEFT HAND IS EMPTY
 				pickupable.InteractLeftHand();
 				targetDropzone.isOccupied = false;
-			} else if(pickupable == null && pickupableInLeftHand != null && !targetDropzone.isOccupied){ //DROP
-				if(dropPos != Vector3.zero){
+			} else if(pickupable == null && pickupableInLeftHand != null && targetDropzone != null){ //DROP
+				if(dropPos != Vector3.zero && !targetDropzone.isOccupied){
 					pickupableInLeftHand.dropPos = dropPos;
 					pickupableInLeftHand.targetDropzone = targetDropzone;
 					pickupableInLeftHand.InteractLeftHand();
@@ -147,24 +147,21 @@ public class PlayerInput : MonoBehaviour {
 		if(i_pickupRight && !Services.TweenManager.tweensAreActive){
 			//Condition 1
 			if(pickupable != null && pickupableInRightHand == null){ //PICK UP, CHECK IF LEFT HAND IS EMPTY
-				Debug.Log("Condition 1!");
-				pickupable.InteractRightHand();
+ 				pickupable.InteractRightHand();
 				targetDropzone.isOccupied = false;
 			} 
 			//Condition 2
-			else if(pickupable == null && pickupableInRightHand != null && !targetDropzone.isOccupied){ //DROP
-				if(dropPos != Vector3.zero){
+			else if(pickupable == null && pickupableInRightHand != null && targetDropzone != null){ //DROP
+				if(dropPos != Vector3.zero && !targetDropzone.isOccupied){
 					pickupableInRightHand.dropPos = dropPos;
 					pickupableInRightHand.targetDropzone = targetDropzone;
 					pickupableInRightHand.InteractRightHand();
-					Debug.Log("Condition 2!");
-				}		
+ 				}		
 			} 
 			//Condtion 3
 			else if (pickupable != null && pickupableInRightHand != null){ //swap
 				if(dropPos != Vector3.zero){
-					Debug.Log("Condition 3!");
-					pickupableInRightHand.dropPos = dropPos;
+ 					pickupableInRightHand.dropPos = dropPos;
 					pickupableInRightHand.targetDropzone = targetDropzone;
 					pickupableInRightHand.SwapRightHand();
 					pickupable.SwapRightHand();		
@@ -235,17 +232,14 @@ public class PlayerInput : MonoBehaviour {
 				Dropzone hitDropzone = hitObj.GetComponent<Dropzone>(); // get a reference to the dropzone
 				dropPos = hitObj.transform.position;					
 				targetDropzone = hitDropzone;
-				// if (hitDropzone.Occupied()){
-				// 	dropPos = Vector3.zero;
-				// 	targetDropzone = null;
-				// } else {
-				// 	dropPos = hitObj.transform.position;					
-				// 	targetDropzone = hitDropzone;
-				// }
-			} else{
+			} 
+			else if (Vector3.Distance(transform.position, hitObj.transform.position) > maxInteractionDist) {
 				dropPos = Vector3.zero;
 				targetDropzone = null;
 			}
+		} else {
+			dropPos = Vector3.zero;
+			targetDropzone = null;
 		}
 	}
 }

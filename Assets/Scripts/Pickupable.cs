@@ -16,9 +16,6 @@ public class Pickupable : MonoBehaviour {
     void Start(){
     }
 
-    private void TestMessage(){
-        Debug.Log("My name is " + this.name);
-    }
     public virtual void InteractLeftHand(){
         if(!pickedUp){
             transform.SetParent(Services.GameManager.player.transform.GetChild(0));
