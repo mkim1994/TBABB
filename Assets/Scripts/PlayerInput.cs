@@ -33,6 +33,7 @@ public class PlayerInput : MonoBehaviour {
 	public Pickupable pickupableInLeftHand;
 	public Pickupable pickupableInRightHand;
 	private float maxInteractionDist = 4f;
+	private float maxTalkingDist = 8f;
 
 	private float lookSensitivityAtStart;
 	private float aimAssistSensitivity = 0;
@@ -221,44 +222,25 @@ public class PlayerInput : MonoBehaviour {
 		#endregion
 
 		#region Use Right
-		/*if(i_useRight && !Services.TweenManager.tweensAreActive){
- 			if(pickupableInRightHand != null && pickupable != null){ //if you're holding something in your left hand
-				pickupableInRightHand.UseRightHand();
-			}
-		} 
-		if (i_endUseRight) {
-			if(pickupableInRightHand != null){
-				pickupableInRightHand.RotateToZeroTween();
-			}
-			
-			if (pickupableInLeftHand != null && pickupableInRightHand != null){
-				pickupableInLeftHand.RotateToZeroTween();
-				pickupableInRightHand.RotateToZeroTween();
-			}
-		}*/ 
 
 		if(i_useRight && !Services.TweenManager.tweensAreActive){
 			if (pickupableInLeftHand != null && pickupable != null){ //one-handed use on something on bar (prioritize this)
 				pickupableInLeftHand.UseLeftHand();
 			} else if (pickupableInLeftHand != null && pickupableInRightHand != null) { //two-handed use 
                 if (pickupableInLeftHand.GetComponent<Bottle>() != null && pickupableInRightHand.GetComponent<Glass>() != null) {
-                    Debug.Log("Pour time"); 
-					pickupableInLeftHand.GetComponent<Bottle>().PourIntoPickedUpGlass();
+ 					pickupableInLeftHand.GetComponent<Bottle>().PourIntoPickedUpGlass();
 					pickupableInRightHand.GetComponent<Glass>().ReceivePourFromBottle();
                 } else if (pickupableInLeftHand.GetComponent<Bottle>() != null && pickupableInRightHand.GetComponent<Rag>() != null){
-					Debug.Log("Cleaning time");
-				} 
+ 				} 
             }
 			if (pickupableInRightHand != null && pickupable != null){ //one-handed use on something on bar (prioritize this)
 				pickupableInRightHand.UseRightHand();
 			} else if (pickupableInLeftHand != null && pickupableInRightHand != null) { //two-handed use 
                 if (pickupableInRightHand.GetComponent<Bottle>() != null && pickupableInLeftHand.GetComponent<Glass>() != null) {
-                    Debug.Log("Pour time"); 
-					pickupableInRightHand.GetComponent<Bottle>().PourIntoPickedUpGlass();
+ 					pickupableInRightHand.GetComponent<Bottle>().PourIntoPickedUpGlass();
 					pickupableInLeftHand.GetComponent<Glass>().ReceivePourFromBottle();
                 } else if (pickupableInRightHand.GetComponent<Bottle>() != null && pickupableInLeftHand.GetComponent<Rag>() != null){
-					Debug.Log("Cleaning time");
-				} 
+ 				} 
             } 
 		} 
 		if(i_endUseRight){
@@ -327,9 +309,9 @@ public class PlayerInput : MonoBehaviour {
 		
 		if(Physics.Raycast(ray, out hit, rayDist, customerLayerMask)){
 			GameObject hitObj = hit.transform.gameObject; //if you're actually looking at something
- 			if(hitObj.GetComponent<NPC>() != null && Vector3.Distance(transform.position, hitObj.transform.position) <= maxInteractionDist){ //check if object looked at can be picked up
+ 			if(hitObj.GetComponent<NPC>() != null && Vector3.Distance(transform.position, hitObj.transform.position) <= maxTalkingDist){ //check if object looked at can be picked up
 				npc = hitObj.GetComponent<NPC>(); //if it's NPC and close enough, assign it to NPC.				  
- 			} else if (hitObj.GetComponent<NPC>() == null || Vector3.Distance(transform.position, hitObj.transform.position) > maxInteractionDist ){
+ 			} else if (hitObj.GetComponent<NPC>() == null || Vector3.Distance(transform.position, hitObj.transform.position) > maxTalkingDist){
 				npc = null;
  			} 	
 		} else {
