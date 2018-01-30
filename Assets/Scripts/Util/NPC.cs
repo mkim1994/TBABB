@@ -36,6 +36,10 @@ public class NPC : MonoBehaviour
 
     }
 
+    public void InitiateDialogue(){
+    
+    }
+
     public void SetCustomerVars(float type, float flavor, float alcohol, float drinkable){
         //float f1 = Services.GameManager.dialogue.variableStorage.GetValue("$drinkType" + characterName).AsNumber;
         var v1 = new Yarn.Value(type);
