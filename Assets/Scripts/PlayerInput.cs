@@ -13,18 +13,22 @@ public class PlayerInput : MonoBehaviour {
 
 	Vector2 smoothV;
 	float t = 0;
+
+	//movement
 	private Vector3 moveVector;
 	private Vector2 lookVector;
 	public int playerId = 0; 
 	private Player player;
 	private CharacterController cc;
 	public Dropzone targetDropzone;
+	public NPC npc;
 
 	public Vector3 dropPos;
 	private Camera myCam;
+	//raycast management
 	public LayerMask layerMask;
-
 	public LayerMask dropzoneLayerMask;
+	public LayerMask customerLayerMask;
 	public Pickupable pickupable;
 	public Pickupable pickupableInLeftHand;
 	public Pickupable pickupableInRightHand;
@@ -34,17 +38,15 @@ public class PlayerInput : MonoBehaviour {
 	private float aimAssistSensitivity = 0;
 	float verticalLook = 0f;
 
+	//buttons
 	bool i_pickupLeft;
 	bool i_pickupRight;
-
 	bool i_useLeft;
 	bool i_endUseLeft;
 	bool i_useRight;
 	bool i_endUseRight;
-
 	bool i_restart;
-
-	bool lookingAtDropzone;
+	bool i_talk;
 
 	void Awake(){
 		Cursor.visible = false;
@@ -61,6 +63,7 @@ public class PlayerInput : MonoBehaviour {
 		ProcessInput();
 		InteractionRay();
 		DropzoneRay();
+		CustomerRay();
   	}
 
 	private void GetInput(){
@@ -75,6 +78,7 @@ public class PlayerInput : MonoBehaviour {
 		i_useRight = player.GetButton("Use Right");
 		i_endUseRight = player.GetButtonUp("Use Right");
 		i_restart = player.GetButtonDown("Restart");
+		i_talk = player.GetButtonDown("Talk");
 	}
 
 	private void ProcessInput(){		
@@ -269,6 +273,11 @@ public class PlayerInput : MonoBehaviour {
 		} 
 		#endregion
 
+		#region Talk
+		if(i_talk){
+			
+		}
+		#endregion
 	}
 
 	private void InteractionRay(){
@@ -306,6 +315,23 @@ public class PlayerInput : MonoBehaviour {
 		} else {
 			dropPos = Vector3.zero;
 			targetDropzone = null;
+		}
+	}
+
+	private void CustomerRay(){
+		Ray ray = new Ray(myCam.transform.position, myCam.transform.forward);
+		float rayDist = Mathf.Infinity;
+		RaycastHit hit = new RaycastHit();
+		
+		if(Physics.Raycast(ray, out hit, rayDist, customerLayerMask)){
+			GameObject hitObj = hit.transform.gameObject; //if you're actually looking at something
+ 			if(hitObj.GetComponent<NPC>() != null && Vector3.Distance(transform.position, hitObj.transform.position) <= maxInteractionDist){ //check if object looked at can be picked up
+				npc = hitObj.GetComponent<NPC>(); //if it's NPC and close enough, assign it to NPC.				  
+ 			} else if (hitObj.GetComponent<NPC>() == null || Vector3.Distance(transform.position, hitObj.transform.position) > maxInteractionDist ){
+				npc = null;
+ 			} 	
+		} else {
+			npc = null;
 		}
 	}
 }
