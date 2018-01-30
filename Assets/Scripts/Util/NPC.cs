@@ -36,7 +36,7 @@ public class NPC : MonoBehaviour
 
     }
 
-    public void InitiateDialogue(string name){
+    public void InitiateDialogue(){
     
     }
 
