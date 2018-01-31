@@ -37,7 +37,6 @@ public class NPC : MonoBehaviour
     }
 
     public void InitiateDialogue(){
-        Debug.Log("hm");
         if (!Services.GameManager.dialogue.isDialogueRunning)
         {
             Services.GameManager.dialogue.StartDialogue(characterName + Services.GameManager.dayManager.currentDay);

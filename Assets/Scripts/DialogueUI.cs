@@ -30,6 +30,7 @@ using UnityEngine.UI;
 using System.Text;
 using System.Collections.Generic;
 using Yarn.Unity;
+using DG.Tweening;
 
 /// Displays dialogue lines to the player, and sends
 /// user choices back to the dialogue system.
@@ -70,8 +71,15 @@ public class DialogueUI : Yarn.Unity.DialogueUIBehaviour
     /// dialogue is active and to restore them when dialogue ends
     public RectTransform gameControlsContainer;
 
+    private float textTime;
+    private float currentTime;
+    private float additionalTime;
+
+    public bool debugMode;
+
     void Awake()
     {
+        DOTween.Init();
         // Start by hiding the container, line and option buttons
         if (dialogueContainer != null)
             dialogueContainer.SetActive(false);
@@ -86,6 +94,38 @@ public class DialogueUI : Yarn.Unity.DialogueUIBehaviour
         // Hide the continue prompt if it exists
         if (continuePrompt != null)
             continuePrompt.SetActive(false);
+
+        textTime = -1f;
+        additionalTime = 1f;
+    }
+
+    void Update(){
+        if(Input.GetKeyDown(KeyCode.Return)){
+            debugMode = !debugMode;
+            Debug.Log("dialogue debug mode: " + debugMode);
+        }
+        /*if(debugMode && (int)textTime != -1){
+            if(Input.GetKeyDown(KeyCode.Return)){
+                textTime = -2f;
+            }
+        }*/
+      /*  if ((int)textTime != -1 && textTime > -2f)
+        {
+            if (debugMode)
+            {
+                if (Input.GetKeyDown(KeyCode.Return))
+                {
+                    textTime = -2f;
+                }
+            }
+
+            if (Time.time - currentTime > textTime)
+            {
+                textTime = -2f;
+            }
+
+        }*/
+
     }
 
     /// Show a line of dialogue, gradually
@@ -93,23 +133,39 @@ public class DialogueUI : Yarn.Unity.DialogueUIBehaviour
     {
         // Show the text
         lineText.gameObject.SetActive(true);
+        lineText.color = new Color(1, 1, 1, 1);
+        string reline = line.text;
+        string result = reline.Replace("Customer: ", "");
 
-        if (textSpeed > 0.0f)
+        if (!debugMode)
         {
-            // Display the line one character at a time
-            var stringBuilder = new StringBuilder();
 
-            foreach (char c in line.text)
+            if (textSpeed > 0.0f)
             {
-                stringBuilder.Append(c);
-                lineText.text = stringBuilder.ToString();
-                yield return new WaitForSeconds(textSpeed);
+                // Display the line one character at a time
+                var stringBuilder = new StringBuilder();
+
+                foreach (char c in result)
+                {
+                    stringBuilder.Append(c);
+                    lineText.text = stringBuilder.ToString();
+                    yield return new WaitForSeconds(textSpeed);
+                }
+                //determining the line duration on the screen
+                textTime = result.Length * 0.2f;
+                // currentTime = Time.time;
+                yield return new WaitForSeconds(textTime);
+                lineText.DOFade(0f, additionalTime).OnComplete(() => textTime = -2f);
             }
-        }
-        else
-        {
-            // Display the line immediately if textSpeed == 0
-            lineText.text = line.text;
+            else
+            {
+                // Display the line immediately if textSpeed == 0
+                lineText.text = result;
+            }
+        } else{
+            lineText.text = result;
+
+            yield return new WaitForSeconds(0.0001f);
         }
 
         // Show the 'press any key' prompt when done, if we have one
@@ -117,13 +173,24 @@ public class DialogueUI : Yarn.Unity.DialogueUIBehaviour
             continuePrompt.SetActive(true);
 
         // Wait for any user input
-        while (Input.anyKeyDown == false)
+        /*while (Input.anyKeyDown == false)
+        {*/
+        //wait for time
+        if (!debugMode)
         {
-            //wait for time
-            //while(true){
-            yield return null;
+            while ((int)textTime != -2)
+            {
+                yield return null;
+            }
+
+        } else{
+            while(!Input.GetKeyDown(KeyCode.Space)){
+                yield return null;
+            }
         }
 
+        textTime = -1f;
+        additionalTime = 1f;
         // Hide the text and prompt
         lineText.gameObject.SetActive(false);
 
@@ -225,9 +292,9 @@ public class DialogueUI : Yarn.Unity.DialogueUIBehaviour
         yield break;
     }
     [YarnCommand("settime")]
-    public void DialogueTimeSet()
+    public void DialogueTimeSet(float addtl)
     {
-
+        additionalTime = addtl;
     }
 
 }
