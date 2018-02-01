@@ -8,6 +8,7 @@ public static class Services {
     public static PrefabDB Prefabs { get; set; }
     public static MaterialDB Materials { get; set; }
     public static SceneStackManager<TransitionData> SceneStackManager { get; set; }
-    public static TweenManager TweenManager { get; set; }
+    public static TweenManager TweenManager { get; set; }    
+    public static DrinkDictionary DrinkDictionary { get; set; }
 
 }

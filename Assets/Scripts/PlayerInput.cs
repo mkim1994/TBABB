@@ -200,8 +200,7 @@ public class PlayerInput : MonoBehaviour {
 				pickupableInRightHand.UseRightHand();
 			} else if (pickupableInLeftHand != null && pickupableInRightHand != null) { //two-handed use 
                 if (pickupableInRightHand.GetComponent<Bottle>() != null && pickupableInLeftHand.GetComponent<Glass>() != null) {
-                    Debug.Log("Pour time"); 
-					pickupableInRightHand.GetComponent<Bottle>().PourIntoPickedUpGlass();
+ 					pickupableInRightHand.GetComponent<Bottle>().PourIntoPickedUpGlass();
 					pickupableInLeftHand.GetComponent<Glass>().ReceivePourFromBottle();
                 } else if (pickupableInRightHand.GetComponent<Bottle>() != null && pickupableInLeftHand.GetComponent<Rag>() != null){
 					Debug.Log("Cleaning time");

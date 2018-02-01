@@ -11,15 +11,10 @@ public class Glass : Pickupable {
 	private Vector3 rightHandPourRot = new Vector3(87.7370f, 0, 6.915f);
 
 	public void ReceivePourFromBottle(){
-		if(Services.GameManager.playerInput.pickupableInLeftHand == this){ //if the bottle is in the left hand
-		 	// base.RotateTween(leftHandPourRot);
-		} else {
-			// base.RotateTween(rightHandPourRot);
-		}
-
 		Liquid liquid = GetComponentInChildren<Liquid>();
 		liquid.isPouring = true;
-		// Services.GameManager.playerInput.pickupableInRightHand	
+		Bottle bottleInHand = Services.GameManager.player.GetComponentInChildren<Bottle>();
+		liquid.AddIngredient(bottleInHand.myDrinkBase);
 	} 
 
 	public void EndPourFromBottle(){
