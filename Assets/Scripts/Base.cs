@@ -59,8 +59,8 @@ public class DrinkDictionary {
 
 public class MixerDictionary {
 	public Dictionary<Mixer, DrinkProfile> mixers = new Dictionary<Mixer, DrinkProfile>(){
-		
-	}
+		{ Mixer.apple_juice, new DrinkProfile(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0.43f, 0.3f, 0.00f, 0f, 0.05f, 0)}
+	};
 }
 
 public class DrinkInfo {
