@@ -6,33 +6,14 @@ public class Liquid : MonoBehaviour {
 
  	public float height;
 	public bool isPouring;
-
 	private float totalVolume;
-	public DrinkBase myBase;
-	public Garnish myGarnish;
-	public Mixer myMixer;
-
-
-	public float whiskeyVolume;
-	public float tequilaVolume;
-	public float rumVolume;
-	public float ginVolume;
-	public float beerVolume;
-	public float wineVolume;
-	public float brandyVolume;
-	public float vodkaVolume;
- 	public float smokiness;
-	private float sweetVolume;
-	public float sweetness;
-	private float sourVolume;
-	public float sourness;
-	private float bitterVolume;
-	public float bitterness;
-	private float spicyVolume;
-	public float spiciness;
-	private float alcoholVolume; 
-
-	public float abv;
+	[SerializeField]DrinkBase baseBeingPoured;
+	[SerializeField]Garnish garnishBeingApplied;
+	[SerializeField]Mixer mixerBeingPoured;
+	[SerializeField]float sodaVolume, tonicVolume, appleJuiceVolume, orangeJuiceVolume, lemonJuiceVolume;
+	[SerializeField]float whiskeyVolume, tequilaVolume, rumVolume, ginVolume, beerVolume, wineVolume, brandyVolume, vodkaVolume;
+ 	[SerializeField]float smokiness, sweetness, sourness, bitterness, spiciness;
+	[SerializeField]float alcoholVolume, abv;
 	
 
 	// Use this for initialization
@@ -44,7 +25,8 @@ public class Liquid : MonoBehaviour {
 	void Update () {
 		height = Mathf.Clamp(height, 0, 7058.475f);
 
-		totalVolume = whiskeyVolume + ginVolume + brandyVolume + vodkaVolume + wineVolume + beerVolume + tequilaVolume + rumVolume; 
+		totalVolume = whiskeyVolume + ginVolume + brandyVolume + vodkaVolume + wineVolume + beerVolume + tequilaVolume + rumVolume 
+					+ sodaVolume + tonicVolume + appleJuiceVolume + orangeJuiceVolume + lemonJuiceVolume; 
  	}
 
 	public void GrowVertical(){
@@ -58,7 +40,7 @@ public class Liquid : MonoBehaviour {
 	public void AddIngredient(DrinkBase _drinkBase){
 		GrowVertical();
 		myDrinkProfile = Services.DrinkDictionary.drinkBases[_drinkBase];
-		myBase = _drinkBase;
+		baseBeingPoured = _drinkBase;
 		switch (_drinkBase){
             case DrinkBase.whiskey:
 			whiskeyVolume = height - totalVolume + whiskeyVolume;
@@ -94,9 +76,33 @@ public class Liquid : MonoBehaviour {
 			break;
 			default:
 			break;
-		}		
+		}
+				
 		// alcoholVolume = myDrinkProfile.alcoholVolume * height;
 		// abv = alcoholVolume/height;		
+	}
+
+	public void AddMixer(Mixer _mixer){
+		GrowVertical();
+		switch (_mixer){
+			case Mixer.soda:
+			sodaVolume = height - totalVolume + sodaVolume;
+			break;
+			case Mixer.tonic:
+			tonicVolume = height - totalVolume + tonicVolume;
+			break;
+			case Mixer.apple_juice:
+			appleJuiceVolume = height - totalVolume + appleJuiceVolume;
+			break;
+			case Mixer.orange_juice:
+			orangeJuiceVolume = height - totalVolume + orangeJuiceVolume;
+			break;
+			case Mixer.lemon_juice:
+			lemonJuiceVolume = height - totalVolume + lemonJuiceVolume;
+			break;
+			default:
+			break;
+		}
 	}
 
 	private float SmokyRate(){
@@ -121,7 +127,13 @@ public class Liquid : MonoBehaviour {
 					+ Services.DrinkDictionary.drinkBases[DrinkBase.beer].sweetRate*beerVolume	
 					+ Services.DrinkDictionary.drinkBases[DrinkBase.wine].sweetRate*wineVolume	
 					+ Services.DrinkDictionary.drinkBases[DrinkBase.brandy].sweetRate*brandyVolume	
-					+ Services.DrinkDictionary.drinkBases[DrinkBase.vodka].sweetRate*vodkaVolume;
+					+ Services.DrinkDictionary.drinkBases[DrinkBase.vodka].sweetRate*vodkaVolume
+					+ Services.MixerDictionary.mixers[Mixer.soda].sweetRate * sodaVolume 
+					+ Services.MixerDictionary.mixers[Mixer.tonic].sweetRate * tonicVolume 
+					+ Services.MixerDictionary.mixers[Mixer.apple_juice].sweetRate * appleJuiceVolume
+					+ Services.MixerDictionary.mixers[Mixer.lemon_juice].sweetRate * lemonJuiceVolume
+					+ Services.MixerDictionary.mixers[Mixer.orange_juice].sweetRate * orangeJuiceVolume;
+
 		return _sweetRate/height;	
  	}
 
@@ -134,7 +146,12 @@ public class Liquid : MonoBehaviour {
 					+ Services.DrinkDictionary.drinkBases[DrinkBase.beer].bitterRate*beerVolume	
 					+ Services.DrinkDictionary.drinkBases[DrinkBase.wine].bitterRate*wineVolume	
 					+ Services.DrinkDictionary.drinkBases[DrinkBase.brandy].bitterRate*brandyVolume	
-					+ Services.DrinkDictionary.drinkBases[DrinkBase.vodka].bitterRate*vodkaVolume;
+					+ Services.DrinkDictionary.drinkBases[DrinkBase.vodka].bitterRate*vodkaVolume
+					+ Services.MixerDictionary.mixers[Mixer.soda].bitterRate * sodaVolume 
+					+ Services.MixerDictionary.mixers[Mixer.tonic].bitterRate * tonicVolume 
+					+ Services.MixerDictionary.mixers[Mixer.apple_juice].bitterRate * appleJuiceVolume
+					+ Services.MixerDictionary.mixers[Mixer.lemon_juice].bitterRate * lemonJuiceVolume
+					+ Services.MixerDictionary.mixers[Mixer.orange_juice].bitterRate * orangeJuiceVolume;
 		return _bitterRate/height;
 	}
 
@@ -147,7 +164,12 @@ public class Liquid : MonoBehaviour {
 					+ Services.DrinkDictionary.drinkBases[DrinkBase.beer].sourRate*beerVolume	
 					+ Services.DrinkDictionary.drinkBases[DrinkBase.wine].sourRate*wineVolume	
 					+ Services.DrinkDictionary.drinkBases[DrinkBase.brandy].sourRate*brandyVolume	
-					+ Services.DrinkDictionary.drinkBases[DrinkBase.vodka].sourRate*vodkaVolume;
+					+ Services.DrinkDictionary.drinkBases[DrinkBase.vodka].sourRate*vodkaVolume
+					+ Services.MixerDictionary.mixers[Mixer.soda].sourRate * sodaVolume 
+					+ Services.MixerDictionary.mixers[Mixer.tonic].sourRate * tonicVolume 
+					+ Services.MixerDictionary.mixers[Mixer.apple_juice].sourRate * appleJuiceVolume
+					+ Services.MixerDictionary.mixers[Mixer.lemon_juice].sourRate * lemonJuiceVolume
+					+ Services.MixerDictionary.mixers[Mixer.orange_juice].sourRate * orangeJuiceVolume;
 		return _sourRate/height;	
  	}
 	private float SpicyRate(){

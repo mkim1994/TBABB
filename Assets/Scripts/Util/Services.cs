@@ -10,5 +10,6 @@ public static class Services {
     public static SceneStackManager<TransitionData> SceneStackManager { get; set; }
     public static TweenManager TweenManager { get; set; }    
     public static DrinkDictionary DrinkDictionary { get; set; }
+    public static MixerDictionary MixerDictionary { get; set; }
 
 }

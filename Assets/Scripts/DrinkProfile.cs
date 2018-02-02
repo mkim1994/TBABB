@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
- public class DrinkProfile {
+public class DrinkProfile {
 
 	 //mixers 
 	public float 	sodaRate, tonicRate, appleJuiceRate, orangeJuiceRate, lemonJuiceRate; 
@@ -51,6 +51,7 @@ using UnityEngine;
 		beerRate = _beerVol;
 		wineRate = _wineVol;
 		brandyRate = _brandyVol;
+
 		//flavors
 		smokyRate = _smokyVol;
 		sweetRate = _sweetVol;

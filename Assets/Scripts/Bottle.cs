@@ -6,6 +6,8 @@ using DG.Tweening;
 public class Bottle : Pickupable {
 
 	public DrinkBase myDrinkBase;
+	public Mixer myMixer;
+	
   	private Vector3 leftHandPourRot = new Vector3(88.76f, 0, 0);
 	private Vector3 rightHandPourRot = new Vector3(87.7370f, 0, 6.915f);
 	void Start(){

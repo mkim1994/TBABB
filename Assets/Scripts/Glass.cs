@@ -6,9 +6,7 @@ public class Glass : Pickupable {
 	public bool hasLiquid;
 	public bool isFull;
 	public bool isDirty;
-
 	private Liquid liquid;
-
 	private Vector3 leftHandPourRot = new Vector3(88.76f, 0, 0);
 	private Vector3 rightHandPourRot = new Vector3(87.7370f, 0, 6.915f);
 
@@ -19,7 +17,11 @@ public class Glass : Pickupable {
 		// Liquid liquid = GetComponentInChildren<Liquid>();
 		liquid.isPouring = true;
 		bottleInHand = Services.GameManager.player.GetComponentInChildren<Bottle>();
-		liquid.AddIngredient(bottleInHand.myDrinkBase);
+		if(bottleInHand.myDrinkBase != DrinkBase.none && bottleInHand.myMixer == Mixer.none){
+			liquid.AddIngredient(bottleInHand.myDrinkBase);
+		} else if (bottleInHand.myMixer != Mixer.none && bottleInHand.myDrinkBase == DrinkBase.none){
+			liquid.AddMixer(bottleInHand.myMixer);
+		}
 	} 
 
 	public void EndPourFromBottle(){
