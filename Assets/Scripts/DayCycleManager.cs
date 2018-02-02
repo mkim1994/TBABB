@@ -10,7 +10,7 @@ public class DayCycleManager : MonoBehaviour
 
     public bool switchOff;
 
-    public List<Day> day;
+    public List<Day> days;
 
     public GameObject blackPanel;
 
@@ -18,6 +18,9 @@ public class DayCycleManager : MonoBehaviour
     public Quaternion resetRot;
 
     public int currentDay;
+
+    private float elapsedTime;
+    private float offsetTime;
 
 
     // Use this for initialization
@@ -29,21 +32,41 @@ public class DayCycleManager : MonoBehaviour
     public void Start()
     {
 
-        currentDay = 1;
+        elapsedTime = 0f;
+        currentDay = 0; // 0th day is day 1
+        offsetTime = 0f;
         resetPos = Services.GameManager.player.transform.position;
         resetRot = Services.GameManager.player.transform.rotation;
 
         dayHasEnded = false;
-
-        day = new List<Day>();
-        day.Add(new Day(1)); //just one customer on the first day
-        day.Add(new Day(2)); //two customers on the second day, etc.
-        day.Add(new Day(1));
-
         switchOff = false;
 
-        //currentNumCustomers = day[0].numCustomers;
+        List<List<NPC>> npcsDaysOrder= new List<List<NPC>>();
+        AddCustomersDays(Services.GameManager.CustomerIvory,npcsDaysOrder);
+        AddCustomersDays(Services.GameManager.CustomerSahana,npcsDaysOrder);
 
+        days = new List<Day>();
+        for (int d = 0; d < 7; ++d)
+        {
+            days.Add(new Day(npcsDaysOrder[d])); //first day
+        }
+
+
+    }
+
+    void AddCustomersDays(NPC cust, List<List<NPC>> list){
+        float[] dv = cust.GetComponent<CustomerData>().daysvisiting;
+        for (int l = 0; l < dv.Length; ++l)
+        { //adds 7 indices
+            list.Add(new List<NPC>());
+        }
+        for (int a = 0; a < dv.Length; ++a)
+        {
+            if (dv[a] > 0f)
+            {
+                list[a].Add(cust);
+            }
+        }
     }
 
     public void ResetDay()
@@ -51,57 +74,44 @@ public class DayCycleManager : MonoBehaviour
         dayHasEnded = false;
         switchOff = false;
         blackPanel.SetActive(true);
-
+        currentDay++;
         WaitTillNextDay();
     }
 
     public void Update()
     {
-       /* if (currentDay < 3)
-        {
+
+        if(!dayHasEnded){ //day ends when customers are all gone
+            elapsedTime = Time.time - offsetTime;
+            for (int i = 0; i < days[currentDay].customers.Count; ++i){
+                if(elapsedTime >= days[currentDay].customers[i].GetComponent<CustomerData>().daysvisiting[currentDay]){
+                    days[currentDay].customers[i].insideBar = true;
+                    days[currentDay].customers.RemoveAt(i);
+                    break;
+                }
+            }
+            if(days[currentDay].customers.Count == 0){
+                dayHasEnded = true;
+            }
+
+        } else{
+            //able to be switched off when day has ended
+
         }
-        if (dayHasEnded && switchOff)
-        {
-            ResetDay();
-        }*/
 
 
     }
 
-    private void Day(int today)
-    {
-        switch (today)
-        {
-            case 0:
-                Day0();
-                break;
-            case 1:
-                Day1();
-                break;
-        }
-    }
-    private void Day0()
-    {
-
-    }
-    private void Day1()
-    {
-
+    void WaitTillNextDay(){
+        // give some time delay
+        BeginDay();
     }
 
-    private void WaitTillNextDay()
-    {
-      //  dialogue.WaitSeconds(currentDay, 5f, player, resetPos, resetRot, blackPanel);
+    void BeginDay(){
 
+        elapsedTime = Time.time - offsetTime;
+        offsetTime = elapsedTime; //no need to keep track of time
     }
-
-    public void DayCycleTrueReset()
-    {
-
-
-    }
-
-
 
 
 }

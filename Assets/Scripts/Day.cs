@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class Day {
 
-    public int numCustomers;
-    public Day(int num){
-        numCustomers = num;
+    public List<NPC> customers;
+    public Day(List<NPC> custs){
+        customers = custs;
     }
 }

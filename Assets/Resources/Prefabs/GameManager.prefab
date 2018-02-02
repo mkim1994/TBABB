@@ -57,4 +57,5 @@ MonoBehaviour:
   playerInput: {fileID: 0}
   dialogue: {fileID: 0}
   CustomerIvory: {fileID: 0}
+  CustomerSahana: {fileID: 0}
   dayManager: {fileID: 0}
