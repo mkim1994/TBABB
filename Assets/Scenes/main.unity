@@ -361,6 +361,11 @@ Prefab:
       objectReference: {fileID: 1528644971}
     - target: {fileID: 114251215414177636, guid: b29337a5327a44c18b29587e87b930dc,
         type: 2}
+      propertyPath: CustomerSahana
+      value: 
+      objectReference: {fileID: 1528644972}
+    - target: {fileID: 114251215414177636, guid: b29337a5327a44c18b29587e87b930dc,
+        type: 2}
       propertyPath: dayManager
       value: 
       objectReference: {fileID: 1138702082}
@@ -1460,6 +1465,12 @@ Prefab:
 --- !u!114 &1528644971 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 114652257479172276, guid: 809be4c21398b4fe99f5a358646f9ee0,
+    type: 2}
+  m_PrefabInternal: {fileID: 1528644970}
+  m_Script: {fileID: 11500000, guid: 3419b57eb638f44db88701b5b33b8af8, type: 3}
+--- !u!114 &1528644972 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114490463237840426, guid: 809be4c21398b4fe99f5a358646f9ee0,
     type: 2}
   m_PrefabInternal: {fileID: 1528644970}
   m_Script: {fileID: 11500000, guid: 3419b57eb638f44db88701b5b33b8af8, type: 3}
