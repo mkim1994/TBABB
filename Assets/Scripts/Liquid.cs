@@ -65,31 +65,31 @@ public class Liquid : MonoBehaviour {
 			IncrementFlavor(myDrinkProfile, whiskeyVolume);
 			break;
             case DrinkBase.gin:
-			ginVolume = ((myDrinkProfile.ginVolume * height) - totalVolume + ginVolume);
+			ginVolume = ((myDrinkProfile.ginRate * height) - totalVolume + ginVolume);
 			IncrementFlavor(myDrinkProfile, ginVolume);
 			break;
 			case DrinkBase.tequila:
-			tequilaVolume = ((myDrinkProfile.tequilaVolume * height) - totalVolume + tequilaVolume);
+			tequilaVolume = ((myDrinkProfile.tequilaRate * height) - totalVolume + tequilaVolume);
 			IncrementFlavor(myDrinkProfile, tequilaVolume);
 			break;
 			case DrinkBase.vodka:
-			vodkaVolume = ((myDrinkProfile.vodkaVolume * height) - totalVolume + vodkaVolume);
+			vodkaVolume = ((myDrinkProfile.vodkaRate * height) - totalVolume + vodkaVolume);
 			IncrementFlavor(myDrinkProfile, vodkaVolume);		
 			break;
 			case DrinkBase.rum:
-			rumVolume = ((myDrinkProfile.rumVolume * height) - totalVolume + rumVolume);
+			rumVolume = ((myDrinkProfile.rumRate * height) - totalVolume + rumVolume);
 			IncrementFlavor(myDrinkProfile, rumVolume);
 			break;
 			case DrinkBase.beer:
-			beerVolume = ((myDrinkProfile.beerVolume * height) - totalVolume + beerVolume);
+			beerVolume = ((myDrinkProfile.beerRate * height) - totalVolume + beerVolume);
 			IncrementFlavor(myDrinkProfile, beerVolume);
 			break;
 			case DrinkBase.wine:
-			wineVolume = ((myDrinkProfile.wineVolume * height) - totalVolume + wineVolume);
+			wineVolume = ((myDrinkProfile.wineRate * height) - totalVolume + wineVolume);
 			IncrementFlavor(myDrinkProfile, wineVolume);
 			break;
 			case DrinkBase.brandy:
-			brandyVolume = ((myDrinkProfile.brandyVolume * height) - totalVolume + brandyVolume);
+			brandyVolume = ((myDrinkProfile.brandyRate * height) - totalVolume + brandyVolume);
 			IncrementFlavor(myDrinkProfile, brandyVolume);
 			break;
 			default:
