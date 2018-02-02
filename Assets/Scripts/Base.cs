@@ -57,6 +57,12 @@ public class DrinkDictionary {
 	};
 }
 
+public class MixerDictionary {
+	public Dictionary<Mixer, DrinkProfile> mixers = new Dictionary<Mixer, DrinkProfile>(){
+		
+	}
+}
+
 public class DrinkInfo {
 
 }
