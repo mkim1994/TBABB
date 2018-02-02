@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class CustomerData : MonoBehaviour{
-    public bool[] daysvisiting;
+    public float[] daysvisiting; //lists time also when >0
     public int[] rankedseats;
     public int[] rankedtypes;
     public int[] rankedflavors;

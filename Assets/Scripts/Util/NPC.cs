@@ -17,29 +17,38 @@ public class NPC : MonoBehaviour
     [Header("Optional")]
     public TextAsset scriptToLoad;
 
-
+    public FSM<NPC> fsm;
     // Use this for initialization
+
+    public bool insideBar;
+
+    public Vector3[] seatLocations;
+
+
     void Start()
     {
+        insideBar = false;
         if (scriptToLoad != null)
         {
             FindObjectOfType<DialogueRunner>().AddScript(scriptToLoad);
         }
 
         customerData = GetComponent<CustomerData>();
-
+        fsm = new FSM<NPC>(this);
+        fsm.TransitionTo<OutsideBar>();
     }
 
     // Update is called once per frame
     void Update()
     {
-
+        fsm.Update();
     }
 
     public void InitiateDialogue(){
         if (!Services.GameManager.dialogue.isDialogueRunning)
         {
-            Services.GameManager.dialogue.StartDialogue(characterName + Services.GameManager.dayManager.currentDay);
+            //need to add 1 to currentDay to offset the 0 start
+            Services.GameManager.dialogue.StartDialogue(characterName + (Services.GameManager.dayManager.currentDay + 1));
         }
     }
 
@@ -65,6 +74,98 @@ public class NPC : MonoBehaviour
 
         Services.GameManager.dialogue.variableStorage.SetValue("$content" + characterName, defaultVar);
         Services.GameManager.dialogue.variableStorage.SetValue("$drunk" + characterName, defaultVar);
+    }
+
+    public void OutsideBarAction(){
+        GetComponent<SpriteActor>().enabled = false;
+        GetComponent<BoxCollider>().enabled = false;
+        GetComponentInChildren<SpriteRenderer>().enabled = false;
+    }
+
+    public void EnterBarAction(){
+        
+    }
+
+    public void TakeSeatAction(){
+        Debug.Log(characterName +" takes seat");
+        transform.position = seatLocations[BestSeat()];
+        GetComponent<SpriteActor>().enabled = true;
+        GetComponent<BoxCollider>().enabled = true;
+        GetComponentInChildren<SpriteRenderer>().enabled = true;
+
+    }
+
+    int BestSeat(){
+        int minIndex = 0;
+        for (int i = 0; i < customerData.rankedseats.Length; ++i){
+            if(customerData.rankedseats[i] < customerData.rankedseats[minIndex]){
+                minIndex = i;
+            }
+        }
+        return minIndex;
+    }
+
+    private class CustomerState : FSM<NPC>.State{}
+
+    private class OutsideBar : CustomerState{ //not in the bar
+        public override void OnEnter(){
+            Context.OutsideBarAction(); //disable components
+        }
+        public override void Update(){
+            if(Context.insideBar){
+                TransitionTo<EnterBar>();
+                return;
+            }
+        }
+    }
+
+    private class EnterBar : CustomerState{
+        //door anim
+        public override void OnEnter(){
+            //on animation complete, <takeseat>
+            Debug.Log("onenter enter bar");
+        }
+        public override void Update(){
+
+            TransitionTo<TakeSeat>();
+            return;
+        }
+    }
+
+    private class TakeSeat : CustomerState{
+        //choose seat, re-enable sprites and scripts
+        public override void OnEnter(){
+
+            Context.TakeSeatAction();
+        }
+    }
+
+    private class ReadyToTalk : CustomerState
+    {
+
+    }
+
+    private class Waiting : CustomerState{ //not drinking, just waiting
+        
+    }
+    private class Drinking : CustomerState{
+        
+    }
+
+    private class TalkingWithoutDrink : CustomerState{
+        
+    }
+
+    private class TalkingWithDrink : CustomerState{
+        
+    }
+
+    private class DrinkServed : CustomerState{
+        
+    }
+
+    private class LeavingBar : CustomerState{
+        
     }
 }
 

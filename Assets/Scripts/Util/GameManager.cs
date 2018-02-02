@@ -14,7 +14,7 @@ public class GameManager : MonoBehaviour {
     public GameObject player;
 	public PlayerInput playerInput;
     public DialogueRunner dialogue;
-    public NPC CustomerIvory;
+    public NPC CustomerIvory, CustomerSahana;
     public DayCycleManager dayManager;
 
     //public GameObject TestingScenes;
