@@ -17,6 +17,10 @@ public class GameManager : MonoBehaviour {
     public NPC CustomerIvory, CustomerSahana;
     public DayCycleManager dayManager;
 
+    public Transform entrance;
+    public GameObject directionalLight;
+    public GameObject entranceLight;
+
     //public GameObject TestingScenes;
 	void Awake()
 	{
@@ -50,7 +54,6 @@ public class GameManager : MonoBehaviour {
 		Services.Prefabs = Resources.Load<PrefabDB>("Prefabs/Prefabs");
 		Services.TweenManager = FindObjectOfType<TweenManager>();
 		Services.DrinkDictionary = new DrinkDictionary(); 
-		Services.MixerDictionary = new MixerDictionary();
         //Services.Materials = Resources.Load<MaterialDB>("Art/Materials");
 		//Services.SceneStackManager = new SceneStackManager<TransitionData>(sceneRoot, Services.Prefabs.Scenes);
 
