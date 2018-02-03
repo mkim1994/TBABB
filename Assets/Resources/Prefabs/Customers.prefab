@@ -182,11 +182,11 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1718955842869474}
   m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 0.19, y: 14.2, z: 11.11}
+  m_LocalPosition: {x: 0.19, y: 9.389999, z: -1.3400002}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 4576001433381004}
-  m_RootOrder: 0
+  m_Father: {fileID: 4425129954102608}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!4 &4425129954102608
 Transform:
@@ -200,6 +200,7 @@ Transform:
   m_Children:
   - {fileID: 4767394684051058}
   - {fileID: 4432156385988386}
+  - {fileID: 4382240523888010}
   m_Father: {fileID: 4207081351955884}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -225,8 +226,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 4382240523888010}
+  m_Children: []
   m_Father: {fileID: 4207081351955884}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -450,7 +450,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   daysvisiting:
-  - 1
+  - 5
   - 20
   - 0
   - 10
@@ -481,6 +481,7 @@ MonoBehaviour:
   - {x: 0, y: 4.81, z: 12.45}
   - {x: 7.33, y: 4.81, z: 9.69}
   - {x: 9.11, y: 4.81, z: 12.45}
+  enterBarAnimFinished: 0
 --- !u!114 &114547003923381196
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -493,7 +494,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   daysvisiting:
-  - 5
+  - 20
   - 20
   - 0
   - 10
@@ -524,6 +525,7 @@ MonoBehaviour:
   - {x: 0, y: 4.81, z: 12.45}
   - {x: 7.33, y: 4.81, z: 9.69}
   - {x: 9.11, y: 4.81, z: 1.52}
+  enterBarAnimFinished: 0
 --- !u!212 &212157344272905590
 SpriteRenderer:
   m_ObjectHideFlags: 1

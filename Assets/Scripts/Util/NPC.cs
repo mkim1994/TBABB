@@ -4,6 +4,7 @@ using UnityEngine;
 using System.Collections;
 using UnityEngine.Serialization;
 using Yarn.Unity;
+using DG.Tweening;
 /// attached to the non-player characters, and stores the name of the
 /// Yarn node that should be run when you talk to them.
 public class NPC : MonoBehaviour
@@ -24,14 +25,18 @@ public class NPC : MonoBehaviour
 
     public Vector3[] seatLocations;
 
+    public bool enterBarAnimFinished;
+
 
     void Start()
     {
+        DOTween.Init();
         insideBar = false;
         if (scriptToLoad != null)
         {
             FindObjectOfType<DialogueRunner>().AddScript(scriptToLoad);
         }
+        enterBarAnimFinished = false;
 
         customerData = GetComponent<CustomerData>();
         fsm = new FSM<NPC>(this);
@@ -83,7 +88,16 @@ public class NPC : MonoBehaviour
     }
 
     public void EnterBarAction(){
-        
+        Services.GameManager.directionalLight.SetActive(true);
+        Services.GameManager.entranceLight.SetActive(true);
+        Sequence enterThroughDoor = DOTween.Sequence();
+        enterThroughDoor.Append(Services.GameManager.entrance.DORotate(new Vector3(0, -125f,0), 1f));
+        enterThroughDoor.Append(Services.GameManager.entrance.DOScale(new Vector3(1, 1, 1), 1f));
+        enterThroughDoor.Append(Services.GameManager.entrance.DORotate(new Vector3(0, 0, 0), 1f));
+        enterThroughDoor.AppendCallback(()=>Services.GameManager.directionalLight.SetActive(false));
+        enterThroughDoor.AppendCallback(() => Services.GameManager.entranceLight.SetActive(false));
+        enterThroughDoor.Append(Services.GameManager.entrance.DOScale(new Vector3(1, 1, 1), 5f)); //time from door to bar
+        enterThroughDoor.OnComplete(() => enterBarAnimFinished = true);
     }
 
     public void TakeSeatAction(){
@@ -124,11 +138,15 @@ public class NPC : MonoBehaviour
         public override void OnEnter(){
             //on animation complete, <takeseat>
             Debug.Log("onenter enter bar");
+            Context.EnterBarAction();
         }
         public override void Update(){
-
-            TransitionTo<TakeSeat>();
-            return;
+            if (Context.enterBarAnimFinished)
+            {
+                Context.enterBarAnimFinished = false;
+                TransitionTo<TakeSeat>();
+                return;
+            }
         }
     }
 
