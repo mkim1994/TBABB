@@ -1,0 +1,117 @@
+title: Sahana1
+tags: 
+colorID: 0
+position: -332,39
+---
+Customer: Hello!
+Customer: Uhm...
+Customer: I've never been here before...
+
+[[First time drinking?|1ASahanaDay2]]
+[[First time here?|1BSahanaDay2]]
+===
+title: 1ASahanaDay2
+tags: 
+colorID: 0
+position: 6,19
+---
+Customer: Haha, yes...
+Customer: Uhm... give me anything, just no alcohol.
+
+
+
+===
+title: 1BSahanaDay2
+tags: 
+colorID: 0
+position: -7,321
+---
+Customer: Yes, but I mean I've never been to a bar in general.
+Customer: Or drank anything alcoholic.
+Customer: I might try it but...
+Customer: Nevermind, give me anything, just no alcohol.
+===
+title: GetDrink1SahanaDay2
+tags: 
+colorID: 0
+position: -190,614
+---
+Customer: I can't take this much of anything.
+Customer: Can't you pour it in a cup? Glass? Something?
+Customer: How does it work in bars...
+===
+title: GetGlassDrink1ASahanaDay2
+tags: 
+colorID: 0
+position: 345,189
+---
+<<$set alcoholicaf to true>>
+
+Customer: Mm.
+Customer: This is pretty bitter...
+Customer: I don't think I've tasted something like this before.
+Customer: You didn't actually give me something alcoholic, did you?
+
+[[Nope. No alcohol.|2ASahanaDay2]]
+[[No promises.|2BSahanaDay2]]
+===
+title: GetEmptyGlass1SahanaDay2
+tags: 
+colorID: 0
+position: 55,597
+---
+Customer: You're hilarious.
+Customer: Please just get me anything. Not alcoholic.
+===
+title: GetGlassDrink1BSahanaDay2
+tags: 
+colorID: 0
+position: 415,484
+---
+<<$set alcoholicaf to false>>
+
+Customer: This doesn't taste bitter at all.
+Customer: Thank you.
+Customer: I know I'm kind of missing the point coming here to drink this but...
+Customer: It's just nice to get what I ask for, for once.
+Customer: I think that's all I needed right now.
+Customer: Thank you again--bye.
+
+<<customerleave Dialogue>>
+===
+title: 2ASahanaDay2
+tags: 
+colorID: 0
+position: 737,-29
+---
+Customer: Alright.
+Customer: I mean...
+Customer: What kind of a bartender would you be if you didn't do what I asked?
+Customer: Then again, no one listens to what I say, so whatever.
+Customer: Fuck you and fuck all of them.
+Customer: Thinking I'm a fucking idiot.
+Customer: You're the idiot.
+Customer: ...
+Customer: I'm so sorry, I don't know what I just said.
+Customer: I'm going to leave now, bye!
+
+<<customerleave Dialogue>>
+===
+title: 2BSahanaDay2
+tags: 
+colorID: 0
+position: 724,235
+---
+Customer: You're kidding.
+Customer: ...
+Customer: I guess it's more interesting this way.
+Customer: Better than my day job, at least.
+Customer: Fuck everyone there, honestly.
+Customer: Thinking they can just step all over me.
+Customer: Fuuuck.
+Customer: ...
+Customer: I'm so sorry, I don't know what I just said.
+Customer: I'm going to leave now, bye!
+
+<<customerleave Dialogue>>
+===
