@@ -15,6 +15,8 @@ public class Liquid : MonoBehaviour {
  	[SerializeField]float smokiness, sweetness, sourness, bitterness, spiciness;
 	[SerializeField]float alcoholVolume, abv;
 	
+	private DrinkProfile thisCocktail;
+	
 
 	// Use this for initialization
 	void Start () {
@@ -28,11 +30,16 @@ public class Liquid : MonoBehaviour {
 		totalVolume = whiskeyVolume + ginVolume + brandyVolume + vodkaVolume + wineVolume + beerVolume + tequilaVolume + rumVolume 
 					+ sodaVolume + tonicVolume + appleJuiceVolume + orangeJuiceVolume + lemonJuiceVolume; 
 		alcoholVolume = whiskeyVolume + ginVolume + brandyVolume + vodkaVolume + wineVolume + beerVolume + tequilaVolume + rumVolume; 
+		abv = alcoholVolume/height;
  	}
 
 	public void GrowVertical(){
 		height += 10000 * Time.deltaTime;
 		transform.localScale = new Vector3 (transform.localScale.x, height, transform.localScale.z);
+		thisCocktail = new DrinkProfile (sodaVolume/height, tonicVolume/height, appleJuiceVolume/height, lemonJuiceVolume/height, 0, 0, 0, 0, 0, 0, 0, 
+		whiskeyVolume/height, ginVolume/height, tequilaVolume/height, vodkaVolume/height, rumVolume/height, beerVolume/height, 
+		wineVolume/height, brandyVolume/height, alcoholVolume, 
+		smokiness, sweetness, sourness, bitterness, spiciness);
 	}
 
 	private DrinkProfile myDrinkProfile;
@@ -221,4 +228,10 @@ public class Liquid : MonoBehaviour {
             sweetVolume = (_myDrinkProfile.sweetRate * _drinkVolume) - totalFlavor + _drinkVolume;
         }*/
     }
+
+	private void DetectCoaster(){
+		if(Vector3.Distance(FindObjectOfType<Coaster>().transform.position, transform.position) <= 0.5f){
+			Debug.Log("Drink is in coaster!");
+		}
+	}
 }
