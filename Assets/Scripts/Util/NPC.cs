@@ -26,7 +26,8 @@ public class NPC : MonoBehaviour
     public Vector3[] seatLocations;
 
     public bool enterBarAnimFinished;
-
+    public SpriteRenderer silhouette;
+    private Vector3 silhouetteLocation;
 
     void Start()
     {
@@ -41,6 +42,7 @@ public class NPC : MonoBehaviour
         customerData = GetComponent<CustomerData>();
         fsm = new FSM<NPC>(this);
         fsm.TransitionTo<OutsideBar>();
+        silhouetteLocation = silhouette.transform.position;
     }
 
     // Update is called once per frame
@@ -82,30 +84,36 @@ public class NPC : MonoBehaviour
     }
 
     public void OutsideBarAction(){
-        GetComponent<SpriteActor>().enabled = false;
+        silhouette.gameObject.SetActive(false);
         GetComponent<BoxCollider>().enabled = false;
         GetComponentInChildren<SpriteRenderer>().enabled = false;
+        GetComponentInChildren<Light>().enabled = false;
     }
 
     public void EnterBarAction(){
+
+        silhouette.gameObject.SetActive(true);
         Services.GameManager.directionalLight.SetActive(true);
         Services.GameManager.entranceLight.SetActive(true);
         Sequence enterThroughDoor = DOTween.Sequence();
-        enterThroughDoor.Append(Services.GameManager.entrance.DORotate(new Vector3(0, -125f,0), 1f));
-        enterThroughDoor.Append(Services.GameManager.entrance.DOScale(new Vector3(1, 1, 1), 1f));
+        enterThroughDoor.Append(Services.GameManager.entrance.DORotate(new Vector3(0, -125f,0), 2f));
+        enterThroughDoor.Append(silhouette.transform.DOMoveZ(silhouetteLocation.z - 3f, 1f));
+        enterThroughDoor.Append(Services.GameManager.entrance.DOScale(new Vector3(1.2f, 1f, 1f), 1f));
         enterThroughDoor.Append(Services.GameManager.entrance.DORotate(new Vector3(0, 0, 0), 1f));
         enterThroughDoor.AppendCallback(()=>Services.GameManager.directionalLight.SetActive(false));
         enterThroughDoor.AppendCallback(() => Services.GameManager.entranceLight.SetActive(false));
-        enterThroughDoor.Append(Services.GameManager.entrance.DOScale(new Vector3(1, 1, 1), 5f)); //time from door to bar
+        enterThroughDoor.Append(Services.GameManager.entrance.DOScale(new Vector3(1.2f, 1f, 1f), 5f)); //time from door to bar
         enterThroughDoor.OnComplete(() => enterBarAnimFinished = true);
     }
 
     public void TakeSeatAction(){
         Debug.Log(characterName +" takes seat");
+        silhouette.transform.position = silhouetteLocation;
+        silhouette.gameObject.SetActive(false);
         transform.position = seatLocations[BestSeat()];
-        GetComponent<SpriteActor>().enabled = true;
         GetComponent<BoxCollider>().enabled = true;
         GetComponentInChildren<SpriteRenderer>().enabled = true;
+        GetComponentInChildren<Light>().enabled = true;
 
     }
 
