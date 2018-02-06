@@ -34,3 +34,8 @@ sysinfo.txt
 *.apk
 *.unitypackage
 UpgradeLog.htm
+.idea/.idea.TBABB/riderModule.iml
+.idea/.idea.TBABB/.idea/workspace.xml
+.idea/.idea.TBABB/.idea/modules.xml
+.idea/.idea.TBABB/.idea/contentModel.xml
+.idea/.idea.TBABB/.idea/indexLayout.xml

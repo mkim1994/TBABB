@@ -21,6 +21,7 @@ public class PlayerInput : MonoBehaviour {
 	private Player player;
 	private CharacterController cc;
 	public Dropzone targetDropzone;
+	[SerializeField]Coaster targetCoaster;
 	public NPC npc;
 
 	public Vector3 dropPos;
@@ -29,6 +30,7 @@ public class PlayerInput : MonoBehaviour {
 	public LayerMask layerMask;
 	public LayerMask dropzoneLayerMask;
 	public LayerMask customerLayerMask;
+	public LayerMask coasterLayerMask;
 	public Pickupable pickupable;
 	public Pickupable pickupableInLeftHand;
 	public Pickupable pickupableInRightHand;
@@ -142,7 +144,7 @@ public class PlayerInput : MonoBehaviour {
 					pickupableInLeftHand.InteractLeftHand();
 				}		
 			} else if (pickupable != null && pickupableInLeftHand != null){ //swap
-				if(dropPos != Vector3.zero){
+				if(dropPos != Vector3.zero){ 
 					pickupableInLeftHand.dropPos = dropPos;
 					pickupableInLeftHand.targetDropzone = targetDropzone;
 					pickupableInLeftHand.SwapLeftHand();
@@ -326,6 +328,23 @@ public class PlayerInput : MonoBehaviour {
  			} 	
 		} else {
 			npc = null;
+		}
+	}
+
+	private void CoasterRay(){
+		Ray ray = new Ray(myCam.transform.position, myCam.transform.forward);
+		float rayDist = Mathf.Infinity;
+		RaycastHit hit = new RaycastHit();
+		
+		if(Physics.Raycast(ray, out hit, rayDist, coasterLayerMask)){
+			GameObject hitObj = hit.transform.gameObject; //if you're actually looking at something
+ 			if(hitObj.GetComponent<Coaster>() != null && Vector3.Distance(transform.position, hitObj.transform.position) <= maxTalkingDist){ //check if object looked at can be picked up
+ 				targetCoaster = hitObj.GetComponent<Coaster>(); //if it's NPC and close enough, assign it to NPC.				  
+ 			} else if (hitObj.GetComponent<Coaster>() == null || Vector3.Distance(transform.position, hitObj.transform.position) > maxTalkingDist){
+				targetCoaster = null;
+ 			} 	
+		} else {
+			targetCoaster = null;
 		}
 	}
 }

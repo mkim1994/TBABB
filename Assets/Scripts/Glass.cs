@@ -10,8 +10,35 @@ public class Glass : Pickupable {
 	private Vector3 leftHandPourRot = new Vector3(88.76f, 0, 0);
 	private Vector3 rightHandPourRot = new Vector3(87.7370f, 0, 6.915f);
 
-	void Start(){
+	private enum GlassType { 
+		Highball,
+		Shot,
+		Square,
+		Wine_glass,
+		Beer_mug
+	}
+
+	[SerializeField]GlassType glassType;
+
+	void Start()
+	{
 		liquid = GetComponentInChildren<Liquid>();
+		switch (glassType)
+		{
+			case GlassType.Beer_mug:
+			break;
+			case GlassType.Highball:
+				dropOffset = new Vector3(0, 0.392f, 0);
+			break;
+			case GlassType.Shot:
+			break;
+			case GlassType.Square:
+			break;
+			case GlassType.Wine_glass:
+			break;
+			default:
+			break;
+		}
 	}
 	public void ReceivePourFromBottle(Bottle bottleInHand){
 		// Liquid liquid = GetComponentInChildren<Liquid>();

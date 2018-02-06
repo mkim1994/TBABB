@@ -54,6 +54,7 @@ public class GameManager : MonoBehaviour {
 		Services.Prefabs = Resources.Load<PrefabDB>("Prefabs/Prefabs");
 		Services.TweenManager = FindObjectOfType<TweenManager>();
 		Services.DrinkDictionary = new DrinkDictionary(); 
+		Services.MixerDictionary = new MixerDictionary();
         //Services.Materials = Resources.Load<MaterialDB>("Art/Materials");
 		//Services.SceneStackManager = new SceneStackManager<TransitionData>(sceneRoot, Services.Prefabs.Scenes);
 

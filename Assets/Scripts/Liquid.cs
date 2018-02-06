@@ -3,34 +3,41 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Liquid : MonoBehaviour {
-
+	private DrinkProfile myDrinkProfile;
+	private float previousAlcoholVolume;
+	private float prevABV;
  	public float height;
 	public bool isPouring;
 	private float totalVolume;
-	[SerializeField]DrinkBase baseBeingPoured;
-	[SerializeField]Garnish garnishBeingApplied;
-	[SerializeField]Mixer mixerBeingPoured;
+	public List<Coaster> coasters = new List<Coaster> ();
+	public Coaster targetCoaster;
+	DrinkBase baseBeingPoured;
+	Garnish garnishBeingApplied;
+	Mixer mixerBeingPoured;
 	[SerializeField]float sodaVolume, tonicVolume, appleJuiceVolume, orangeJuiceVolume, lemonJuiceVolume;
 	[SerializeField]float whiskeyVolume, tequilaVolume, rumVolume, ginVolume, beerVolume, wineVolume, brandyVolume, vodkaVolume;
  	[SerializeField]float smokiness, sweetness, sourness, bitterness, spiciness;
 	[SerializeField]float alcoholVolume, abv;
 	
-	private DrinkProfile thisCocktail;
+	public DrinkProfile thisCocktail;
 	
 
 	// Use this for initialization
 	void Start () {
-		
+		DetectCoasters ();
 	}
 	
 	// Update is called once per frame
 	void Update () {
+		EvaluateDrinkInCoaster ();
+
 		height = Mathf.Clamp(height, 0, 7058.475f);
 
 		totalVolume = whiskeyVolume + ginVolume + brandyVolume + vodkaVolume + wineVolume + beerVolume + tequilaVolume + rumVolume 
 					+ sodaVolume + tonicVolume + appleJuiceVolume + orangeJuiceVolume + lemonJuiceVolume; 
 		alcoholVolume = whiskeyVolume + ginVolume + brandyVolume + vodkaVolume + wineVolume + beerVolume + tequilaVolume + rumVolume; 
-		abv = alcoholVolume/height;
+		// abv = alcoholVolume/height;
+		abv = AlcoholRate();
  	}
 
 	public void GrowVertical(){
@@ -38,13 +45,11 @@ public class Liquid : MonoBehaviour {
 		transform.localScale = new Vector3 (transform.localScale.x, height, transform.localScale.z);
 		thisCocktail = new DrinkProfile (sodaVolume/height, tonicVolume/height, appleJuiceVolume/height, lemonJuiceVolume/height, 0, 0, 0, 0, 0, 0, 0, 
 		whiskeyVolume/height, ginVolume/height, tequilaVolume/height, vodkaVolume/height, rumVolume/height, beerVolume/height, 
-		wineVolume/height, brandyVolume/height, alcoholVolume, 
+		wineVolume/height, brandyVolume/height, abv, 
 		smokiness, sweetness, sourness, bitterness, spiciness);
 	}
 
-	private DrinkProfile myDrinkProfile;
-	private float previousAlcoholVolume;
-	private float prevABV;
+
 	public void AddIngredient(DrinkBase _drinkBase){
 		GrowVertical();
 		myDrinkProfile = Services.DrinkDictionary.drinkBases[_drinkBase];
@@ -200,6 +205,19 @@ public class Liquid : MonoBehaviour {
 		return _spicyRate/height;	
  	}
 
+	private float AlcoholRate(){
+		float _alcoholRate = 0;
+		_alcoholRate = Services.DrinkDictionary.drinkBases[DrinkBase.whiskey].alcoholRate*whiskeyVolume			
+					+ Services.DrinkDictionary.drinkBases[DrinkBase.tequila].alcoholRate*tequilaVolume	
+					+ Services.DrinkDictionary.drinkBases[DrinkBase.rum].alcoholRate*rumVolume	
+					+ Services.DrinkDictionary.drinkBases[DrinkBase.gin].alcoholRate*ginVolume	
+					+ Services.DrinkDictionary.drinkBases[DrinkBase.beer].alcoholRate*beerVolume	
+					+ Services.DrinkDictionary.drinkBases[DrinkBase.wine].alcoholRate*wineVolume	
+					+ Services.DrinkDictionary.drinkBases[DrinkBase.brandy].alcoholRate*brandyVolume	
+					+ Services.DrinkDictionary.drinkBases[DrinkBase.vodka].alcoholRate*vodkaVolume;
+		return _alcoholRate/height;
+	}
+
  	private void IncrementFlavor(DrinkProfile _myDrinkProfile, float _drinkVolume)
     {
 		smokiness = SmokyRate();
@@ -207,31 +225,17 @@ public class Liquid : MonoBehaviour {
 		spiciness = SpicyRate();
 		sourness = SourRate();
 		sweetness = SweetRate();
-       /*  if (_myDrinkProfile.smokyRate != 0)
-        {
-						
-        }
-        if (_myDrinkProfile.spicyRate != 0)
-        {
-            spicyVolume = (_myDrinkProfile.spicyRate * _drinkVolume) - totalFlavor + _drinkVolume;
-        }
-        if (_myDrinkProfile.bitterRate != 0)
-        {
-            bitterVolume = (_myDrinkProfile.bitterRate * _drinkVolume) - totalFlavor + _drinkVolume;
-        }
-        if (_myDrinkProfile.sourRate != 0)
-        {
-            sourVolume = (_myDrinkProfile.sourRate * _drinkVolume) - totalFlavor + _drinkVolume;
-        }
-        if (_myDrinkProfile.sweetRate != 0)
-        {
-            sweetVolume = (_myDrinkProfile.sweetRate * _drinkVolume) - totalFlavor + _drinkVolume;
-        }*/
     }
 
-	private void DetectCoaster(){
-		if(Vector3.Distance(FindObjectOfType<Coaster>().transform.position, transform.position) <= 0.5f){
-			Debug.Log("Drink is in coaster!");
+	private void DetectCoasters(){
+		coasters.AddRange (FindObjectsOfType<Coaster> ());
+	}
+		
+	private void EvaluateDrinkInCoaster(){
+		foreach (var coaster in coasters) {
+			if (Vector3.Distance (coaster.gameObject.transform.position, transform.position) <= 0.5f) {
+				coaster.EvaluateDrink (this);
+			}		
 		}
 	}
 }

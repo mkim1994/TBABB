@@ -5,7 +5,7 @@ using DG.Tweening;
 public class Pickupable : MonoBehaviour {
     #region Left Hand Positions/Rotations
     private Vector3 leftHandPos = new Vector3 (-1.022f, -0.25f, 1.241f);
-    
+    protected Vector3 dropOffset = Vector3.zero;
     #endregion
     private Vector3 rightHandPos = new Vector3 (0.954f, -0.25f, 1.473f);
     public Dropzone targetDropzone;
@@ -102,7 +102,7 @@ public class Pickupable : MonoBehaviour {
         DeclareActiveTween();
         _targetDropzone.isOccupied = true;
         Sequence sequence = DOTween.Sequence();
-        sequence.Append(transform.DOLocalMove(dropPos, 0.25f, false));
+        sequence.Append(transform.DOLocalMove(dropPos + dropOffset, 0.25f, false));
         transform.DOLocalRotate(Vector3.zero, 0.25f, RotateMode.Fast);
         sequence.OnComplete(() => DeclareInactiveTween());
         pickedUp = false;
