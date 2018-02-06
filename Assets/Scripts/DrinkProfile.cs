@@ -12,7 +12,7 @@ public class DrinkProfile {
 	
 	//mixers
 	public float whiskeyRate, tequilaRate, rumRate, ginRate, beerRate, wineRate, brandyRate, vodkaRate;
-	public float smokyRate, sweetRate, sourRate, bitterRate, alcoholRate, spicyRate;
+	public float smokiness, sweetness, sourness, bitterness, alcoholicStrength, spicyRate;
  
 	public DrinkProfile(float _sodaRate, float _tonicRate, float _appleJuiceRate, float _orangeJuiceRate,
 						float _lemonJuiceRate, //mixers
@@ -20,12 +20,12 @@ public class DrinkProfile {
 						float _lemonSliceRate, float _orangePeelRate, float _bitterGarnishRate,
 						float _sugarRate, float _oliveRate, float _chiliPowderRate, //garnish
 
-						float _whiskeyVol, float _ginVol, float _tequilaVol, float _vodkaVol, float _rumVol, 
-						float _beerVol, float _wineVol, float _brandyVol, 
+						float _whiskeyRate, float _ginRate, float _tequilaRate, float _vodkaRate, float _rumRate, 
+						float _beerRate, float _wineRate, float _brandyRate, 
 						
-						float _alcoholVol, 
+						float _alcoholicStrength, 
 						
-						float _smokyVol, float _sweetVol, float _sourVol, float _bitterVol, float _spicyVol){ //mixers
+						float _smokiness, float _sweetness, float _sourness, float _bitterness, float _spiciness){ //mixers
 		
 		//mixers
 		sodaRate = _sodaRate;
@@ -43,21 +43,25 @@ public class DrinkProfile {
 		chiliPowderRate = _chiliPowderRate;
 
 		//alcohol
-		whiskeyRate = _whiskeyVol;
-		ginRate = _ginVol; 
-		tequilaRate = _tequilaVol;
-		vodkaRate = _vodkaVol;
-		rumRate = _rumVol;
-		beerRate = _beerVol;
-		wineRate = _wineVol;
-		brandyRate = _brandyVol;
+		whiskeyRate = _whiskeyRate;
+		ginRate = _ginRate; 
+		tequilaRate = _tequilaRate;
+		vodkaRate = _vodkaRate;
+		rumRate = _rumRate;
+		beerRate = _beerRate;
+		wineRate = _wineRate;
+		brandyRate = _brandyRate;
 
+		//alcohol content
+		alcoholicStrength = _alcoholicStrength;
+		
 		//flavors
-		smokyRate = _smokyVol;
-		sweetRate = _sweetVol;
-		sourRate = _sourVol;
-		bitterRate = _bitterVol;
-		spicyRate = _spicyVol;
-		alcoholRate = _alcoholVol;
+		smokiness = _smokiness;
+		sweetness = _sweetness;
+		sourness = _sourness;
+		bitterness = _bitterness;
+		spicyRate = _spiciness;
+		
+		
 	}
 }

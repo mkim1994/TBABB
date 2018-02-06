@@ -37,7 +37,7 @@ public class Liquid : MonoBehaviour {
 					+ sodaVolume + tonicVolume + appleJuiceVolume + orangeJuiceVolume + lemonJuiceVolume; 
 		alcoholVolume = whiskeyVolume + ginVolume + brandyVolume + vodkaVolume + wineVolume + beerVolume + tequilaVolume + rumVolume; 
 		// abv = alcoholVolume/height;
-		abv = AlcoholRate();
+		abv = GetAlcoholicStrength();
  	}
 
 	public void GrowVertical(){
@@ -125,74 +125,74 @@ public class Liquid : MonoBehaviour {
 		}
 	}
 
-	private float SmokyRate(){
+	private float GetSmokiness(){
 		float _smokyRate = 0;
-		_smokyRate = Services.DrinkDictionary.drinkBases[DrinkBase.whiskey].smokyRate*whiskeyVolume			
-					+ Services.DrinkDictionary.drinkBases[DrinkBase.tequila].smokyRate*tequilaVolume	
-					+ Services.DrinkDictionary.drinkBases[DrinkBase.rum].smokyRate*rumVolume	
-					+ Services.DrinkDictionary.drinkBases[DrinkBase.gin].smokyRate*ginVolume	
-					+ Services.DrinkDictionary.drinkBases[DrinkBase.beer].smokyRate*beerVolume	
-					+ Services.DrinkDictionary.drinkBases[DrinkBase.wine].smokyRate*wineVolume	
-					+ Services.DrinkDictionary.drinkBases[DrinkBase.brandy].smokyRate*brandyVolume	
-					+ Services.DrinkDictionary.drinkBases[DrinkBase.vodka].smokyRate*vodkaVolume;
+		_smokyRate = Services.DrinkDictionary.drinkBases[DrinkBase.whiskey].smokiness*whiskeyVolume			
+					+ Services.DrinkDictionary.drinkBases[DrinkBase.tequila].smokiness*tequilaVolume	
+					+ Services.DrinkDictionary.drinkBases[DrinkBase.rum].smokiness*rumVolume	
+					+ Services.DrinkDictionary.drinkBases[DrinkBase.gin].smokiness*ginVolume	
+					+ Services.DrinkDictionary.drinkBases[DrinkBase.beer].smokiness*beerVolume	
+					+ Services.DrinkDictionary.drinkBases[DrinkBase.wine].smokiness*wineVolume	
+					+ Services.DrinkDictionary.drinkBases[DrinkBase.brandy].smokiness*brandyVolume	
+					+ Services.DrinkDictionary.drinkBases[DrinkBase.vodka].smokiness*vodkaVolume;
 		return _smokyRate/height;	
  	}
 
-	private float SweetRate(){
+	private float GetSweetness(){
 		float _sweetRate = 0;
-		_sweetRate = Services.DrinkDictionary.drinkBases[DrinkBase.whiskey].sweetRate*whiskeyVolume			
-					+ Services.DrinkDictionary.drinkBases[DrinkBase.tequila].sweetRate*tequilaVolume	
-					+ Services.DrinkDictionary.drinkBases[DrinkBase.rum].sweetRate*rumVolume	
-					+ Services.DrinkDictionary.drinkBases[DrinkBase.gin].sweetRate*ginVolume	
-					+ Services.DrinkDictionary.drinkBases[DrinkBase.beer].sweetRate*beerVolume	
-					+ Services.DrinkDictionary.drinkBases[DrinkBase.wine].sweetRate*wineVolume	
-					+ Services.DrinkDictionary.drinkBases[DrinkBase.brandy].sweetRate*brandyVolume	
-					+ Services.DrinkDictionary.drinkBases[DrinkBase.vodka].sweetRate*vodkaVolume
-					+ Services.MixerDictionary.mixers[Mixer.soda].sweetRate * sodaVolume 
-					+ Services.MixerDictionary.mixers[Mixer.tonic].sweetRate * tonicVolume 
-					+ Services.MixerDictionary.mixers[Mixer.apple_juice].sweetRate * appleJuiceVolume
-					+ Services.MixerDictionary.mixers[Mixer.lemon_juice].sweetRate * lemonJuiceVolume
-					+ Services.MixerDictionary.mixers[Mixer.orange_juice].sweetRate * orangeJuiceVolume;
+		_sweetRate = Services.DrinkDictionary.drinkBases[DrinkBase.whiskey].sweetness*whiskeyVolume			
+					+ Services.DrinkDictionary.drinkBases[DrinkBase.tequila].sweetness*tequilaVolume	
+					+ Services.DrinkDictionary.drinkBases[DrinkBase.rum].sweetness*rumVolume	
+					+ Services.DrinkDictionary.drinkBases[DrinkBase.gin].sweetness*ginVolume	
+					+ Services.DrinkDictionary.drinkBases[DrinkBase.beer].sweetness*beerVolume	
+					+ Services.DrinkDictionary.drinkBases[DrinkBase.wine].sweetness*wineVolume	
+					+ Services.DrinkDictionary.drinkBases[DrinkBase.brandy].sweetness*brandyVolume	
+					+ Services.DrinkDictionary.drinkBases[DrinkBase.vodka].sweetness*vodkaVolume
+					+ Services.MixerDictionary.mixers[Mixer.soda].sweetness * sodaVolume 
+					+ Services.MixerDictionary.mixers[Mixer.tonic].sweetness * tonicVolume 
+					+ Services.MixerDictionary.mixers[Mixer.apple_juice].sweetness * appleJuiceVolume
+					+ Services.MixerDictionary.mixers[Mixer.lemon_juice].sweetness * lemonJuiceVolume
+					+ Services.MixerDictionary.mixers[Mixer.orange_juice].sweetness * orangeJuiceVolume;
 
 		return _sweetRate/height;	
  	}
 
-	private float BitterRate(){
+	private float GetBitterness(){
 		float _bitterRate = 0;
-		_bitterRate = Services.DrinkDictionary.drinkBases[DrinkBase.whiskey].bitterRate*whiskeyVolume			
-					+ Services.DrinkDictionary.drinkBases[DrinkBase.tequila].bitterRate*tequilaVolume	
-					+ Services.DrinkDictionary.drinkBases[DrinkBase.rum].bitterRate*rumVolume	
-					+ Services.DrinkDictionary.drinkBases[DrinkBase.gin].bitterRate*ginVolume	
-					+ Services.DrinkDictionary.drinkBases[DrinkBase.beer].bitterRate*beerVolume	
-					+ Services.DrinkDictionary.drinkBases[DrinkBase.wine].bitterRate*wineVolume	
-					+ Services.DrinkDictionary.drinkBases[DrinkBase.brandy].bitterRate*brandyVolume	
-					+ Services.DrinkDictionary.drinkBases[DrinkBase.vodka].bitterRate*vodkaVolume
-					+ Services.MixerDictionary.mixers[Mixer.soda].bitterRate * sodaVolume 
-					+ Services.MixerDictionary.mixers[Mixer.tonic].bitterRate * tonicVolume 
-					+ Services.MixerDictionary.mixers[Mixer.apple_juice].bitterRate * appleJuiceVolume
-					+ Services.MixerDictionary.mixers[Mixer.lemon_juice].bitterRate * lemonJuiceVolume
-					+ Services.MixerDictionary.mixers[Mixer.orange_juice].bitterRate * orangeJuiceVolume;
+		_bitterRate = Services.DrinkDictionary.drinkBases[DrinkBase.whiskey].bitterness*whiskeyVolume			
+					+ Services.DrinkDictionary.drinkBases[DrinkBase.tequila].bitterness*tequilaVolume	
+					+ Services.DrinkDictionary.drinkBases[DrinkBase.rum].bitterness*rumVolume	
+					+ Services.DrinkDictionary.drinkBases[DrinkBase.gin].bitterness*ginVolume	
+					+ Services.DrinkDictionary.drinkBases[DrinkBase.beer].bitterness*beerVolume	
+					+ Services.DrinkDictionary.drinkBases[DrinkBase.wine].bitterness*wineVolume	
+					+ Services.DrinkDictionary.drinkBases[DrinkBase.brandy].bitterness*brandyVolume	
+					+ Services.DrinkDictionary.drinkBases[DrinkBase.vodka].bitterness*vodkaVolume
+					+ Services.MixerDictionary.mixers[Mixer.soda].bitterness * sodaVolume 
+					+ Services.MixerDictionary.mixers[Mixer.tonic].bitterness * tonicVolume 
+					+ Services.MixerDictionary.mixers[Mixer.apple_juice].bitterness * appleJuiceVolume
+					+ Services.MixerDictionary.mixers[Mixer.lemon_juice].bitterness * lemonJuiceVolume
+					+ Services.MixerDictionary.mixers[Mixer.orange_juice].bitterness * orangeJuiceVolume;
 		return _bitterRate/height;
 	}
 
-	private float SourRate(){
+	private float GetSourness(){
 		float _sourRate = 0;
-		_sourRate = Services.DrinkDictionary.drinkBases[DrinkBase.whiskey].sourRate*whiskeyVolume			
-					+ Services.DrinkDictionary.drinkBases[DrinkBase.tequila].sourRate*tequilaVolume	
-					+ Services.DrinkDictionary.drinkBases[DrinkBase.rum].sourRate*rumVolume	
-					+ Services.DrinkDictionary.drinkBases[DrinkBase.gin].sourRate*ginVolume	
-					+ Services.DrinkDictionary.drinkBases[DrinkBase.beer].sourRate*beerVolume	
-					+ Services.DrinkDictionary.drinkBases[DrinkBase.wine].sourRate*wineVolume	
-					+ Services.DrinkDictionary.drinkBases[DrinkBase.brandy].sourRate*brandyVolume	
-					+ Services.DrinkDictionary.drinkBases[DrinkBase.vodka].sourRate*vodkaVolume
-					+ Services.MixerDictionary.mixers[Mixer.soda].sourRate * sodaVolume 
-					+ Services.MixerDictionary.mixers[Mixer.tonic].sourRate * tonicVolume 
-					+ Services.MixerDictionary.mixers[Mixer.apple_juice].sourRate * appleJuiceVolume
-					+ Services.MixerDictionary.mixers[Mixer.lemon_juice].sourRate * lemonJuiceVolume
-					+ Services.MixerDictionary.mixers[Mixer.orange_juice].sourRate * orangeJuiceVolume;
+		_sourRate = Services.DrinkDictionary.drinkBases[DrinkBase.whiskey].sourness*whiskeyVolume			
+					+ Services.DrinkDictionary.drinkBases[DrinkBase.tequila].sourness*tequilaVolume	
+					+ Services.DrinkDictionary.drinkBases[DrinkBase.rum].sourness*rumVolume	
+					+ Services.DrinkDictionary.drinkBases[DrinkBase.gin].sourness*ginVolume	
+					+ Services.DrinkDictionary.drinkBases[DrinkBase.beer].sourness*beerVolume	
+					+ Services.DrinkDictionary.drinkBases[DrinkBase.wine].sourness*wineVolume	
+					+ Services.DrinkDictionary.drinkBases[DrinkBase.brandy].sourness*brandyVolume	
+					+ Services.DrinkDictionary.drinkBases[DrinkBase.vodka].sourness*vodkaVolume
+					+ Services.MixerDictionary.mixers[Mixer.soda].sourness * sodaVolume 
+					+ Services.MixerDictionary.mixers[Mixer.tonic].sourness * tonicVolume 
+					+ Services.MixerDictionary.mixers[Mixer.apple_juice].sourness * appleJuiceVolume
+					+ Services.MixerDictionary.mixers[Mixer.lemon_juice].sourness * lemonJuiceVolume
+					+ Services.MixerDictionary.mixers[Mixer.orange_juice].sourness * orangeJuiceVolume;
 		return _sourRate/height;	
  	}
-	private float SpicyRate(){
+	private float GetSpiciness(){
 		float _spicyRate = 0;
 		_spicyRate = Services.DrinkDictionary.drinkBases[DrinkBase.whiskey].spicyRate*whiskeyVolume			
 					+ Services.DrinkDictionary.drinkBases[DrinkBase.tequila].spicyRate*tequilaVolume	
@@ -205,26 +205,26 @@ public class Liquid : MonoBehaviour {
 		return _spicyRate/height;	
  	}
 
-	private float AlcoholRate(){
+	private float GetAlcoholicStrength(){
 		float _alcoholRate = 0;
-		_alcoholRate = Services.DrinkDictionary.drinkBases[DrinkBase.whiskey].alcoholRate*whiskeyVolume			
-					+ Services.DrinkDictionary.drinkBases[DrinkBase.tequila].alcoholRate*tequilaVolume	
-					+ Services.DrinkDictionary.drinkBases[DrinkBase.rum].alcoholRate*rumVolume	
-					+ Services.DrinkDictionary.drinkBases[DrinkBase.gin].alcoholRate*ginVolume	
-					+ Services.DrinkDictionary.drinkBases[DrinkBase.beer].alcoholRate*beerVolume	
-					+ Services.DrinkDictionary.drinkBases[DrinkBase.wine].alcoholRate*wineVolume	
-					+ Services.DrinkDictionary.drinkBases[DrinkBase.brandy].alcoholRate*brandyVolume	
-					+ Services.DrinkDictionary.drinkBases[DrinkBase.vodka].alcoholRate*vodkaVolume;
+		_alcoholRate = Services.DrinkDictionary.drinkBases[DrinkBase.whiskey].alcoholicStrength*whiskeyVolume			
+					+ Services.DrinkDictionary.drinkBases[DrinkBase.tequila].alcoholicStrength*tequilaVolume	
+					+ Services.DrinkDictionary.drinkBases[DrinkBase.rum].alcoholicStrength*rumVolume	
+					+ Services.DrinkDictionary.drinkBases[DrinkBase.gin].alcoholicStrength*ginVolume	
+					+ Services.DrinkDictionary.drinkBases[DrinkBase.beer].alcoholicStrength*beerVolume	
+					+ Services.DrinkDictionary.drinkBases[DrinkBase.wine].alcoholicStrength*wineVolume	
+					+ Services.DrinkDictionary.drinkBases[DrinkBase.brandy].alcoholicStrength*brandyVolume	
+					+ Services.DrinkDictionary.drinkBases[DrinkBase.vodka].alcoholicStrength*vodkaVolume;
 		return _alcoholRate/height;
 	}
 
  	private void IncrementFlavor(DrinkProfile _myDrinkProfile, float _drinkVolume)
     {
-		smokiness = SmokyRate();
-		bitterness = BitterRate();
-		spiciness = SpicyRate();
-		sourness = SourRate();
-		sweetness = SweetRate();
+		smokiness = GetSmokiness();
+		bitterness = GetBitterness();
+		spiciness = GetSpiciness();
+		sourness = GetSourness();
+		sweetness = GetSweetness();
     }
 
 	private void DetectCoasters(){
