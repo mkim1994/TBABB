@@ -59,25 +59,19 @@ public class NPC : MonoBehaviour
         }
     }
 
-    public void SetCustomerVars(float type, float flavor, float alcohol, float drinkable){
+    public void SetCustomerVars(float score, float alcohol){
         //float f1 = Services.GameManager.dialogue.variableStorage.GetValue("$drinkType" + characterName).AsNumber;
-        var v1 = new Yarn.Value(type);
-        var v2 = new Yarn.Value(flavor);
-        var v3 = new Yarn.Value(alcohol);
-        var v4 = new Yarn.Value(drinkable);
-        Services.GameManager.dialogue.variableStorage.SetValue("$drinkType" + characterName, v1);
-        Services.GameManager.dialogue.variableStorage.SetValue("$drinkFlavor" + characterName, v2);
-        Services.GameManager.dialogue.variableStorage.SetValue("$drinkAlcohol" + characterName, v3);
-        Services.GameManager.dialogue.variableStorage.SetValue("$drinkable" + characterName, v4);
+        var v1 = new Yarn.Value(score);
+        var v2 = new Yarn.Value(alcohol);
+        Services.GameManager.dialogue.variableStorage.SetValue("$drinkScore"+characterName,v1);
+        Services.GameManager.dialogue.variableStorage.SetValue("$drinkAlcohol" + characterName, v2);
         
     } 
 
     public void ResetCustomerVars(){
         var defaultVar = new Yarn.Value(-1f);
-        Services.GameManager.dialogue.variableStorage.SetValue("$drinkType" + characterName, defaultVar);
-        Services.GameManager.dialogue.variableStorage.SetValue("$drinkFlavor" + characterName, defaultVar);
+        Services.GameManager.dialogue.variableStorage.SetValue("$drinkScore" + characterName, defaultVar);
         Services.GameManager.dialogue.variableStorage.SetValue("$drinkAlcohol" + characterName, defaultVar);
-        Services.GameManager.dialogue.variableStorage.SetValue("$drinkable" + characterName, defaultVar);
 
         Services.GameManager.dialogue.variableStorage.SetValue("$content" + characterName, defaultVar);
         Services.GameManager.dialogue.variableStorage.SetValue("$drunk" + characterName, defaultVar);
