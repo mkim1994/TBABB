@@ -10,7 +10,7 @@ public class DrinkProfile {
 	public float 	lemonSliceRate, orangePeelRate, bitterGarnishRate, sugarRate, 
 					oliveRate, chiliPowderRate;
 	
-	//mixers
+	//drink bases
 	public float whiskeyRate, tequilaRate, rumRate, ginRate, beerRate, wineRate, brandyRate, vodkaRate;
 	public float smokiness, sweetness, sourness, bitterness, alcoholicStrength, spicyRate;
  
