@@ -335,16 +335,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   defaultVariables:
-  - name: drinkTypeIvory
-    value: -1
-    type: 0
-  - name: drinkFlavorIvory
+  - name: drinkScoreIvory
     value: -1
     type: 0
   - name: drinkAlcoholIvory
-    value: -1
-    type: 0
-  - name: drinkableIvory
     value: -1
     type: 0
   - name: contentIvory
@@ -353,17 +347,17 @@ MonoBehaviour:
   - name: drunkIvory
     value: -1
     type: 0
-  - name: 
-    value: 
+  - name: drinkScoreSahana
+    value: -1
     type: 0
-  - name: 
-    value: 
+  - name: drinkAlcoholSahana
+    value: -1
     type: 0
-  - name: 
-    value: 
+  - name: contentSahana
+    value: -1
     type: 0
-  - name: 
-    value: 
+  - name: drunkSahana
+    value: -1
     type: 0
   debugTextView: {fileID: 0}
 --- !u!114 &114363662100448426
