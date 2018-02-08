@@ -5,8 +5,8 @@ position: 114,209
 ---
 <<if visited("1Ivory") is false>>
     <<set $progressIvory = 0>>
-    Customer: Ha...
     <<order Ivory n 0 n 0 whiskey 1.0>>
+    Customer: Ha...
     <<set $stateIvory = 0>>
     Customer: Whiskey please.
 <<else>>
