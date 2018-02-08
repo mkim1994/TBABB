@@ -59,6 +59,7 @@ MonoBehaviour:
   CustomerIvory: {fileID: 0}
   CustomerSahana: {fileID: 0}
   dayManager: {fileID: 0}
+  audioController: {fileID: 0}
   entrance: {fileID: 0}
   directionalLight: {fileID: 0}
   entranceLight: {fileID: 0}

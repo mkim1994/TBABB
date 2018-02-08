@@ -431,7 +431,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   daysvisiting:
-  - 20
+  - 0
   - 20
   - 0
   - 10

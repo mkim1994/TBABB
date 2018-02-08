@@ -17,14 +17,19 @@ position: 114,209
             Customer: And you pour it into a glass.
             Customer: It's not that hard, is it?
         <<else>>
-            <<if $drinkScoreIvory >= 0.8>>
-                Customer: Thanks.
+            <<if $drinkScoreIvory <= 0.1>>
+                Customer: This isn't enough...
+                Customer: Get me more, won't you?
             <<else>>
-                Customer: Thanks...?
-                Customer: Sigh.
+                <<if $drinkScoreIvory >= 0.8>>
+                    Customer: Thanks.
+                <<else>>
+                    Customer: Thanks...?
+                    Customer: Sigh.
+                <<endif>>
+                <<set $progressIvory = 1>>
+                <<set $stateIvory = 1>>
             <<endif>>
-            <<set $progressIvory = 1>>
-            <<set $stateIvory = 1>>
         <<endif>>
     <<else>>
         <<if $progressIvory is 1>>
