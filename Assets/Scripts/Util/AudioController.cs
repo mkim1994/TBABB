@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class AudioController : MonoBehaviour {
 
-    public AudioSource bgm;
+    public AudioSource bgm, signhum, dooropen, doorclose, doorbell, spotlightsfx;
 	// Use this for initialization
 	void Start () {
 		

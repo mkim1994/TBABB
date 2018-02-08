@@ -14,6 +14,7 @@ public class GameManager : MonoBehaviour {
     public DialogueRunner dialogue;
     public NPC CustomerIvory, CustomerSahana;
     public DayCycleManager dayManager;
+    public AudioController audioController;
 
     public Transform entrance;
     public GameObject directionalLight;
