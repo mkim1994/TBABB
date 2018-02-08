@@ -136,6 +136,9 @@ public class NPC : MonoBehaviour
         {
             if (isReadyToTalk)
             {   
+                if(!Services.GameManager.audioController.bgm.isPlaying){
+                    Services.GameManager.audioController.bgm.Play();
+                }
                 //need to add 1 to currentDay to offset the 0 start
                 //Services.GameManager.dialogue.variableStorage.SetValue("$content" + characterName, defaultVar);
                 Services.GameManager.dialogue.StartDialogue((Services.GameManager.dayManager.currentDay + 1) + characterName);
@@ -169,14 +172,19 @@ public class NPC : MonoBehaviour
     }
 
     public void EnterBarAction(){
-
+        Services.GameManager.audioController.dooropen.Play();
+        Services.GameManager.audioController.doorbell.Play();
         silhouette.gameObject.SetActive(true);
         Services.GameManager.directionalLight.SetActive(true);
         Services.GameManager.entranceLight.SetActive(true);
         Sequence enterThroughDoor = DOTween.Sequence();
+        //open door
         enterThroughDoor.Append(Services.GameManager.entrance.DORotate(new Vector3(0, -125f,0), 2f));
         enterThroughDoor.Append(silhouette.transform.DOMoveZ(silhouetteLocation.z - 3f, 1f));
         enterThroughDoor.Append(Services.GameManager.entrance.DOScale(new Vector3(1.2f, 1f, 1f), 1f));
+
+        //close door
+        enterThroughDoor.AppendCallback(()=>Services.GameManager.audioController.doorclose.Play());
         enterThroughDoor.Append(Services.GameManager.entrance.DORotate(new Vector3(0, 0, 0), 1f));
         enterThroughDoor.AppendCallback(()=>Services.GameManager.directionalLight.SetActive(false));
         enterThroughDoor.AppendCallback(() => Services.GameManager.entranceLight.SetActive(false));
@@ -185,7 +193,7 @@ public class NPC : MonoBehaviour
     }
 
     public void TakeSeatAction(){
-        Debug.Log(characterName +" takes seat");
+        Services.GameManager.audioController.spotlightsfx.Play();
         silhouette.transform.position = silhouetteLocation;
         silhouette.gameObject.SetActive(false);
         transform.position = seatLocations[BestSeat()];
