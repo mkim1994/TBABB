@@ -359,6 +359,12 @@ MonoBehaviour:
   - name: drunkSahana
     value: -1
     type: 0
+  - name: stateIvory
+    value: -1
+    type: 0
+  - name: stateSahana
+    value: -1
+    type: 0
   debugTextView: {fileID: 0}
 --- !u!114 &114363662100448426
 MonoBehaviour:

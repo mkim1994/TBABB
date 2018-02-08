@@ -11,6 +11,7 @@ public class DayCycleManager : MonoBehaviour
     public bool switchOff;
 
     public List<Day> days;
+    public List<NPC> currentCustomers;
 
     public GameObject blackPanel;
 
@@ -32,6 +33,7 @@ public class DayCycleManager : MonoBehaviour
     public void Start()
     {
 
+        currentCustomers = new List<NPC>();
         elapsedTime = 0f;
         currentDay = 0; // 0th day is day 1
         offsetTime = 0f;
@@ -86,11 +88,12 @@ public class DayCycleManager : MonoBehaviour
             for (int i = 0; i < days[currentDay].customers.Count; ++i){
                 if(elapsedTime >= days[currentDay].customers[i].GetComponent<CustomerData>().daysvisiting[currentDay]){
                     days[currentDay].customers[i].insideBar = true;
+                    currentCustomers.Add(days[currentDay].customers[i]);
                     days[currentDay].customers.RemoveAt(i);
                     break;
                 }
             }
-            if(days[currentDay].customers.Count == 0){
+            if(days[currentDay].customers.Count == 0 && currentCustomers.Count == 0){
                 dayHasEnded = true;
             }
 
