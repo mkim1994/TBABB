@@ -12,6 +12,5 @@ public static class Services {
     public static DrinkDictionary DrinkDictionary { get; set; }
     public static MixerDictionary MixerDictionary { get; set; }
     public static CustomerDictionary CustomerDictionary { get; set; }
-    public static CoasterManager CoasterManager { get; set; }
-
+ 
 }

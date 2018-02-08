@@ -9,8 +9,6 @@ public class GameManager : MonoBehaviour {
 
 	public GameObject sceneRoot;
     public Camera currentCamera;
-
-
     public GameObject player;
 	public PlayerInput playerInput;
     public DialogueRunner dialogue;
@@ -56,8 +54,7 @@ public class GameManager : MonoBehaviour {
 		Services.DrinkDictionary = new DrinkDictionary(); 
 		Services.MixerDictionary = new MixerDictionary();
 		Services.CustomerDictionary = new CustomerDictionary();
-		Services.CoasterManager = FindObjectOfType<CoasterManager>();
-        //Services.Materials = Resources.Load<MaterialDB>("Art/Materials");
+         //Services.Materials = Resources.Load<MaterialDB>("Art/Materials");
 		//Services.SceneStackManager = new SceneStackManager<TransitionData>(sceneRoot, Services.Prefabs.Scenes);
 
 

@@ -25,7 +25,7 @@ public class PlayerInput : MonoBehaviour {
 	public NPC npc;
 
 	public Vector3 dropPos;
-	private Camera myCam;
+	protected Camera myCam;
 	//raycast management
 	public LayerMask layerMask;
 	public LayerMask dropzoneLayerMask;

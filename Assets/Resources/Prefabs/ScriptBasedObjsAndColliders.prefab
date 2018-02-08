@@ -2681,6 +2681,7 @@ GameObject:
   - component: {fileID: 4870863183096252}
   - component: {fileID: 65053753484662862}
   - component: {fileID: 114838069706939084}
+  - component: {fileID: 114640423773529690}
   m_Layer: 0
   m_Name: DefaultBottle
   m_TagString: Untagged
@@ -9728,8 +9729,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1, y: 7.138943, z: 1}
+  m_Center: {x: 0, y: 3.0694716, z: 0}
 --- !u!65 &65052817464659800
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -12415,6 +12416,40 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isOccupied: 0
+--- !u!114 &114640423773529690
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1984640738679988}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a433c2afe0a76e4bb72e41952f91ec8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  height: 0
+  isPouring: 0
+  coasters: []
+  sodaVolume: 0
+  tonicVolume: 0
+  appleJuiceVolume: 0
+  orangeJuiceVolume: 0
+  lemonJuiceVolume: 0
+  whiskeyVolume: 0
+  tequilaVolume: 0
+  rumVolume: 0
+  ginVolume: 0
+  beerVolume: 0
+  wineVolume: 0
+  brandyVolume: 0
+  vodkaVolume: 0
+  smokiness: 0
+  sweetness: 0
+  sourness: 0
+  bitterness: 0
+  spiciness: 0
+  alcoholVolume: 0
+  abv: 0
 --- !u!114 &114640602289121634
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -12747,7 +12782,6 @@ MonoBehaviour:
   height: 0
   isPouring: 0
   coasters: []
-  targetCoaster: {fileID: 0}
   sodaVolume: 0
   tonicVolume: 0
   appleJuiceVolume: 0
@@ -12906,7 +12940,6 @@ MonoBehaviour:
   height: 0
   isPouring: 0
   coasters: []
-  targetCoaster: {fileID: 0}
   sodaVolume: 0
   tonicVolume: 0
   appleJuiceVolume: 0
@@ -13013,7 +13046,6 @@ MonoBehaviour:
   height: 0
   isPouring: 0
   coasters: []
-  targetCoaster: {fileID: 0}
   sodaVolume: 0
   tonicVolume: 0
   appleJuiceVolume: 0

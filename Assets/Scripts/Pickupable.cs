@@ -132,13 +132,5 @@ public class Pickupable : MonoBehaviour {
     public void SetPickedUpToTrue(){
         pickedUp = true;
     }
-
-   /*  public void EvaluateDrinkInCoaster(){
-		foreach (var coaster in coasters) {
-			if (Vector3.Distance (coaster.gameObject.transform.position, transform.position) <= 0.5f) {
-				coaster.EvaluateDrink (this.thisCocktail);
-			}		
-		}
-	} */
-	
+       
 }
