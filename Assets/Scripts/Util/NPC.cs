@@ -29,6 +29,8 @@ public class NPC : MonoBehaviour
     public SpriteRenderer silhouette;
     private Vector3 silhouetteLocation;
 
+    public bool isReadyToTalk;
+
     void Start()
     {
         DOTween.Init();
@@ -54,8 +56,12 @@ public class NPC : MonoBehaviour
     public void InitiateDialogue(){
         if (!Services.GameManager.dialogue.isDialogueRunning)
         {
-            //need to add 1 to currentDay to offset the 0 start
-            Services.GameManager.dialogue.StartDialogue(characterName + (Services.GameManager.dayManager.currentDay + 1));
+            if (isReadyToTalk)
+            {
+                //need to add 1 to currentDay to offset the 0 start
+                //Services.GameManager.dialogue.variableStorage.SetValue("$content" + characterName, defaultVar);
+                Services.GameManager.dialogue.StartDialogue((Services.GameManager.dayManager.currentDay + 1) + characterName);
+            }
         }
     }
 
@@ -158,16 +164,42 @@ public class NPC : MonoBehaviour
 
             Context.TakeSeatAction();
         }
+
+        public override void Update(){
+            TransitionTo<ReadyToTalk>();
+            return;
+        }
     }
 
     private class ReadyToTalk : CustomerState
     {
+        public override void OnEnter(){
+            Context.isReadyToTalk = true;
+        }
 
+        public override void Update()
+        {
+            if(Services.GameManager.dialogue.variableStorage.GetValue("$state" + Context.characterName) == new Yarn.Value(0)){
+                TransitionTo<WaitingForDrink>();
+                return;
+            }
+        }
     }
 
-    private class Waiting : CustomerState{ //not drinking, just waiting
-        
+    private class WaitingForDrink : CustomerState{ // unable to talk at this point
+        //might want to change it so the customer repeats the order if asked
+        public override void OnEnter()
+        {
+            Context.isReadyToTalk = false;
+        }
+        public override void Update(){
+            /*
+             * if coaster has received something
+             * 
+             * */
+        }
     }
+
     private class Drinking : CustomerState{
         
     }

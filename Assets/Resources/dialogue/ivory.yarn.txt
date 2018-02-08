@@ -1,31 +1,60 @@
-title: Ivory1
+title: 1Ivory
 tags: 
 colorID: 0
-position: 279,149
+position: 114,209
 ---
-<<set $gameover to false>>
-
-Customer: Ha...
-Customer: Whiskey please.
+<<if visited("1Ivory") is false>>
+    <<set $progressIvory = 0>>
+    Customer: Ha...
+    Customer: Whiskey please.
+    <<set $stateIvory = 0>>
+<<else>>
+    <<if $progressIvory is 0>>
+        <<if $drinkScoreIvory is 0>>
+            Customer: Alright.
+            Customer: You take one of the whiskey bottles...
+            Customer: And you pour it into a glass.
+            Customer: It's not that hard, is it?
+        <<else>>
+            <<if $drinkScoreIvory >= 0.8>>
+                Customer: Thanks.
+            <<else>>
+                Customer: Thanks...?
+                Customer: Sigh.
+            <<endif>>
+            <<set $progressIvory = 1>>
+            <<set $stateIvory = 1>>
+        <<endif>>
+    <<else if $progressIvory is 1>>
+        <<set $progressIvory = 2>>
+        Customer: Been a while since I've ended up here.
+        Customer: I don't think I've seen you around.
+        Customer: You new?
+        [[Yes|1IvoryA]]
+        [[No, not really|1IvoryB]]
+    <<else if $progressIvory is 2>>
+        <<if $drinkScoreIvory is 0>>
+            Customer: Alright.
+            Customer: You take one of the whiskey bottles...
+            Customer: And you pour it into a glass.
+        <<else>>
+            <<if $drinkScoreIvory >= 0.8>>
+                Customer: Thanks!
+            <<else>>
+                Customer: Sigh.
+            <<endif>>
+            <<set $progressIvory = 3>>
+            <<set $stateIvory = 1>>
+        <<endif>>
+    <<else if $progressIvory is 3>>
+        
+    <<endif>>
+<<endif>>
 ===
-title: GetGlassDrink1IvoryDay1
+title: 1IvoryA
 tags: 
 colorID: 0
-position: 598,133
----
-<<set $rightdrink to 0>>
-Customer: Thanks.
-Customer: It's been a while since I ended up here.
-Customer: I don't think I've seen you?
-Customer: You new?
-
-[[Yes|2AIvoryDay1]]
-[[No, not really|2BIvoryDay1]]
-===
-title: 2AIvoryDay1
-tags: 
-colorID: 0
-position: 880,173
+position: 559,114
 ---
 Customer: Oh. Okay.
 Customer: Wonder what happened to the last bartender.
@@ -33,11 +62,12 @@ Customer: Doesn't matter though.
 Customer: I've missed this.
 Customer: ...Hey.
 Customer: Can I get another?
+<<set $stateIvory = 0>>
 ===
-title: 2BIvoryDay1
+title: 1IvoryB
 tags: 
 colorID: 0
-position: 882,464
+position: 563,341
 ---
 Customer: Huh.
 Customer: I must've been away longer than I thought.
@@ -47,32 +77,7 @@ Customer: ...
 Customer: I've missed this.
 Customer: ...Hey.
 Customer: Can I get another?
-===
-title: GetNotDrink1IvoryDay1
-tags: 
-colorID: 0
-position: 574,378
----
-<<set $rightdrink to 2>>
-
-Customer: Thanks...?
-Customer: Sigh.
-Customer: It's been a while since I ended up here.
-Customer: I don't think I've seen you?
-Customer: You new?
-
-[[Yes|2AIvoryDay1]]
-[[No, not really|2BIvoryDay1]]
-===
-title: GetDrink1IvoryDay1
-tags: 
-colorID: 0
-position: 329,499
----
-<<set $rightdrink to 1>>
-
-Customer: Uh...this is a lot.
-Customer: Can't you just give it to me in a glass? Or something?
+<<set $stateIvory = 0>>
 ===
 title: 3AIvoryDay1
 tags: 
@@ -178,18 +183,6 @@ Customer: See you around.
 
 <<set $gameover to true>>
 <<customerleave Dialogue>>
-===
-title: GetEmptyGlass1IvoryDay1
-tags: 
-colorID: 0
-position: 549,667
----
-<<set $rightdrink to 2>>
-
-Customer: Alright.
-Customer: You take one of those bottles there...
-Customer: And you pour it into a glass.
-Customer: It's not that hard, is it?
 ===
 title: GetEmptyGlass2IvoryDay1
 tags: 
