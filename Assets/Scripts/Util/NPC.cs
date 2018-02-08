@@ -56,6 +56,78 @@ public class NPC : MonoBehaviour
         fsm.Update();
     }
 
+    [YarnCommand("order")]
+    public void OrderDrink(string flavor, string f, string mixer, string m, string drinkbase, string b){
+        Flavor myFlavor = Flavor.none;
+        Mixer myMixer = Mixer.none;
+        DrinkBase myBase = DrinkBase.none;
+        float fF = 0f; float mF = 0f; float bF = 0f;
+        float.TryParse(f, out fF);
+        float.TryParse(m, out mF);
+        float.TryParse(b, out bF);
+        switch (flavor)
+        {
+            case "bitter":
+                myFlavor = Flavor.bitter;
+                break;
+            case "sweet":
+                myFlavor = Flavor.sweet;
+                break;
+            case "sour":
+                myFlavor = Flavor.sour;
+                break;
+            case "spicy":
+                myFlavor = Flavor.spicy;
+                break;
+            case "smoky":
+                myFlavor = Flavor.smoky;
+                break;
+        }
+        switch (drinkbase)
+        {
+            case "whiskey":
+                myBase = DrinkBase.whiskey;
+                break;
+            case "tequila":
+                myBase = DrinkBase.tequila;
+                break;
+            case "gin":
+                myBase = DrinkBase.gin;
+                break;
+            case "vodka":
+                myBase = DrinkBase.vodka;
+                break;
+            case "beer":
+                myBase = DrinkBase.beer;
+                break;
+            case "rum":
+                myBase = DrinkBase.rum;
+                break;
+            case "wine":
+                myBase = DrinkBase.wine;
+                break;
+        }
+        switch (mixer)
+        {
+            case "applejuice":
+                myMixer = Mixer.apple_juice;
+                break;
+            case "orangejuice":
+                myMixer = Mixer.orange_juice;
+                break;
+            case "tonic":
+                myMixer = Mixer.tonic;
+                break;
+            case "lemonjuice":
+                myMixer = Mixer.lemon_juice;
+                break;
+            case "soda":
+                myMixer = Mixer.soda;
+                break;
+        }
+        DrinkProfile.OrderDrink(myFlavor,fF,myBase,bF,myMixer,mF);
+    }
+
     public void InitiateDialogue(){
         if (!Services.GameManager.dialogue.isDialogueRunning)
         {

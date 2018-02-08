@@ -384,7 +384,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   daysvisiting:
-  - 5
+  - 1
   - 20
   - 0
   - 10
@@ -406,6 +406,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterName: Sahana
+  myCoaster: {fileID: 0}
   talkToNode: Sahana
   scriptToLoad: {fileID: 0}
   insideBar: 0
@@ -417,6 +418,7 @@ MonoBehaviour:
   - {x: 9.11, y: 4.81, z: 12.45}
   enterBarAnimFinished: 0
   silhouette: {fileID: 0}
+  isReadyToTalk: 0
 --- !u!114 &114547003923381196
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -451,6 +453,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterName: Ivory
+  myCoaster: {fileID: 0}
   talkToNode: Ivory
   scriptToLoad: {fileID: 0}
   insideBar: 0
@@ -462,6 +465,7 @@ MonoBehaviour:
   - {x: 9.11, y: 4.81, z: 1.52}
   enterBarAnimFinished: 0
   silhouette: {fileID: 0}
+  isReadyToTalk: 0
 --- !u!212 &212157344272905590
 SpriteRenderer:
   m_ObjectHideFlags: 1

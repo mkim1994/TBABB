@@ -7,6 +7,7 @@ position: 114,209
     <<set $progressIvory = 0>>
     Customer: Ha...
     Customer: Whiskey please.
+    <<order Ivory n 0 n 0 whiskey 0.5>>
     <<set $stateIvory = 0>>
 <<else>>
     <<if $progressIvory is 0>>
@@ -25,29 +26,35 @@ position: 114,209
             <<set $progressIvory = 1>>
             <<set $stateIvory = 1>>
         <<endif>>
-    <<else if $progressIvory is 1>>
-        <<set $progressIvory = 2>>
-        Customer: Been a while since I've ended up here.
-        Customer: I don't think I've seen you around.
-        Customer: You new?
-        [[Yes|1IvoryA]]
-        [[No, not really|1IvoryB]]
-    <<else if $progressIvory is 2>>
-        <<if $drinkScoreIvory is 0>>
-            Customer: Alright.
-            Customer: You take one of the whiskey bottles...
-            Customer: And you pour it into a glass.
+    <<else>>
+        <<if $progressIvory is 1>>
+            <<set $progressIvory = 2>>
+            Customer: Been a while since I've ended up here.
+            Customer: I don't think I've seen you around.
+            Customer: You new?
+            [[Yes|1IvoryA]]
+            [[No, not really|1IvoryB]]
         <<else>>
-            <<if $drinkScoreIvory >= 0.8>>
-                Customer: Thanks!
+            <<if $progressIvory is 2>>
+                <<if $drinkScoreIvory is 0>>
+                    Customer: Alright.
+                    Customer: You take one of the whiskey bottles...
+                    Customer: And you pour it into a glass.
+                <<else>>
+                    <<if $drinkScoreIvory >= 0.8>>
+                        Customer: Thanks!
+                    <<else>>
+                        Customer: Sigh.
+                    <<endif>>
+                    <<set $progressIvory = 3>>
+                    <<set $stateIvory = 1>>
+                <<endif>>
             <<else>>
-                Customer: Sigh.
+                <<if $progressIvory is 3>>
+                    Customer: What. 
+                <<endif>>
             <<endif>>
-            <<set $progressIvory = 3>>
-            <<set $stateIvory = 1>>
         <<endif>>
-    <<else if $progressIvory is 3>>
-        
     <<endif>>
 <<endif>>
 ===
