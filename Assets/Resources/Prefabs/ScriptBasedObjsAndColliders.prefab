@@ -1210,24 +1210,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!1 &1434990186383140
-GameObject:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 4751690107128526}
-  - component: {fileID: 65286292380166686}
-  - component: {fileID: 114668513739246688}
-  - component: {fileID: 114962762145813896}
-  m_Layer: 0
-  m_Name: DefaultBottle (1)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
 --- !u!1 &1435948201185956
 GameObject:
   m_ObjectHideFlags: 1
@@ -2634,24 +2616,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!1 &1880206774976052
-GameObject:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 4377312408204064}
-  - component: {fileID: 33745173821045942}
-  - component: {fileID: 23921615681059962}
-  - component: {fileID: 95414229631288370}
-  m_Layer: 0
-  m_Name: bottle
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
 --- !u!1 &1880981930938582
 GameObject:
   m_ObjectHideFlags: 1
@@ -3025,7 +2989,7 @@ Transform:
   m_Children:
   - {fileID: 4616516398512224}
   m_Father: {fileID: 4861439855706366}
-  m_RootOrder: 23
+  m_RootOrder: 22
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4049560294712648
 Transform:
@@ -3145,7 +3109,7 @@ Transform:
   m_Children:
   - {fileID: 4567749484904666}
   m_Father: {fileID: 4861439855706366}
-  m_RootOrder: 18
+  m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4098682273861458
 Transform:
@@ -3237,7 +3201,7 @@ Transform:
   m_Children:
   - {fileID: 4714312175457610}
   m_Father: {fileID: 4861439855706366}
-  m_RootOrder: 17
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4136986451183026
 Transform:
@@ -3264,7 +3228,7 @@ Transform:
   m_Children:
   - {fileID: 4136986451183026}
   m_Father: {fileID: 4861439855706366}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4152586756410956
 Transform:
@@ -3495,7 +3459,7 @@ Transform:
   m_Children:
   - {fileID: 4168397738965746}
   m_Father: {fileID: 4861439855706366}
-  m_RootOrder: 11
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4203344071484140
 Transform:
@@ -3626,7 +3590,7 @@ Transform:
   m_Children:
   - {fileID: 4655537261643542}
   m_Father: {fileID: 4861439855706366}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4246097286870512
 Transform:
@@ -3747,7 +3711,7 @@ Transform:
   m_Children:
   - {fileID: 4400600968999734}
   m_Father: {fileID: 4861439855706366}
-  m_RootOrder: 24
+  m_RootOrder: 23
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4293946112721712
 Transform:
@@ -3956,7 +3920,7 @@ Transform:
   m_Children:
   - {fileID: 4709638282363810}
   m_Father: {fileID: 4861439855706366}
-  m_RootOrder: 12
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4366378284073296
 Transform:
@@ -3996,20 +3960,7 @@ Transform:
   m_Children:
   - {fileID: 4849905154490470}
   m_Father: {fileID: 4861439855706366}
-  m_RootOrder: 25
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &4377312408204064
-Transform:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1880206774976052}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0, y: -0.553, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 4751690107128526}
-  m_RootOrder: 0
+  m_RootOrder: 24
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4388721300029580
 Transform:
@@ -4158,7 +4109,7 @@ Transform:
   m_Children:
   - {fileID: 4432815505145676}
   m_Father: {fileID: 4861439855706366}
-  m_RootOrder: 16
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4472582659170700
 Transform:
@@ -4250,7 +4201,7 @@ Transform:
   m_Children:
   - {fileID: 4358477131300648}
   m_Father: {fileID: 4861439855706366}
-  m_RootOrder: 21
+  m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4496403817547176
 Transform:
@@ -4290,7 +4241,7 @@ Transform:
   m_Children:
   - {fileID: 4836455672433578}
   m_Father: {fileID: 4861439855706366}
-  m_RootOrder: 15
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4505356072431542
 Transform:
@@ -4317,7 +4268,7 @@ Transform:
   m_Children:
   - {fileID: 4065120732224040}
   m_Father: {fileID: 4861439855706366}
-  m_RootOrder: 19
+  m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4511211742875154
 Transform:
@@ -4357,7 +4308,7 @@ Transform:
   m_Children:
   - {fileID: 4354531331711930}
   m_Father: {fileID: 4861439855706366}
-  m_RootOrder: 28
+  m_RootOrder: 27
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4567749484904666
 Transform:
@@ -4436,7 +4387,7 @@ Transform:
   m_Children:
   - {fileID: 4062714468983616}
   m_Father: {fileID: 4861439855706366}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4643871267597922
 Transform:
@@ -4463,7 +4414,7 @@ Transform:
   m_Children:
   - {fileID: 4769382701935648}
   m_Father: {fileID: 4861439855706366}
-  m_RootOrder: 26
+  m_RootOrder: 25
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4655537261643542
 Transform:
@@ -4529,7 +4480,7 @@ Transform:
   m_Children:
   - {fileID: 4473676530817506}
   m_Father: {fileID: 4861439855706366}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4671576715614004
 Transform:
@@ -4648,20 +4599,6 @@ Transform:
   m_Father: {fileID: 4951544143388070}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &4751690107128526
-Transform:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1434990186383140}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.475, y: 3.6021, z: 10.11}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 4377312408204064}
-  m_Father: {fileID: 4861439855706366}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4752108321446460
 Transform:
   m_ObjectHideFlags: 1
@@ -4700,7 +4637,7 @@ Transform:
   m_Children:
   - {fileID: 4284615640055494}
   m_Father: {fileID: 4861439855706366}
-  m_RootOrder: 22
+  m_RootOrder: 21
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4756828801246640
 Transform:
@@ -4831,7 +4768,7 @@ Transform:
   m_Children:
   - {fileID: 4686658922350814}
   m_Father: {fileID: 4861439855706366}
-  m_RootOrder: 13
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4799231106179484
 Transform:
@@ -4951,7 +4888,7 @@ Transform:
   m_Children:
   - {fileID: 4078868193841266}
   m_Father: {fileID: 4861439855706366}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4853708486890166
 Transform:
@@ -5005,7 +4942,7 @@ Transform:
   m_Children:
   - {fileID: 4425261572423196}
   m_Father: {fileID: 4861439855706366}
-  m_RootOrder: 29
+  m_RootOrder: 28
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4861439855706366
 Transform:
@@ -5018,7 +4955,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4870863183096252}
-  - {fileID: 4751690107128526}
   - {fileID: 4868992524719600}
   - {fileID: 4852344971449580}
   - {fileID: 4244399673833244}
@@ -5075,7 +5011,7 @@ Transform:
   m_Children:
   - {fileID: 4820605738085312}
   m_Father: {fileID: 4861439855706366}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4868992524719600
 Transform:
@@ -5089,7 +5025,7 @@ Transform:
   m_Children:
   - {fileID: 4366671642130544}
   m_Father: {fileID: 4861439855706366}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4870863183096252
 Transform:
@@ -5117,7 +5053,7 @@ Transform:
   m_Children:
   - {fileID: 4129806855761250}
   m_Father: {fileID: 4861439855706366}
-  m_RootOrder: 10
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4917919040448294
 Transform:
@@ -5131,7 +5067,7 @@ Transform:
   m_Children:
   - {fileID: 4727277081994142}
   m_Father: {fileID: 4861439855706366}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4918071895552600
 Transform:
@@ -5158,7 +5094,7 @@ Transform:
   m_Children:
   - {fileID: 4402943408988640}
   m_Father: {fileID: 4861439855706366}
-  m_RootOrder: 14
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4928968546177588
 Transform:
@@ -5185,7 +5121,7 @@ Transform:
   m_Children:
   - {fileID: 4270954712649362}
   m_Father: {fileID: 4861439855706366}
-  m_RootOrder: 27
+  m_RootOrder: 26
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4951544143388070
 Transform:
@@ -5199,7 +5135,7 @@ Transform:
   m_Children:
   - {fileID: 4737233117597314}
   m_Father: {fileID: 4861439855706366}
-  m_RootOrder: 20
+  m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4977689820323362
 Transform:
@@ -9211,40 +9147,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!23 &23921615681059962
-MeshRenderer:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1880206774976052}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_Materials:
-  - {fileID: 2100000, guid: 8481cdd9647ca4f5db48a84ee2a4837a, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 0
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
 --- !u!23 &23939689651197656
 MeshRenderer:
   m_ObjectHideFlags: 1
@@ -10168,13 +10070,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1364403062902334}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!33 &33745173821045942
-MeshFilter:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1880206774976052}
-  m_Mesh: {fileID: 4300000, guid: 953380112456940edb3d7c011c8126f4, type: 3}
 --- !u!33 &33768254880763314
 MeshFilter:
   m_ObjectHideFlags: 1
@@ -10884,18 +10779,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!65 &65286292380166686
-BoxCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1434990186383140}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.7634938, y: 1.0971003, z: 0.6251211}
-  m_Center: {x: 0.0034905672, y: -0.011380911, z: -0.0024785995}
 --- !u!65 &65286849957206640
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -12077,23 +11960,6 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
---- !u!95 &95414229631288370
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1880206774976052}
-  m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: 953380112456940edb3d7c011c8126f4, type: 3}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
 --- !u!95 &95425002728503128
 Animator:
   serializedVersion: 3
@@ -12414,6 +12280,7 @@ MonoBehaviour:
   targetDropzone: {fileID: 0}
   dropPos: {x: 0, y: 0, z: 0}
   pickedUp: 0
+  myName: 
   hasLiquid: 0
   isFull: 0
   isDirty: 0
@@ -12444,6 +12311,7 @@ MonoBehaviour:
   targetDropzone: {fileID: 0}
   dropPos: {x: 0, y: 0, z: 0}
   pickedUp: 0
+  myName: 
   myDrinkBase: 4
   myMixer: 0
 --- !u!114 &114008439942709644
@@ -12460,6 +12328,7 @@ MonoBehaviour:
   targetDropzone: {fileID: 0}
   dropPos: {x: 0, y: 0, z: 0}
   pickedUp: 0
+  myName: 
   myDrinkBase: 0
   myMixer: 1
 --- !u!114 &114012047793093834
@@ -12604,6 +12473,7 @@ MonoBehaviour:
   targetDropzone: {fileID: 0}
   dropPos: {x: 0, y: 0, z: 0}
   pickedUp: 0
+  myName: 
   myDrinkBase: 4
   myMixer: 0
 --- !u!114 &114081560289535150
@@ -12678,6 +12548,7 @@ MonoBehaviour:
   targetDropzone: {fileID: 0}
   dropPos: {x: 0, y: 0, z: 0}
   pickedUp: 0
+  myName: 
   myDrinkBase: 3
   myMixer: 0
 --- !u!114 &114121872271436142
@@ -12706,6 +12577,7 @@ MonoBehaviour:
   targetDropzone: {fileID: 0}
   dropPos: {x: 0, y: 0, z: 0}
   pickedUp: 0
+  myName: 
   myDrinkBase: 2
   myMixer: 0
 --- !u!114 &114128623951713614
@@ -12792,6 +12664,7 @@ MonoBehaviour:
   targetDropzone: {fileID: 0}
   dropPos: {x: 0, y: 0, z: 0}
   pickedUp: 0
+  myName: 
   hasLiquid: 0
   isFull: 0
   isDirty: 0
@@ -12878,6 +12751,7 @@ MonoBehaviour:
   targetDropzone: {fileID: 0}
   dropPos: {x: 0, y: 0, z: 0}
   pickedUp: 0
+  myName: 
   myDrinkBase: 0
   myMixer: 4
 --- !u!114 &114170834196258390
@@ -12940,6 +12814,7 @@ MonoBehaviour:
   targetDropzone: {fileID: 0}
   dropPos: {x: 0, y: 0, z: 0}
   pickedUp: 0
+  myName: 
   myDrinkBase: 0
   myMixer: 2
 --- !u!114 &114177024631739628
@@ -12956,6 +12831,7 @@ MonoBehaviour:
   targetDropzone: {fileID: 0}
   dropPos: {x: 0, y: 0, z: 0}
   pickedUp: 0
+  myName: 
   myDrinkBase: 0
   myMixer: 1
 --- !u!114 &114177677791486028
@@ -12972,6 +12848,7 @@ MonoBehaviour:
   targetDropzone: {fileID: 0}
   dropPos: {x: 0, y: 0, z: 0}
   pickedUp: 0
+  myName: 
   myDrinkBase: 0
   myMixer: 5
 --- !u!114 &114177941391080592
@@ -13036,6 +12913,7 @@ MonoBehaviour:
   targetDropzone: {fileID: 0}
   dropPos: {x: 0, y: 0, z: 0}
   pickedUp: 0
+  myName: 
   myDrinkBase: 3
   myMixer: 0
 --- !u!114 &114205271402240456
@@ -13158,6 +13036,7 @@ MonoBehaviour:
   targetDropzone: {fileID: 0}
   dropPos: {x: 0, y: 0, z: 0}
   pickedUp: 0
+  myName: 
   myDrinkBase: 2
   myMixer: 0
 --- !u!114 &114243487218169828
@@ -13186,6 +13065,7 @@ MonoBehaviour:
   targetDropzone: {fileID: 0}
   dropPos: {x: 0, y: 0, z: 0}
   pickedUp: 0
+  myName: 
   myDrinkBase: 4
   myMixer: 0
 --- !u!114 &114255245636762690
@@ -13202,6 +13082,7 @@ MonoBehaviour:
   targetDropzone: {fileID: 0}
   dropPos: {x: 0, y: 0, z: 0}
   pickedUp: 0
+  myName: 
   myDrinkBase: 2
   myMixer: 0
 --- !u!114 &114255955766454368
@@ -13360,6 +13241,7 @@ MonoBehaviour:
   targetDropzone: {fileID: 0}
   dropPos: {x: 0, y: 0, z: 0}
   pickedUp: 0
+  myName: 
   myDrinkBase: 0
   myMixer: 1
 --- !u!114 &114327979035927658
@@ -13376,6 +13258,7 @@ MonoBehaviour:
   targetDropzone: {fileID: 0}
   dropPos: {x: 0, y: 0, z: 0}
   pickedUp: 0
+  myName: 
   myDrinkBase: 0
   myMixer: 2
 --- !u!114 &114354154107509986
@@ -13450,6 +13333,7 @@ MonoBehaviour:
   targetDropzone: {fileID: 0}
   dropPos: {x: 0, y: 0, z: 0}
   pickedUp: 0
+  myName: 
   myDrinkBase: 0
   myMixer: 5
 --- !u!114 &114383219390161612
@@ -13536,6 +13420,7 @@ MonoBehaviour:
   targetDropzone: {fileID: 0}
   dropPos: {x: 0, y: 0, z: 0}
   pickedUp: 0
+  myName: 
   myDrinkBase: 0
   myMixer: 4
 --- !u!114 &114417515181688728
@@ -13634,6 +13519,7 @@ MonoBehaviour:
   targetDropzone: {fileID: 0}
   dropPos: {x: 0, y: 0, z: 0}
   pickedUp: 0
+  myName: 
   myDrinkBase: 0
   myMixer: 2
 --- !u!114 &114474628216073948
@@ -13696,6 +13582,7 @@ MonoBehaviour:
   targetDropzone: {fileID: 0}
   dropPos: {x: 0, y: 0, z: 0}
   pickedUp: 0
+  myName: 
   myDrinkBase: 0
   myMixer: 4
 --- !u!114 &114506814342753598
@@ -14058,6 +13945,7 @@ MonoBehaviour:
   targetDropzone: {fileID: 0}
   dropPos: {x: 0, y: 0, z: 0}
   pickedUp: 0
+  myName: 
   myDrinkBase: 4
   myMixer: 0
 --- !u!114 &114615621476436960
@@ -14108,6 +13996,7 @@ MonoBehaviour:
   targetDropzone: {fileID: 0}
   dropPos: {x: 0, y: 0, z: 0}
   pickedUp: 0
+  myName: 
   myDrinkBase: 0
   myMixer: 5
 --- !u!114 &114631998686116828
@@ -14124,6 +14013,7 @@ MonoBehaviour:
   targetDropzone: {fileID: 0}
   dropPos: {x: 0, y: 0, z: 0}
   pickedUp: 0
+  myName: 
   myDrinkBase: 3
   myMixer: 0
 --- !u!114 &114637136280928268
@@ -14198,6 +14088,7 @@ MonoBehaviour:
   targetDropzone: {fileID: 0}
   dropPos: {x: 0, y: 0, z: 0}
   pickedUp: 0
+  myName: 
   myDrinkBase: 0
   myMixer: 2
 --- !u!114 &114659106742056184
@@ -14226,6 +14117,7 @@ MonoBehaviour:
   targetDropzone: {fileID: 0}
   dropPos: {x: 0, y: 0, z: 0}
   pickedUp: 0
+  myName: 
   myDrinkBase: 0
   myMixer: 5
 --- !u!114 &114667458223893424
@@ -14242,24 +14134,9 @@ MonoBehaviour:
   targetDropzone: {fileID: 0}
   dropPos: {x: 0, y: 0, z: 0}
   pickedUp: 0
+  myName: 
   myDrinkBase: 0
   myMixer: 1
---- !u!114 &114668513739246688
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1434990186383140}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 99b9acb760e670a429ef08ffc808a5ab, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  targetDropzone: {fileID: 0}
-  dropPos: {x: 0, y: 0, z: 0}
-  pickedUp: 0
-  myDrinkBase: 8
-  myMixer: 0
 --- !u!114 &114697866510559260
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -14390,6 +14267,7 @@ MonoBehaviour:
   targetDropzone: {fileID: 0}
   dropPos: {x: 0, y: 0, z: 0}
   pickedUp: 0
+  myName: 
   myDrinkBase: 2
   myMixer: 0
 --- !u!114 &114743024052657828
@@ -14618,6 +14496,7 @@ MonoBehaviour:
   targetDropzone: {fileID: 0}
   dropPos: {x: 0, y: 0, z: 0}
   pickedUp: 0
+  myName: 
   myDrinkBase: 1
   myMixer: 0
 --- !u!114 &114841779087605262
@@ -14714,6 +14593,7 @@ MonoBehaviour:
   targetDropzone: {fileID: 0}
   dropPos: {x: 0, y: 0, z: 0}
   pickedUp: 0
+  myName: 
   hasLiquid: 0
   isFull: 0
   isDirty: 0
@@ -14744,6 +14624,7 @@ MonoBehaviour:
   targetDropzone: {fileID: 0}
   dropPos: {x: 0, y: 0, z: 0}
   pickedUp: 0
+  myName: 
   myDrinkBase: 3
   myMixer: 0
 --- !u!114 &114861959908691570
@@ -14854,6 +14735,7 @@ MonoBehaviour:
   targetDropzone: {fileID: 0}
   dropPos: {x: 0, y: 0, z: 0}
   pickedUp: 0
+  myName: 
   myDrinkBase: 0
   myMixer: 4
 --- !u!114 &114908950876974512
@@ -15008,40 +14890,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isOccupied: 0
---- !u!114 &114962762145813896
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1434990186383140}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8a433c2afe0a76e4bb72e41952f91ec8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  height: 0
-  isPouring: 0
-  coasters: []
-  sodaVolume: 0
-  tonicVolume: 0
-  appleJuiceVolume: 0
-  orangeJuiceVolume: 0
-  lemonJuiceVolume: 0
-  whiskeyVolume: 0
-  tequilaVolume: 0
-  rumVolume: 0
-  ginVolume: 0
-  beerVolume: 0
-  wineVolume: 0
-  brandyVolume: 0
-  vodkaVolume: 0
-  smokiness: 0
-  sweetness: 0
-  sourness: 0
-  bitterness: 0
-  spiciness: 0
-  alcoholVolume: 0
-  abv: 0
 --- !u!114 &114973532368339418
 MonoBehaviour:
   m_ObjectHideFlags: 1

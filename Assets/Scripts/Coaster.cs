@@ -5,7 +5,7 @@ using UnityEngine;
 public class Coaster : MonoBehaviour
 {
 	private NPC myCustomer;
-
+	private Dropzone myDropzone;
 	private DrinkProfile currentOrder;
 	// public enum Customer
 	// {
@@ -17,6 +17,7 @@ public class Coaster : MonoBehaviour
 	public DrinkProfile customerOrder;	
 	void Start()
 	{
+		myDropzone = GetComponentInChildren<Dropzone>();
  		switch (currentCustomer)
 		{
 			case Customer.IvoryDefault:
@@ -35,12 +36,10 @@ public class Coaster : MonoBehaviour
 
 	void Update()
 	{
-		if(currentOrder != null){
-		}
  	}
 
 	public void EvaluateDrink(DrinkProfile _cocktail){
-		if(currentOrder != null && _cocktail !=null){
+  		if(currentOrder != null && _cocktail !=null){
 			float drinkDeviation = DrinkProfile.GetProfileDeviation(_cocktail, currentOrder);
 			// float abvSimilarity = DrinkProfile.GetABV
 			float abvDeviation = DrinkProfile.GetABVdeviation(_cocktail, currentOrder);
@@ -85,7 +84,7 @@ public class Coaster : MonoBehaviour
 			myCustomer.InitiateDialogue();
 			myCustomer.SetCustomerVars(0, 0);
 		}	
-	}
+ 	}
 
 	public void TakeOrder (DrinkProfile _customerOrder){
 		currentOrder = _customerOrder; 	
