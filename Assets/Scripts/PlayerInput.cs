@@ -8,7 +8,7 @@ using UnityEngine.SceneManagement;
 public class PlayerInput : MonoBehaviour {
 	
 	[SerializeField]float moveSpeed = 2.0f;
-	[SerializeField]float lookSensitivity = 0.01f;
+	[SerializeField]float lookSensitivity = 0.005f;
 	// [SerializeField]float smoothing = 2.0f;
 
 	Vector2 smoothV;
@@ -50,7 +50,8 @@ public class PlayerInput : MonoBehaviour {
 	bool i_endUseRight;
 	bool i_restart;
 	bool i_talk;
-
+	bool i_choose1;
+	bool i_choose2;
 	void Awake(){
 		Cursor.visible = false;
 		Cursor.lockState = CursorLockMode.Locked;
@@ -86,6 +87,8 @@ public class PlayerInput : MonoBehaviour {
 		i_endUseRight = player.GetButtonUp("Use Right");
 		i_restart = player.GetButtonDown("Restart");
 		i_talk = player.GetButtonDown("Talk");
+		i_choose1 = player.GetButtonDown("Choose1");
+		i_choose2 = player.GetButtonDown("Choose2");
 	}
 
 	private void ProcessInput(){		
@@ -272,6 +275,17 @@ public class PlayerInput : MonoBehaviour {
 			if(npc != null){
 				npc.InitiateDialogue();
 			}
+ 		}
+		#endregion
+		#region Dialogue Selection
+		if(i_choose1){
+			// Services.GameManager.dialogue.dialogueUI.ChooseOption(0);
+ 			Services.GameManager.dialogue.GetComponent<DialogueUI>().ChooseOption(0);
+		}
+
+		if(i_choose2){
+			// Services.GameManager.dialogue.dialogueUI.ChooseOption(1);
+			Services.GameManager.dialogue.GetComponent<DialogueUI>().ChooseOption(0);
  		}
 		#endregion
 	}

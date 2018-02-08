@@ -98,6 +98,12 @@ public class UIControls : MonoBehaviour {
 				rayControlsText.text = "Press Q to pick up " + targetObj + " with left hand \n Press E to pick up " + targetObj + " with right hand";
 			} else if (hitObj.GetComponent<Glass>() != null){
 				rayControlsText.text = "Press Q to pick up glass with left hand \n Press E to pick up glass with right hand";
+			} else if (hitObj.GetComponent<NPC>() != null){
+				if(hitObj.GetComponent<NPC>().isReadyToTalk){
+					rayControlsText.text = "Press SPACE to talk";
+				} else if (!hitObj.GetComponent<NPC>().isReadyToTalk){
+					rayControlsText.text = "";
+				}
 			}
 			else {
 				rayControlsText.text = rayControlsStrings[0];				
