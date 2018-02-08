@@ -6,9 +6,9 @@ position: 114,209
 <<if visited("1Ivory") is false>>
     <<set $progressIvory = 0>>
     Customer: Ha...
-    Customer: Whiskey please.
     <<order Ivory n 0 n 0 whiskey 1.0>>
     <<set $stateIvory = 0>>
+    Customer: Whiskey please.
 <<else>>
     <<if $progressIvory is 0>>
         <<if $drinkScoreIvory is 0>>
@@ -72,9 +72,10 @@ Customer: Oh. Okay.
 Customer: Wonder what happened to the last bartender.
 Customer: Doesn't matter though.
 Customer: I've missed this.
-Customer: ...Hey.
-Customer: Can I get another?
-<<set $stateIvory = 0>>
+Customer: Well. 
+Customer: See you around.
+Customer: Maybe I'll come again tomorrow.
+<<set $stateIvory = 5>>
 ===
 title: 1IvoryB
 tags: 
@@ -87,9 +88,10 @@ Customer: Though I find that hard to believe.
 Customer: I'm pretty sure you're new...
 Customer: ...
 Customer: I've missed this.
-Customer: ...Hey.
-Customer: Can I get another?
-<<set $stateIvory = 0>>
+Customer: Well. 
+Customer: See you around.
+Customer: Maybe I'll come again tomorrow.
+<<set $stateIvory = 5>>
 ===
 title: 3AIvoryDay1
 tags: 

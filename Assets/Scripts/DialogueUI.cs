@@ -128,6 +128,12 @@ public class DialogueUI : Yarn.Unity.DialogueUIBehaviour
 
     }
 
+    public void ChooseOption(int o){
+        if(optionButtons[o].gameObject.activeSelf){
+            SetOption(o);
+        }
+    }
+
     /// Show a line of dialogue, gradually
     public override IEnumerator RunLine(Yarn.Line line)
     {
