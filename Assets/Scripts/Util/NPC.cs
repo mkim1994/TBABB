@@ -11,6 +11,8 @@ public class NPC : MonoBehaviour
 {
     private CustomerData customerData;
     public string characterName = "";
+    public Coaster myCoaster;
+
 
     [FormerlySerializedAs("startNode")]
     public string talkToNode = "";
@@ -30,6 +32,7 @@ public class NPC : MonoBehaviour
     private Vector3 silhouetteLocation;
 
     public bool isReadyToTalk;
+
 
     void Start()
     {
@@ -57,7 +60,7 @@ public class NPC : MonoBehaviour
         if (!Services.GameManager.dialogue.isDialogueRunning)
         {
             if (isReadyToTalk)
-            {
+            {   
                 //need to add 1 to currentDay to offset the 0 start
                 //Services.GameManager.dialogue.variableStorage.SetValue("$content" + characterName, defaultVar);
                 Services.GameManager.dialogue.StartDialogue((Services.GameManager.dayManager.currentDay + 1) + characterName);
@@ -71,7 +74,6 @@ public class NPC : MonoBehaviour
         var v2 = new Yarn.Value(alcohol);
         Services.GameManager.dialogue.variableStorage.SetValue("$drinkScore"+characterName,v1);
         Services.GameManager.dialogue.variableStorage.SetValue("$drinkAlcohol" + characterName, v2);
-        
     } 
 
     public void ResetCustomerVars(){

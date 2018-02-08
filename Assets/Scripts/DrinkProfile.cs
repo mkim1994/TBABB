@@ -14,6 +14,7 @@ public class DrinkProfile {
 	public float whiskeyRate, tequilaRate, rumRate, ginRate, beerRate, wineRate, brandyRate, vodkaRate;
 	public float smokiness, sweetness, sourness, bitterness, alcoholicStrength, spiciness;
  
+	public float drinkSimilarity = 0;
 	public DrinkProfile(float _sodaRate = 0, float _tonicRate = 0, float _appleJuiceRate = 0, float _orangeJuiceRate = 0,
 						float _lemonJuiceRate = 0, //mixers
 						
@@ -66,38 +67,70 @@ public class DrinkProfile {
 	}
 
 
-	public static DrinkProfile CompareProfiles (DrinkProfile one, DrinkProfile two){
-		DrinkProfile combinedProfile = new DrinkProfile(
-			one.sodaRate - two.sodaRate, 
-			one.tonicRate - two.tonicRate,
-			one.appleJuiceRate - two.appleJuiceRate,
-			one.orangeJuiceRate - two.orangeJuiceRate,
-			one.lemonJuiceRate - two.lemonJuiceRate,
-			one.lemonSliceRate - two.lemonSliceRate,
-			one.orangePeelRate - two.orangePeelRate,
-			one.bitterGarnishRate-  two.bitterGarnishRate,
-			one.sugarRate - two.sugarRate,
-			one.oliveRate - two.oliveRate,
-			one.chiliPowderRate - two.chiliPowderRate,
-			one.whiskeyRate - two.whiskeyRate,
-			one.tequilaRate - two.tequilaRate,
-			one.rumRate - two.rumRate,
-			one.ginRate - two.ginRate,
-			one.beerRate - two.beerRate,
-			one.wineRate - two.wineRate,
-			one.brandyRate - two.brandyRate,
-			one.vodkaRate - two.vodkaRate,
-			one.alcoholicStrength - two.alcoholicStrength,
-			one.smokiness - two.smokiness,
-			one.sweetness - two.sweetness,
-			one.sourness - two.sourness,
-			one.bitterness - two.bitterness,
-			one.spiciness - two.spiciness
-			);
+	public static float GetProfileDeviation (DrinkProfile one, DrinkProfile two){
+		float _similarity = 0;
+		_similarity = 	Mathf.Abs(one.sodaRate - two.sodaRate) 
+					+ Mathf.Abs(one.tonicRate - two.tonicRate) 
+					+ Mathf.Abs(one.appleJuiceRate - two.appleJuiceRate)
+					+ Mathf.Abs (one.orangeJuiceRate - two.orangeJuiceRate)
+					+ Mathf.Abs (one.lemonJuiceRate - two.lemonJuiceRate)
+					+ Mathf.Abs(one.lemonSliceRate - two.lemonSliceRate)
+					+ Mathf.Abs(one.orangePeelRate - two.orangePeelRate)
+					+ Mathf.Abs(one.bitterGarnishRate - two.bitterGarnishRate)
+					+ Mathf.Abs(one.sugarRate - two.sugarRate)
+					+ Mathf.Abs(one.oliveRate - two.oliveRate)
+					+ Mathf.Abs(one.chiliPowderRate - two.chiliPowderRate)
+					+ Mathf.Abs(one.whiskeyRate - two.whiskeyRate)
+					+ Mathf.Abs(one.tequilaRate - two.tequilaRate)
+					+ Mathf.Abs(one.rumRate - two.rumRate)
+					+ Mathf.Abs(one.ginRate - two.ginRate)
+					+ Mathf.Abs(one.beerRate - two.beerRate)
+					+ Mathf.Abs(one.wineRate - two.wineRate)
+					+ Mathf.Abs(one.brandyRate - two.brandyRate)
+					+ Mathf.Abs(one.vodkaRate - two.vodkaRate)
+					// + Mathf.Abs(one.alcoholicStrength - two.alcoholicStrength)
+					+ Mathf.Abs(one.smokiness - two.smokiness)
+					+ Mathf.Abs(one.sweetness - two.sweetness)
+					+ Mathf.Abs(one.sourness - two.sourness)
+					+ Mathf.Abs(one.bitterness - two.bitterness)
+					+ Mathf.Abs(one.spiciness - two.spiciness);
 
-			return combinedProfile;
+		// DrinkProfile combinedProfile = new DrinkProfile(
+		// 	one.sodaRate - two.sodaRate, 
+		// 	one.tonicRate - two.tonicRate,
+		// 	one.appleJuiceRate - two.appleJuiceRate,
+		// 	one.orangeJuiceRate - two.orangeJuiceRate,
+		// 	one.lemonJuiceRate - two.lemonJuiceRate,
+		// 	one.lemonSliceRate - two.lemonSliceRate,
+		// 	one.orangePeelRate - two.orangePeelRate,
+		// 	one.bitterGarnishRate - two.bitterGarnishRate,
+		// 	one.sugarRate - two.sugarRate,
+		// 	one.oliveRate - two.oliveRate,
+		// 	one.chiliPowderRate - two.chiliPowderRate,
+		// 	one.whiskeyRate - two.whiskeyRate,
+		// 	one.tequilaRate - two.tequilaRate,
+		// 	one.rumRate - two.rumRate,
+		// 	one.ginRate - two.ginRate,
+		// 	one.beerRate - two.beerRate,
+		// 	one.wineRate - two.wineRate,
+		// 	one.brandyRate - two.brandyRate,
+		// 	one.vodkaRate - two.vodkaRate,
+		// 	one.alcoholicStrength - two.alcoholicStrength,
+		// 	one.smokiness - two.smokiness,
+		// 	one.sweetness - two.sweetness,
+		// 	one.sourness - two.sourness,
+		// 	one.bitterness - two.bitterness,
+		// 	one.spiciness - two.spiciness
+		// 	);
+
+			return _similarity;
 	}
 
+	public static float GetABVdeviation(DrinkProfile _drink1, DrinkProfile _drink2){
+		float abvDeviation = 0;
+		abvDeviation = Mathf.Abs(_drink1.alcoholicStrength - _drink2.alcoholicStrength);
+		return abvDeviation;
+	}
 	public static DrinkProfile AddNewProfilePreferences(DrinkProfile profile, Flavor newFlavor, float newFlavorPref, DrinkBase newBase, float newDrinkBasePref, Mixer newMixer, float newMixerPref, float newAlcoholPref)
 	{
 		if(newFlavor == Flavor.bitter){

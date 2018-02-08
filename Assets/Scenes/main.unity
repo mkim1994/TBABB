@@ -1504,6 +1504,11 @@ Prefab:
       propertyPath: m_LocalPosition.z
       value: 10.11
       objectReference: {fileID: 0}
+    - target: {fileID: 114744907413054334, guid: 81df8f504d79640629ad026d32ff0cd5,
+        type: 2}
+      propertyPath: currentCustomer
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 81df8f504d79640629ad026d32ff0cd5, type: 2}
   m_IsPrefabParent: 0
