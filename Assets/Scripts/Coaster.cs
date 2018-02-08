@@ -41,6 +41,7 @@ public class Coaster : MonoBehaviour
 
 	public void EvaluateDrink(DrinkProfile _cocktail){
 		if(currentOrder != null){
+            Debug.Log("currentOrder");
 			float drinkDeviation = DrinkProfile.GetProfileDeviation(_cocktail, currentOrder);
 			// float abvSimilarity = DrinkProfile.GetABV
 			float abvDeviation = DrinkProfile.GetABVdeviation(_cocktail, currentOrder);

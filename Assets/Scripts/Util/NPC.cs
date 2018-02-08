@@ -125,7 +125,10 @@ public class NPC : MonoBehaviour
                 myMixer = Mixer.soda;
                 break;
         }
-        DrinkProfile.OrderDrink(myFlavor,fF,myBase,bF,myMixer,mF);
+        if (myCoaster != null)
+        {
+            myCoaster.TakeOrder(DrinkProfile.OrderDrink(myFlavor, fF, myBase, bF, myMixer, mF));
+        }
     }
 
     public void InitiateDialogue(){
@@ -144,6 +147,7 @@ public class NPC : MonoBehaviour
         //float f1 = Services.GameManager.dialogue.variableStorage.GetValue("$drinkType" + characterName).AsNumber;
         var v1 = new Yarn.Value(score);
         var v2 = new Yarn.Value(alcohol);
+        Debug.Log(score);
         Services.GameManager.dialogue.variableStorage.SetValue("$drinkScore"+characterName,v1);
         Services.GameManager.dialogue.variableStorage.SetValue("$drinkAlcohol" + characterName, v2);
     } 
