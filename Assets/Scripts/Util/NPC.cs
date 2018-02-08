@@ -202,6 +202,13 @@ public class NPC : MonoBehaviour
 
     }
 
+    public void LeavingBarAction(){
+        Services.GameManager.dayManager.currentCustomers.Remove(this);
+        GetComponent<BoxCollider>().enabled = false;
+        GetComponentInChildren<SpriteRenderer>().enabled = false;
+        GetComponentInChildren<Light>().enabled = false;
+    }
+
     int BestSeat(){
         int minIndex = 0;
         for (int i = 0; i < customerData.rankedseats.Length; ++i){
@@ -319,6 +326,9 @@ public class NPC : MonoBehaviour
         public override void Update(){
             if (Services.GameManager.dialogue.variableStorage.GetValue("$state" + Context.characterName) == new Yarn.Value(5))
             {
+                Context.isReadyToTalk = false;
+
+                Services.GameManager.dialogue.variableStorage.SetValue("$state" + Context.characterName, new Yarn.Value(-1));
                 TransitionTo<LeavingBar>();
                 return;
             }
@@ -330,7 +340,14 @@ public class NPC : MonoBehaviour
     }
 
     private class LeavingBar : CustomerState{
-        
+        public override void OnEnter(){
+            
+        }
+        public override void Update(){
+            Context.LeavingBarAction();
+            TransitionTo<OutsideBar>();
+            return;
+        }
     }
 }
 
