@@ -29,7 +29,6 @@ using System.Collections;
 /// Attach sprite renderer to game object
 namespace Yarn.Unity.Example {
 
-    [RequireComponent (typeof (SpriteRenderer))]
     /// Attach SpriteSwitcher to game object
     public class SpriteSwitcher : MonoBehaviour {
 
@@ -57,7 +56,7 @@ namespace Yarn.Unity.Example {
                 return;
             }
 
-            GetComponent<SpriteRenderer>().sprite = s;
+            GetComponentInChildren<SpriteRenderer>().sprite = s;
         }
     }
 
