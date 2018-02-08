@@ -108,7 +108,7 @@ public class PlayerInput : MonoBehaviour {
  		if(pickupable != null){ //aim assist
 			t += 2f * Time.deltaTime;
 			lookSensitivity = Mathf.Lerp(lookSensitivityAtStart, aimAssistSensitivity, t);
-			Vector3 aimAssistDir = myCam.transform.position - pickupable.transform.position;
+			// Vector3 aimAssistDir = myCam.transform.position - pickupable.transform.position;
  			//aim assist attempt (not working)
  			// if(Mathf.Abs){
 				// float aimY = verticalLook;

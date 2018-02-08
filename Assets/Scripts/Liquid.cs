@@ -193,15 +193,15 @@ public class Liquid : MonoBehaviour {
 		return _sourRate/height;	
  	}
 	private float GetSpiciness(){
-		float _spicyRate = 0;
-		_spicyRate = Services.DrinkDictionary.drinkBases[DrinkBase.whiskey].spicyRate*whiskeyVolume			
-					+ Services.DrinkDictionary.drinkBases[DrinkBase.tequila].spicyRate*tequilaVolume	
-					+ Services.DrinkDictionary.drinkBases[DrinkBase.rum].spicyRate*rumVolume	
-					+ Services.DrinkDictionary.drinkBases[DrinkBase.gin].spicyRate*ginVolume	
-					+ Services.DrinkDictionary.drinkBases[DrinkBase.beer].spicyRate*beerVolume	
-					+ Services.DrinkDictionary.drinkBases[DrinkBase.wine].spicyRate*wineVolume	
-					+ Services.DrinkDictionary.drinkBases[DrinkBase.brandy].spicyRate*brandyVolume	
-					+ Services.DrinkDictionary.drinkBases[DrinkBase.vodka].spicyRate*vodkaVolume;
+		float _spicyRate = 0;		
+		_spicyRate = Services.DrinkDictionary.drinkBases[DrinkBase.whiskey].spiciness*whiskeyVolume			
+					+ Services.DrinkDictionary.drinkBases[DrinkBase.tequila].spiciness*tequilaVolume	
+					+ Services.DrinkDictionary.drinkBases[DrinkBase.rum].spiciness*rumVolume	
+					+ Services.DrinkDictionary.drinkBases[DrinkBase.gin].spiciness*ginVolume	
+					+ Services.DrinkDictionary.drinkBases[DrinkBase.beer].spiciness*beerVolume	
+					+ Services.DrinkDictionary.drinkBases[DrinkBase.wine].spiciness*wineVolume	
+					+ Services.DrinkDictionary.drinkBases[DrinkBase.brandy].spiciness*brandyVolume	
+					+ Services.DrinkDictionary.drinkBases[DrinkBase.vodka].spiciness*vodkaVolume;
 		return _spicyRate/height;	
  	}
 
