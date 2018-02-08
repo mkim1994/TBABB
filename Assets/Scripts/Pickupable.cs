@@ -11,6 +11,8 @@ public class Pickupable : MonoBehaviour {
     public Dropzone targetDropzone;
     public Vector3 dropPos;
     public bool pickedUp = false;
+
+    public string myName = "";
     // public List<Coaster> coasters = new List<Coaster> ();
 
     void Start(){
@@ -131,6 +133,64 @@ public class Pickupable : MonoBehaviour {
 
     public void SetPickedUpToTrue(){
         pickedUp = true;
+    }
+
+    public string GetMyName(DrinkBase _base, Mixer _mixer){
+        string _myName = "";
+        if(_base != DrinkBase.none && _mixer == Mixer.none){
+            switch (_base){
+                case DrinkBase.beer:
+                    _myName = "beer";
+                break;
+                case DrinkBase.brandy:
+                    _myName = "brandy";
+                break;
+                case DrinkBase.gin:
+                    _myName = "gin";
+                break;
+                case DrinkBase.rum:
+                    _myName = "rum";
+                break;
+                case DrinkBase.tequila:
+                    _myName = "tequila";
+                break;
+                case DrinkBase.vodka:
+                    _myName = "vodka";
+                break;
+                case DrinkBase.whiskey:
+                    _myName = "whiskey";
+                break;
+                case DrinkBase.wine:
+                    _myName = "wine";
+                break;
+                default:
+                break;
+            }
+        }
+
+        if(_base == DrinkBase.none && _mixer != Mixer.none){
+            switch (_mixer){
+                case Mixer.tonic:
+                    _myName = "tonic";
+                break;
+                case Mixer.soda:
+                    _myName = "soda";
+                break;
+                case Mixer.orange_juice:
+                    _myName = "orange juice";
+                break;
+                case Mixer.lemon_juice:
+                    _myName = "lemon juice";
+                break;
+                case Mixer.apple_juice:
+                    _myName = "apple juice";
+                break;
+                default:
+                break;
+            }
+        }
+
+        return _myName;
     }
        
 }

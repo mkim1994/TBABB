@@ -5,14 +5,14 @@ using UnityEngine.UI;
 public class UIControls : MonoBehaviour {
 	[SerializeField]LayerMask controlsMask;
 	[SerializeField]Text controlsText;
-	[SerializeField]GameObject targetObj;
+	[SerializeField]string targetObj;
 
 	[SerializeField]List<string> controls = new List<string>();
 	private Camera myCam;
 
 	void Start(){
-		controls.Add("Press Q to pick up " + targetObj.gameObject.name + " with left hand");
-		controls.Add("Press E to pick up " + targetObj.gameObject.name + " with right hand");
+		controls.Add("Press Q to pick up " + targetObj + " with left hand");
+		controls.Add("Press E to pick up " + targetObj + " with right hand");
 		controls.Add("Press E to drop object in right hand");
 		controls.Add("Press Q to drop object in left hand");
 		controls.Add("Hold LMB or RMB to pour drink");
@@ -29,7 +29,37 @@ public class UIControls : MonoBehaviour {
 		
 		if(Physics.Raycast(ray, out hit, rayDist, controlsMask)){
 			GameObject hitObj = hit.transform.gameObject; //if you're actually looking at something
-
+			if(hitObj.GetComponent<Bottle>() != null){
+				Bottle targetBottle = hitObj.GetComponent<Bottle>();
+				switch (targetBottle.myDrinkBase){
+					case DrinkBase.beer:
+						targetObj = "beer";
+					break;
+					case DrinkBase.brandy:
+						targetObj = "brandy";
+					break;
+					case DrinkBase.gin:
+						targetObj = "gin";
+					break;
+					case DrinkBase.rum:
+						targetObj = "rum";
+					break;
+					case DrinkBase.tequila:
+						targetObj = "tequila";
+					break;
+					case DrinkBase.vodka:
+						targetObj = "vodka";
+					break;
+					case DrinkBase.whiskey:
+						targetObj = "whiskey";
+					break;
+					case DrinkBase.wine:
+						targetObj = "wine";
+					break;
+					default:
+					break;
+				}
+			}
 		} else {
 			//no hit.
 
