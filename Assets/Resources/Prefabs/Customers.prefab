@@ -39,6 +39,7 @@ GameObject:
   - component: {fileID: 114652257479172276}
   - component: {fileID: 114273037733688660}
   - component: {fileID: 65103052466598304}
+  - component: {fileID: 114694410589545504}
   m_Layer: 10
   m_Name: Ivory
   m_TagString: Untagged
@@ -466,6 +467,24 @@ MonoBehaviour:
   enterBarAnimFinished: 0
   silhouette: {fileID: 0}
   isReadyToTalk: 0
+--- !u!114 &114694410589545504
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1385666405802664}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 38c717a794b9f4e66802ee51e19eaf8a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sprites:
+  - name: idle
+    sprite: {fileID: 21300000, guid: 21c982630e4b3427f97b278c867ba185, type: 3}
+  - name: happy
+    sprite: {fileID: 21300000, guid: 9c7ca8c79b7a940cd955b1d904f366f6, type: 3}
+  - name: unhappy
+    sprite: {fileID: 21300000, guid: cf8f5e1a0ad99408fab8957048d12e8c, type: 3}
 --- !u!212 &212157344272905590
 SpriteRenderer:
   m_ObjectHideFlags: 1

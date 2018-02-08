@@ -150,7 +150,6 @@ public class NPC : MonoBehaviour
         //float f1 = Services.GameManager.dialogue.variableStorage.GetValue("$drinkType" + characterName).AsNumber;
         var v1 = new Yarn.Value(score);
         var v2 = new Yarn.Value(alcohol);
-        Debug.Log(score);
         Services.GameManager.dialogue.variableStorage.SetValue("$drinkScore"+characterName,v1);
         Services.GameManager.dialogue.variableStorage.SetValue("$drinkAlcohol" + characterName, v2);
     } 
@@ -203,6 +202,13 @@ public class NPC : MonoBehaviour
 
     }
 
+    public void LeavingBarAction(){
+        Services.GameManager.dayManager.currentCustomers.Remove(this);
+        GetComponent<BoxCollider>().enabled = false;
+        GetComponentInChildren<SpriteRenderer>().enabled = false;
+        GetComponentInChildren<Light>().enabled = false;
+    }
+
     int BestSeat(){
         int minIndex = 0;
         for (int i = 0; i < customerData.rankedseats.Length; ++i){
@@ -231,7 +237,7 @@ public class NPC : MonoBehaviour
         //door anim
         public override void OnEnter(){
             //on animation complete, <takeseat>
-            Debug.Log("onenter enter bar");
+            Debug.Log("enter bar");
             Context.EnterBarAction();
         }
         public override void Update(){
@@ -247,7 +253,7 @@ public class NPC : MonoBehaviour
     private class TakeSeat : CustomerState{
         //choose seat, re-enable sprites and scripts
         public override void OnEnter(){
-
+            Debug.Log("take seat");
             Context.TakeSeatAction();
         }
 
@@ -260,6 +266,7 @@ public class NPC : MonoBehaviour
     private class ReadyToTalk : CustomerState
     {
         public override void OnEnter(){
+            Debug.Log("ready to talk");
             Context.isReadyToTalk = true;
         }
 
@@ -276,9 +283,15 @@ public class NPC : MonoBehaviour
         //might want to change it so the customer repeats the order if asked
         public override void OnEnter()
         {
+            Debug.Log("waiting for drink");
             Context.isReadyToTalk = false;
         }
         public override void Update(){
+            if(Services.GameManager.dialogue.variableStorage.GetValue("$state" + Context.characterName) == new Yarn.Value(1)){
+                Context.isReadyToTalk = true;
+                TransitionTo<Drinking>();
+                return;
+            }
             /*
              * if coaster has received something
              * 
@@ -286,16 +299,40 @@ public class NPC : MonoBehaviour
         }
     }
 
-    private class Drinking : CustomerState{
-        
+    /*
+     * how to determine when the customer has stopped talking: 
+     * when $state is 5 (set at the end of a conversation tree), reset it to -1
+     * and take out "this" from currentCustomers in DayCycleManager
+     **/
+
+    private class Drinking : CustomerState{ // actually, state should change in here after time delay? so that it's talking??
+        public override void OnEnter(){
+            Debug.Log("drinking");
+        }
+        public override void Update(){
+            if (Services.GameManager.dialogue.variableStorage.GetValue("$state" + Context.characterName) == new Yarn.Value(1))
+            {
+                TransitionTo<Default>();
+                return;
+            }
+        }
     }
 
-    private class TalkingWithoutDrink : CustomerState{
-        
-    }
+    //this is where it should track different $states and go to different states.
+    private class Default : CustomerState{ 
+        public override void OnEnter(){
+            
+        }
+        public override void Update(){
+            if (Services.GameManager.dialogue.variableStorage.GetValue("$state" + Context.characterName) == new Yarn.Value(5))
+            {
+                Context.isReadyToTalk = false;
 
-    private class TalkingWithDrink : CustomerState{
-        
+                Services.GameManager.dialogue.variableStorage.SetValue("$state" + Context.characterName, new Yarn.Value(-1));
+                TransitionTo<LeavingBar>();
+                return;
+            }
+        }
     }
 
     private class DrinkServed : CustomerState{
@@ -303,7 +340,14 @@ public class NPC : MonoBehaviour
     }
 
     private class LeavingBar : CustomerState{
-        
+        public override void OnEnter(){
+            
+        }
+        public override void Update(){
+            Context.LeavingBarAction();
+            TransitionTo<OutsideBar>();
+            return;
+        }
     }
 }
 

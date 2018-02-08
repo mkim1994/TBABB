@@ -6,24 +6,30 @@ position: 114,209
 <<if visited("1Ivory") is false>>
     <<set $progressIvory = 0>>
     Customer: Ha...
-    Customer: Whiskey please.
     <<order Ivory n 0 n 0 whiskey 1.0>>
     <<set $stateIvory = 0>>
+    Customer: Whiskey please.
 <<else>>
     <<if $progressIvory is 0>>
         <<if $drinkScoreIvory is 0>>
+            <<setsprite Ivory unhappy>>
             Customer: Alright.
             Customer: You take one of the whiskey bottles...
             Customer: And you pour it into a glass.
             Customer: It's not that hard, is it?
+            <<setsprite Ivory idle>>
         <<else>>
             <<if $drinkScoreIvory <= 0.1>>
+                <<setsprite Ivory unhappy>>
                 Customer: This isn't enough...
                 Customer: Get me more, won't you?
+                <<setsprite Ivory idle>>
             <<else>>
                 <<if $drinkScoreIvory >= 0.8>>
+                    <<setsprite Ivory happy>>
                     Customer: Thanks.
                 <<else>>
+                    <<setsprite Ivory unhappy>>
                     Customer: Thanks...?
                     Customer: Sigh.
                 <<endif>>
@@ -35,6 +41,7 @@ position: 114,209
         <<if $progressIvory is 1>>
             <<set $progressIvory = 2>>
             Customer: Been a while since I've ended up here.
+            <<setsprite Ivory idle>>
             Customer: I don't think I've seen you around.
             Customer: You new?
             [[Yes|1IvoryA]]
@@ -72,9 +79,10 @@ Customer: Oh. Okay.
 Customer: Wonder what happened to the last bartender.
 Customer: Doesn't matter though.
 Customer: I've missed this.
-Customer: ...Hey.
-Customer: Can I get another?
-<<set $stateIvory = 0>>
+Customer: Well. 
+Customer: See you around.
+Customer: Maybe I'll come again tomorrow.
+<<set $stateIvory = 5>>
 ===
 title: 1IvoryB
 tags: 
@@ -87,9 +95,10 @@ Customer: Though I find that hard to believe.
 Customer: I'm pretty sure you're new...
 Customer: ...
 Customer: I've missed this.
-Customer: ...Hey.
-Customer: Can I get another?
-<<set $stateIvory = 0>>
+Customer: Well. 
+Customer: See you around.
+Customer: Maybe I'll come again tomorrow.
+<<set $stateIvory = 5>>
 ===
 title: 3AIvoryDay1
 tags: 
