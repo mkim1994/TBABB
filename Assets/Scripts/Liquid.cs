@@ -10,8 +10,7 @@ public class Liquid : MonoBehaviour {
 	public bool isPouring;
 	private float totalVolume;
 	public List<Coaster> coasters = new List<Coaster> ();
-	public Coaster targetCoaster;
-	DrinkBase baseBeingPoured;
+ 	DrinkBase baseBeingPoured;
 	Garnish garnishBeingApplied;
 	Mixer mixerBeingPoured;
 	[SerializeField]float sodaVolume, tonicVolume, appleJuiceVolume, orangeJuiceVolume, lemonJuiceVolume;

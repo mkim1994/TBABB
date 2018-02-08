@@ -56,6 +56,7 @@ public class GameManager : MonoBehaviour {
 		Services.DrinkDictionary = new DrinkDictionary(); 
 		Services.MixerDictionary = new MixerDictionary();
 		Services.CustomerDictionary = new CustomerDictionary();
+		Services.CoasterManager = FindObjectOfType<CoasterManager>();
         //Services.Materials = Resources.Load<MaterialDB>("Art/Materials");
 		//Services.SceneStackManager = new SceneStackManager<TransitionData>(sceneRoot, Services.Prefabs.Scenes);
 

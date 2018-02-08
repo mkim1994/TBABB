@@ -9,9 +9,9 @@ public class Pickupable : MonoBehaviour {
     #endregion
     private Vector3 rightHandPos = new Vector3 (0.954f, -0.25f, 1.473f);
     public Dropzone targetDropzone;
- 
     public Vector3 dropPos;
     public bool pickedUp = false;
+    // public List<Coaster> coasters = new List<Coaster> ();
 
     void Start(){
     }
@@ -132,5 +132,13 @@ public class Pickupable : MonoBehaviour {
     public void SetPickedUpToTrue(){
         pickedUp = true;
     }
+
+   /*  public void EvaluateDrinkInCoaster(){
+		foreach (var coaster in coasters) {
+			if (Vector3.Distance (coaster.gameObject.transform.position, transform.position) <= 0.5f) {
+				coaster.EvaluateDrink (this.thisCocktail);
+			}		
+		}
+	} */
 	
 }
