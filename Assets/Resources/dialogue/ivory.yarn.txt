@@ -17,13 +17,11 @@ position: 114,209
             Customer: You take one of the whiskey bottles...
             Customer: And you pour it into a glass.
             Customer: It's not that hard, is it?
-            <<setsprite Ivory idle>>
         <<else>>
             <<if $drinkScoreIvory <= 0.1>>
                 <<setsprite Ivory unhappy>>
                 Customer: This isn't enough...
                 Customer: Get me more, won't you?
-                <<setsprite Ivory idle>>
             <<else>>
                 <<if $drinkScoreIvory >= 0.8>>
                     <<setsprite Ivory happy>>
@@ -49,9 +47,8 @@ position: 114,209
         <<else>>
             <<if $progressIvory is 2>>
                 <<if $drinkScoreIvory is 0>>
-                    Customer: Alright.
-                    Customer: You take one of the whiskey bottles...
-                    Customer: And you pour it into a glass.
+                    Customer: Sigh...
+                    Customer: I want whiskey in a glass again.
                 <<else>>
                     <<if $drinkScoreIvory >= 0.8>>
                         Customer: Thanks!
