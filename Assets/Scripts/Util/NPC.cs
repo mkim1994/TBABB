@@ -56,6 +56,10 @@ public class NPC : MonoBehaviour
         fsm.Update();
     }
 
+    public void ResetDrinkScore(){
+        Services.GameManager.dialogue.variableStorage.SetValue("$drinkScore" + characterName, new Yarn.Value(-1));
+    }
+
     [YarnCommand("order")]
     public void OrderDrink(string flavor, string f, string mixer, string m, string drinkbase, string b){
         Flavor myFlavor = Flavor.none;
@@ -258,26 +262,69 @@ public class NPC : MonoBehaviour
         }
 
         public override void Update(){
-            TransitionTo<ReadyToTalk>();
+            TransitionTo<Default>();
             return;
+        }
+    }
+    //this is where it should track different $states and go to different states.
+    private class Default : CustomerState
+    {
+        /*
+         * $state+characterName:
+         * -1 = reset/nothing
+         * 0 = waiting for a drink
+         * 1 = ready to talk after receiving a drink.
+         * 2 = 
+         * */
+        public override void OnEnter()
+        {
+            Debug.Log("default");
+
+        }
+        public override void Update()
+        {
+            if (Services.GameManager.dialogue.variableStorage.GetValue("$state" + Context.characterName) == new Yarn.Value(5))
+            {
+                //customer is going to leave
+                Context.isReadyToTalk = false;
+                Services.GameManager.dialogue.variableStorage.SetValue("$state" + Context.characterName, new Yarn.Value(-1));
+                TransitionTo<LeavingBar>();
+                return;
+            }
+            else if (Services.GameManager.dialogue.variableStorage.GetValue("$state" + Context.characterName) == new Yarn.Value(0))
+            {
+                //waiting for a drink
+                Context.isReadyToTalk = false;
+                TransitionTo<WaitingForDrink>();
+                return;
+            } else{
+
+                //customer is ready to talk
+                TransitionTo<ReadyToTalk>();
+                return;
+            }
         }
     }
 
     private class ReadyToTalk : CustomerState
     {
+        private Yarn.Value val;
         public override void OnEnter(){
             Debug.Log("ready to talk");
             Context.isReadyToTalk = true;
+            val = Services.GameManager.dialogue.variableStorage.GetValue("$state" + Context.characterName);
         }
 
         public override void Update()
         {
-            if(Services.GameManager.dialogue.variableStorage.GetValue("$state" + Context.characterName) == new Yarn.Value(0)){
-                TransitionTo<WaitingForDrink>();
+            if (Services.GameManager.dialogue.variableStorage.GetValue("$state" + Context.characterName) != val){
+                TransitionTo<Default>();
                 return;
             }
         }
     }
+
+
 
     private class WaitingForDrink : CustomerState{ // unable to talk at this point
         //might want to change it so the customer repeats the order if asked
@@ -287,9 +334,9 @@ public class NPC : MonoBehaviour
             Context.isReadyToTalk = false;
         }
         public override void Update(){
-            if(Services.GameManager.dialogue.variableStorage.GetValue("$state" + Context.characterName) == new Yarn.Value(1)){
+            if(Services.GameManager.dialogue.variableStorage.GetValue("$state" + Context.characterName) != new Yarn.Value(0)){
                 Context.isReadyToTalk = true;
-                TransitionTo<Drinking>();
+                TransitionTo<Default>();
                 return;
             }
             /*
@@ -318,22 +365,7 @@ public class NPC : MonoBehaviour
         }
     }
 
-    //this is where it should track different $states and go to different states.
-    private class Default : CustomerState{ 
-        public override void OnEnter(){
-            
-        }
-        public override void Update(){
-            if (Services.GameManager.dialogue.variableStorage.GetValue("$state" + Context.characterName) == new Yarn.Value(5))
-            {
-                Context.isReadyToTalk = false;
 
-                Services.GameManager.dialogue.variableStorage.SetValue("$state" + Context.characterName, new Yarn.Value(-1));
-                TransitionTo<LeavingBar>();
-                return;
-            }
-        }
-    }
 
     private class DrinkServed : CustomerState{
         
