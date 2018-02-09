@@ -7,6 +7,8 @@ public class Coaster : MonoBehaviour
 	private NPC myCustomer;
 	private Dropzone myDropzone;
 	private DrinkProfile currentOrder;
+
+	public bool isDrinkHere = false;
 	// public enum Customer
 	// {
 	// 	Ivory,
@@ -36,6 +38,9 @@ public class Coaster : MonoBehaviour
 
 	void Update()
 	{
+		if(!isDrinkHere){
+			// myCustomer.
+		}
  	}
 
 	public void EvaluateDrink(DrinkProfile _cocktail){
