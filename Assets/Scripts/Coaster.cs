@@ -16,7 +16,7 @@ public class Coaster : MonoBehaviour
 	// }
 
 	public Customer currentCustomer;
-	public DrinkProfile customerOrder;	
+	public DrinkProfile drinkOnCoaster;	
 	void Start()
 	{
 		myDropzone = GetComponentInChildren<Dropzone>();
@@ -34,6 +34,15 @@ public class Coaster : MonoBehaviour
 			break;
 		}
 
+		if(drinkOnCoaster != null){
+			isDrinkHere = true;
+		} else {
+			isDrinkHere = false;
+		}
+
+		if(!isDrinkHere){
+			myCustomer.ResetDrinkScore();
+		}
 	}
 
 	void Update()
@@ -48,6 +57,7 @@ public class Coaster : MonoBehaviour
 			float drinkDeviation = DrinkProfile.GetProfileDeviation(_cocktail, currentOrder);
 			// float abvSimilarity = DrinkProfile.GetABV
 			float abvDeviation = DrinkProfile.GetABVdeviation(_cocktail, currentOrder);
+			drinkOnCoaster = _cocktail;
 			if(drinkDeviation <= 0.5f){
 				if(_cocktail.alcoholicStrength >= 0.25f){
 					myCustomer.SetCustomerVars (1.0f, 100);
@@ -93,6 +103,12 @@ public class Coaster : MonoBehaviour
 
 	public void TakeOrder (DrinkProfile _customerOrder){
 		currentOrder = _customerOrder; 	
+	}
+
+	private void CheckDropzoneStatus(){
+		if(!GetComponentInChildren<Dropzone>().isOccupied){
+			isDrinkHere = false;
+		}
 	}
 
 	

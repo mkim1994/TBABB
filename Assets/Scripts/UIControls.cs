@@ -4,10 +4,13 @@ using UnityEngine;
 using UnityEngine.UI;
 public class UIControls : MonoBehaviour {
 	[SerializeField]LayerMask controlsMask;
-	[SerializeField]Text rayControlsText;
+	[SerializeField]Text centerText;
+	[SerializeField]Text[] leftHandControlsText;
+	[SerializeField]Text[] rightHandControlsText;
+	[SerializeField]Text bottomCenterText;
+
 	[SerializeField]Text inHandControlsText;
 	[SerializeField]string targetObj;
-
 	[SerializeField]List<string> rayControlsStrings = new List<string>();
 	[SerializeField]List<string> inHandControlsStrings = new List<string>();
 	private Camera myCam;
@@ -28,12 +31,17 @@ public class UIControls : MonoBehaviour {
 			if(Services.GameManager.playerInput.pickupableInLeftHand.name.Contains("Bottle") && Services.GameManager.playerInput.pickupableInRightHand.name.Contains("Glass")
 			|| Services.GameManager.playerInput.pickupableInRightHand.name.Contains("Bottle") && Services.GameManager.playerInput.pickupableInLeftHand.name.Contains("Glass")
 			){
-				inHandControlsText.text = inHandControlsStrings[0];	
+				// leftHandControlsText[0].text = "E";
+				// leftHandControlsText[1].text = "pick up\nwith left hand";
+				rightHandControlsText[2].text = "LMB";
+				rightHandControlsText[3].text = "pour with left hand";	
 			} else {
-				inHandControlsText.text = "";
+				rightHandControlsText[2].text = "";
+				rightHandControlsText[3].text = "";
 			}
 		} else {
-			inHandControlsText.text = "";
+			rightHandControlsText[2].text = "";
+			rightHandControlsText[2].text = "";
 		}
 	}
 	private void UIRay(){
@@ -95,21 +103,27 @@ public class UIControls : MonoBehaviour {
 						break;
 					} 
 				}
-				rayControlsText.text = "Press Q to pick up " + targetObj + " with left hand \n Press E to pick up " + targetObj + " with right hand";
+				centerText.text = targetObj;
 			} else if (hitObj.GetComponent<Glass>() != null){
-				rayControlsText.text = "Press Q to pick up glass with left hand \n Press E to pick up glass with right hand";
+				centerText.text = "glass";
+				rightHandControlsText[0].text = "E";
+				rightHandControlsText[1].text = "pick up\nwith left hand";
 			} else if (hitObj.GetComponent<NPC>() != null){
-				if(hitObj.GetComponent<NPC>().isReadyToTalk){
-					rayControlsText.text = "Press SPACE to talk";
-				} else if (!hitObj.GetComponent<NPC>().isReadyToTalk){
-					rayControlsText.text = "";
+				if(!Services.GameManager.dialogue.isDialogueRunning){
+					centerText.text = "Press SPACE to talk";
+				} else if (Services.GameManager.dialogue.isDialogueRunning){
+					centerText.text = "";
 				}
 			}
 			else {
-				rayControlsText.text = rayControlsStrings[0];				
+				centerText.text = "";	
+				rightHandControlsText[0].text = "";
+				rightHandControlsText[1].text = "";			
 			} 
 		} else {
-			rayControlsText.text = rayControlsStrings[0];
+			centerText.text = "";
+			rightHandControlsText[0].text = "";
+			rightHandControlsText[1].text = "";		
 		}
 	}
 }
