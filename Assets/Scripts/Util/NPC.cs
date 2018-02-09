@@ -56,6 +56,10 @@ public class NPC : MonoBehaviour
         fsm.Update();
     }
 
+    public void ResetDrinkScore(){
+        Services.GameManager.dialogue.variableStorage.SetValue("$drinkScore" + characterName, new Yarn.Value(-1));
+    }
+
     [YarnCommand("order")]
     public void OrderDrink(string flavor, string f, string mixer, string m, string drinkbase, string b){
         Flavor myFlavor = Flavor.none;
