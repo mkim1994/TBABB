@@ -380,7 +380,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1117426447310104
 GameObject:
   m_ObjectHideFlags: 0
@@ -470,7 +470,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1428087926361578
 GameObject:
   m_ObjectHideFlags: 1
@@ -488,7 +488,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1499145641749850
 GameObject:
   m_ObjectHideFlags: 1
@@ -506,7 +506,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1543797866096990
 GameObject:
   m_ObjectHideFlags: 1
@@ -596,7 +596,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1729139152771998
 GameObject:
   m_ObjectHideFlags: 1
@@ -668,7 +668,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1927701337910260
 GameObject:
   m_ObjectHideFlags: 1
@@ -686,7 +686,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1977649218134610
 GameObject:
   m_ObjectHideFlags: 1
@@ -704,7 +704,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1990768093889312
 GameObject:
   m_ObjectHideFlags: 0
@@ -865,9 +865,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 0.5
-  m_Text: 'pick up
-
-    with right hand'
+  m_Text: pick up
 --- !u!114 &114107806424576816
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1003,7 +1001,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 0.5
-  m_Text: pour with right hand
+  m_Text: pour
 --- !u!114 &114272151395893358
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1161,7 +1159,6 @@ MonoBehaviour:
   inRightHandText:
   - {fileID: 114834578378722322}
   - {fileID: 114246193758293542}
-  inHandControlsText: {fileID: 0}
   targetObj: 
   rayControlsStrings: []
   inHandControlsStrings: []
@@ -1498,9 +1495,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 0.5
-  m_Text: 'pick up
-
-    with left hand'
+  m_Text: pick up
 --- !u!114 &114814346037773760
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1547,7 +1542,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 0.5
-  m_Text: pour with right hand
+  m_Text: 
 --- !u!114 &114829036142774942
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1580,7 +1575,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 0.5
-  m_Text: pour with left hand
+  m_Text: pour
 --- !u!114 &114833182282523802
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1679,7 +1674,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 0.5
-  m_Text: pour with left hand
+  m_Text: 
 --- !u!114 &114861125595480032
 MonoBehaviour:
   m_ObjectHideFlags: 1

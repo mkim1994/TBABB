@@ -10,8 +10,7 @@ public class UIControls : MonoBehaviour {
 	[SerializeField]Text bottomCenterText;
 	[SerializeField]Text[] inLeftHandText;
 	[SerializeField] private Text[] inRightHandText;
-	[SerializeField]Text inHandControlsText;
-	[SerializeField]string targetObj;
+ 	[SerializeField]string targetObj;
 	[SerializeField]List<string> rayControlsStrings = new List<string>();
 	[SerializeField]List<string> inHandControlsStrings = new List<string>();
 	private Camera myCam;
@@ -20,42 +19,123 @@ public class UIControls : MonoBehaviour {
 	
 	void Start(){
 		myCam = FindObjectOfType<Camera>();
-		
 	}
 	void Update(){
 		UIRay();
 		//find the objects in hand
-		if (Services.GameManager.playerInput.pickupableInLeftHand != null &&
-		    Services.GameManager.playerInput.pickupableInRightHand != null)
+		if (Services.GameManager.playerInput.pickupableInLeftHand != null)
 		{
-			leftHandObj = Services.GameManager.playerInput.pickupableInLeftHand.gameObject;
-			rightHandObj = Services.GameManager.playerInput.pickupableInRightHand.gameObject;
+			leftHandObj = GetComponent<PlayerInput>().pickupableInLeftHand.gameObject;
 		}
-		
+		else
+		{
+			leftHandObj = null;
+		}
+
+		if (Services.GameManager.playerInput.pickupableInRightHand != null)
+		{
+			rightHandObj = GetComponent<PlayerInput>().pickupableInRightHand.gameObject;
+		}
+		else
+		{
+			rightHandObj = null;
+		}
+
+
 		if(leftHandObj != null && rightHandObj != null){ //if both hands have object in them
+			//case 1: if bottle in one, glass in the other
 			if(leftHandObj.GetComponent<Bottle>() != null && rightHandObj.GetComponent<Glass>() != null
 			|| rightHandObj.GetComponent<Bottle>() != null  && leftHandObj.GetComponent<Glass>() != null
 			)
 			{
 				inLeftHandText[0].text = "LMB";
-				inLeftHandText[1].text = "pour into glass";
+				inLeftHandText[1].text = "pour";
 				inRightHandText[0].text = "RMB";
-				inRightHandText[1].text = "pour into glass";
-			} else {
-				inLeftHandText[0].text = "";
-				inLeftHandText[1].text = "";
-				inRightHandText[0].text = "";
-				inRightHandText[1].text = "";
-				//other cases			
- 			}
+				inRightHandText[1].text = "pour";
+			}
+			//case 2: bottle in both hands
+			else if (leftHandObj.GetComponent<Bottle>() != null && rightHandObj.GetComponent<Bottle>() != null)
+			{
+				if (Services.GameManager.playerInput.pickupable != null)
+				{
+					//looking at glass
+					if (Services.GameManager.playerInput.pickupable.gameObject.GetComponent<Glass>() != null)
+					{
+						inLeftHandText[0].text = "LMB";
+						inLeftHandText[1].text = "pour";
+						inRightHandText[0].text = "RMB";
+						inRightHandText[1].text = "pour";
+					}	
+				}
+				else
+				{
+					ClearTextArray(inLeftHandText);
+				}
+			}
+			//case 3: glass in both hands
+			else if (leftHandObj.GetComponent<Bottle>() != null && rightHandObj.GetComponent<Bottle>() != null)
+			{
+				ClearTextArray(inLeftHandText);
+				ClearTextArray(inRightHandText);
+			}
 		}
-		else
+//		left hand not empty; right hand empty
+		else if(leftHandObj != null && rightHandObj == null)
+		{	
+//			inRightHandText[0].text = "";
+//			inRightHandText[1].text = "";
+			ClearTextArray(inRightHandText);
+			if (Services.GameManager.playerInput.pickupable != null)
+			{
+				//looking at glass, holding bottle
+				if (Services.GameManager.playerInput.pickupable.gameObject.GetComponent<Glass>() != null)
+				{
+					if(leftHandObj.GetComponent<Bottle>() != null){
+						inLeftHandText[0].text = "LMB";
+						inLeftHandText[1].text = "pour";			
+					}
+				}
+			}
+			else
+			{
+				ClearTextArray(inLeftHandText);
+				ClearTextArray(inRightHandText);
+			}
+
+		}
+//		left hand empty, right hand not empty
+		else if (leftHandObj == null && rightHandObj != null)
+		{			
+//			inLeftHandText[0].text = "";
+//			inLeftHandText[1].text = "";
+			ClearTextArray(inLeftHandText);
+			if (Services.GameManager.playerInput.pickupable != null)
+			{
+				//looking at glass, holding bottle
+				if (Services.GameManager.playerInput.pickupable.gameObject.GetComponent<Glass>() != null)
+				{
+					if(rightHandObj.GetComponent<Bottle>() != null){
+						inRightHandText[0].text = "RMB";
+						inRightHandText[1].text = "pour";			
+					}
+				}
+			}
+			else
+			{
+				ClearTextArray(inLeftHandText);
+				ClearTextArray(inRightHandText);
+			}
+		}
+		else if (leftHandObj == null && rightHandObj == null)
 		{
-			inLeftHandText[0].text = "";
-			inLeftHandText[1].text = "";
-			inRightHandText[0].text = "";
-			inRightHandText[1].text = "";			
+			ClearTextArray(inLeftHandText);
+			ClearTextArray(inRightHandText);
+//			inLeftHandText[0].text = "";
+//			inLeftHandText[1].text = "";
+//			inRightHandText[0].text = "";
+//			inRightHandText[1].text = "";
 		}
+		
 	}
 	
 	private void UIRay(){
@@ -119,15 +199,15 @@ public class UIControls : MonoBehaviour {
 				}
 				centerText.text = targetObj;
 				leftHandControlsText[0].text = "Q";
-				leftHandControlsText[1].text = "pick up\nwith left hand";
+				leftHandControlsText[1].text = "pick up";
 				rightHandControlsText[0].text = "E";
-				rightHandControlsText[1].text = "pick up\nwith right hand";
+				rightHandControlsText[1].text = "pick up";
 			} else if (hitObj.GetComponent<Glass>() != null){
 				centerText.text = "glass";
 				leftHandControlsText[0].text = "Q";
-				leftHandControlsText[1].text = "pick up\nwith left hand";
+				leftHandControlsText[1].text = "pick up";
 				rightHandControlsText[0].text = "E";
-				rightHandControlsText[1].text = "pick up\nwith right hand";
+				rightHandControlsText[1].text = "pick up";
 			} else if (hitObj.GetComponent<NPC>() != null){
 				if(!Services.GameManager.dialogue.isDialogueRunning){
 					centerText.text = hitObj.GetComponent<NPC>().characterName;
@@ -152,4 +232,13 @@ public class UIControls : MonoBehaviour {
 			leftHandControlsText[1].text = "";		
 		}
 	}
+
+	void ClearTextArray(Text[] texts)
+	{
+		for (int i = 0; i < texts.Length; i++)
+		{
+			texts[i].text = "";
+		}
+	}
+	
 }
