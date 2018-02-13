@@ -1155,8 +1155,12 @@ MonoBehaviour:
   - {fileID: 114403877642880778}
   - {fileID: 114078115086541814}
   bottomCenterText: {fileID: 114927173548750250}
-  inLeftHandText: []
-  inRightHandText: []
+  inLeftHandText:
+  - {fileID: 114402641278035738}
+  - {fileID: 114829036142774942}
+  inRightHandText:
+  - {fileID: 114834578378722322}
+  - {fileID: 114246193758293542}
   inHandControlsText: {fileID: 0}
   targetObj: 
   rayControlsStrings: []

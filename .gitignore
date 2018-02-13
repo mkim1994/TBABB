@@ -33,7 +33,7 @@ sysinfo.txt
 # Builds
 *.apk
 *.unitypackage
-UpgradeLog.htm
+UpgradeLog.htm0..
 .idea/.idea.TBABB/riderModule.iml
 .idea/.idea.TBABB/.idea/workspace.xml
 .idea/.idea.TBABB/.idea/modules.xml
@@ -41,3 +41,6 @@ UpgradeLog.htm
 .idea/.idea.TBABB/.idea/indexLayout.xml
 Assets/Plugins/Editor/JetBrains.meta
 ProjectSettings/ProjectVersion.txt
+*.iml
+*.xml
+Assets/Plugins/Editor/JetBrains/Unity3DRider.cs
