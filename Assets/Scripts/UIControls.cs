@@ -8,42 +8,56 @@ public class UIControls : MonoBehaviour {
 	[SerializeField]Text[] leftHandControlsText;
 	[SerializeField]Text[] rightHandControlsText;
 	[SerializeField]Text bottomCenterText;
-
+	[SerializeField]Text[] inLeftHandText;
+	[SerializeField] private Text[] inRightHandText;
 	[SerializeField]Text inHandControlsText;
 	[SerializeField]string targetObj;
 	[SerializeField]List<string> rayControlsStrings = new List<string>();
 	[SerializeField]List<string> inHandControlsStrings = new List<string>();
 	private Camera myCam;
-
+	private GameObject leftHandObj;
+	private GameObject rightHandObj;
+	
 	void Start(){
 		myCam = FindObjectOfType<Camera>();
-		rayControlsStrings.Add("");
-		rayControlsStrings.Add("Press Q to pick up " + targetObj + " with left hand \n Press E to pick up " + targetObj + " with right hand");
-		rayControlsStrings.Add("Press E to drop object in right hand");
-		rayControlsStrings.Add("Press Q to drop object in left hand");
-		rayControlsStrings.Add("Press Q to serve drink");
-		rayControlsStrings.Add("Press E to serve drink");
-		inHandControlsStrings.Add("Hold LMB or RMB to pour drink");
+		
 	}
 	void Update(){
 		UIRay();
-		if(Services.GameManager.playerInput.pickupableInLeftHand != null && Services.GameManager.playerInput.pickupableInRightHand != null){
-			if(Services.GameManager.playerInput.pickupableInLeftHand.name.Contains("Bottle") && Services.GameManager.playerInput.pickupableInRightHand.name.Contains("Glass")
-			|| Services.GameManager.playerInput.pickupableInRightHand.name.Contains("Bottle") && Services.GameManager.playerInput.pickupableInLeftHand.name.Contains("Glass")
-			){
-				// leftHandControlsText[0].text = "E";
-				// leftHandControlsText[1].text = "pick up\nwith left hand";
-				rightHandControlsText[2].text = "LMB";
-				rightHandControlsText[3].text = "pour with left hand";	
+		//find the objects in hand
+		if (Services.GameManager.playerInput.pickupableInLeftHand != null &&
+		    Services.GameManager.playerInput.pickupableInRightHand != null)
+		{
+			leftHandObj = Services.GameManager.playerInput.pickupableInLeftHand.gameObject;
+			rightHandObj = Services.GameManager.playerInput.pickupableInRightHand.gameObject;
+		}
+		
+		if(leftHandObj != null && rightHandObj != null){ //if both hands have object in them
+			if(leftHandObj.GetComponent<Bottle>() != null && rightHandObj.GetComponent<Glass>() != null
+			|| rightHandObj.GetComponent<Bottle>() != null  && leftHandObj.GetComponent<Glass>() != null
+			)
+			{
+				inLeftHandText[0].text = "LMB";
+				inLeftHandText[1].text = "pour into glass";
+				inRightHandText[0].text = "RMB";
+				inRightHandText[1].text = "pour into glass";
 			} else {
-				rightHandControlsText[2].text = "";
-				rightHandControlsText[3].text = "";
-			}
-		} else {
-			rightHandControlsText[2].text = "";
-			rightHandControlsText[2].text = "";
+				inLeftHandText[0].text = "";
+				inLeftHandText[1].text = "";
+				inRightHandText[0].text = "";
+				inRightHandText[1].text = "";
+				//other cases			
+ 			}
+		}
+		else
+		{
+			inLeftHandText[0].text = "";
+			inLeftHandText[1].text = "";
+			inRightHandText[0].text = "";
+			inRightHandText[1].text = "";			
 		}
 	}
+	
 	private void UIRay(){
 		Ray ray = new Ray(myCam.transform.position, myCam.transform.forward);
 		float rayDist = Mathf.Infinity;
@@ -104,26 +118,38 @@ public class UIControls : MonoBehaviour {
 					} 
 				}
 				centerText.text = targetObj;
+				leftHandControlsText[0].text = "Q";
+				leftHandControlsText[1].text = "pick up\nwith left hand";
+				rightHandControlsText[0].text = "E";
+				rightHandControlsText[1].text = "pick up\nwith right hand";
 			} else if (hitObj.GetComponent<Glass>() != null){
 				centerText.text = "glass";
+				leftHandControlsText[0].text = "Q";
+				leftHandControlsText[1].text = "pick up\nwith left hand";
 				rightHandControlsText[0].text = "E";
-				rightHandControlsText[1].text = "pick up\nwith left hand";
+				rightHandControlsText[1].text = "pick up\nwith right hand";
 			} else if (hitObj.GetComponent<NPC>() != null){
 				if(!Services.GameManager.dialogue.isDialogueRunning){
-					centerText.text = "Press SPACE to talk";
+					centerText.text = hitObj.GetComponent<NPC>().characterName;
 				} else if (Services.GameManager.dialogue.isDialogueRunning){
-					centerText.text = "";
+					centerText.text = hitObj.GetComponent<NPC>().characterName;
 				}
 			}
 			else {
-				centerText.text = "";	
+				bottomCenterText.text = "";
+				centerText.text = "";
 				rightHandControlsText[0].text = "";
 				rightHandControlsText[1].text = "";			
+				leftHandControlsText[0].text = "";
+				leftHandControlsText[1].text = "";		
 			} 
 		} else {
+			bottomCenterText.text = "";	
 			centerText.text = "";
 			rightHandControlsText[0].text = "";
-			rightHandControlsText[1].text = "";		
+			rightHandControlsText[1].text = "";	
+			leftHandControlsText[0].text = "";
+			leftHandControlsText[1].text = "";		
 		}
 	}
 }

@@ -280,6 +280,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 114739140198778196, guid: 002984101656d421a83f24c057d0eade,
+        type: 2}
+      propertyPath: pickupableGOs.Array.size
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 002984101656d421a83f24c057d0eade, type: 2}
       propertyPath: m_LocalPosition.x
       value: 0

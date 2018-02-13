@@ -22,10 +22,11 @@ public class Pickupable : MonoBehaviour {
         if(!pickedUp){
             transform.SetParent(Services.GameManager.player.transform.GetChild(0));
             Services.GameManager.player.GetComponent<PlayerInput>().pickupableInLeftHand = this;
-            PickupTween(leftHandPos);
+             PickupTween(leftHandPos);
         } else if(pickedUp){
             transform.SetParent(null);
             Services.GameManager.player.GetComponent<PlayerInput>().pickupableInLeftHand = null;
+ 
             if(targetDropzone != null){
                  DropTween(dropPos,targetDropzone);
             }
@@ -36,12 +37,12 @@ public class Pickupable : MonoBehaviour {
         if(!pickedUp){
             transform.SetParent(Services.GameManager.player.transform.GetChild(0));
             Services.GameManager.player.GetComponent<PlayerInput>().pickupableInRightHand = this;
-            PickupTween(rightHandPos);
+             PickupTween(rightHandPos);
         }
         else if(pickedUp){
             transform.SetParent(null);
             Services.GameManager.player.GetComponent<PlayerInput>().pickupableInRightHand = null;
-            if(targetDropzone != null){
+             if(targetDropzone != null){
                 DropTween(dropPos, targetDropzone);
             }
         }
@@ -51,14 +52,12 @@ public class Pickupable : MonoBehaviour {
         if(pickedUp){
             transform.SetParent(null);
             Services.GameManager.player.GetComponent<PlayerInput>().pickupableInLeftHand = null;
-            // if(targetDropzone != null){
             DropTween(dropPos,targetDropzone);
-            // }
             pickedUp = false;
         }
         else if(!pickedUp){
             Services.GameManager.player.GetComponent<PlayerInput>().pickupableInLeftHand = this;
-            // StartCoroutine(SetNewParent(0.1f));
+            pickedUp = true;
             transform.SetParent(Services.GameManager.player.transform.GetChild(0));
             PickupTween(leftHandPos);
         }
@@ -69,12 +68,10 @@ public class Pickupable : MonoBehaviour {
             transform.SetParent(null);
             Services.GameManager.player.GetComponent<PlayerInput>().pickupableInRightHand = null;
             DropTween(dropPos,targetDropzone);
-            // }
             pickedUp = false;
         }
         else if(!pickedUp){
             Services.GameManager.player.GetComponent<PlayerInput>().pickupableInRightHand = this;
-            // StartCoroutine(SetNewParent(0.1f));
             pickedUp = true;
             transform.SetParent(Services.GameManager.player.transform.GetChild(0));
             PickupTween(rightHandPos);
@@ -134,63 +131,6 @@ public class Pickupable : MonoBehaviour {
     public void SetPickedUpToTrue(){
         pickedUp = true;
     }
-
-    public string GetMyName(DrinkBase _base, Mixer _mixer){
-        string _myName = "";
-        if(_base != DrinkBase.none && _mixer == Mixer.none){
-            switch (_base){
-                case DrinkBase.beer:
-                    _myName = "beer";
-                break;
-                case DrinkBase.brandy:
-                    _myName = "brandy";
-                break;
-                case DrinkBase.gin:
-                    _myName = "gin";
-                break;
-                case DrinkBase.rum:
-                    _myName = "rum";
-                break;
-                case DrinkBase.tequila:
-                    _myName = "tequila";
-                break;
-                case DrinkBase.vodka:
-                    _myName = "vodka";
-                break;
-                case DrinkBase.whiskey:
-                    _myName = "whiskey";
-                break;
-                case DrinkBase.wine:
-                    _myName = "wine";
-                break;
-                default:
-                break;
-            }
-        }
-
-        if(_base == DrinkBase.none && _mixer != Mixer.none){
-            switch (_mixer){
-                case Mixer.tonic:
-                    _myName = "tonic";
-                break;
-                case Mixer.soda:
-                    _myName = "soda";
-                break;
-                case Mixer.orange_juice:
-                    _myName = "orange juice";
-                break;
-                case Mixer.lemon_juice:
-                    _myName = "lemon juice";
-                break;
-                case Mixer.apple_juice:
-                    _myName = "apple juice";
-                break;
-                default:
-                break;
-            }
-        }
-
-        return _myName;
-    }
-       
+    
+    
 }
