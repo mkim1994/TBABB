@@ -53,6 +53,7 @@ Transform:
   m_Children:
   - {fileID: 400002}
   - {fileID: 224926821003423514}
+  - {fileID: 4990613293878512}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -704,6 +705,71 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1990768093889312
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4990613293878512}
+  - component: {fileID: 108920855168389614}
+  m_Layer: 0
+  m_Name: Point light
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4990613293878512
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1990768093889312}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 400000}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!108 &108920855168389614
+Light:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1990768093889312}
+  m_Enabled: 1
+  serializedVersion: 8
+  m_Type: 2
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Intensity: 12.16
+  m_Range: 3.35
+  m_SpotAngle: 30
+  m_CookieSize: 10
+  m_Shadows:
+    m_Type: 0
+    m_Resolution: -1
+    m_CustomResolution: -1
+    m_Strength: 1
+    m_Bias: 0.05
+    m_NormalBias: 0.4
+    m_NearPlane: 0.2
+  m_Cookie: {fileID: 0}
+  m_DrawHalo: 0
+  m_Flare: {fileID: 0}
+  m_RenderMode: 0
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_Lightmapping: 4
+  m_AreaSize: {x: 1, y: 1}
+  m_BounceIntensity: 1
+  m_ColorTemperature: 6570
+  m_UseColorTemperature: 0
+  m_ShadowRadius: 0
+  m_ShadowAngle: 0
 --- !u!114 &114020313720889180
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1089,12 +1155,8 @@ MonoBehaviour:
   - {fileID: 114403877642880778}
   - {fileID: 114078115086541814}
   bottomCenterText: {fileID: 114927173548750250}
-  inLeftHandText:
-  - {fileID: 114402641278035738}
-  - {fileID: 114829036142774942}
-  inRightHandText:
-  - {fileID: 114834578378722322}
-  - {fileID: 114246193758293542}
+  inLeftHandText: []
+  inRightHandText: []
   inHandControlsText: {fileID: 0}
   targetObj: 
   rayControlsStrings: []
@@ -1310,6 +1372,9 @@ MonoBehaviour:
   pickupable: {fileID: 0}
   pickupableInLeftHand: {fileID: 0}
   pickupableInRightHand: {fileID: 0}
+  pickupableGOs:
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!114 &114748651186478056
 MonoBehaviour:
   m_ObjectHideFlags: 1
