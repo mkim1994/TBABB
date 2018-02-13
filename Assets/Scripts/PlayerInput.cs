@@ -195,18 +195,21 @@ public class PlayerInput : MonoBehaviour {
 
 		#region Use Left
 		if(i_useLeft && !Services.TweenManager.tweensAreActive){
-			if (pickupableInLeftHand != null && pickupable != null){ //one-handed use on something on bar (prioritize this)
+			//one-handed use on something on bar
+			if (pickupableInLeftHand != null && pickupable != null && pickupableInRightHand == null){ 
 				pickupableInLeftHand.UseLeftHand();
-			} else if (pickupableInLeftHand != null && pickupableInRightHand != null) { //two-handed use 
+			} 
+			
+			
+			else if (pickupableInLeftHand != null && pickupableInRightHand != null) { //two-handed use (left hand)
                 if (pickupableInLeftHand.GetComponent<Bottle>() != null && pickupableInRightHand.GetComponent<Glass>() != null) {
  					pickupableInLeftHand.GetComponent<Bottle>().PourIntoPickedUpGlass();
 					pickupableInRightHand.GetComponent<Glass>().ReceivePourFromBottle(pickupableInLeftHand.GetComponent<Bottle>());
                 } else if (pickupableInLeftHand.GetComponent<Bottle>() != null && pickupableInRightHand.GetComponent<Rag>() != null){
  				} 
             }
-			if (pickupableInRightHand != null && pickupable != null){ //one-handed use on something on bar (prioritize this)
-				pickupableInRightHand.UseRightHand();
-			} else if (pickupableInLeftHand != null && pickupableInRightHand != null) { //two-handed use 
+		
+			if (pickupableInLeftHand != null && pickupableInRightHand != null) { //two-handed use (right hand)
                 if (pickupableInRightHand.GetComponent<Bottle>() != null && pickupableInLeftHand.GetComponent<Glass>() != null) {
  					pickupableInRightHand.GetComponent<Bottle>().PourIntoPickedUpGlass();
 					pickupableInLeftHand.GetComponent<Glass>().ReceivePourFromBottle(pickupableInRightHand.GetComponent<Bottle>());
@@ -235,18 +238,20 @@ public class PlayerInput : MonoBehaviour {
 		#region Use Right
 
 		if(i_useRight && !Services.TweenManager.tweensAreActive){
-			if (pickupableInLeftHand != null && pickupable != null){ //one-handed use on something on bar (prioritize this)
-				pickupableInLeftHand.UseLeftHand();
-			} else if (pickupableInLeftHand != null && pickupableInRightHand != null) { //two-handed use 
+			//one-handed use on something on bar
+			if (pickupableInRightHand != null && pickupable != null && pickupableInLeftHand == null){ 
+				pickupableInRightHand.UseRightHand();
+			} 
+			//two-handed use (bottle in left hand
+			else if (pickupableInLeftHand != null && pickupableInRightHand != null) { 
                 if (pickupableInLeftHand.GetComponent<Bottle>() != null && pickupableInRightHand.GetComponent<Glass>() != null) {
  					pickupableInLeftHand.GetComponent<Bottle>().PourIntoPickedUpGlass();
 					pickupableInRightHand.GetComponent<Glass>().ReceivePourFromBottle(pickupableInLeftHand.GetComponent<Bottle>());
                 } else if (pickupableInLeftHand.GetComponent<Bottle>() != null && pickupableInRightHand.GetComponent<Rag>() != null){
  				} 
             }
-			if (pickupableInRightHand != null && pickupable != null){ //one-handed use on something on bar (prioritize this)
-				pickupableInRightHand.UseRightHand();
-			} else if (pickupableInLeftHand != null && pickupableInRightHand != null) { //two-handed use 
+			//two-handed use (bottle in right hand)
+			if (pickupableInLeftHand != null && pickupableInRightHand != null) { 
                 if (pickupableInRightHand.GetComponent<Bottle>() != null && pickupableInLeftHand.GetComponent<Glass>() != null) {
  					pickupableInRightHand.GetComponent<Bottle>().PourIntoPickedUpGlass();
 					pickupableInLeftHand.GetComponent<Glass>().ReceivePourFromBottle(pickupableInRightHand.GetComponent<Bottle>());
@@ -255,8 +260,8 @@ public class PlayerInput : MonoBehaviour {
             } 
 		} 
 		if(i_endUseRight){
-			if(pickupableInLeftHand != null){
-				pickupableInLeftHand.RotateToZeroTween();
+			if(pickupableInRightHand != null){
+				pickupableInRightHand.RotateToZeroTween();
 			}
 			if (pickupableInLeftHand != null && pickupableInRightHand != null){
 				pickupableInLeftHand.RotateToZeroTween();
