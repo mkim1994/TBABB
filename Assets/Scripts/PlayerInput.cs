@@ -21,7 +21,7 @@ public class PlayerInput : MonoBehaviour {
 	private Player player;
 	private CharacterController cc;
 	public Dropzone targetDropzone;
-	[SerializeField]Coaster targetCoaster;
+//	[SerializeField]Coaster targetCoaster;
 	public NPC npc;
 
 	public Vector3 dropPos;
@@ -112,26 +112,10 @@ public class PlayerInput : MonoBehaviour {
  		if(pickupable != null){ //aim assist
 			t += 2f * Time.deltaTime;
 			lookSensitivity = Mathf.Lerp(lookSensitivityAtStart, aimAssistSensitivity, t);
-			// Vector3 aimAssistDir = myCam.transform.position - pickupable.transform.position;
- 			//aim assist attempt (not working)
- 			// if(Mathf.Abs){
-				// float aimY = verticalLook;
-				// aimY = Mathf.Lerp(verticalLook, aimAssistDir.y, t);
-				// float aimX = lookVector.x;
-				// aimX = Mathf.Lerp(lookVector.x, aimAssistDir.x, t);
-				// myCam.transform.localRotation = Quaternion.Euler(aimY, 0, 0);
-				// cc.transform.Rotate(0, aimX, 0);
-			// }  
-			// if(lookSensitivity == aimAssistSensitivity){
-			// 	t = 0;
-			// }
 			
 		} else {
  			t += 4f * Time.deltaTime;
 			lookSensitivity = Mathf.Lerp(lookSensitivity, lookSensitivityAtStart, t);
-			// if(lookSensitivity == lookSensitivityAtStart){
-			// 	t = 0;
-			// }
 		}
 
 		#endregion
@@ -351,20 +335,20 @@ public class PlayerInput : MonoBehaviour {
 		}
 	}
 
-	private void CoasterRay(){
-		Ray ray = new Ray(myCam.transform.position, myCam.transform.forward);
-		float rayDist = Mathf.Infinity;
-		RaycastHit hit = new RaycastHit();
-		
-		if(Physics.Raycast(ray, out hit, rayDist, coasterLayerMask)){
-			GameObject hitObj = hit.transform.gameObject; //if you're actually looking at something
- 			if(hitObj.GetComponent<Coaster>() != null && Vector3.Distance(transform.position, hitObj.transform.position) <= maxTalkingDist){ //check if object looked at can be picked up
- 				targetCoaster = hitObj.GetComponent<Coaster>(); //if it's NPC and close enough, assign it to NPC.				  
- 			} else if (hitObj.GetComponent<Coaster>() == null || Vector3.Distance(transform.position, hitObj.transform.position) > maxTalkingDist){
-				targetCoaster = null;
- 			} 	
-		} else {
-			targetCoaster = null;
-		}
-	}
+//	private void CoasterRay(){
+//		Ray ray = new Ray(myCam.transform.position, myCam.transform.forward);
+//		float rayDist = Mathf.Infinity;
+//		RaycastHit hit = new RaycastHit();
+//		
+//		if(Physics.Raycast(ray, out hit, rayDist, coasterLayerMask)){
+//			GameObject hitObj = hit.transform.gameObject; //if you're actually looking at something
+// 			if(hitObj.GetComponent<Coaster>() != null && Vector3.Distance(transform.position, hitObj.transform.position) <= maxTalkingDist){ //check if object looked at can be picked up
+// 				targetCoaster = hitObj.GetComponent<Coaster>(); //if it's NPC and close enough, assign it to NPC.				  
+// 			} else if (hitObj.GetComponent<Coaster>() == null || Vector3.Distance(transform.position, hitObj.transform.position) > maxTalkingDist){
+//				targetCoaster = null;
+// 			} 	
+//		} else {
+//			targetCoaster = null;
+//		}
+//	}
 }

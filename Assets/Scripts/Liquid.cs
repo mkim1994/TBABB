@@ -12,9 +12,9 @@ public class Liquid : MonoBehaviour {
 	private bool isEvaluated = false;
 	private float totalVolume;
 	public List<Coaster> coasters = new List<Coaster> ();
- 	DrinkBase baseBeingPoured;
+// 	DrinkBase baseBeingPoured;
 	Garnish garnishBeingApplied;
-	Mixer mixerBeingPoured;
+//	Mixer mixerBeingPoured;
 	[SerializeField]float sodaVolume, tonicVolume, appleJuiceVolume, orangeJuiceVolume, lemonJuiceVolume;
 	[SerializeField]float whiskeyVolume, tequilaVolume, rumVolume, ginVolume, beerVolume, wineVolume, brandyVolume, vodkaVolume;
  	[SerializeField]float smokiness, sweetness, sourness, bitterness, spiciness;
@@ -36,7 +36,7 @@ public class Liquid : MonoBehaviour {
 
 		totalVolume = whiskeyVolume + ginVolume + brandyVolume + vodkaVolume + wineVolume + beerVolume + tequilaVolume + rumVolume 
 					+ sodaVolume + tonicVolume + appleJuiceVolume + orangeJuiceVolume + lemonJuiceVolume; 
-		alcoholVolume = whiskeyVolume + ginVolume + brandyVolume + vodkaVolume + wineVolume + beerVolume + tequilaVolume + rumVolume; 
+//		alcoholVolume = whiskeyVolume + ginVolume + brandyVolume + vodkaVolume + wineVolume + beerVolume + tequilaVolume + rumVolume; 
 		// abv = alcoholVolume/height;
 		abv = GetAlcoholicStrength();
  	}
@@ -54,7 +54,7 @@ public class Liquid : MonoBehaviour {
 	public void AddIngredient(DrinkBase _drinkBase){
 		GrowVertical();
 		myDrinkProfile = Services.DrinkDictionary.drinkBases[_drinkBase];
-		baseBeingPoured = _drinkBase;
+//		baseBeingPoured = _drinkBase;
 		switch (_drinkBase){
             case DrinkBase.whiskey:
 			whiskeyVolume = height - totalVolume + whiskeyVolume;
@@ -99,7 +99,7 @@ public class Liquid : MonoBehaviour {
 	public void AddMixer(Mixer _mixer){
 		GrowVertical();
 		myDrinkProfile = Services.MixerDictionary.mixers[_mixer];
-		mixerBeingPoured = _mixer;
+//		mixerBeingPoured = _mixer;
 		switch (_mixer){
 			case Mixer.soda:
 			sodaVolume = height - totalVolume + sodaVolume;

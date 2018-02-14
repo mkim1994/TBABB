@@ -19,7 +19,7 @@ public class Coaster : MonoBehaviour
 	public DrinkProfile drinkOnCoaster;	
 	void Start()
 	{
-		myDropzone = GetComponentInChildren<Dropzone>();
+//		myDropzone = GetComponentInChildren<Dropzone>();
  		switch (currentCustomer)
 		{
 			case Customer.IvoryDefault:
@@ -56,7 +56,7 @@ public class Coaster : MonoBehaviour
   		if(currentOrder != null && _cocktail !=null){
 			float drinkDeviation = DrinkProfile.GetProfileDeviation(_cocktail, currentOrder);
 			// float abvSimilarity = DrinkProfile.GetABV
-			float abvDeviation = DrinkProfile.GetABVdeviation(_cocktail, currentOrder);
+//			float abvDeviation = DrinkProfile.GetABVdeviation(_cocktail, currentOrder);
 			drinkOnCoaster = _cocktail;
 			if(drinkDeviation <= 0.5f){
 				if(_cocktail.alcoholicStrength >= 0.25f){

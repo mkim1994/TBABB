@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+
+
 public class UIControls : MonoBehaviour {
 	[SerializeField]LayerMask controlsMask;
 	[SerializeField]Text centerText;
@@ -11,13 +13,21 @@ public class UIControls : MonoBehaviour {
 	[SerializeField]Text[] inLeftHandText;
 	[SerializeField] private Text[] inRightHandText;
  	[SerializeField]string targetObj;
-	[SerializeField]List<string> rayControlsStrings = new List<string>();
-	[SerializeField]List<string> inHandControlsStrings = new List<string>();
 	private Camera myCam;
 	private GameObject leftHandObj;
 	private GameObject rightHandObj;
+//	private bool isUsingKeyboard = true;
 	
 	void Start(){
+//		if ( /*some Rewired code here*/)
+//		{
+//			isUsingKeyboard = true;
+//		}
+//		else
+//		{
+//			isUsingKeyboard = false;
+//		}
+
 		myCam = FindObjectOfType<Camera>();
 	}
 	void Update(){
@@ -48,9 +58,9 @@ public class UIControls : MonoBehaviour {
 			|| rightHandObj.GetComponent<Bottle>() != null  && leftHandObj.GetComponent<Glass>() != null
 			)
 			{
-				inLeftHandText[0].text = "LMB";
+//				inLeftHandText[0].text = "LMB";
 				inLeftHandText[1].text = "pour";
-				inRightHandText[0].text = "RMB";
+//				inRightHandText[0].text = "RMB";
 				inRightHandText[1].text = "pour";
 			}
 			//case 2: bottle in both hands
@@ -61,9 +71,9 @@ public class UIControls : MonoBehaviour {
 					//looking at glass
 					if (Services.GameManager.playerInput.pickupable.gameObject.GetComponent<Glass>() != null)
 					{
-						inLeftHandText[0].text = "LMB";
+//						inLeftHandText[0].text = "LMB";
 						inLeftHandText[1].text = "pour";
-						inRightHandText[0].text = "RMB";
+//						inRightHandText[0].text = "RMB";
 						inRightHandText[1].text = "pour";
 					}	
 				}
