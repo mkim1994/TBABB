@@ -60,7 +60,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &1077898490051250
 GameObject:
   m_ObjectHideFlags: 1
@@ -294,7 +294,7 @@ GameObject:
   - component: {fileID: 65187575575838036}
   - component: {fileID: 23478569941667576}
   m_Layer: 12
-  m_Name: Cube (1)
+  m_Name: BackWall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -403,7 +403,7 @@ GameObject:
   - component: {fileID: 33405237195543104}
   - component: {fileID: 23854552104319406}
   - component: {fileID: 95345604709358468}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: lightswitch_base
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1142,7 +1142,7 @@ GameObject:
   - component: {fileID: 33360786373858936}
   - component: {fileID: 23662190902977012}
   - component: {fileID: 95012303471535916}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: lightswitch_switch
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1309,13 +1309,13 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1365967570844122}
-  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalRotation: {x: 0.50000024, y: -0.5, z: -0.5, w: 0.49999982}
   m_LocalPosition: {x: 0, y: 20, z: -2.81}
   m_LocalScale: {x: 100, y: 1, z: 100}
   m_Children: []
   m_Father: {fileID: 4216898431797454}
   m_RootOrder: 8
-  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 180, y: 89.99999, z: 89.99999}
 --- !u!4 &4083472925977256
 Transform:
   m_ObjectHideFlags: 1
@@ -2551,7 +2551,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: ca45704408e824cbb827884d59791243, type: 2}
+  - {fileID: 2100000, guid: 65cf3c3bf1d5f4dc88e3e95c88eabc87, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3495,7 +3495,7 @@ Light:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1063704592001906}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 8
   m_Type: 1
   m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}

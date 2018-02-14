@@ -945,8 +945,6 @@ MonoBehaviour:
   - {fileID: 114834578378722322}
   - {fileID: 114246193758293542}
   targetObj: 
-  rayControlsStrings: []
-  inHandControlsStrings: []
 --- !u!114 &114506412615432964
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1052,7 +1050,6 @@ MonoBehaviour:
   lookSensitivity: 0.25
   playerId: 0
   targetDropzone: {fileID: 0}
-  targetCoaster: {fileID: 0}
   npc: {fileID: 0}
   dropPos: {x: 0, y: 0, z: 0}
   layerMask:
@@ -1510,7 +1507,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 201.8, y: 53.999992}
+  m_AnchoredPosition: {x: 201.7998, y: 54}
   m_SizeDelta: {x: 219.7, y: 73.899994}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224221467195132130
