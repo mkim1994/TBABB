@@ -25,11 +25,6 @@ public class LightSwitch : MonoBehaviour
 		if (dayCycleManager.dayHasEnded)
 		{
 			dayCycleManager.switchOff = true;
-			Debug.Log(dayCycleManager.switchOff);
-		}
-		else
-		{
-			Debug.Log("there are still customers to serve!");
-		}
+ 		}
 	}
 }

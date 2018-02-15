@@ -27,7 +27,10 @@ public class UIControls : MonoBehaviour {
 	private Camera myCam;
 	private GameObject leftHandObj;
 	private GameObject rightHandObj;
+
+	private IEnumerator clearTextCoroutine;
 //	private bool isUsingKeyboard = true;
+	[SerializeField]private bool isMessageOverrideOn = false;
 	
 	void Start(){
 //		if ( /*some Rewired code here*/)
@@ -38,10 +41,12 @@ public class UIControls : MonoBehaviour {
 //		{
 //			isUsingKeyboard = false;
 //		}
+		clearTextCoroutine = ClearTextCoroutine(centerText, 3);
 		botCenterImg.SetActive(false);
 		myCam = FindObjectOfType<Camera>();
 	}
 	void Update(){
+
 		UIRay();
 		//find the objects in hand
  
@@ -134,7 +139,6 @@ public class UIControls : MonoBehaviour {
 				ClearTextArray(inRightHandText);
 				rightHandActionImage.enabled = false;
 			}
-
 		}
 //		left hand empty, right hand not empty
 		else if (leftHandObj == null && rightHandObj != null)
@@ -312,10 +316,29 @@ public class UIControls : MonoBehaviour {
 			{
 				if (Services.GameManager.dayManager.dayHasEnded)
 				{
-					centerText.text = "";
+					centerText.text = "end the day";
 				}
+				else if (!Services.GameManager.dayManager.dayHasEnded)
+				{
+					if (Services.GameManager.playerInput.i_talk)
+					{
+						if (!isMessageOverrideOn)
+						{
+							isMessageOverrideOn = true;
+							centerText.text = "there are still customers to serve";
+							StartCoroutine(clearTextCoroutine);
+						}					
+					} else if (!Services.GameManager.playerInput.i_talk && !isMessageOverrideOn)
+					{
+						centerText.text = "end the day";
+					}
+
+
+				} 
 			}
 			else {
+ 				StopCoroutine(clearTextCoroutine);
+				isMessageOverrideOn = false;
 				botCenterImg.SetActive(false);
 				bottomCenterText.text = "";
 				centerText.text = "";
@@ -346,5 +369,13 @@ public class UIControls : MonoBehaviour {
 			texts[i].text = "";
 		}
 	}
-	
+
+	IEnumerator ClearTextCoroutine(Text text, float delay)
+	{
+		yield return new WaitForSeconds(delay);
+		text.text = "";
+		Debug.Log("what cororuite");
+		isMessageOverrideOn = false;
+	}
+
 }

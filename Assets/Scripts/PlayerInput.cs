@@ -52,7 +52,7 @@ public class PlayerInput : MonoBehaviour {
 	bool i_useRight;
 	bool i_endUseRight;
 	bool i_restart;
-	bool i_talk;
+	public bool i_talk;
 	bool i_choose1;
 	bool i_choose2;
 	void Awake(){
