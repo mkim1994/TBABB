@@ -1063,6 +1063,7 @@ MonoBehaviour:
   - {fileID: 114403877642880778}
   - {fileID: 114078115086541814}
   bottomCenterText: {fileID: 114467932124016912}
+  bottomCenterInsText: {fileID: 114927173548750250}
   inLeftHandText:
   - {fileID: 114402641278035738}
   - {fileID: 114829036142774942}
@@ -1070,6 +1071,7 @@ MonoBehaviour:
   - {fileID: 114834578378722322}
   - {fileID: 114246193758293542}
   targetObj: 
+  isMessageOverrideOn: 0
 --- !u!114 &114467932124016912
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1213,6 +1215,8 @@ MonoBehaviour:
   pickupableGOs:
   - {fileID: 0}
   - {fileID: 0}
+  maxInteractionDist: 4
+  i_talk: 0
 --- !u!114 &114748651186478056
 MonoBehaviour:
   m_ObjectHideFlags: 1

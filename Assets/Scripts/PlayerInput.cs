@@ -37,7 +37,7 @@ public class PlayerInput : MonoBehaviour {
 	public Pickupable pickupableInLeftHand;
 	public Pickupable pickupableInRightHand;
 	public List<GameObject> pickupableGOs = new List<GameObject>();
-	private float maxInteractionDist = 4f;
+	public float maxInteractionDist = 4f;
 	private float maxTalkingDist = 8f;
 
 	private float lookSensitivityAtStart;

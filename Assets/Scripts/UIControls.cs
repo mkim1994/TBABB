@@ -21,6 +21,7 @@ public class UIControls : MonoBehaviour {
 	[SerializeField]Text[] leftHandControlsText;
 	[SerializeField]Text[] rightHandControlsText;
 	[SerializeField]Text bottomCenterText;
+	[SerializeField] private Text bottomCenterInsText;
 	[SerializeField]Text[] inLeftHandText;
 	[SerializeField] private Text[] inRightHandText;
  	[SerializeField]string targetObj;
@@ -177,7 +178,7 @@ public class UIControls : MonoBehaviour {
 	
 	private void UIRay(){
 		Ray ray = new Ray(myCam.transform.position, myCam.transform.forward);
-		float rayDist = Mathf.Infinity;
+		float rayDist = Services.GameManager.playerInput.maxInteractionDist;
 		RaycastHit hit = new RaycastHit();
 		
 		if(Physics.Raycast(ray, out hit, rayDist, controlsMask)){
@@ -295,6 +296,7 @@ public class UIControls : MonoBehaviour {
 					centerText.text = hitObj.GetComponent<NPC>().characterName;
 					botCenterImg.SetActive(true);
 					bottomCenterText.text = "SPACE";
+					bottomCenterInsText.text = "talk";
 				}
 				else if (Services.GameManager.dialogue.isDialogueRunning)
 				{
@@ -317,9 +319,15 @@ public class UIControls : MonoBehaviour {
 				if (Services.GameManager.dayManager.dayHasEnded)
 				{
 					centerText.text = "end the day";
+					botCenterImg.SetActive(true);
+					bottomCenterInsText.text = "use";
+					bottomCenterText.text = "SPACE";
 				}
 				else if (!Services.GameManager.dayManager.dayHasEnded)
 				{
+					botCenterImg.SetActive(true);
+					bottomCenterInsText.text = "use";
+					bottomCenterText.text = "SPACE";
 					if (Services.GameManager.playerInput.i_talk)
 					{
 						if (!isMessageOverrideOn)
@@ -328,7 +336,8 @@ public class UIControls : MonoBehaviour {
 							centerText.text = "there are still customers to serve";
 							StartCoroutine(clearTextCoroutine);
 						}					
-					} else if (!Services.GameManager.playerInput.i_talk && !isMessageOverrideOn)
+					}
+					else if (!Services.GameManager.playerInput.i_talk && !isMessageOverrideOn)
 					{
 						centerText.text = "end the day";
 					}
@@ -341,6 +350,7 @@ public class UIControls : MonoBehaviour {
 				isMessageOverrideOn = false;
 				botCenterImg.SetActive(false);
 				bottomCenterText.text = "";
+				bottomCenterInsText.text = "";
 				centerText.text = "";
 				rightHandPickUpImage.enabled = false;
 				rightHandControlsText[0].text = "";
@@ -351,7 +361,8 @@ public class UIControls : MonoBehaviour {
 			} 
 		} else {
 			botCenterImg.SetActive(false);
-			bottomCenterText.text = "";	
+			bottomCenterText.text = "";
+			bottomCenterInsText.text = "";
 			centerText.text = "";
 			rightHandPickUpImage.enabled = false;
 			rightHandControlsText[0].text = "";
