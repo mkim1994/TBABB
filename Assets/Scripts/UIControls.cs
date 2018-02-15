@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 using UnityEngine.UI;
 
 
@@ -230,29 +231,88 @@ public class UIControls : MonoBehaviour {
 					} 
 				}
 				centerText.text = targetObj;
-				leftHandPickUpImage.enabled = true;
-				leftHandControlsText[0].text = "Q";
-				leftHandControlsText[1].text = "pick up";
-				rightHandPickUpImage.enabled = true;
-				rightHandControlsText[0].text = "E";
-				rightHandControlsText[1].text = "pick up";
+
+				if (leftHandObj == null)
+				{
+					leftHandPickUpImage.enabled = true;
+					leftHandControlsText[0].text = "Q";
+					leftHandControlsText[1].text = "pick up";
+				}
+				else if (leftHandObj != null)
+				{
+					leftHandPickUpImage.enabled = true;
+					leftHandControlsText[0].text = "Q";
+					leftHandControlsText[1].text = "swap";
+				}
+				if (rightHandObj == null)
+				{
+					rightHandPickUpImage.enabled = true;
+					rightHandControlsText[0].text = "E";
+					rightHandControlsText[1].text = "pick up";
+				}
+				else
+				{
+					rightHandPickUpImage.enabled = true;
+					rightHandControlsText[0].text = "E";
+					rightHandControlsText[1].text = "swap";
+				}
 			} else if (hitObj.GetComponent<Glass>() != null){
 				centerText.text = "glass";
-				leftHandPickUpImage.enabled = true;
-				leftHandControlsText[0].text = "Q";
-				leftHandControlsText[1].text = "pick up";
-				rightHandPickUpImage.enabled = true;
-				rightHandControlsText[0].text = "E";
-				rightHandControlsText[1].text = "pick up";
-			} else if (hitObj.GetComponent<NPC>() != null){
-				if(!Services.GameManager.dialogue.isDialogueRunning){ //Customer is not talking
+				if (leftHandObj == null)
+				{
+					leftHandPickUpImage.enabled = true;
+					leftHandControlsText[0].text = "Q";
+					leftHandControlsText[1].text = "pick up";
+				} 
+				else if (leftHandObj != null)
+				{
+					leftHandPickUpImage.enabled = true;
+					leftHandControlsText[0].text = "Q";
+					leftHandControlsText[1].text = "swap";
+				}
+
+				if (rightHandObj == null)
+				{
+					rightHandPickUpImage.enabled = true;
+					rightHandControlsText[0].text = "E";
+					rightHandControlsText[1].text = "pick up";
+				}
+				else
+				{
+					rightHandPickUpImage.enabled = true;
+					rightHandControlsText[0].text = "E";
+					rightHandControlsText[1].text = "swap";
+				}
+			} else if (hitObj.GetComponent<NPC>() != null)
+			{
+				if (!Services.GameManager.dialogue.isDialogueRunning)
+				{
+					//Customer is not talking
 					centerText.text = hitObj.GetComponent<NPC>().characterName;
 					botCenterImg.SetActive(true);
 					bottomCenterText.text = "SPACE";
-				} else if (Services.GameManager.dialogue.isDialogueRunning){ //customer is talking
+				}
+				else if (Services.GameManager.dialogue.isDialogueRunning)
+				{
+					//customer is talking
 					centerText.text = hitObj.GetComponent<NPC>().characterName;
 					botCenterImg.SetActive(false);
 					bottomCenterText.text = "";
+				}
+			} else if (hitObj.GetComponent<Dropzone>() != null)
+			{
+				leftHandPickUpImage.enabled = true;
+				leftHandControlsText[0].text = "Q";
+				leftHandControlsText[1].text = "put back";
+				rightHandPickUpImage.enabled = true;
+				rightHandControlsText[0].text = "E";
+				rightHandControlsText[1].text = "put back";
+			} 
+			else if (hitObj.GetComponent<LightSwitch>() != null)
+			{
+				if (Services.GameManager.dayManager.dayHasEnded)
+				{
+					centerText.text = "";
 				}
 			}
 			else {

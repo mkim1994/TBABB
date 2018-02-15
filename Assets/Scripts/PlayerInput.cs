@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Rewired;
+using Rewired.ComponentControls.Data;
 using UnityEngine.SceneManagement;
  
 [RequireComponent(typeof(CharacterController))]
@@ -20,16 +21,17 @@ public class PlayerInput : MonoBehaviour {
 	public int playerId = 0; 
 	private Player player;
 	private CharacterController cc;
-	public Dropzone targetDropzone;
 //	[SerializeField]Coaster targetCoaster;
 	public NPC npc;
 
 	public Vector3 dropPos;
 	protected Camera myCam;
 	//raycast management
+	public Dropzone targetDropzone;
+	[SerializeField] private LightSwitch lightSwitch;
 	public LayerMask layerMask;
 	public LayerMask dropzoneLayerMask;
-	public LayerMask customerLayerMask;
+	public LayerMask nonPickupableLayerMask;
 	public LayerMask coasterLayerMask;
 	public Pickupable pickupable;
 	public Pickupable pickupableInLeftHand;
@@ -68,12 +70,8 @@ public class PlayerInput : MonoBehaviour {
 		ProcessInput();
 		InteractionRay();
 		DropzoneRay();
-		CustomerRay();
+		NonPickupableRay();
   	}
-
-	void FixedUpdate(){
-
-	}
 
 	private void GetInput(){
 		moveVector.x = player.GetAxis("Move Horizontal");
@@ -124,7 +122,10 @@ public class PlayerInput : MonoBehaviour {
 		if(i_pickupLeft && !Services.TweenManager.tweensAreActive){
 			if(pickupable != null && pickupableInLeftHand == null){ //PICK UP, CHECK IF LEFT HAND IS EMPTY
 				pickupable.InteractLeftHand();
-				targetDropzone.isOccupied = false;
+				if (targetDropzone != null)
+				{
+					targetDropzone.isOccupied = false;
+				}	
 			} else if(pickupable == null && pickupableInLeftHand != null && targetDropzone != null){ //DROP
 				if(dropPos != Vector3.zero && !targetDropzone.isOccupied){
 					pickupableInLeftHand.dropPos = dropPos;
@@ -183,7 +184,6 @@ public class PlayerInput : MonoBehaviour {
 			if (pickupableInLeftHand != null && pickupable != null && pickupableInRightHand == null){ 
 				pickupableInLeftHand.UseLeftHand();
 			} 
-			
 			
 			else if (pickupableInLeftHand != null && pickupableInRightHand != null) { //two-handed use (left hand)
                 if (pickupableInLeftHand.GetComponent<Bottle>() != null && pickupableInRightHand.GetComponent<Glass>() != null) {
@@ -265,7 +265,12 @@ public class PlayerInput : MonoBehaviour {
 			if(npc != null){
 				npc.InitiateDialogue();
 			}
- 		}
+
+			if (lightSwitch != null)
+			{
+				lightSwitch.EndDay();
+			}
+		}
 		#endregion
 		#region Dialogue Selection
 		if(i_choose1){
@@ -318,20 +323,30 @@ public class PlayerInput : MonoBehaviour {
 		}
 	}
 
-	private void CustomerRay(){
+	private void NonPickupableRay(){
 		Ray ray = new Ray(myCam.transform.position, myCam.transform.forward);
 		float rayDist = Mathf.Infinity;
 		RaycastHit hit = new RaycastHit();
 		
-		if(Physics.Raycast(ray, out hit, rayDist, customerLayerMask)){
+		if(Physics.Raycast(ray, out hit, rayDist, nonPickupableLayerMask)){
 			GameObject hitObj = hit.transform.gameObject; //if you're actually looking at something
+//			Debug.Log(hitObj.transform.name);
  			if(hitObj.GetComponent<NPC>() != null && Vector3.Distance(transform.position, hitObj.transform.position) <= maxTalkingDist){ //check if object looked at can be picked up
 				npc = hitObj.GetComponent<NPC>(); //if it's NPC and close enough, assign it to NPC.				  
  			} else if (hitObj.GetComponent<NPC>() == null || Vector3.Distance(transform.position, hitObj.transform.position) > maxTalkingDist){
 				npc = null;
- 			} 	
+ 			} 
+			
+			if (hitObj.GetComponent<LightSwitch>() != null)
+			{
+				lightSwitch = hitObj.GetComponent<LightSwitch>();
+			} else if (hitObj.GetComponent<LightSwitch>() == null)
+			{
+				lightSwitch = null;
+			}
 		} else {
 			npc = null;
+			lightSwitch = null;
 		}
 	}
 
