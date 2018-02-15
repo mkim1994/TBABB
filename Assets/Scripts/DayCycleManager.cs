@@ -77,6 +77,7 @@ public class DayCycleManager : MonoBehaviour
         switchOff = false;
         blackPanel.SetActive(true);
         currentDay++;
+        Services.GameManager.playerInput.isInputEnabled = false;
         WaitTillNextDay();
     }
 
