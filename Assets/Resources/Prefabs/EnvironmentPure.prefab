@@ -632,6 +632,22 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
   m_IsActive: 1
+--- !u!1 &1626308730780066
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4792891904772576}
+  - component: {fileID: 220214809493168738}
+  m_Layer: 0
+  m_Name: Light Probe Group
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1639415184678454
 GameObject:
   m_ObjectHideFlags: 1
@@ -2052,6 +2068,7 @@ Transform:
   - {fileID: 4258773728536762}
   - {fileID: 4782831080232468}
   - {fileID: 4384458439622588}
+  - {fileID: 4792891904772576}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2246,6 +2263,19 @@ Transform:
   m_Father: {fileID: 4476413766316514}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: -1.03, z: 0}
+--- !u!4 &4792891904772576
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1626308730780066}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 3.21, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4657057216003564}
+  m_RootOrder: 14
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4808344851303340
 Transform:
   m_ObjectHideFlags: 1
@@ -4319,3 +4349,25 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
+--- !u!220 &220214809493168738
+LightProbeGroup:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1626308730780066}
+  m_Enabled: 1
+  m_SourcePositions:
+  - {x: 2.1095185, y: 1, z: 5.0732183}
+  - {x: 3.1209586, y: 1, z: -1}
+  - {x: 2.11088, y: 0.0741663, z: 5.2717795}
+  - {x: 2.5785255, y: -0.0029935837, z: -2.042505}
+  - {x: -2.1126804, y: 0.9982481, z: 4.8853426}
+  - {x: -3.2785945, y: 1, z: -1.4145395}
+  - {x: -2.0306754, y: 0.1229434, z: 4.7765584}
+  - {x: -3.098599, y: 0.28639698, z: -1.743845}
+  - {x: -3.1222982, y: 0.24421072, z: 0}
+  - {x: -3.2964077, y: 0.27742386, z: 2.104622}
+  - {x: -2.8021636, y: 0.12898827, z: 3.5807495}
+  - {x: 0, y: 0.22202015, z: 5.29833}
+  - {x: 2.9120388, y: 0.10991764, z: 3.3740816}
+  - {x: 2.9898157, y: 0.10493183, z: 0.19494438}
