@@ -63,7 +63,6 @@ position: 114,209
                 <<endif>>
             <<else>>
                 <<if $progressIvory is 3>>
-                    Customer: What. 
                 <<endif>>
             <<endif>>
         <<endif>>
