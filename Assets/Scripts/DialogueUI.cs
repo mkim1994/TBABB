@@ -96,7 +96,7 @@ public class DialogueUI : Yarn.Unity.DialogueUIBehaviour
             continuePrompt.SetActive(false);
 
         textTime = -1f;
-        additionalTime = 1f;
+        additionalTime = 0.3f;
     }
 
     void Update(){
@@ -158,7 +158,7 @@ public class DialogueUI : Yarn.Unity.DialogueUIBehaviour
                     yield return new WaitForSeconds(textSpeed);
                 }
                 //determining the line duration on the screen
-                textTime = result.Length * 0.1f;
+                textTime = result.Length * 0.05f;
                 // currentTime = Time.time;
                 yield return new WaitForSeconds(textTime);
                 lineText.DOFade(0f, additionalTime).OnComplete(() => textTime = -2f);
