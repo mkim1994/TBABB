@@ -207,7 +207,7 @@ public class NPC : MonoBehaviour
     }
 
     public void LeavingBarAction(){
-        Debug.Log("LeavingBar");
+        insideBar = false;
         Services.GameManager.dayManager.currentCustomers.Remove(this);
         GetComponent<BoxCollider>().enabled = false;
         GetComponentInChildren<SpriteRenderer>().enabled = false;
@@ -284,7 +284,8 @@ public class NPC : MonoBehaviour
         }
         public override void Update()
         {
-            if (Services.GameManager.dialogue.variableStorage.GetValue("$state" + Context.characterName) == new Yarn.Value(5))
+
+            if (Services.GameManager.dialogue.variableStorage.GetValue("$state" + Context.characterName).AsString == "5")
             {
                 //customer is going to leave
                 Context.isReadyToTalk = false;
@@ -292,7 +293,7 @@ public class NPC : MonoBehaviour
                 TransitionTo<LeavingBar>();
                 return;
             }
-            else if (Services.GameManager.dialogue.variableStorage.GetValue("$state" + Context.characterName) == new Yarn.Value(0))
+            else if (Services.GameManager.dialogue.variableStorage.GetValue("$state" + Context.characterName).AsString == "0")
             {
                 //waiting for a drink
                 Context.isReadyToTalk = false;
@@ -374,7 +375,7 @@ public class NPC : MonoBehaviour
 
     private class LeavingBar : CustomerState{
         public override void OnEnter(){
-            
+            Debug.Log(Context.characterName+" LeavingBar");
         }
         public override void Update(){
             Context.LeavingBarAction();

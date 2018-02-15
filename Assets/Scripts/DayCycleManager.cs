@@ -99,7 +99,9 @@ public class DayCycleManager : MonoBehaviour
 
         } else{
             //able to be switched off when day has ended
-
+            if(switchOff){
+                ResetDay();
+            }
         }
 
 
