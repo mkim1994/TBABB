@@ -44,6 +44,8 @@ public class PlayerInput : MonoBehaviour {
 	private float aimAssistSensitivity = 0;
 	float verticalLook = 0f;
 
+	public bool isInputEnabled = true;
+
 	//buttons
 	bool i_pickupLeft;
 	bool i_pickupRight;
@@ -66,11 +68,14 @@ public class PlayerInput : MonoBehaviour {
  	}
 
 	void Update(){
-		GetInput();
-		ProcessInput();
-		InteractionRay();
-		DropzoneRay();
-		NonPickupableRay();
+		if (isInputEnabled)
+		{
+			GetInput();
+			ProcessInput();
+			InteractionRay();
+			DropzoneRay();
+			NonPickupableRay();
+		}
   	}
 
 	private void GetInput(){
@@ -264,8 +269,8 @@ public class PlayerInput : MonoBehaviour {
 		if(i_talk){
 			if(npc != null){
 				npc.InitiateDialogue();
-			}
-
+			} 
+			
 			if (lightSwitch != null)
 			{
 				lightSwitch.EndDay();
