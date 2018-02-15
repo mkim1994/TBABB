@@ -53,14 +53,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dayHasEnded: 0
   switchOff: 0
-  player: {fileID: 0}
-  numCustomersThatLeft: 0
-  numCurrentCustomers: 0
-  currentDay: 0
-  CustomerIvory: {fileID: 0}
-  CustomerSahana: {fileID: 0}
-  dialogue: {fileID: 0}
+  currentCustomers: []
   blackPanel: {fileID: 0}
   resetPos: {x: 0, y: 0, z: 0}
   resetRot: {x: 0, y: 0, z: 0, w: 0}
-  safeToEnableInteraction: 0
+  currentDay: 0
