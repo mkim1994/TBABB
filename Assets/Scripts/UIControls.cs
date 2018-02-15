@@ -5,7 +5,17 @@ using UnityEngine.UI;
 
 
 public class UIControls : MonoBehaviour {
+	
 	[SerializeField]LayerMask controlsMask;
+	
+	//images
+	[SerializeField] private Image leftHandActionImage;
+	[SerializeField] private Image rightHandActionImage;
+	[SerializeField] private Image leftHandPickUpImage;
+	[SerializeField] private Image rightHandPickUpImage;
+	[SerializeField] private GameObject botCenterImg;
+
+	//text 
 	[SerializeField]Text centerText;
 	[SerializeField]Text[] leftHandControlsText;
 	[SerializeField]Text[] rightHandControlsText;
@@ -27,12 +37,13 @@ public class UIControls : MonoBehaviour {
 //		{
 //			isUsingKeyboard = false;
 //		}
-
+		botCenterImg.SetActive(false);
 		myCam = FindObjectOfType<Camera>();
 	}
 	void Update(){
 		UIRay();
 		//find the objects in hand
+ 
 		if (Services.GameManager.playerInput.pickupableInLeftHand != null)
 		{
 			leftHandObj = GetComponent<PlayerInput>().pickupableInLeftHand.gameObject;
@@ -59,8 +70,10 @@ public class UIControls : MonoBehaviour {
 			)
 			{
 //				inLeftHandText[0].text = "LMB";
+				leftHandActionImage.enabled = true;
 				inLeftHandText[1].text = "pour";
 //				inRightHandText[0].text = "RMB";
+				rightHandActionImage.enabled = true;
 				inRightHandText[1].text = "pour";
 			}
 			//case 2: bottle in both hands
@@ -72,13 +85,17 @@ public class UIControls : MonoBehaviour {
 					if (Services.GameManager.playerInput.pickupable.gameObject.GetComponent<Glass>() != null)
 					{
 //						inLeftHandText[0].text = "LMB";
+						leftHandActionImage.enabled = true;
 						inLeftHandText[1].text = "pour";
 //						inRightHandText[0].text = "RMB";
+						rightHandActionImage.enabled = true;
 						inRightHandText[1].text = "pour";
 					}	
 				}
 				else
 				{
+					rightHandActionImage.enabled = false;
+					leftHandActionImage.enabled = false;
 					ClearTextArray(inLeftHandText);
 				}
 			}
@@ -86,7 +103,9 @@ public class UIControls : MonoBehaviour {
 			else if (leftHandObj.GetComponent<Bottle>() != null && rightHandObj.GetComponent<Bottle>() != null)
 			{
 				ClearTextArray(inLeftHandText);
+				leftHandActionImage.enabled = false;
 				ClearTextArray(inRightHandText);
+				rightHandActionImage.enabled = false;
 			}
 		}
 //		left hand not empty; right hand empty
@@ -95,13 +114,14 @@ public class UIControls : MonoBehaviour {
 //			inRightHandText[0].text = "";
 //			inRightHandText[1].text = "";
 			ClearTextArray(inRightHandText);
+			rightHandActionImage.enabled = false;
 			if (Services.GameManager.playerInput.pickupable != null)
 			{
 				//looking at glass, holding bottle
 				if (Services.GameManager.playerInput.pickupable.gameObject.GetComponent<Glass>() != null)
 				{
 					if(leftHandObj.GetComponent<Bottle>() != null){
-						inLeftHandText[0].text = "LMB";
+						leftHandActionImage.enabled = true;
 						inLeftHandText[1].text = "pour";			
 					}
 				}
@@ -109,7 +129,9 @@ public class UIControls : MonoBehaviour {
 			else
 			{
 				ClearTextArray(inLeftHandText);
+				leftHandActionImage.enabled = false;
 				ClearTextArray(inRightHandText);
+				rightHandActionImage.enabled = false;
 			}
 
 		}
@@ -119,33 +141,33 @@ public class UIControls : MonoBehaviour {
 //			inLeftHandText[0].text = "";
 //			inLeftHandText[1].text = "";
 			ClearTextArray(inLeftHandText);
+			leftHandActionImage.enabled = false;
 			if (Services.GameManager.playerInput.pickupable != null)
 			{
 				//looking at glass, holding bottle
 				if (Services.GameManager.playerInput.pickupable.gameObject.GetComponent<Glass>() != null)
 				{
 					if(rightHandObj.GetComponent<Bottle>() != null){
-						inRightHandText[0].text = "RMB";
+						rightHandActionImage.enabled = true;
 						inRightHandText[1].text = "pour";			
 					}
 				}
 			}
 			else
 			{
+				leftHandActionImage.enabled = false;
 				ClearTextArray(inLeftHandText);
+				rightHandActionImage.enabled = false;
 				ClearTextArray(inRightHandText);
 			}
 		}
 		else if (leftHandObj == null && rightHandObj == null)
 		{
+			leftHandActionImage.enabled = false;
 			ClearTextArray(inLeftHandText);
+			rightHandActionImage.enabled = false;
 			ClearTextArray(inRightHandText);
-//			inLeftHandText[0].text = "";
-//			inLeftHandText[1].text = "";
-//			inRightHandText[0].text = "";
-//			inRightHandText[1].text = "";
 		}
-		
 	}
 	
 	private void UIRay(){
@@ -208,36 +230,50 @@ public class UIControls : MonoBehaviour {
 					} 
 				}
 				centerText.text = targetObj;
+				leftHandPickUpImage.enabled = true;
 				leftHandControlsText[0].text = "Q";
 				leftHandControlsText[1].text = "pick up";
+				rightHandPickUpImage.enabled = true;
 				rightHandControlsText[0].text = "E";
 				rightHandControlsText[1].text = "pick up";
 			} else if (hitObj.GetComponent<Glass>() != null){
 				centerText.text = "glass";
+				leftHandPickUpImage.enabled = true;
 				leftHandControlsText[0].text = "Q";
 				leftHandControlsText[1].text = "pick up";
+				rightHandPickUpImage.enabled = true;
 				rightHandControlsText[0].text = "E";
 				rightHandControlsText[1].text = "pick up";
 			} else if (hitObj.GetComponent<NPC>() != null){
-				if(!Services.GameManager.dialogue.isDialogueRunning){
+				if(!Services.GameManager.dialogue.isDialogueRunning){ //Customer is not talking
 					centerText.text = hitObj.GetComponent<NPC>().characterName;
-				} else if (Services.GameManager.dialogue.isDialogueRunning){
+					botCenterImg.SetActive(true);
+					bottomCenterText.text = "SPACE";
+				} else if (Services.GameManager.dialogue.isDialogueRunning){ //customer is talking
 					centerText.text = hitObj.GetComponent<NPC>().characterName;
+					botCenterImg.SetActive(false);
+					bottomCenterText.text = "";
 				}
 			}
 			else {
+				botCenterImg.SetActive(false);
 				bottomCenterText.text = "";
 				centerText.text = "";
+				rightHandPickUpImage.enabled = false;
 				rightHandControlsText[0].text = "";
 				rightHandControlsText[1].text = "";			
+				leftHandPickUpImage.enabled = false;
 				leftHandControlsText[0].text = "";
 				leftHandControlsText[1].text = "";		
 			} 
 		} else {
+			botCenterImg.SetActive(false);
 			bottomCenterText.text = "";	
 			centerText.text = "";
+			rightHandPickUpImage.enabled = false;
 			rightHandControlsText[0].text = "";
 			rightHandControlsText[1].text = "";	
+			leftHandPickUpImage.enabled = false;
 			leftHandControlsText[0].text = "";
 			leftHandControlsText[1].text = "";		
 		}
