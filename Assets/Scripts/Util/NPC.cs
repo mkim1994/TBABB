@@ -207,6 +207,7 @@ public class NPC : MonoBehaviour
     }
 
     public void LeavingBarAction(){
+        Debug.Log("LeavingBar");
         Services.GameManager.dayManager.currentCustomers.Remove(this);
         GetComponent<BoxCollider>().enabled = false;
         GetComponentInChildren<SpriteRenderer>().enabled = false;

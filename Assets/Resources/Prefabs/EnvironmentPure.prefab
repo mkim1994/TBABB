@@ -885,7 +885,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!1 &1796058296163360
 GameObject:
@@ -2709,7 +2709,7 @@ MeshRenderer:
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_MotionVectors: 1
-  m_LightProbeUsage: 1
+  m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 1
   m_Materials:
   - {fileID: 2100000, guid: ca45704408e824cbb827884d59791243, type: 2}
@@ -4422,6 +4422,9 @@ LightProbeGroup:
   - {x: -3.1222982, y: 0.24421072, z: 0}
   - {x: -3.2964077, y: 0.27742386, z: 2.104622}
   - {x: -2.8021636, y: 0.12898827, z: 3.5807495}
-  - {x: 0, y: 0.22202015, z: 5.29833}
+  - {x: 0, y: -0.0027804375, z: 4.9674854}
   - {x: 2.9120388, y: 0.10991764, z: 3.3740816}
   - {x: 2.9898157, y: 0.10493183, z: 0.19494438}
+  - {x: 0, y: 0.90201616, z: 5.031268}
+  - {x: 0, y: 0.31130886, z: 6.697452}
+  - {x: 0, y: 1.2366562, z: 6.717784}
