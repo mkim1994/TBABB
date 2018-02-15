@@ -297,6 +297,19 @@ public class UIControls : MonoBehaviour {
 					botCenterImg.SetActive(true);
 					bottomCenterText.text = "SPACE";
 					bottomCenterInsText.text = "talk";
+					if (rightHandObj != null)
+					{
+						rightHandPickUpImage.enabled = true;
+						rightHandControlsText[0].text = "E";
+						rightHandControlsText[1].text = "serve";
+					}
+
+					if (leftHandObj != null)
+					{
+						leftHandPickUpImage.enabled = true;
+						leftHandControlsText[0].text = "Q";
+						leftHandControlsText[1].text = "serve";
+					}
 				}
 				else if (Services.GameManager.dialogue.isDialogueRunning)
 				{
@@ -304,7 +317,7 @@ public class UIControls : MonoBehaviour {
 					centerText.text = hitObj.GetComponent<NPC>().characterName;
 					botCenterImg.SetActive(false);
 					bottomCenterText.text = "";
-				}
+				} 
 			} else if (hitObj.GetComponent<Dropzone>() != null)
 			{
 				leftHandPickUpImage.enabled = true;
