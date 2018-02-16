@@ -178,12 +178,16 @@ public class UIControls : MonoBehaviour {
 	
 	private void UIRay(){
 		Ray ray = new Ray(myCam.transform.position, myCam.transform.forward);
-		float rayDist = Services.GameManager.playerInput.maxInteractionDist;
+//		float rayDist = Services.GameManager.playerInput.maxInteractionDist;
+		float rayDist = Mathf.Infinity;
+		float distanceToObj = 0;
 		RaycastHit hit = new RaycastHit();
 		
 		if(Physics.Raycast(ray, out hit, rayDist, controlsMask)){
 			GameObject hitObj = hit.transform.gameObject; //if you're actually looking at something
-			if(hitObj.GetComponent<Bottle>() != null){
+			if(hitObj.GetComponent<Bottle>() != null)
+			{
+				distanceToObj = Vector3.Distance(transform.position, hitObj.transform.position);
 				Bottle targetBottle = hitObj.GetComponent<Bottle>();
 				if(targetBottle.myDrinkBase != DrinkBase.none){
 					switch (targetBottle.myDrinkBase){
@@ -236,96 +240,108 @@ public class UIControls : MonoBehaviour {
 					} 
 				}
 				centerText.text = targetObj;
-
-				if (leftHandObj == null)
+				if (distanceToObj < Services.GameManager.playerInput.maxInteractionDist)
 				{
-					leftHandPickUpImage.enabled = true;
-					leftHandControlsText[0].text = "Q";
-					leftHandControlsText[1].text = "pick up";
-				}
-				else if (leftHandObj != null)
-				{
-					leftHandPickUpImage.enabled = true;
-					leftHandControlsText[0].text = "Q";
-					leftHandControlsText[1].text = "swap";
-				}
-				if (rightHandObj == null)
-				{
-					rightHandPickUpImage.enabled = true;
-					rightHandControlsText[0].text = "E";
-					rightHandControlsText[1].text = "pick up";
-				}
-				else
-				{
-					rightHandPickUpImage.enabled = true;
-					rightHandControlsText[0].text = "E";
-					rightHandControlsText[1].text = "swap";
-				}
-			} else if (hitObj.GetComponent<Glass>() != null){
-				centerText.text = "glass";
-				if (leftHandObj == null)
-				{
-					leftHandPickUpImage.enabled = true;
-					leftHandControlsText[0].text = "Q";
-					leftHandControlsText[1].text = "pick up";
-				} 
-				else if (leftHandObj != null)
-				{
-					leftHandPickUpImage.enabled = true;
-					leftHandControlsText[0].text = "Q";
-					leftHandControlsText[1].text = "swap";
-				}
-
-				if (rightHandObj == null)
-				{
-					rightHandPickUpImage.enabled = true;
-					rightHandControlsText[0].text = "E";
-					rightHandControlsText[1].text = "pick up";
-				}
-				else
-				{
-					rightHandPickUpImage.enabled = true;
-					rightHandControlsText[0].text = "E";
-					rightHandControlsText[1].text = "swap";
-				}
-			} else if (hitObj.GetComponent<NPC>() != null)
-			{
-				if (!Services.GameManager.dialogue.isDialogueRunning)
-				{
-					//Customer is not talking
-					centerText.text = hitObj.GetComponent<NPC>().characterName;
-					botCenterImg.SetActive(true);
-					bottomCenterText.text = "SPACE";
-					bottomCenterInsText.text = "talk";
-					if (rightHandObj != null)
-					{
-						rightHandPickUpImage.enabled = true;
-						rightHandControlsText[0].text = "E";
-						rightHandControlsText[1].text = "serve";
-					}
-
-					if (leftHandObj != null)
+					if (leftHandObj == null)
 					{
 						leftHandPickUpImage.enabled = true;
 						leftHandControlsText[0].text = "Q";
-						leftHandControlsText[1].text = "serve";
+						leftHandControlsText[1].text = "pick up";
+					}
+					else if (leftHandObj != null)
+					{
+						leftHandPickUpImage.enabled = true;
+						leftHandControlsText[0].text = "Q";
+						leftHandControlsText[1].text = "swap";
+					}
+					if (rightHandObj == null)
+					{
+						rightHandPickUpImage.enabled = true;
+						rightHandControlsText[0].text = "E";
+						rightHandControlsText[1].text = "pick up";
+					}
+					else
+					{
+						rightHandPickUpImage.enabled = true;
+						rightHandControlsText[0].text = "E";
+						rightHandControlsText[1].text = "swap";
+					}					
+				}
+			} else if (hitObj.GetComponent<Glass>() != null){
+				centerText.text = "glass";
+				if (distanceToObj < Services.GameManager.playerInput.maxInteractionDist)
+				{
+					if (leftHandObj == null)
+					{
+						leftHandPickUpImage.enabled = true;
+						leftHandControlsText[0].text = "Q";
+						leftHandControlsText[1].text = "pick up";
+					} 
+					else if (leftHandObj != null)
+					{
+						leftHandPickUpImage.enabled = true;
+						leftHandControlsText[0].text = "Q";
+						leftHandControlsText[1].text = "swap";
+					}					
+					if (rightHandObj == null)
+					{
+						rightHandPickUpImage.enabled = true;
+						rightHandControlsText[0].text = "E";
+						rightHandControlsText[1].text = "pick up";
+					}
+					else
+					{
+						rightHandPickUpImage.enabled = true;
+						rightHandControlsText[0].text = "E";
+						rightHandControlsText[1].text = "swap";
 					}
 				}
-				else if (Services.GameManager.dialogue.isDialogueRunning)
+			} else if (hitObj.GetComponent<NPC>() != null)
+			{
+				
+				centerText.text = hitObj.GetComponent<NPC>().characterName;
+				if (distanceToObj < Vector3.Distance(transform.position, hitObj.transform.position))
 				{
-					//customer is talking
-					centerText.text = hitObj.GetComponent<NPC>().characterName;
-					botCenterImg.SetActive(false);
-					bottomCenterText.text = "";
-				} 
+					if (!Services.GameManager.dialogue.isDialogueRunning)
+					{
+						//Customer is not talking
+						botCenterImg.SetActive(true);
+						bottomCenterText.text = "SPACE";
+						bottomCenterInsText.text = "talk";
+						if (rightHandObj != null)
+						{
+							rightHandPickUpImage.enabled = true;
+							rightHandControlsText[0].text = "E";
+							rightHandControlsText[1].text = "serve";
+						}
+	
+						if (leftHandObj != null)
+						{
+							leftHandPickUpImage.enabled = true;
+							leftHandControlsText[0].text = "Q";
+							leftHandControlsText[1].text = "serve";
+						}
+					}
+					else if (Services.GameManager.dialogue.isDialogueRunning)
+					{
+						//customer is talking
+						botCenterImg.SetActive(false);
+						bottomCenterText.text = "";
+					} 
+				}
+
 			} else if (hitObj.GetComponent<Dropzone>() != null)
 			{
-				leftHandPickUpImage.enabled = true;
-				leftHandControlsText[0].text = "Q";
-				leftHandControlsText[1].text = "put back";
-				rightHandPickUpImage.enabled = true;
-				rightHandControlsText[0].text = "E";
-				rightHandControlsText[1].text = "put back";
+				if (distanceToObj < Vector3.Distance(transform.position, hitObj.transform.position))
+				{
+					leftHandPickUpImage.enabled = true;
+					leftHandControlsText[0].text = "Q";
+					leftHandControlsText[1].text = "put back";
+					rightHandPickUpImage.enabled = true;
+					rightHandControlsText[0].text = "E";
+					rightHandControlsText[1].text = "put back";
+				}
+
 			} 
 			else if (hitObj.GetComponent<LightSwitch>() != null)
 			{
