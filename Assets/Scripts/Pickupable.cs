@@ -5,7 +5,7 @@ using DG.Tweening;
 public class Pickupable : MonoBehaviour {
     #region Left Hand Positions/Rotations
     private Vector3 leftHandPos = new Vector3 (-1.022f, -0.25f, 1.241f);
-    protected Vector3 dropOffset = Vector3.zero;
+    protected Vector3 dropOffset;
     #endregion
     private Vector3 rightHandPos = new Vector3 (0.954f, -0.25f, 1.473f);
     public Dropzone targetDropzone;
@@ -28,7 +28,7 @@ public class Pickupable : MonoBehaviour {
             Services.GameManager.player.GetComponent<PlayerInput>().pickupableInLeftHand = null;
  
             if(targetDropzone != null){
-                 DropTween(dropPos,targetDropzone);
+                 DropTween(dropPos, dropOffset, targetDropzone);
             }
          }
 	}
@@ -43,7 +43,7 @@ public class Pickupable : MonoBehaviour {
             transform.SetParent(null);
             Services.GameManager.player.GetComponent<PlayerInput>().pickupableInRightHand = null;
              if(targetDropzone != null){
-                DropTween(dropPos, targetDropzone);
+                DropTween(dropPos, dropOffset, targetDropzone);
             }
         }
     }
@@ -52,7 +52,7 @@ public class Pickupable : MonoBehaviour {
         if(pickedUp){
             transform.SetParent(null);
             Services.GameManager.player.GetComponent<PlayerInput>().pickupableInLeftHand = null;
-            DropTween(dropPos,targetDropzone);
+            DropTween(dropPos, dropOffset, targetDropzone);
             pickedUp = false;
         }
         else if(!pickedUp){
@@ -67,7 +67,7 @@ public class Pickupable : MonoBehaviour {
         if(pickedUp){
             transform.SetParent(null);
             Services.GameManager.player.GetComponent<PlayerInput>().pickupableInRightHand = null;
-            DropTween(dropPos,targetDropzone);
+            DropTween(dropPos, dropOffset, targetDropzone);
             pickedUp = false;
         }
         else if(!pickedUp){
@@ -94,16 +94,18 @@ public class Pickupable : MonoBehaviour {
         sequence.Append(transform.DOLocalMove(moveToPos, 0.25f, false));
         transform.DOLocalRotate(Vector3.zero, 0.25f, RotateMode.Fast);
         sequence.OnComplete(() => DeclareInactiveTween());
+        StartCoroutine(ChangeToFirstPersonLayer(0.25f));
         pickedUp = true;
     }
 
-    public virtual void DropTween(Vector3 dropPos, Dropzone _targetDropzone){
+    public virtual void DropTween(Vector3 dropPos, Vector3 dropOffset, Dropzone _targetDropzone){
         DeclareActiveTween();
         _targetDropzone.isOccupied = true;
         Sequence sequence = DOTween.Sequence();
         sequence.Append(transform.DOLocalMove(dropPos + dropOffset, 0.25f, false));
         transform.DOLocalRotate(Vector3.zero, 0.25f, RotateMode.Fast);
         sequence.OnComplete(() => DeclareInactiveTween());
+        StartCoroutine(ChangeToWorldLayer(0.25f));
         pickedUp = false;
     }
 
@@ -119,6 +121,7 @@ public class Pickupable : MonoBehaviour {
         Sequence sequence = DOTween.Sequence();
         sequence.Append(transform.DOLocalRotate(Vector3.zero, 0.25f, RotateMode.Fast));
         sequence.OnComplete(() => DeclareInactiveTween());
+
     } 
 
     public void DeclareActiveTween(){
@@ -131,6 +134,22 @@ public class Pickupable : MonoBehaviour {
     public void SetPickedUpToTrue(){
         pickedUp = true;
     }
-    
-    
+
+    IEnumerator ChangeToFirstPersonLayer(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        int children = transform.childCount;
+        for (int i = 0; i < children; ++i)
+        {
+            transform.GetChild(i).gameObject.layer = 13;        
+         }
+    }
+
+    IEnumerator ChangeToWorldLayer(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        int children = transform.childCount;
+        for (int i = 0; i < children; ++i)
+            transform.GetChild(i).gameObject.layer = 0;
+    }
 }

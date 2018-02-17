@@ -38,7 +38,7 @@ public class PlayerInput : MonoBehaviour {
 	public Pickupable pickupableInRightHand;
 	public List<GameObject> pickupableGOs = new List<GameObject>();
 	public float maxInteractionDist = 4f;
-	private float maxTalkingDist = 8f;
+	public float maxTalkingDist = 8f;
 
 	private float lookSensitivityAtStart;
 	private float aimAssistSensitivity = 0;
@@ -68,6 +68,8 @@ public class PlayerInput : MonoBehaviour {
  	}
 
 	void Update(){
+		Cursor.visible = false;
+		Cursor.lockState = CursorLockMode.Locked;
 		if (isInputEnabled)
 		{
 			GetInput();

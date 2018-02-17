@@ -242,8 +242,7 @@ public class UIControls : MonoBehaviour {
 				centerText.text = targetObj;
 				if (distanceToObj < Services.GameManager.playerInput.maxInteractionDist)
 				{
-					Debug.Log("too far from alak!");
-					if (leftHandObj == null)
+ 					if (leftHandObj == null)
 					{
 						leftHandPickUpImage.enabled = true;
 						leftHandControlsText[0].text = "Q";
@@ -314,7 +313,7 @@ public class UIControls : MonoBehaviour {
 			{
 				
 				centerText.text = hitObj.GetComponent<NPC>().characterName;
-				if (distanceToObj < Services.GameManager.playerInput.maxInteractionDist)
+				if (distanceToObj < Services.GameManager.playerInput.maxTalkingDist)
 				{
 					if (!Services.GameManager.dialogue.isDialogueRunning)
 					{

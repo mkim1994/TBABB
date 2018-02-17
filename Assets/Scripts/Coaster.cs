@@ -60,44 +60,52 @@ public class Coaster : MonoBehaviour
 			drinkOnCoaster = _cocktail;
 			if(drinkDeviation <= 0.5f){
 				if(_cocktail.alcoholicStrength >= 0.25f){
+					Debug.Log("Case 1 true!");
 					myCustomer.SetCustomerVars (1.0f, 100);
 					myCustomer.InitiateDialogue();
 				} else if (_cocktail.alcoholicStrength < 0.25f && _cocktail.alcoholicStrength >= 0.10f){
+					Debug.Log("Case 2 true!");
 					myCustomer.SetCustomerVars(1.0f, 50);
 					myCustomer.InitiateDialogue();
 				} else if (_cocktail.alcoholicStrength < 0.10f){
+					Debug.Log("Case 3 true!");
 					myCustomer.SetCustomerVars(1.0f, 0);
 					myCustomer.InitiateDialogue();
 				}
 			} else if (drinkDeviation > 0.5f && drinkDeviation <= 1.5f){
 				if(_cocktail.alcoholicStrength >= 0.25f){
+					Debug.Log("Case 4 true!");
 					myCustomer.SetCustomerVars (0.8f, 100);
 					myCustomer.InitiateDialogue();
 				} else if (_cocktail.alcoholicStrength < 0.25f && _cocktail.alcoholicStrength >= 0.10f){
+					Debug.Log("Case 5 true!");
 					myCustomer.SetCustomerVars(0.8f, 50);
 					myCustomer.InitiateDialogue();
 				} else if (_cocktail.alcoholicStrength < 0.10f){
+					Debug.Log("Case 6 true!");
 					myCustomer.SetCustomerVars(0.8f, 0);
 					myCustomer.InitiateDialogue();
 				}
 			} else if (drinkDeviation > 1.5f && drinkDeviation <= 2.5f){
 				if(_cocktail.alcoholicStrength >= 0.25f){
+					Debug.Log("Case 7 true!");
 					myCustomer.SetCustomerVars (0.5f, 100);
 					myCustomer.InitiateDialogue();
 				} else if (_cocktail.alcoholicStrength < 0.25f && _cocktail.alcoholicStrength >= 0.10f){
+					Debug.Log("Case 8 true!");
 					myCustomer.SetCustomerVars(0.5f, 50);
 					myCustomer.InitiateDialogue();
 				} else if (_cocktail.alcoholicStrength < 0.10f){
+					Debug.Log("Case 9 true!");
 					myCustomer.SetCustomerVars(0.5f, 0);
 					myCustomer.InitiateDialogue();
 				}
-			} else if (_cocktail == null){
-				myCustomer.SetCustomerVars(0, 0);
-				myCustomer.InitiateDialogue();
-			}
-		} else {
-			myCustomer.InitiateDialogue();
+			} 
+		} else if (_cocktail == null) {
+		  	Debug.Log("empty glass or bottle");
+
 			myCustomer.SetCustomerVars(0, 0);
+			myCustomer.InitiateDialogue();
 		}	
  	}
 

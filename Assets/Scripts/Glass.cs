@@ -23,12 +23,12 @@ public class Glass : Pickupable {
 	void Start()
 	{
 		liquid = GetComponentInChildren<Liquid>();
-		switch (glassType)
+ 		switch (glassType)
 		{
 			case GlassType.Beer_mug:
 			break;
 			case GlassType.Highball:
-				dropOffset = new Vector3(0, 0.392f, 0);
+				dropOffset = new Vector3(0, -0.15f, 0);
 			break;
 			case GlassType.Shot:
 			break;

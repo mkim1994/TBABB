@@ -9,7 +9,7 @@ public class Liquid : MonoBehaviour {
  	public float height;
 	public bool isPouring;
 
-	private bool isEvaluated = false;
+	public bool isEvaluated = false;
 	private float totalVolume;
 	public List<Coaster> coasters = new List<Coaster> ();
 // 	DrinkBase baseBeingPoured;
@@ -30,6 +30,7 @@ public class Liquid : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		Debug.Log("Is evaluated = " + isEvaluated);
 		EvaluateDrinkInCoaster ();
  
 		height = Mathf.Clamp(height, 0, 7058.475f);
@@ -234,12 +235,18 @@ public class Liquid : MonoBehaviour {
 		
 	private void EvaluateDrinkInCoaster(){
 		foreach (var coaster in coasters) {
-			if (Vector3.Distance (coaster.gameObject.transform.position, transform.position) <= 0.5f) {
+			if (Vector3.Distance (coaster.gameObject.transform.position, transform.position) <= 1f) {
 				if(!isEvaluated){
+					Debug.Log("Got evaluated");
 					coaster.EvaluateDrink (this.thisCocktail);
 					isEvaluated = true;
 				}
- 			}		
+ 			}
+//			else if (Vector3.Distance (coaster.gameObject.transform.position, transform.position) > 1f) 
+//			{
+//				Debug.Log("Setting isEvaluated to false!");
+//				isEvaluated = false;
+//			}
 		}
 	}
 
