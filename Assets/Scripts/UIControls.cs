@@ -185,9 +185,9 @@ public class UIControls : MonoBehaviour {
 		
 		if(Physics.Raycast(ray, out hit, rayDist, controlsMask)){
 			GameObject hitObj = hit.transform.gameObject; //if you're actually looking at something
+			distanceToObj = Vector3.Distance(transform.position, hitObj.transform.position);
 			if(hitObj.GetComponent<Bottle>() != null)
 			{
-				distanceToObj = Vector3.Distance(transform.position, hitObj.transform.position);
 				Bottle targetBottle = hitObj.GetComponent<Bottle>();
 				if(targetBottle.myDrinkBase != DrinkBase.none){
 					switch (targetBottle.myDrinkBase){
@@ -242,6 +242,7 @@ public class UIControls : MonoBehaviour {
 				centerText.text = targetObj;
 				if (distanceToObj < Services.GameManager.playerInput.maxInteractionDist)
 				{
+					Debug.Log("too far from alak!");
 					if (leftHandObj == null)
 					{
 						leftHandPickUpImage.enabled = true;
@@ -267,7 +268,14 @@ public class UIControls : MonoBehaviour {
 						rightHandControlsText[1].text = "swap";
 					}					
 				}
-			} else if (hitObj.GetComponent<Glass>() != null){
+
+				else
+				{
+					ClearUI();
+				}
+			} 
+			//ray hits glass
+			else if (hitObj.GetComponent<Glass>() != null){
 				centerText.text = "glass";
 				if (distanceToObj < Services.GameManager.playerInput.maxInteractionDist)
 				{
@@ -296,11 +304,17 @@ public class UIControls : MonoBehaviour {
 						rightHandControlsText[1].text = "swap";
 					}
 				}
-			} else if (hitObj.GetComponent<NPC>() != null)
+				else
+				{
+					ClearUI();
+				}
+			} 
+			//ray hits NPC
+			else if (hitObj.GetComponent<NPC>() != null)
 			{
 				
 				centerText.text = hitObj.GetComponent<NPC>().characterName;
-				if (distanceToObj < Vector3.Distance(transform.position, hitObj.transform.position))
+				if (distanceToObj < Services.GameManager.playerInput.maxInteractionDist)
 				{
 					if (!Services.GameManager.dialogue.isDialogueRunning)
 					{
@@ -329,10 +343,16 @@ public class UIControls : MonoBehaviour {
 						bottomCenterText.text = "";
 					} 
 				}
-
-			} else if (hitObj.GetComponent<Dropzone>() != null)
+				else
+				{
+					ClearUI();
+				}
+			//ray hits dropzone
+			} 
+			
+			else if (hitObj.GetComponent<Dropzone>() != null && !hitObj.GetComponent<Dropzone>().isOccupied)
 			{
-				if (distanceToObj < Vector3.Distance(transform.position, hitObj.transform.position))
+				if (distanceToObj < Services.GameManager.playerInput.maxInteractionDist)
 				{
 					leftHandPickUpImage.enabled = true;
 					leftHandControlsText[0].text = "Q";
@@ -341,37 +361,55 @@ public class UIControls : MonoBehaviour {
 					rightHandControlsText[0].text = "E";
 					rightHandControlsText[1].text = "put back";
 				}
-
+				
+				else
+				{
+					ClearUI();
+				}
 			} 
+			//ray hits light switch
 			else if (hitObj.GetComponent<LightSwitch>() != null)
 			{
 				if (Services.GameManager.dayManager.dayHasEnded)
 				{
 					centerText.text = "end the day";
-					botCenterImg.SetActive(true);
-					bottomCenterInsText.text = "use";
-					bottomCenterText.text = "SPACE";
-				}
+					if (distanceToObj < Services.GameManager.playerInput.maxInteractionDist)
+					{
+						botCenterImg.SetActive(true);
+						bottomCenterInsText.text = "use";
+						bottomCenterText.text = "SPACE";
+					} 
+					else
+					{
+						ClearUI();
+					}
+
+				} 
 				else if (!Services.GameManager.dayManager.dayHasEnded)
 				{
-					botCenterImg.SetActive(true);
-					bottomCenterInsText.text = "use";
-					bottomCenterText.text = "SPACE";
-					if (Services.GameManager.playerInput.i_talk)
+					if (distanceToObj < Services.GameManager.playerInput.maxInteractionDist)
 					{
-						if (!isMessageOverrideOn)
+						botCenterImg.SetActive(true);
+						bottomCenterInsText.text = "use";
+						bottomCenterText.text = "SPACE";
+						if (Services.GameManager.playerInput.i_talk)
 						{
-							isMessageOverrideOn = true;
-							centerText.text = "there are still customers to serve";
-							StartCoroutine(clearTextCoroutine);
-						}					
+							if (!isMessageOverrideOn)
+							{
+								isMessageOverrideOn = true;
+								centerText.text = "there are still customers to serve";
+								StartCoroutine(clearTextCoroutine);
+							}					
+						}
+						else if (!Services.GameManager.playerInput.i_talk && !isMessageOverrideOn)
+						{
+							centerText.text = "end the day";
+						}
 					}
-					else if (!Services.GameManager.playerInput.i_talk && !isMessageOverrideOn)
+					else
 					{
-						centerText.text = "end the day";
+						ClearUI();
 					}
-
-
 				} 
 			}
 			else {
@@ -400,6 +438,19 @@ public class UIControls : MonoBehaviour {
 			leftHandControlsText[0].text = "";
 			leftHandControlsText[1].text = "";		
 		}
+	}
+
+	private void ClearUI()
+	{
+		botCenterImg.SetActive(false);
+		bottomCenterText.text = "";
+		bottomCenterInsText.text = "";
+		rightHandPickUpImage.enabled = false;
+		rightHandControlsText[0].text = "";
+		rightHandControlsText[1].text = "";
+		leftHandPickUpImage.enabled = false;
+		leftHandControlsText[0].text = "";
+		leftHandControlsText[1].text = "";
 	}
 
 	void ClearTextArray(Text[] texts)
