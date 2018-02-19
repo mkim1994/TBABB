@@ -15,7 +15,8 @@ public class GameManager : MonoBehaviour {
     public NPC CustomerIvory, CustomerSahana;
     public DayCycleManager dayManager;
     public AudioController audioController;
-
+	public ControllerDetection controllerDetection;
+	
     public Transform entrance;
     public GameObject directionalLight;
     public GameObject entranceLight;
@@ -31,6 +32,7 @@ public class GameManager : MonoBehaviour {
 	void Start()
 	{
 		//Services.EventManager.Register<Reset>(Reset);
+		Services.ControllerDetection.Start();
 	}
 
 	// Update is called once per frame
@@ -55,7 +57,9 @@ public class GameManager : MonoBehaviour {
 		Services.DrinkDictionary = new DrinkDictionary(); 
 		Services.MixerDictionary = new MixerDictionary();
 		Services.CustomerDictionary = new CustomerDictionary();
-         //Services.Materials = Resources.Load<MaterialDB>("Art/Materials");
+		Services.ControllerDetection = new ControllerDetection();
+		
+		//Services.Materials = Resources.Load<MaterialDB>("Art/Materials");
 		//Services.SceneStackManager = new SceneStackManager<TransitionData>(sceneRoot, Services.Prefabs.Scenes);
 
 
