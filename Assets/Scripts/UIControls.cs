@@ -34,20 +34,29 @@ public class UIControls : MonoBehaviour {
 	[SerializeField]private bool isMessageOverrideOn = false;
 	
 	void Start(){
-//		if ( /*some Rewired code here*/)
-//		{
-//			isUsingKeyboard = true;
-//		}
-//		else
-//		{
-//			isUsingKeyboard = false;
-//		}
+		if (Services.ControllerDetection.isConnected)
+		{
+			leftHandActionImage.sprite = GetSprite("icon_trigger1");
+			rightHandActionImage.sprite = GetSprite("icon_trigger1");
+			leftHandPickUpImage.sprite = GetSprite("icon_trigger2");
+			rightHandPickUpImage.sprite = GetSprite("icon_trigger2");
+			botCenterImg.GetComponent<Image>().sprite = GetSprite("icon_x");
+		}
+		else
+		{
+			leftHandActionImage.sprite = GetSprite("icon_lmb");
+			rightHandActionImage.sprite = GetSprite("icon_rmb");
+			leftHandPickUpImage.sprite = GetSprite("icon_key");
+			rightHandPickUpImage.sprite = GetSprite("icon_key");
+			botCenterImg.GetComponent<Image>().sprite = GetSprite("icon_key");
+		}
 		clearTextCoroutine = ClearTextCoroutine(centerText, 3);
 		botCenterImg.SetActive(false);
 		myCam = FindObjectOfType<Camera>();
 	}
 	void Update(){
 
+ 		
 		UIRay();
 		//find the objects in hand
  
@@ -464,8 +473,35 @@ public class UIControls : MonoBehaviour {
 	{
 		yield return new WaitForSeconds(delay);
 		text.text = "";
-		Debug.Log("what cororuite");
 		isMessageOverrideOn = false;
 	}
+	
+	protected Sprite GetSprite(string _fileName){
+		Sprite mySprite;
+		mySprite = Resources.Load<Sprite>("UI/" + _fileName);
+		return mySprite; 
+	}
+
+	public void ChangeUISpritesOnControllerConnect()
+	{
+		leftHandActionImage.sprite = GetSprite("icon_trigger1");
+		rightHandActionImage.sprite = GetSprite("icon_trigger1");
+		leftHandPickUpImage.sprite = GetSprite("icon_trigger2");
+		rightHandPickUpImage.sprite = GetSprite("icon_trigger2");
+		botCenterImg.GetComponent<Image>().sprite = GetSprite("icon_x");
+	}
+
+	public void ChangeUISpritesOnControllerDisconnect()
+	{
+		leftHandActionImage.sprite = GetSprite("icon_lmb");
+		rightHandActionImage.sprite = GetSprite("icon_rmb");
+		leftHandPickUpImage.sprite = GetSprite("icon_key");
+		rightHandPickUpImage.sprite = GetSprite("icon_key");
+		botCenterImg.GetComponent<Image>().sprite = GetSprite("icon_key");
+	}
+
+
+
+
 
 }

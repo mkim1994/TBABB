@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour {
     public Camera currentCamera;
     public GameObject player;
 	public PlayerInput playerInput;
+	public UIControls uiControls;
     public DialogueRunner dialogue;
     public NPC CustomerIvory, CustomerSahana;
     public DayCycleManager dayManager;
@@ -58,6 +59,8 @@ public class GameManager : MonoBehaviour {
 		Services.MixerDictionary = new MixerDictionary();
 		Services.CustomerDictionary = new CustomerDictionary();
 		Services.ControllerDetection = new ControllerDetection();
+		Services.ControllerDetection.Start();
+
 		
 		//Services.Materials = Resources.Load<MaterialDB>("Art/Materials");
 		//Services.SceneStackManager = new SceneStackManager<TransitionData>(sceneRoot, Services.Prefabs.Scenes);
