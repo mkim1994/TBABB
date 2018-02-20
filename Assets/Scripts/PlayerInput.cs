@@ -44,7 +44,7 @@ public class PlayerInput : MonoBehaviour {
 	public float controllerSens;
 	public float mouseSens;
 	
-	private float lookSensitivityAtStart;
+	public float lookSensitivityAtStart;
 	private float aimAssistSensitivity = 0;
 	float verticalLook = 0f;
 
