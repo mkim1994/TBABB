@@ -23,7 +23,7 @@ public class ControllerDetection
         isConnected = true;
         if (Services.GameManager.uiControls != null)
         {
-            Services.GameManager.uiControls.ChangeUISpritesOnControllerConnect();
+            Services.GameManager.uiControls.ChangeUIOnControllerConnect();
         }
     }
     
@@ -34,7 +34,7 @@ public class ControllerDetection
         isConnected = false;
         if (Services.GameManager.uiControls != null)
         {
-            Services.GameManager.uiControls.ChangeUISpritesOnControllerDisconnect();
+            Services.GameManager.uiControls.ChangeUIOnControllerDisconnect();
         }
     }
     

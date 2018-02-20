@@ -28,32 +28,32 @@ public class UIControls : MonoBehaviour {
 	private Camera myCam;
 	private GameObject leftHandObj;
 	private GameObject rightHandObj;
+	private int stringOffset;
+	private string[] buttonAndKeyStrings =
+	{
+		"",
+		"",
+		"Q",
+		"E",
+		"SPACE",
+
+		"L1",
+		"R1",
+		"L2",
+		"R2",
+		""
+	};
 
 	private IEnumerator clearTextCoroutine;
 //	private bool isUsingKeyboard = true;
 	[SerializeField]private bool isMessageOverrideOn = false;
 	
 	void Start(){
-		if (Services.ControllerDetection.isConnected)
-		{
-			leftHandActionImage.sprite = GetSprite("icon_trigger1");
-			rightHandActionImage.sprite = GetSprite("icon_trigger1");
-			leftHandPickUpImage.sprite = GetSprite("icon_trigger2");
-			rightHandPickUpImage.sprite = GetSprite("icon_trigger2");
-			botCenterImg.GetComponent<Image>().sprite = GetSprite("icon_x");
-		}
-		else
-		{
-			leftHandActionImage.sprite = GetSprite("icon_lmb");
-			rightHandActionImage.sprite = GetSprite("icon_rmb");
-			leftHandPickUpImage.sprite = GetSprite("icon_key");
-			rightHandPickUpImage.sprite = GetSprite("icon_key");
-			botCenterImg.GetComponent<Image>().sprite = GetSprite("icon_key");
-		}
 		clearTextCoroutine = ClearTextCoroutine(centerText, 3);
 		botCenterImg.SetActive(false);
 		myCam = FindObjectOfType<Camera>();
 	}
+	
 	void Update(){
 
  		
@@ -85,10 +85,10 @@ public class UIControls : MonoBehaviour {
 			|| rightHandObj.GetComponent<Bottle>() != null  && leftHandObj.GetComponent<Glass>() != null
 			)
 			{
-//				inLeftHandText[0].text = "LMB";
+				inLeftHandText[0].text = buttonAndKeyStrings[0 + stringOffset];
 				leftHandActionImage.enabled = true;
 				inLeftHandText[1].text = "pour";
-//				inRightHandText[0].text = "RMB";
+				inRightHandText[0].text = buttonAndKeyStrings[1 + stringOffset];
 				rightHandActionImage.enabled = true;
 				inRightHandText[1].text = "pour";
 			}
@@ -100,10 +100,10 @@ public class UIControls : MonoBehaviour {
 					//looking at glass
 					if (Services.GameManager.playerInput.pickupable.gameObject.GetComponent<Glass>() != null)
 					{
-//						inLeftHandText[0].text = "LMB";
+						inLeftHandText[0].text = buttonAndKeyStrings[0 + stringOffset];
 						leftHandActionImage.enabled = true;
 						inLeftHandText[1].text = "pour";
-//						inRightHandText[0].text = "RMB";
+						inRightHandText[0].text = buttonAndKeyStrings[1 + stringOffset];
 						rightHandActionImage.enabled = true;
 						inRightHandText[1].text = "pour";
 					}	
@@ -138,6 +138,7 @@ public class UIControls : MonoBehaviour {
 				{
 					if(leftHandObj.GetComponent<Bottle>() != null){
 						leftHandActionImage.enabled = true;
+						inLeftHandText[0].text = buttonAndKeyStrings[0 + stringOffset];
 						inLeftHandText[1].text = "pour";			
 					}
 				}
@@ -164,6 +165,7 @@ public class UIControls : MonoBehaviour {
 				{
 					if(rightHandObj.GetComponent<Bottle>() != null){
 						rightHandActionImage.enabled = true;
+						inRightHandText[0].text = buttonAndKeyStrings[1 + stringOffset];
 						inRightHandText[1].text = "pour";			
 					}
 				}
@@ -254,25 +256,25 @@ public class UIControls : MonoBehaviour {
  					if (leftHandObj == null)
 					{
 						leftHandPickUpImage.enabled = true;
-						leftHandControlsText[0].text = "Q";
+						leftHandControlsText[0].text = buttonAndKeyStrings[2 + stringOffset];
 						leftHandControlsText[1].text = "pick up";
 					}
 					else if (leftHandObj != null)
 					{
 						leftHandPickUpImage.enabled = true;
-						leftHandControlsText[0].text = "Q";
+						leftHandControlsText[0].text = buttonAndKeyStrings[2 + stringOffset];
 						leftHandControlsText[1].text = "swap";
 					}
 					if (rightHandObj == null)
 					{
 						rightHandPickUpImage.enabled = true;
-						rightHandControlsText[0].text = "E";
+						rightHandControlsText[0].text = buttonAndKeyStrings[3 + stringOffset];
 						rightHandControlsText[1].text = "pick up";
 					}
 					else
 					{
 						rightHandPickUpImage.enabled = true;
-						rightHandControlsText[0].text = "E";
+						rightHandControlsText[0].text = buttonAndKeyStrings[3 + stringOffset];
 						rightHandControlsText[1].text = "swap";
 					}					
 				}
@@ -290,25 +292,25 @@ public class UIControls : MonoBehaviour {
 					if (leftHandObj == null)
 					{
 						leftHandPickUpImage.enabled = true;
-						leftHandControlsText[0].text = "Q";
+						leftHandControlsText[0].text = buttonAndKeyStrings[2 + stringOffset];
 						leftHandControlsText[1].text = "pick up";
 					} 
 					else if (leftHandObj != null)
 					{
 						leftHandPickUpImage.enabled = true;
-						leftHandControlsText[0].text = "Q";
+						leftHandControlsText[0].text = buttonAndKeyStrings[2 + stringOffset];
 						leftHandControlsText[1].text = "swap";
 					}					
 					if (rightHandObj == null)
 					{
 						rightHandPickUpImage.enabled = true;
-						rightHandControlsText[0].text = "E";
+						rightHandControlsText[0].text = buttonAndKeyStrings[3 + stringOffset];
 						rightHandControlsText[1].text = "pick up";
 					}
 					else
 					{
 						rightHandPickUpImage.enabled = true;
-						rightHandControlsText[0].text = "E";
+						rightHandControlsText[0].text = buttonAndKeyStrings[3 + stringOffset];
 						rightHandControlsText[1].text = "swap";
 					}
 				}
@@ -328,19 +330,19 @@ public class UIControls : MonoBehaviour {
 					{
 						//Customer is not talking
 						botCenterImg.SetActive(true);
-						bottomCenterText.text = "SPACE";
+						bottomCenterText.text = buttonAndKeyStrings[4 + stringOffset];
 						bottomCenterInsText.text = "talk";
 						if (rightHandObj != null)
 						{
 							rightHandPickUpImage.enabled = true;
-							rightHandControlsText[0].text = "E";
+							rightHandControlsText[0].text = buttonAndKeyStrings[3 + stringOffset];
 							rightHandControlsText[1].text = "serve";
 						}
 	
 						if (leftHandObj != null)
 						{
 							leftHandPickUpImage.enabled = true;
-							leftHandControlsText[0].text = "Q";
+							leftHandControlsText[0].text = buttonAndKeyStrings[2 + stringOffset];
 							leftHandControlsText[1].text = "serve";
 						}
 					}
@@ -363,10 +365,10 @@ public class UIControls : MonoBehaviour {
 				if (distanceToObj < Services.GameManager.playerInput.maxInteractionDist)
 				{
 					leftHandPickUpImage.enabled = true;
-					leftHandControlsText[0].text = "Q";
+					leftHandControlsText[0].text = buttonAndKeyStrings[2 + stringOffset];
 					leftHandControlsText[1].text = "put back";
 					rightHandPickUpImage.enabled = true;
-					rightHandControlsText[0].text = "E";
+					rightHandControlsText[0].text = buttonAndKeyStrings[3 + stringOffset];
 					rightHandControlsText[1].text = "put back";
 				}
 				
@@ -385,7 +387,7 @@ public class UIControls : MonoBehaviour {
 					{
 						botCenterImg.SetActive(true);
 						bottomCenterInsText.text = "use";
-						bottomCenterText.text = "SPACE";
+						bottomCenterText.text = buttonAndKeyStrings[4 + stringOffset];
 					} 
 					else
 					{
@@ -399,7 +401,7 @@ public class UIControls : MonoBehaviour {
 					{
 						botCenterImg.SetActive(true);
 						bottomCenterInsText.text = "use";
-						bottomCenterText.text = "SPACE";
+						bottomCenterText.text = buttonAndKeyStrings[4 + stringOffset];
 						if (Services.GameManager.playerInput.i_talk)
 						{
 							if (!isMessageOverrideOn)
@@ -432,7 +434,7 @@ public class UIControls : MonoBehaviour {
 				rightHandControlsText[1].text = "";			
 				leftHandPickUpImage.enabled = false;
 				leftHandControlsText[0].text = "";
-				leftHandControlsText[1].text = "";		
+				leftHandControlsText[1].text = "";
 			} 
 		} else {
 			botCenterImg.SetActive(false);
@@ -482,8 +484,9 @@ public class UIControls : MonoBehaviour {
 		return mySprite; 
 	}
 
-	public void ChangeUISpritesOnControllerConnect()
+	public void ChangeUIOnControllerConnect()
 	{
+		stringOffset = 5;
 		leftHandActionImage.sprite = GetSprite("icon_trigger1");
 		rightHandActionImage.sprite = GetSprite("icon_trigger1");
 		leftHandPickUpImage.sprite = GetSprite("icon_trigger2");
@@ -491,8 +494,9 @@ public class UIControls : MonoBehaviour {
 		botCenterImg.GetComponent<Image>().sprite = GetSprite("icon_x");
 	}
 
-	public void ChangeUISpritesOnControllerDisconnect()
+	public void ChangeUIOnControllerDisconnect()
 	{
+		stringOffset = 0;
 		leftHandActionImage.sprite = GetSprite("icon_lmb");
 		rightHandActionImage.sprite = GetSprite("icon_rmb");
 		leftHandPickUpImage.sprite = GetSprite("icon_key");
