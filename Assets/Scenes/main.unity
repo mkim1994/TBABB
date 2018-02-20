@@ -124,6 +124,12 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 296003611}
   m_Script: {fileID: 11500000, guid: d16bc231d7a9d4d4290ca16737e4fe57, type: 3}
+--- !u!114 &82639884 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114442831977188336, guid: 002984101656d421a83f24c057d0eade,
+    type: 2}
+  m_PrefabInternal: {fileID: 296003611}
+  m_Script: {fileID: 11500000, guid: 6f302c71fb5613047a16fd9bac0e22ce, type: 3}
 --- !u!114 &166663318 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 114415776459832788, guid: 0a12ea9eba71045608e38cf6b982c571,
@@ -233,6 +239,11 @@ Prefab:
       objectReference: {fileID: 82639882}
     - target: {fileID: 114251215414177636, guid: b29337a5327a44c18b29587e87b930dc,
         type: 2}
+      propertyPath: uiControls
+      value: 
+      objectReference: {fileID: 82639884}
+    - target: {fileID: 114251215414177636, guid: b29337a5327a44c18b29587e87b930dc,
+        type: 2}
       propertyPath: dialogue
       value: 
       objectReference: {fileID: 166663318}
@@ -316,6 +327,16 @@ Prefab:
     - target: {fileID: 1117426447310104, guid: 002984101656d421a83f24c057d0eade, type: 2}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114739140198778196, guid: 002984101656d421a83f24c057d0eade,
+        type: 2}
+      propertyPath: controllerSens
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114739140198778196, guid: 002984101656d421a83f24c057d0eade,
+        type: 2}
+      propertyPath: mouseSens
+      value: 0.25
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 002984101656d421a83f24c057d0eade, type: 2}

@@ -8,8 +8,7 @@ using UnityEngine.SceneManagement;
 [RequireComponent(typeof(CharacterController))]
 public class PlayerInput : MonoBehaviour {
 	
-	[SerializeField]float moveSpeed = 2.0f;
-	[SerializeField]float lookSensitivity = 0.005f;
+	
 	// [SerializeField]float smoothing = 2.0f;
 
 	Vector2 smoothV;
@@ -39,12 +38,18 @@ public class PlayerInput : MonoBehaviour {
 	public List<GameObject> pickupableGOs = new List<GameObject>();
 	public float maxInteractionDist = 4f;
 	public float maxTalkingDist = 8f;
-
+	
+	[SerializeField]float moveSpeed = 2.0f;
+	public float lookSensitivity;
+	public float controllerSens;
+	public float mouseSens;
+	
 	private float lookSensitivityAtStart;
 	private float aimAssistSensitivity = 0;
 	float verticalLook = 0f;
 
 	public bool isInputEnabled = true;
+	public bool isUsingController = false;
 
 	//buttons
 	bool i_pickupLeft;
@@ -57,15 +62,33 @@ public class PlayerInput : MonoBehaviour {
 	public bool i_talk;
 	bool i_choose1;
 	bool i_choose2;
+	
 	void Awake(){
 		Cursor.visible = false;
 		Cursor.lockState = CursorLockMode.Locked;
 		player = ReInput.players.GetPlayer(playerId);
 		cc = GetComponent<CharacterController>();
 		myCam = GetComponentInChildren<Camera>();
-		lookSensitivityAtStart = lookSensitivity;
-		aimAssistSensitivity = lookSensitivity * 0.49f;
- 	}
+//		lookSensitivityAtStart = lookSensitivity;
+	}
+
+	void Start()
+	{
+		if (isUsingController)
+		{
+			lookSensitivity = controllerSens;
+			lookSensitivityAtStart = lookSensitivity;
+			aimAssistSensitivity = lookSensitivity * 0.49f;
+		}
+		
+		else if (!isUsingController)
+		{
+			lookSensitivity = mouseSens;
+			lookSensitivityAtStart = lookSensitivity;
+			aimAssistSensitivity = lookSensitivity * 0.49f;
+		}
+	}
+
 
 	void Update(){
 		Cursor.visible = false;
@@ -109,11 +132,14 @@ public class PlayerInput : MonoBehaviour {
 		#endregion
 
 		#region MouseLook
+
+//		
+		
 		verticalLook -= lookVector.y * lookSensitivity;
 		verticalLook = Mathf.Clamp (verticalLook, -90f, 90f);
 		myCam.transform.localRotation = Quaternion.Euler (verticalLook, 0, 0);
 		cc.transform.Rotate (0, lookVector.x * lookSensitivity, 0);
-		
+
  		if(pickupable != null){ //aim assist
 			t += 2f * Time.deltaTime;
 			lookSensitivity = Mathf.Lerp(lookSensitivityAtStart, aimAssistSensitivity, t);

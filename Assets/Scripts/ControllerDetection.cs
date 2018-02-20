@@ -24,6 +24,9 @@ public class ControllerDetection
         if (Services.GameManager.uiControls != null)
         {
             Services.GameManager.uiControls.ChangeUIOnControllerConnect();
+            Services.GameManager.playerInput.isUsingController = true;
+            Services.GameManager.playerInput.lookSensitivity = Services.GameManager.playerInput.controllerSens;
+            Debug.Log("Changed to mouse sensitivity! " + Services.GameManager.playerInput.controllerSens);
         }
     }
     
@@ -35,6 +38,9 @@ public class ControllerDetection
         if (Services.GameManager.uiControls != null)
         {
             Services.GameManager.uiControls.ChangeUIOnControllerDisconnect();
+            Services.GameManager.playerInput.isUsingController = false;
+            Services.GameManager.playerInput.lookSensitivity = Services.GameManager.playerInput.mouseSens;
+            Debug.Log("Changed to mouse sensitivity! " + Services.GameManager.playerInput.mouseSens);
         }
     }
     
