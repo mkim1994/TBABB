@@ -30,8 +30,7 @@ public class Liquid : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		Debug.Log("Is evaluated = " + isEvaluated);
-		EvaluateDrinkInCoaster ();
+ 		EvaluateDrinkInCoaster ();
  
 		height = Mathf.Clamp(height, 0, 7058.475f);
 
