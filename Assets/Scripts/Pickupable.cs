@@ -9,13 +9,14 @@ public class Pickupable : MonoBehaviour {
     #endregion
     private Vector3 rightHandPos = new Vector3 (0.954f, -0.25f, 1.473f);
     public Dropzone targetDropzone;
+    public Vector3 startPos;
     public Vector3 dropPos;
     public bool pickedUp = false;
 
     public string myName = "";
     // public List<Coaster> coasters = new List<Coaster> ();
 
-    void Start(){
+    protected virtual void Start(){
     }
 
     public virtual void InteractLeftHand(){
@@ -84,6 +85,15 @@ public class Pickupable : MonoBehaviour {
     public virtual void UseRightHand(){
     }
 
+    public virtual void StartPourTween(Vector3 moveToPos)
+    {
+        
+    }
+
+    public virtual void EndPourTween()
+    {
+        
+    }
 
     public virtual void PickupTween(Vector3 moveToPos){
          DeclareActiveTween();
@@ -121,7 +131,6 @@ public class Pickupable : MonoBehaviour {
         Sequence sequence = DOTween.Sequence();
         sequence.Append(transform.DOLocalRotate(Vector3.zero, 0.25f, RotateMode.Fast));
         sequence.OnComplete(() => DeclareInactiveTween());
-
     } 
 
     public void DeclareActiveTween(){
@@ -139,6 +148,7 @@ public class Pickupable : MonoBehaviour {
     {
         yield return new WaitForSeconds(delay);
         int children = transform.childCount;
+        startPos = transform.localPosition;
         for (int i = 0; i < children; ++i)
         {
             transform.GetChild(i).gameObject.layer = 13;        
@@ -148,8 +158,12 @@ public class Pickupable : MonoBehaviour {
     IEnumerator ChangeToWorldLayer(float delay)
     {
         yield return new WaitForSeconds(delay);
-        int children = transform.childCount;
+        startPos = transform.localPosition;
+         int children = transform.childCount;
         for (int i = 0; i < children; ++i)
+        {
             transform.GetChild(i).gameObject.layer = 0;
+        }
+
     }
 }

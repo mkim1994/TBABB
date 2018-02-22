@@ -41,9 +41,6 @@ public class Coaster : MonoBehaviour
 
 	void Update()
 	{
-		if(!isDrinkHere){
-			// myCustomer.
-		}
  	}
 
 	public void EvaluateDrink(DrinkProfile _cocktail){

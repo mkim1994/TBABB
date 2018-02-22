@@ -236,6 +236,7 @@ public class PlayerInput : MonoBehaviour {
 		if(i_endUseLeft){
 			if(pickupableInLeftHand != null){
 				pickupableInLeftHand.RotateToZeroTween();
+				pickupableInLeftHand.EndPourTween();
 			}
 			if (pickupableInLeftHand != null && pickupableInRightHand != null){
 				pickupableInLeftHand.RotateToZeroTween();
@@ -279,6 +280,7 @@ public class PlayerInput : MonoBehaviour {
 		if(i_endUseRight){
 			if(pickupableInRightHand != null){
 				pickupableInRightHand.RotateToZeroTween();
+				pickupableInRightHand.EndPourTween();
 			}
 			if (pickupableInLeftHand != null && pickupableInRightHand != null){
 				pickupableInLeftHand.RotateToZeroTween();
