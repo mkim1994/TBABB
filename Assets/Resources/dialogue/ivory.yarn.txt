@@ -4,16 +4,22 @@ colorID: 0
 position: 114,209
 ---
 <<if $stateIvory is -1>>
+    <<set $hasOrderedIvory = false>>
     <<set $progressIvory = 0>>
     <<order Ivory n 0 n 0 whiskey 1.0>>
     <<set $stateIvory = 0>>
     Customer: Ha...
+    <<set $hasOrderedIvory = true>>
     Customer: Whiskey please.
 <<else>>
     <<if $progressIvory is 0>>
         <<if $drinkScoreIvory is -1>>
+            <<set $hasOrderedIvory = true>>
             Customer: Whiskey.
         <<else>>
+            <<if $hasOrderedIvory is false>>
+                Customer: Hah, I didn't even tell you what I wanted.
+            <<endif>>
             <<if $drinkScoreIvory is 0>>
                 Customer: Alright.
                 Customer: You take one of the whiskey bottles...

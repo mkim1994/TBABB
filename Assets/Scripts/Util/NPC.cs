@@ -136,6 +136,14 @@ public class NPC : MonoBehaviour
         }
     }
 
+    public bool IsCustomerPresent(){
+        if (GetComponentInChildren<SpriteRenderer>().enabled)
+        {
+            return true;
+        }
+        return false;
+    }
+
     public void InitiateDialogue(){
         /* if(Services.GameManager.dialogue.isDialogueRunning){
              Services.GameManager.dialogue.ResetDialogue();
@@ -268,6 +276,7 @@ public class NPC : MonoBehaviour
             Debug.Log("take seat");
 
             Context.isReadyToTalk = true;
+            Context.isReadyToServe = true;
             Context.TakeSeatAction();
         }
 
