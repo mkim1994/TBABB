@@ -365,7 +365,7 @@ public class NPC : MonoBehaviour
             Context.isReadyToTalk = true; //can talk to clarify order
         }
         public override void Update(){
-            if(Services.GameManager.dialogue.variableStorage.GetValue("$state" + Context.characterName) != new Yarn.Value(0)){
+            if(Services.GameManager.dialogue.variableStorage.GetValue("$state" + Context.characterName).AsString != "0"){
                 Context.isReadyToTalk = true;
                 TransitionTo<Default>();
                 return;
