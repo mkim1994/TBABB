@@ -389,24 +389,6 @@ Prefab:
       propertyPath: m_Name
       value: ScriptBasedObjsColliders
       objectReference: {fileID: 0}
-    - target: {fileID: 23003145133490524, guid: 81df8f504d79640629ad026d32ff0cd5,
-        type: 2}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 1c5225c36c15c35418ac47c9b336bfe9, type: 2}
-    - target: {fileID: 23055785177339006, guid: 81df8f504d79640629ad026d32ff0cd5,
-        type: 2}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 1c5225c36c15c35418ac47c9b336bfe9, type: 2}
-    - target: {fileID: 4049560294712648, guid: 81df8f504d79640629ad026d32ff0cd5, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 0.14
-      objectReference: {fileID: 0}
-    - target: {fileID: 4049560294712648, guid: 81df8f504d79640629ad026d32ff0cd5, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: -0.553
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 81df8f504d79640629ad026d32ff0cd5, type: 2}
   m_IsPrefabParent: 0

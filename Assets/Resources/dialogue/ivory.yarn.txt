@@ -3,7 +3,7 @@ tags:
 colorID: 0
 position: 114,209
 ---
-<<if $stateIvory is -1>>
+<<if $drinkScoreIvory is -1 and $stateIvory is -1>>
     <<set $hasOrderedIvory = false>>
     <<set $progressIvory = 0>>
     <<order Ivory n 0 n 0 whiskey 1.0>>
@@ -22,6 +22,7 @@ position: 114,209
             <<endif>>
             <<if $drinkScoreIvory is 0>>
                 Customer: Alright.
+                <<set $hasOrderedIvory = true>>
                 Customer: You take one of the whiskey bottles...
                 Customer: And you pour it into a glass.
                 Customer: It's not that hard, is it?
