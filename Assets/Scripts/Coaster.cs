@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Coaster : MonoBehaviour
 {
-	private NPC myCustomer;
+	public NPC myCustomer;
 	private Dropzone myDropzone;
 	private DrinkProfile currentOrder;
 
@@ -44,7 +44,7 @@ public class Coaster : MonoBehaviour
  	}
 
 	public void EvaluateDrink(DrinkProfile _cocktail){
-  		if(currentOrder != null && _cocktail !=null){
+  		if(_cocktail !=null){
 			float drinkDeviation = DrinkProfile.GetProfileDeviation(_cocktail, currentOrder);
 			// float abvSimilarity = DrinkProfile.GetABV
 //			float abvDeviation = DrinkProfile.GetABVdeviation(_cocktail, currentOrder);
@@ -90,7 +90,7 @@ public class Coaster : MonoBehaviour
 					Debug.Log("Case 9 true!");
 					myCustomer.SetCustomerVars(0.5f, 0);
 					myCustomer.InitiateDialogue();
-				}
+				}	
 			} 
 		} else if (_cocktail == null) {
 		  	Debug.Log("empty glass or bottle");

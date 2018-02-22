@@ -51,8 +51,11 @@ public class Bottle : Pickupable {
 	public void PourIntoPickedUpGlass(){
 		if(Services.GameManager.playerInput.pickupableInLeftHand == this){ //if the bottle is in the left hand
 			base.RotateTween(leftHandPourRot);
+			StartPourTween(new Vector3(-0.482f, 0, 0.5f));
 		} else {
 			base.RotateTween(rightHandPourRot);
+			StartPourTween(Vector3.forward + new Vector3(0.482f, 0, 0.5f));
+			EndPourTween();
 		}
 		// Services.GameManager.playerInput.pickupableInRightHand	
 	}

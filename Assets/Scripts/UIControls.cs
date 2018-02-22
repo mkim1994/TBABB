@@ -28,6 +28,7 @@ public class UIControls : MonoBehaviour {
 	private Camera myCam;
 	private GameObject leftHandObj;
 	private GameObject rightHandObj;
+	private bool isExceptionTextRequired = false;
 	private int stringOffset;
 	private string[] buttonAndKeyStrings =
 	{
@@ -428,7 +429,10 @@ public class UIControls : MonoBehaviour {
 				botCenterImg.SetActive(false);
 				bottomCenterText.text = "";
 				bottomCenterInsText.text = "";
-				centerText.text = "";
+				if (!isExceptionTextRequired)
+				{
+					centerText.text = "";				
+				}
 				rightHandPickUpImage.enabled = false;
 				rightHandControlsText[0].text = "";
 				rightHandControlsText[1].text = "";			
@@ -440,7 +444,10 @@ public class UIControls : MonoBehaviour {
 			botCenterImg.SetActive(false);
 			bottomCenterText.text = "";
 			bottomCenterInsText.text = "";
-			centerText.text = "";
+			if (!isExceptionTextRequired)
+			{
+				centerText.text = "";				
+			}
 			rightHandPickUpImage.enabled = false;
 			rightHandControlsText[0].text = "";
 			rightHandControlsText[1].text = "";	
@@ -475,6 +482,7 @@ public class UIControls : MonoBehaviour {
 	{
 		yield return new WaitForSeconds(delay);
 		text.text = "";
+		isExceptionTextRequired = false;
 		isMessageOverrideOn = false;
 	}
 	
@@ -502,6 +510,14 @@ public class UIControls : MonoBehaviour {
 		leftHandPickUpImage.sprite = GetSprite("icon_key");
 		rightHandPickUpImage.sprite = GetSprite("icon_key");
 		botCenterImg.GetComponent<Image>().sprite = GetSprite("icon_key");
+	}
+
+
+	public void ChangeCenterText(string text)
+	{
+		isExceptionTextRequired = true;
+		centerText.text = text;
+ 		StartCoroutine(ClearTextCoroutine(centerText, 3));
 	}
 
 

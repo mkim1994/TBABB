@@ -159,16 +159,48 @@ public class PlayerInput : MonoBehaviour {
 				}	
 			} else if(pickupable == null && pickupableInLeftHand != null && targetDropzone != null){ //DROP
 				if(dropPos != Vector3.zero && !targetDropzone.isOccupied){
-					pickupableInLeftHand.dropPos = dropPos;
-					pickupableInLeftHand.targetDropzone = targetDropzone;
-					pickupableInLeftHand.InteractLeftHand();
+					if (targetDropzone.GetComponentInParent<Coaster>() == null)
+					{
+						pickupableInLeftHand.dropPos = dropPos;
+						pickupableInLeftHand.targetDropzone = targetDropzone;
+						pickupableInLeftHand.InteractLeftHand();
+					}
+					else
+					{
+						Coaster targetCoaster = targetDropzone.GetComponentInParent<Coaster>();
+						if (!targetCoaster.myCustomer.IsCustomerPresent())
+						{
+ 							GetComponent<UIControls>().ChangeCenterText("no one to serve");
+						} else if (targetCoaster.myCustomer.IsCustomerPresent() && !targetCoaster.myCustomer.HasAcceptedDrink())
+						{
+							pickupableInLeftHand.dropPos = dropPos;
+							pickupableInLeftHand.targetDropzone = targetDropzone;
+							pickupableInLeftHand.InteractLeftHand();
+						}
+					}
 				}		
 			} else if (pickupable != null && pickupableInLeftHand != null){ //swap
-				if(dropPos != Vector3.zero){ 
-					pickupableInLeftHand.dropPos = dropPos;
-					pickupableInLeftHand.targetDropzone = targetDropzone;
-					pickupableInLeftHand.SwapLeftHand();
-					pickupable.SwapLeftHand();		
+				if(dropPos != Vector3.zero){
+					if (targetDropzone.GetComponentInParent<Coaster>() == null)
+					{
+						if (targetDropzone.GetComponentInParent<Coaster>() == null)
+						{
+							pickupableInLeftHand.dropPos = dropPos;
+							pickupableInLeftHand.targetDropzone = targetDropzone;
+							pickupableInLeftHand.SwapLeftHand();
+							pickupable.SwapLeftHand();
+						}
+						else
+						{
+							Coaster targetCoaster = targetDropzone.GetComponentInParent<Coaster>();
+							if (targetCoaster.myCustomer.HasAcceptedDrink())
+							{
+								pickupableInLeftHand.dropPos = dropPos;
+								pickupableInLeftHand.targetDropzone = targetDropzone;
+								pickupableInLeftHand.SwapLeftHand();
+								pickupable.SwapLeftHand();							}
+						}
+					}
 				}
 			}
 		}      
@@ -182,17 +214,49 @@ public class PlayerInput : MonoBehaviour {
 			} 
  			else if(pickupable == null && pickupableInRightHand != null && targetDropzone != null){ //DROP
 				if(dropPos != Vector3.zero && !targetDropzone.isOccupied){
-					pickupableInRightHand.dropPos = dropPos;
-					pickupableInRightHand.targetDropzone = targetDropzone;
-					pickupableInRightHand.InteractRightHand();
+					if (targetDropzone.GetComponentInParent<Coaster>() == null)
+					{
+						pickupableInRightHand.dropPos = dropPos;
+						pickupableInRightHand.targetDropzone = targetDropzone;
+						pickupableInRightHand.InteractRightHand();
+					}
+					else
+					{
+						Coaster targetCoaster = targetDropzone.GetComponentInParent<Coaster>();
+						if (!targetCoaster.myCustomer.IsCustomerPresent())
+						{
+ 							GetComponent<UIControls>().ChangeCenterText("no one to serve");
+						} else if (targetCoaster.myCustomer.IsCustomerPresent() && !targetCoaster.myCustomer.HasAcceptedDrink())
+						{
+							pickupableInRightHand.dropPos = dropPos;
+							pickupableInRightHand.targetDropzone = targetDropzone;
+							pickupableInRightHand.InteractRightHand();
+						}
+					}
  				}		
 			} 
  			else if (pickupable != null && pickupableInRightHand != null){ //swap
 				if(dropPos != Vector3.zero){
- 					pickupableInRightHand.dropPos = dropPos;
-					pickupableInRightHand.targetDropzone = targetDropzone;
-					pickupableInRightHand.SwapRightHand();
-					pickupable.SwapRightHand();		
+					if (targetDropzone.GetComponentInParent<Coaster>() == null)
+					{
+						if (targetDropzone.GetComponentInParent<Coaster>() == null)
+						{
+							pickupableInRightHand.dropPos = dropPos;
+							pickupableInRightHand.targetDropzone = targetDropzone;
+							pickupableInRightHand.SwapRightHand();
+							pickupable.SwapRightHand();
+						}
+						else
+						{
+							Coaster targetCoaster = targetDropzone.GetComponentInParent<Coaster>();
+							if (targetCoaster.myCustomer.HasAcceptedDrink())
+							{
+								pickupableInLeftHand.dropPos = dropPos;
+								pickupableInLeftHand.targetDropzone = targetDropzone;
+								pickupableInLeftHand.SwapLeftHand();
+								pickupable.SwapLeftHand();							}
+						}
+					}
 				}
 			}
 		}   
@@ -259,21 +323,20 @@ public class PlayerInput : MonoBehaviour {
 			if (pickupableInRightHand != null && pickupable != null && pickupableInLeftHand == null){
 				pickupableInRightHand.UseRightHand();				
 			} 
-			//two-handed use (bottle in left hand
+			//two-handed use (bottle in left hand, glass in right)
 			else if (pickupableInLeftHand != null && pickupableInRightHand != null) { 
                 if (pickupableInLeftHand.GetComponent<Bottle>() != null && pickupableInRightHand.GetComponent<Glass>() != null) {
  					pickupableInLeftHand.GetComponent<Bottle>().PourIntoPickedUpGlass();
 					pickupableInRightHand.GetComponent<Glass>().ReceivePourFromBottle(pickupableInLeftHand.GetComponent<Bottle>());
-                } else if (pickupableInLeftHand.GetComponent<Bottle>() != null && pickupableInRightHand.GetComponent<Rag>() != null){
- 				} 
+                } else if (pickupableInRightHand.GetComponent<Bottle>() != null && pickupableInLeftHand.GetComponent<Bottle>() != null){
+	                pickupableInRightHand.UseRightHand();				
+                } 
             }
-			//two-handed use (bottle in right hand)
+			//two-handed use (bottle in right hand, glass in left)
 			if (pickupableInLeftHand != null && pickupableInRightHand != null) { 
                 if (pickupableInRightHand.GetComponent<Bottle>() != null && pickupableInLeftHand.GetComponent<Glass>() != null) {
  					pickupableInRightHand.GetComponent<Bottle>().PourIntoPickedUpGlass();
 					pickupableInLeftHand.GetComponent<Glass>().ReceivePourFromBottle(pickupableInRightHand.GetComponent<Bottle>());
-                } else if (pickupableInRightHand.GetComponent<Bottle>() != null && pickupableInLeftHand.GetComponent<Bottle>() != null){
-	                pickupableInRightHand.UseRightHand();				
                 } 
             } 
 		} 
@@ -287,9 +350,11 @@ public class PlayerInput : MonoBehaviour {
 				pickupableInRightHand.RotateToZeroTween();
 				if(pickupableInLeftHand.GetComponent<Glass>() != null){	
 					pickupableInLeftHand.GetComponent<Glass>().EndPourFromBottle();
+					pickupableInRightHand.EndPourTween();
 				}
 				if(pickupableInRightHand.GetComponent<Glass>() != null){	
 					pickupableInRightHand.GetComponent<Glass>().EndPourFromBottle();
+					pickupableInLeftHand.EndPourTween();
 				}
 			}
 		} 
@@ -345,7 +410,7 @@ public class PlayerInput : MonoBehaviour {
 			GameObject hitObj = hit.transform.gameObject; //if you're actually looking at something
 			if (hitObj.GetComponent<Dropzone>() != null && Vector3.Distance(transform.position, hitObj.transform.position) <= maxInteractionDist){
 				Dropzone hitDropzone = hitObj.GetComponent<Dropzone>(); // get a reference to the dropzone
-				dropPos = hitObj.transform.position;					
+				dropPos = hitObj.transform.position;
 				targetDropzone = hitDropzone;
 			} 
 			else if (Vector3.Distance(transform.position, hitObj.transform.position) > maxInteractionDist) {

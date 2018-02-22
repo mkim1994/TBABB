@@ -40,10 +40,12 @@ public class Glass : Pickupable {
 			break;
 		}
 	}
+	
 	public void ReceivePourFromBottle(Bottle bottleInHand){
 		// Liquid liquid = GetComponentInChildren<Liquid>();
 		liquid.isPouring = true;
 		bottleInHand = Services.GameManager.player.GetComponentInChildren<Bottle>();
+
 		if(bottleInHand.myDrinkBase != DrinkBase.none && bottleInHand.myMixer == Mixer.none){
 			liquid.AddIngredient(bottleInHand.myDrinkBase);
 		} else if (bottleInHand.myMixer != Mixer.none && bottleInHand.myDrinkBase == DrinkBase.none){
