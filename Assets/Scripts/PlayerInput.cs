@@ -254,7 +254,8 @@ public class PlayerInput : MonoBehaviour {
 								pickupableInLeftHand.dropPos = dropPos;
 								pickupableInLeftHand.targetDropzone = targetDropzone;
 								pickupableInLeftHand.SwapLeftHand();
-								pickupable.SwapLeftHand();							}
+								pickupable.SwapLeftHand();							
+							}
 						}
 					}
 				}
