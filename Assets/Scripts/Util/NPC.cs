@@ -137,11 +137,12 @@ public class NPC : MonoBehaviour
     }
 
     public void InitiateDialogue(){
-       /* if(Services.GameManager.dialogue.isDialogueRunning){
-            Services.GameManager.dialogue.ResetDialogue();
-        }*/
-      /* if (!Services.GameManager.dialogue.isDialogueRunning)
-        {*/
+        /* if(Services.GameManager.dialogue.isDialogueRunning){
+             Services.GameManager.dialogue.ResetDialogue();
+         }*/
+        /* if (!Services.GameManager.dialogue.isDialogueRunning)
+          {*/
+        Debug.Log("initiating dialogue");
             if (isReadyToTalk)
             {   
                 if(!Services.GameManager.audioController.bgm.isPlaying){
@@ -265,6 +266,8 @@ public class NPC : MonoBehaviour
         //choose seat, re-enable sprites and scripts
         public override void OnEnter(){
             Debug.Log("take seat");
+
+            Context.isReadyToTalk = true;
             Context.TakeSeatAction();
         }
 
@@ -290,26 +293,30 @@ public class NPC : MonoBehaviour
         }
         public override void Update()
         {
-
-            if (Services.GameManager.dialogue.variableStorage.GetValue("$state" + Context.characterName).AsString == "5")
+            if (Services.GameManager.dialogue.variableStorage.GetValue("$state" + Context.characterName).AsString != "-1")
             {
-                //customer is going to leave
-                Context.isReadyToTalk = false;
-                Services.GameManager.dialogue.variableStorage.SetValue("$state" + Context.characterName, new Yarn.Value(-1));
-                TransitionTo<LeavingBar>();
-                return;
-            }
-            else if (Services.GameManager.dialogue.variableStorage.GetValue("$state" + Context.characterName).AsString == "0")
-            {
-                //waiting for a drink
-                Context.isReadyToTalk = false;
-                TransitionTo<WaitingForDrink>();
-                return;
-            } else{
+                if (Services.GameManager.dialogue.variableStorage.GetValue("$state" + Context.characterName).AsString == "5")
+                {
+                    //customer is going to leave
+                    Context.isReadyToTalk = false;
+                    Services.GameManager.dialogue.variableStorage.SetValue("$state" + Context.characterName, new Yarn.Value(-1));
+                    TransitionTo<LeavingBar>();
+                    return;
+                }
+                else if (Services.GameManager.dialogue.variableStorage.GetValue("$state" + Context.characterName).AsString == "0")
+                {
+                    //waiting for a drink
+                   // Context.isReadyToTalk = false;
+                    TransitionTo<WaitingForDrink>();
+                    return;
+                }
+                else
+                {
 
-                //customer is ready to talk
-                TransitionTo<ReadyToTalk>();
-                return;
+                    //customer is ready to talk
+                    TransitionTo<ReadyToTalk>();
+                    return;
+                }
             }
         }
     }
@@ -334,12 +341,11 @@ public class NPC : MonoBehaviour
 
 
 
-    private class WaitingForDrink : CustomerState{ // unable to talk at this point
-        //might want to change it so the customer repeats the order if asked
+    private class WaitingForDrink : CustomerState{ 
         public override void OnEnter()
         {
             Debug.Log("waiting for drink");
-            Context.isReadyToTalk = false;
+            Context.isReadyToTalk = true; //can talk to clarify order
         }
         public override void Update(){
             if(Services.GameManager.dialogue.variableStorage.GetValue("$state" + Context.characterName) != new Yarn.Value(0)){
