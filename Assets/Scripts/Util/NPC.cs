@@ -32,6 +32,7 @@ public class NPC : MonoBehaviour
     private Vector3 silhouetteLocation;
 
     public bool isReadyToTalk;
+    public bool isReadyToServe;
 
 
     void Start()
@@ -136,8 +137,11 @@ public class NPC : MonoBehaviour
     }
 
     public void InitiateDialogue(){
-        if (!Services.GameManager.dialogue.isDialogueRunning)
-        {
+       /* if(Services.GameManager.dialogue.isDialogueRunning){
+            Services.GameManager.dialogue.ResetDialogue();
+        }*/
+      /* if (!Services.GameManager.dialogue.isDialogueRunning)
+        {*/
             if (isReadyToTalk)
             {   
                 if(!Services.GameManager.audioController.bgm.isPlaying){
@@ -147,7 +151,7 @@ public class NPC : MonoBehaviour
                 //Services.GameManager.dialogue.variableStorage.SetValue("$content" + characterName, defaultVar);
                 Services.GameManager.dialogue.StartDialogue((Services.GameManager.dayManager.currentDay + 1) + characterName);
             }
-        }
+       // }
     }
 
     public void SetCustomerVars(float score, float alcohol){
@@ -229,6 +233,8 @@ public class NPC : MonoBehaviour
     private class OutsideBar : CustomerState{ //not in the bar
         public override void OnEnter(){
             Context.OutsideBarAction(); //disable components
+            Context.isReadyToServe = false;
+            Context.isReadyToTalk = false;
         }
         public override void Update(){
             if(Context.insideBar){
@@ -310,16 +316,16 @@ public class NPC : MonoBehaviour
 
     private class ReadyToTalk : CustomerState
     {
-        private Yarn.Value val;
+        private string val;
         public override void OnEnter(){
             Debug.Log("ready to talk");
             Context.isReadyToTalk = true;
-            val = Services.GameManager.dialogue.variableStorage.GetValue("$state" + Context.characterName);
+            val = Services.GameManager.dialogue.variableStorage.GetValue("$state" + Context.characterName).AsString;
         }
 
         public override void Update()
         {
-            if (Services.GameManager.dialogue.variableStorage.GetValue("$state" + Context.characterName) != val){
+            if (Services.GameManager.dialogue.variableStorage.GetValue("$state" + Context.characterName).AsString != val){
                 TransitionTo<Default>();
                 return;
             }
