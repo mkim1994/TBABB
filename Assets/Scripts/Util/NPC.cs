@@ -33,7 +33,7 @@ public class NPC : MonoBehaviour
 
     public bool isReadyToTalk;
     public bool isReadyToServe;
-
+    public bool hasAcceptedDrink;
 
     void Start()
     {
@@ -144,6 +144,10 @@ public class NPC : MonoBehaviour
         return false;
     }
 
+    public bool HasAcceptedDrink(){
+        return hasAcceptedDrink;
+    }
+
     public void InitiateDialogue(){
         /* if(Services.GameManager.dialogue.isDialogueRunning){
              Services.GameManager.dialogue.ResetDialogue();
@@ -151,15 +155,16 @@ public class NPC : MonoBehaviour
         /* if (!Services.GameManager.dialogue.isDialogueRunning)
           {*/
         Debug.Log("initiating dialogue");
-            if (isReadyToTalk)
-            {   
-                if(!Services.GameManager.audioController.bgm.isPlaying){
-                    Services.GameManager.audioController.bgm.Play();
-                }
-                //need to add 1 to currentDay to offset the 0 start
-                //Services.GameManager.dialogue.variableStorage.SetValue("$content" + characterName, defaultVar);
-                Services.GameManager.dialogue.StartDialogue((Services.GameManager.dayManager.currentDay + 1) + characterName);
+        if (isReadyToTalk)
+        {
+            if (!Services.GameManager.audioController.bgm.isPlaying)
+            {
+                Services.GameManager.audioController.bgm.Play();
             }
+            //need to add 1 to currentDay to offset the 0 start
+            //Services.GameManager.dialogue.variableStorage.SetValue("$content" + characterName, defaultVar);
+            Services.GameManager.dialogue.StartDialogue((Services.GameManager.dayManager.currentDay + 1) + characterName);
+        }
        // }
     }
 
@@ -244,6 +249,7 @@ public class NPC : MonoBehaviour
             Context.OutsideBarAction(); //disable components
             Context.isReadyToServe = false;
             Context.isReadyToTalk = false;
+            Context.hasAcceptedDrink = false;
         }
         public override void Update(){
             if(Context.insideBar){
@@ -291,7 +297,7 @@ public class NPC : MonoBehaviour
         /*
          * $state+characterName:
          * -1 = reset/nothing
-         * 0 = waiting for a drink
+         * 0 = isReadyToServe
          * 1 = ready to talk after receiving a drink.
          * 2 = 
          * */
@@ -319,10 +325,10 @@ public class NPC : MonoBehaviour
                     TransitionTo<WaitingForDrink>();
                     return;
                 }
-                else
+                else if(Services.GameManager.dialogue.variableStorage.GetValue("$state" +Context.characterName).AsString == "1")
                 {
 
-                    //customer is ready to talk
+                    //customer is ready to talk, has accepted drink
                     TransitionTo<ReadyToTalk>();
                     return;
                 }
@@ -336,6 +342,7 @@ public class NPC : MonoBehaviour
         public override void OnEnter(){
             Debug.Log("ready to talk");
             Context.isReadyToTalk = true;
+            Context.hasAcceptedDrink = true;
             val = Services.GameManager.dialogue.variableStorage.GetValue("$state" + Context.characterName).AsString;
         }
 
