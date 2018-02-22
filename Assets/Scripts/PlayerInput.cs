@@ -35,7 +35,7 @@ public class PlayerInput : MonoBehaviour {
 	public Pickupable pickupable;
 	public Pickupable pickupableInLeftHand;
 	public Pickupable pickupableInRightHand;
-	public List<GameObject> pickupableGOs = new List<GameObject>();
+//	public List<GameObject> pickupableGOs = new List<GameObject>();
 	public float maxInteractionDist = 4f;
 	public float maxTalkingDist = 8f;
 	
@@ -132,8 +132,6 @@ public class PlayerInput : MonoBehaviour {
 		#endregion
 
 		#region MouseLook
-
-//		
 		
 		verticalLook -= lookVector.y * lookSensitivity;
 		verticalLook = Mathf.Clamp (verticalLook, -90f, 90f);
@@ -222,8 +220,9 @@ public class PlayerInput : MonoBehaviour {
                 if (pickupableInLeftHand.GetComponent<Bottle>() != null && pickupableInRightHand.GetComponent<Glass>() != null) {
  					pickupableInLeftHand.GetComponent<Bottle>().PourIntoPickedUpGlass();
 					pickupableInRightHand.GetComponent<Glass>().ReceivePourFromBottle(pickupableInLeftHand.GetComponent<Bottle>());
-                } else if (pickupableInLeftHand.GetComponent<Bottle>() != null && pickupableInRightHand.GetComponent<Rag>() != null){
- 				} 
+                } else if (pickupableInRightHand.GetComponent<Bottle>() != null && pickupableInLeftHand.GetComponent<Bottle>() != null){
+	                pickupableInLeftHand.UseLeftHand();				
+                }  
             }
 		
 			if (pickupableInLeftHand != null && pickupableInRightHand != null) { //two-handed use (right hand)
@@ -256,8 +255,8 @@ public class PlayerInput : MonoBehaviour {
 
 		if(i_useRight && !Services.TweenManager.tweensAreActive){
 			//one-handed use on something on bar
-			if (pickupableInRightHand != null && pickupable != null && pickupableInLeftHand == null){ 
-				pickupableInRightHand.UseRightHand();
+			if (pickupableInRightHand != null && pickupable != null && pickupableInLeftHand == null){
+				pickupableInRightHand.UseRightHand();				
 			} 
 			//two-handed use (bottle in left hand
 			else if (pickupableInLeftHand != null && pickupableInRightHand != null) { 
@@ -272,8 +271,9 @@ public class PlayerInput : MonoBehaviour {
                 if (pickupableInRightHand.GetComponent<Bottle>() != null && pickupableInLeftHand.GetComponent<Glass>() != null) {
  					pickupableInRightHand.GetComponent<Bottle>().PourIntoPickedUpGlass();
 					pickupableInLeftHand.GetComponent<Glass>().ReceivePourFromBottle(pickupableInRightHand.GetComponent<Bottle>());
-                } else if (pickupableInRightHand.GetComponent<Bottle>() != null && pickupableInLeftHand.GetComponent<Rag>() != null){
- 				} 
+                } else if (pickupableInRightHand.GetComponent<Bottle>() != null && pickupableInLeftHand.GetComponent<Bottle>() != null){
+	                pickupableInRightHand.UseRightHand();				
+                } 
             } 
 		} 
 		if(i_endUseRight){

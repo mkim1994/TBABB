@@ -9,17 +9,11 @@ public class Coaster : MonoBehaviour
 	private DrinkProfile currentOrder;
 
 	public bool isDrinkHere = false;
-	// public enum Customer
-	// {
-	// 	Ivory,
-	// 	Sahana
-	// }
 
 	public Customer currentCustomer;
 	public DrinkProfile drinkOnCoaster;	
 	void Start()
 	{
-//		myDropzone = GetComponentInChildren<Dropzone>();
  		switch (currentCustomer)
 		{
 			case Customer.IvoryDefault:

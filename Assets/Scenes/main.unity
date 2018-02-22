@@ -338,6 +338,11 @@ Prefab:
       propertyPath: mouseSens
       value: 0.25
       objectReference: {fileID: 0}
+    - target: {fileID: 114739140198778196, guid: 002984101656d421a83f24c057d0eade,
+        type: 2}
+      propertyPath: lookSensitivity
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 002984101656d421a83f24c057d0eade, type: 2}
   m_IsPrefabParent: 0

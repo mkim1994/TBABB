@@ -18,7 +18,7 @@ public class ControllerDetection
     // This function will be called when a controller is connected
     // You can get information about the controller that was connected via the args parameter
     void OnControllerConnected(ControllerStatusChangedEventArgs args) {
-//        Debug.Log("A controller was connected! Name = " + args.name + " Id = " + args.controllerId + " Type = " + args.controllerType);
+//      Debug.Log("A controller was connected! Name = " + args.name + " Id = " + args.controllerId + " Type = " + args.controllerType);
         isConnected = true;
         if (Services.GameManager.uiControls != null)
         {
