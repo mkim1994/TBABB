@@ -198,7 +198,7 @@ public class UIControls : MonoBehaviour {
 		if(Physics.Raycast(ray, out hit, rayDist, controlsMask)){
 			GameObject hitObj = hit.transform.gameObject; //if you're actually looking at something
 			distanceToObj = Vector3.Distance(transform.position, hitObj.transform.position);
-			if(hitObj.GetComponent<Bottle>() != null)
+			if(hitObj.GetComponent<Bottle>() != null && !isExceptionTextRequired)
 			{
 				Bottle targetBottle = hitObj.GetComponent<Bottle>();
 				if(targetBottle.myDrinkBase != DrinkBase.none){
@@ -286,7 +286,7 @@ public class UIControls : MonoBehaviour {
 				}
 			} 
 			//ray hits glass
-			else if (hitObj.GetComponent<Glass>() != null){
+			else if (hitObj.GetComponent<Glass>() != null && !isExceptionTextRequired){
 				centerText.text = "glass";
 				if (distanceToObj < Services.GameManager.playerInput.maxInteractionDist)
 				{
@@ -381,7 +381,7 @@ public class UIControls : MonoBehaviour {
 				}
 			} 
 			//ray hits light switch
-			else if (hitObj.GetComponent<LightSwitch>() != null)
+			else if (hitObj.GetComponent<LightSwitch>() != null && !isExceptionTextRequired)
 			{
 				if (Services.GameManager.dayManager.dayHasEnded)
 				{

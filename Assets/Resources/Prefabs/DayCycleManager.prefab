@@ -54,7 +54,7 @@ MonoBehaviour:
   dayHasEnded: 0
   switchOff: 0
   currentCustomers: []
-  blackPanel: {fileID: 0}
+  blackPanel: {fileID: 1385909560760584, guid: 7af2f6b68f7cb4d358505037fc302e52, type: 2}
   resetPos: {x: 0, y: 0, z: 0}
   resetRot: {x: 0, y: 0, z: 0, w: 0}
   currentDay: 0
