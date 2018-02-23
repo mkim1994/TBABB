@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Reflection;
 using UnityEngine;
 using Rewired;
 using Rewired.ComponentControls.Data;
@@ -157,10 +158,14 @@ public class PlayerInput : MonoBehaviour {
 					if (targetDropzone.GetComponentInParent<Coaster>() != null)
 					{
 						Coaster targetCoaster = targetDropzone.GetComponentInParent<Coaster>();
-						if (targetCoaster.myCustomer.IsCustomerPresent() && !targetCoaster.myCustomer.HasAcceptedDrink())
+						if (targetCoaster.myCustomer.IsCustomerPresent() && !targetCoaster.myCustomer.HasAcceptedDrink()) //if  customer is present and customer HAS NOT accepted drink, then you can get it
 						{
 							pickupable.InteractLeftHand();						
 							targetDropzone.isOccupied = false;
+						}
+						else if(!targetCoaster.myCustomer.insideBar)
+						{
+							pickupable.InteractLeftHand();
 						}
 						else
 						{

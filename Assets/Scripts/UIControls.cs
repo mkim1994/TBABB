@@ -25,6 +25,7 @@ public class UIControls : MonoBehaviour {
 	[SerializeField]Text[] inLeftHandText;
 	[SerializeField] private Text[] inRightHandText;
  	[SerializeField]string targetObj;
+	[SerializeField] private Canvas myCanvas;
 	private Camera myCam;
 	private GameObject leftHandObj;
 	private GameObject rightHandObj;
@@ -57,8 +58,12 @@ public class UIControls : MonoBehaviour {
 	
 	void Update(){
 
- 		
 		UIRay();
+		if (Services.GameManager.dayManager.dayHasEnded && Services.GameManager.dayManager.switchOff)
+		{
+			ClearUI();
+			myCanvas.enabled = false;
+		}
 		//find the objects in hand
  
 		if (Services.GameManager.playerInput.pickupableInLeftHand != null)

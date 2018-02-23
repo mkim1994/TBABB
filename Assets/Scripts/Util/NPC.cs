@@ -34,7 +34,7 @@ public class NPC : MonoBehaviour
     public bool isReadyToTalk;
     public bool isReadyToServe;
     public bool hasAcceptedDrink;
-
+ 
     void Start()
     {
         DOTween.Init();
