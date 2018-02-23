@@ -77,6 +77,8 @@ public class DialogueUI : Yarn.Unity.DialogueUIBehaviour
 
     public bool debugMode;
 
+    Sequence textAnim;
+
     void Awake()
     {
         DOTween.Init();
@@ -139,6 +141,7 @@ public class DialogueUI : Yarn.Unity.DialogueUIBehaviour
     {
         // Show the text
         lineText.gameObject.SetActive(true);
+        DOTween.Kill(lineText);
         lineText.color = new Color(1, 1, 1, 1);
         string reline = line.text;
         string result = reline.Replace("Customer: ", "");
