@@ -406,7 +406,7 @@ public class PlayerInput : MonoBehaviour {
 
 		#region Talk
 		if(i_talk){
-			if(npc != null){
+			if(npc != null && !Services.GameManager.dialogue.isDialogueRunning){
 				npc.InitiateDialogue();
 			} 
 			
