@@ -323,8 +323,10 @@ public class UIControls : MonoBehaviour {
 			//ray hits NPC
 			else if (hitObj.GetComponent<NPC>() != null)
 			{
-				
-				centerText.text = hitObj.GetComponent<NPC>().characterName;
+				if (!isExceptionTextRequired)
+				{
+					centerText.text = hitObj.GetComponent<NPC>().characterName;				
+				}
 				if (distanceToObj < Services.GameManager.playerInput.maxTalkingDist)
 				{
 					if (!Services.GameManager.dialogue.isDialogueRunning)
@@ -517,6 +519,7 @@ public class UIControls : MonoBehaviour {
 	{
 		isExceptionTextRequired = true;
 		centerText.text = text;
+		Debug.Log("Changed center text!");
  		StartCoroutine(ClearTextCoroutine(centerText, 3));
 	}
 

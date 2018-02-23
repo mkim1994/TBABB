@@ -234,7 +234,7 @@ public class Liquid : MonoBehaviour {
 		
 	private void EvaluateDrinkInCoaster(){
 		foreach (var coaster in coasters) {
-			if (Vector3.Distance (coaster.gameObject.transform.position, transform.position) <= 1f) {
+			if (Vector3.Distance (coaster.gameObject.transform.position, transform.position) <= 0.1f) {
 				if(!isEvaluated){
 					Debug.Log("Got evaluated");
 					coaster.EvaluateDrink (this.thisCocktail);

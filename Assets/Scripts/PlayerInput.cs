@@ -193,12 +193,16 @@ public class PlayerInput : MonoBehaviour {
 						else
 						{
 							Coaster targetCoaster = targetDropzone.GetComponentInParent<Coaster>();
-							if (targetCoaster.myCustomer.HasAcceptedDrink())
+							if (!targetCoaster.myCustomer.HasAcceptedDrink())
 							{
 								pickupableInLeftHand.dropPos = dropPos;
 								pickupableInLeftHand.targetDropzone = targetDropzone;
 								pickupableInLeftHand.SwapLeftHand();
-								pickupable.SwapLeftHand();							}
+								pickupable.SwapLeftHand();							
+							} else if (targetCoaster.myCustomer.HasAcceptedDrink())
+							{
+								GetComponent<UIControls>().ChangeCenterText("customer is still drinking");
+							}
 						}
 					}
 				}
@@ -249,12 +253,15 @@ public class PlayerInput : MonoBehaviour {
 						else
 						{
 							Coaster targetCoaster = targetDropzone.GetComponentInParent<Coaster>();
-							if (targetCoaster.myCustomer.HasAcceptedDrink())
+							if (!targetCoaster.myCustomer.HasAcceptedDrink())
 							{
-								pickupableInLeftHand.dropPos = dropPos;
-								pickupableInLeftHand.targetDropzone = targetDropzone;
-								pickupableInLeftHand.SwapLeftHand();
-								pickupable.SwapLeftHand();							
+								pickupableInRightHand.dropPos = dropPos;
+								pickupableInRightHand.targetDropzone = targetDropzone;
+								pickupableInRightHand.SwapRightHand();
+								pickupable.SwapRightHand();							
+							} else if (targetCoaster.myCustomer.HasAcceptedDrink())
+							{
+								GetComponent<UIControls>().ChangeCenterText("customer is still drinking");
 							}
 						}
 					}
