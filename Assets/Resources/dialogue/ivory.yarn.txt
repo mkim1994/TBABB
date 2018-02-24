@@ -32,14 +32,19 @@ position: 114,209
                     Customer: This isn't enough...
                     Customer: Get me more, won't you?
                 <<else>>
-                    <<set $stateIvory = 1>>
                     <<if $drinkScoreIvory >= 0.8>>
+                        <<set $stateIvory = 1>>
                         <<setsprite Ivory happy>>
                         Customer: Thanks.
-                    <<else>>
+                    <<elseif $drinkScoreIvory >= 0.5>>
+                        <<set $stateIvory = 1>>
                         <<setsprite Ivory unhappy>>
                         Customer: Thanks...?
                         Customer: Sigh.
+                    <<else>>
+                        <<setsprite Ivory unhappy>>
+                        Customer: Does this even have whiskey in it?
+                        Customer: Just get me whiskey, can't be that hard.
                     <<endif>>
                     <<set $progressIvory = 1>>
                 <<endif>>
