@@ -350,6 +350,13 @@ public class PlayerInput : MonoBehaviour {
 			if(pickupableInLeftHand != null){
 				pickupableInLeftHand.RotateToZeroTween();
 				pickupableInLeftHand.EndPourTween();
+				if (pickupable != null)
+				{
+					if (pickupable.GetComponent<Glass>() != null)
+					{
+						pickupable.GetComponent<Glass>().EndPourFromBottle();
+					}
+				}
 			}
 			if (pickupableInLeftHand != null && pickupableInRightHand != null){
 				pickupableInLeftHand.RotateToZeroTween();
@@ -393,6 +400,13 @@ public class PlayerInput : MonoBehaviour {
 			if(pickupableInRightHand != null){
 				pickupableInRightHand.RotateToZeroTween();
 				pickupableInRightHand.EndPourTween();
+				if (pickupable != null)
+				{
+					if (pickupable.GetComponent<Glass>() != null)
+					{
+						pickupable.GetComponent<Glass>().EndPourFromBottle();
+					}
+				}
 			}
 			if (pickupableInLeftHand != null && pickupableInRightHand != null){
 				pickupableInLeftHand.RotateToZeroTween();

@@ -43,7 +43,7 @@ public class Glass : Pickupable {
 	
 	public void ReceivePourFromBottle(Bottle bottleInHand){
 		// Liquid liquid = GetComponentInChildren<Liquid>();
-		liquid.isPouring = true;
+//		liquid.isPouring = true;
 //		bottleInHand = Services.GameManager.player.GetComponentInChildren<Bottle>();
 
 		if(bottleInHand.myDrinkBase != DrinkBase.none && bottleInHand.myMixer == Mixer.none){
@@ -55,6 +55,6 @@ public class Glass : Pickupable {
 
 	public void EndPourFromBottle(){
 		Liquid liquid = GetComponentInChildren<Liquid>();
-		liquid.isPouring = false;
+//		liquid.isPouring = false;
 	}
 }

@@ -89,9 +89,13 @@ public class Coaster : MonoBehaviour
 					Debug.Log("Case 9 true!");
 					myCustomer.SetCustomerVars(0.5f, 0);
 					myCustomer.InitiateDialogue();
-				}	
-			} 
-			else if (_cocktail.totalVolume <= 0){
+				}   	
+			} else if (drinkDeviation == 0)
+			 {
+				 myCustomer.SetCustomerVars(0.5f, 0);
+				 myCustomer.InitiateDialogue();
+			 }
+			 else if (_cocktail.totalVolume <= 0){
 				Debug.Log("empty glass or bottle");
 
 				myCustomer.SetCustomerVars(0, 0);

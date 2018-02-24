@@ -63,15 +63,13 @@ public class DrinkProfile {
 		sourness = _sourness;
 		bitterness = _bitterness;
 		spiciness = _spiciness;
-		
-		
 	}
 
 
 	public static float GetProfileDeviation (DrinkProfile one, DrinkProfile two){
 		float _similarity = 0;
 		if(one != null && two != null){
-			_similarity = 	Mathf.Abs(one.sodaRate - two.sodaRate) 
+			_similarity = 	Mathf.Abs(one.sodaRate - two.sodaRate)
 						+ Mathf.Abs(one.tonicRate - two.tonicRate) 
 						+ Mathf.Abs(one.appleJuiceRate - two.appleJuiceRate)
 						+ Mathf.Abs (one.orangeJuiceRate - two.orangeJuiceRate)
@@ -95,35 +93,12 @@ public class DrinkProfile {
 						+ Mathf.Abs(one.sweetness - two.sweetness)
 						+ Mathf.Abs(one.sourness - two.sourness)
 						+ Mathf.Abs(one.bitterness - two.bitterness)
-						+ Mathf.Abs(one.spiciness - two.spiciness);
+						+ Mathf.Abs(one.spiciness - two.spiciness)
+						;
 		}
 
 		// DrinkProfile combinedProfile = new DrinkProfile(
-		// 	one.sodaRate - two.sodaRate, 
-		// 	one.tonicRate - two.tonicRate,
-		// 	one.appleJuiceRate - two.appleJuiceRate,
-		// 	one.orangeJuiceRate - two.orangeJuiceRate,
-		// 	one.lemonJuiceRate - two.lemonJuiceRate,
-		// 	one.lemonSliceRate - two.lemonSliceRate,
-		// 	one.orangePeelRate - two.orangePeelRate,
-		// 	one.bitterGarnishRate - two.bitterGarnishRate,
-		// 	one.sugarRate - two.sugarRate,
-		// 	one.oliveRate - two.oliveRate,
-		// 	one.chiliPowderRate - two.chiliPowderRate,
-		// 	one.whiskeyRate - two.whiskeyRate,
-		// 	one.tequilaRate - two.tequilaRate,
-		// 	one.rumRate - two.rumRate,
-		// 	one.ginRate - two.ginRate,
-		// 	one.beerRate - two.beerRate,
-		// 	one.wineRate - two.wineRate,
-		// 	one.brandyRate - two.brandyRate,
-		// 	one.vodkaRate - two.vodkaRate,
-		// 	one.alcoholicStrength - two.alcoholicStrength,
-		// 	one.smokiness - two.smokiness,
-		// 	one.sweetness - two.sweetness,
-		// 	one.sourness - two.sourness,
-		// 	one.bitterness - two.bitterness,
-		// 	one.spiciness - two.spiciness
+		
 		// 	);
 
 			return _similarity;

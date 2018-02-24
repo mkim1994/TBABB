@@ -7,8 +7,7 @@ public class Liquid : MonoBehaviour {
 	private float previousAlcoholVolume;
 	private float prevABV;
  	public float height;
-	public bool isPouring;
-
+ 
 	public bool isEvaluated = false;
 	public float totalVolume;
 	public List<Coaster> coasters = new List<Coaster> ();
@@ -45,10 +44,11 @@ public class Liquid : MonoBehaviour {
  		EvaluateDrinkInCoaster ();
  
 		height = Mathf.Clamp(height, 0, 8000f);
-
+		
 		totalVolume = whiskeyVolume + ginVolume + brandyVolume + vodkaVolume + wineVolume + beerVolume + tequilaVolume + rumVolume 
 					+ sodaVolume + tonicVolume + appleJuiceVolume + orangeJuiceVolume + lemonJuiceVolume;
-		
+
+ 		
 //		alcoholVolume = whiskeyVolume + ginVolume + brandyVolume + vodkaVolume + wineVolume + beerVolume + tequilaVolume + rumVolume; 
 		// abv = alcoholVolume/height;
 		abv = GetAlcoholicStrength();
@@ -56,14 +56,15 @@ public class Liquid : MonoBehaviour {
 		{
 			thisCocktail.totalVolume = totalVolume;
  		}
+		Debug.Log("Whiskey = " + whiskeyVolume/height);
 	}
 
 	public void GrowVertical(){
 		height += 10000 * Time.deltaTime;
         transform.localScale = new Vector3 (originalX, height, originalZ);
-		thisCocktail = new DrinkProfile (sodaVolume/height, tonicVolume/height, appleJuiceVolume/height, lemonJuiceVolume/height, 0, 0, 0, 0, 0, 0, 0, 
-		whiskeyVolume/height, ginVolume/height, tequilaVolume/height, vodkaVolume/height, rumVolume/height, beerVolume/height, 
-		wineVolume/height, brandyVolume/height, abv, 
+		thisCocktail = new DrinkProfile (sodaVolume/totalVolume, tonicVolume/totalVolume, appleJuiceVolume/totalVolume, lemonJuiceVolume/totalVolume, 0, 0, 0, 0, 0, 0, 0, 
+		whiskeyVolume/totalVolume, ginVolume/totalVolume, tequilaVolume/totalVolume, vodkaVolume/totalVolume, rumVolume/totalVolume, beerVolume/totalVolume, 
+		wineVolume/totalVolume, brandyVolume/totalVolume, abv, 
 		smokiness, sweetness, sourness, bitterness, spiciness);
 //		thisCocktail.totalVolume = totalVolume;
 
