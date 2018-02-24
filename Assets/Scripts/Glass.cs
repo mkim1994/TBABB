@@ -20,7 +20,7 @@ public class Glass : Pickupable {
 
 	[SerializeField]GlassType glassType;
 
-	void Start()
+	protected override void Start()
 	{
 		liquid = GetComponentInChildren<Liquid>();
  		switch (glassType)
@@ -44,7 +44,7 @@ public class Glass : Pickupable {
 	public void ReceivePourFromBottle(Bottle bottleInHand){
 		// Liquid liquid = GetComponentInChildren<Liquid>();
 		liquid.isPouring = true;
-		bottleInHand = Services.GameManager.player.GetComponentInChildren<Bottle>();
+//		bottleInHand = Services.GameManager.player.GetComponentInChildren<Bottle>();
 
 		if(bottleInHand.myDrinkBase != DrinkBase.none && bottleInHand.myMixer == Mixer.none){
 			liquid.AddIngredient(bottleInHand.myDrinkBase);
