@@ -92,12 +92,13 @@ public class Coaster : MonoBehaviour
 					myCustomer.InitiateDialogue();
 				}	
 			} 
-		} else if (_cocktail == null) {
-		  	Debug.Log("empty glass or bottle");
+			else if (_cocktail.totalVolume <= 0){
+				Debug.Log("empty glass or bottle");
 
-			myCustomer.SetCustomerVars(0, 0);
-			myCustomer.InitiateDialogue();
-		}	
+				myCustomer.SetCustomerVars(0, 0);
+				myCustomer.InitiateDialogue();
+			}	
+		} 
  	}
 
 	public void TakeOrder (DrinkProfile _customerOrder){

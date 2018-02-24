@@ -15,6 +15,7 @@ public class DrinkProfile {
 	public float smokiness, sweetness, sourness, bitterness, alcoholicStrength, spiciness;
  
 	public float drinkSimilarity = 0;
+	public float totalVolume;
 	public DrinkProfile(float _sodaRate = 0, float _tonicRate = 0, float _appleJuiceRate = 0, float _orangeJuiceRate = 0,
 						float _lemonJuiceRate = 0, //mixers
 						

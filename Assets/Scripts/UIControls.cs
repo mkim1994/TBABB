@@ -59,11 +59,7 @@ public class UIControls : MonoBehaviour {
 	void Update(){
 
 		UIRay();
-		if (Services.GameManager.dayManager.dayHasEnded && Services.GameManager.dayManager.switchOff)
-		{
-			ClearUI();
-			myCanvas.enabled = false;
-		}
+		
 		//find the objects in hand
  
 		if (Services.GameManager.playerInput.pickupableInLeftHand != null)

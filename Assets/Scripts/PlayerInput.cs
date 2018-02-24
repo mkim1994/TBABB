@@ -177,8 +177,6 @@ public class PlayerInput : MonoBehaviour {
 						pickupable.InteractLeftHand();
 					}
 				}
-
-
 			} else if(pickupable == null && pickupableInLeftHand != null && targetDropzone != null){ //DROP
 				if(dropPos != Vector3.zero && !targetDropzone.isOccupied){
 					if (targetDropzone.GetComponentInParent<Coaster>() == null)
@@ -238,17 +236,21 @@ public class PlayerInput : MonoBehaviour {
 					 if (targetDropzone.GetComponentInParent<Coaster>() != null)
 					 {
 						 Coaster targetCoaster = targetDropzone.GetComponentInParent<Coaster>();
-						 if (targetCoaster.myCustomer.IsCustomerPresent() && !targetCoaster.myCustomer.HasAcceptedDrink())
+						 if (targetCoaster.myCustomer.IsCustomerPresent() && !targetCoaster.myCustomer.HasAcceptedDrink()) //if  customer is present and customer HAS NOT accepted drink, then you can get it
 						 {
-							 pickupable.InteractRightHand();				
+							 pickupable.InteractRightHand();						
 							 targetDropzone.isOccupied = false;
+						 }
+						 else if(!targetCoaster.myCustomer.insideBar)
+						 {
+							 pickupable.InteractRightHand();
 						 }
 						 else
 						 {
 							 GetComponent<UIControls>().ChangeCenterText("customer is still drinking");
 						 }
 					 }
-					 else //if coaster is null, just pick it up
+					 else
 					 {
 						 pickupable.InteractRightHand();
 					 }
