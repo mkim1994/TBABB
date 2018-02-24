@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.Remoting;
 using UnityEngine;
 using Rewired;
 
@@ -26,7 +27,9 @@ public class ControllerDetection
             Services.GameManager.playerInput.isUsingController = true;
             Services.GameManager.playerInput.lookSensitivity = Services.GameManager.playerInput.controllerSens;
             Services.GameManager.playerInput.lookSensitivityAtStart = Services.GameManager.playerInput.controllerSens;
-         }
+            Services.GameManager.playerInput.aimAssistSensitivity =
+                Services.GameManager.playerInput.controllerSens * Services.GameManager.playerInput.aimAssistFactor;
+        }
     }
     
     // This function will be called when a controller is fully disconnected
@@ -40,6 +43,7 @@ public class ControllerDetection
             Services.GameManager.playerInput.isUsingController = false;
             Services.GameManager.playerInput.lookSensitivity = Services.GameManager.playerInput.mouseSens;
             Services.GameManager.playerInput.lookSensitivityAtStart = Services.GameManager.playerInput.mouseSens;
+            Services.GameManager.playerInput.aimAssistSensitivity = Services.GameManager.playerInput.mouseSens * Services.GameManager.playerInput.aimAssistFactor;
          }
     }
     

@@ -46,7 +46,8 @@ public class PlayerInput : MonoBehaviour {
 	public float mouseSens;
 	
 	public float lookSensitivityAtStart;
-	private float aimAssistSensitivity = 0;
+	public float aimAssistSensitivity = 0;
+	public float aimAssistFactor;
 	float verticalLook = 0f;
 
 	public bool isInputEnabled = true;
@@ -78,15 +79,15 @@ public class PlayerInput : MonoBehaviour {
 		if (isUsingController)
 		{
 			lookSensitivity = controllerSens;
-			lookSensitivityAtStart = lookSensitivity;
-			aimAssistSensitivity = lookSensitivity * 0.49f;
+			lookSensitivityAtStart = controllerSens;
+			aimAssistSensitivity = lookSensitivity * aimAssistFactor;
 		}
 		
 		else if (!isUsingController)
 		{
 			lookSensitivity = mouseSens;
-			lookSensitivityAtStart = lookSensitivity;
-			aimAssistSensitivity = lookSensitivity * 0.49f;
+			lookSensitivityAtStart = mouseSens;
+			aimAssistSensitivity = lookSensitivity * aimAssistFactor;
 		}
 	}
 
@@ -139,14 +140,16 @@ public class PlayerInput : MonoBehaviour {
 		myCam.transform.localRotation = Quaternion.Euler (verticalLook, 0, 0);
 		cc.transform.Rotate (0, lookVector.x * lookSensitivity, 0);
 
- 		if(pickupable != null){ //aim assist
+		if(pickupable != null){ //aim assist
 			t += 2f * Time.deltaTime;
 			lookSensitivity = Mathf.Lerp(lookSensitivityAtStart, aimAssistSensitivity, t);
 			
 		} else {
- 			t += 4f * Time.deltaTime;
+			t += 4f * Time.deltaTime;
 			lookSensitivity = Mathf.Lerp(lookSensitivity, lookSensitivityAtStart, t);
-		}
+		}			
+	
+
 
 		#endregion
 		
