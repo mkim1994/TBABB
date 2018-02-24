@@ -27,7 +27,14 @@ public class Dropzone : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
+		if (droppedObj == null)
+		{
+			isOccupied = false;
+		}
+		else
+		{
+			isOccupied = true;
+		}
 	}
 
 	void OnTriggerStay(Collider hit)
@@ -35,6 +42,14 @@ public class Dropzone : MonoBehaviour {
 		if (hit.gameObject.GetComponent<Bottle>() != null || hit.gameObject.GetComponent<Glass>() != null)
 		{
 			droppedObj = hit.gameObject;
+		}
+	}
+
+	void OnTriggerExit(Collider exiter)
+	{
+		if (exiter.gameObject.GetComponent<Bottle>() != null || exiter.gameObject.GetComponent<Glass>() != null)
+		{
+			droppedObj = null;
 		}
 	}
 }
