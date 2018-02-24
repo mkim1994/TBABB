@@ -224,6 +224,11 @@ public class DialogueUI : Yarn.Unity.DialogueUIBehaviour
         foreach (var optionString in optionsCollection.options)
         {
             optionButtons[i].gameObject.SetActive(true);
+            if (Services.GameManager.playerInput.isUsingController)
+            {
+                optionButtons[i].transform.GetChild(1).gameObject.SetActive(false);
+                optionButtons[i].transform.GetChild(2).gameObject.SetActive(true);            
+            }
             optionButtons[i].GetComponentInChildren<Text>().text = optionString;
             i++;
         }
