@@ -338,8 +338,7 @@ public class UIControls : MonoBehaviour {
 						bottomCenterInsText.text = "talk";
 						if (rightHandObj != null && distanceToObj <= Services.GameManager.playerInput.maxInteractionDist)
 						{
-							Debug.Log(distanceToObj);
-							rightHandPickUpImage.enabled = true;
+ 							rightHandPickUpImage.enabled = true;
 							rightHandControlsText[0].text = buttonAndKeyStrings[3 + stringOffset];
 							rightHandControlsText[1].text = "serve";
 						} else if (distanceToObj > Services.GameManager.playerInput.maxInteractionDist)
@@ -350,8 +349,6 @@ public class UIControls : MonoBehaviour {
 
 						if (leftHandObj != null && distanceToObj <= Services.GameManager.playerInput.maxInteractionDist)
 						{
-							Debug.Log(distanceToObj);
-
 							leftHandPickUpImage.enabled = true;
 							leftHandControlsText[0].text = buttonAndKeyStrings[2 + stringOffset];
 							leftHandControlsText[1].text = "serve";

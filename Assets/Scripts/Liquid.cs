@@ -56,8 +56,7 @@ public class Liquid : MonoBehaviour {
 		{
 			thisCocktail.totalVolume = totalVolume;
  		}
-		Debug.Log("Whiskey = " + whiskeyVolume/height);
-	}
+ 	}
 
 	public void GrowVertical(){
 		height += 10000 * Time.deltaTime;
@@ -257,7 +256,7 @@ public class Liquid : MonoBehaviour {
 			if (Vector3.Distance (coaster.gameObject.transform.position, transform.position) <= 0.75f) {
 				if(!isEvaluated){
 					Debug.Log("Got evaluated");
-					coaster.EvaluateDrink (this.thisCocktail);
+					coaster.EvaluateDrink (this.thisCocktail, this);
 					isEvaluated = true;
 				}
  			}

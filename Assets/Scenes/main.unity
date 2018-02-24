@@ -1584,6 +1584,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 114710004018597254, guid: 335db22a7c9844cc4925893ddca08517,
+        type: 2}
+      propertyPath: blackPanel
+      value: 
+      objectReference: {fileID: 1674079576}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 335db22a7c9844cc4925893ddca08517, type: 2}
   m_IsPrefabParent: 0
@@ -1745,6 +1750,11 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 1432363339}
   m_Script: {fileID: 11500000, guid: 3419b57eb638f44db88701b5b33b8af8, type: 3}
+--- !u!1 &1674079576 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1777700880906048, guid: 002984101656d421a83f24c057d0eade,
+    type: 2}
+  m_PrefabInternal: {fileID: 296003611}
 --- !u!114 &1935639208 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 114020071287428016, guid: 10ae96076c5cc4a8d914267fe751e8ab,
