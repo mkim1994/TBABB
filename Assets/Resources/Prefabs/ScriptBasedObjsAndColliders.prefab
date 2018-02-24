@@ -625,7 +625,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1334228916000806
 GameObject:
   m_ObjectHideFlags: 1
@@ -927,7 +927,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1458309936852400
 GameObject:
   m_ObjectHideFlags: 1
@@ -9259,8 +9259,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.75900286, y: 0.87067366, z: 0.65218544}
-  m_Center: {x: 0.02662021, y: -0.14191914, z: -0.009135246}
+  m_Size: {x: 0.75900286, y: 1.025156, z: 0.65218544}
+  m_Center: {x: 0.02662019, y: -0.06467781, z: -0.009135241}
 --- !u!65 &65983697705848976
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -9533,6 +9533,7 @@ MonoBehaviour:
   height: 0
   isPouring: 0
   isEvaluated: 0
+  totalVolume: 0
   coasters: []
   sodaVolume: 0
   tonicVolume: 0
@@ -9581,6 +9582,7 @@ MonoBehaviour:
   height: 0
   isPouring: 0
   isEvaluated: 0
+  totalVolume: 0
   coasters: []
   sodaVolume: 0
   tonicVolume: 0
@@ -9746,6 +9748,7 @@ MonoBehaviour:
   height: 0
   isPouring: 0
   isEvaluated: 0
+  totalVolume: 0
   coasters: []
   sodaVolume: 0
   tonicVolume: 0
@@ -10106,6 +10109,7 @@ MonoBehaviour:
   height: 0
   isPouring: 0
   isEvaluated: 0
+  totalVolume: 0
   coasters: []
   sodaVolume: 0
   tonicVolume: 0
@@ -10154,6 +10158,7 @@ MonoBehaviour:
   height: 0
   isPouring: 0
   isEvaluated: 0
+  totalVolume: 0
   coasters: []
   sodaVolume: 0
   tonicVolume: 0
@@ -10267,6 +10272,7 @@ MonoBehaviour:
   height: 0
   isPouring: 0
   isEvaluated: 0
+  totalVolume: 0
   coasters: []
   sodaVolume: 0
   tonicVolume: 0
@@ -10328,6 +10334,7 @@ MonoBehaviour:
   height: 0
   isPouring: 0
   isEvaluated: 0
+  totalVolume: 0
   coasters: []
   sodaVolume: 0
   tonicVolume: 0
@@ -10467,6 +10474,7 @@ MonoBehaviour:
   height: 0
   isPouring: 0
   isEvaluated: 0
+  totalVolume: 0
   coasters: []
   sodaVolume: 0
   tonicVolume: 0
@@ -10546,6 +10554,7 @@ MonoBehaviour:
   height: 0
   isPouring: 0
   isEvaluated: 0
+  totalVolume: 0
   coasters: []
   sodaVolume: 0
   tonicVolume: 0
@@ -10663,6 +10672,7 @@ MonoBehaviour:
   height: 0
   isPouring: 0
   isEvaluated: 0
+  totalVolume: 0
   coasters: []
   sodaVolume: 0
   tonicVolume: 0
@@ -11181,6 +11191,7 @@ MonoBehaviour:
   height: 0
   isPouring: 0
   isEvaluated: 0
+  totalVolume: 0
   coasters: []
   sodaVolume: 0
   tonicVolume: 0

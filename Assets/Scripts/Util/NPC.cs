@@ -133,6 +133,7 @@ public class NPC : MonoBehaviour
         if (myCoaster != null)
         {
             myCoaster.TakeOrder(DrinkProfile.OrderDrink(myFlavor, fF, myBase, bF, myMixer, mF));
+            Debug.Log("order taken! " + myBase);
         }
     }
 

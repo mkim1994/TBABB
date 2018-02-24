@@ -49,7 +49,8 @@ public class Coaster : MonoBehaviour
 			// float abvSimilarity = DrinkProfile.GetABV
 //			float abvDeviation = DrinkProfile.GetABVdeviation(_cocktail, currentOrder);
 			drinkOnCoaster = _cocktail;
-			if(drinkDeviation <= 0.5f){
+			Debug.Log("Whiskey rate = " + _cocktail.whiskeyRate);
+ 			if(drinkDeviation <= 0.5f){
 				if(_cocktail.alcoholicStrength >= 0.25f){
 					Debug.Log("Case 1 true!");
 					myCustomer.SetCustomerVars (1.0f, 100);
@@ -102,7 +103,8 @@ public class Coaster : MonoBehaviour
  	}
 
 	public void TakeOrder (DrinkProfile _customerOrder){
-		currentOrder = _customerOrder; 	
+		currentOrder = _customerOrder;
+		Debug.Log("Customer smokiness order: " + currentOrder.smokiness);
 	}
 
 	private void CheckDropzoneStatus(){

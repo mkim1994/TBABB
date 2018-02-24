@@ -53,10 +53,10 @@ public class Liquid : MonoBehaviour {
 	public void GrowVertical(){
 		height += 10000 * Time.deltaTime;
 		transform.localScale = new Vector3 (transform.localScale.x, height, transform.localScale.z);
-//		thisCocktail = new DrinkProfile (sodaVolume/height, tonicVolume/height, appleJuiceVolume/height, lemonJuiceVolume/height, 0, 0, 0, 0, 0, 0, 0, 
-//		whiskeyVolume/height, ginVolume/height, tequilaVolume/height, vodkaVolume/height, rumVolume/height, beerVolume/height, 
-//		wineVolume/height, brandyVolume/height, abv, 
-//		smokiness, sweetness, sourness, bitterness, spiciness);
+		thisCocktail = new DrinkProfile (sodaVolume/height, tonicVolume/height, appleJuiceVolume/height, lemonJuiceVolume/height, 0, 0, 0, 0, 0, 0, 0, 
+		whiskeyVolume/height, ginVolume/height, tequilaVolume/height, vodkaVolume/height, rumVolume/height, beerVolume/height, 
+		wineVolume/height, brandyVolume/height, abv, 
+		smokiness, sweetness, sourness, bitterness, spiciness);
 //		thisCocktail.totalVolume = totalVolume;
 
 	}
@@ -245,7 +245,7 @@ public class Liquid : MonoBehaviour {
 		
 	private void EvaluateDrinkInCoaster(){
 		foreach (var coaster in coasters) {
-			if (Vector3.Distance (coaster.gameObject.transform.position, transform.position) <= 0.75f && !GetComponentInParent<Pickupable>().pickedUp) {
+			if (Vector3.Distance (coaster.gameObject.transform.position, transform.position) <= 0.75f) {
 				if(!isEvaluated){
 					Debug.Log("Got evaluated");
 					coaster.EvaluateDrink (this.thisCocktail);
