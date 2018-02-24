@@ -145,6 +145,11 @@ public class DrinkProfile {
 		}
 	}
 
+//	public static bool CheckIfOrderIsNull(DrinkProfile _order)
+//	{
+//		
+//	}
+
 	public static DrinkProfile OrderDrink(	Flavor flavor = Flavor.none, float newFlavorPref = 0, 
 											DrinkBase dBase = DrinkBase.none, float newBasePref = 0, 
 											Mixer mixer = Mixer.none, float newMixerPref = 0,

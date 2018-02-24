@@ -46,8 +46,8 @@ public class Coaster : MonoBehaviour
 //			float abvDeviation = DrinkProfile.GetABVdeviation(_cocktail, currentOrder);
 		  Debug.Log("drink deviation is " + drinkDeviation);
 			drinkOnCoaster = _cocktail;
-			Debug.Log("Whiskey rate = " + _cocktail.whiskeyRate);
- 			if(drinkDeviation <= 0.5f){
+			
+ 			if(drinkDeviation <= 0.5f && drinkDeviation > 0){
 				if(_cocktail.alcoholicStrength >= 0.25f){
 					Debug.Log("Case 1 true!");
 					myCustomer.SetCustomerVars (1.0f, 100);
@@ -57,6 +57,7 @@ public class Coaster : MonoBehaviour
 					myCustomer.SetCustomerVars(1.0f, 50);
 					myCustomer.InitiateDialogue();
 				} else if (_cocktail.alcoholicStrength < 0.10f){
+					//true when you drop a whole bottle or an empty glass.
 					Debug.Log("Case 3 true!");
 					myCustomer.SetCustomerVars(1.0f, 0);
 					myCustomer.InitiateDialogue();
@@ -75,7 +76,7 @@ public class Coaster : MonoBehaviour
 					myCustomer.SetCustomerVars(0.8f, 0);
 					myCustomer.InitiateDialogue();
 				}
-			} else if (drinkDeviation > 1.5f && drinkDeviation <= 2.5f){
+			} else if (drinkDeviation > 1.5f){
 				if(_cocktail.alcoholicStrength >= 0.25f){
 					Debug.Log("Case 7 true!");
 					myCustomer.SetCustomerVars (0.5f, 100);
@@ -101,8 +102,7 @@ public class Coaster : MonoBehaviour
 
 	public void TakeOrder (DrinkProfile _customerOrder){
 		currentOrder = _customerOrder;
-		Debug.Log("Customer smokiness order: " + currentOrder.smokiness);
-	}
+ 	}
 
 	private void CheckDropzoneStatus(){
 		if(!GetComponentInChildren<Dropzone>().isOccupied){
