@@ -17,6 +17,10 @@ public class Dropzone : MonoBehaviour {
  			if(Vector3.Distance(pickupable.transform.position, this.transform.position) <= 1f){
 				isOccupied = true;				
 			}
+			else
+			 {
+				 isOccupied = false;
+			 }
 		}
 		// isOccupied = false;
 	}
@@ -24,10 +28,6 @@ public class Dropzone : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		
-	}
-
-	public void Occupied(){
-		isOccupied = !isOccupied;
 	}
 
 	void OnTriggerStay(Collider hit)

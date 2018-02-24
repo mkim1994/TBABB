@@ -23,7 +23,7 @@ public class Pickupable : MonoBehaviour {
         if(!pickedUp){
             transform.SetParent(Services.GameManager.player.transform.GetChild(0));
             Services.GameManager.player.GetComponent<PlayerInput>().pickupableInLeftHand = this;
-             PickupTween(leftHandPos);
+            PickupTween(leftHandPos);
         } else if(pickedUp){
             transform.SetParent(null);
             Services.GameManager.player.GetComponent<PlayerInput>().pickupableInLeftHand = null;
@@ -149,10 +149,15 @@ public class Pickupable : MonoBehaviour {
         yield return new WaitForSeconds(delay);
         int children = transform.childCount;
         startPos = transform.localPosition;
+        if (targetDropzone != null)
+        {
+            targetDropzone.isOccupied = false;
+        }
+
         for (int i = 0; i < children; ++i)
         {
             transform.GetChild(i).gameObject.layer = 13;        
-         }
+        }
     }
 
     IEnumerator ChangeToWorldLayer(float delay)
