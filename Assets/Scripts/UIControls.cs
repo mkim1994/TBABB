@@ -253,7 +253,7 @@ public class UIControls : MonoBehaviour {
 					} 
 				}
 				centerText.text = targetObj;
-				if (distanceToObj < Services.GameManager.playerInput.maxInteractionDist)
+				if (distanceToObj <= Services.GameManager.playerInput.maxInteractionDist)
 				{
  					if (leftHandObj == null)
 					{
@@ -289,7 +289,7 @@ public class UIControls : MonoBehaviour {
 			//ray hits glass
 			else if (hitObj.GetComponent<Glass>() != null && !isExceptionTextRequired){
 				centerText.text = "glass";
-				if (distanceToObj < Services.GameManager.playerInput.maxInteractionDist)
+				if (distanceToObj <= Services.GameManager.playerInput.maxInteractionDist)
 				{
 					if (leftHandObj == null)
 					{
@@ -336,18 +336,29 @@ public class UIControls : MonoBehaviour {
 						botCenterImg.SetActive(true);
 						bottomCenterText.text = buttonAndKeyStrings[4 + stringOffset];
 						bottomCenterInsText.text = "talk";
-						if (rightHandObj != null)
+						if (rightHandObj != null && distanceToObj <= Services.GameManager.playerInput.maxInteractionDist)
 						{
+							Debug.Log(distanceToObj);
 							rightHandPickUpImage.enabled = true;
 							rightHandControlsText[0].text = buttonAndKeyStrings[3 + stringOffset];
 							rightHandControlsText[1].text = "serve";
-						}
-	
-						if (leftHandObj != null)
+						} else if (distanceToObj > Services.GameManager.playerInput.maxInteractionDist)
 						{
+							ClearTextArray(rightHandControlsText);
+							rightHandPickUpImage.enabled = false;
+						}
+
+						if (leftHandObj != null && distanceToObj <= Services.GameManager.playerInput.maxInteractionDist)
+						{
+							Debug.Log(distanceToObj);
+
 							leftHandPickUpImage.enabled = true;
 							leftHandControlsText[0].text = buttonAndKeyStrings[2 + stringOffset];
 							leftHandControlsText[1].text = "serve";
+						} else if (distanceToObj > Services.GameManager.playerInput.maxInteractionDist)
+						{
+							ClearTextArray(leftHandControlsText);
+							leftHandPickUpImage.enabled = false;
 						}
 					}
 					else if (Services.GameManager.dialogue.isDialogueRunning)
@@ -366,7 +377,7 @@ public class UIControls : MonoBehaviour {
 			
 			else if (hitObj.GetComponent<Dropzone>() != null && !hitObj.GetComponent<Dropzone>().isOccupied)
 			{
-				if (distanceToObj < Services.GameManager.playerInput.maxInteractionDist)
+				if (distanceToObj <= Services.GameManager.playerInput.maxInteractionDist)
 				{
 					leftHandPickUpImage.enabled = true;
 					leftHandControlsText[0].text = buttonAndKeyStrings[2 + stringOffset];
@@ -387,7 +398,7 @@ public class UIControls : MonoBehaviour {
 				if (Services.GameManager.dayManager.dayHasEnded)
 				{
 					centerText.text = "end the day";
-					if (distanceToObj < Services.GameManager.playerInput.maxInteractionDist)
+					if (distanceToObj <= Services.GameManager.playerInput.maxInteractionDist)
 					{
 						botCenterImg.SetActive(true);
 						bottomCenterInsText.text = "use";
@@ -395,13 +406,20 @@ public class UIControls : MonoBehaviour {
 					} 
 					else
 					{
-						ClearUI();
+						botCenterImg.SetActive(false);
+						bottomCenterInsText.text = "";
+						bottomCenterText.text = "";
 					}
 
 				} 
 				else if (!Services.GameManager.dayManager.dayHasEnded)
 				{
-					if (distanceToObj < Services.GameManager.playerInput.maxInteractionDist)
+					if (!isMessageOverrideOn)
+					{
+						centerText.text = "end the day";
+					}
+
+					if (distanceToObj <= Services.GameManager.playerInput.maxInteractionDist)
 					{
 						botCenterImg.SetActive(true);
 						bottomCenterInsText.text = "use";
@@ -422,7 +440,9 @@ public class UIControls : MonoBehaviour {
 					}
 					else
 					{
-						ClearUI();
+						botCenterImg.SetActive(false);
+						bottomCenterInsText.text = "";
+						bottomCenterText.text = "";
 					}
 				} 
 			}
@@ -522,6 +542,11 @@ public class UIControls : MonoBehaviour {
 		centerText.text = text;
 		Debug.Log("Changed center text!");
  		StartCoroutine(ClearTextCoroutine(centerText, 3));
+	}
+
+	void ClearText(Text text)
+	{
+		text.text = "";
 	}
 
 

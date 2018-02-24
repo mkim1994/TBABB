@@ -90,17 +90,18 @@ public class Coaster : MonoBehaviour
 					myCustomer.SetCustomerVars(0.5f, 0);
 					myCustomer.InitiateDialogue();
 				}   	
-			} else if (drinkDeviation == 0)
-			 {
-				 myCustomer.SetCustomerVars(0.5f, 0);
-				 myCustomer.InitiateDialogue();
-			 }
+			} 
 			 else if (_cocktail.totalVolume <= 0){
 				Debug.Log("empty glass or bottle");
 
 				myCustomer.SetCustomerVars(0, 0);
 				myCustomer.InitiateDialogue();
 			}	
+			 else if (drinkDeviation == 0)
+			 {
+				 myCustomer.SetCustomerVars(0.5f, 0);
+				 myCustomer.InitiateDialogue();
+			 }
 		} 
  	}
 
