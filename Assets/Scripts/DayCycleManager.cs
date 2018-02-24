@@ -85,7 +85,7 @@ public class DayCycleManager : MonoBehaviour
     {
 
         if(!dayHasEnded){ //day ends when customers are all gone
-            elapsedTime = Time.time - offsetTime;
+            elapsedTime = Time.timeSinceLevelLoad - offsetTime;
             for (int i = 0; i < days[currentDay].customers.Count; ++i){
                 if(elapsedTime >= days[currentDay].customers[i].GetComponent<CustomerData>().daysvisiting[currentDay]){
                     days[currentDay].customers[i].insideBar = true;
@@ -115,7 +115,7 @@ public class DayCycleManager : MonoBehaviour
 
     void BeginDay(){
 
-        elapsedTime = Time.time - offsetTime;
+        elapsedTime = Time.timeSinceLevelLoad - offsetTime;
         offsetTime = elapsedTime; //no need to keep track of time
     }
 
