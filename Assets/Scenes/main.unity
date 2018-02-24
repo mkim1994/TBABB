@@ -57,7 +57,7 @@ LightmapSettings:
     serializedVersion: 9
     m_Resolution: 2
     m_BakeResolution: 50
-    m_TextureWidth: 512
+    m_TextureWidth: 1024
     m_TextureHeight: 1024
     m_AO: 1
     m_AOMaxDistance: 1
@@ -343,6 +343,46 @@ Prefab:
       propertyPath: lookSensitivity
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 224096453968674342, guid: 002984101656d421a83f24c057d0eade,
+        type: 2}
+      propertyPath: m_AnchoredPosition.x
+      value: 561.6001
+      objectReference: {fileID: 0}
+    - target: {fileID: 224096453968674342, guid: 002984101656d421a83f24c057d0eade,
+        type: 2}
+      propertyPath: m_AnchoredPosition.y
+      value: 48.447266
+      objectReference: {fileID: 0}
+    - target: {fileID: 224221467195132130, guid: 002984101656d421a83f24c057d0eade,
+        type: 2}
+      propertyPath: m_AnchoredPosition.x
+      value: 122.1001
+      objectReference: {fileID: 0}
+    - target: {fileID: 224221467195132130, guid: 002984101656d421a83f24c057d0eade,
+        type: 2}
+      propertyPath: m_AnchoredPosition.y
+      value: 48.447266
+      objectReference: {fileID: 0}
+    - target: {fileID: 224744004681425196, guid: 002984101656d421a83f24c057d0eade,
+        type: 2}
+      propertyPath: m_AnchoredPosition.y
+      value: 48.447266
+      objectReference: {fileID: 0}
+    - target: {fileID: 224097610651144170, guid: 002984101656d421a83f24c057d0eade,
+        type: 2}
+      propertyPath: m_AnchoredPosition.x
+      value: 199.8999
+      objectReference: {fileID: 0}
+    - target: {fileID: 224097610651144170, guid: 002984101656d421a83f24c057d0eade,
+        type: 2}
+      propertyPath: m_AnchoredPosition.y
+      value: 48.447266
+      objectReference: {fileID: 0}
+    - target: {fileID: 224634253065122286, guid: 002984101656d421a83f24c057d0eade,
+        type: 2}
+      propertyPath: m_AnchoredPosition.y
+      value: 84.3999
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 002984101656d421a83f24c057d0eade, type: 2}
   m_IsPrefabParent: 0
@@ -388,6 +428,10 @@ Prefab:
     - target: {fileID: 1111909942223710, guid: 81df8f504d79640629ad026d32ff0cd5, type: 2}
       propertyPath: m_Name
       value: ScriptBasedObjsColliders
+      objectReference: {fileID: 0}
+    - target: {fileID: 4567796656013590, guid: 81df8f504d79640629ad026d32ff0cd5, type: 2}
+      propertyPath: m_LocalScale.y
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 81df8f504d79640629ad026d32ff0cd5, type: 2}
