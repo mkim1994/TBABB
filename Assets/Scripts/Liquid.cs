@@ -19,6 +19,8 @@ public class Liquid : MonoBehaviour {
 	[SerializeField]float whiskeyVolume, tequilaVolume, rumVolume, ginVolume, beerVolume, wineVolume, brandyVolume, vodkaVolume;
  	[SerializeField]float smokiness, sweetness, sourness, bitterness, spiciness;
 	[SerializeField]float alcoholVolume, abv;
+
+    private float originalX, originalZ;
 	
 	public DrinkProfile thisCocktail;
 	
@@ -30,13 +32,19 @@ public class Liquid : MonoBehaviour {
 			whiskeyVolume/height, ginVolume/height, tequilaVolume/height, vodkaVolume/height, rumVolume/height, beerVolume/height, 
 			wineVolume/height, brandyVolume/height, abv, 
 			smokiness, sweetness, sourness, bitterness, spiciness);
+        originalX = transform.localScale.x;
+        originalZ = transform.localScale.z;
+        if (GetComponent<Bottle>() == null)
+        {
+            transform.localScale = new Vector3(0, 0, 0);
+        }
 	}
 	
 	// Update is called once per frame
 	void Update () {
  		EvaluateDrinkInCoaster ();
  
-		height = Mathf.Clamp(height, 0, 7058.475f);
+		height = Mathf.Clamp(height, 0, 8000f);
 
 		totalVolume = whiskeyVolume + ginVolume + brandyVolume + vodkaVolume + wineVolume + beerVolume + tequilaVolume + rumVolume 
 					+ sodaVolume + tonicVolume + appleJuiceVolume + orangeJuiceVolume + lemonJuiceVolume;
@@ -52,7 +60,7 @@ public class Liquid : MonoBehaviour {
 
 	public void GrowVertical(){
 		height += 10000 * Time.deltaTime;
-		transform.localScale = new Vector3 (transform.localScale.x, height, transform.localScale.z);
+        transform.localScale = new Vector3 (originalX, height, originalZ);
 		thisCocktail = new DrinkProfile (sodaVolume/height, tonicVolume/height, appleJuiceVolume/height, lemonJuiceVolume/height, 0, 0, 0, 0, 0, 0, 0, 
 		whiskeyVolume/height, ginVolume/height, tequilaVolume/height, vodkaVolume/height, rumVolume/height, beerVolume/height, 
 		wineVolume/height, brandyVolume/height, abv, 
