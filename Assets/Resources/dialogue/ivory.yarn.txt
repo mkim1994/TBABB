@@ -36,17 +36,19 @@ position: 114,209
                         <<set $stateIvory = 1>>
                         <<setsprite Ivory happy>>
                         Customer: Thanks.
+                        <<set $progressIvory = 1>>
                     <<elseif $drinkScoreIvory >= 0.5>>
                         <<set $stateIvory = 1>>
                         <<setsprite Ivory unhappy>>
                         Customer: Thanks...?
                         Customer: Sigh.
+                        <<set $progressIvory = 1>>
                     <<else>>
                         <<setsprite Ivory unhappy>>
+                        <<set $hasOrderedIvory = true>>
                         Customer: Does this even have whiskey in it?
                         Customer: Just get me whiskey, can't be that hard.
                     <<endif>>
-                    <<set $progressIvory = 1>>
                 <<endif>>
             <<endif>>
         <<endif>>
@@ -225,4 +227,11 @@ Customer: Haha, dude--you managed to give me something last time!
 Customer: You take one of those bottles there...
 Customer: And you pour it into a glass.
 Customer: It's not that hard, is it?
+===
+title: 1OrderIvory
+tags: 
+colorID: 0
+position: -107,216
+---
+<<order Ivory n 0 n 0 whiskey 1.0>>
 ===

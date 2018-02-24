@@ -139,6 +139,11 @@ public class NPC : MonoBehaviour
         }
     }
 
+    public void PreemptiveOrder(){
+        Debug.Log("preemptive ordering");
+        Services.GameManager.dialogue.StartDialogue((Services.GameManager.dayManager.currentDay + 1) +"Order"+ characterName);
+    }
+
     public bool IsCustomerPresent(){
         if (GetComponentInChildren<SpriteRenderer>().enabled)
         {
@@ -197,6 +202,7 @@ public class NPC : MonoBehaviour
     }
 
     public void EnterBarAction(){
+        PreemptiveOrder();
         Services.GameManager.audioController.dooropen.Play();
         Services.GameManager.audioController.doorbell.Play();
         silhouette.gameObject.SetActive(true);
