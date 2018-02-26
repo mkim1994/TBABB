@@ -324,65 +324,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 1117426447310104, guid: 002984101656d421a83f24c057d0eade, type: 2}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114739140198778196, guid: 002984101656d421a83f24c057d0eade,
-        type: 2}
-      propertyPath: controllerSens
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 114739140198778196, guid: 002984101656d421a83f24c057d0eade,
-        type: 2}
-      propertyPath: mouseSens
-      value: 0.25
-      objectReference: {fileID: 0}
-    - target: {fileID: 114739140198778196, guid: 002984101656d421a83f24c057d0eade,
-        type: 2}
-      propertyPath: lookSensitivity
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 224096453968674342, guid: 002984101656d421a83f24c057d0eade,
-        type: 2}
-      propertyPath: m_AnchoredPosition.x
-      value: 561.6001
-      objectReference: {fileID: 0}
-    - target: {fileID: 224096453968674342, guid: 002984101656d421a83f24c057d0eade,
-        type: 2}
-      propertyPath: m_AnchoredPosition.y
-      value: 48.447266
-      objectReference: {fileID: 0}
-    - target: {fileID: 224221467195132130, guid: 002984101656d421a83f24c057d0eade,
-        type: 2}
-      propertyPath: m_AnchoredPosition.x
-      value: 122.1001
-      objectReference: {fileID: 0}
-    - target: {fileID: 224221467195132130, guid: 002984101656d421a83f24c057d0eade,
-        type: 2}
-      propertyPath: m_AnchoredPosition.y
-      value: 48.447266
-      objectReference: {fileID: 0}
-    - target: {fileID: 224744004681425196, guid: 002984101656d421a83f24c057d0eade,
-        type: 2}
-      propertyPath: m_AnchoredPosition.y
-      value: 48.447266
-      objectReference: {fileID: 0}
-    - target: {fileID: 224097610651144170, guid: 002984101656d421a83f24c057d0eade,
-        type: 2}
-      propertyPath: m_AnchoredPosition.x
-      value: 199.8999
-      objectReference: {fileID: 0}
-    - target: {fileID: 224097610651144170, guid: 002984101656d421a83f24c057d0eade,
-        type: 2}
-      propertyPath: m_AnchoredPosition.y
-      value: 48.447266
-      objectReference: {fileID: 0}
-    - target: {fileID: 224634253065122286, guid: 002984101656d421a83f24c057d0eade,
-        type: 2}
-      propertyPath: m_AnchoredPosition.y
-      value: 84.3999
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 002984101656d421a83f24c057d0eade, type: 2}
   m_IsPrefabParent: 0
