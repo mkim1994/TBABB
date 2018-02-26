@@ -336,23 +336,23 @@ public class UIControls : MonoBehaviour {
 						botCenterImg.SetActive(true);
 						bottomCenterText.text = buttonAndKeyStrings[4 + stringOffset];
 						bottomCenterInsText.text = "talk";
-						if (rightHandObj != null && distanceToObj <= Services.GameManager.playerInput.maxInteractionDist)
+						if (rightHandObj != null && distanceToObj <= Services.GameManager.playerInput.maxInteractionDist+1)
 						{
  							rightHandPickUpImage.enabled = true;
 							rightHandControlsText[0].text = buttonAndKeyStrings[3 + stringOffset];
 							rightHandControlsText[1].text = "serve";
-						} else if (distanceToObj > Services.GameManager.playerInput.maxInteractionDist)
+						} else if (distanceToObj > Services.GameManager.playerInput.maxInteractionDist+1)
 						{
 							ClearTextArray(rightHandControlsText);
 							rightHandPickUpImage.enabled = false;
 						}
 
-						if (leftHandObj != null && distanceToObj <= Services.GameManager.playerInput.maxInteractionDist)
+						if (leftHandObj != null && distanceToObj <= Services.GameManager.playerInput.maxInteractionDist+1)
 						{
 							leftHandPickUpImage.enabled = true;
 							leftHandControlsText[0].text = buttonAndKeyStrings[2 + stringOffset];
 							leftHandControlsText[1].text = "serve";
-						} else if (distanceToObj > Services.GameManager.playerInput.maxInteractionDist)
+						} else if (distanceToObj > Services.GameManager.playerInput.maxInteractionDist+1)
 						{
 							ClearTextArray(leftHandControlsText);
 							leftHandPickUpImage.enabled = false;

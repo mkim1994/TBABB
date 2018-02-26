@@ -19,6 +19,14 @@ public class Pickupable : MonoBehaviour {
     // public List<Coaster> coasters = new List<Coaster> ();
 
     protected virtual void Start(){
+        CreateDropzone();
+    }
+
+    protected virtual void CreateDropzone()
+    {
+        Debug.Log("Dropzone created!");
+        GameObject dropzoneGO = Instantiate(Resources.Load("Prefabs/dropzone"), transform.position, Quaternion.identity) as GameObject;
+        dropzoneGO.GetComponent<Dropzone>().isOccupied = true;
     }
 
     public virtual void InteractLeftHand(){

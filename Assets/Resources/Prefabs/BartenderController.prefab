@@ -1466,7 +1466,7 @@ MonoBehaviour:
   pickupable: {fileID: 0}
   pickupableInLeftHand: {fileID: 0}
   pickupableInRightHand: {fileID: 0}
-  maxInteractionDist: 4
+  maxInteractionDist: 5
   maxTalkingDist: 8
   moveSpeed: 5
   lookSensitivity: 0

@@ -13,7 +13,7 @@ public class Bottle : Pickupable {
  	
 	protected override void Start()
 	{
-// 		dropOffset = Vector3.down * 0;
+ 		base.Start();
  	}
 	
 	public override void StartPourTween(Vector3 moveToPos)

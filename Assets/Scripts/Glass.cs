@@ -22,6 +22,7 @@ public class Glass : Pickupable {
 
 	protected override void Start()
 	{
+		base.Start();
 		liquid = GetComponentInChildren<Liquid>();
  		switch (glassType)
 		{
