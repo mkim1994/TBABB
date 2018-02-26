@@ -14,6 +14,8 @@ public class Pickupable : MonoBehaviour {
     public bool pickedUp = false;
 
     public string myName = "";
+
+    public Liquid myLiquid;
     // public List<Coaster> coasters = new List<Coaster> ();
 
     protected virtual void Start(){
@@ -21,6 +23,7 @@ public class Pickupable : MonoBehaviour {
 
     public virtual void InteractLeftHand(){
         if(!pickedUp){
+            //pick up with left hand
             transform.SetParent(Services.GameManager.player.transform.GetChild(0));
             Services.GameManager.player.GetComponent<PlayerInput>().pickupableInLeftHand = this;
             PickupTween(leftHandPos);
@@ -153,7 +156,11 @@ public class Pickupable : MonoBehaviour {
         {
             targetDropzone.isOccupied = false;
         }
-
+        if (gameObject.GetComponentInChildren<Liquid>() != null)
+        {
+             Liquid _liquid = gameObject.GetComponentInChildren<Liquid>();
+            _liquid.isEvaluated = false;
+        }
         for (int i = 0; i < children; ++i)
         {
             transform.GetChild(i).gameObject.layer = 13;        
@@ -170,5 +177,10 @@ public class Pickupable : MonoBehaviour {
             transform.GetChild(i).gameObject.layer = 0;
         }
 
+    }
+
+    protected virtual void ResetEvaluationStatus()
+    {
+        
     }
 }

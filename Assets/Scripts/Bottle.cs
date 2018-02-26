@@ -60,5 +60,7 @@ public class Bottle : Pickupable {
  		}
 		// Services.GameManager.playerInput.pickupableInRightHand	
 	}
+	
+
 
 }

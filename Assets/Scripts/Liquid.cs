@@ -268,4 +268,9 @@ public class Liquid : MonoBehaviour {
 		}
 	}
 
+	public void SetEvaluatedToFalse()
+	{
+		isEvaluated = false;
+	}
+
 }
