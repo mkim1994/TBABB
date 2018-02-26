@@ -76,6 +76,9 @@ public class DayCycleManager : MonoBehaviour
         dayHasEnded = false;
         switchOff = false;
         blackPanel.SetActive(true);
+        Services.GameManager.audioController.spotlightsfx.Play();
+        Services.GameManager.audioController.bgm.Stop();
+        Services.GameManager.audioController.signhum.Stop();
         currentDay++;
         Services.GameManager.playerInput.isInputEnabled = false;
         WaitTillNextDay();
