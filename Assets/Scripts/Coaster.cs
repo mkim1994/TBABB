@@ -80,7 +80,23 @@ public class Coaster : MonoBehaviour
 						myCustomer.SetCustomerVars(0.8f, 0);
 						myCustomer.InitiateDialogue();
 					}
-				} else if (drinkDeviation > 1.5f && drinkDeviation <= 2.5f){
+				} 
+//				else if (drinkDeviation > 1.5f && drinkDeviation <= 2.5f){
+//					if(_cocktail.alcoholicStrength >= 0.25f){
+//						Debug.Log("Case 7 true!");
+//						myCustomer.SetCustomerVars (0.5f, 100);
+//						myCustomer.InitiateDialogue();
+//					} else if (_cocktail.alcoholicStrength < 0.25f && _cocktail.alcoholicStrength >= 0.10f){
+//						Debug.Log("Case 8 true!");
+//						myCustomer.SetCustomerVars(0.5f, 50);
+//						myCustomer.InitiateDialogue();
+//					} else if (_cocktail.alcoholicStrength < 0.10f){
+//						Debug.Log("Case 9 true!");
+//						myCustomer.SetCustomerVars(0.5f, 0);
+//						myCustomer.InitiateDialogue();
+//					}   	
+//				}
+				else if (drinkDeviation > 1.5f && drinkDeviation <= 1.95f){
 					if(_cocktail.alcoholicStrength >= 0.25f){
 						Debug.Log("Case 7 true!");
 						myCustomer.SetCustomerVars (0.5f, 100);
@@ -94,7 +110,8 @@ public class Coaster : MonoBehaviour
 						myCustomer.SetCustomerVars(0.5f, 0);
 						myCustomer.InitiateDialogue();
 					}   	
-				} else if (drinkDeviation > 2.5f) //no whiskey at all, acceptable amt of drink
+				}
+				else if (drinkDeviation > 1.95f) //no whiskey at all, acceptable amt of drink
 				{
 					if(_cocktail.alcoholicStrength >= 0.25f){
 						Debug.Log("Case 7 true!");

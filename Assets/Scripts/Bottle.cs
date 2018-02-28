@@ -36,7 +36,7 @@ public class Bottle : Pickupable {
 		if(Services.GameManager.playerInput.pickupable.GetComponent<Glass>() != null){
  			base.RotateTween(leftHandPourRot);
 			StartPourTween(Vector3.forward + new Vector3(-0.482f, 0, 0.5f));
-			Services.GameManager.playerInput.pickupable.GetComponent<Glass>().ReceivePourFromBottle(this);
+			Services.GameManager.playerInput.pickupable.GetComponent<Glass>().ReceivePourFromBottle(this, 0);
 			Debug.Log("Pouring left!");
 		} 
 	}
@@ -45,7 +45,7 @@ public class Bottle : Pickupable {
 		if(Services.GameManager.playerInput.pickupable.GetComponent<Glass>() != null){
  			base.RotateTween(rightHandPourRot);
 			StartPourTween(Vector3.forward + new Vector3(0.482f, 0, 0.5f));
-			Services.GameManager.playerInput.pickupable.GetComponent<Glass>().ReceivePourFromBottle(this);
+			Services.GameManager.playerInput.pickupable.GetComponent<Glass>().ReceivePourFromBottle(this, 1);
 			Debug.Log("Pouring right!");
 		} 
 	}
@@ -53,7 +53,7 @@ public class Bottle : Pickupable {
 	public void PourIntoPickedUpGlass(){
 		if(Services.GameManager.playerInput.pickupableInLeftHand == this){ //if the bottle is in the left hand
 			base.RotateTween(leftHandPourRot);
-			StartPourTween(new Vector3(-0.482f, 0, 0.5f));
+			StartPourTween(Vector3.forward + new Vector3(-0.482f, 0, 0.5f));
  		} else if (Services.GameManager.playerInput.pickupableInRightHand == this){
 			base.RotateTween(rightHandPourRot);
 			StartPourTween(Vector3.forward + new Vector3(0.482f, 0, 0.5f));

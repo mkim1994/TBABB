@@ -11,21 +11,29 @@ public class Pickupable : MonoBehaviour {
     public Dropzone targetDropzone;
     public Vector3 startPos;
     public Vector3 dropPos;
+    public Vector3 dropzoneOffset;
     public bool pickedUp = false;
-
+ 
     public string myName = "";
 
     public Liquid myLiquid;
     // public List<Coaster> coasters = new List<Coaster> ();
 
     protected virtual void Start(){
-        CreateDropzone();
+        if (gameObject.GetComponent<Bottle>() != null)
+        {
+            dropzoneOffset = new Vector3(0, 0.05f, 0);
+            CreateDropzone();
+        } else if (gameObject.GetComponent<Glass>() != null)
+        {
+            dropzoneOffset = new Vector3(0, 0.15f, 0);
+            CreateDropzone();
+        }
     }
 
     protected virtual void CreateDropzone()
     {
-        Debug.Log("Dropzone created!");
-        GameObject dropzoneGO = Instantiate(Resources.Load("Prefabs/dropzone"), transform.position, Quaternion.identity) as GameObject;
+        GameObject dropzoneGO = Instantiate(Resources.Load("Prefabs/dropzone"), transform.position + dropzoneOffset, Quaternion.identity) as GameObject;
         dropzoneGO.GetComponent<Dropzone>().isOccupied = true;
     }
 
