@@ -11,6 +11,23 @@ Prefab:
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 1990981567063706}
   m_IsPrefabParent: 1
+--- !u!1 &1044492013073010
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4849653233933616}
+  - component: {fileID: 137960859973853270}
+  - component: {fileID: 95153151226732448}
+  m_Layer: 0
+  m_Name: glassDrinkCylinder
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1162344764371372
 GameObject:
   m_ObjectHideFlags: 0
@@ -46,7 +63,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1990981567063706
 GameObject:
   m_ObjectHideFlags: 0
@@ -71,11 +88,12 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1990981567063706}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.82, y: 2.092, z: 10.42}
+  m_LocalPosition: {x: 0.382, y: 2.092, z: 10.366}
   m_LocalScale: {x: 0.7223261, y: 0.722326, z: 0.722326}
   m_Children:
   - {fileID: 4636743838125058}
   - {fileID: 4983605418241212}
+  - {fileID: 4849653233933616}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -87,10 +105,23 @@ Transform:
   m_GameObject: {fileID: 1601920935792142}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0, y: -0.515, z: 0}
-  m_LocalScale: {x: 18, y: 0, z: 18}
+  m_LocalScale: {x: 20, y: 0, z: 20}
   m_Children: []
   m_Father: {fileID: 4175873300679116}
   m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4849653233933616
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1044492013073010}
+  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0, y: -0.524, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4175873300679116}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4983605418241212
 Transform:
@@ -197,8 +228,25 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.75900286, y: 0.87067366, z: 0.65218544}
-  m_Center: {x: 0.02662021, y: -0.14191914, z: -0.009135246}
+  m_Size: {x: 0.75900286, y: 1.025156, z: 0.65218544}
+  m_Center: {x: 0.02662019, y: -0.06467781, z: -0.009135241}
+--- !u!95 &95153151226732448
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1044492013073010}
+  m_Enabled: 1
+  m_Avatar: {fileID: 9000000, guid: 6e448beaa5ced4d6499b40a9ea987fc1, type: 3}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 1
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!95 &95636727734278156
 Animator:
   serializedVersion: 3
@@ -230,8 +278,10 @@ MonoBehaviour:
   targetDropzone: {fileID: 0}
   startPos: {x: 0, y: 0, z: 0}
   dropPos: {x: 0, y: 0, z: 0}
+  dropzoneOffset: {x: 0, y: 0, z: 0}
   pickedUp: 0
   myName: 
+  myLiquid: {fileID: 0}
   hasLiquid: 0
   isFull: 0
   isDirty: 0
@@ -248,8 +298,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   height: 0
-  isPouring: 0
   isEvaluated: 0
+  totalVolume: 0
   coasters: []
   sodaVolume: 0
   tonicVolume: 0
@@ -271,3 +321,50 @@ MonoBehaviour:
   spiciness: 0
   alcoholVolume: 0
   abv: 0
+--- !u!137 &137960859973853270
+SkinnedMeshRenderer:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1044492013073010}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_Materials:
+  - {fileID: 2100000, guid: 6c5e837e2cef24848b63ebaea7a7e78a, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  serializedVersion: 2
+  m_Quality: 0
+  m_UpdateWhenOffscreen: 1
+  m_SkinnedMotionVectors: 1
+  m_Mesh: {fileID: 4300000, guid: 6e448beaa5ced4d6499b40a9ea987fc1, type: 3}
+  m_Bones: []
+  m_BlendShapeWeights:
+  - 100
+  m_RootBone: {fileID: 0}
+  m_AABB:
+    m_Center: {x: 0.000000022351742, y: 0.4350929, z: -0.000000037252903}
+    m_Extent: {x: 0.19040704, y: 0.4350929, z: 0.19040707}
+  m_DirtyAABB: 0
