@@ -83,7 +83,7 @@ public class Glass : Pickupable {
 	{
 		DeclareActiveTween();
 		Sequence sequence = DOTween.Sequence();
-		sequence.Append(transform.DOLocalMove(moveToPos, 0.25f, false));
+		sequence.Append(transform.DOLocalMove(moveToPos, tweenTime, false));
 		sequence.OnComplete(() => DeclareInactiveTween());		
 	}
 	
@@ -96,7 +96,7 @@ public class Glass : Pickupable {
 	{
 		DeclareActiveTween();
 		Sequence sequence = DOTween.Sequence();
-		sequence.Append(transform.DOLocalMove(startPos, 0.25f, false));
+		sequence.Append(transform.DOLocalMove(startPos, tweenTime, false));
 		sequence.OnComplete(() => DeclareInactiveTween());				
 	}
 	

@@ -12,6 +12,7 @@ public class Pickupable : MonoBehaviour {
     public Vector3 startPos;
     public Vector3 dropPos;
     public Vector3 dropzoneOffset;
+    public float tweenTime;
     public bool pickedUp = false;
  
     public string myName = "";
@@ -120,10 +121,10 @@ public class Pickupable : MonoBehaviour {
         //     targetDropzone.isOccupied = false;
         // }
         Sequence sequence = DOTween.Sequence();
-        sequence.Append(transform.DOLocalMove(moveToPos, 0.25f, false));
-        transform.DOLocalRotate(Vector3.zero, 0.25f, RotateMode.Fast);
+        sequence.Append(transform.DOLocalMove(moveToPos, tweenTime, false));
+        transform.DOLocalRotate(Vector3.zero, tweenTime, RotateMode.Fast);
         sequence.OnComplete(() => DeclareInactiveTween());
-        StartCoroutine(ChangeToFirstPersonLayer(0.25f));
+        StartCoroutine(ChangeToFirstPersonLayer(tweenTime));
         pickedUp = true;
     }
 
@@ -131,24 +132,24 @@ public class Pickupable : MonoBehaviour {
         DeclareActiveTween();
         _targetDropzone.isOccupied = true;
         Sequence sequence = DOTween.Sequence();
-        sequence.Append(transform.DOLocalMove(dropPos + dropOffset, 0.25f, false));
-        transform.DOLocalRotate(Vector3.zero, 0.25f, RotateMode.Fast);
+        sequence.Append(transform.DOLocalMove(dropPos + dropOffset, tweenTime, false));
+        transform.DOLocalRotate(Vector3.zero, tweenTime, RotateMode.Fast);
         sequence.OnComplete(() => DeclareInactiveTween());
-        StartCoroutine(ChangeToWorldLayer(0.25f));
+        StartCoroutine(ChangeToWorldLayer(tweenTime));
         pickedUp = false;
     }
 
     public virtual void RotateTween(Vector3 rotation){
         DeclareActiveTween();
         Sequence sequence = DOTween.Sequence();
-        sequence.Append(transform.DOLocalRotate(rotation, 0.25f, RotateMode.Fast));
+        sequence.Append(transform.DOLocalRotate(rotation, tweenTime, RotateMode.Fast));
         sequence.OnComplete(() => DeclareInactiveTween());
     } 
 
     public virtual void RotateToZeroTween(){
         DeclareActiveTween();
         Sequence sequence = DOTween.Sequence();
-        sequence.Append(transform.DOLocalRotate(Vector3.zero, 0.25f, RotateMode.Fast));
+        sequence.Append(transform.DOLocalRotate(Vector3.zero, tweenTime, RotateMode.Fast));
         sequence.OnComplete(() => DeclareInactiveTween());
     } 
 

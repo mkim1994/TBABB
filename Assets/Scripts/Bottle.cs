@@ -15,12 +15,18 @@ public class Bottle : Pickupable {
 	{
  		base.Start();
  	}
+	public override void RotateTween(Vector3 rotation){
+		DeclareActiveTween();
+		Sequence sequence = DOTween.Sequence();
+		sequence.Append(transform.DOLocalRotate(rotation, tweenTime, RotateMode.Fast)).SetEase(Ease.InOutBack);
+		sequence.OnComplete(() => DeclareInactiveTween());
+	} 
 	
 	public override void StartPourTween(Vector3 moveToPos)
 	{
 		DeclareActiveTween();
 		Sequence sequence = DOTween.Sequence();
-		sequence.Append(transform.DOLocalMove(moveToPos, 0.25f, false));
+		sequence.Append(transform.DOLocalMove(moveToPos, tweenTime, false)).SetEase(Ease.InOutQuart);
 		sequence.OnComplete(() => DeclareInactiveTween());		
 	}
 
@@ -28,7 +34,7 @@ public class Bottle : Pickupable {
 	{
 		DeclareActiveTween();
 		Sequence sequence = DOTween.Sequence();
-		sequence.Append(transform.DOLocalMove(startPos, 0.25f, false));
+		sequence.Append(transform.DOLocalMove(startPos, tweenTime, false));
 		sequence.OnComplete(() => DeclareInactiveTween());				
 	}
 
