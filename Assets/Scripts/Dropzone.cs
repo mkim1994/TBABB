@@ -43,9 +43,9 @@ public class Dropzone : MonoBehaviour
 		}
 	}
 
-	void OnTriggerStay(Collider hit)
+	void OnTriggerStay(Collider trigger)
 	{
-		if (hit.gameObject.GetComponent<Pickupable>() != null)
+		if (trigger.gameObject.GetComponent<Pickupable>() != null)
 		{
  			isOccupied = true;
 		}
