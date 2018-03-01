@@ -8,48 +8,47 @@ public class Dropzone : MonoBehaviour {
 	// Use this for initialization
 	Pickupable[] pickupables;
 
-	public GameObject droppedObj;
-
 	void Start () {
 		pickupables = FindObjectsOfType<Pickupable>();
 //		transform.eulerAngles = new Vector3 (transform.eulerAngles.x, Random.Range(0, 359), transform.eulerAngles.z);
-		foreach(var pickupable in pickupables){
- 			if(Vector3.Distance(pickupable.transform.position, this.transform.position) <= 1f){
-				isOccupied = true;				
-			}
-			else
-			 {
-				 isOccupied = false;
-			 }
-		}
+//		foreach(var pickupable in pickupables){
+// 			if(Vector3.Distance(pickupable.transform.position, this.transform.position) <= 1f){
+//				isOccupied = true;				
+//			}
+//			else
+//			 {
+//				 isOccupied = false;
+//			 }
+//		}
 		// isOccupied = false;
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		if (droppedObj == null)
-		{
-			isOccupied = false;
-		}
-		else
-		{
-			isOccupied = true;
-		}
+//		if (droppedObj == null)
+//		{
+//			isOccupied = false;
+//		}
+//		else
+//		{
+//			isOccupied = true;
+//		}
 	}
 
 	void OnTriggerStay(Collider hit)
 	{
-		if (hit.gameObject.GetComponent<Bottle>() != null || hit.gameObject.GetComponent<Glass>() != null)
+		if (hit.gameObject.GetComponent<Pickupable>() != null)
 		{
-			droppedObj = hit.gameObject;
+ 			isOccupied = true;
 		}
 	}
 
 	void OnTriggerExit(Collider exiter)
 	{
-		if (exiter.gameObject.GetComponent<Bottle>() != null || exiter.gameObject.GetComponent<Glass>() != null)
+// 		if (exiter.gameObject.GetComponent<Bottle>() != null || exiter.gameObject.GetComponent<Glass>() != null)
+		if(exiter.gameObject.GetComponent<Pickupable>() != null)
 		{
-			droppedObj = null;
+ 			isOccupied = false;
 		}
 	}
 }
