@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.UI;
@@ -8,6 +9,7 @@ using UnityEngine.UI;
 public class UIControls : MonoBehaviour {
 	
 	[SerializeField]LayerMask controlsMask;
+	[SerializeField] private LayerMask dropzoneOnlyMask;
 	
 	//images
 	[SerializeField] private Image leftHandActionImage;
@@ -58,7 +60,12 @@ public class UIControls : MonoBehaviour {
 	
 	void Update(){
 
-		UIRay();
+		DropzoneOnlyRay();
+		if (!isLookingAtEmptyDropzone)
+		{
+			UIRay();		
+		}
+
 		
 		//find the objects in hand
  
@@ -188,7 +195,60 @@ public class UIControls : MonoBehaviour {
 			ClearTextArray(inRightHandText);
 		}
 	}
-	
+
+	[SerializeField]private bool isLookingAtEmptyDropzone = false;
+
+	private void DropzoneOnlyRay()
+	{
+		Ray ray = new Ray(myCam.transform.position, myCam.transform.forward);
+//		float rayDist = Services.GameManager.playerInput.maxInteractionDist;
+		float rayDist = Mathf.Infinity;
+		float distanceToObj = 0;
+		RaycastHit hit = new RaycastHit();
+ 
+		if (Physics.Raycast(ray, out hit, rayDist, dropzoneOnlyMask))
+		{
+			GameObject hitObj = hit.transform.gameObject; //if you're actually looking at something
+			distanceToObj = Vector3.Distance(transform.position, hitObj.transform.position);
+  			if (hitObj.GetComponent<Dropzone>() != null)
+			{
+  				Dropzone dropzone = hitObj.GetComponent<Dropzone>();
+				if (!dropzone.isOccupied) //empty dropzone
+				{
+					isLookingAtEmptyDropzone = true;
+					if (distanceToObj <= Services.GameManager.playerInput.maxInteractionDist)
+					{
+
+						if (leftHandObj != null)
+						{						
+ 							leftHandPickUpImage.enabled = true;
+							leftHandControlsText[0].text = buttonAndKeyStrings[2 + stringOffset];
+							leftHandControlsText[1].text = "put back";
+						}
+						else if (rightHandObj != null)
+						{
+							rightHandPickUpImage.enabled = true;
+							rightHandControlsText[0].text = buttonAndKeyStrings[3 + stringOffset];
+							rightHandControlsText[1].text = "put back";
+						}					
+					}
+				}
+				else
+				{
+					isLookingAtEmptyDropzone = false;
+				}
+			}
+			else
+			  {
+				  isLookingAtEmptyDropzone = false;
+			  }
+		}
+		else
+		{
+			isLookingAtEmptyDropzone = false;
+		}
+	}
+
 	private void UIRay(){
 		Ray ray = new Ray(myCam.transform.position, myCam.transform.forward);
 //		float rayDist = Services.GameManager.playerInput.maxInteractionDist;
@@ -369,9 +429,10 @@ public class UIControls : MonoBehaviour {
 				{
 					ClearUI();
 				}
-			//ray hits dropzone
 			} 
 			
+			//ray hits dropzone
+
 			else if (hitObj.GetComponent<Dropzone>() != null && !hitObj.GetComponent<Dropzone>().isOccupied)
 			{
 				if (distanceToObj <= Services.GameManager.playerInput.maxInteractionDist)
