@@ -7,7 +7,7 @@ Material:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: TurquoiseGem
-  m_Shader: {fileID: 4800000, guid: 4443140fbd110a7011005aba44295342, type: 3}
+  m_Shader: {fileID: 4800000, guid: f6a68a66f5c46e24ebf85360d4fd7f38, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 5
   m_EnableInstancingVariants: 0
@@ -34,14 +34,31 @@ Material:
         m_Texture: {fileID: 8900000, guid: 51e3f49dbd110a7011005aba44295342, type: 2}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _TransMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     m_Floats:
     - _Emission: 0
     - _Emissive: 0
     - _EnvironmentLight: 2
     - _IndexOfRefraction: 2.14
     - _ReflectionStrength: 2
+    - _TransBackfaceIntensity: 0.15
+    - _TransDirectianalLightStrength: 0.2
+    - _TransDistortion: 0.1
+    - _TransOtherLightsStrength: 0.5
+    - _TransPower: 1
+    - _TransScale: 1
+    - _V_MaterialTag: 0
+    - _V_MaterialTitle_Default: 0
+    - _V_MaterialTitle_SSS: 0
+    - _V_SSS_Emission: 0
+    - _V_SSS_Rim_Pow: 2
     m_Colors:
     - _Color: {r: 0.43382353, g: 1, b: 0.8304055, a: 1}
+    - _TransColor: {r: 1, g: 1, b: 1, a: 1}
+    - _V_SSS_Rim_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1002 &2100001
 EditorExtensionImpl:
   serializedVersion: 6
