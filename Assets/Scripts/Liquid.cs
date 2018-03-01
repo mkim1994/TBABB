@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Xml;
 using UnityEngine;
 
 public class Liquid : MonoBehaviour {
@@ -7,7 +8,9 @@ public class Liquid : MonoBehaviour {
 	private float previousAlcoholVolume;
 	private float prevABV;
  	public float height;
- 
+	private SkinnedMeshRenderer myLiquid;
+	private float myLiquidVolume = 100;
+	[SerializeField]private float pourRate = 1;
 	public bool isEvaluated = false;
 	public float totalVolume;
 	public List<Coaster> coasters = new List<Coaster> ();
@@ -25,7 +28,15 @@ public class Liquid : MonoBehaviour {
 	
 
 	// Use this for initialization
-	void Start () {
+	void Start ()
+	{
+		if (gameObject.GetComponent<SkinnedMeshRenderer>() != null)
+		{
+			myLiquid = GetComponent<SkinnedMeshRenderer>();
+ 		} else if (gameObject.GetComponent<SkinnedMeshRenderer>() == null)
+		{
+		}
+ 
 		DetectCoasters ();
 		thisCocktail = new DrinkProfile (sodaVolume/height, tonicVolume/height, appleJuiceVolume/height, lemonJuiceVolume/height, 0, 0, 0, 0, 0, 0, 0, 
 			whiskeyVolume/height, ginVolume/height, tequilaVolume/height, vodkaVolume/height, rumVolume/height, beerVolume/height, 
@@ -43,11 +54,10 @@ public class Liquid : MonoBehaviour {
 	void Update () {
  		EvaluateDrinkInCoaster ();
  
-		height = Mathf.Clamp(height, 0, 8000f);
-		
+
+ 		
 		totalVolume = whiskeyVolume + ginVolume + brandyVolume + vodkaVolume + wineVolume + beerVolume + tequilaVolume + rumVolume 
 					+ sodaVolume + tonicVolume + appleJuiceVolume + orangeJuiceVolume + lemonJuiceVolume;
-
  		
 //		alcoholVolume = whiskeyVolume + ginVolume + brandyVolume + vodkaVolume + wineVolume + beerVolume + tequilaVolume + rumVolume; 
 		// abv = alcoholVolume/height;
@@ -59,8 +69,13 @@ public class Liquid : MonoBehaviour {
  	}
 
 	public void GrowVertical(){
-		height += 10000 * Time.deltaTime;
-        transform.localScale = new Vector3 (originalX, height, originalZ);
+//		height -= 1 * Time.deltaTime;
+		height = remapRange(myLiquidVolume, 0, 100, 100, 0);
+//		height = Mathf.Clamp(height, 0, 100f);
+		transform.localScale = new Vector3(1, 1, 1);
+ 		myLiquidVolume -= pourRate * Time.deltaTime;
+		myLiquid.SetBlendShapeWeight(0, myLiquidVolume);
+//        transform.localScale = new Vector3 (originalX, height, originalZ);
 		thisCocktail = new DrinkProfile (sodaVolume/totalVolume, tonicVolume/totalVolume, appleJuiceVolume/totalVolume, lemonJuiceVolume/totalVolume, 0, 0, 0, 0, 0, 0, 0, 
 		whiskeyVolume/totalVolume, ginVolume/totalVolume, tequilaVolume/totalVolume, vodkaVolume/totalVolume, rumVolume/totalVolume, beerVolume/totalVolume, 
 		wineVolume/totalVolume, brandyVolume/totalVolume, abv, 
@@ -68,7 +83,15 @@ public class Liquid : MonoBehaviour {
 //		thisCocktail.totalVolume = totalVolume;
 
 	}
-
+	
+	float remapRange(float oldValue, float oldMin, float oldMax, float newMin, float newMax )
+	{
+		float newValue = 0;
+		float oldRange = (oldMax - oldMin);
+		float newRange = (newMax - newMin);
+		newValue = (((oldValue - oldMin) * newRange) / oldRange) + newMin;
+		return newValue;
+	}
 
 	public void AddIngredient(DrinkBase _drinkBase){
 		GrowVertical();

@@ -13,13 +13,13 @@ public class Pickupable : MonoBehaviour {
     public Vector3 dropPos;
     public Vector3 dropzoneOffset;
     public float tweenTime;
+    public float pickupDropTime;
     public bool pickedUp = false;
  
     public string myName = "";
 
     public Liquid myLiquid;
-    // public List<Coaster> coasters = new List<Coaster> ();
-
+ 
     protected virtual void Start(){
         if (gameObject.GetComponent<Bottle>() != null)
         {
@@ -121,10 +121,10 @@ public class Pickupable : MonoBehaviour {
         //     targetDropzone.isOccupied = false;
         // }
         Sequence sequence = DOTween.Sequence();
-        sequence.Append(transform.DOLocalMove(moveToPos, tweenTime, false));
-        transform.DOLocalRotate(Vector3.zero, tweenTime, RotateMode.Fast);
+        sequence.Append(transform.DOLocalMove(moveToPos, pickupDropTime, false));
+        transform.DOLocalRotate(Vector3.zero, pickupDropTime, RotateMode.Fast);
         sequence.OnComplete(() => DeclareInactiveTween());
-        StartCoroutine(ChangeToFirstPersonLayer(tweenTime));
+        StartCoroutine(ChangeToFirstPersonLayer(pickupDropTime));
         pickedUp = true;
     }
 
@@ -132,10 +132,10 @@ public class Pickupable : MonoBehaviour {
         DeclareActiveTween();
         _targetDropzone.isOccupied = true;
         Sequence sequence = DOTween.Sequence();
-        sequence.Append(transform.DOLocalMove(dropPos + dropOffset, tweenTime, false));
-        transform.DOLocalRotate(Vector3.zero, tweenTime, RotateMode.Fast);
+        sequence.Append(transform.DOLocalMove(dropPos + dropOffset, pickupDropTime, false));
+        transform.DOLocalRotate(Vector3.zero, pickupDropTime, RotateMode.Fast);
         sequence.OnComplete(() => DeclareInactiveTween());
-        StartCoroutine(ChangeToWorldLayer(tweenTime));
+        StartCoroutine(ChangeToWorldLayer(pickupDropTime));
         pickedUp = false;
     }
 

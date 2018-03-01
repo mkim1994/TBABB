@@ -13,7 +13,7 @@ public class Coaster : MonoBehaviour
 	public Customer currentCustomer;
 	public DrinkProfile drinkOnCoaster;	
 
-	private float minAcceptableVolume = 1000f;
+	private float minAcceptableVolume = 20f;
 
 	void Start()
 	{
@@ -145,8 +145,7 @@ public class Coaster : MonoBehaviour
 			 else if (_cocktail.totalVolume <= 0){ //empty glass or bottle
 				myCustomer.SetCustomerVars(0, 0);
 				myCustomer.InitiateDialogue();
-			}	
-			 
+			}				 
 		} 
  	}
 
@@ -161,12 +160,5 @@ public class Coaster : MonoBehaviour
 			isDrinkHere = false;
 		}
 	}
-
-
-
-
-
-
-
-
+	
 }

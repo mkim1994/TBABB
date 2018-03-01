@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4849653233933616}
   - component: {fileID: 137960859973853270}
   - component: {fileID: 95153151226732448}
+  - component: {fileID: 114534227693515202}
   m_Layer: 0
   m_Name: glassDrinkCylinder
   m_TagString: Untagged
@@ -88,7 +89,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1990981567063706}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.382, y: 2.092, z: 10.366}
+  m_LocalPosition: {x: 2.819, y: 2.648, z: 10.011}
   m_LocalScale: {x: 0.7223261, y: 0.722326, z: 0.722326}
   m_Children:
   - {fileID: 4636743838125058}
@@ -228,8 +229,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.75900286, y: 1.025156, z: 0.65218544}
-  m_Center: {x: 0.02662019, y: -0.06467781, z: -0.009135241}
+  m_Size: {x: 0.44656986, y: 1.025156, z: 0.41616878}
+  m_Center: {x: -0.0071798186, y: -0.06467779, z: -0.009937724}
 --- !u!95 &95153151226732448
 Animator:
   serializedVersion: 3
@@ -279,13 +280,51 @@ MonoBehaviour:
   startPos: {x: 0, y: 0, z: 0}
   dropPos: {x: 0, y: 0, z: 0}
   dropzoneOffset: {x: 0, y: 0, z: 0}
+  tweenTime: 0.75
+  pickupDropTime: 0.25
   pickedUp: 0
   myName: 
-  myLiquid: {fileID: 0}
+  myLiquid: {fileID: 114534227693515202}
   hasLiquid: 0
   isFull: 0
   isDirty: 0
   glassType: 0
+--- !u!114 &114534227693515202
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1044492013073010}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a433c2afe0a76e4bb72e41952f91ec8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  height: 0
+  pourRate: 300
+  isEvaluated: 0
+  totalVolume: 0
+  coasters: []
+  sodaVolume: 0
+  tonicVolume: 0
+  appleJuiceVolume: 0
+  orangeJuiceVolume: 0
+  lemonJuiceVolume: 0
+  whiskeyVolume: 0
+  tequilaVolume: 0
+  rumVolume: 0
+  ginVolume: 0
+  beerVolume: 0
+  wineVolume: 0
+  brandyVolume: 0
+  vodkaVolume: 0
+  smokiness: 0
+  sweetness: 0
+  sourness: 0
+  bitterness: 0
+  spiciness: 0
+  alcoholVolume: 0
+  abv: 0
 --- !u!114 &114865051915595450
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -298,6 +337,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   height: 0
+  pourRate: 1
   isEvaluated: 0
   totalVolume: 0
   coasters: []
