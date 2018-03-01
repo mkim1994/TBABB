@@ -481,13 +481,23 @@ public class PlayerInput : MonoBehaviour {
 			if (hitObj.GetComponent<Dropzone>() != null && Vector3.Distance(transform.position, hitObj.transform.position) <= maxInteractionDist){
 				Dropzone hitDropzone = hitObj.GetComponent<Dropzone>(); // get a reference to the dropzone
 				dropPos = hitObj.transform.position;
+				hitDropzone.playerIsLooking = true;
 				targetDropzone = hitDropzone;
 			} 
 			else if (Vector3.Distance(transform.position, hitObj.transform.position) > maxInteractionDist) {
 				dropPos = Vector3.zero;
+				if (targetDropzone != null)
+				{
+					targetDropzone.playerIsLooking = false;				
+				}
 				targetDropzone = null;
 			}
-		} else {
+		} else
+		{
+			if (targetDropzone != null)
+			{
+				targetDropzone.playerIsLooking = false;			
+			}
 			dropPos = Vector3.zero;
 			targetDropzone = null;
 		}

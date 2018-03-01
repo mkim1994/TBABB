@@ -2,13 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Dropzone : MonoBehaviour {
-
+public class Dropzone : MonoBehaviour
+{
+	public GameObject aura;
 	public bool isOccupied;
 	// Use this for initialization
 	Pickupable[] pickupables;
+	public bool playerIsLooking;
 
-	void Start () {
+	void Start ()
+	{
+		playerIsLooking = false;
+		aura = transform.GetChild(0).gameObject; 
+		aura.SetActive(false);
 		pickupables = FindObjectsOfType<Pickupable>();
 //		transform.eulerAngles = new Vector3 (transform.eulerAngles.x, Random.Range(0, 359), transform.eulerAngles.z);
 //		foreach(var pickupable in pickupables){
@@ -24,15 +30,17 @@ public class Dropzone : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update () {
-//		if (droppedObj == null)
-//		{
-//			isOccupied = false;
-//		}
-//		else
-//		{
-//			isOccupied = true;
-//		}
+
+	void Update()
+	{
+		if (playerIsLooking && !isOccupied)
+		{
+			ShowAura();
+		}
+		else
+		{
+			HideAura();
+		}
 	}
 
 	void OnTriggerStay(Collider hit)
@@ -50,5 +58,17 @@ public class Dropzone : MonoBehaviour {
 		{
  			isOccupied = false;
 		}
+	}
+
+	public void ShowAura()
+	{
+		if(!aura.activeInHierarchy)
+			aura.SetActive(true);
+	}
+
+	private void HideAura()
+	{
+		if (aura.activeInHierarchy)
+			aura.SetActive(false);
 	}
 }

@@ -195,6 +195,23 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1070064762163298
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4718589214260072}
+  - component: {fileID: 33917609118451420}
+  - component: {fileID: 23539874818953378}
+  m_Layer: 0
+  m_Name: DropzoneAura
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1071011312528002
 GameObject:
   m_ObjectHideFlags: 1
@@ -3458,6 +3475,19 @@ Transform:
   m_Father: {fileID: 4174320290193702}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: -40.085003, z: 0}
+--- !u!4 &4718589214260072
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1070064762163298}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -3.798, y: -5.37, z: 2.789}
+  m_LocalScale: {x: 0.3802725, y: 0.3802725, z: 0.3802725}
+  m_Children: []
+  m_Father: {fileID: 4863984689011052}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4724066908011394
 Transform:
   m_ObjectHideFlags: 1
@@ -3728,7 +3758,8 @@ Transform:
   m_LocalRotation: {x: -0, y: 0.012599521, z: -0, w: 0.99992067}
   m_LocalPosition: {x: 0.006000042, y: 0.533, z: -0.028000832}
   m_LocalScale: {x: 0.6104933, y: 0.12573647, z: 0.5256092}
-  m_Children: []
+  m_Children:
+  - {fileID: 4718589214260072}
   m_Father: {fileID: 4853708486890166}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 1.4440001, z: 0}
@@ -5905,6 +5936,40 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!23 &23539874818953378
+MeshRenderer:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1070064762163298}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_Materials:
+  - {fileID: 2100000, guid: f63214b33e9e4b9498822382d1575619, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
 --- !u!23 &23543604418536648
 MeshRenderer:
   m_ObjectHideFlags: 1
@@ -7773,6 +7838,13 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1072218244492682}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!33 &33917609118451420
+MeshFilter:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1070064762163298}
+  m_Mesh: {fileID: 4300000, guid: 6ffe8365171a3204698c4de86c5d1f73, type: 3}
 --- !u!33 &33928189014937200
 MeshFilter:
   m_ObjectHideFlags: 1
@@ -9354,8 +9426,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc0fe9619cf481d44a61d65ff89977a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  aura: {fileID: 0}
   isOccupied: 0
-  droppedObj: {fileID: 0}
+  playerIsLooking: 0
 --- !u!114 &114002992784088136
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -9402,8 +9475,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc0fe9619cf481d44a61d65ff89977a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  aura: {fileID: 0}
   isOccupied: 0
-  droppedObj: {fileID: 0}
+  playerIsLooking: 0
 --- !u!114 &114016110093113366
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -9450,8 +9524,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc0fe9619cf481d44a61d65ff89977a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  aura: {fileID: 0}
   isOccupied: 0
-  droppedObj: {fileID: 0}
+  playerIsLooking: 0
 --- !u!114 &114045866956090050
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -9463,8 +9538,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc0fe9619cf481d44a61d65ff89977a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  aura: {fileID: 0}
   isOccupied: 0
-  droppedObj: {fileID: 0}
+  playerIsLooking: 0
 --- !u!114 &114049610353460900
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -9476,8 +9552,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc0fe9619cf481d44a61d65ff89977a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  aura: {fileID: 1070064762163298}
   isOccupied: 0
-  droppedObj: {fileID: 0}
+  playerIsLooking: 0
 --- !u!114 &114052336177977886
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -9492,6 +9569,7 @@ MonoBehaviour:
   targetDropzone: {fileID: 0}
   startPos: {x: 0, y: 0, z: 0}
   dropPos: {x: 0, y: 0, z: 0}
+  dropzoneOffset: {x: 0, y: 0, z: 0}
   pickedUp: 0
   myName: 
   myLiquid: {fileID: 0}
@@ -9510,8 +9588,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc0fe9619cf481d44a61d65ff89977a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  aura: {fileID: 0}
   isOccupied: 0
-  droppedObj: {fileID: 0}
+  playerIsLooking: 0
 --- !u!114 &114099646840406588
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -9523,8 +9602,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc0fe9619cf481d44a61d65ff89977a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  aura: {fileID: 0}
   isOccupied: 0
-  droppedObj: {fileID: 0}
+  playerIsLooking: 0
 --- !u!114 &114107089248995292
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -9536,8 +9616,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc0fe9619cf481d44a61d65ff89977a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  aura: {fileID: 0}
   isOccupied: 0
-  droppedObj: {fileID: 0}
+  playerIsLooking: 0
 --- !u!114 &114121872271436142
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -9549,8 +9630,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc0fe9619cf481d44a61d65ff89977a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  aura: {fileID: 0}
   isOccupied: 0
-  droppedObj: {fileID: 0}
+  playerIsLooking: 0
 --- !u!114 &114122236366707516
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -9565,6 +9647,7 @@ MonoBehaviour:
   targetDropzone: {fileID: 0}
   startPos: {x: 0, y: 0, z: 0}
   dropPos: {x: 0, y: 0, z: 0}
+  dropzoneOffset: {x: 0, y: 0, z: 0}
   pickedUp: 0
   myName: 
   myLiquid: {fileID: 0}
@@ -9583,8 +9666,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc0fe9619cf481d44a61d65ff89977a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  aura: {fileID: 0}
   isOccupied: 0
-  droppedObj: {fileID: 0}
+  playerIsLooking: 0
 --- !u!114 &114144421017364842
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -9634,6 +9718,7 @@ MonoBehaviour:
   targetDropzone: {fileID: 0}
   startPos: {x: 0, y: 0, z: 0}
   dropPos: {x: 0, y: 0, z: 0}
+  dropzoneOffset: {x: 0, y: 0, z: 0}
   pickedUp: 0
   myName: 
   myLiquid: {fileID: 0}
@@ -9664,8 +9749,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc0fe9619cf481d44a61d65ff89977a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  aura: {fileID: 0}
   isOccupied: 0
-  droppedObj: {fileID: 0}
+  playerIsLooking: 0
 --- !u!114 &114192514071823774
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -9677,8 +9763,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc0fe9619cf481d44a61d65ff89977a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  aura: {fileID: 0}
   isOccupied: 0
-  droppedObj: {fileID: 0}
+  playerIsLooking: 0
 --- !u!114 &114202028948489886
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -9693,6 +9780,7 @@ MonoBehaviour:
   targetDropzone: {fileID: 0}
   startPos: {x: 0, y: 0, z: 0}
   dropPos: {x: 0, y: 0, z: 0}
+  dropzoneOffset: {x: 0, y: 0, z: 0}
   pickedUp: 0
   myName: 
   myLiquid: {fileID: 0}
@@ -9711,8 +9799,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc0fe9619cf481d44a61d65ff89977a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  aura: {fileID: 0}
   isOccupied: 0
-  droppedObj: {fileID: 0}
+  playerIsLooking: 0
 --- !u!114 &114228166428224630
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -9724,8 +9813,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc0fe9619cf481d44a61d65ff89977a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  aura: {fileID: 0}
   isOccupied: 0
-  droppedObj: {fileID: 0}
+  playerIsLooking: 0
 --- !u!114 &114230460185024012
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -9737,8 +9827,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc0fe9619cf481d44a61d65ff89977a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  aura: {fileID: 0}
   isOccupied: 0
-  droppedObj: {fileID: 0}
+  playerIsLooking: 0
 --- !u!114 &114233961737271420
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -9785,8 +9876,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc0fe9619cf481d44a61d65ff89977a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  aura: {fileID: 0}
   isOccupied: 0
-  droppedObj: {fileID: 0}
+  playerIsLooking: 0
 --- !u!114 &114253695194881774
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -9833,8 +9925,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc0fe9619cf481d44a61d65ff89977a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  aura: {fileID: 0}
   isOccupied: 0
-  droppedObj: {fileID: 0}
+  playerIsLooking: 0
 --- !u!114 &114278165088748510
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -9849,6 +9942,7 @@ MonoBehaviour:
   targetDropzone: {fileID: 0}
   startPos: {x: 0, y: 0, z: 0}
   dropPos: {x: 0, y: 0, z: 0}
+  dropzoneOffset: {x: 0, y: 0, z: 0}
   pickedUp: 0
   myName: 
   myLiquid: {fileID: 0}
@@ -9902,8 +9996,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc0fe9619cf481d44a61d65ff89977a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  aura: {fileID: 0}
   isOccupied: 0
-  droppedObj: {fileID: 0}
+  playerIsLooking: 0
 --- !u!114 &114295969036132318
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -9950,8 +10045,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc0fe9619cf481d44a61d65ff89977a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  aura: {fileID: 0}
   isOccupied: 0
-  droppedObj: {fileID: 0}
+  playerIsLooking: 0
 --- !u!114 &114300509004325162
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -9966,6 +10062,7 @@ MonoBehaviour:
   targetDropzone: {fileID: 0}
   startPos: {x: 0, y: 0, z: 0}
   dropPos: {x: 0, y: 0, z: 0}
+  dropzoneOffset: {x: 0, y: 0, z: 0}
   pickedUp: 0
   myName: 
   myLiquid: {fileID: 0}
@@ -9984,8 +10081,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc0fe9619cf481d44a61d65ff89977a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  aura: {fileID: 0}
   isOccupied: 0
-  droppedObj: {fileID: 0}
+  playerIsLooking: 0
 --- !u!114 &114302412628277514
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -9997,8 +10095,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc0fe9619cf481d44a61d65ff89977a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  aura: {fileID: 0}
   isOccupied: 0
-  droppedObj: {fileID: 0}
+  playerIsLooking: 0
 --- !u!114 &114311220568089822
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -10010,8 +10109,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc0fe9619cf481d44a61d65ff89977a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  aura: {fileID: 0}
   isOccupied: 0
-  droppedObj: {fileID: 0}
+  playerIsLooking: 0
 --- !u!114 &114317809613483780
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -10058,8 +10158,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc0fe9619cf481d44a61d65ff89977a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  aura: {fileID: 0}
   isOccupied: 0
-  droppedObj: {fileID: 0}
+  playerIsLooking: 0
 --- !u!114 &114322971844794718
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -10106,8 +10207,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc0fe9619cf481d44a61d65ff89977a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  aura: {fileID: 0}
   isOccupied: 0
-  droppedObj: {fileID: 0}
+  playerIsLooking: 0
 --- !u!114 &114354270453170824
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -10119,8 +10221,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc0fe9619cf481d44a61d65ff89977a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  aura: {fileID: 0}
   isOccupied: 0
-  droppedObj: {fileID: 0}
+  playerIsLooking: 0
 --- !u!114 &114371065815850832
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -10167,8 +10270,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc0fe9619cf481d44a61d65ff89977a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  aura: {fileID: 0}
   isOccupied: 0
-  droppedObj: {fileID: 0}
+  playerIsLooking: 0
 --- !u!114 &114373850286611928
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -10215,8 +10319,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc0fe9619cf481d44a61d65ff89977a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  aura: {fileID: 0}
   isOccupied: 0
-  droppedObj: {fileID: 0}
+  playerIsLooking: 0
 --- !u!114 &114383219390161612
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -10228,8 +10333,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc0fe9619cf481d44a61d65ff89977a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  aura: {fileID: 0}
   isOccupied: 0
-  droppedObj: {fileID: 0}
+  playerIsLooking: 0
 --- !u!114 &114386422320014228
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -10241,8 +10347,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc0fe9619cf481d44a61d65ff89977a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  aura: {fileID: 0}
   isOccupied: 0
-  droppedObj: {fileID: 0}
+  playerIsLooking: 0
 --- !u!114 &114396031282382864
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -10257,6 +10364,7 @@ MonoBehaviour:
   targetDropzone: {fileID: 0}
   startPos: {x: 0, y: 0, z: 0}
   dropPos: {x: 0, y: 0, z: 0}
+  dropzoneOffset: {x: 0, y: 0, z: 0}
   pickedUp: 0
   myName: 
   myLiquid: {fileID: 0}
@@ -10275,8 +10383,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc0fe9619cf481d44a61d65ff89977a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  aura: {fileID: 0}
   isOccupied: 0
-  droppedObj: {fileID: 0}
+  playerIsLooking: 0
 --- !u!114 &114445166447077668
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -10288,8 +10397,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc0fe9619cf481d44a61d65ff89977a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  aura: {fileID: 0}
   isOccupied: 0
-  droppedObj: {fileID: 0}
+  playerIsLooking: 0
 --- !u!114 &114448378642646206
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -10304,6 +10414,7 @@ MonoBehaviour:
   targetDropzone: {fileID: 0}
   startPos: {x: 0, y: 0, z: 0}
   dropPos: {x: 0, y: 0, z: 0}
+  dropzoneOffset: {x: 0, y: 0, z: 0}
   pickedUp: 0
   myName: 
   myLiquid: {fileID: 0}
@@ -10322,8 +10433,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc0fe9619cf481d44a61d65ff89977a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  aura: {fileID: 0}
   isOccupied: 0
-  droppedObj: {fileID: 0}
+  playerIsLooking: 0
 --- !u!114 &114504453670631272
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -10370,8 +10482,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc0fe9619cf481d44a61d65ff89977a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  aura: {fileID: 0}
   isOccupied: 0
-  droppedObj: {fileID: 0}
+  playerIsLooking: 0
 --- !u!114 &114553467664360570
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -10383,8 +10496,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc0fe9619cf481d44a61d65ff89977a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  aura: {fileID: 0}
   isOccupied: 0
-  droppedObj: {fileID: 0}
+  playerIsLooking: 0
 --- !u!114 &114571927907734240
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -10396,8 +10510,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc0fe9619cf481d44a61d65ff89977a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  aura: {fileID: 0}
   isOccupied: 0
-  droppedObj: {fileID: 0}
+  playerIsLooking: 0
 --- !u!114 &114578208103425668
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -10444,8 +10559,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc0fe9619cf481d44a61d65ff89977a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  aura: {fileID: 0}
   isOccupied: 0
-  droppedObj: {fileID: 0}
+  playerIsLooking: 0
 --- !u!114 &114590323586754134
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -10495,6 +10611,7 @@ MonoBehaviour:
   targetDropzone: {fileID: 0}
   startPos: {x: 0, y: 0, z: 0}
   dropPos: {x: 0, y: 0, z: 0}
+  dropzoneOffset: {x: 0, y: 0, z: 0}
   pickedUp: 0
   myName: 
   myLiquid: {fileID: 0}
@@ -10511,8 +10628,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc0fe9619cf481d44a61d65ff89977a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  aura: {fileID: 0}
   isOccupied: 0
-  droppedObj: {fileID: 0}
+  playerIsLooking: 0
 --- !u!114 &114640423773529690
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -10597,6 +10715,7 @@ MonoBehaviour:
   targetDropzone: {fileID: 0}
   startPos: {x: 0, y: 0, z: 0}
   dropPos: {x: 0, y: 0, z: 0}
+  dropzoneOffset: {x: 0, y: 0, z: 0}
   pickedUp: 0
   myName: 
   myLiquid: {fileID: 0}
@@ -10616,6 +10735,7 @@ MonoBehaviour:
   targetDropzone: {fileID: 0}
   startPos: {x: 0, y: 0, z: 0}
   dropPos: {x: 0, y: 0, z: 0}
+  dropzoneOffset: {x: 0, y: 0, z: 0}
   pickedUp: 0
   myName: 
   myLiquid: {fileID: 0}
@@ -10740,6 +10860,7 @@ MonoBehaviour:
   targetDropzone: {fileID: 0}
   startPos: {x: 0, y: 0, z: 0}
   dropPos: {x: 0, y: 0, z: 0}
+  dropzoneOffset: {x: 0, y: 0, z: 0}
   pickedUp: 0
   myName: 
   myLiquid: {fileID: 0}
@@ -10758,8 +10879,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc0fe9619cf481d44a61d65ff89977a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  aura: {fileID: 0}
   isOccupied: 0
-  droppedObj: {fileID: 0}
+  playerIsLooking: 0
 --- !u!114 &114723263443056044
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -10771,8 +10893,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc0fe9619cf481d44a61d65ff89977a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  aura: {fileID: 0}
   isOccupied: 0
-  droppedObj: {fileID: 0}
+  playerIsLooking: 0
 --- !u!114 &114727508152648370
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -10784,8 +10907,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc0fe9619cf481d44a61d65ff89977a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  aura: {fileID: 0}
   isOccupied: 0
-  droppedObj: {fileID: 0}
+  playerIsLooking: 0
 --- !u!114 &114743024052657828
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -10797,8 +10921,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc0fe9619cf481d44a61d65ff89977a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  aura: {fileID: 0}
   isOccupied: 0
-  droppedObj: {fileID: 0}
+  playerIsLooking: 0
 --- !u!114 &114744907413054334
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -10862,6 +10987,7 @@ MonoBehaviour:
   targetDropzone: {fileID: 0}
   startPos: {x: 0, y: 0, z: 0}
   dropPos: {x: 0, y: 0, z: 0}
+  dropzoneOffset: {x: 0, y: 0, z: 0}
   pickedUp: 0
   myName: 
   myLiquid: {fileID: 0}
@@ -10878,8 +11004,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc0fe9619cf481d44a61d65ff89977a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  aura: {fileID: 0}
   isOccupied: 0
-  droppedObj: {fileID: 0}
+  playerIsLooking: 0
 --- !u!114 &114775325802165404
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -10891,8 +11018,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc0fe9619cf481d44a61d65ff89977a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  aura: {fileID: 0}
   isOccupied: 0
-  droppedObj: {fileID: 0}
+  playerIsLooking: 0
 --- !u!114 &114779521151497730
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -10904,8 +11032,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc0fe9619cf481d44a61d65ff89977a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  aura: {fileID: 0}
   isOccupied: 0
-  droppedObj: {fileID: 0}
+  playerIsLooking: 0
 --- !u!114 &114779701686000194
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -10917,8 +11046,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc0fe9619cf481d44a61d65ff89977a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  aura: {fileID: 0}
   isOccupied: 0
-  droppedObj: {fileID: 0}
+  playerIsLooking: 0
 --- !u!114 &114806633711660834
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -10933,6 +11063,7 @@ MonoBehaviour:
   targetDropzone: {fileID: 0}
   startPos: {x: 0, y: 0, z: 0}
   dropPos: {x: 0, y: 0, z: 0}
+  dropzoneOffset: {x: 0, y: 0, z: 0}
   pickedUp: 0
   myName: 
   myLiquid: {fileID: 0}
@@ -10951,8 +11082,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc0fe9619cf481d44a61d65ff89977a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  aura: {fileID: 0}
   isOccupied: 0
-  droppedObj: {fileID: 0}
+  playerIsLooking: 0
 --- !u!114 &114815569505793082
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -10964,8 +11096,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc0fe9619cf481d44a61d65ff89977a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  aura: {fileID: 0}
   isOccupied: 0
-  droppedObj: {fileID: 0}
+  playerIsLooking: 0
 --- !u!114 &114823657590812454
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -10980,6 +11113,7 @@ MonoBehaviour:
   targetDropzone: {fileID: 0}
   startPos: {x: 0, y: 0, z: 0}
   dropPos: {x: 0, y: 0, z: 0}
+  dropzoneOffset: {x: 0, y: 0, z: 0}
   pickedUp: 0
   myName: 
   myLiquid: {fileID: 0}
@@ -11001,6 +11135,7 @@ MonoBehaviour:
   targetDropzone: {fileID: 0}
   startPos: {x: 0, y: 0, z: 0}
   dropPos: {x: 0, y: 0, z: 0}
+  dropzoneOffset: {x: 0, y: 0, z: 0}
   pickedUp: 0
   myName: 
   myLiquid: {fileID: 0}
@@ -11019,8 +11154,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc0fe9619cf481d44a61d65ff89977a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  aura: {fileID: 0}
   isOccupied: 0
-  droppedObj: {fileID: 0}
+  playerIsLooking: 0
 --- !u!114 &114838069706939084
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -11035,6 +11171,7 @@ MonoBehaviour:
   targetDropzone: {fileID: 0}
   startPos: {x: 0, y: 0, z: 0}
   dropPos: {x: 0, y: 0, z: 0}
+  dropzoneOffset: {x: 0, y: 0, z: 0}
   pickedUp: 0
   myName: 
   myLiquid: {fileID: 0}
@@ -11051,8 +11188,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc0fe9619cf481d44a61d65ff89977a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  aura: {fileID: 0}
   isOccupied: 0
-  droppedObj: {fileID: 0}
+  playerIsLooking: 0
 --- !u!114 &114861959908691570
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -11064,8 +11202,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc0fe9619cf481d44a61d65ff89977a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  aura: {fileID: 0}
   isOccupied: 0
-  droppedObj: {fileID: 0}
+  playerIsLooking: 0
 --- !u!114 &114876313493276562
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -11080,6 +11219,7 @@ MonoBehaviour:
   targetDropzone: {fileID: 0}
   startPos: {x: 0, y: 0, z: 0}
   dropPos: {x: 0, y: 0, z: 0}
+  dropzoneOffset: {x: 0, y: 0, z: 0}
   pickedUp: 0
   myName: 
   myLiquid: {fileID: 0}
@@ -11096,8 +11236,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc0fe9619cf481d44a61d65ff89977a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  aura: {fileID: 0}
   isOccupied: 0
-  droppedObj: {fileID: 0}
+  playerIsLooking: 0
 --- !u!114 &114908950876974512
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -11109,8 +11250,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc0fe9619cf481d44a61d65ff89977a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  aura: {fileID: 0}
   isOccupied: 0
-  droppedObj: {fileID: 0}
+  playerIsLooking: 0
 --- !u!114 &114913917525633030
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -11122,8 +11264,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc0fe9619cf481d44a61d65ff89977a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  aura: {fileID: 0}
   isOccupied: 0
-  droppedObj: {fileID: 0}
+  playerIsLooking: 0
 --- !u!114 &114921865461449048
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -11135,8 +11278,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc0fe9619cf481d44a61d65ff89977a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  aura: {fileID: 0}
   isOccupied: 0
-  droppedObj: {fileID: 0}
+  playerIsLooking: 0
 --- !u!114 &114925551507616434
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -11148,8 +11292,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc0fe9619cf481d44a61d65ff89977a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  aura: {fileID: 0}
   isOccupied: 0
-  droppedObj: {fileID: 0}
+  playerIsLooking: 0
 --- !u!114 &114952278355971030
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -11161,8 +11306,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc0fe9619cf481d44a61d65ff89977a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  aura: {fileID: 0}
   isOccupied: 0
-  droppedObj: {fileID: 0}
+  playerIsLooking: 0
 --- !u!114 &114957942197830030
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -11174,8 +11320,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc0fe9619cf481d44a61d65ff89977a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  aura: {fileID: 0}
   isOccupied: 0
-  droppedObj: {fileID: 0}
+  playerIsLooking: 0
 --- !u!114 &114961478882995358
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -11190,6 +11337,7 @@ MonoBehaviour:
   targetDropzone: {fileID: 0}
   startPos: {x: 0, y: 0, z: 0}
   dropPos: {x: 0, y: 0, z: 0}
+  dropzoneOffset: {x: 0, y: 0, z: 0}
   pickedUp: 0
   myName: 
   myLiquid: {fileID: 0}
@@ -11211,6 +11359,7 @@ MonoBehaviour:
   targetDropzone: {fileID: 0}
   startPos: {x: 0, y: 0, z: 0}
   dropPos: {x: 0, y: 0, z: 0}
+  dropzoneOffset: {x: 0, y: 0, z: 0}
   pickedUp: 0
   myName: 
   myLiquid: {fileID: 0}
@@ -11227,8 +11376,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc0fe9619cf481d44a61d65ff89977a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  aura: {fileID: 0}
   isOccupied: 0
-  droppedObj: {fileID: 0}
+  playerIsLooking: 0
 --- !u!114 &114982482972859544
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -11240,8 +11390,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc0fe9619cf481d44a61d65ff89977a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  aura: {fileID: 0}
   isOccupied: 0
-  droppedObj: {fileID: 0}
+  playerIsLooking: 0
 --- !u!114 &114990109702675744
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -11253,8 +11404,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc0fe9619cf481d44a61d65ff89977a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  aura: {fileID: 0}
   isOccupied: 0
-  droppedObj: {fileID: 0}
+  playerIsLooking: 0
 --- !u!114 &114997764000283964
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -11266,5 +11418,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc0fe9619cf481d44a61d65ff89977a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  aura: {fileID: 0}
   isOccupied: 0
-  droppedObj: {fileID: 0}
+  playerIsLooking: 0
