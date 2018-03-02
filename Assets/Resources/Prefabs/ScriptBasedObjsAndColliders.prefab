@@ -318,7 +318,7 @@ GameObject:
   - component: {fileID: 33181405017414752}
   - component: {fileID: 23757247992647904}
   - component: {fileID: 95633421213704352}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: bottle2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1089,7 +1089,7 @@ GameObject:
   - component: {fileID: 33306508187356416}
   - component: {fileID: 23569128803841870}
   - component: {fileID: 95135465066290618}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: whiskeybottle
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -858,7 +858,7 @@ Light:
   m_RenderMode: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 4294963199
+    m_Bits: 4294955007
   m_Lightmapping: 4
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
@@ -1220,6 +1220,9 @@ MonoBehaviour:
   controlsMask:
     serializedVersion: 2
     m_Bits: 4294966783
+  dropzoneOnlyMask:
+    serializedVersion: 2
+    m_Bits: 0
   leftHandActionImage: {fileID: 114506412615432964}
   rightHandActionImage: {fileID: 114970829274596450}
   leftHandPickUpImage: {fileID: 114170378680369964}
@@ -1243,6 +1246,7 @@ MonoBehaviour:
   targetObj: 
   myCanvas: {fileID: 223688907964543262}
   isMessageOverrideOn: 0
+  isLookingAtEmptyDropzone: 0
 --- !u!114 &114467932124016912
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1466,7 +1470,7 @@ MonoBehaviour:
   pickupable: {fileID: 0}
   pickupableInLeftHand: {fileID: 0}
   pickupableInRightHand: {fileID: 0}
-  maxInteractionDist: 5
+  maxInteractionDist: 4
   maxTalkingDist: 8
   moveSpeed: 5
   lookSensitivity: 0

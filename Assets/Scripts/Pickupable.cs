@@ -189,7 +189,7 @@ public class Pickupable : MonoBehaviour {
          int children = transform.childCount;
         for (int i = 0; i < children; ++i)
         {
-            transform.GetChild(i).gameObject.layer = 0;
+            transform.GetChild(i).gameObject.layer = 12;
         }
 
     }

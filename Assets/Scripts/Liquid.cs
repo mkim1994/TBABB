@@ -53,10 +53,7 @@ public class Liquid : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
- 		Debug.Log(transform.name + " " + Vector3.Distance (coasters[0].gameObject.transform.position, transform.position));
-		EvaluateDrinkInCoaster ();
- 
-		
+ 		EvaluateDrinkInCoaster ();
  		
 		totalVolume = whiskeyVolume + ginVolume + brandyVolume + vodkaVolume + wineVolume + beerVolume + tequilaVolume + rumVolume 
 					+ sodaVolume + tonicVolume + appleJuiceVolume + orangeJuiceVolume + lemonJuiceVolume;

@@ -169,6 +169,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 9
       objectReference: {fileID: 0}
+    - target: {fileID: 114534227693515202, guid: 7ddb8dee7f99345f6a8729d931b23609,
+        type: 2}
+      propertyPath: pourRate
+      value: 500
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7ddb8dee7f99345f6a8729d931b23609, type: 2}
   m_IsPrefabParent: 0
@@ -267,6 +272,11 @@ Prefab:
     - target: {fileID: 4657057216003564, guid: c184c6db1c91e4ddca91b65f7040fc47, type: 2}
       propertyPath: m_RootOrder
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 108990135976694408, guid: c184c6db1c91e4ddca91b65f7040fc47,
+        type: 2}
+      propertyPath: m_CullingMask.m_Bits
+      value: 4294955007
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c184c6db1c91e4ddca91b65f7040fc47, type: 2}
@@ -499,11 +509,6 @@ Prefab:
     - target: {fileID: 400000, guid: 002984101656d421a83f24c057d0eade, type: 2}
       propertyPath: m_RootOrder
       value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 114739140198778196, guid: 002984101656d421a83f24c057d0eade,
-        type: 2}
-      propertyPath: maxInteractionDist
-      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 002984101656d421a83f24c057d0eade, type: 2}
