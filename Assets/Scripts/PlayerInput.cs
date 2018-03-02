@@ -103,6 +103,15 @@ public class PlayerInput : MonoBehaviour {
 			DropzoneRay();
 			NonPickupableRay();
 		}
+		
+		i_restart = player.GetButtonDown("Restart");
+		
+		#region Restart
+		if(i_restart){
+			SceneManager.LoadScene("main");
+		}
+		#endregion
+
   	}
 
 	private void GetInput(){
@@ -164,7 +173,7 @@ public class PlayerInput : MonoBehaviour {
 						if (targetCoaster.myCustomer.IsCustomerPresent() && !targetCoaster.myCustomer.HasAcceptedDrink()) //if  customer is present and customer HAS NOT accepted drink, then you can get it
 						{
 							pickupable.InteractLeftHand();						
-							targetDropzone.isOccupied = false;
+//							targetDropzone.isOccupied = false;
 						}
 						else if(!targetCoaster.myCustomer.insideBar)
 						{
@@ -242,7 +251,7 @@ public class PlayerInput : MonoBehaviour {
 						 if (targetCoaster.myCustomer.IsCustomerPresent() && !targetCoaster.myCustomer.HasAcceptedDrink()) //if  customer is present and customer HAS NOT accepted drink, then you can get it
 						 {
 							 pickupable.InteractRightHand();						
-							 targetDropzone.isOccupied = false;
+//							 targetDropzone.isOccupied = false;
 						 }
 						 else if(!targetCoaster.myCustomer.insideBar)
 						 {
@@ -309,12 +318,6 @@ public class PlayerInput : MonoBehaviour {
 				}
 			}
 		}   
-		#endregion
-
-		#region Restart
-		if(i_restart){
-			SceneManager.LoadScene("main");
-		}
 		#endregion
 
 		#region Test

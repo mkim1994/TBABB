@@ -3,11 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
 public class Pickupable : MonoBehaviour {
-    #region Left Hand Positions/Rotations
-    private Vector3 leftHandPos = new Vector3 (-1.022f, -0.25f, 1.241f);
+     private Vector3 leftHandPos = new Vector3 (-1.022f, -0.25f, 1.241f);
     protected Vector3 dropOffset;
-    #endregion
-    private Vector3 rightHandPos = new Vector3 (0.954f, -0.25f, 1.473f);
+     private Vector3 rightHandPos = new Vector3 (0.954f, -0.25f, 1.473f);
     public Dropzone targetDropzone;
     public Vector3 startPos;
     public Vector3 dropPos;

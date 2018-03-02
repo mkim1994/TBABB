@@ -4,7 +4,7 @@ using System.Xml;
 using UnityEngine;
 
 public class Liquid : MonoBehaviour {
-	private DrinkProfile myDrinkProfile;
+ 	private DrinkProfile myDrinkProfile;
 	private float previousAlcoholVolume;
 	private float prevABV;
  	public float height;
@@ -25,8 +25,7 @@ public class Liquid : MonoBehaviour {
     private float originalX, originalZ;
 	
 	public DrinkProfile thisCocktail;
-	
-
+ 
 	// Use this for initialization
 	void Start ()
 	{
@@ -37,7 +36,9 @@ public class Liquid : MonoBehaviour {
 		{
 		}
  
+
 		DetectCoasters ();
+		Debug.Log(Vector3.Distance(coasters[0].transform.position, transform.position));
 		thisCocktail = new DrinkProfile (sodaVolume/height, tonicVolume/height, appleJuiceVolume/height, lemonJuiceVolume/height, 0, 0, 0, 0, 0, 0, 0, 
 			whiskeyVolume/height, ginVolume/height, tequilaVolume/height, vodkaVolume/height, rumVolume/height, beerVolume/height, 
 			wineVolume/height, brandyVolume/height, abv, 
@@ -49,12 +50,13 @@ public class Liquid : MonoBehaviour {
             transform.localScale = new Vector3(0, 0, 0);
         }
 	}
-	
+
 	// Update is called once per frame
 	void Update () {
- 		EvaluateDrinkInCoaster ();
+ 		Debug.Log(transform.name + " " + Vector3.Distance (coasters[0].gameObject.transform.position, transform.position));
+		EvaluateDrinkInCoaster ();
  
-
+		
  		
 		totalVolume = whiskeyVolume + ginVolume + brandyVolume + vodkaVolume + wineVolume + beerVolume + tequilaVolume + rumVolume 
 					+ sodaVolume + tonicVolume + appleJuiceVolume + orangeJuiceVolume + lemonJuiceVolume;
@@ -273,15 +275,15 @@ public class Liquid : MonoBehaviour {
 	private void DetectCoasters(){
 		coasters.AddRange (FindObjectsOfType<Coaster> ());
 	}
-		
+
+
 	private void EvaluateDrinkInCoaster(){
 		foreach (var coaster in coasters) {
-			if (Vector3.Distance (coaster.gameObject.transform.position, transform.position) <= 0.75f) {
+			if (Vector3.Distance (coaster.gameObject.transform.position, transform.position) <= 0.55f) {
 				if(!isEvaluated){
-					Debug.Log("Got evaluated");
 					coaster.EvaluateDrink (this.thisCocktail, this);
 					isEvaluated = true;
-				}
+				}        
  			}
 //			else if (Vector3.Distance (coaster.gameObject.transform.position, transform.position) > 1f) 
 //			{

@@ -42,6 +42,11 @@ public class Coaster : MonoBehaviour
 		}
 	}
 
+	void Update()
+	{
+		CheckDropzoneStatus();
+	}
+
 	public void EvaluateDrink(DrinkProfile _cocktail, Liquid _liquid){
   		if(_cocktail !=null){
 			float drinkDeviation = DrinkProfile.GetProfileDeviation(_cocktail, currentOrder);
@@ -152,12 +157,16 @@ public class Coaster : MonoBehaviour
 	public void TakeOrder (DrinkProfile _customerOrder)
 	{
 		currentOrder = _customerOrder;
-
+		
 	}
 
 	private void CheckDropzoneStatus(){
 		if(!GetComponentInChildren<Dropzone>().isOccupied){
 			isDrinkHere = false;
+		}
+		else
+		{
+			isDrinkHere = true;
 		}
 	}
 	

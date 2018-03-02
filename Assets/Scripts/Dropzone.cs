@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Resources;
 using UnityEngine;
 
 public class Dropzone : MonoBehaviour
@@ -47,7 +48,7 @@ public class Dropzone : MonoBehaviour
 	{
 		if (trigger.gameObject.GetComponent<Pickupable>() != null)
 		{
- 			isOccupied = true;
+  			isOccupied = true;
 		}
 	}
 
