@@ -10,7 +10,7 @@ public class Dropzone : MonoBehaviour
 	// Use this for initialization
 	Pickupable[] pickupables;
 	public bool playerIsLooking;
-	[SerializeField]List<GameObject> objectsInMe = new List<GameObject>();
+	public List<GameObject> objectsInMe = new List<GameObject>();
 
 	void Start ()
 	{
@@ -37,6 +37,7 @@ public class Dropzone : MonoBehaviour
 	{
 	}
 
+	
 	void OnTriggerStay(Collider trigger)
 	{
 		if (trigger.gameObject.GetComponent<Pickupable>() != null)
@@ -48,7 +49,6 @@ public class Dropzone : MonoBehaviour
 				objectsInMe.Add(trigger.gameObject);		
 	  			isOccupied = true;
 			}
-
 		}
 	}
 

@@ -217,8 +217,11 @@ public class PlayerInput : MonoBehaviour {
 					{
 						pickupableInLeftHand.dropPos = dropPos;
 						pickupableInLeftHand.targetDropzone = targetDropzone;
-						pickupableInLeftHand.SwapLeftHand();
-						pickupable.SwapLeftHand();
+						if (pickupable.gameObject == pickupableInLeftHand.targetDropzone.objectsInMe[0])
+						{
+							pickupableInLeftHand.SwapLeftHand();
+							pickupable.SwapLeftHand();	
+						}
 					}
 					else
 					{
@@ -297,8 +300,11 @@ public class PlayerInput : MonoBehaviour {
 					{
 						pickupableInRightHand.dropPos = dropPos;
 						pickupableInRightHand.targetDropzone = targetDropzone;
-						pickupableInRightHand.SwapRightHand();
-						pickupable.SwapRightHand();
+						if (pickupable.gameObject == pickupableInRightHand.targetDropzone.objectsInMe[0])
+						{
+							pickupableInRightHand.SwapRightHand();
+							pickupable.SwapRightHand();
+						}
 					}
 					else
 					{
@@ -481,6 +487,7 @@ public class PlayerInput : MonoBehaviour {
 		
 		if(Physics.Raycast(ray, out hit, rayDist, dropzoneLayerMask)){
 			GameObject hitObj = hit.transform.gameObject; //if you're actually looking at something
+			Debug.Log("Dropzone in LoS is " + hitObj.name);
 			if (hitObj.GetComponent<Dropzone>() != null && Vector3.Distance(transform.position, hitObj.transform.position) <= maxInteractionDist){
 				Dropzone hitDropzone = hitObj.GetComponent<Dropzone>(); // get a reference to the dropzone
 				dropPos = hitObj.transform.position;
