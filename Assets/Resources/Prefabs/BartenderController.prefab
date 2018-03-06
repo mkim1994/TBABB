@@ -1222,7 +1222,7 @@ MonoBehaviour:
     m_Bits: 4294966783
   dropzoneOnlyMask:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 512
   leftHandActionImage: {fileID: 114506412615432964}
   rightHandActionImage: {fileID: 114970829274596450}
   leftHandPickUpImage: {fileID: 114170378680369964}

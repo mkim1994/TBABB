@@ -225,7 +225,7 @@ public class UIControls : MonoBehaviour {
 							leftHandControlsText[0].text = buttonAndKeyStrings[2 + stringOffset];
 							leftHandControlsText[1].text = "put back";
 						}
-						else if (rightHandObj != null)
+						if (rightHandObj != null)
 						{
 							rightHandPickUpImage.enabled = true;
 							rightHandControlsText[0].text = buttonAndKeyStrings[3 + stringOffset];

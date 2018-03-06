@@ -38,8 +38,7 @@ public class Liquid : MonoBehaviour {
  
 
 		DetectCoasters ();
-		Debug.Log(Vector3.Distance(coasters[0].transform.position, transform.position));
-		thisCocktail = new DrinkProfile (sodaVolume/height, tonicVolume/height, appleJuiceVolume/height, lemonJuiceVolume/height, 0, 0, 0, 0, 0, 0, 0, 
+ 		thisCocktail = new DrinkProfile (sodaVolume/height, tonicVolume/height, appleJuiceVolume/height, lemonJuiceVolume/height, 0, 0, 0, 0, 0, 0, 0, 
 			whiskeyVolume/height, ginVolume/height, tequilaVolume/height, vodkaVolume/height, rumVolume/height, beerVolume/height, 
 			wineVolume/height, brandyVolume/height, abv, 
 			smokiness, sweetness, sourness, bitterness, spiciness);
@@ -80,7 +79,6 @@ public class Liquid : MonoBehaviour {
 		wineVolume/totalVolume, brandyVolume/totalVolume, abv, 
 		smokiness, sweetness, sourness, bitterness, spiciness);
 //		thisCocktail.totalVolume = totalVolume;
-
 	}
 	
 	float remapRange(float oldValue, float oldMin, float oldMax, float newMin, float newMax )
