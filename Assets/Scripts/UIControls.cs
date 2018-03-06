@@ -17,6 +17,9 @@ public class UIControls : MonoBehaviour {
 	[SerializeField] private Image leftHandPickUpImage;
 	[SerializeField] private Image rightHandPickUpImage;
 	[SerializeField] private GameObject botCenterImg;
+	
+	//bools
+	[SerializeField] private bool isLookingAtNPC;
 
 	//text 
 	[SerializeField]Text centerText;
@@ -60,7 +63,10 @@ public class UIControls : MonoBehaviour {
 	
 	void Update(){
 
-		DropzoneOnlyRay();
+		if (!isLookingAtNPC)
+		{
+			DropzoneOnlyRay();		
+		}
 		if (!isLookingAtEmptyDropzone)
 		{
 			UIRay();		
@@ -246,8 +252,7 @@ public class UIControls : MonoBehaviour {
 		else
 		{
 			isLookingAtEmptyDropzone = false;
-			ClearUI();
-		}
+ 		}
 	}
 
 	private void UIRay(){
@@ -262,6 +267,7 @@ public class UIControls : MonoBehaviour {
 			distanceToObj = Vector3.Distance(transform.position, hitObj.transform.position);
 			if(hitObj.GetComponent<Bottle>() != null && !isExceptionTextRequired)
 			{
+				isLookingAtNPC = false;
 				Bottle targetBottle = hitObj.GetComponent<Bottle>();
 				if(targetBottle.myDrinkBase != DrinkBase.none){
 					switch (targetBottle.myDrinkBase){
@@ -348,7 +354,9 @@ public class UIControls : MonoBehaviour {
 				}
 			} 
 			//ray hits glass
-			else if (hitObj.GetComponent<Glass>() != null && !isExceptionTextRequired){
+			else if (hitObj.GetComponent<Glass>() != null && !isExceptionTextRequired)
+			{
+				isLookingAtNPC = false;
 				centerText.text = "glass";
 				if (distanceToObj <= Services.GameManager.playerInput.maxInteractionDist)
 				{
@@ -385,7 +393,8 @@ public class UIControls : MonoBehaviour {
 			//ray hits NPC
 			else if (hitObj.GetComponent<NPC>() != null)
 			{
-				if (!isExceptionTextRequired)
+				isLookingAtNPC = true;
+ 				if (!isExceptionTextRequired)
 				{
 					centerText.text = hitObj.GetComponent<NPC>().characterName;				
 				}
@@ -431,11 +440,11 @@ public class UIControls : MonoBehaviour {
 					ClearUI();
 				}
 			} 
-			
 			//ray hits dropzone
 
 			else if (hitObj.GetComponent<Dropzone>() != null && !hitObj.GetComponent<Dropzone>().isOccupied)
 			{
+ 				
 				if (distanceToObj <= Services.GameManager.playerInput.maxInteractionDist)
 				{
 					leftHandPickUpImage.enabled = true;
@@ -454,6 +463,7 @@ public class UIControls : MonoBehaviour {
 			//ray hits light switch
 			else if (hitObj.GetComponent<LightSwitch>() != null && !isExceptionTextRequired)
 			{
+				isLookingAtNPC = false;
 				if (Services.GameManager.dayManager.dayHasEnded)
 				{
 					centerText.text = "end the day";
@@ -504,7 +514,8 @@ public class UIControls : MonoBehaviour {
 						bottomCenterText.text = "";
 					}
 				} 
-			}
+			} 
+			
 			else {
  				StopCoroutine(clearTextCoroutine);
 				isMessageOverrideOn = false;
@@ -544,6 +555,16 @@ public class UIControls : MonoBehaviour {
 		botCenterImg.SetActive(false);
 		bottomCenterText.text = "";
 		bottomCenterInsText.text = "";
+		rightHandPickUpImage.enabled = false;
+		rightHandControlsText[0].text = "";
+		rightHandControlsText[1].text = "";
+		leftHandPickUpImage.enabled = false;
+		leftHandControlsText[0].text = "";
+		leftHandControlsText[1].text = "";
+	}
+
+	private void ClearNonCenteredUI()
+	{
 		rightHandPickUpImage.enabled = false;
 		rightHandControlsText[0].text = "";
 		rightHandControlsText[1].text = "";
