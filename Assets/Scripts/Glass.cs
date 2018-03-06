@@ -89,6 +89,9 @@ public class Glass : Pickupable {
 	
 	public void EndPourFromBottle(){
 		Liquid liquid = GetComponentInChildren<Liquid>();
+		liquid.isEvaluated = false;
+		liquid.EvaluateDrinkInCoaster();
+		
 //		liquid.isPouring = false;
 	}
 	

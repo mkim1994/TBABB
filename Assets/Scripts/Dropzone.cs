@@ -10,6 +10,7 @@ public class Dropzone : MonoBehaviour
 	// Use this for initialization
 	Pickupable[] pickupables;
 	public bool playerIsLooking;
+	[SerializeField]List<GameObject> objectsInMe = new List<GameObject>();
 
 	void Start ()
 	{
@@ -40,7 +41,14 @@ public class Dropzone : MonoBehaviour
 	{
 		if (trigger.gameObject.GetComponent<Pickupable>() != null)
 		{
-  			isOccupied = true;
+			float distance = Vector3.Distance(trigger.transform.position, transform.position);
+//			Debug.Log(trigger.name + " " + distance);
+			if (!objectsInMe.Contains(trigger.gameObject) && objectsInMe.Count<1 && distance <= 0.16f)
+			{
+				objectsInMe.Add(trigger.gameObject);		
+	  			isOccupied = true;
+			}
+
 		}
 	}
 
@@ -49,7 +57,11 @@ public class Dropzone : MonoBehaviour
 // 		if (exiter.gameObject.GetComponent<Bottle>() != null || exiter.gameObject.GetComponent<Glass>() != null)
 		if(exiter.gameObject.GetComponent<Pickupable>() != null)
 		{
- 			isOccupied = false;
+			if (objectsInMe.Contains(exiter.gameObject))
+			{
+				objectsInMe.Remove(exiter.gameObject);
+ 				isOccupied = false;
+			}
 		}
 	}
 
