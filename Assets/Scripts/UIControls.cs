@@ -230,7 +230,7 @@ public class UIControls : MonoBehaviour {
 							rightHandPickUpImage.enabled = true;
 							rightHandControlsText[0].text = buttonAndKeyStrings[3 + stringOffset];
 							rightHandControlsText[1].text = "put back";
-						}					
+						}
 					}
 				}
 				else
@@ -246,6 +246,7 @@ public class UIControls : MonoBehaviour {
 		else
 		{
 			isLookingAtEmptyDropzone = false;
+			ClearUI();
 		}
 	}
 

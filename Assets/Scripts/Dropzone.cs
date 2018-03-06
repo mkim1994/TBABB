@@ -34,14 +34,6 @@ public class Dropzone : MonoBehaviour
 
 	void Update()
 	{
-		if (playerIsLooking && !isOccupied)
-		{
-			ShowAura();
-		}
-		else
-		{
-			HideAura();
-		}
 	}
 
 	void OnTriggerStay(Collider trigger)
