@@ -56,10 +56,12 @@ public class PlayerInput : MonoBehaviour {
 	//buttons
 	bool i_pickupLeft;
 	bool i_pickupRight;
-	bool i_useLeft;
-	bool i_endUseLeft;
-	bool i_useRight;
-	bool i_endUseRight;
+	public bool i_startUseLeft;
+	public bool i_startUseRight;
+	public bool i_useLeft;
+	public bool i_endUseLeft;
+	public bool i_useRight;
+	public bool i_endUseRight;
 	bool i_restart;
 	public bool i_talk;
 	bool i_choose1;
@@ -121,6 +123,8 @@ public class PlayerInput : MonoBehaviour {
 		lookVector.y = player.GetAxis("Look Vertical");
 		i_pickupLeft = player.GetButtonDown("Pick Up Left");
 		i_pickupRight = player.GetButtonDown("Pick Up Right");
+		i_startUseLeft = player.GetButtonDown("Use Left");
+		i_startUseRight = player.GetButtonDown("Use Right");
 		i_useLeft = player.GetButton("Use Left");
 		i_endUseLeft = player.GetButtonUp("Use Left");
 		i_useRight = player.GetButton("Use Right");
@@ -211,17 +215,25 @@ public class PlayerInput : MonoBehaviour {
 						}
 					}
 				}		
-			} else if (pickupable != null && pickupableInLeftHand != null){ //swap
+			} else if (pickupable != null && pickupableInLeftHand != null && targetDropzone != null){ //swap
 				if(dropPos != Vector3.zero){			
 					if (targetDropzone.GetComponentInParent<Coaster>() == null)
 					{
 						pickupableInLeftHand.dropPos = dropPos;
 						pickupableInLeftHand.targetDropzone = targetDropzone;
-						if (pickupable.gameObject == pickupableInLeftHand.targetDropzone.objectsInMe[0])
+						if (pickupableInLeftHand.targetDropzone.objectsInMe.Count > 0)
 						{
-							pickupableInLeftHand.SwapLeftHand();
-							pickupable.SwapLeftHand();	
+							if (pickupable.gameObject == pickupableInLeftHand.targetDropzone.objectsInMe[0])
+							{
+								pickupableInLeftHand.SwapLeftHand();
+								pickupable.SwapLeftHand();	
+							}
+							else
+							{
+								pickupableInLeftHand.InteractLeftHand();
+							}
 						}
+
 					}
 					else
 					{
@@ -294,16 +306,32 @@ public class PlayerInput : MonoBehaviour {
 					}
  				}		
 			} 
- 			else if (pickupable != null && pickupableInRightHand != null){ //swap
+//			 else if (pickupable != null && pickupableInRightHand != null && targetDropzone != null)
+//			 {
+//				 if (!targetDropzone.isOccupied)
+//				 {
+//					 pickupableInRightHand.dropPos = targetDropzone.transform.position;
+//					 pickupableInRightHand.targetDropzone = targetDropzone;
+//					 pickupableInRightHand.InteractRightHand();
+//				 }
+//			 }
+			 else if (pickupable != null && pickupableInRightHand != null && targetDropzone != null){ //swap
 				if(dropPos != Vector3.zero){
 					if (targetDropzone.GetComponentInParent<Coaster>() == null)
 					{
 						pickupableInRightHand.dropPos = dropPos;
 						pickupableInRightHand.targetDropzone = targetDropzone;
-						if (pickupable.gameObject == pickupableInRightHand.targetDropzone.objectsInMe[0])
+						if (pickupableInRightHand.targetDropzone.objectsInMe.Count > 0)
 						{
-							pickupableInRightHand.SwapRightHand();
-							pickupable.SwapRightHand();
+							if (pickupable.gameObject == pickupableInRightHand.targetDropzone.objectsInMe[0])
+							{
+								pickupableInRightHand.SwapRightHand();
+								pickupable.SwapRightHand();
+							}
+						}
+						else
+						{
+							pickupableInRightHand.InteractRightHand(); //else just drop
 						}
 					}
 					else
@@ -487,8 +515,7 @@ public class PlayerInput : MonoBehaviour {
 		
 		if(Physics.Raycast(ray, out hit, rayDist, dropzoneLayerMask)){
 			GameObject hitObj = hit.transform.gameObject; //if you're actually looking at something
-			Debug.Log("Dropzone in LoS is " + hitObj.name);
-			if (hitObj.GetComponent<Dropzone>() != null && Vector3.Distance(transform.position, hitObj.transform.position) <= maxInteractionDist){
+ 			if (hitObj.GetComponent<Dropzone>() != null && Vector3.Distance(transform.position, hitObj.transform.position) <= maxInteractionDist){
 				Dropzone hitDropzone = hitObj.GetComponent<Dropzone>(); // get a reference to the dropzone
 				dropPos = hitObj.transform.position;
 //				hitDropzone.playerIsLooking = true;

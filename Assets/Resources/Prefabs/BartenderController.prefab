@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 8200000}
   - component: {fileID: 114739140198778196}
   - component: {fileID: 114442831977188336}
+  - component: {fileID: 114469227181714596}
   m_Layer: 0
   m_Name: BartenderController
   m_TagString: Untagged
@@ -1228,6 +1229,7 @@ MonoBehaviour:
   leftHandPickUpImage: {fileID: 114170378680369964}
   rightHandPickUpImage: {fileID: 114304957212755290}
   botCenterImg: {fileID: 1496139420144814}
+  isLookingAtNPC: 0
   centerText: {fileID: 114107806424576816}
   leftHandControlsText:
   - {fileID: 114945097526644708}
@@ -1247,6 +1249,7 @@ MonoBehaviour:
   myCanvas: {fileID: 223688907964543262}
   isMessageOverrideOn: 0
   isLookingAtEmptyDropzone: 0
+  pickupableBeingLookedAt: {fileID: 0}
 --- !u!114 &114467932124016912
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1280,6 +1283,24 @@ MonoBehaviour:
     m_VerticalOverflow: 1
     m_LineSpacing: 1
   m_Text: SPACE
+--- !u!114 &114469227181714596
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f0debdaa3bec6449a3d26c0d74249aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clips:
+  - {fileID: 8300000, guid: 7dc3ed9bdab5ea3469e97d731daf6651, type: 3}
+  - {fileID: 8300000, guid: 7dbe8f4d65059e24e9ec67cea5346de6, type: 3}
+  - {fileID: 8300000, guid: 5e1bb3c98ebe909428070e150ef3eb17, type: 3}
+  attack: 0
+  sustain: 0
+  release: 0
 --- !u!114 &114470869291770384
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1481,6 +1502,12 @@ MonoBehaviour:
   aimAssistFactor: 0.49
   isInputEnabled: 1
   isUsingController: 0
+  i_startUseLeft: 0
+  i_startUseRight: 0
+  i_useLeft: 0
+  i_endUseLeft: 0
+  i_useRight: 0
+  i_endUseRight: 0
   i_talk: 0
 --- !u!114 &114748651186478056
 MonoBehaviour:

@@ -203,11 +203,13 @@ public class UIControls : MonoBehaviour {
 	}
 
 	[SerializeField]private bool isLookingAtEmptyDropzone = false;
-
+	private GameObject dropzoneBeingLookedAtGO;
+	[SerializeField]private GameObject pickupableBeingLookedAt;
+	private Dropzone dropzoneBeingLookedAt;
+	
 	private void DropzoneOnlyRay()
 	{
 		Ray ray = new Ray(myCam.transform.position, myCam.transform.forward);
-//		float rayDist = Services.GameManager.playerInput.maxInteractionDist;
 		float rayDist = Mathf.Infinity;
 		float distanceToObj = 0;
 		RaycastHit hit = new RaycastHit();
@@ -215,6 +217,8 @@ public class UIControls : MonoBehaviour {
 		if (Physics.Raycast(ray, out hit, rayDist, dropzoneOnlyMask))
 		{
 			GameObject hitObj = hit.transform.gameObject; //if you're actually looking at something
+			dropzoneBeingLookedAtGO = hitObj;
+			dropzoneBeingLookedAt = dropzoneBeingLookedAtGO.GetComponent<Dropzone>();
 			distanceToObj = Vector3.Distance(transform.position, hitObj.transform.position);
   			if (hitObj.GetComponent<Dropzone>() != null)
 			{
@@ -224,13 +228,13 @@ public class UIControls : MonoBehaviour {
 					isLookingAtEmptyDropzone = true;
 					if (distanceToObj <= Services.GameManager.playerInput.maxInteractionDist)
 					{
-
 						if (leftHandObj != null)
-						{						
- 							leftHandPickUpImage.enabled = true;
+						{
+							leftHandPickUpImage.enabled = true;
 							leftHandControlsText[0].text = buttonAndKeyStrings[2 + stringOffset];
 							leftHandControlsText[1].text = "put back";
 						}
+
 						if (rightHandObj != null)
 						{
 							rightHandPickUpImage.enabled = true;
@@ -267,6 +271,7 @@ public class UIControls : MonoBehaviour {
 			distanceToObj = Vector3.Distance(transform.position, hitObj.transform.position);
 			if(hitObj.GetComponent<Bottle>() != null && !isExceptionTextRequired)
 			{
+				pickupableBeingLookedAt = hitObj;
 				isLookingAtNPC = false;
 				Bottle targetBottle = hitObj.GetComponent<Bottle>();
 				if(targetBottle.myDrinkBase != DrinkBase.none){
@@ -322,30 +327,33 @@ public class UIControls : MonoBehaviour {
 				centerText.text = targetObj;
 				if (distanceToObj <= Services.GameManager.playerInput.maxInteractionDist)
 				{
- 					if (leftHandObj == null)
+					if (dropzoneBeingLookedAt.objectsInMe.Count > 0)
 					{
-						leftHandPickUpImage.enabled = true;
-						leftHandControlsText[0].text = buttonAndKeyStrings[2 + stringOffset];
-						leftHandControlsText[1].text = "pick up";
+						if (leftHandObj == null)
+						{
+							leftHandPickUpImage.enabled = true;
+							leftHandControlsText[0].text = buttonAndKeyStrings[2 + stringOffset];
+							leftHandControlsText[1].text = "pick up";
+						}
+						else if (leftHandObj != null && dropzoneBeingLookedAt.objectsInMe[0] == pickupableBeingLookedAt)
+						{
+							leftHandPickUpImage.enabled = true;
+							leftHandControlsText[0].text = buttonAndKeyStrings[2 + stringOffset];
+							leftHandControlsText[1].text = "swap";
+						}
+						if (rightHandObj == null)
+						{
+							rightHandPickUpImage.enabled = true;
+							rightHandControlsText[0].text = buttonAndKeyStrings[3 + stringOffset];
+							rightHandControlsText[1].text = "pick up";
+						}
+						else
+						{
+							rightHandPickUpImage.enabled = true;
+							rightHandControlsText[0].text = buttonAndKeyStrings[3 + stringOffset];
+							rightHandControlsText[1].text = "swap";
+						}					
 					}
-					else if (leftHandObj != null)
-					{
-						leftHandPickUpImage.enabled = true;
-						leftHandControlsText[0].text = buttonAndKeyStrings[2 + stringOffset];
-						leftHandControlsText[1].text = "swap";
-					}
-					if (rightHandObj == null)
-					{
-						rightHandPickUpImage.enabled = true;
-						rightHandControlsText[0].text = buttonAndKeyStrings[3 + stringOffset];
-						rightHandControlsText[1].text = "pick up";
-					}
-					else
-					{
-						rightHandPickUpImage.enabled = true;
-						rightHandControlsText[0].text = buttonAndKeyStrings[3 + stringOffset];
-						rightHandControlsText[1].text = "swap";
-					}					
 				}
 
 				else
@@ -356,33 +364,38 @@ public class UIControls : MonoBehaviour {
 			//ray hits glass
 			else if (hitObj.GetComponent<Glass>() != null && !isExceptionTextRequired)
 			{
+				pickupableBeingLookedAt = hitObj;
 				isLookingAtNPC = false;
 				centerText.text = "glass";
 				if (distanceToObj <= Services.GameManager.playerInput.maxInteractionDist)
 				{
-					if (leftHandObj == null)
+					if (dropzoneBeingLookedAt.objectsInMe.Count > 0)
 					{
-						leftHandPickUpImage.enabled = true;
-						leftHandControlsText[0].text = buttonAndKeyStrings[2 + stringOffset];
-						leftHandControlsText[1].text = "pick up";
-					} 
-					else if (leftHandObj != null)
-					{
-						leftHandPickUpImage.enabled = true;
-						leftHandControlsText[0].text = buttonAndKeyStrings[2 + stringOffset];
-						leftHandControlsText[1].text = "swap";
-					}					
-					if (rightHandObj == null)
-					{
-						rightHandPickUpImage.enabled = true;
-						rightHandControlsText[0].text = buttonAndKeyStrings[3 + stringOffset];
-						rightHandControlsText[1].text = "pick up";
-					}
-					else
-					{
-						rightHandPickUpImage.enabled = true;
-						rightHandControlsText[0].text = buttonAndKeyStrings[3 + stringOffset];
-						rightHandControlsText[1].text = "swap";
+						if (leftHandObj == null)
+						{
+							leftHandPickUpImage.enabled = true;
+							leftHandControlsText[0].text = buttonAndKeyStrings[2 + stringOffset];
+							leftHandControlsText[1].text = "pick up";
+						}
+						else if (leftHandObj != null)
+						{
+							leftHandPickUpImage.enabled = true;
+							leftHandControlsText[0].text = buttonAndKeyStrings[2 + stringOffset];
+							leftHandControlsText[1].text = "swap";
+						}
+
+						if (rightHandObj == null)
+						{
+							rightHandPickUpImage.enabled = true;
+							rightHandControlsText[0].text = buttonAndKeyStrings[3 + stringOffset];
+							rightHandControlsText[1].text = "pick up";
+						}
+						else
+						{
+							rightHandPickUpImage.enabled = true;
+							rightHandControlsText[0].text = buttonAndKeyStrings[3 + stringOffset];
+							rightHandControlsText[1].text = "swap";
+						}
 					}
 				}
 				else
