@@ -4,8 +4,13 @@ using UnityEngine;
 
 public class AudioLoopScript : MonoBehaviour
 {
-
+	
 	private PlayerInput player;
+
+	public bool isPlayerPouring;
+	public bool playerAttackPour;
+	public bool playerSustainPour;
+	public bool playerReleasePour;
 
 	double delay = 0.00001f;
 	public AudioClip[] clips;
@@ -48,35 +53,40 @@ public class AudioLoopScript : MonoBehaviour
 	void Update ()
 	{
 //		if(player.)
+
 		PourAudioLooper();
+
 	}
 
 	private void PourAudioLooper()
 	{
+		if(!sources[0].isPlaying && !sources[1].isPlaying && !sources[2].isPlaying){}
 		int myInt = 0;
 		for (int i = 0; i < 1000000; i++)
 		{
 			myInt += i;
 		}
 
-		if (sources[2].isPlaying)
+//		if (sources[2].isPlaying)
+//		{
+//			sustain = false;
+//			release = true;
+//		}
+		
+		if ((player.i_startUseLeft && player.pickupableInLeftHand.GetComponent<Bottle> () != null) || (player.i_startUseRight 
+			&& player.pickupableInRightHand.GetComponent<Bottle> () != null))
 		{
-			sustain = false;
-			release = true;
-		}
-
-		if (player.i_startUseLeft || player.i_startUseRight)
-		{
+//			attackStartTime = AudioSettings.dspTime + delay + 0.75f;
 			attackStartTime = AudioSettings.dspTime + delay;
 			nowInSustain = true;
 			sources[0].PlayScheduled(attackStartTime);
 			sources[1].PlayScheduled(attackStartTime + sources[0].clip.length);
-			print("aStart: " + attackStartTime);
-			print("sStart: " + (attackStartTime + sources[0].clip.length));
-			sources[1].loop = true;
+			sources[1].volume = 1;
+ 			sources[1].loop = true;
 		}
 
-		if (player.i_useLeft || player.i_useRight)
+		if (((player.i_useLeft && player.pickupableInLeftHand.GetComponent<Bottle> () != null) || 
+		    (player.i_useRight && player.pickupableInRightHand.GetComponent<Bottle> () != null)))
 		{
 			if (-(attackStartTime - AudioSettings.dspTime) <= sources[0].clip.length)
 			{
@@ -91,9 +101,16 @@ public class AudioLoopScript : MonoBehaviour
 			{
 				sustain = true;
 			}
+
+			if (-(attackStartTime - AudioSettings.dspTime) > sources[0].clip.length + (sources[1].clip.length * loops)) ;
+			{
+				sustain = false;
+				release = true;
+			}
 		}
 
-		if (player.i_endUseLeft || player.i_endUseRight)
+		if (((player.i_endUseLeft && player.pickupableInLeftHand.GetComponent<Bottle> () != null) || 
+		(player.i_endUseRight && player.pickupableInRightHand.GetComponent<Bottle> () != null)))
 		{
 			sources[1].loop = false;
 
@@ -104,6 +121,7 @@ public class AudioLoopScript : MonoBehaviour
 			}
 			else if (attack && !sustain)
 			{
+				sources[1].volume = 0;
 				sources[2].PlayScheduled(attackStartTime + sources[0].clip.length);
 			}
 

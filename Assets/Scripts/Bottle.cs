@@ -6,8 +6,7 @@ using DG.Tweening;
 public class Bottle : Pickupable {
 
 	public DrinkBase myDrinkBase;
-	public Mixer myMixer;
-	
+	public Mixer myMixer;	
   	private Vector3 leftHandPourRot = new Vector3(80f, 25, 0);
 	private Vector3 rightHandPourRot = new Vector3(80, -25, 6.915f);
  	
@@ -25,7 +24,9 @@ public class Bottle : Pickupable {
 	public override void StartPourTween(Vector3 moveToPos)
 	{
 		DeclareActiveTween();
-		Sequence sequence = DOTween.Sequence();
+		Services.AudioLoopScript.playerAttackPour = true;
+		Services.AudioLoopScript.playerAttackPour = false;
+ 		Sequence sequence = DOTween.Sequence();
 		sequence.Append(transform.DOLocalMove(moveToPos, tweenTime, false)).SetEase(Ease.InOutQuart);
 		sequence.OnComplete(() => DeclareInactiveTween());		
 	}
@@ -33,7 +34,8 @@ public class Bottle : Pickupable {
 	public override void EndPourTween()
 	{
 		DeclareActiveTween();
-		Sequence sequence = DOTween.Sequence();
+		Services.AudioLoopScript.isPlayerPouring = false;
+ 		Sequence sequence = DOTween.Sequence();
 		sequence.Append(transform.DOLocalMove(startPos, tweenTime, false));
 		sequence.OnComplete(() => DeclareInactiveTween());				
 	}

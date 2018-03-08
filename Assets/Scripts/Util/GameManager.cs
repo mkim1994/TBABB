@@ -16,6 +16,7 @@ public class GameManager : MonoBehaviour {
     public NPC CustomerIvory, CustomerSahana;
     public DayCycleManager dayManager;
     public AudioController audioController;
+//	public AudioLoopScript audioLoopScript;
 	public ControllerDetection controllerDetection;
 	
     public Transform entrance;
@@ -60,12 +61,10 @@ public class GameManager : MonoBehaviour {
 		Services.CustomerDictionary = new CustomerDictionary();
 		Services.ControllerDetection = new ControllerDetection();
 		Services.ControllerDetection.Start();
+		Services.AudioLoopScript = FindObjectOfType<AudioLoopScript>();
 
-		
 		//Services.Materials = Resources.Load<MaterialDB>("Art/Materials");
 		//Services.SceneStackManager = new SceneStackManager<TransitionData>(sceneRoot, Services.Prefabs.Scenes);
-
-
 	}
 
 	void Reset(Reset e)

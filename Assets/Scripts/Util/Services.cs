@@ -13,5 +13,6 @@ public static class Services {
     public static MixerDictionary MixerDictionary { get; set; }
     public static CustomerDictionary CustomerDictionary { get; set; }
     public static ControllerDetection ControllerDetection { get; set; }
+    public static AudioLoopScript AudioLoopScript { get; set; }
  
 }

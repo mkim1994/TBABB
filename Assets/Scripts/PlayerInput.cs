@@ -48,7 +48,7 @@ public class PlayerInput : MonoBehaviour {
 	public float lookSensitivityAtStart;
 	public float aimAssistSensitivity = 0;
 	public float aimAssistFactor;
-	float verticalLook = 0f;
+	[SerializeField]float verticalLook = 0f;
 
 	public bool isInputEnabled = true;
 	public bool isUsingController = false;
@@ -121,7 +121,7 @@ public class PlayerInput : MonoBehaviour {
 		moveVector.z = player.GetAxis("Move Vertical");
 		lookVector.x = player.GetAxis("Look Horizontal");
 		lookVector.y = player.GetAxis("Look Vertical");
-		i_pickupLeft = player.GetButtonDown("Pick Up Left");
+ 		i_pickupLeft = player.GetButtonDown("Pick Up Left");
 		i_pickupRight = player.GetButtonDown("Pick Up Right");
 		i_startUseLeft = player.GetButtonDown("Use Left");
 		i_startUseRight = player.GetButtonDown("Use Right");
