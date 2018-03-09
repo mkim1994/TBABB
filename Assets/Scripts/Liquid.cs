@@ -70,6 +70,7 @@ public class Liquid : MonoBehaviour {
 //		height -= 1 * Time.deltaTime;
 		height = remapRange(myLiquidVolume, 0, 100, 100, 0);
 //		height = Mathf.Clamp(height, 0, 100f);
+		height = Mathf.Clamp(height, 0, 100);
 		transform.localScale = new Vector3(1, 1, 1);
  		myLiquidVolume -= pourRate * Time.deltaTime;
 		myLiquid.SetBlendShapeWeight(0, myLiquidVolume);

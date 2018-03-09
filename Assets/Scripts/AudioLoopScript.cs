@@ -37,8 +37,7 @@ public class AudioLoopScript : MonoBehaviour
 			sources[i] = gameObject.AddComponent<AudioSource>();
 			
 			sources[i].clip = clips[i];
-			print("Clip" + i + " : " + clips[i].length);
-		}
+ 		}
 
 		sources[0].loop = false;
 		sources[1].loop = true;
@@ -53,8 +52,13 @@ public class AudioLoopScript : MonoBehaviour
 	void Update ()
 	{
 //		if(player.)
+		if (Services.GameManager.playerInput.pickupable != null
+		    || Services.GameManager.playerInput.pickupableInLeftHand != null
+		    || Services.GameManager.playerInput.pickupableInRightHand != null)
+		{
+			PourAudioLooper();		
+		}
 
-		PourAudioLooper();
 
 	}
 
@@ -74,7 +78,7 @@ public class AudioLoopScript : MonoBehaviour
 //		}
 		
 		if ((player.i_startUseLeft && player.pickupableInLeftHand.GetComponent<Bottle> () != null) || (player.i_startUseRight 
-			&& player.pickupableInRightHand.GetComponent<Bottle> () != null))
+			&& player.pickupableInRightHand.GetComponent<Bottle> () != null) && !sources[0].isPlaying)
 		{
 //			attackStartTime = AudioSettings.dspTime + delay + 0.75f;
 			attackStartTime = AudioSettings.dspTime + delay;

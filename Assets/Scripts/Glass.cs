@@ -1,11 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Xml.Schema;
 using UnityEngine;
 using DG.Tweening;
 
 public class Glass : Pickupable {
 	public bool hasLiquid;
-	public bool isFull;
+	[SerializeField]private bool isFull;
 	public bool isDirty;
 	private Liquid liquid;
 //	private Vector3 leftHandPourRot = new Vector3(88.76f, 0, 0);
@@ -28,6 +29,7 @@ public class Glass : Pickupable {
 	protected override void Start()
 	{
 		base.Start();
+		dropzoneOffset = new Vector3(0, 0.15f, 0);
 		liquid = GetComponentInChildren<Liquid>();
  		switch (glassType)
 		{
@@ -44,8 +46,26 @@ public class Glass : Pickupable {
 			default:
 			break;
 		}
+		
 	}
-	
+
+
+	public bool IsFull
+	{
+		get
+		{
+			if (liquid.totalVolume >= 100f)
+			{
+				isFull = true;			
+			}
+			else
+			{
+				isFull = false;
+			}
+			return isFull;
+		}
+	}
+
 	public void ReceivePourFromBottle(Bottle bottleInHand, int handNum){
 
 	//left hand is 0, right hand is 1

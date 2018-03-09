@@ -2,7 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
-public class Pickupable : MonoBehaviour {
+public class Pickupable : MonoBehaviour
+{
+
+    [SerializeField] protected bool isForDropzoneOnly;
      private Vector3 leftHandPos = new Vector3 (-1.022f, -0.25f, 1.241f);
     protected Vector3 dropOffset;
      private Vector3 rightHandPos = new Vector3 (0.954f, -0.25f, 1.473f);
@@ -13,27 +16,29 @@ public class Pickupable : MonoBehaviour {
     public float tweenTime;
     public float pickupDropTime;
     public bool pickedUp = false;
+
+    [SerializeField] private Dropzone myChildDropzone;
  
     public string myName = "";
 
     public Liquid myLiquid;
- 
-    protected virtual void Start(){
-        if (gameObject.GetComponent<Bottle>() != null)
-        {
-            dropzoneOffset = new Vector3(0, 0.05f, 0);
-            CreateDropzone();
-        } else if (gameObject.GetComponent<Glass>() != null)
-        {
-            dropzoneOffset = new Vector3(0, 0.15f, 0);
-            CreateDropzone();
-        }
+
+    protected virtual void Start()
+    {
+        CreateDropzone();
     }
 
-    protected virtual void CreateDropzone()
+    public void CreateDropzone()
     {
         GameObject dropzoneGO = Instantiate(Resources.Load("Prefabs/dropzone"), transform.position + dropzoneOffset, Quaternion.identity) as GameObject;
-        dropzoneGO.GetComponent<Dropzone>().isOccupied = true;
+        myChildDropzone = dropzoneGO.GetComponent<Dropzone>();
+        if (isForDropzoneOnly)
+        {
+             Destroy(gameObject);
+        } else if (!isForDropzoneOnly)
+        {
+            dropzoneGO.GetComponent<Dropzone>().isOccupied = true;
+        }
     }
 
     public virtual void InteractLeftHand(){
@@ -198,5 +203,16 @@ public class Pickupable : MonoBehaviour {
     protected virtual void ResetEvaluationStatus()
     {
         
+    }
+
+    private void DoThisWhenYouDie()
+    {
+        myChildDropzone.objectsInMe.Clear();
+        myChildDropzone.isOccupied = false; //set my dropzone's isOccupied to false so it can take object drops
+    }
+
+    private void OnDestroy()
+    {
+        DoThisWhenYouDie();   
     }
 }

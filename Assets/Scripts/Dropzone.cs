@@ -35,6 +35,7 @@ public class Dropzone : MonoBehaviour
 
 	void Update()
 	{
+		
 	}
 
 	
@@ -64,6 +65,8 @@ public class Dropzone : MonoBehaviour
 			}
 		}
 	}
+
+	
 
 	public void ShowAura()
 	{

@@ -12,8 +12,10 @@ public class Bottle : Pickupable {
  	
 	protected override void Start()
 	{
- 		base.Start();
- 	}
+		base.Start();
+		dropzoneOffset = new Vector3(0, 0.05f, 0);
+  	}
+
 	public override void RotateTween(Vector3 rotation){
 		DeclareActiveTween();
 		Sequence sequence = DOTween.Sequence();
@@ -45,8 +47,7 @@ public class Bottle : Pickupable {
  			base.RotateTween(leftHandPourRot);
 			StartPourTween(Vector3.forward + new Vector3(-0.482f, 0, 0.5f));
 			Services.GameManager.playerInput.pickupable.GetComponent<Glass>().ReceivePourFromBottle(this, 0);
-			Debug.Log("Pouring left!");
-		} 
+ 		} 
 	}
 
 	public override void UseRightHand(){
@@ -54,8 +55,7 @@ public class Bottle : Pickupable {
  			base.RotateTween(rightHandPourRot);
 			StartPourTween(Vector3.forward + new Vector3(0.482f, 0, 0.5f));
 			Services.GameManager.playerInput.pickupable.GetComponent<Glass>().ReceivePourFromBottle(this, 1);
-			Debug.Log("Pouring right!");
-		} 
+ 		} 
 	}
 
 	public void PourIntoPickedUpGlass(){
