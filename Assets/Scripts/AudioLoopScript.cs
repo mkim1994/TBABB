@@ -106,7 +106,7 @@ public class AudioLoopScript : MonoBehaviour
 				sustain = true;
 			}
 
-			if (-(attackStartTime - AudioSettings.dspTime) > sources[0].clip.length + (sources[1].clip.length * loops)) ;
+			if (-(attackStartTime - AudioSettings.dspTime) > sources[0].clip.length + (sources[1].clip.length * loops))
 			{
 				sustain = false;
 				release = true;
