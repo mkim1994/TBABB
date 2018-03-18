@@ -30,6 +30,7 @@ public class Glass : Pickupable {
 	{
 		base.Start();
 		dropzoneOffset = new Vector3(0, 0.15f, 0);
+		dropOffset = new Vector3(0, -0.25f, 0);
 		liquid = GetComponentInChildren<Liquid>();
  		switch (glassType)
 		{
@@ -97,6 +98,28 @@ public class Glass : Pickupable {
 				}
 			} 
 		}
+	}
+	
+	public override void DropTween(Vector3 dropPos, Vector3 dropOffset, Dropzone _targetDropzone){
+		if (_targetDropzone.GetComponentInParent<Coaster>() != null)
+		{
+			Debug.Log("Target dropzone has coaster!");
+			dropOffset = new Vector3(0, -0.10f, 0);
+		}
+		else
+		{			
+			Debug.Log("Target dropzone has NO coaster!");
+			dropOffset = new Vector3(0, 0, 0);
+		}
+
+		DeclareActiveTween();
+		_targetDropzone.isOccupied = true;
+		Sequence sequence = DOTween.Sequence();
+		sequence.Append(transform.DOLocalMove(dropPos + dropOffset, pickupDropTime, false));
+		transform.DOLocalRotate(Vector3.zero, pickupDropTime, RotateMode.Fast);
+		sequence.OnComplete(() => DeclareInactiveTween());
+		StartCoroutine(ChangeToWorldLayer(pickupDropTime));
+		pickedUp = false;		
 	}
 	
 	public override void StartPourTween(Vector3 moveToPos)

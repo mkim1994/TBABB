@@ -188,7 +188,7 @@ public class Pickupable : MonoBehaviour
         }
     }
 
-    IEnumerator ChangeToWorldLayer(float delay)
+    protected IEnumerator ChangeToWorldLayer(float delay)
     {
         yield return new WaitForSeconds(delay);
         startPos = transform.localPosition;
