@@ -13,7 +13,7 @@ public class Coaster : MonoBehaviour
 	public Customer currentCustomer;
 	public DrinkProfile drinkOnCoaster;	
 
-	private float minAcceptableVolume = 20f;
+	private float minAcceptableVolume = 5f;
 
 	void Start()
 	{
