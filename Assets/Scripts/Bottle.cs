@@ -13,8 +13,7 @@ public class Bottle : Pickupable {
 	protected override void Start()
 	{
 		base.Start();
-		dropzoneOffset = new Vector3(0, 0.05f, 0);
-  	}
+   	}
 
 	public override void RotateTween(Vector3 rotation){
 		DeclareActiveTween();

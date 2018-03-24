@@ -29,9 +29,7 @@ public class Glass : Pickupable {
 	protected override void Start()
 	{
 		base.Start();
-		dropzoneOffset = new Vector3(0, 0.15f, 0);
-		dropOffset = new Vector3(0, -0.25f, 0);
-		liquid = GetComponentInChildren<Liquid>();
+ 		liquid = GetComponentInChildren<Liquid>();
  		switch (glassType)
 		{
 			case GlassType.Beer_mug:
@@ -104,12 +102,12 @@ public class Glass : Pickupable {
 		if (_targetDropzone.GetComponentInParent<Coaster>() != null)
 		{
 			Debug.Log("Target dropzone has coaster!");
-			dropOffset = new Vector3(0, -0.10f, 0);
+			Debug.Log(_targetDropzone.transform.localScale.y);
+//			dropOffset = new Vector3(0, -0.10f, 0);
 		}
 		else
 		{			
-			Debug.Log("Target dropzone has NO coaster!");
-			dropOffset = new Vector3(0, 0, 0);
+ 			dropOffset = new Vector3(0, 0, 0);
 		}
 
 		DeclareActiveTween();

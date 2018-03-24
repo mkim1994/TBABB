@@ -5,15 +5,14 @@ using DG.Tweening;
 public class Pickupable : MonoBehaviour
 {
 
-    [SerializeField] protected bool isForDropzoneOnly;
+    [SerializeField] protected bool isForDropzoneOnly;    
      private Vector3 leftHandPos = new Vector3 (-1.022f, -0.25f, 1.241f);
     protected Vector3 dropOffset;
      private Vector3 rightHandPos = new Vector3 (0.954f, -0.25f, 1.473f);
     public Dropzone targetDropzone;
     public Vector3 startPos;
     public Vector3 dropPos;
-    public Vector3 dropzoneOffset;
-    public float tweenTime;
+     public float tweenTime;
     public float pickupDropTime;
     public bool pickedUp = false;
 
@@ -30,14 +29,14 @@ public class Pickupable : MonoBehaviour
 
     public void CreateDropzone()
     {
-        GameObject dropzoneGO = Instantiate(Resources.Load("Prefabs/dropzone"), transform.position + dropzoneOffset, Quaternion.identity) as GameObject;
-        myChildDropzone = dropzoneGO.GetComponent<Dropzone>();
+        GameObject dropzoneGO = Instantiate(Resources.Load("Prefabs/dropzoneParent"), transform.position, Quaternion.identity) as GameObject;
+        myChildDropzone = dropzoneGO.GetComponentInChildren<Dropzone>();
         if (isForDropzoneOnly)
         {
              Destroy(gameObject);
         } else if (!isForDropzoneOnly)
         {
-            dropzoneGO.GetComponent<Dropzone>().isOccupied = true;
+            myChildDropzone.isOccupied = true;
         }
     }
 
@@ -120,9 +119,9 @@ public class Pickupable : MonoBehaviour
 
     public virtual void PickupTween(Vector3 moveToPos){
          DeclareActiveTween();
-        // if(targetDropzone != null){
-        //     targetDropzone.isOccupied = false;
-        // }
+//         if(targetDropzone != null){
+//             targetDropzone.isOccupied = false;
+//         }
         Sequence sequence = DOTween.Sequence();
         sequence.Append(transform.DOLocalMove(moveToPos, pickupDropTime, false));
         transform.DOLocalRotate(Vector3.zero, pickupDropTime, RotateMode.Fast);
@@ -173,10 +172,10 @@ public class Pickupable : MonoBehaviour
         yield return new WaitForSeconds(delay);
         int children = transform.childCount;
         startPos = transform.localPosition;
-        if (targetDropzone != null)
-        {
-//            targetDropzone.isOccupied = false;
-        }
+//        if (targetDropzone != null)
+//        {
+////            targetDropzone.isOccupied = false;
+//        }
         if (gameObject.GetComponentInChildren<Liquid>() != null)
         {
              Liquid _liquid = gameObject.GetComponentInChildren<Liquid>();

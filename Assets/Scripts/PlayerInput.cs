@@ -517,7 +517,7 @@ public class PlayerInput : MonoBehaviour {
 			GameObject hitObj = hit.transform.gameObject; //if you're actually looking at something
  			if (hitObj.GetComponent<Dropzone>() != null && Vector3.Distance(transform.position, hitObj.transform.position) <= maxInteractionDist){
 				Dropzone hitDropzone = hitObj.GetComponent<Dropzone>(); // get a reference to the dropzone
-				dropPos = hitObj.transform.position;
+				dropPos = hitObj.transform.parent.position;
 //				hitDropzone.playerIsLooking = true;
 				targetDropzone = hitDropzone;
 			} 

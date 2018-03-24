@@ -38,12 +38,14 @@ public class Dropzone : MonoBehaviour
 		
 	}
 
+	[SerializeField]private float _distance; 	
 	
 	void OnTriggerStay(Collider trigger)
 	{
 		if (trigger.gameObject.GetComponent<Pickupable>() != null)
 		{
-			float distance = Vector3.Distance(trigger.transform.position, transform.position);
+			float distance = Vector3.Distance(trigger.transform.position, transform.parent.position);
+			_distance = distance;
 //			Debug.Log(trigger.name + " " + distance);
 			if (!objectsInMe.Contains(trigger.gameObject) && objectsInMe.Count<1 && distance <= 0.16f)
 			{
