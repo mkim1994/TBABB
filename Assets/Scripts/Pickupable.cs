@@ -31,8 +31,9 @@ public class Pickupable : MonoBehaviour
     {
         GameObject dropzoneGO = Instantiate(Resources.Load("Prefabs/dropzoneParent"), transform.position, Quaternion.identity) as GameObject;
         myChildDropzone = dropzoneGO.GetComponentInChildren<Dropzone>();
-        if (isForDropzoneOnly)
+         if (isForDropzoneOnly)
         {
+            DoThisWhenYouDie();
              Destroy(gameObject);
         } else if (!isForDropzoneOnly)
         {
@@ -209,9 +210,9 @@ public class Pickupable : MonoBehaviour
         myChildDropzone.objectsInMe.Clear();
         myChildDropzone.isOccupied = false; //set my dropzone's isOccupied to false so it can take object drops
     }
-
-    private void OnDestroy()
-    {
-        DoThisWhenYouDie();   
-    }
+//
+//    private void OnDestroy()
+//    {
+//        DoThisWhenYouDie();   
+//    }
 }
