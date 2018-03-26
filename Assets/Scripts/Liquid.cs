@@ -22,6 +22,8 @@ public class Liquid : MonoBehaviour {
  	[SerializeField]float smokiness, sweetness, sourness, bitterness, spiciness;
 	[SerializeField]float alcoholVolume, abv;
 
+	public List<float> drinkParts = new List<float>();
+
     private float originalX, originalZ;
 	
 	public DrinkProfile thisCocktail;
@@ -29,6 +31,10 @@ public class Liquid : MonoBehaviour {
 	// Use this for initialization
 	void Start ()
 	{
+		drinkParts.Add(sodaVolume);
+		drinkParts.Add(tonicVolume);
+		drinkParts.Add(whiskeyVolume);
+		
 		if (gameObject.GetComponent<SkinnedMeshRenderer>() != null)
 		{
 			myLiquid = GetComponent<SkinnedMeshRenderer>();
@@ -81,7 +87,35 @@ public class Liquid : MonoBehaviour {
 		smokiness, sweetness, sourness, bitterness, spiciness);
 //		thisCocktail.totalVolume = totalVolume;
 	}
-	
+
+	public void EmptyLiquid()
+	{
+		height = 0;
+		sodaVolume = 0;
+		tonicVolume = 0;
+		appleJuiceVolume = 0;
+		orangeJuiceVolume = 0;
+		lemonJuiceVolume = 0;
+		whiskeyVolume = 0;
+		tequilaVolume = 0;
+		rumVolume = 0;
+		ginVolume = 0;
+		beerVolume = 0;
+		wineVolume = 0;
+		brandyVolume = 0;
+		vodkaVolume = 0;
+
+		smokiness = 0;
+		sweetness = 0;
+		sourness = 0;
+		bitterness = 0;
+		spiciness = 0;
+		alcoholVolume = 0;
+		abv = 0;
+		myLiquid.SetBlendShapeWeight(0, 100);
+
+	}
+
 	float remapRange(float oldValue, float oldMin, float oldMax, float newMin, float newMax )
 	{
 		float newValue = 0;

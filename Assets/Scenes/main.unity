@@ -548,7 +548,7 @@ GameObject:
   m_PrefabParentObject: {fileID: 1677249424745194, guid: c184c6db1c91e4ddca91b65f7040fc47,
     type: 2}
   m_PrefabInternal: {fileID: 237313825}
---- !u!1001 &1020947995
+--- !u!1001 &814418576
 Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2

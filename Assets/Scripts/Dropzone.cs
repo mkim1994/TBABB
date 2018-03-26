@@ -42,7 +42,7 @@ public class Dropzone : MonoBehaviour
 	
 	void OnTriggerStay(Collider trigger)
 	{
-		if (trigger.gameObject.GetComponent<Pickupable>() != null)
+		if (trigger.gameObject.GetComponent<Pickupable>() != null && !trigger.gameObject.GetComponent<Pickupable>().isForDropzoneOnly)
 		{
 			float distance = Vector3.Distance(trigger.transform.position, transform.parent.position);
 			_distance = distance;
@@ -52,6 +52,11 @@ public class Dropzone : MonoBehaviour
 				objectsInMe.Add(trigger.gameObject);		
 	  			isOccupied = true;
 			}
+		}
+
+		if (trigger.gameObject == null)
+		{
+			isOccupied = false;
 		}
 	}
 

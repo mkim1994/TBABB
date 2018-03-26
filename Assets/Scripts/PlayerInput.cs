@@ -29,6 +29,7 @@ public class PlayerInput : MonoBehaviour {
 	//raycast management
 	public Dropzone targetDropzone;
 	[SerializeField] private LightSwitch lightSwitch;
+	[SerializeField] private Sink sink;
 	public LayerMask layerMask;
 	public LayerMask dropzoneLayerMask;
 	public LayerMask nonPickupableLayerMask;
@@ -105,7 +106,7 @@ public class PlayerInput : MonoBehaviour {
 			DropzoneRay();
 			NonPickupableRay();
 		}
-		
+
 		i_restart = player.GetButtonDown("Restart");
 		
 		#region Restart
@@ -372,8 +373,8 @@ public class PlayerInput : MonoBehaviour {
 					pickupableInRightHand.GetComponent<Glass>().ReceivePourFromBottle(pickupableInLeftHand.GetComponent<Bottle>(), 1);
                 } else if (pickupableInRightHand.GetComponent<Bottle>() != null && pickupableInLeftHand.GetComponent<Bottle>() != null){ //BOTTLE : BOTTLE
 	                pickupableInLeftHand.UseLeftHand();				
-                }  
-            }
+                }
+			}
 		
 			if (pickupableInLeftHand != null && pickupableInRightHand != null) { //two-handed use (right hand)
                 if (pickupableInRightHand.GetComponent<Bottle>() != null && pickupableInLeftHand.GetComponent<Glass>() != null) {
@@ -420,7 +421,7 @@ public class PlayerInput : MonoBehaviour {
 			//one-handed use on something on bar
 			if (pickupableInRightHand != null && pickupable != null && pickupableInLeftHand == null){
 				pickupableInRightHand.UseRightHand();				
-			} 
+			}  
 			//two-handed use (bottle in left hand, glass in right)
 			else if (pickupableInLeftHand != null && pickupableInRightHand != null) { 
                 if (pickupableInLeftHand.GetComponent<Bottle>() != null && pickupableInRightHand.GetComponent<Glass>() != null) {
@@ -476,6 +477,27 @@ public class PlayerInput : MonoBehaviour {
 			if (lightSwitch != null)
 			{
 				lightSwitch.EndDay();
+			}
+
+			if (sink != null)
+			{
+				if (pickupableInLeftHand != null)
+				{
+					if (pickupableInLeftHand.GetComponent<Glass>() != null)
+					{
+						Glass leftHandGlass = pickupableInLeftHand.GetComponent<Glass>();
+						leftHandGlass.EmptyGlass();
+					}
+				}
+
+				if (pickupableInRightHand != null)
+				{
+					if (pickupableInRightHand.GetComponent<Glass>() != null)
+					{
+						Glass rightHandGlass = pickupableInRightHand.GetComponent<Glass>();
+						rightHandGlass.EmptyGlass();
+					}
+				}
 			}
 		}
 		#endregion
@@ -561,9 +583,18 @@ public class PlayerInput : MonoBehaviour {
 			{
 				lightSwitch = null;
 			}
+
+			if (hitObj.GetComponent<Sink>() != null && Vector3.Distance(transform.position, hitObj.transform.position) <= maxInteractionDist)
+			{
+				sink = hitObj.GetComponent<Sink>();
+			} else if (hitObj.GetComponent<Sink>() == null)
+			{
+				sink = null;
+			}
 		} else {
 			npc = null;
 			lightSwitch = null;
+			sink = null;
 		}
 	}
 

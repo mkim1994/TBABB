@@ -16,6 +16,7 @@ public class DrinkProfile {
  
 	public float drinkSimilarity = 0;
 	public float totalVolume;
+		
 	public DrinkProfile(float _sodaRate = 0, float _tonicRate = 0, float _appleJuiceRate = 0, float _orangeJuiceRate = 0,
 						float _lemonJuiceRate = 0, //mixers
 						
@@ -109,6 +110,9 @@ public class DrinkProfile {
 		abvDeviation = Mathf.Abs(_drink1.alcoholicStrength - _drink2.alcoholicStrength);
 		return abvDeviation;
 	}
+	
+
+	
 	public static DrinkProfile AddNewProfilePreferences(DrinkProfile profile, Flavor newFlavor, float newFlavorPref, DrinkBase newBase, float newDrinkBasePref, Mixer newMixer, float newMixerPref, float newAlcoholPref)
 	{
 		if(newFlavor == Flavor.bitter){
@@ -118,6 +122,12 @@ public class DrinkProfile {
 		else {
 			return profile;
 		}
+	}
+
+	public static DrinkProfile Empty()
+	{
+		DrinkProfile empty = new DrinkProfile(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+		return empty;
 	}
 
 //	public static bool CheckIfOrderIsNull(DrinkProfile _order)

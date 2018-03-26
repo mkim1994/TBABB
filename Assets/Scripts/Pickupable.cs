@@ -5,14 +5,14 @@ using DG.Tweening;
 public class Pickupable : MonoBehaviour
 {
 
-    [SerializeField] protected bool isForDropzoneOnly;    
-     private Vector3 leftHandPos = new Vector3 (-1.022f, -0.25f, 1.241f);
+    public bool isForDropzoneOnly;    
+    private Vector3 leftHandPos = new Vector3 (-0.64f, -0.89f, 1.241f);
     protected Vector3 dropOffset;
-     private Vector3 rightHandPos = new Vector3 (0.954f, -0.25f, 1.473f);
+    private Vector3 rightHandPos = new Vector3 (0.64f, -0.89f, 1.473f);
     public Dropzone targetDropzone;
     public Vector3 startPos;
     public Vector3 dropPos;
-     public float tweenTime;
+    public float tweenTime;
     public float pickupDropTime;
     public bool pickedUp = false;
 
@@ -31,10 +31,9 @@ public class Pickupable : MonoBehaviour
     {
         GameObject dropzoneGO = Instantiate(Resources.Load("Prefabs/dropzoneParent"), transform.position, Quaternion.identity) as GameObject;
         myChildDropzone = dropzoneGO.GetComponentInChildren<Dropzone>();
-         if (isForDropzoneOnly)
+        if (isForDropzoneOnly)
         {
-            DoThisWhenYouDie();
-             Destroy(gameObject);
+            SetupDropzoneThenDestroySelf();
         } else if (!isForDropzoneOnly)
         {
             myChildDropzone.isOccupied = true;
@@ -184,7 +183,10 @@ public class Pickupable : MonoBehaviour
         }
         for (int i = 0; i < children; ++i)
         {
-            transform.GetChild(i).gameObject.layer = 13;        
+            transform.GetChild(i).gameObject.layer = 13;
+            GameObject grandchildren = transform.GetChild(i).gameObject;
+//            grandchildren.transform.GetChild(i).gameObject.layer = 13;
+
         }
     }
 
@@ -192,7 +194,7 @@ public class Pickupable : MonoBehaviour
     {
         yield return new WaitForSeconds(delay);
         startPos = transform.localPosition;
-         int children = transform.childCount;
+        int children = transform.childCount;
         for (int i = 0; i < children; ++i)
         {
             transform.GetChild(i).gameObject.layer = 12;
@@ -205,14 +207,16 @@ public class Pickupable : MonoBehaviour
         
     }
 
-    private void DoThisWhenYouDie()
+    private void SetupDropzoneThenDestroySelf()
     {
+        
         myChildDropzone.objectsInMe.Clear();
-        myChildDropzone.isOccupied = false; //set my dropzone's isOccupied to false so it can take object drops
+        myChildDropzone.isOccupied = false;
+         Destroy(gameObject);
     }
-//
-//    private void OnDestroy()
-//    {
-//        DoThisWhenYouDie();   
-//    }
+
+    private void OnDestroy()
+    {
+
+    }
 }
