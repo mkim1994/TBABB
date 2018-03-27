@@ -8,6 +8,8 @@ public class DayCycleManager : MonoBehaviour
 
     public bool dayHasEnded;
 
+    public bool dayReallyStarted;
+
     public bool switchOff;
 
     public List<Day> days;
@@ -22,6 +24,24 @@ public class DayCycleManager : MonoBehaviour
 
     private float elapsedTime;
     private float offsetTime;
+    public bool doorOpened;
+
+    public Transform spawnPoint1, spawnPoint2;
+
+    /*
+     * order:
+     * if !dayReallyStarted, we're only in the backroom scene.
+     * in the backroom scene, if the player interacts with the door --> dayReallyStarted = true
+     * if dayReallyStarted, the player is now in the bar scene.
+     * until every customer is gone, dayHasEnded = false.
+     * when every customer is gone, dayHasEnded = true.
+     * if dayHasEnded, the switch can be switched off, ending the day.
+     * this triggers the black panel, with the title segments. 
+     * once the title segments are over, the next day begins. dayReallyStarted = false.
+     * 
+     * 
+     * 
+     * */
 
 
     // Use this for initialization
@@ -33,10 +53,12 @@ public class DayCycleManager : MonoBehaviour
     public void Start()
     {
 
+        doorOpened = false;
         currentCustomers = new List<NPC>();
         elapsedTime = 0f;
         currentDay = 0; // 0th day is day 1
         offsetTime = 0f;
+        dayReallyStarted = false;
         resetPos = Services.GameManager.player.transform.position;
         resetRot = Services.GameManager.player.transform.rotation;
 
@@ -52,6 +74,11 @@ public class DayCycleManager : MonoBehaviour
         {
             days.Add(new Day(npcsDaysOrder[d])); //first day
         }
+
+        Services.GameManager.player.transform.position =
+            new Vector3(spawnPoint1.position.x,
+                        Services.GameManager.player.transform.position.y,
+                        spawnPoint1.position.z);
 
 
     }
@@ -87,28 +114,58 @@ public class DayCycleManager : MonoBehaviour
     public void Update()
     {
 
-        if(!dayHasEnded){ //day ends when customers are all gone
-            elapsedTime = Time.timeSinceLevelLoad - offsetTime;
-            for (int i = 0; i < days[currentDay].customers.Count; ++i){
-                if(elapsedTime >= days[currentDay].customers[i].GetComponent<CustomerData>().daysvisiting[currentDay]){
-                    days[currentDay].customers[i].insideBar = true;
-                    currentCustomers.Add(days[currentDay].customers[i]);
-                    days[currentDay].customers.RemoveAt(i);
-                    break;
-                }
-            }
-            if(days[currentDay].customers.Count == 0 && currentCustomers.Count == 0){
-                dayHasEnded = true;
-            }
-
-        } else{
-            //able to be switched off when day has ended
-            if(switchOff){
-                ResetDay();
-            }
+        if(doorOpened){ //doorOpened = true when door interacted with after checking note
+            doorOpened = false;
+            StartCoroutine(TransitionSequence());
         }
 
+        if (dayReallyStarted)
+        {
+            //if(Services.GameManager.player.)
+            if(offsetTime == elapsedTime){ //need to do offsetTime to account for the beginning sequence
+                Debug.Log("yea");
+                offsetTime = Time.timeSinceLevelLoad;
+            }
+            if (!dayHasEnded)
+            { //day ends when customers are all gone
+                elapsedTime = Time.timeSinceLevelLoad - offsetTime;
+                for (int i = 0; i < days[currentDay].customers.Count; ++i)
+                {
+                    if (elapsedTime >= days[currentDay].customers[i].GetComponent<CustomerData>().daysvisiting[currentDay])
+                    {
+                        days[currentDay].customers[i].insideBar = true;
+                        currentCustomers.Add(days[currentDay].customers[i]);
+                        days[currentDay].customers.RemoveAt(i);
+                        break;
+                    }
+                }
+                if (days[currentDay].customers.Count == 0 && currentCustomers.Count == 0)
+                {
+                    dayHasEnded = true;
+                }
 
+            }
+            else
+            {
+                //able to be switched off when day has ended
+                if (switchOff)
+                {
+                    ResetDay();
+                }
+            }
+
+        }
+
+    }
+
+    IEnumerator TransitionSequence(){
+        //fade
+        yield return new WaitForSeconds(3f);
+        Services.GameManager.player.transform.position =
+                    new Vector3(spawnPoint2.position.x,
+                        Services.GameManager.player.transform.position.y,
+                        spawnPoint2.position.z);
+        dayReallyStarted = true;
     }
 
     void WaitTillNextDay(){
