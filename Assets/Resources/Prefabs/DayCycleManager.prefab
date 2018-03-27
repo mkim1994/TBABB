@@ -56,8 +56,10 @@ MonoBehaviour:
   switchOff: 0
   currentCustomers: []
   blackPanel: {fileID: 0}
+  whitePanel: {fileID: 0}
   resetPos: {x: 0, y: 0, z: 0}
   resetRot: {x: 0, y: 0, z: 0, w: 0}
   currentDay: 0
+  doorOpened: 0
   spawnPoint1: {fileID: 0}
   spawnPoint2: {fileID: 0}

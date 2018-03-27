@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
+using UnityEngine.UI;
 using Yarn.Unity;
 
 public class DayCycleManager : MonoBehaviour
@@ -15,7 +17,7 @@ public class DayCycleManager : MonoBehaviour
     public List<Day> days;
     public List<NPC> currentCustomers;
 
-    public GameObject blackPanel;
+    public GameObject blackPanel, whitePanel;
 
     public Vector3 resetPos;
     public Quaternion resetRot;
@@ -52,7 +54,7 @@ public class DayCycleManager : MonoBehaviour
     }
     public void Start()
     {
-
+        DOTween.Init();
         doorOpened = false;
         currentCustomers = new List<NPC>();
         elapsedTime = 0f;
@@ -79,7 +81,7 @@ public class DayCycleManager : MonoBehaviour
             new Vector3(spawnPoint1.position.x,
                         Services.GameManager.player.transform.position.y,
                         spawnPoint1.position.z);
-
+        Services.GameManager.player.transform.rotation = spawnPoint1.rotation;
 
     }
 
@@ -160,11 +162,16 @@ public class DayCycleManager : MonoBehaviour
 
     IEnumerator TransitionSequence(){
         //fade
+        whitePanel.SetActive(true);
+        whitePanel.GetComponentInChildren<Image>().DOFade(1f, 3f);
         yield return new WaitForSeconds(3f);
+        whitePanel.GetComponentInChildren<Image>().DOFade(0f, 1f).OnComplete(() => whitePanel.SetActive(false));
         Services.GameManager.player.transform.position =
                     new Vector3(spawnPoint2.position.x,
                         Services.GameManager.player.transform.position.y,
                         spawnPoint2.position.z);
+
+        Services.GameManager.player.transform.rotation = spawnPoint2.rotation;
         dayReallyStarted = true;
     }
 
