@@ -145,6 +145,7 @@ public class Glass : Pickupable
 		Liquid liquid = GetComponentInChildren<Liquid>();
 		liquid.isEvaluated = false;
 		liquid.EvaluateDrinkInCoaster();
+		liquid.isBeingPoured = false;
 
 //		liquid.isPouring = false;
 	}

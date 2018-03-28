@@ -7,8 +7,8 @@ public class Bottle : Pickupable {
 
 	public DrinkBase myDrinkBase;
 	public Mixer myMixer;	
-  	private Vector3 leftHandPourRot = new Vector3(80f, 25, 0);
-	private Vector3 rightHandPourRot = new Vector3(80, -25, 6.915f);
+  	public Vector3 leftHandPourRot = new Vector3(80f, 25, 0);
+	public Vector3 rightHandPourRot = new Vector3(80, -25, 6.915f);
  	
 	protected override void Start()
 	{
@@ -19,7 +19,7 @@ public class Bottle : Pickupable {
 		DeclareActiveTween();
 		Sequence sequence = DOTween.Sequence();
 		sequence.Append(transform.DOLocalRotate(rotation, tweenTime, RotateMode.Fast)).SetEase(Ease.InOutBack);
-		sequence.OnComplete(() => DeclareInactiveTween());
+//		sequence.OnComplete(() => DeclareInactiveTween());
 	} 
 	
 	public override void StartPourTween(Vector3 moveToPos)
@@ -29,7 +29,7 @@ public class Bottle : Pickupable {
 		Services.AudioLoopScript.playerAttackPour = false;
  		Sequence sequence = DOTween.Sequence();
 		sequence.Append(transform.DOLocalMove(moveToPos, tweenTime, false)).SetEase(Ease.InOutQuart);
-		sequence.OnComplete(() => DeclareInactiveTween());		
+//		sequence.OnComplete(() => DeclareInactiveTween());		
 	}
 
 	public override void EndPourTween()
@@ -37,15 +37,15 @@ public class Bottle : Pickupable {
 		DeclareActiveTween();
 		Services.AudioLoopScript.isPlayerPouring = false;
  		Sequence sequence = DOTween.Sequence();
-		sequence.Append(transform.DOLocalMove(startPos, tweenTime, false));
-		sequence.OnComplete(() => DeclareInactiveTween());				
+		sequence.Append(transform.DOLocalMove(startPos, tweenEndTime, false)).SetEase(Ease.InOutSine);
+//		sequence.OnComplete(() => DeclareInactiveTween());				
 	}
 
 	public override void UseLeftHand(){ 
 		if(Services.GameManager.playerInput.pickupable.GetComponent<Glass>() != null){
  			base.RotateTween(leftHandPourRot);
 			StartPourTween(Vector3.forward + new Vector3(-0.64f, 0, 0.5f));
-			Services.GameManager.playerInput.pickupable.GetComponent<Glass>().ReceivePourFromBottle(this, 0);
+//			Services.GameManager.playerInput.pickupable.GetComponent<Glass>().ReceivePourFromBottle(this, 0);
  		} 
 	}
 
@@ -53,7 +53,7 @@ public class Bottle : Pickupable {
 		if(Services.GameManager.playerInput.pickupable.GetComponent<Glass>() != null){
  			base.RotateTween(rightHandPourRot);
 			StartPourTween(Vector3.forward + new Vector3(0.64f, 0, 0.5f));
-			Services.GameManager.playerInput.pickupable.GetComponent<Glass>().ReceivePourFromBottle(this, 1);
+//			Services.GameManager.playerInput.pickupable.GetComponent<Glass>().ReceivePourFromBottle(this, 1);
  		} 
 	}
 

@@ -13,6 +13,7 @@ public class Pickupable : MonoBehaviour
     public Vector3 startPos;
     public Vector3 dropPos;
     public float tweenTime;
+    public float tweenEndTime;
     public float pickupDropTime;
     public bool pickedUp = false;
 
@@ -151,7 +152,7 @@ public class Pickupable : MonoBehaviour
     public virtual void RotateToZeroTween(){
         DeclareActiveTween();
         Sequence sequence = DOTween.Sequence();
-        sequence.Append(transform.DOLocalRotate(Vector3.zero, tweenTime, RotateMode.Fast));
+        sequence.Append(transform.DOLocalRotate(Vector3.zero, tweenEndTime, RotateMode.Fast));
         sequence.OnComplete(() => DeclareInactiveTween());
     } 
 
@@ -160,6 +161,11 @@ public class Pickupable : MonoBehaviour
     }
     
     public void DeclareInactiveTween(){
+        Services.TweenManager.tweensAreActive = false;
+    }
+
+    public static void DeclareAllTweensInactive()
+    {
         Services.TweenManager.tweensAreActive = false;
     }
 

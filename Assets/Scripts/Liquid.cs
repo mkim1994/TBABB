@@ -27,6 +27,8 @@ public class Liquid : MonoBehaviour {
     private float originalX, originalZ;
 	
 	public DrinkProfile thisCocktail;
+
+	public bool isBeingPoured;
  
 	// Use this for initialization
 	void Start ()
@@ -70,6 +72,12 @@ public class Liquid : MonoBehaviour {
 		{
 			thisCocktail.totalVolume = totalVolume;
  		}
+
+		if (isBeingPoured)
+		{
+			GrowVertical();		
+		}
+
  	}
 
 	public void GrowVertical(){
@@ -86,6 +94,11 @@ public class Liquid : MonoBehaviour {
 		wineVolume/totalVolume, brandyVolume/totalVolume, abv, 
 		smokiness, sweetness, sourness, bitterness, spiciness);
 //		thisCocktail.totalVolume = totalVolume;
+	}
+
+	public void LetItPour()
+	{
+		isBeingPoured = true;
 	}
 
 	public void EmptyLiquid()
@@ -126,7 +139,8 @@ public class Liquid : MonoBehaviour {
 	}
 
 	public void AddIngredient(DrinkBase _drinkBase){
-		GrowVertical();
+//		GrowVertical();
+		LetItPour();
 		myDrinkProfile = Services.DrinkDictionary.drinkBases[_drinkBase];
 //		baseBeingPoured = _drinkBase;
 		switch (_drinkBase){
@@ -171,7 +185,7 @@ public class Liquid : MonoBehaviour {
 	}
 
 	public void AddMixer(Mixer _mixer){
-		GrowVertical();
+		LetItPour();
 		myDrinkProfile = Services.MixerDictionary.mixers[_mixer];
 //		mixerBeingPoured = _mixer;
 		switch (_mixer){

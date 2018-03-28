@@ -1,16 +1,40 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using System.Reflection;
+using DG.Tweening;
 using UnityEngine;
 using Rewired;
 using Rewired.ComponentControls.Data;
+using UnityEditor;
+using UnityEngine.Networking;
 using UnityEngine.SceneManagement;
- 
+
 [RequireComponent(typeof(CharacterController))]
-public class PlayerInput : MonoBehaviour {
-	
-	
+public class PlayerInput : MonoBehaviour
+{
+
+
 	// [SerializeField]float smoothing = 2.0f;
+	public delegate void TweenManagerDelegate();
+	private TweenManagerDelegate _tweenManagerDelegate;
+
+	public delegate void StartPourDelegate(Bottle bottle, int num);
+	private StartPourDelegate _startPourDelegate;
+
+	private IEnumerator tweenManagerCoroutine;
+	private IEnumerator startPourCoroutine;
+
+	public enum InteractionState
+	{
+		BothHandsInUse,
+		LeftHasObject_RightEmpty,
+		LeftEmpty_RightHasObject,
+		BothHandsEmpty,
+		LeftHasBottle_RightHasGlass,
+		LeftHasGlass_RightHasBottle
+	}
+
+	private InteractionState _interactionState;
 
 	Vector2 smoothV;
 	float t = 0;
@@ -28,8 +52,9 @@ public class PlayerInput : MonoBehaviour {
 	protected Camera myCam;
 	//raycast management
 	public Dropzone targetDropzone;
-	[SerializeField] private LightSwitch lightSwitch;
-	[SerializeField] private Sink sink;
+	private LightSwitch lightSwitch;
+	private Sink sink;
+	[SerializeField]private Backdoor backdoor;
 	public LayerMask layerMask;
 	public LayerMask dropzoneLayerMask;
 	public LayerMask nonPickupableLayerMask;
@@ -79,6 +104,7 @@ public class PlayerInput : MonoBehaviour {
 
 	void Start()
 	{
+		 _tweenManagerDelegate = Pickupable.DeclareAllTweensInactive; 
 		if (isUsingController)
 		{
 			lookSensitivity = controllerSens;
@@ -94,10 +120,8 @@ public class PlayerInput : MonoBehaviour {
 		}
 	}
 
-
-	void Update(){
-		Cursor.visible = false;
-		Cursor.lockState = CursorLockMode.Locked;
+	private void FixedUpdate()
+	{
 		if (isInputEnabled)
 		{
 			GetInput();
@@ -106,10 +130,36 @@ public class PlayerInput : MonoBehaviour {
 			DropzoneRay();
 			NonPickupableRay();
 		}
+	}
 
-		i_restart = player.GetButtonDown("Restart");
+	void Update(){
+		Cursor.visible = false;
+		Cursor.lockState = CursorLockMode.Locked;
 		
+		//checks what player is holding to change the interaction state
+		if (pickupableInLeftHand != null && pickupableInRightHand != null)
+		{
+			if (pickupableInLeftHand.GetComponent<Bottle>() != null && 
+			    pickupableInRightHand.GetComponent<Glass>() != null)
+			{
+				_interactionState = InteractionState.LeftHasBottle_RightHasGlass;
+			} 
+			
+			else if (pickupableInLeftHand.GetComponent<Glass>() != null &&
+			           pickupableInRightHand.GetComponent<Bottle>() != null)
+			{
+				_interactionState = InteractionState.LeftHasGlass_RightHasBottle;
+			} else if (pickupableInLeftHand != null && pickupableInRightHand == null)
+			{
+				_interactionState = InteractionState.LeftHasObject_RightEmpty;
+			} else if (pickupableInLeftHand == null && pickupableInRightHand != null)
+			{
+				_interactionState = InteractionState.LeftEmpty_RightHasObject;
+			}
+		}
+
 		#region Restart
+		i_restart = player.GetButtonDown("Restart");
 		if(i_restart){
 			SceneManager.LoadScene("main");
 		}
@@ -363,32 +413,38 @@ public class PlayerInput : MonoBehaviour {
 		#region Use Left
 		if(i_useLeft && !Services.TweenManager.tweensAreActive){
 			//one-handed use on something on bar
-			if (pickupableInLeftHand != null && pickupable != null && pickupableInRightHand == null){ 
-				pickupableInLeftHand.UseLeftHand();
-			} 
-			
-			else if (pickupableInLeftHand != null && pickupableInRightHand != null) { //two-handed use (left hand)
-                if (pickupableInLeftHand.GetComponent<Bottle>() != null && pickupableInRightHand.GetComponent<Glass>() != null) { //BOTTLE : GLASS
- 					pickupableInLeftHand.GetComponent<Bottle>().PourIntoPickedUpGlass();
-					pickupableInRightHand.GetComponent<Glass>().ReceivePourFromBottle(pickupableInLeftHand.GetComponent<Bottle>(), 1);
-                } else if (pickupableInRightHand.GetComponent<Bottle>() != null && pickupableInLeftHand.GetComponent<Bottle>() != null){ //BOTTLE : BOTTLE
-	                pickupableInLeftHand.UseLeftHand();				
-                }
+			if (pickupableInLeftHand != null && pickupable != null){ 
+ 				if (pickupable.GetComponent<Glass>() != null && pickupableInLeftHand.GetComponent<Bottle>() != null)
+				{
+//					Debug.Log("i_useLeft only functions are getting called!");
+					Bottle bottle = pickupableInLeftHand.GetComponent<Bottle>();
+					Glass glass = pickupable.GetComponent<Glass>();
+					_startPourDelegate = glass.ReceivePourFromBottle;
+					if (i_startUseLeft)
+					{
+						Debug.Log("start use left!");
+						startPourCoroutine = UtilCoroutines.WaitThenPour(bottle.tweenTime, glass.ReceivePourFromBottle, bottle, 0);
+						StartCoroutine(startPourCoroutine);					
+						bottle.StartPourTween(Vector3.forward + new Vector3(-0.64f, 0, 0.5f));
+						bottle.RotateTween(bottle.leftHandPourRot);
+					}
+				}
 			}
-		
-			if (pickupableInLeftHand != null && pickupableInRightHand != null) { //two-handed use (right hand)
-                if (pickupableInRightHand.GetComponent<Bottle>() != null && pickupableInLeftHand.GetComponent<Glass>() != null) {
- 					pickupableInRightHand.GetComponent<Bottle>().PourIntoPickedUpGlass();
-					pickupableInLeftHand.GetComponent<Glass>().ReceivePourFromBottle(pickupableInRightHand.GetComponent<Bottle>(), 0);
-                } else if (pickupableInRightHand.GetComponent<Bottle>() != null && pickupableInLeftHand.GetComponent<Rag>() != null){
- 				} 
-            }  
 		} 
+		
 		if(i_endUseLeft){
 			if(pickupableInLeftHand != null){
+				if (pickupableInLeftHand.GetComponent<Bottle>() != null)
+				{
+					Bottle bottle = pickupableInLeftHand.GetComponent<Bottle>();
+					int tweensKilled = DOTween.KillAll();
+//					Debug.Log("Tweens killed = " + tweensKilled);
+				}
 				pickupableInLeftHand.RotateToZeroTween();
 				pickupableInLeftHand.EndPourTween();
-				if (pickupable != null)
+				StopCoroutine(startPourCoroutine);
+				StartCoroutine(UtilCoroutines.WaitThenSetTweensToInactive(pickupableInLeftHand.tweenEndTime, _tweenManagerDelegate));
+ 				if (pickupable != null)
 				{
 					if (pickupable.GetComponent<Glass>() != null)
 					{
@@ -396,53 +452,84 @@ public class PlayerInput : MonoBehaviour {
 					}
 				}
 			}
-			if (pickupableInLeftHand != null && pickupableInRightHand != null){
-				pickupableInLeftHand.RotateToZeroTween();
-				pickupableInRightHand.RotateToZeroTween();
-				if(pickupableInLeftHand.GetComponent<Glass>() != null){	
-					pickupableInLeftHand.GetComponent<Glass>().EndPourFromBottle();
-					pickupableInLeftHand.GetComponent<Glass>().EndPourTween();
-					pickupableInRightHand.EndPourTween();
-
-				}
-				if(pickupableInRightHand.GetComponent<Glass>() != null){	
-					pickupableInRightHand.GetComponent<Glass>().EndPourFromBottle();
-					pickupableInRightHand.GetComponent<Glass>().EndPourTween();
-					pickupableInLeftHand.EndPourTween();
-				}
-			}
 		} 
+		
+//		if(i_useLeft && !Services.TweenManager.tweensAreActive){
+//			//one-handed use on something on bar
+//			if (pickupableInLeftHand != null && pickupable != null && pickupableInRightHand == null){ 
+//				pickupableInLeftHand.UseLeftHand();
+//			} 
+//			
+//			else if (pickupableInLeftHand != null && pickupableInRightHand != null) { //two-handed use (left hand)
+//				if (pickupableInLeftHand.GetComponent<Bottle>() != null && pickupableInRightHand.GetComponent<Glass>() != null) { //BOTTLE : GLASS
+//					pickupableInLeftHand.GetComponent<Bottle>().PourIntoPickedUpGlass();
+//					pickupableInRightHand.GetComponent<Glass>().ReceivePourFromBottle(pickupableInLeftHand.GetComponent<Bottle>(), 1);
+//				} else if (pickupableInRightHand.GetComponent<Bottle>() != null && pickupableInLeftHand.GetComponent<Bottle>() != null){ //BOTTLE : BOTTLE
+//					pickupableInLeftHand.UseLeftHand();				
+//				}
+//			}
+//		
+////			if (pickupableInLeftHand != null && pickupableInRightHand != null) { //two-handed use (right hand)
+////                if (pickupableInRightHand.GetComponent<Bottle>() != null && pickupableInLeftHand.GetComponent<Glass>() != null) {
+//// 					pickupableInRightHand.GetComponent<Bottle>().PourIntoPickedUpGlass();
+////					pickupableInLeftHand.GetComponent<Glass>().ReceivePourFromBottle(pickupableInRightHand.GetComponent<Bottle>(), 0);
+////                } else if (pickupableInRightHand.GetComponent<Bottle>() != null && pickupableInLeftHand.GetComponent<Rag>() != null){
+//// 				} 
+////			}	  
+//		} 
+		
+//		if(i_endUseLeft){
+//			if(pickupableInLeftHand != null){
+//				pickupableInLeftHand.RotateToZeroTween();
+//				pickupableInLeftHand.EndPourTween();
+//				if (pickupable != null)
+//				{
+//					if (pickupable.GetComponent<Glass>() != null)
+//					{
+//						pickupable.GetComponent<Glass>().EndPourFromBottle();
+//					}
+//				}
+//			}
+//			if (pickupableInLeftHand != null && pickupableInRightHand != null){
+//				pickupableInLeftHand.RotateToZeroTween();
+//				pickupableInRightHand.RotateToZeroTween();
+//				if(pickupableInLeftHand.GetComponent<Glass>() != null){	
+//					pickupableInLeftHand.GetComponent<Glass>().EndPourFromBottle();
+//					pickupableInLeftHand.GetComponent<Glass>().EndPourTween();
+//					pickupableInRightHand.EndPourTween();
+//
+//				}
+//				if(pickupableInRightHand.GetComponent<Glass>() != null){	
+//					pickupableInRightHand.GetComponent<Glass>().EndPourFromBottle();
+//					pickupableInRightHand.GetComponent<Glass>().EndPourTween();
+//					pickupableInLeftHand.EndPourTween();
+//				}
+//			}
+//		} 
 		
 		#endregion
 
 		#region Use Right
-
 		if(i_useRight && !Services.TweenManager.tweensAreActive){
 			//one-handed use on something on bar
-			if (pickupableInRightHand != null && pickupable != null && pickupableInLeftHand == null){
-				pickupableInRightHand.UseRightHand();				
-			}  
-			//two-handed use (bottle in left hand, glass in right)
-			else if (pickupableInLeftHand != null && pickupableInRightHand != null) { 
-                if (pickupableInLeftHand.GetComponent<Bottle>() != null && pickupableInRightHand.GetComponent<Glass>() != null) {
- 					pickupableInLeftHand.GetComponent<Bottle>().PourIntoPickedUpGlass();
-					pickupableInRightHand.GetComponent<Glass>().ReceivePourFromBottle(pickupableInLeftHand.GetComponent<Bottle>(), 1);
-                } else if (pickupableInRightHand.GetComponent<Bottle>() != null && pickupableInLeftHand.GetComponent<Bottle>() != null){ //Dual bottle
-	                pickupableInRightHand.UseRightHand();
-                 } 
-            }
-			//two-handed use (bottle in right hand, glass in left)
-			if (pickupableInLeftHand != null && pickupableInRightHand != null) { 
-                if (pickupableInRightHand.GetComponent<Bottle>() != null && pickupableInLeftHand.GetComponent<Glass>() != null) {
- 					pickupableInRightHand.GetComponent<Bottle>().PourIntoPickedUpGlass();
-					pickupableInLeftHand.GetComponent<Glass>().ReceivePourFromBottle(pickupableInRightHand.GetComponent<Bottle>(), 0);
-                } 
-            } 
+			if (pickupableInRightHand != null && pickupable != null){ 
+//				pickupableInLeftHand.UseLeftHand();
+				if (pickupable.GetComponent<Glass>() != null && pickupableInRightHand.GetComponent<Bottle>() != null)
+				{	
+ 					Bottle bottle = pickupableInRightHand.GetComponent<Bottle>();
+					Glass glass = pickupable.GetComponent<Glass>();
+					glass.ReceivePourFromBottle(bottle, 1);
+					bottle.StartPourTween(Vector3.forward + new Vector3(0.64f, 0, 0.5f));
+					bottle.RotateTween(bottle.rightHandPourRot);
+				}
+			}
 		} 
 		if(i_endUseRight){
 			if(pickupableInRightHand != null){
 				pickupableInRightHand.RotateToZeroTween();
 				pickupableInRightHand.EndPourTween();
+				StartCoroutine(UtilCoroutines.WaitThenSetTweensToInactive(pickupableInLeftHand.tweenEndTime, _tweenManagerDelegate));
+
 				if (pickupable != null)
 				{
 					if (pickupable.GetComponent<Glass>() != null)
@@ -451,23 +538,108 @@ public class PlayerInput : MonoBehaviour {
 					}
 				}
 			}
-			if (pickupableInLeftHand != null && pickupableInRightHand != null){
-				pickupableInLeftHand.RotateToZeroTween();
-				pickupableInRightHand.RotateToZeroTween();
-				if(pickupableInLeftHand.GetComponent<Glass>() != null){	
-					pickupableInLeftHand.GetComponent<Glass>().EndPourFromBottle();
-					pickupableInLeftHand.GetComponent<Glass>().EndPourTween();
-					pickupableInRightHand.EndPourTween();
-				}
-				if(pickupableInRightHand.GetComponent<Glass>() != null){	
-					pickupableInRightHand.GetComponent<Glass>().EndPourFromBottle();
-					pickupableInRightHand.GetComponent<Glass>().EndPourTween();
-					pickupableInLeftHand.EndPourTween();
- 				}
-			}
 		} 
+
+//		if(i_useRight && !Services.TweenManager.tweensAreActive){
+//			//one-handed use on something on bar
+//			if (pickupableInRightHand != null && pickupable != null && pickupableInLeftHand == null){
+//				pickupableInRightHand.UseRightHand();				
+//			}  
+//			//two-handed use (bottle in left hand, glass in right)
+//			else if (pickupableInLeftHand != null && pickupableInRightHand != null) { 
+//                if (pickupableInRightHand.GetComponent<Bottle>() != null && pickupableInLeftHand.GetComponent<Bottle>() != null){ //Dual bottle
+//	                pickupableInRightHand.UseRightHand();
+//                 } 
+//            }
+//			//two-handed use (bottle in right hand, glass in left)
+//			if (pickupableInLeftHand != null && pickupableInRightHand != null) { 
+//                if (pickupableInRightHand.GetComponent<Bottle>() != null && pickupableInLeftHand.GetComponent<Glass>() != null) {
+// 					pickupableInRightHand.GetComponent<Bottle>().PourIntoPickedUpGlass();
+//					pickupableInLeftHand.GetComponent<Glass>().ReceivePourFromBottle(pickupableInRightHand.GetComponent<Bottle>(), 0);
+//                } 
+//            } 
+//		} 
+//		if(i_endUseRight){
+//			if(pickupableInRightHand != null){
+//				pickupableInRightHand.RotateToZeroTween();
+//				pickupableInRightHand.EndPourTween();
+//				if (pickupable != null)
+//				{
+//					if (pickupable.GetComponent<Glass>() != null)
+//					{
+//						pickupable.GetComponent<Glass>().EndPourFromBottle();
+//					}
+//				}
+//			}
+//			if (pickupableInLeftHand != null && pickupableInRightHand != null){
+//				pickupableInLeftHand.RotateToZeroTween();
+//				pickupableInRightHand.RotateToZeroTween();
+//				if(pickupableInLeftHand.GetComponent<Glass>() != null){	
+//					pickupableInLeftHand.GetComponent<Glass>().EndPourFromBottle();
+//					pickupableInLeftHand.GetComponent<Glass>().EndPourTween();
+//					pickupableInRightHand.EndPourTween();
+//				}
+//				if(pickupableInRightHand.GetComponent<Glass>() != null){	
+//					pickupableInRightHand.GetComponent<Glass>().EndPourFromBottle();
+//					pickupableInRightHand.GetComponent<Glass>().EndPourTween();
+//					pickupableInLeftHand.EndPourTween();
+// 				}
+//			}
+//		} 
 		#endregion
 
+		#region Two-handed Interactions
+
+		if (i_useLeft && i_useRight && !Services.TweenManager.tweensAreActive)
+		{
+			switch (_interactionState)
+			{
+				case InteractionState.LeftHasBottle_RightHasGlass:
+ 					Bottle bottle = pickupableInLeftHand.GetComponent<Bottle>();
+					Glass glass = pickupableInRightHand.GetComponent<Glass>();
+					glass.ReceivePourFromBottle(bottle, 1);
+					bottle.StartPourTween(Vector3.forward + new Vector3(-0.482f, 1.5f, 0.5f));
+					bottle.RotateTween(bottle.leftHandPourRot);
+					break;
+				case InteractionState.LeftHasGlass_RightHasBottle:
+ 					Glass glass0 = pickupableInLeftHand.GetComponent<Glass>();
+					Bottle bottle0 = pickupableInRightHand.GetComponent<Bottle>();
+					glass0.ReceivePourFromBottle(bottle0, 0);
+					bottle0.StartPourTween(Vector3.forward + new Vector3(0.482f, 1.5f, 0.5f));
+					bottle0.RotateTween(bottle0.rightHandPourRot);
+					break;
+				default:
+					break;
+			}
+		}
+		else if (i_useLeft && i_endUseRight)
+		{
+			switch (_interactionState)
+			{
+				case InteractionState.LeftHasBottle_RightHasGlass:
+					Bottle bottle = pickupableInLeftHand.GetComponent<Bottle>();
+					Glass glass = pickupableInRightHand.GetComponent<Glass>();
+					bottle.RotateToZeroTween();
+					bottle.EndPourTween();
+					glass.EndPourFromBottle();
+					glass.EndPourTween();
+					break;
+				case InteractionState.LeftHasGlass_RightHasBottle:
+					Glass glass0 = pickupableInLeftHand.GetComponent<Glass>();
+					Bottle bottle0 = pickupableInRightHand.GetComponent<Bottle>();
+					bottle0.RotateToZeroTween();
+					bottle0.EndPourTween();
+					glass0.EndPourFromBottle();
+					glass0.EndPourTween();
+					break;
+				default:
+					break;
+			}
+		}
+
+		#endregion
+		
+		
 		#region Talk
 		if(i_talk){
 			if(npc != null && !Services.GameManager.dialogue.isDialogueRunning){
@@ -499,8 +671,14 @@ public class PlayerInput : MonoBehaviour {
 					}
 				}
 			}
+			
+			if (backdoor != null)
+			{
+ 				Services.GameManager.dayManager.doorOpened = true;
+			}
 		}
 		#endregion
+		
 		#region Dialogue Selection
 		if(i_choose1){
 			// Services.GameManager.dialogue.dialogueUI.ChooseOption(0);
@@ -569,7 +747,7 @@ public class PlayerInput : MonoBehaviour {
 		
 		if(Physics.Raycast(ray, out hit, rayDist, nonPickupableLayerMask)){
 			GameObject hitObj = hit.transform.gameObject; //if you're actually looking at something
-//			Debug.Log(hitObj.transform.name);
+//			Debug.Log(hitObj);
  			if(hitObj.GetComponent<NPC>() != null && Vector3.Distance(transform.position, hitObj.transform.position) <= maxTalkingDist){ //check if object looked at can be picked up
 				npc = hitObj.GetComponent<NPC>(); //if it's NPC and close enough, assign it to NPC.				  
  			} else if (hitObj.GetComponent<NPC>() == null || Vector3.Distance(transform.position, hitObj.transform.position) > maxTalkingDist){
@@ -591,10 +769,20 @@ public class PlayerInput : MonoBehaviour {
 			{
 				sink = null;
 			}
+
+			if (hitObj.GetComponent<Backdoor>() != null &&
+			    Vector3.Distance(transform.position, hitObj.transform.position) <= 6f)
+			{
+				backdoor = hitObj.GetComponent<Backdoor>();
+			} else if (hitObj.GetComponent<Backdoor>() == null)
+			{
+				backdoor = null;
+			}
 		} else {
 			npc = null;
 			lightSwitch = null;
 			sink = null;
+			backdoor = null;
 		}
 	}
 
@@ -615,3 +803,4 @@ public class PlayerInput : MonoBehaviour {
 //		}
 //	}
 }
+
