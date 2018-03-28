@@ -163,6 +163,11 @@ public class Pickupable : MonoBehaviour
         Services.TweenManager.tweensAreActive = false;
     }
 
+    public void DeclareSpecificInactiveTween(Sequence _sequence)
+    {
+        Services.TweenManager.tweensAreActive = false;
+    }
+
     public void SetPickedUpToTrue(){
         pickedUp = true;
     }

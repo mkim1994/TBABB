@@ -56,9 +56,8 @@ public class AudioLoopScript : MonoBehaviour
 		    || Services.GameManager.playerInput.pickupableInLeftHand != null
 		    || Services.GameManager.playerInput.pickupableInRightHand != null)
 		{
-			PourAudioLooper();		
+//			PourAudioLooper();		
 		}
-
 
 	}
 

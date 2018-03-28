@@ -277,6 +277,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4578988298709540}
   - component: {fileID: 95703054206403636}
+  - component: {fileID: 65571102666368736}
+  - component: {fileID: 114519512956008262}
   m_Layer: 12
   m_Name: backdoor
   m_TagString: Untagged
@@ -1152,8 +1154,20 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 35.50067, y: 22.21788, z: 1}
-  m_Center: {x: -4.573181, y: 8.39, z: 0}
+  m_Size: {x: 35.50067, y: 22.21788, z: 0.8320465}
+  m_Center: {x: -4.573181, y: 8.389999, z: -0.083976746}
+--- !u!65 &65571102666368736
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1888231346163944}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.9150085, y: 7.688883, z: 1.1071777}
+  m_Center: {x: 0.11616516, y: 3.3444414, z: 0.2983303}
 --- !u!65 &65619633468351474
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -1301,6 +1315,17 @@ Light:
   m_UseColorTemperature: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &114519512956008262
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1888231346163944}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f280881d207475d46ab2309decfb9390, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!135 &135905267031400352
 SphereCollider:
   m_ObjectHideFlags: 1
