@@ -227,7 +227,7 @@ public class NPC : MonoBehaviour
         Services.GameManager.audioController.spotlightsfx.Play();
         silhouette.transform.position = silhouetteLocation;
         silhouette.gameObject.SetActive(false);
-        transform.position = seatLocations[BestSeat()];
+        //transform.position = seatLocations[BestSeat()];
         GetComponent<BoxCollider>().enabled = true;
         GetComponentInChildren<SpriteRenderer>().enabled = true;
         GetComponentInChildren<Light>().enabled = true;
