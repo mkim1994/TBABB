@@ -13,6 +13,8 @@ public class Liquid : MonoBehaviour {
 	[SerializeField]private float pourRate = 1;
 	public bool isEvaluated = false;
 	public float totalVolume;
+	public DrinkBase myDrinkBase;
+	public Mixer myMixer;
 	public List<Coaster> coasters = new List<Coaster> ();
 // 	DrinkBase baseBeingPoured;
 	Garnish garnishBeingApplied;
@@ -76,6 +78,69 @@ public class Liquid : MonoBehaviour {
 		if (isBeingPoured)
 		{
 			GrowVertical();		
+			AddIngredient(myDrinkBase);
+//			AddMixer(myMixer);
+			switch (myDrinkBase){
+				case DrinkBase.whiskey:
+					whiskeyVolume = height - totalVolume + whiskeyVolume;
+					IncrementFlavor(myDrinkProfile, whiskeyVolume);
+					break;
+				case DrinkBase.gin:
+					ginVolume = height - totalVolume + ginVolume;
+					IncrementFlavor(myDrinkProfile, ginVolume);
+					break;
+				case DrinkBase.tequila:
+					tequilaVolume = height - totalVolume + tequilaVolume;
+					IncrementFlavor(myDrinkProfile, tequilaVolume);
+					break;
+				case DrinkBase.vodka:
+					vodkaVolume = height - totalVolume + vodkaVolume;
+					IncrementFlavor(myDrinkProfile, vodkaVolume);		
+					break;
+				case DrinkBase.rum:
+					rumVolume = height - totalVolume + rumVolume;
+					IncrementFlavor(myDrinkProfile, rumVolume);
+					break;
+				case DrinkBase.beer:
+					beerVolume = height - totalVolume + beerVolume;
+					IncrementFlavor(myDrinkProfile, beerVolume);
+					break;
+				case DrinkBase.wine:
+					wineVolume = height - totalVolume + wineVolume;
+					IncrementFlavor(myDrinkProfile, wineVolume);
+					break;
+				case DrinkBase.brandy:
+					brandyVolume = height - totalVolume + brandyVolume;
+					IncrementFlavor(myDrinkProfile, brandyVolume);
+					break;
+				default:
+					break;
+			}
+			
+//			switch (myMixer){
+//				case Mixer.soda:
+//					sodaVolume = height - totalVolume + sodaVolume;
+//					IncrementFlavor(myDrinkProfile, sodaVolume);
+//					break;
+//				case Mixer.tonic:
+//					tonicVolume = height - totalVolume + tonicVolume;
+//					IncrementFlavor(myDrinkProfile, tonicVolume);
+//					break;
+//				case Mixer.apple_juice:
+//					appleJuiceVolume = height - totalVolume + appleJuiceVolume;
+//					IncrementFlavor(myDrinkProfile, appleJuiceVolume);
+//					break;
+//				case Mixer.orange_juice:
+//					orangeJuiceVolume = height - totalVolume + orangeJuiceVolume;
+//					IncrementFlavor(myDrinkProfile, orangeJuiceVolume);
+//					break;
+//				case Mixer.lemon_juice:
+//					lemonJuiceVolume = height - totalVolume + lemonJuiceVolume;
+//					IncrementFlavor(myDrinkProfile, lemonJuiceVolume);
+//					break;
+//				default:
+//					break;
+//			}
 		}
 
  	}
@@ -143,42 +208,8 @@ public class Liquid : MonoBehaviour {
 		LetItPour();
 		myDrinkProfile = Services.DrinkDictionary.drinkBases[_drinkBase];
 //		baseBeingPoured = _drinkBase;
-		switch (_drinkBase){
-            case DrinkBase.whiskey:
-			whiskeyVolume = height - totalVolume + whiskeyVolume;
-			IncrementFlavor(myDrinkProfile, whiskeyVolume);
-			break;
-            case DrinkBase.gin:
-			ginVolume = height - totalVolume + ginVolume;
-			IncrementFlavor(myDrinkProfile, ginVolume);
-			break;
-			case DrinkBase.tequila:
-			tequilaVolume = height - totalVolume + tequilaVolume;
-			IncrementFlavor(myDrinkProfile, tequilaVolume);
-			break;
-			case DrinkBase.vodka:
-			vodkaVolume = height - totalVolume + vodkaVolume;
-			IncrementFlavor(myDrinkProfile, vodkaVolume);		
-			break;
-			case DrinkBase.rum:
-			rumVolume = height - totalVolume + rumVolume;
-			IncrementFlavor(myDrinkProfile, rumVolume);
-			break;
-			case DrinkBase.beer:
-			beerVolume = height - totalVolume + beerVolume;
-			IncrementFlavor(myDrinkProfile, beerVolume);
-			break;
-			case DrinkBase.wine:
-			wineVolume = height - totalVolume + wineVolume;
-			IncrementFlavor(myDrinkProfile, wineVolume);
-			break;
-			case DrinkBase.brandy:
-			brandyVolume = height - totalVolume + brandyVolume;
-			IncrementFlavor(myDrinkProfile, brandyVolume);
-			break;
-			default:
-			break;
-		}
+		myDrinkBase = _drinkBase;
+	
 				
 		// alcoholVolume = myDrinkProfile.alcoholVolume * height;
 		// abv = alcoholVolume/height;		
@@ -188,30 +219,8 @@ public class Liquid : MonoBehaviour {
 		LetItPour();
 		myDrinkProfile = Services.MixerDictionary.mixers[_mixer];
 //		mixerBeingPoured = _mixer;
-		switch (_mixer){
-			case Mixer.soda:
-			sodaVolume = height - totalVolume + sodaVolume;
-			IncrementFlavor(myDrinkProfile, sodaVolume);
-			break;
-			case Mixer.tonic:
-			tonicVolume = height - totalVolume + tonicVolume;
-			IncrementFlavor(myDrinkProfile, tonicVolume);
-			break;
-			case Mixer.apple_juice:
-			appleJuiceVolume = height - totalVolume + appleJuiceVolume;
-			IncrementFlavor(myDrinkProfile, appleJuiceVolume);
-			break;
-			case Mixer.orange_juice:
-			orangeJuiceVolume = height - totalVolume + orangeJuiceVolume;
-			IncrementFlavor(myDrinkProfile, orangeJuiceVolume);
-			break;
-			case Mixer.lemon_juice:
-			lemonJuiceVolume = height - totalVolume + lemonJuiceVolume;
-			IncrementFlavor(myDrinkProfile, lemonJuiceVolume);
-			break;
-			default:
-			break;
-		}
+		myMixer = _mixer;
+
 	}
 
 	private float GetSmokiness(){
