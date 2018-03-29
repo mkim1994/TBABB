@@ -59,6 +59,9 @@ MonoBehaviour:
   dialogue: {fileID: 0}
   CustomerIvory: {fileID: 0}
   CustomerSahana: {fileID: 0}
+  CustomerJulia: {fileID: 0}
+  CustomerShay: {fileID: 0}
+  CustomerIzzy: {fileID: 0}
   dayManager: {fileID: 0}
   audioController: {fileID: 0}
   entrance: {fileID: 0}

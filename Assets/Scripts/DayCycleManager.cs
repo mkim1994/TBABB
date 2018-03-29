@@ -70,6 +70,9 @@ public class DayCycleManager : MonoBehaviour
         List<List<NPC>> npcsDaysOrder= new List<List<NPC>>();
         AddCustomersDays(Services.GameManager.CustomerIvory,npcsDaysOrder);
         AddCustomersDays(Services.GameManager.CustomerSahana,npcsDaysOrder);
+        AddCustomersDays(Services.GameManager.CustomerJulia, npcsDaysOrder);
+        AddCustomersDays(Services.GameManager.CustomerIzzy, npcsDaysOrder);
+        AddCustomersDays(Services.GameManager.CustomerJulia, npcsDaysOrder);
 
         days = new List<Day>();
         for (int d = 0; d < 7; ++d)

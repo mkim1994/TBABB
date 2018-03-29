@@ -13,7 +13,7 @@ public class GameManager : MonoBehaviour {
 	public PlayerInput playerInput;
 	public UIControls uiControls;
     public DialogueRunner dialogue;
-    public NPC CustomerIvory, CustomerSahana;
+    public NPC CustomerIvory, CustomerSahana, CustomerJulia, CustomerShay, CustomerIzzy;
     public DayCycleManager dayManager;
     public AudioController audioController;
 //	public AudioLoopScript audioLoopScript;
