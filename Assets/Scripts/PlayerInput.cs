@@ -422,8 +422,7 @@ public class PlayerInput : MonoBehaviour
 					_startPourDelegate = glass.ReceivePourFromBottle;
 					if (i_startUseLeft)
 					{
-						Debug.Log("start use left!");
-						startPourCoroutine = UtilCoroutines.WaitThenPour(bottle.tweenTime, glass.ReceivePourFromBottle, bottle, 0);
+ 						startPourCoroutine = UtilCoroutines.WaitThenPour(bottle.tweenTime, glass.ReceivePourFromBottle, bottle, 0);
 						StartCoroutine(startPourCoroutine);					
 						bottle.StartPourTween(Vector3.forward + new Vector3(-0.64f, 0, 0.5f));
 						bottle.RotateTween(bottle.leftHandPourRot);
@@ -437,9 +436,11 @@ public class PlayerInput : MonoBehaviour
 				if (pickupableInLeftHand.GetComponent<Bottle>() != null)
 				{
 					Bottle bottle = pickupableInLeftHand.GetComponent<Bottle>();
-					int tweensKilled = DOTween.KillAll();
-//					Debug.Log("Tweens killed = " + tweensKilled);
-				}
+					foreach (var sequence in bottle.tweenSequences)
+					{
+						sequence.Kill(false);
+					}
+ 				}
 				pickupableInLeftHand.RotateToZeroTween();
 				pickupableInLeftHand.EndPourTween();
 				StopCoroutine(startPourCoroutine);
@@ -518,17 +519,34 @@ public class PlayerInput : MonoBehaviour
 				{	
  					Bottle bottle = pickupableInRightHand.GetComponent<Bottle>();
 					Glass glass = pickupable.GetComponent<Glass>();
-					glass.ReceivePourFromBottle(bottle, 1);
-					bottle.StartPourTween(Vector3.forward + new Vector3(0.64f, 0, 0.5f));
-					bottle.RotateTween(bottle.rightHandPourRot);
+					_startPourDelegate = glass.ReceivePourFromBottle;
+					if (i_startUseRight)
+					{
+						startPourCoroutine = UtilCoroutines.WaitThenPour(bottle.tweenTime, glass.ReceivePourFromBottle, bottle, 0);
+						StartCoroutine(startPourCoroutine);					
+						bottle.StartPourTween(Vector3.forward + new Vector3(0.64f, 0, 0.5f));
+						bottle.RotateTween(bottle.rightHandPourRot);
+					}
+//					glass.ReceivePourFromBottle(bottle, 1);
+//					bottle.StartPourTween(Vector3.forward + new Vector3(0.64f, 0, 0.5f));
+//					bottle.RotateTween(bottle.rightHandPourRot);
 				}
 			}
 		} 
 		if(i_endUseRight){
 			if(pickupableInRightHand != null){
+				if (pickupableInRightHand.GetComponent<Bottle>() != null)
+				{
+					Bottle bottle = pickupableInRightHand.GetComponent<Bottle>();
+					foreach (var sequence in bottle.tweenSequences)
+					{
+						sequence.Kill(false);
+					}
+				}
 				pickupableInRightHand.RotateToZeroTween();
 				pickupableInRightHand.EndPourTween();
-				StartCoroutine(UtilCoroutines.WaitThenSetTweensToInactive(pickupableInLeftHand.tweenEndTime, _tweenManagerDelegate));
+				StopCoroutine(startPourCoroutine);
+				StartCoroutine(UtilCoroutines.WaitThenSetTweensToInactive(pickupableInRightHand.tweenEndTime, _tweenManagerDelegate));
 
 				if (pickupable != null)
 				{
