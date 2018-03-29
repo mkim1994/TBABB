@@ -20,6 +20,7 @@ public class Bottle : Pickupable {
 		Sequence sequence = DOTween.Sequence();
 		sequence.Append(transform.DOLocalRotate(rotation, tweenTime, RotateMode.Fast)).SetEase(Ease.InOutBack);
 //		sequence.OnComplete(() => DeclareInactiveTween());
+		tweenSequences.Add(sequence);
 	} 
 	
 	public override void StartPourTween(Vector3 moveToPos)
@@ -30,6 +31,7 @@ public class Bottle : Pickupable {
  		Sequence sequence = DOTween.Sequence();
 		sequence.Append(transform.DOLocalMove(moveToPos, tweenTime, false)).SetEase(Ease.InOutQuart);
 //		sequence.OnComplete(() => DeclareInactiveTween());		
+		tweenSequences.Add(sequence);
 	}
 
 	public override void EndPourTween()
@@ -38,7 +40,8 @@ public class Bottle : Pickupable {
 		Services.AudioLoopScript.isPlayerPouring = false;
  		Sequence sequence = DOTween.Sequence();
 		sequence.Append(transform.DOLocalMove(startPos, tweenEndTime, false)).SetEase(Ease.InOutSine);
-//		sequence.OnComplete(() => DeclareInactiveTween());				
+//		sequence.OnComplete(() => DeclareInactiveTween());			
+		tweenSequences.Add(sequence);
 	}
 
 	public override void UseLeftHand(){ 

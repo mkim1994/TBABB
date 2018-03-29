@@ -16,6 +16,8 @@ public class Pickupable : MonoBehaviour
     public float tweenEndTime;
     public float pickupDropTime;
     public bool pickedUp = false;
+    public List<Sequence> tweenSequences = new List<Sequence>();
+
 
     [SerializeField] private Dropzone myChildDropzone;
  
@@ -129,6 +131,7 @@ public class Pickupable : MonoBehaviour
         sequence.OnComplete(() => DeclareInactiveTween());
         StartCoroutine(ChangeToFirstPersonLayer(pickupDropTime));
         pickedUp = true;
+        tweenSequences.Add(sequence);
     }
 
     public virtual void DropTween(Vector3 dropPos, Vector3 dropOffset, Dropzone _targetDropzone){
@@ -140,6 +143,7 @@ public class Pickupable : MonoBehaviour
         sequence.OnComplete(() => DeclareInactiveTween());
         StartCoroutine(ChangeToWorldLayer(pickupDropTime));
         pickedUp = false;
+        tweenSequences.Add(sequence);
     }
 
     public virtual void RotateTween(Vector3 rotation){
@@ -147,6 +151,7 @@ public class Pickupable : MonoBehaviour
         Sequence sequence = DOTween.Sequence();
         sequence.Append(transform.DOLocalRotate(rotation, tweenTime, RotateMode.Fast));
         sequence.OnComplete(() => DeclareInactiveTween());
+        tweenSequences.Add(sequence);
     }
 
     public virtual void RotateToZeroTween(){
@@ -154,6 +159,7 @@ public class Pickupable : MonoBehaviour
         Sequence sequence = DOTween.Sequence();
         sequence.Append(transform.DOLocalRotate(Vector3.zero, tweenEndTime, RotateMode.Fast));
         sequence.OnComplete(() => DeclareInactiveTween());
+        tweenSequences.Add(sequence);
     } 
 
     public void DeclareActiveTween(){
