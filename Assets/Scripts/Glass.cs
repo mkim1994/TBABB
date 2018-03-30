@@ -10,7 +10,7 @@ public class Glass : Pickupable
 	[SerializeField] private bool isFull;
 	public bool isDirty;
 
-	private Liquid liquid;
+	public Liquid liquid;
 
 //	private Vector3 leftHandPourRot = new Vector3(88.76f, 0, 0);
 //	private Vector3 rightHandPourRot = new Vector3(87.7370f, 0, 6.915f);
@@ -74,11 +74,11 @@ public class Glass : Pickupable
 	{
 
 		//left hand is 0, right hand is 1
-
-
+//		Debug.Log("Receive Pour From Bottle Called!");
+		
 		if (bottleInHand.myDrinkBase != DrinkBase.none && bottleInHand.myMixer == Mixer.none)
 		{
-			liquid.AddIngredient(bottleInHand.myDrinkBase);
+ 			liquid.AddIngredient(bottleInHand.myDrinkBase);
 			if (pickedUp)
 			{
 //				base.RotateTween(leftHandPourRot);
@@ -94,7 +94,7 @@ public class Glass : Pickupable
 		}
 		else if (bottleInHand.myMixer != Mixer.none && bottleInHand.myDrinkBase == DrinkBase.none)
 		{
-			liquid.AddMixer(bottleInHand.myMixer);
+ 			liquid.AddMixer(bottleInHand.myMixer);
 			if (pickedUp)
 			{
 				if (handNum == 0)
@@ -114,7 +114,6 @@ public class Glass : Pickupable
 		if (_targetDropzone.GetComponentInParent<Coaster>() != null)
 		{
 			Debug.Log("Target dropzone has coaster!");
-			Debug.Log(_targetDropzone.transform.localScale.y);
 //			dropOffset = new Vector3(0, -0.10f, 0);
 		}
 		else
@@ -142,11 +141,10 @@ public class Glass : Pickupable
 
 	public void EndPourFromBottle()
 	{
-		Liquid liquid = GetComponentInChildren<Liquid>();
+//		Liquid liquid = GetComponentInChildren<Liquid>();
+		liquid.isBeingPoured = false;
 		liquid.isEvaluated = false;
 		liquid.EvaluateDrinkInCoaster();
-		liquid.isBeingPoured = false;
-
 //		liquid.isPouring = false;
 	}
 

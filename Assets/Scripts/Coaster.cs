@@ -13,7 +13,7 @@ public class Coaster : MonoBehaviour
 	public Customer currentCustomer;
 	public DrinkProfile drinkOnCoaster;	
 
-	private float minAcceptableVolume = 5f;
+	private float minAcceptableVolume = 15f;
 
 	void Start()
 	{
@@ -52,36 +52,36 @@ public class Coaster : MonoBehaviour
 			float drinkDeviation = DrinkProfile.GetProfileDeviation(_cocktail, currentOrder);
 			// float abvSimilarity = DrinkProfile.GetABV
 //			float abvDeviation = DrinkProfile.GetABVdeviation(_cocktail, currentOrder);
-			Debug.Log("drink deviation is " + drinkDeviation);
+//			Debug.Log("drink deviation is " + drinkDeviation);
 			drinkOnCoaster = _cocktail;
 			if (_cocktail.totalVolume >= minAcceptableVolume)
 			{
 				if(drinkDeviation <= 0.5f && drinkDeviation > 0){
 					if(_cocktail.alcoholicStrength >= 0.25f){
-						Debug.Log("Case 1 true!");
+//						Debug.Log("Case 1 true!");
 						myCustomer.SetCustomerVars (1.0f, 100);
 						myCustomer.InitiateDialogue();
 					} else if (_cocktail.alcoholicStrength < 0.25f && _cocktail.alcoholicStrength >= 0.10f){
-						Debug.Log("Case 2 true!");
+//						Debug.Log("Case 2 true!");
 						myCustomer.SetCustomerVars(1.0f, 50);
 						myCustomer.InitiateDialogue();
 					} else if (_cocktail.alcoholicStrength < 0.10f){
 						//true when you drop a whole bottle or an empty glass.
-						Debug.Log("Case 3 true!");
+//						Debug.Log("Case 3 true!");
 						myCustomer.SetCustomerVars(1.0f, 0);
 						myCustomer.InitiateDialogue();
 					}
 				} else if (drinkDeviation > 0.5f && drinkDeviation <= 1.5f){
 					if(_cocktail.alcoholicStrength >= 0.25f){
-						Debug.Log("Case 4 true!");
+//						Debug.Log("Case 4 true!");
 						myCustomer.SetCustomerVars (0.8f, 100);
 						myCustomer.InitiateDialogue();
 					} else if (_cocktail.alcoholicStrength < 0.25f && _cocktail.alcoholicStrength >= 0.10f){
-						Debug.Log("Case 5 true!");
+//						Debug.Log("Case 5 true!");
 						myCustomer.SetCustomerVars(0.8f, 50);
 						myCustomer.InitiateDialogue();
 					} else if (_cocktail.alcoholicStrength < 0.10f){
-						Debug.Log("Case 6 true!");
+//						Debug.Log("Case 6 true!");
 						myCustomer.SetCustomerVars(0.8f, 0);
 						myCustomer.InitiateDialogue();
 					}
@@ -103,15 +103,15 @@ public class Coaster : MonoBehaviour
 //				}
 				else if (drinkDeviation > 1.5f && drinkDeviation <= 1.95f){
 					if(_cocktail.alcoholicStrength >= 0.25f){
-						Debug.Log("Case 7 true!");
+//						Debug.Log("Case 7 true!");
 						myCustomer.SetCustomerVars (0.5f, 100);
 						myCustomer.InitiateDialogue();
 					} else if (_cocktail.alcoholicStrength < 0.25f && _cocktail.alcoholicStrength >= 0.10f){
-						Debug.Log("Case 8 true!");
+//						Debug.Log("Case 8 true!");
 						myCustomer.SetCustomerVars(0.5f, 50);
 						myCustomer.InitiateDialogue();
 					} else if (_cocktail.alcoholicStrength < 0.10f){
-						Debug.Log("Case 9 true!");
+//						Debug.Log("Case 9 true!");
 						myCustomer.SetCustomerVars(0.5f, 0);
 						myCustomer.InitiateDialogue();
 					}   	
@@ -119,15 +119,15 @@ public class Coaster : MonoBehaviour
 				else if (drinkDeviation > 1.95f) //no whiskey at all, acceptable amt of drink
 				{
 					if(_cocktail.alcoholicStrength >= 0.25f){
-						Debug.Log("Case 7 true!");
+//						Debug.Log("Case 7 true!");
 						myCustomer.SetCustomerVars (0.3f, 100);
 						myCustomer.InitiateDialogue();
 					} else if (_cocktail.alcoholicStrength < 0.25f && _cocktail.alcoholicStrength >= 0.10f){
-						Debug.Log("Case 8 true!");
+//						Debug.Log("Case 8 true!");
 						myCustomer.SetCustomerVars(0.3f, 50);
 						myCustomer.InitiateDialogue();
 					} else if (_cocktail.alcoholicStrength < 0.10f){
-						Debug.Log("Case 9 true!");
+//						Debug.Log("Case 9 true!");
 						myCustomer.SetCustomerVars(0.3f, 0);
 						myCustomer.InitiateDialogue();
 					}

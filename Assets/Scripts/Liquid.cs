@@ -62,7 +62,8 @@ public class Liquid : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
- 		EvaluateDrinkInCoaster ();
+		
+//		Debug.Log(gameObject.name + " isBeingPoured is " + isBeingPoured);
  		
 		totalVolume = whiskeyVolume + ginVolume + brandyVolume + vodkaVolume + wineVolume + beerVolume + tequilaVolume + rumVolume 
 					+ sodaVolume + tonicVolume + appleJuiceVolume + orangeJuiceVolume + lemonJuiceVolume;
@@ -70,6 +71,7 @@ public class Liquid : MonoBehaviour {
 //		alcoholVolume = whiskeyVolume + ginVolume + brandyVolume + vodkaVolume + wineVolume + beerVolume + tequilaVolume + rumVolume; 
 		// abv = alcoholVolume/height;
 		abv = GetAlcoholicStrength();
+		
 		if (thisCocktail != null)
 		{
 			thisCocktail.totalVolume = totalVolume;
@@ -116,6 +118,8 @@ public class Liquid : MonoBehaviour {
 				default:
 					break;
 			}
+
+//			EvaluateDrinkInCoaster ();
 			
 //			switch (myMixer){
 //				case Mixer.soda:
@@ -142,6 +146,13 @@ public class Liquid : MonoBehaviour {
 //					break;
 //			}
 		}
+		
+		if (Input.GetKeyDown(KeyCode.CapsLock))
+		{
+			isBeingPoured = false;
+		}
+		
+		EvaluateDrinkInCoaster ();
 
  	}
 
@@ -163,6 +174,7 @@ public class Liquid : MonoBehaviour {
 
 	public void LetItPour()
 	{
+		Debug.Log("LetItPour is being called");
 		isBeingPoured = true;
 	}
 
@@ -205,12 +217,10 @@ public class Liquid : MonoBehaviour {
 
 	public void AddIngredient(DrinkBase _drinkBase){
 //		GrowVertical();
-		LetItPour();
+//		LetItPour();
 		myDrinkProfile = Services.DrinkDictionary.drinkBases[_drinkBase];
 //		baseBeingPoured = _drinkBase;
 		myDrinkBase = _drinkBase;
-	
-				
 		// alcoholVolume = myDrinkProfile.alcoholVolume * height;
 		// abv = alcoholVolume/height;		
 	}
@@ -333,8 +343,9 @@ public class Liquid : MonoBehaviour {
 	public void EvaluateDrinkInCoaster(){
 		foreach (var coaster in coasters) {
 			if (Vector3.Distance (coaster.gameObject.transform.position, transform.position) <= 0.55f) {
-				if(!isEvaluated){
-					coaster.EvaluateDrink (this.thisCocktail, this);
+				if(!isEvaluated)
+				{
+ 					coaster.EvaluateDrink (this.thisCocktail, this);
 					isEvaluated = true;
 				}        
  			}
@@ -350,5 +361,5 @@ public class Liquid : MonoBehaviour {
 	{
 		isEvaluated = false;
 	}
-
+	
 }

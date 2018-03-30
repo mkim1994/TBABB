@@ -166,7 +166,7 @@ public class Pickupable : MonoBehaviour
         Services.TweenManager.tweensAreActive = true;
     }
     
-    public void DeclareInactiveTween(){
+    public virtual void DeclareInactiveTween(){
         Services.TweenManager.tweensAreActive = false;
     }
 
