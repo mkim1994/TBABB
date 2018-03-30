@@ -339,7 +339,6 @@ public class Liquid : MonoBehaviour {
 		coasters.AddRange (FindObjectsOfType<Coaster> ());
 	}
 
-
 	public void EvaluateDrinkInCoaster(){
 		foreach (var coaster in coasters) {
 			if (Vector3.Distance (coaster.gameObject.transform.position, transform.position) <= 0.55f) {
