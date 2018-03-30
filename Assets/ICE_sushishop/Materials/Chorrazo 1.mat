@@ -6,8 +6,8 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: Chorrazo
-  m_Shader: {fileID: 4800000, guid: c16efd14f0adca84d960699ce98be4a5, type: 3}
+  m_Name: Chorrazo 1
+  m_Shader: {fileID: 4800000, guid: 47c2f584a3d053541a7f028e213fed6d, type: 3}
   m_ShaderKeywords: _ALPHAPREMULTIPLY_ON _EMISSION _NODE_2671_ON _SMOOTHNESS_TEXTURE_ALBEDO_CHANNEL_A
     _SWITCHDIREC_ON
   m_LightmapFlags: 5

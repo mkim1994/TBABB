@@ -29,6 +29,9 @@ public class Liquid : MonoBehaviour {
     private float originalX, originalZ;
 	
 	public DrinkProfile thisCocktail;
+	public GameObject otherLiquid;
+	public GameObject otherLiquidMask;
+	public GameObject myMask;
 
 	public bool isBeingPoured;
  
