@@ -157,7 +157,7 @@ public class PlayerInput : MonoBehaviour
 				_interactionState = InteractionState.LeftEmpty_RightHasObject;
 			}
 		}
-
+		
 		#region Restart
 		i_restart = player.GetButtonDown("Restart");
 		if(i_restart){
@@ -421,7 +421,7 @@ public class PlayerInput : MonoBehaviour
 					if (pickupableInLeftHand.GetComponent<Glass>() != null)
 					{
 						Glass leftHandGlass = pickupableInLeftHand.GetComponent<Glass>();
-						leftHandGlass.EmptyGlass();
+						leftHandGlass.LeftHandEmptyGlass();
 					}
 				}
 			}
@@ -443,6 +443,7 @@ public class PlayerInput : MonoBehaviour
 								StartCoroutine(startPourCoroutine);					
 								bottle.StartPourTween(Vector3.forward + new Vector3(-0.64f, 0, 0.5f));
 								bottle.RotateTween(bottle.leftHandPourRot);
+ 							 
 							} 
 						}
 						else
@@ -482,7 +483,7 @@ public class PlayerInput : MonoBehaviour
 							if (pickupableInLeftHand.GetComponent<Bottle>() != null)
 							{
 								Bottle bottle = pickupableInLeftHand.GetComponent<Bottle>();
-								foreach (var sequence in bottle.tweenSequences)
+ 								foreach (var sequence in bottle.tweenSequences)
 								{
 									sequence.Kill(false);
 								}
@@ -508,7 +509,7 @@ public class PlayerInput : MonoBehaviour
 						if (pickupableInLeftHand.GetComponent<Bottle>() != null)
 						{
 							Bottle bottle = pickupableInLeftHand.GetComponent<Bottle>();
-							foreach (var sequence in bottle.tweenSequences)
+ 							foreach (var sequence in bottle.tweenSequences)
 							{
 								sequence.Kill(false);
 							}
@@ -518,7 +519,7 @@ public class PlayerInput : MonoBehaviour
 							if (pickupable.GetComponent<Glass>() != null)
 							{
 								Glass glass = pickupable.GetComponent<Glass>();
-								glass.liquid.isBeingPoured = false;
+ 								glass.liquid.isBeingPoured = false;
 								IEnumerator isBeingPouredCoroutine = WaitThenCallFunction(glass);
 								StartCoroutine(isBeingPouredCoroutine);
 							}
@@ -595,7 +596,7 @@ public class PlayerInput : MonoBehaviour
 				if (pickupableInRightHand.GetComponent<Glass>() != null)
 				{
 					Glass rightHandGlass = pickupableInRightHand.GetComponent<Glass>();
-					rightHandGlass.EmptyGlass();
+					rightHandGlass.RightHandEmptyGlass();
 				}
 			}
 			if (pickupableInRightHand != null && pickupable != null)
@@ -617,7 +618,7 @@ public class PlayerInput : MonoBehaviour
 								StartCoroutine(startPourCoroutine);					
 								bottle.StartPourTween(Vector3.forward + new Vector3(0.64f, 0, 0.5f));
 								bottle.RotateTween(bottle.rightHandPourRot);
-							}
+ 							}
 						}
 						else
 						{
@@ -635,7 +636,8 @@ public class PlayerInput : MonoBehaviour
 							StartCoroutine(WaitThenSetBoolToTrue(bottle.tweenTime, glass.liquid));
 							StartCoroutine(startPourCoroutine);					
 							bottle.StartPourTween(Vector3.forward + new Vector3(0.64f, 0, 0.5f));
-							bottle.RotateTween(bottle.rightHandPourRot);	
+							bottle.RotateTween(bottle.rightHandPourRot);
+ 
 						}
 					}
 				}
@@ -656,7 +658,7 @@ public class PlayerInput : MonoBehaviour
 							if (pickupableInRightHand.GetComponent<Bottle>() != null)
 							{
 								Bottle bottle = pickupableInRightHand.GetComponent<Bottle>();
-								foreach (var sequence in bottle.tweenSequences)
+ 								foreach (var sequence in bottle.tweenSequences)
 								{
 									sequence.Kill(false);
 								}
@@ -671,6 +673,8 @@ public class PlayerInput : MonoBehaviour
 									StartCoroutine(isBeingPouredCoroutine);
 								}
 							}
+
+
 							pickupableInRightHand.RotateToZeroTween();
 							pickupableInRightHand.EndPourTween();
 							StartCoroutine(UtilCoroutines.WaitThenSetTweensToInactive(pickupableInRightHand.tweenEndTime, _tweenManagerDelegate));

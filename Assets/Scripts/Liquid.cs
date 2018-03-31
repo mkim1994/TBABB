@@ -150,11 +150,12 @@ public class Liquid : MonoBehaviour {
 //			}
 		}
 		
-		if (Input.GetKeyDown(KeyCode.CapsLock))
-		{
-			isBeingPoured = false;
-		}
-		
+//		if (Input.GetKeyDown(KeyCode.CapsLock))
+//		{
+//			isBeingPoured = false;
+//		}
+
+ 		
 		EvaluateDrinkInCoaster ();
 
  	}
@@ -221,9 +222,13 @@ public class Liquid : MonoBehaviour {
 	public void AddIngredient(DrinkBase _drinkBase){
 //		GrowVertical();
 //		LetItPour();
-		myDrinkProfile = Services.DrinkDictionary.drinkBases[_drinkBase];
+		if (Services.DrinkDictionary.drinkBases.ContainsKey(_drinkBase))
+		{
+			myDrinkProfile = Services.DrinkDictionary.drinkBases[_drinkBase];		
+			myDrinkBase = _drinkBase;
+		}
 //		baseBeingPoured = _drinkBase;
-		myDrinkBase = _drinkBase;
+		
 		// alcoholVolume = myDrinkProfile.alcoholVolume * height;
 		// abv = alcoholVolume/height;		
 	}

@@ -14,8 +14,8 @@ public class Glass : Pickupable
 
 //	private Vector3 leftHandPourRot = new Vector3(88.76f, 0, 0);
 //	private Vector3 rightHandPourRot = new Vector3(87.7370f, 0, 6.915f);
-	private Vector3 leftHandPourRot = new Vector3(0, 0, 0);
-	private Vector3 rightHandPourRot = new Vector3(0, 0, 6.915f);
+	private Vector3 leftHandPourRot = new Vector3(80f, 0, 6.915f);
+	private Vector3 rightHandPourRot = new Vector3(80f, 0, 6.915f);
 	private Vector3 leftHandPourPos = new Vector3(-0.14f, -0.5f, 1.75f);
 	private Vector3 rightHandPourPos = new Vector3(0.14f, -0.5f, 1.75f);
 
@@ -70,15 +70,13 @@ public class Glass : Pickupable
 		}
 	}
 
-	public void ReceivePourFromBottle(Bottle bottleInHand, int handNum)
+ 	public void ReceivePourFromBottle(Bottle bottleInHand, int handNum)
 	{
-
-		//left hand is 0, right hand is 1
-//		Debug.Log("Receive Pour From Bottle Called!");
-		
+		//left hand is 0, right hand is 1		
 		if (bottleInHand.myDrinkBase != DrinkBase.none && bottleInHand.myMixer == Mixer.none)
 		{
- 			liquid.AddIngredient(bottleInHand.myDrinkBase);
+			Debug.Log(bottleInHand.myDrinkBase);
+			liquid.AddIngredient(bottleInHand.myDrinkBase);
 			if (pickedUp)
 			{
 //				base.RotateTween(leftHandPourRot);
@@ -94,7 +92,7 @@ public class Glass : Pickupable
 		}
 		else if (bottleInHand.myMixer != Mixer.none && bottleInHand.myDrinkBase == DrinkBase.none)
 		{
- 			liquid.AddMixer(bottleInHand.myMixer);
+			liquid.AddMixer(bottleInHand.myMixer);
 			if (pickedUp)
 			{
 				if (handNum == 0)
@@ -165,17 +163,35 @@ public class Glass : Pickupable
 		}
 	}
 
-	public void EmptyGlass()
+	
+	public void LeftHandEmptyGlass()
 	{	
 		DeclareActiveTween();
 		Sequence sequence = DOTween.Sequence();
 		Vector3 moveToPos = Vector3.forward + new Vector3(-0.482f, 0, 0.5f);
-		sequence.Append(transform.DOLocalMove(moveToPos, 0.5f, false));
+		sequence.Append(transform.DOLocalMove(leftHandPourPos, 0.5f, false));
 		sequence.Append(transform.DOLocalMove(startPos, 0.5f, false));
 		sequence.OnComplete(() => DeclareInactiveTween());
 		
 		Sequence rotateSequence = DOTween.Sequence();
-		rotateSequence.Append(transform.DOLocalRotate(Vector3.right * 90f, 0.5f, RotateMode.Fast));
+		rotateSequence.Append(transform.DOLocalRotate(leftHandPourRot, 0.5f, RotateMode.Fast));
+		rotateSequence.Append(transform.DOLocalRotate(Vector3.zero, 0.5f, RotateMode.Fast));
+		rotateSequence.OnComplete(() => liquid.EmptyLiquid());
+		
+//		liquid.empty;
+	}
+	
+	public void RightHandEmptyGlass()
+	{	
+		DeclareActiveTween();
+		Sequence sequence = DOTween.Sequence();
+		Vector3 moveToPos = Vector3.forward + new Vector3(-0.482f, 0, 0.5f);
+		sequence.Append(transform.DOLocalMove(rightHandPourPos, 0.5f, false));
+		sequence.Append(transform.DOLocalMove(startPos, 0.5f, false));
+		sequence.OnComplete(() => DeclareInactiveTween());
+		
+		Sequence rotateSequence = DOTween.Sequence();
+		rotateSequence.Append(transform.DOLocalRotate(rightHandPourRot, 0.5f, RotateMode.Fast));
 		rotateSequence.Append(transform.DOLocalRotate(Vector3.zero, 0.5f, RotateMode.Fast));
 		rotateSequence.OnComplete(() => liquid.EmptyLiquid());
 		
