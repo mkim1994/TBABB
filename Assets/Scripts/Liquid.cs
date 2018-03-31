@@ -229,8 +229,7 @@ public class Liquid : MonoBehaviour {
 	}
 
 	public void AddMixer(Mixer _mixer){
-		LetItPour();
-		myDrinkProfile = Services.MixerDictionary.mixers[_mixer];
+ 		myDrinkProfile = Services.MixerDictionary.mixers[_mixer];
 //		mixerBeingPoured = _mixer;
 		myMixer = _mixer;
 

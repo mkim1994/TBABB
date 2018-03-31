@@ -47,6 +47,24 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1003928085460172
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4966043209109128}
+  - component: {fileID: 33424782379670376}
+  - component: {fileID: 65661690912359086}
+  - component: {fileID: 23689706090971074}
+  m_Layer: 12
+  m_Name: Cube (4)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1004223891177916
 GameObject:
   m_ObjectHideFlags: 1
@@ -1565,6 +1583,24 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1098603123979276
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4099016282911394}
+  - component: {fileID: 33987058173317448}
+  - component: {fileID: 65401727881812636}
+  - component: {fileID: 23426350627100790}
+  m_Layer: 12
+  m_Name: Cube (7)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1099332119190138
 GameObject:
   m_ObjectHideFlags: 1
@@ -2163,7 +2199,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1143313676588516
 GameObject:
   m_ObjectHideFlags: 1
@@ -2566,7 +2602,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1163505193343294
 GameObject:
   m_ObjectHideFlags: 1
@@ -3736,7 +3772,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1258863617135922
 GameObject:
   m_ObjectHideFlags: 1
@@ -4102,7 +4138,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1287802980462890
 GameObject:
   m_ObjectHideFlags: 1
@@ -5031,6 +5067,24 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1357300697743504
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4232791030450608}
+  - component: {fileID: 33337531172025318}
+  - component: {fileID: 65537072503035744}
+  - component: {fileID: 23820449232284760}
+  m_Layer: 12
+  m_Name: Cube (3)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1357561041297696
 GameObject:
   m_ObjectHideFlags: 1
@@ -5873,6 +5927,24 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1444093052729878
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4947124356863990}
+  - component: {fileID: 33057270460415474}
+  - component: {fileID: 65158611461245254}
+  - component: {fileID: 23909927489532202}
+  m_Layer: 12
+  m_Name: Cube (8)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1445456490287084
 GameObject:
   m_ObjectHideFlags: 1
@@ -6616,6 +6688,21 @@ GameObject:
   - component: {fileID: 114563421809592928}
   m_Layer: 0
   m_Name: glassDrinkCylinder
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1502824651888230
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4342726862919814}
+  m_Layer: 12
+  m_Name: IceMaker
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7935,6 +8022,24 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1635714298908198
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4033537268272964}
+  - component: {fileID: 33634079575438764}
+  - component: {fileID: 65701659188575860}
+  - component: {fileID: 23429704435330462}
+  m_Layer: 12
+  m_Name: Cube (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1636458884525238
 GameObject:
   m_ObjectHideFlags: 1
@@ -8208,6 +8313,24 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 0
+--- !u!1 &1655434232168378
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4314511130519512}
+  - component: {fileID: 33850147503553908}
+  - component: {fileID: 65081675876917074}
+  - component: {fileID: 23246006675284608}
+  m_Layer: 12
+  m_Name: Cube (10)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1656643405032010
 GameObject:
   m_ObjectHideFlags: 1
@@ -8802,6 +8925,24 @@ GameObject:
   - component: {fileID: 54424513814955016}
   m_Layer: 0
   m_Name: DefaultBottle (86)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1709223651449724
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4755316427589260}
+  - component: {fileID: 33984220588167888}
+  - component: {fileID: 65320036455912496}
+  - component: {fileID: 23720487232655112}
+  m_Layer: 12
+  m_Name: Cube (9)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9624,6 +9765,24 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1807417281221904
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4346207017198970}
+  - component: {fileID: 33623242904803240}
+  - component: {fileID: 65671633624062278}
+  - component: {fileID: 23334506596114196}
+  m_Layer: 12
+  m_Name: Cube
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1810853703542566
 GameObject:
   m_ObjectHideFlags: 1
@@ -9694,6 +9853,24 @@ GameObject:
   - component: {fileID: 114754951727251442}
   m_Layer: 0
   m_Name: GlassPrefab (44)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1816250108174588
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4856372479173216}
+  - component: {fileID: 33961169480446366}
+  - component: {fileID: 65825518635788454}
+  - component: {fileID: 23629560166141974}
+  m_Layer: 12
+  m_Name: Cube (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10012,6 +10189,21 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1844818872952790
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4405391185264760}
+  m_Layer: 12
+  m_Name: IceSign
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1849161980791916
 GameObject:
   m_ObjectHideFlags: 1
@@ -10135,6 +10327,24 @@ GameObject:
   - component: {fileID: 95849875995571192}
   m_Layer: 0
   m_Name: GlassModel
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1858974736661110
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4999874459135732}
+  - component: {fileID: 33563079389843562}
+  - component: {fileID: 65890850202507854}
+  - component: {fileID: 23793085555238054}
+  m_Layer: 12
+  m_Name: Cube (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10611,6 +10821,24 @@ GameObject:
   - component: {fileID: 54756009240717096}
   m_Layer: 0
   m_Name: DefaultBottle (91)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1902263154523090
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4099613989403404}
+  - component: {fileID: 33055208385382208}
+  - component: {fileID: 65777035142744288}
+  - component: {fileID: 23197586790328106}
+  m_Layer: 12
+  m_Name: Cube (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11795,6 +12023,19 @@ Transform:
   m_Father: {fileID: 4872318542058628}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4033537268272964
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1635714298908198}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -2.556, y: 4.1436, z: 2.1891}
+  m_LocalScale: {x: 0.7183367, y: 0.41876924, z: 0.77224624}
+  m_Children: []
+  m_Father: {fileID: 4342726862919814}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4035148969729872
 Transform:
   m_ObjectHideFlags: 1
@@ -12370,6 +12611,32 @@ Transform:
   m_Father: {fileID: 4861439855706366}
   m_RootOrder: 96
   m_LocalEulerAnglesHint: {x: 0, y: -10.494, z: 0}
+--- !u!4 &4099016282911394
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1098603123979276}
+  m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: 0.44843203, z: -11.631196}
+  m_LocalScale: {x: 1, y: 4.287369, z: 0.102977656}
+  m_Children: []
+  m_Father: {fileID: 4405391185264760}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+--- !u!4 &4099613989403404
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1902263154523090}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -9.98841}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4405391185264760}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4100849706805784
 Transform:
   m_ObjectHideFlags: 1
@@ -13583,6 +13850,19 @@ Transform:
   m_Father: {fileID: 4171476119206860}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4232791030450608
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1357300697743504}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4405391185264760}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4234306907179256
 Transform:
   m_ObjectHideFlags: 1
@@ -14605,6 +14885,19 @@ Transform:
   m_Father: {fileID: 4258624004506724}
   m_RootOrder: 31
   m_LocalEulerAnglesHint: {x: 0, y: 25.95, z: 0}
+--- !u!4 &4314511130519512
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1655434232168378}
+  m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: -0.44843048, z: -5.204254}
+  m_LocalScale: {x: 1, y: 4.287369, z: 0.102977656}
+  m_Children: []
+  m_Father: {fileID: 4405391185264760}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!4 &4315037044958094
 Transform:
   m_ObjectHideFlags: 1
@@ -14885,6 +15178,36 @@ Transform:
   m_Father: {fileID: 4174320290193702}
   m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: -1.5830001, z: 0}
+--- !u!4 &4342726862919814
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1502824651888230}
+  m_LocalRotation: {x: -0, y: 0.06320867, z: -0, w: 0.9980003}
+  m_LocalPosition: {x: -0.224, y: 0, z: -0.38}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 4405391185264760}
+  - {fileID: 4346207017198970}
+  - {fileID: 4999874459135732}
+  - {fileID: 4033537268272964}
+  m_Father: {fileID: 4426755293192950}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 7.248, z: 0}
+--- !u!4 &4346207017198970
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1807417281221904}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -2.5887, y: 3.1163, z: 2.1891}
+  m_LocalScale: {x: 0.7838255, y: 0.1341581, z: 0.7722448}
+  m_Children: []
+  m_Father: {fileID: 4342726862919814}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4346412716896816
 Transform:
   m_ObjectHideFlags: 1
@@ -15464,6 +15787,27 @@ Transform:
   m_Father: {fileID: 4362381728485356}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4405391185264760
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1844818872952790}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -2.896, y: 4.143, z: 2.394}
+  m_LocalScale: {x: 0.102461845, y: 0.3097466, z: 0.03189696}
+  m_Children:
+  - {fileID: 4232791030450608}
+  - {fileID: 4966043209109128}
+  - {fileID: 4099613989403404}
+  - {fileID: 4856372479173216}
+  - {fileID: 4099016282911394}
+  - {fileID: 4947124356863990}
+  - {fileID: 4755316427589260}
+  - {fileID: 4314511130519512}
+  m_Father: {fileID: 4342726862919814}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4406193367464776
 Transform:
   m_ObjectHideFlags: 1
@@ -15698,6 +16042,7 @@ Transform:
   - {fileID: 4174320290193702}
   - {fileID: 4992694315264474}
   - {fileID: 4105568214492956}
+  - {fileID: 4342726862919814}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -18301,6 +18646,19 @@ Transform:
   m_Father: {fileID: 4549169356842596}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4755316427589260
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1709223651449724}
+  m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: 0.44843203, z: -5.204254}
+  m_LocalScale: {x: 1, y: 4.287369, z: 0.102977656}
+  m_Children: []
+  m_Father: {fileID: 4405391185264760}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!4 &4756828801246640
 Transform:
   m_ObjectHideFlags: 1
@@ -19078,6 +19436,19 @@ Transform:
   m_Father: {fileID: 4861439855706366}
   m_RootOrder: 61
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4856372479173216
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1816250108174588}
+  m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: -0.44843048, z: -11.631196}
+  m_LocalScale: {x: 1, y: 4.287369, z: 0.102977656}
+  m_Children: []
+  m_Father: {fileID: 4405391185264760}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!4 &4856589548300590
 Transform:
   m_ObjectHideFlags: 1
@@ -20009,6 +20380,19 @@ Transform:
   m_Father: {fileID: 4810327258560582}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4947124356863990
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1444093052729878}
+  m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: 0.10008226, z: -11.157797}
+  m_LocalScale: {x: 1, y: 3.3378272, z: 0.102977656}
+  m_Children: []
+  m_Father: {fileID: 4405391185264760}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!4 &4948619164731608
 Transform:
   m_ObjectHideFlags: 1
@@ -20090,6 +20474,19 @@ Transform:
   - {fileID: 4994899777739170}
   m_Father: {fileID: 4258624004506724}
   m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4966043209109128
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1003928085460172}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -3.5614607}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4405391185264760}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4967758211577118
 Transform:
@@ -20425,6 +20822,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 4298389944184598}
   m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4999874459135732
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1858974736661110}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -2.4352, y: 3.5588, z: 2.1891}
+  m_LocalScale: {x: 0.47678512, y: 0.7508436, z: 0.77224624}
+  m_Children: []
+  m_Father: {fileID: 4342726862919814}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!23 &23004192530544074
 MeshRenderer:
@@ -22910,6 +23320,40 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!23 &23197586790328106
+MeshRenderer:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1902263154523090}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_Materials:
+  - {fileID: 2100000, guid: 8cda9d0a4938cc541abed39643da14f9, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 1
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
 --- !u!23 &23206634477880444
 MeshRenderer:
   m_ObjectHideFlags: 1
@@ -23375,6 +23819,40 @@ MeshRenderer:
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
   m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!23 &23246006675284608
+MeshRenderer:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1655434232168378}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_Materials:
+  - {fileID: 2100000, guid: 8cda9d0a4938cc541abed39643da14f9, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 1
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
   m_StitchLightmapSeams: 0
@@ -24372,6 +24850,40 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!23 &23334506596114196
+MeshRenderer:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1807417281221904}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_Materials:
+  - {fileID: 2100000, guid: e6fb7eca82ae15848ac7abe815d2dc0c, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 1
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
 --- !u!23 &23337047968032084
 MeshRenderer:
   m_ObjectHideFlags: 1
@@ -25018,6 +25530,40 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!23 &23426350627100790
+MeshRenderer:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1098603123979276}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_Materials:
+  - {fileID: 2100000, guid: 8cda9d0a4938cc541abed39643da14f9, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 1
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
 --- !u!23 &23427468362938752
 MeshRenderer:
   m_ObjectHideFlags: 1
@@ -25075,6 +25621,40 @@ MeshRenderer:
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
   m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!23 &23429704435330462
+MeshRenderer:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1635714298908198}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_Materials:
+  - {fileID: 2100000, guid: e6fb7eca82ae15848ac7abe815d2dc0c, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 1
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
   m_StitchLightmapSeams: 0
@@ -26855,6 +27435,40 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!23 &23629560166141974
+MeshRenderer:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1816250108174588}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_Materials:
+  - {fileID: 2100000, guid: 8cda9d0a4938cc541abed39643da14f9, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 1
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
 --- !u!23 &23635944871678836
 MeshRenderer:
   m_ObjectHideFlags: 1
@@ -27365,6 +27979,40 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!23 &23689706090971074
+MeshRenderer:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1003928085460172}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_Materials:
+  - {fileID: 2100000, guid: 8cda9d0a4938cc541abed39643da14f9, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 1
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
 --- !u!23 &23690654235358252
 MeshRenderer:
   m_ObjectHideFlags: 1
@@ -27762,6 +28410,40 @@ MeshRenderer:
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
   m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!23 &23720487232655112
+MeshRenderer:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1709223651449724}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_Materials:
+  - {fileID: 2100000, guid: 8cda9d0a4938cc541abed39643da14f9, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 1
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
   m_StitchLightmapSeams: 0
@@ -28453,6 +29135,40 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!23 &23793085555238054
+MeshRenderer:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1858974736661110}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_Materials:
+  - {fileID: 2100000, guid: e6fb7eca82ae15848ac7abe815d2dc0c, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 1
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
 --- !u!23 &23796539068174126
 MeshRenderer:
   m_ObjectHideFlags: 1
@@ -28680,6 +29396,40 @@ MeshRenderer:
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
   m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!23 &23820449232284760
+MeshRenderer:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1357300697743504}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_Materials:
+  - {fileID: 2100000, guid: 8cda9d0a4938cc541abed39643da14f9, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 1
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
   m_StitchLightmapSeams: 0
@@ -29677,6 +30427,40 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!23 &23909927489532202
+MeshRenderer:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1444093052729878}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_Materials:
+  - {fileID: 2100000, guid: 8cda9d0a4938cc541abed39643da14f9, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 1
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
 --- !u!23 &23910389229848220
 MeshRenderer:
   m_ObjectHideFlags: 1
@@ -30407,6 +31191,13 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1013767538085026}
   m_Mesh: {fileID: 4300000, guid: 953380112456940edb3d7c011c8126f4, type: 3}
+--- !u!33 &33055208385382208
+MeshFilter:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1902263154523090}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!33 &33056692870172794
 MeshFilter:
   m_ObjectHideFlags: 1
@@ -30421,6 +31212,13 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1686209490879804}
   m_Mesh: {fileID: 4300000, guid: 953380112456940edb3d7c011c8126f4, type: 3}
+--- !u!33 &33057270460415474
+MeshFilter:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1444093052729878}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!33 &33058655409233552
 MeshFilter:
   m_ObjectHideFlags: 1
@@ -31093,6 +31891,13 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1757507248704466}
   m_Mesh: {fileID: 4300000, guid: 27d0ced3b7c5740c681e79e32c4b432b, type: 3}
+--- !u!33 &33337531172025318
+MeshFilter:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1357300697743504}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!33 &33339698741213590
 MeshFilter:
   m_ObjectHideFlags: 1
@@ -31345,6 +32150,13 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1132463395290464}
   m_Mesh: {fileID: 4300000, guid: 953380112456940edb3d7c011c8126f4, type: 3}
+--- !u!33 &33424782379670376
+MeshFilter:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1003928085460172}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!33 &33426674076401394
 MeshFilter:
   m_ObjectHideFlags: 1
@@ -31604,6 +32416,13 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1850030357309966}
   m_Mesh: {fileID: 4300000, guid: 953380112456940edb3d7c011c8126f4, type: 3}
+--- !u!33 &33563079389843562
+MeshFilter:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1858974736661110}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!33 &33563093063986832
 MeshFilter:
   m_ObjectHideFlags: 1
@@ -31688,6 +32507,13 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1085018648171988}
   m_Mesh: {fileID: 4300000, guid: 953380112456940edb3d7c011c8126f4, type: 3}
+--- !u!33 &33623242904803240
+MeshFilter:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1807417281221904}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!33 &33624389284058062
 MeshFilter:
   m_ObjectHideFlags: 1
@@ -31709,6 +32535,13 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1297413667153618}
   m_Mesh: {fileID: 4300000, guid: 27d0ced3b7c5740c681e79e32c4b432b, type: 3}
+--- !u!33 &33634079575438764
+MeshFilter:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1635714298908198}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!33 &33637323839397210
 MeshFilter:
   m_ObjectHideFlags: 1
@@ -32031,6 +32864,13 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1877325823426734}
   m_Mesh: {fileID: 4300000, guid: 27d0ced3b7c5740c681e79e32c4b432b, type: 3}
+--- !u!33 &33850147503553908
+MeshFilter:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1655434232168378}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!33 &33851419607953152
 MeshFilter:
   m_ObjectHideFlags: 1
@@ -32290,6 +33130,13 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1528981717374126}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!33 &33961169480446366
+MeshFilter:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1816250108174588}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!33 &33964188172449748
 MeshFilter:
   m_ObjectHideFlags: 1
@@ -32339,6 +33186,20 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1157019326368550}
   m_Mesh: {fileID: 4300000, guid: 27d0ced3b7c5740c681e79e32c4b432b, type: 3}
+--- !u!33 &33984220588167888
+MeshFilter:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1709223651449724}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!33 &33987058173317448
+MeshFilter:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1098603123979276}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!33 &33994705272680258
 MeshFilter:
   m_ObjectHideFlags: 1
@@ -35960,6 +36821,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.2903633, y: 1.0811474, z: 0.27520943}
   m_Center: {x: -0.0018167496, y: 0.54, z: 0.0038790703}
+--- !u!65 &65081675876917074
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1655434232168378}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!65 &65087504373437008
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -36100,6 +36973,18 @@ BoxCollider:
   m_GameObject: {fileID: 1540569866390686}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!65 &65158611461245254
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1444093052729878}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
@@ -36440,6 +37325,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!65 &65320036455912496
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1709223651449724}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!65 &65321955767003256
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -36620,6 +37517,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.2903633, y: 1.0811474, z: 0.27520943}
   m_Center: {x: -0.0018167496, y: 0.54, z: 0.0038790703}
+--- !u!65 &65401727881812636
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1098603123979276}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!65 &65403836337186340
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -36872,6 +37781,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.2903633, y: 1.0811474, z: 0.27520943}
   m_Center: {x: -0.0018167496, y: 0.54, z: 0.0038790703}
+--- !u!65 &65537072503035744
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1357300697743504}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!65 &65550191420643096
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -37112,6 +38033,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.41443676, y: 1, z: 0.38716117}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!65 &65661690912359086
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1003928085460172}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!65 &65668029377106576
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -37120,6 +38053,18 @@ BoxCollider:
   m_GameObject: {fileID: 1398285572650248}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!65 &65671633624062278
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1807417281221904}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
@@ -37156,6 +38101,18 @@ BoxCollider:
   m_GameObject: {fileID: 1389454545892160}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!65 &65701659188575860
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1635714298908198}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
@@ -37316,6 +38273,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.2903633, y: 1.0811474, z: 0.27520943}
   m_Center: {x: -0.0018167496, y: 0.54, z: 0.0038790703}
+--- !u!65 &65777035142744288
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1902263154523090}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!65 &65779426613636582
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -37448,6 +38417,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.2903633, y: 1.0811474, z: 0.27520943}
   m_Center: {x: -0.0018167496, y: 0.54, z: 0.0038790703}
+--- !u!65 &65825518635788454
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1816250108174588}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!65 &65853828848221230
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -37520,6 +38501,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.2903633, y: 1.0811474, z: 0.27520943}
   m_Center: {x: -0.0018167496, y: 0.54, z: 0.0038790703}
+--- !u!65 &65890850202507854
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1858974736661110}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!65 &65892675935502408
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -43660,6 +44653,8 @@ MonoBehaviour:
   pourRate: 100
   isEvaluated: 0
   totalVolume: 0
+  myDrinkBase: 0
+  myMixer: 0
   coasters: []
   sodaVolume: 0
   tonicVolume: 0
@@ -43682,6 +44677,9 @@ MonoBehaviour:
   alcoholVolume: 0
   abv: 0
   drinkParts: []
+  otherLiquid: {fileID: 0}
+  otherLiquidMask: {fileID: 0}
+  myMask: {fileID: 0}
   isBeingPoured: 0
 --- !u!114 &114006522970596842
 MonoBehaviour:
@@ -43708,6 +44706,7 @@ MonoBehaviour:
   hasLiquid: 0
   isFull: 0
   isDirty: 0
+  liquid: {fileID: 0}
   glassType: 0
 --- !u!114 &114006669070988048
 MonoBehaviour:
@@ -43734,6 +44733,7 @@ MonoBehaviour:
   hasLiquid: 0
   isFull: 0
   isDirty: 0
+  liquid: {fileID: 0}
   glassType: 0
 --- !u!114 &114006730530558860
 MonoBehaviour:
@@ -43750,6 +44750,8 @@ MonoBehaviour:
   pourRate: 100
   isEvaluated: 0
   totalVolume: 0
+  myDrinkBase: 0
+  myMixer: 0
   coasters: []
   sodaVolume: 0
   tonicVolume: 0
@@ -43772,6 +44774,9 @@ MonoBehaviour:
   alcoholVolume: 0
   abv: 0
   drinkParts: []
+  otherLiquid: {fileID: 0}
+  otherLiquidMask: {fileID: 0}
+  myMask: {fileID: 0}
   isBeingPoured: 0
 --- !u!114 &114010281704421190
 MonoBehaviour:
@@ -43788,6 +44793,8 @@ MonoBehaviour:
   pourRate: 100
   isEvaluated: 0
   totalVolume: 0
+  myDrinkBase: 0
+  myMixer: 0
   coasters: []
   sodaVolume: 0
   tonicVolume: 0
@@ -43810,6 +44817,9 @@ MonoBehaviour:
   alcoholVolume: 0
   abv: 0
   drinkParts: []
+  otherLiquid: {fileID: 0}
+  otherLiquidMask: {fileID: 0}
+  myMask: {fileID: 0}
   isBeingPoured: 0
 --- !u!114 &114015645806598666
 MonoBehaviour:
@@ -43842,6 +44852,8 @@ MonoBehaviour:
   pourRate: 1
   isEvaluated: 0
   totalVolume: 0
+  myDrinkBase: 0
+  myMixer: 0
   coasters: []
   sodaVolume: 0
   tonicVolume: 0
@@ -43864,6 +44876,9 @@ MonoBehaviour:
   alcoholVolume: 0
   abv: 0
   drinkParts: []
+  otherLiquid: {fileID: 0}
+  otherLiquidMask: {fileID: 0}
+  myMask: {fileID: 0}
   isBeingPoured: 0
 --- !u!114 &114020193497975494
 MonoBehaviour:
@@ -43880,6 +44895,8 @@ MonoBehaviour:
   pourRate: 1
   isEvaluated: 0
   totalVolume: 0
+  myDrinkBase: 0
+  myMixer: 0
   coasters: []
   sodaVolume: 0
   tonicVolume: 0
@@ -43902,6 +44919,9 @@ MonoBehaviour:
   alcoholVolume: 0
   abv: 0
   drinkParts: []
+  otherLiquid: {fileID: 0}
+  otherLiquidMask: {fileID: 0}
+  myMask: {fileID: 0}
   isBeingPoured: 0
 --- !u!114 &114020478136360130
 MonoBehaviour:
@@ -43944,6 +44964,8 @@ MonoBehaviour:
   pourRate: 100
   isEvaluated: 0
   totalVolume: 0
+  myDrinkBase: 0
+  myMixer: 0
   coasters: []
   sodaVolume: 0
   tonicVolume: 0
@@ -43966,6 +44988,9 @@ MonoBehaviour:
   alcoholVolume: 0
   abv: 0
   drinkParts: []
+  otherLiquid: {fileID: 0}
+  otherLiquidMask: {fileID: 0}
+  myMask: {fileID: 0}
   isBeingPoured: 0
 --- !u!114 &114026507945655510
 MonoBehaviour:
@@ -43992,6 +45017,7 @@ MonoBehaviour:
   hasLiquid: 0
   isFull: 0
   isDirty: 0
+  liquid: {fileID: 0}
   glassType: 0
 --- !u!114 &114026893240816188
 MonoBehaviour:
@@ -44008,6 +45034,8 @@ MonoBehaviour:
   pourRate: 1
   isEvaluated: 0
   totalVolume: 0
+  myDrinkBase: 0
+  myMixer: 0
   coasters: []
   sodaVolume: 0
   tonicVolume: 0
@@ -44030,6 +45058,9 @@ MonoBehaviour:
   alcoholVolume: 0
   abv: 0
   drinkParts: []
+  otherLiquid: {fileID: 0}
+  otherLiquidMask: {fileID: 0}
+  myMask: {fileID: 0}
   isBeingPoured: 0
 --- !u!114 &114029923773680660
 MonoBehaviour:
@@ -44056,6 +45087,7 @@ MonoBehaviour:
   hasLiquid: 0
   isFull: 0
   isDirty: 0
+  liquid: {fileID: 0}
   glassType: 0
 --- !u!114 &114032641590299836
 MonoBehaviour:
@@ -44072,6 +45104,8 @@ MonoBehaviour:
   pourRate: 100
   isEvaluated: 0
   totalVolume: 0
+  myDrinkBase: 0
+  myMixer: 0
   coasters: []
   sodaVolume: 0
   tonicVolume: 0
@@ -44094,6 +45128,9 @@ MonoBehaviour:
   alcoholVolume: 0
   abv: 0
   drinkParts: []
+  otherLiquid: {fileID: 0}
+  otherLiquidMask: {fileID: 0}
+  myMask: {fileID: 0}
   isBeingPoured: 0
 --- !u!114 &114038829464399242
 MonoBehaviour:
@@ -44110,6 +45147,8 @@ MonoBehaviour:
   pourRate: 1
   isEvaluated: 0
   totalVolume: 0
+  myDrinkBase: 0
+  myMixer: 0
   coasters: []
   sodaVolume: 0
   tonicVolume: 0
@@ -44132,6 +45171,9 @@ MonoBehaviour:
   alcoholVolume: 0
   abv: 0
   drinkParts: []
+  otherLiquid: {fileID: 0}
+  otherLiquidMask: {fileID: 0}
+  myMask: {fileID: 0}
   isBeingPoured: 0
 --- !u!114 &114039214150185950
 MonoBehaviour:
@@ -44164,6 +45206,8 @@ MonoBehaviour:
   pourRate: 1
   isEvaluated: 0
   totalVolume: 0
+  myDrinkBase: 0
+  myMixer: 0
   coasters: []
   sodaVolume: 0
   tonicVolume: 0
@@ -44186,6 +45230,9 @@ MonoBehaviour:
   alcoholVolume: 0
   abv: 0
   drinkParts: []
+  otherLiquid: {fileID: 0}
+  otherLiquidMask: {fileID: 0}
+  myMask: {fileID: 0}
   isBeingPoured: 0
 --- !u!114 &114045866956090050
 MonoBehaviour:
@@ -44218,6 +45265,8 @@ MonoBehaviour:
   pourRate: 100
   isEvaluated: 0
   totalVolume: 0
+  myDrinkBase: 0
+  myMixer: 0
   coasters: []
   sodaVolume: 0
   tonicVolume: 0
@@ -44240,6 +45289,9 @@ MonoBehaviour:
   alcoholVolume: 0
   abv: 0
   drinkParts: []
+  otherLiquid: {fileID: 0}
+  otherLiquidMask: {fileID: 0}
+  myMask: {fileID: 0}
   isBeingPoured: 0
 --- !u!114 &114049610353460900
 MonoBehaviour:
@@ -44272,6 +45324,8 @@ MonoBehaviour:
   pourRate: 100
   isEvaluated: 0
   totalVolume: 0
+  myDrinkBase: 0
+  myMixer: 0
   coasters: []
   sodaVolume: 0
   tonicVolume: 0
@@ -44294,6 +45348,9 @@ MonoBehaviour:
   alcoholVolume: 0
   abv: 0
   drinkParts: []
+  otherLiquid: {fileID: 0}
+  otherLiquidMask: {fileID: 0}
+  myMask: {fileID: 0}
   isBeingPoured: 0
 --- !u!114 &114055719859845962
 MonoBehaviour:
@@ -44310,6 +45367,8 @@ MonoBehaviour:
   pourRate: 100
   isEvaluated: 0
   totalVolume: 0
+  myDrinkBase: 0
+  myMixer: 0
   coasters: []
   sodaVolume: 0
   tonicVolume: 0
@@ -44332,6 +45391,9 @@ MonoBehaviour:
   alcoholVolume: 0
   abv: 0
   drinkParts: []
+  otherLiquid: {fileID: 0}
+  otherLiquidMask: {fileID: 0}
+  myMask: {fileID: 0}
   isBeingPoured: 0
 --- !u!114 &114055874071101192
 MonoBehaviour:
@@ -44410,6 +45472,7 @@ MonoBehaviour:
   hasLiquid: 0
   isFull: 0
   isDirty: 0
+  liquid: {fileID: 0}
   glassType: 0
 --- !u!114 &114071114865159726
 MonoBehaviour:
@@ -44426,6 +45489,8 @@ MonoBehaviour:
   pourRate: 100
   isEvaluated: 0
   totalVolume: 0
+  myDrinkBase: 0
+  myMixer: 0
   coasters: []
   sodaVolume: 0
   tonicVolume: 0
@@ -44448,6 +45513,9 @@ MonoBehaviour:
   alcoholVolume: 0
   abv: 0
   drinkParts: []
+  otherLiquid: {fileID: 0}
+  otherLiquidMask: {fileID: 0}
+  myMask: {fileID: 0}
   isBeingPoured: 0
 --- !u!114 &114072377697920474
 MonoBehaviour:
@@ -44474,6 +45542,7 @@ MonoBehaviour:
   hasLiquid: 0
   isFull: 0
   isDirty: 0
+  liquid: {fileID: 0}
   glassType: 0
 --- !u!114 &114074348681023308
 MonoBehaviour:
@@ -44516,6 +45585,8 @@ MonoBehaviour:
   pourRate: 1
   isEvaluated: 0
   totalVolume: 0
+  myDrinkBase: 0
+  myMixer: 0
   coasters: []
   sodaVolume: 0
   tonicVolume: 0
@@ -44538,6 +45609,9 @@ MonoBehaviour:
   alcoholVolume: 0
   abv: 0
   drinkParts: []
+  otherLiquid: {fileID: 0}
+  otherLiquidMask: {fileID: 0}
+  myMask: {fileID: 0}
   isBeingPoured: 0
 --- !u!114 &114077411033300082
 MonoBehaviour:
@@ -44564,6 +45638,7 @@ MonoBehaviour:
   hasLiquid: 0
   isFull: 0
   isDirty: 0
+  liquid: {fileID: 0}
   glassType: 0
 --- !u!114 &114079486350495666
 MonoBehaviour:
@@ -44590,6 +45665,7 @@ MonoBehaviour:
   hasLiquid: 0
   isFull: 0
   isDirty: 0
+  liquid: {fileID: 0}
   glassType: 0
 --- !u!114 &114081560289535150
 MonoBehaviour:
@@ -44648,6 +45724,8 @@ MonoBehaviour:
   pourRate: 1
   isEvaluated: 0
   totalVolume: 0
+  myDrinkBase: 0
+  myMixer: 0
   coasters: []
   sodaVolume: 0
   tonicVolume: 0
@@ -44670,6 +45748,9 @@ MonoBehaviour:
   alcoholVolume: 0
   abv: 0
   drinkParts: []
+  otherLiquid: {fileID: 0}
+  otherLiquidMask: {fileID: 0}
+  myMask: {fileID: 0}
   isBeingPoured: 0
 --- !u!114 &114094230232402148
 MonoBehaviour:
@@ -44686,6 +45767,8 @@ MonoBehaviour:
   pourRate: 1
   isEvaluated: 0
   totalVolume: 0
+  myDrinkBase: 0
+  myMixer: 0
   coasters: []
   sodaVolume: 0
   tonicVolume: 0
@@ -44708,6 +45791,9 @@ MonoBehaviour:
   alcoholVolume: 0
   abv: 0
   drinkParts: []
+  otherLiquid: {fileID: 0}
+  otherLiquidMask: {fileID: 0}
+  myMask: {fileID: 0}
   isBeingPoured: 0
 --- !u!114 &114094345420184724
 MonoBehaviour:
@@ -44724,6 +45810,8 @@ MonoBehaviour:
   pourRate: 1
   isEvaluated: 0
   totalVolume: 0
+  myDrinkBase: 0
+  myMixer: 0
   coasters: []
   sodaVolume: 0
   tonicVolume: 0
@@ -44746,6 +45834,9 @@ MonoBehaviour:
   alcoholVolume: 0
   abv: 0
   drinkParts: []
+  otherLiquid: {fileID: 0}
+  otherLiquidMask: {fileID: 0}
+  myMask: {fileID: 0}
   isBeingPoured: 0
 --- !u!114 &114096097917172852
 MonoBehaviour:
@@ -44762,6 +45853,8 @@ MonoBehaviour:
   pourRate: 1
   isEvaluated: 0
   totalVolume: 0
+  myDrinkBase: 0
+  myMixer: 0
   coasters: []
   sodaVolume: 0
   tonicVolume: 0
@@ -44784,6 +45877,9 @@ MonoBehaviour:
   alcoholVolume: 0
   abv: 0
   drinkParts: []
+  otherLiquid: {fileID: 0}
+  otherLiquidMask: {fileID: 0}
+  myMask: {fileID: 0}
   isBeingPoured: 0
 --- !u!114 &114096397225539036
 MonoBehaviour:
@@ -44800,6 +45896,8 @@ MonoBehaviour:
   pourRate: 1
   isEvaluated: 0
   totalVolume: 0
+  myDrinkBase: 0
+  myMixer: 0
   coasters: []
   sodaVolume: 0
   tonicVolume: 0
@@ -44822,6 +45920,9 @@ MonoBehaviour:
   alcoholVolume: 0
   abv: 0
   drinkParts: []
+  otherLiquid: {fileID: 0}
+  otherLiquidMask: {fileID: 0}
+  myMask: {fileID: 0}
   isBeingPoured: 0
 --- !u!114 &114096769224915830
 MonoBehaviour:
@@ -44838,6 +45939,8 @@ MonoBehaviour:
   pourRate: 100
   isEvaluated: 0
   totalVolume: 0
+  myDrinkBase: 0
+  myMixer: 0
   coasters: []
   sodaVolume: 0
   tonicVolume: 0
@@ -44860,6 +45963,9 @@ MonoBehaviour:
   alcoholVolume: 0
   abv: 0
   drinkParts: []
+  otherLiquid: {fileID: 0}
+  otherLiquidMask: {fileID: 0}
+  myMask: {fileID: 0}
   isBeingPoured: 0
 --- !u!114 &114097387713255088
 MonoBehaviour:
@@ -44876,6 +45982,8 @@ MonoBehaviour:
   pourRate: 100
   isEvaluated: 0
   totalVolume: 0
+  myDrinkBase: 0
+  myMixer: 0
   coasters: []
   sodaVolume: 0
   tonicVolume: 0
@@ -44898,6 +46006,9 @@ MonoBehaviour:
   alcoholVolume: 0
   abv: 0
   drinkParts: []
+  otherLiquid: {fileID: 0}
+  otherLiquidMask: {fileID: 0}
+  myMask: {fileID: 0}
   isBeingPoured: 0
 --- !u!114 &114099646840406588
 MonoBehaviour:
@@ -44930,6 +46041,8 @@ MonoBehaviour:
   pourRate: 100
   isEvaluated: 0
   totalVolume: 0
+  myDrinkBase: 0
+  myMixer: 0
   coasters: []
   sodaVolume: 0
   tonicVolume: 0
@@ -44952,6 +46065,9 @@ MonoBehaviour:
   alcoholVolume: 0
   abv: 0
   drinkParts: []
+  otherLiquid: {fileID: 0}
+  otherLiquidMask: {fileID: 0}
+  myMask: {fileID: 0}
   isBeingPoured: 0
 --- !u!114 &114102320221851634
 MonoBehaviour:
@@ -44968,6 +46084,8 @@ MonoBehaviour:
   pourRate: 100
   isEvaluated: 0
   totalVolume: 0
+  myDrinkBase: 0
+  myMixer: 0
   coasters: []
   sodaVolume: 0
   tonicVolume: 0
@@ -44990,6 +46108,9 @@ MonoBehaviour:
   alcoholVolume: 0
   abv: 0
   drinkParts: []
+  otherLiquid: {fileID: 0}
+  otherLiquidMask: {fileID: 0}
+  myMask: {fileID: 0}
   isBeingPoured: 0
 --- !u!114 &114105478491697712
 MonoBehaviour:
@@ -45006,6 +46127,8 @@ MonoBehaviour:
   pourRate: 100
   isEvaluated: 0
   totalVolume: 0
+  myDrinkBase: 0
+  myMixer: 0
   coasters: []
   sodaVolume: 0
   tonicVolume: 0
@@ -45028,6 +46151,9 @@ MonoBehaviour:
   alcoholVolume: 0
   abv: 0
   drinkParts: []
+  otherLiquid: {fileID: 0}
+  otherLiquidMask: {fileID: 0}
+  myMask: {fileID: 0}
   isBeingPoured: 0
 --- !u!114 &114105990680119832
 MonoBehaviour:
@@ -45070,6 +46196,8 @@ MonoBehaviour:
   pourRate: 1
   isEvaluated: 0
   totalVolume: 0
+  myDrinkBase: 0
+  myMixer: 0
   coasters: []
   sodaVolume: 0
   tonicVolume: 0
@@ -45092,6 +46220,9 @@ MonoBehaviour:
   alcoholVolume: 0
   abv: 0
   drinkParts: []
+  otherLiquid: {fileID: 0}
+  otherLiquidMask: {fileID: 0}
+  myMask: {fileID: 0}
   isBeingPoured: 0
 --- !u!114 &114107089248995292
 MonoBehaviour:
@@ -45134,6 +46265,7 @@ MonoBehaviour:
   hasLiquid: 0
   isFull: 0
   isDirty: 0
+  liquid: {fileID: 0}
   glassType: 0
 --- !u!114 &114112054758243240
 MonoBehaviour:
@@ -45150,6 +46282,8 @@ MonoBehaviour:
   pourRate: 1
   isEvaluated: 0
   totalVolume: 0
+  myDrinkBase: 0
+  myMixer: 0
   coasters: []
   sodaVolume: 0
   tonicVolume: 0
@@ -45172,6 +46306,9 @@ MonoBehaviour:
   alcoholVolume: 0
   abv: 0
   drinkParts: []
+  otherLiquid: {fileID: 0}
+  otherLiquidMask: {fileID: 0}
+  myMask: {fileID: 0}
   isBeingPoured: 0
 --- !u!114 &114112333823893192
 MonoBehaviour:
@@ -45198,6 +46335,7 @@ MonoBehaviour:
   hasLiquid: 0
   isFull: 0
   isDirty: 0
+  liquid: {fileID: 0}
   glassType: 0
 --- !u!114 &114116391169777504
 MonoBehaviour:
@@ -45224,6 +46362,7 @@ MonoBehaviour:
   hasLiquid: 0
   isFull: 0
   isDirty: 0
+  liquid: {fileID: 0}
   glassType: 0
 --- !u!114 &114118346768664436
 MonoBehaviour:
@@ -45240,6 +46379,8 @@ MonoBehaviour:
   pourRate: 100
   isEvaluated: 0
   totalVolume: 0
+  myDrinkBase: 0
+  myMixer: 0
   coasters: []
   sodaVolume: 0
   tonicVolume: 0
@@ -45262,6 +46403,9 @@ MonoBehaviour:
   alcoholVolume: 0
   abv: 0
   drinkParts: []
+  otherLiquid: {fileID: 0}
+  otherLiquidMask: {fileID: 0}
+  myMask: {fileID: 0}
   isBeingPoured: 0
 --- !u!114 &114120333262217440
 MonoBehaviour:
@@ -45278,6 +46422,8 @@ MonoBehaviour:
   pourRate: 1
   isEvaluated: 0
   totalVolume: 0
+  myDrinkBase: 0
+  myMixer: 0
   coasters: []
   sodaVolume: 0
   tonicVolume: 0
@@ -45300,6 +46446,9 @@ MonoBehaviour:
   alcoholVolume: 0
   abv: 0
   drinkParts: []
+  otherLiquid: {fileID: 0}
+  otherLiquidMask: {fileID: 0}
+  myMask: {fileID: 0}
   isBeingPoured: 0
 --- !u!114 &114121872271436142
 MonoBehaviour:
@@ -45384,6 +46533,8 @@ MonoBehaviour:
   pourRate: 100
   isEvaluated: 0
   totalVolume: 0
+  myDrinkBase: 0
+  myMixer: 0
   coasters: []
   sodaVolume: 0
   tonicVolume: 0
@@ -45406,6 +46557,9 @@ MonoBehaviour:
   alcoholVolume: 0
   abv: 0
   drinkParts: []
+  otherLiquid: {fileID: 0}
+  otherLiquidMask: {fileID: 0}
+  myMask: {fileID: 0}
   isBeingPoured: 0
 --- !u!114 &114128488965969786
 MonoBehaviour:
@@ -45448,6 +46602,8 @@ MonoBehaviour:
   pourRate: 100
   isEvaluated: 0
   totalVolume: 0
+  myDrinkBase: 0
+  myMixer: 0
   coasters: []
   sodaVolume: 0
   tonicVolume: 0
@@ -45470,6 +46626,9 @@ MonoBehaviour:
   alcoholVolume: 0
   abv: 0
   drinkParts: []
+  otherLiquid: {fileID: 0}
+  otherLiquidMask: {fileID: 0}
+  myMask: {fileID: 0}
   isBeingPoured: 0
 --- !u!114 &114130070525316224
 MonoBehaviour:
@@ -45486,6 +46645,8 @@ MonoBehaviour:
   pourRate: 1
   isEvaluated: 0
   totalVolume: 0
+  myDrinkBase: 0
+  myMixer: 0
   coasters: []
   sodaVolume: 0
   tonicVolume: 0
@@ -45508,6 +46669,9 @@ MonoBehaviour:
   alcoholVolume: 0
   abv: 0
   drinkParts: []
+  otherLiquid: {fileID: 0}
+  otherLiquidMask: {fileID: 0}
+  myMask: {fileID: 0}
   isBeingPoured: 0
 --- !u!114 &114134843978882188
 MonoBehaviour:
@@ -45524,6 +46688,8 @@ MonoBehaviour:
   pourRate: 1
   isEvaluated: 0
   totalVolume: 0
+  myDrinkBase: 0
+  myMixer: 0
   coasters: []
   sodaVolume: 0
   tonicVolume: 0
@@ -45546,6 +46712,9 @@ MonoBehaviour:
   alcoholVolume: 0
   abv: 0
   drinkParts: []
+  otherLiquid: {fileID: 0}
+  otherLiquidMask: {fileID: 0}
+  myMask: {fileID: 0}
   isBeingPoured: 0
 --- !u!114 &114138185517560124
 MonoBehaviour:
@@ -45682,6 +46851,8 @@ MonoBehaviour:
   pourRate: 1
   isEvaluated: 0
   totalVolume: 0
+  myDrinkBase: 0
+  myMixer: 0
   coasters: []
   sodaVolume: 0
   tonicVolume: 0
@@ -45704,6 +46875,9 @@ MonoBehaviour:
   alcoholVolume: 0
   abv: 0
   drinkParts: []
+  otherLiquid: {fileID: 0}
+  otherLiquidMask: {fileID: 0}
+  myMask: {fileID: 0}
   isBeingPoured: 0
 --- !u!114 &114152310652330600
 MonoBehaviour:
@@ -45720,6 +46894,8 @@ MonoBehaviour:
   pourRate: 100
   isEvaluated: 0
   totalVolume: 0
+  myDrinkBase: 0
+  myMixer: 0
   coasters: []
   sodaVolume: 0
   tonicVolume: 0
@@ -45742,6 +46918,9 @@ MonoBehaviour:
   alcoholVolume: 0
   abv: 0
   drinkParts: []
+  otherLiquid: {fileID: 0}
+  otherLiquidMask: {fileID: 0}
+  myMask: {fileID: 0}
   isBeingPoured: 0
 --- !u!114 &114158001356919828
 MonoBehaviour:
@@ -45758,6 +46937,8 @@ MonoBehaviour:
   pourRate: 1
   isEvaluated: 0
   totalVolume: 0
+  myDrinkBase: 0
+  myMixer: 0
   coasters: []
   sodaVolume: 0
   tonicVolume: 0
@@ -45780,6 +46961,9 @@ MonoBehaviour:
   alcoholVolume: 0
   abv: 0
   drinkParts: []
+  otherLiquid: {fileID: 0}
+  otherLiquidMask: {fileID: 0}
+  myMask: {fileID: 0}
   isBeingPoured: 0
 --- !u!114 &114160597716596546
 MonoBehaviour:
@@ -45796,6 +46980,8 @@ MonoBehaviour:
   pourRate: 1
   isEvaluated: 0
   totalVolume: 0
+  myDrinkBase: 0
+  myMixer: 0
   coasters: []
   sodaVolume: 0
   tonicVolume: 0
@@ -45818,6 +47004,9 @@ MonoBehaviour:
   alcoholVolume: 0
   abv: 0
   drinkParts: []
+  otherLiquid: {fileID: 0}
+  otherLiquidMask: {fileID: 0}
+  myMask: {fileID: 0}
   isBeingPoured: 0
 --- !u!114 &114164718121677658
 MonoBehaviour:
@@ -45834,6 +47023,8 @@ MonoBehaviour:
   pourRate: 1
   isEvaluated: 0
   totalVolume: 0
+  myDrinkBase: 0
+  myMixer: 0
   coasters: []
   sodaVolume: 0
   tonicVolume: 0
@@ -45856,6 +47047,9 @@ MonoBehaviour:
   alcoholVolume: 0
   abv: 0
   drinkParts: []
+  otherLiquid: {fileID: 0}
+  otherLiquidMask: {fileID: 0}
+  myMask: {fileID: 0}
   isBeingPoured: 0
 --- !u!114 &114167163677899092
 MonoBehaviour:
@@ -45986,6 +47180,7 @@ MonoBehaviour:
   hasLiquid: 0
   isFull: 0
   isDirty: 0
+  liquid: {fileID: 0}
   glassType: 0
 --- !u!114 &114173940279009920
 MonoBehaviour:
@@ -46012,6 +47207,7 @@ MonoBehaviour:
   hasLiquid: 0
   isFull: 0
   isDirty: 0
+  liquid: {fileID: 0}
   glassType: 0
 --- !u!114 &114174544581215276
 MonoBehaviour:
@@ -46028,6 +47224,8 @@ MonoBehaviour:
   pourRate: 100
   isEvaluated: 0
   totalVolume: 0
+  myDrinkBase: 0
+  myMixer: 0
   coasters: []
   sodaVolume: 0
   tonicVolume: 0
@@ -46050,6 +47248,9 @@ MonoBehaviour:
   alcoholVolume: 0
   abv: 0
   drinkParts: []
+  otherLiquid: {fileID: 0}
+  otherLiquidMask: {fileID: 0}
+  myMask: {fileID: 0}
   isBeingPoured: 0
 --- !u!114 &114174912505258422
 MonoBehaviour:
@@ -46066,6 +47267,8 @@ MonoBehaviour:
   pourRate: 1
   isEvaluated: 0
   totalVolume: 0
+  myDrinkBase: 0
+  myMixer: 0
   coasters: []
   sodaVolume: 0
   tonicVolume: 0
@@ -46088,6 +47291,9 @@ MonoBehaviour:
   alcoholVolume: 0
   abv: 0
   drinkParts: []
+  otherLiquid: {fileID: 0}
+  otherLiquidMask: {fileID: 0}
+  myMask: {fileID: 0}
   isBeingPoured: 0
 --- !u!114 &114175057662187998
 MonoBehaviour:
@@ -46154,6 +47360,7 @@ MonoBehaviour:
   hasLiquid: 0
   isFull: 0
   isDirty: 0
+  liquid: {fileID: 0}
   glassType: 0
 --- !u!114 &114182180354049904
 MonoBehaviour:
@@ -46170,6 +47377,8 @@ MonoBehaviour:
   pourRate: 100
   isEvaluated: 0
   totalVolume: 0
+  myDrinkBase: 0
+  myMixer: 0
   coasters: []
   sodaVolume: 0
   tonicVolume: 0
@@ -46192,6 +47401,9 @@ MonoBehaviour:
   alcoholVolume: 0
   abv: 0
   drinkParts: []
+  otherLiquid: {fileID: 0}
+  otherLiquidMask: {fileID: 0}
+  myMask: {fileID: 0}
   isBeingPoured: 0
 --- !u!114 &114182224759134640
 MonoBehaviour:
@@ -46224,6 +47436,8 @@ MonoBehaviour:
   pourRate: 1
   isEvaluated: 0
   totalVolume: 0
+  myDrinkBase: 0
+  myMixer: 0
   coasters: []
   sodaVolume: 0
   tonicVolume: 0
@@ -46246,6 +47460,9 @@ MonoBehaviour:
   alcoholVolume: 0
   abv: 0
   drinkParts: []
+  otherLiquid: {fileID: 0}
+  otherLiquidMask: {fileID: 0}
+  myMask: {fileID: 0}
   isBeingPoured: 0
 --- !u!114 &114183344558891666
 MonoBehaviour:
@@ -46272,6 +47489,7 @@ MonoBehaviour:
   hasLiquid: 0
   isFull: 0
   isDirty: 0
+  liquid: {fileID: 0}
   glassType: 0
 --- !u!114 &114184362137828546
 MonoBehaviour:
@@ -46288,6 +47506,8 @@ MonoBehaviour:
   pourRate: 1
   isEvaluated: 0
   totalVolume: 0
+  myDrinkBase: 0
+  myMixer: 0
   coasters: []
   sodaVolume: 0
   tonicVolume: 0
@@ -46310,6 +47530,9 @@ MonoBehaviour:
   alcoholVolume: 0
   abv: 0
   drinkParts: []
+  otherLiquid: {fileID: 0}
+  otherLiquidMask: {fileID: 0}
+  myMask: {fileID: 0}
   isBeingPoured: 0
 --- !u!114 &114189054933602286
 MonoBehaviour:
@@ -46388,6 +47611,7 @@ MonoBehaviour:
   hasLiquid: 0
   isFull: 0
   isDirty: 0
+  liquid: {fileID: 0}
   glassType: 0
 --- !u!114 &114192514071823774
 MonoBehaviour:
@@ -46420,6 +47644,8 @@ MonoBehaviour:
   pourRate: 1
   isEvaluated: 0
   totalVolume: 0
+  myDrinkBase: 0
+  myMixer: 0
   coasters: []
   sodaVolume: 0
   tonicVolume: 0
@@ -46442,6 +47668,9 @@ MonoBehaviour:
   alcoholVolume: 0
   abv: 0
   drinkParts: []
+  otherLiquid: {fileID: 0}
+  otherLiquidMask: {fileID: 0}
+  myMask: {fileID: 0}
   isBeingPoured: 0
 --- !u!114 &114194117172529078
 MonoBehaviour:
@@ -46468,6 +47697,7 @@ MonoBehaviour:
   hasLiquid: 0
   isFull: 0
   isDirty: 0
+  liquid: {fileID: 0}
   glassType: 0
 --- !u!114 &114194833835035338
 MonoBehaviour:
@@ -46520,6 +47750,7 @@ MonoBehaviour:
   hasLiquid: 0
   isFull: 0
   isDirty: 0
+  liquid: {fileID: 0}
   glassType: 0
 --- !u!114 &114200847691666342
 MonoBehaviour:
@@ -46546,6 +47777,7 @@ MonoBehaviour:
   hasLiquid: 0
   isFull: 0
   isDirty: 0
+  liquid: {fileID: 0}
   glassType: 0
 --- !u!114 &114200960465485890
 MonoBehaviour:
@@ -46588,6 +47820,8 @@ MonoBehaviour:
   pourRate: 1
   isEvaluated: 0
   totalVolume: 0
+  myDrinkBase: 0
+  myMixer: 0
   coasters: []
   sodaVolume: 0
   tonicVolume: 0
@@ -46610,6 +47844,9 @@ MonoBehaviour:
   alcoholVolume: 0
   abv: 0
   drinkParts: []
+  otherLiquid: {fileID: 0}
+  otherLiquidMask: {fileID: 0}
+  myMask: {fileID: 0}
   isBeingPoured: 0
 --- !u!114 &114202068658019046
 MonoBehaviour:
@@ -46626,6 +47863,8 @@ MonoBehaviour:
   pourRate: 100
   isEvaluated: 0
   totalVolume: 0
+  myDrinkBase: 0
+  myMixer: 0
   coasters: []
   sodaVolume: 0
   tonicVolume: 0
@@ -46648,6 +47887,9 @@ MonoBehaviour:
   alcoholVolume: 0
   abv: 0
   drinkParts: []
+  otherLiquid: {fileID: 0}
+  otherLiquidMask: {fileID: 0}
+  myMask: {fileID: 0}
   isBeingPoured: 0
 --- !u!114 &114203969075425684
 MonoBehaviour:
@@ -46664,6 +47906,8 @@ MonoBehaviour:
   pourRate: 100
   isEvaluated: 0
   totalVolume: 0
+  myDrinkBase: 0
+  myMixer: 0
   coasters: []
   sodaVolume: 0
   tonicVolume: 0
@@ -46686,6 +47930,9 @@ MonoBehaviour:
   alcoholVolume: 0
   abv: 0
   drinkParts: []
+  otherLiquid: {fileID: 0}
+  otherLiquidMask: {fileID: 0}
+  myMask: {fileID: 0}
   isBeingPoured: 0
 --- !u!114 &114204402599793050
 MonoBehaviour:
@@ -46702,6 +47949,8 @@ MonoBehaviour:
   pourRate: 1
   isEvaluated: 0
   totalVolume: 0
+  myDrinkBase: 0
+  myMixer: 0
   coasters: []
   sodaVolume: 0
   tonicVolume: 0
@@ -46724,6 +47973,9 @@ MonoBehaviour:
   alcoholVolume: 0
   abv: 0
   drinkParts: []
+  otherLiquid: {fileID: 0}
+  otherLiquidMask: {fileID: 0}
+  myMask: {fileID: 0}
   isBeingPoured: 0
 --- !u!114 &114205276793587420
 MonoBehaviour:
@@ -46756,6 +48008,8 @@ MonoBehaviour:
   pourRate: 1
   isEvaluated: 0
   totalVolume: 0
+  myDrinkBase: 0
+  myMixer: 0
   coasters: []
   sodaVolume: 0
   tonicVolume: 0
@@ -46778,6 +48032,9 @@ MonoBehaviour:
   alcoholVolume: 0
   abv: 0
   drinkParts: []
+  otherLiquid: {fileID: 0}
+  otherLiquidMask: {fileID: 0}
+  myMask: {fileID: 0}
   isBeingPoured: 0
 --- !u!114 &114219627515508486
 MonoBehaviour:
@@ -46794,6 +48051,8 @@ MonoBehaviour:
   pourRate: 100
   isEvaluated: 0
   totalVolume: 0
+  myDrinkBase: 0
+  myMixer: 0
   coasters: []
   sodaVolume: 0
   tonicVolume: 0
@@ -46816,6 +48075,9 @@ MonoBehaviour:
   alcoholVolume: 0
   abv: 0
   drinkParts: []
+  otherLiquid: {fileID: 0}
+  otherLiquidMask: {fileID: 0}
+  myMask: {fileID: 0}
   isBeingPoured: 0
 --- !u!114 &114219885545418846
 MonoBehaviour:
@@ -46832,6 +48094,8 @@ MonoBehaviour:
   pourRate: 1
   isEvaluated: 0
   totalVolume: 0
+  myDrinkBase: 0
+  myMixer: 0
   coasters: []
   sodaVolume: 0
   tonicVolume: 0
@@ -46854,6 +48118,9 @@ MonoBehaviour:
   alcoholVolume: 0
   abv: 0
   drinkParts: []
+  otherLiquid: {fileID: 0}
+  otherLiquidMask: {fileID: 0}
+  myMask: {fileID: 0}
   isBeingPoured: 0
 --- !u!114 &114226035078624008
 MonoBehaviour:
@@ -46880,6 +48147,7 @@ MonoBehaviour:
   hasLiquid: 0
   isFull: 0
   isDirty: 0
+  liquid: {fileID: 0}
   glassType: 0
 --- !u!114 &114227163107795788
 MonoBehaviour:
@@ -46922,6 +48190,8 @@ MonoBehaviour:
   pourRate: 100
   isEvaluated: 0
   totalVolume: 0
+  myDrinkBase: 0
+  myMixer: 0
   coasters: []
   sodaVolume: 0
   tonicVolume: 0
@@ -46944,6 +48214,9 @@ MonoBehaviour:
   alcoholVolume: 0
   abv: 0
   drinkParts: []
+  otherLiquid: {fileID: 0}
+  otherLiquidMask: {fileID: 0}
+  myMask: {fileID: 0}
   isBeingPoured: 0
 --- !u!114 &114228166428224630
 MonoBehaviour:
@@ -47018,6 +48291,8 @@ MonoBehaviour:
   pourRate: 100
   isEvaluated: 0
   totalVolume: 0
+  myDrinkBase: 0
+  myMixer: 0
   coasters: []
   sodaVolume: 0
   tonicVolume: 0
@@ -47040,6 +48315,9 @@ MonoBehaviour:
   alcoholVolume: 0
   abv: 0
   drinkParts: []
+  otherLiquid: {fileID: 0}
+  otherLiquidMask: {fileID: 0}
+  myMask: {fileID: 0}
   isBeingPoured: 0
 --- !u!114 &114237746618795974
 MonoBehaviour:
@@ -47056,6 +48334,8 @@ MonoBehaviour:
   pourRate: 100
   isEvaluated: 0
   totalVolume: 0
+  myDrinkBase: 0
+  myMixer: 0
   coasters: []
   sodaVolume: 0
   tonicVolume: 0
@@ -47078,6 +48358,9 @@ MonoBehaviour:
   alcoholVolume: 0
   abv: 0
   drinkParts: []
+  otherLiquid: {fileID: 0}
+  otherLiquidMask: {fileID: 0}
+  myMask: {fileID: 0}
   isBeingPoured: 0
 --- !u!114 &114243216706050480
 MonoBehaviour:
@@ -47094,6 +48377,8 @@ MonoBehaviour:
   pourRate: 1
   isEvaluated: 0
   totalVolume: 0
+  myDrinkBase: 0
+  myMixer: 0
   coasters: []
   sodaVolume: 0
   tonicVolume: 0
@@ -47116,6 +48401,9 @@ MonoBehaviour:
   alcoholVolume: 0
   abv: 0
   drinkParts: []
+  otherLiquid: {fileID: 0}
+  otherLiquidMask: {fileID: 0}
+  myMask: {fileID: 0}
   isBeingPoured: 0
 --- !u!114 &114243487218169828
 MonoBehaviour:
@@ -47184,6 +48472,7 @@ MonoBehaviour:
   hasLiquid: 0
   isFull: 0
   isDirty: 0
+  liquid: {fileID: 0}
   glassType: 0
 --- !u!114 &114247530060416638
 MonoBehaviour:
@@ -47236,6 +48525,7 @@ MonoBehaviour:
   hasLiquid: 0
   isFull: 0
   isDirty: 0
+  liquid: {fileID: 0}
   glassType: 0
 --- !u!114 &114257440959231394
 MonoBehaviour:
@@ -47252,6 +48542,8 @@ MonoBehaviour:
   pourRate: 100
   isEvaluated: 0
   totalVolume: 0
+  myDrinkBase: 0
+  myMixer: 0
   coasters: []
   sodaVolume: 0
   tonicVolume: 0
@@ -47274,6 +48566,9 @@ MonoBehaviour:
   alcoholVolume: 0
   abv: 0
   drinkParts: []
+  otherLiquid: {fileID: 0}
+  otherLiquidMask: {fileID: 0}
+  myMask: {fileID: 0}
   isBeingPoured: 0
 --- !u!114 &114257730472178308
 MonoBehaviour:
@@ -47300,6 +48595,7 @@ MonoBehaviour:
   hasLiquid: 0
   isFull: 0
   isDirty: 0
+  liquid: {fileID: 0}
   glassType: 0
 --- !u!114 &114259455470210352
 MonoBehaviour:
@@ -47326,6 +48622,7 @@ MonoBehaviour:
   hasLiquid: 0
   isFull: 0
   isDirty: 0
+  liquid: {fileID: 0}
   glassType: 0
 --- !u!114 &114261287154559476
 MonoBehaviour:
@@ -47404,6 +48701,7 @@ MonoBehaviour:
   hasLiquid: 0
   isFull: 0
   isDirty: 0
+  liquid: {fileID: 0}
   glassType: 0
 --- !u!114 &114262237200052912
 MonoBehaviour:
@@ -47420,6 +48718,8 @@ MonoBehaviour:
   pourRate: 1
   isEvaluated: 0
   totalVolume: 0
+  myDrinkBase: 0
+  myMixer: 0
   coasters: []
   sodaVolume: 0
   tonicVolume: 0
@@ -47442,6 +48742,9 @@ MonoBehaviour:
   alcoholVolume: 0
   abv: 0
   drinkParts: []
+  otherLiquid: {fileID: 0}
+  otherLiquidMask: {fileID: 0}
+  myMask: {fileID: 0}
   isBeingPoured: 0
 --- !u!114 &114266978701658558
 MonoBehaviour:
@@ -47474,6 +48777,8 @@ MonoBehaviour:
   pourRate: 1
   isEvaluated: 0
   totalVolume: 0
+  myDrinkBase: 0
+  myMixer: 0
   coasters: []
   sodaVolume: 0
   tonicVolume: 0
@@ -47496,6 +48801,9 @@ MonoBehaviour:
   alcoholVolume: 0
   abv: 0
   drinkParts: []
+  otherLiquid: {fileID: 0}
+  otherLiquidMask: {fileID: 0}
+  myMask: {fileID: 0}
   isBeingPoured: 0
 --- !u!114 &114268883813290160
 MonoBehaviour:
@@ -47538,6 +48846,8 @@ MonoBehaviour:
   pourRate: 100
   isEvaluated: 0
   totalVolume: 0
+  myDrinkBase: 0
+  myMixer: 0
   coasters: []
   sodaVolume: 0
   tonicVolume: 0
@@ -47560,6 +48870,9 @@ MonoBehaviour:
   alcoholVolume: 0
   abv: 0
   drinkParts: []
+  otherLiquid: {fileID: 0}
+  otherLiquidMask: {fileID: 0}
+  myMask: {fileID: 0}
   isBeingPoured: 0
 --- !u!114 &114271306146144972
 MonoBehaviour:
@@ -47576,6 +48889,8 @@ MonoBehaviour:
   pourRate: 100
   isEvaluated: 0
   totalVolume: 0
+  myDrinkBase: 0
+  myMixer: 0
   coasters: []
   sodaVolume: 0
   tonicVolume: 0
@@ -47598,6 +48913,9 @@ MonoBehaviour:
   alcoholVolume: 0
   abv: 0
   drinkParts: []
+  otherLiquid: {fileID: 0}
+  otherLiquidMask: {fileID: 0}
+  myMask: {fileID: 0}
   isBeingPoured: 0
 --- !u!114 &114273581557339946
 MonoBehaviour:
@@ -47624,6 +48942,7 @@ MonoBehaviour:
   hasLiquid: 0
   isFull: 0
   isDirty: 0
+  liquid: {fileID: 0}
   glassType: 0
 --- !u!114 &114277386822555992
 MonoBehaviour:
@@ -47640,6 +48959,8 @@ MonoBehaviour:
   pourRate: 1
   isEvaluated: 0
   totalVolume: 0
+  myDrinkBase: 0
+  myMixer: 0
   coasters: []
   sodaVolume: 0
   tonicVolume: 0
@@ -47662,6 +48983,9 @@ MonoBehaviour:
   alcoholVolume: 0
   abv: 0
   drinkParts: []
+  otherLiquid: {fileID: 0}
+  otherLiquidMask: {fileID: 0}
+  myMask: {fileID: 0}
   isBeingPoured: 0
 --- !u!114 &114277501433838920
 MonoBehaviour:
@@ -47704,6 +49028,8 @@ MonoBehaviour:
   pourRate: 100
   isEvaluated: 0
   totalVolume: 0
+  myDrinkBase: 0
+  myMixer: 0
   coasters: []
   sodaVolume: 0
   tonicVolume: 0
@@ -47726,6 +49052,9 @@ MonoBehaviour:
   alcoholVolume: 0
   abv: 0
   drinkParts: []
+  otherLiquid: {fileID: 0}
+  otherLiquidMask: {fileID: 0}
+  myMask: {fileID: 0}
   isBeingPoured: 0
 --- !u!114 &114278592755372454
 MonoBehaviour:
@@ -47742,6 +49071,8 @@ MonoBehaviour:
   pourRate: 100
   isEvaluated: 0
   totalVolume: 0
+  myDrinkBase: 0
+  myMixer: 0
   coasters: []
   sodaVolume: 0
   tonicVolume: 0
@@ -47764,6 +49095,9 @@ MonoBehaviour:
   alcoholVolume: 0
   abv: 0
   drinkParts: []
+  otherLiquid: {fileID: 0}
+  otherLiquidMask: {fileID: 0}
+  myMask: {fileID: 0}
   isBeingPoured: 0
 --- !u!114 &114281448770228506
 MonoBehaviour:
@@ -47780,6 +49114,8 @@ MonoBehaviour:
   pourRate: 1
   isEvaluated: 0
   totalVolume: 0
+  myDrinkBase: 0
+  myMixer: 0
   coasters: []
   sodaVolume: 0
   tonicVolume: 0
@@ -47802,6 +49138,9 @@ MonoBehaviour:
   alcoholVolume: 0
   abv: 0
   drinkParts: []
+  otherLiquid: {fileID: 0}
+  otherLiquidMask: {fileID: 0}
+  myMask: {fileID: 0}
   isBeingPoured: 0
 --- !u!114 &114283205936973390
 MonoBehaviour:
@@ -47870,6 +49209,7 @@ MonoBehaviour:
   hasLiquid: 0
   isFull: 0
   isDirty: 0
+  liquid: {fileID: 0}
   glassType: 0
 --- !u!114 &114293201812879610
 MonoBehaviour:
@@ -47896,6 +49236,7 @@ MonoBehaviour:
   hasLiquid: 0
   isFull: 0
   isDirty: 0
+  liquid: {fileID: 0}
   glassType: 0
 --- !u!114 &114294260527777728
 MonoBehaviour:
@@ -47922,6 +49263,7 @@ MonoBehaviour:
   hasLiquid: 0
   isFull: 0
   isDirty: 0
+  liquid: {fileID: 0}
   glassType: 0
 --- !u!114 &114295636516154154
 MonoBehaviour:
@@ -47948,6 +49290,7 @@ MonoBehaviour:
   hasLiquid: 0
   isFull: 0
   isDirty: 0
+  liquid: {fileID: 0}
   glassType: 0
 --- !u!114 &114296350691060832
 MonoBehaviour:
@@ -47964,6 +49307,8 @@ MonoBehaviour:
   pourRate: 1
   isEvaluated: 0
   totalVolume: 0
+  myDrinkBase: 0
+  myMixer: 0
   coasters: []
   sodaVolume: 0
   tonicVolume: 0
@@ -47986,6 +49331,9 @@ MonoBehaviour:
   alcoholVolume: 0
   abv: 0
   drinkParts: []
+  otherLiquid: {fileID: 0}
+  otherLiquidMask: {fileID: 0}
+  myMask: {fileID: 0}
   isBeingPoured: 0
 --- !u!114 &114296917893943968
 MonoBehaviour:
@@ -48012,6 +49360,7 @@ MonoBehaviour:
   hasLiquid: 0
   isFull: 0
   isDirty: 0
+  liquid: {fileID: 0}
   glassType: 0
 --- !u!114 &114298123615274260
 MonoBehaviour:
@@ -48028,6 +49377,8 @@ MonoBehaviour:
   pourRate: 100
   isEvaluated: 0
   totalVolume: 0
+  myDrinkBase: 0
+  myMixer: 0
   coasters: []
   sodaVolume: 0
   tonicVolume: 0
@@ -48050,6 +49401,9 @@ MonoBehaviour:
   alcoholVolume: 0
   abv: 0
   drinkParts: []
+  otherLiquid: {fileID: 0}
+  otherLiquidMask: {fileID: 0}
+  myMask: {fileID: 0}
   isBeingPoured: 0
 --- !u!114 &114299351499610146
 MonoBehaviour:
@@ -48066,6 +49420,8 @@ MonoBehaviour:
   pourRate: 1
   isEvaluated: 0
   totalVolume: 0
+  myDrinkBase: 0
+  myMixer: 0
   coasters: []
   sodaVolume: 0
   tonicVolume: 0
@@ -48088,6 +49444,9 @@ MonoBehaviour:
   alcoholVolume: 0
   abv: 0
   drinkParts: []
+  otherLiquid: {fileID: 0}
+  otherLiquidMask: {fileID: 0}
+  myMask: {fileID: 0}
   isBeingPoured: 0
 --- !u!114 &114299734601593928
 MonoBehaviour:
@@ -48104,6 +49463,8 @@ MonoBehaviour:
   pourRate: 1
   isEvaluated: 0
   totalVolume: 0
+  myDrinkBase: 0
+  myMixer: 0
   coasters: []
   sodaVolume: 0
   tonicVolume: 0
@@ -48126,6 +49487,9 @@ MonoBehaviour:
   alcoholVolume: 0
   abv: 0
   drinkParts: []
+  otherLiquid: {fileID: 0}
+  otherLiquidMask: {fileID: 0}
+  myMask: {fileID: 0}
   isBeingPoured: 0
 --- !u!114 &114300470339767444
 MonoBehaviour:
@@ -48184,6 +49548,7 @@ MonoBehaviour:
   hasLiquid: 0
   isFull: 0
   isDirty: 0
+  liquid: {fileID: 0}
   glassType: 0
 --- !u!114 &114301802257756554
 MonoBehaviour:
@@ -48242,6 +49607,8 @@ MonoBehaviour:
   pourRate: 1
   isEvaluated: 0
   totalVolume: 0
+  myDrinkBase: 0
+  myMixer: 0
   coasters: []
   sodaVolume: 0
   tonicVolume: 0
@@ -48264,6 +49631,9 @@ MonoBehaviour:
   alcoholVolume: 0
   abv: 0
   drinkParts: []
+  otherLiquid: {fileID: 0}
+  otherLiquidMask: {fileID: 0}
+  myMask: {fileID: 0}
   isBeingPoured: 0
 --- !u!114 &114304711958088376
 MonoBehaviour:
@@ -48290,6 +49660,7 @@ MonoBehaviour:
   hasLiquid: 0
   isFull: 0
   isDirty: 0
+  liquid: {fileID: 0}
   glassType: 0
 --- !u!114 &114309534542177140
 MonoBehaviour:
@@ -48306,6 +49677,8 @@ MonoBehaviour:
   pourRate: 100
   isEvaluated: 0
   totalVolume: 0
+  myDrinkBase: 0
+  myMixer: 0
   coasters: []
   sodaVolume: 0
   tonicVolume: 0
@@ -48328,6 +49701,9 @@ MonoBehaviour:
   alcoholVolume: 0
   abv: 0
   drinkParts: []
+  otherLiquid: {fileID: 0}
+  otherLiquidMask: {fileID: 0}
+  myMask: {fileID: 0}
   isBeingPoured: 0
 --- !u!114 &114311220568089822
 MonoBehaviour:
@@ -48480,6 +49856,8 @@ MonoBehaviour:
   pourRate: 1
   isEvaluated: 0
   totalVolume: 0
+  myDrinkBase: 0
+  myMixer: 0
   coasters: []
   sodaVolume: 0
   tonicVolume: 0
@@ -48502,6 +49880,9 @@ MonoBehaviour:
   alcoholVolume: 0
   abv: 0
   drinkParts: []
+  otherLiquid: {fileID: 0}
+  otherLiquidMask: {fileID: 0}
+  myMask: {fileID: 0}
   isBeingPoured: 0
 --- !u!114 &114323807898616080
 MonoBehaviour:
@@ -48534,6 +49915,8 @@ MonoBehaviour:
   pourRate: 1
   isEvaluated: 0
   totalVolume: 0
+  myDrinkBase: 0
+  myMixer: 0
   coasters: []
   sodaVolume: 0
   tonicVolume: 0
@@ -48556,6 +49939,9 @@ MonoBehaviour:
   alcoholVolume: 0
   abv: 0
   drinkParts: []
+  otherLiquid: {fileID: 0}
+  otherLiquidMask: {fileID: 0}
+  myMask: {fileID: 0}
   isBeingPoured: 0
 --- !u!114 &114333788307852096
 MonoBehaviour:
@@ -48598,6 +49984,8 @@ MonoBehaviour:
   pourRate: 1
   isEvaluated: 0
   totalVolume: 0
+  myDrinkBase: 0
+  myMixer: 0
   coasters: []
   sodaVolume: 0
   tonicVolume: 0
@@ -48620,6 +50008,9 @@ MonoBehaviour:
   alcoholVolume: 0
   abv: 0
   drinkParts: []
+  otherLiquid: {fileID: 0}
+  otherLiquidMask: {fileID: 0}
+  myMask: {fileID: 0}
   isBeingPoured: 0
 --- !u!114 &114340611946986752
 MonoBehaviour:
@@ -48714,6 +50105,8 @@ MonoBehaviour:
   pourRate: 1
   isEvaluated: 0
   totalVolume: 0
+  myDrinkBase: 0
+  myMixer: 0
   coasters: []
   sodaVolume: 0
   tonicVolume: 0
@@ -48736,6 +50129,9 @@ MonoBehaviour:
   alcoholVolume: 0
   abv: 0
   drinkParts: []
+  otherLiquid: {fileID: 0}
+  otherLiquidMask: {fileID: 0}
+  myMask: {fileID: 0}
   isBeingPoured: 0
 --- !u!114 &114346475902281418
 MonoBehaviour:
@@ -48778,6 +50174,8 @@ MonoBehaviour:
   pourRate: 100
   isEvaluated: 0
   totalVolume: 0
+  myDrinkBase: 0
+  myMixer: 0
   coasters: []
   sodaVolume: 0
   tonicVolume: 0
@@ -48800,6 +50198,9 @@ MonoBehaviour:
   alcoholVolume: 0
   abv: 0
   drinkParts: []
+  otherLiquid: {fileID: 0}
+  otherLiquidMask: {fileID: 0}
+  myMask: {fileID: 0}
   isBeingPoured: 0
 --- !u!114 &114349321287870702
 MonoBehaviour:
@@ -48826,6 +50227,7 @@ MonoBehaviour:
   hasLiquid: 0
   isFull: 0
   isDirty: 0
+  liquid: {fileID: 0}
   glassType: 0
 --- !u!114 &114349915155618394
 MonoBehaviour:
@@ -48842,6 +50244,8 @@ MonoBehaviour:
   pourRate: 1
   isEvaluated: 0
   totalVolume: 0
+  myDrinkBase: 0
+  myMixer: 0
   coasters: []
   sodaVolume: 0
   tonicVolume: 0
@@ -48864,6 +50268,9 @@ MonoBehaviour:
   alcoholVolume: 0
   abv: 0
   drinkParts: []
+  otherLiquid: {fileID: 0}
+  otherLiquidMask: {fileID: 0}
+  myMask: {fileID: 0}
   isBeingPoured: 0
 --- !u!114 &114351053723709244
 MonoBehaviour:
@@ -48906,6 +50313,8 @@ MonoBehaviour:
   pourRate: 100
   isEvaluated: 0
   totalVolume: 0
+  myDrinkBase: 0
+  myMixer: 0
   coasters: []
   sodaVolume: 0
   tonicVolume: 0
@@ -48928,6 +50337,9 @@ MonoBehaviour:
   alcoholVolume: 0
   abv: 0
   drinkParts: []
+  otherLiquid: {fileID: 0}
+  otherLiquidMask: {fileID: 0}
+  myMask: {fileID: 0}
   isBeingPoured: 0
 --- !u!114 &114352676611280250
 MonoBehaviour:
@@ -48970,6 +50382,8 @@ MonoBehaviour:
   pourRate: 1
   isEvaluated: 0
   totalVolume: 0
+  myDrinkBase: 0
+  myMixer: 0
   coasters: []
   sodaVolume: 0
   tonicVolume: 0
@@ -48992,6 +50406,9 @@ MonoBehaviour:
   alcoholVolume: 0
   abv: 0
   drinkParts: []
+  otherLiquid: {fileID: 0}
+  otherLiquidMask: {fileID: 0}
+  myMask: {fileID: 0}
   isBeingPoured: 0
 --- !u!114 &114354270453170824
 MonoBehaviour:
@@ -49034,6 +50451,7 @@ MonoBehaviour:
   hasLiquid: 0
   isFull: 0
   isDirty: 0
+  liquid: {fileID: 0}
   glassType: 0
 --- !u!114 &114357738873188480
 MonoBehaviour:
@@ -49050,6 +50468,8 @@ MonoBehaviour:
   pourRate: 100
   isEvaluated: 0
   totalVolume: 0
+  myDrinkBase: 0
+  myMixer: 0
   coasters: []
   sodaVolume: 0
   tonicVolume: 0
@@ -49072,6 +50492,9 @@ MonoBehaviour:
   alcoholVolume: 0
   abv: 0
   drinkParts: []
+  otherLiquid: {fileID: 0}
+  otherLiquidMask: {fileID: 0}
+  myMask: {fileID: 0}
   isBeingPoured: 0
 --- !u!114 &114367903347306990
 MonoBehaviour:
@@ -49150,6 +50573,7 @@ MonoBehaviour:
   hasLiquid: 0
   isFull: 0
   isDirty: 0
+  liquid: {fileID: 0}
   glassType: 0
 --- !u!114 &114370433481529632
 MonoBehaviour:
@@ -49166,6 +50590,8 @@ MonoBehaviour:
   pourRate: 1
   isEvaluated: 0
   totalVolume: 0
+  myDrinkBase: 0
+  myMixer: 0
   coasters: []
   sodaVolume: 0
   tonicVolume: 0
@@ -49188,6 +50614,9 @@ MonoBehaviour:
   alcoholVolume: 0
   abv: 0
   drinkParts: []
+  otherLiquid: {fileID: 0}
+  otherLiquidMask: {fileID: 0}
+  myMask: {fileID: 0}
   isBeingPoured: 0
 --- !u!114 &114371512284005690
 MonoBehaviour:
@@ -49204,6 +50633,8 @@ MonoBehaviour:
   pourRate: 100
   isEvaluated: 0
   totalVolume: 0
+  myDrinkBase: 0
+  myMixer: 0
   coasters: []
   sodaVolume: 0
   tonicVolume: 0
@@ -49226,6 +50657,9 @@ MonoBehaviour:
   alcoholVolume: 0
   abv: 0
   drinkParts: []
+  otherLiquid: {fileID: 0}
+  otherLiquidMask: {fileID: 0}
+  myMask: {fileID: 0}
   isBeingPoured: 0
 --- !u!114 &114373097641688306
 MonoBehaviour:
@@ -49258,6 +50692,8 @@ MonoBehaviour:
   pourRate: 1
   isEvaluated: 0
   totalVolume: 0
+  myDrinkBase: 0
+  myMixer: 0
   coasters: []
   sodaVolume: 0
   tonicVolume: 0
@@ -49280,6 +50716,9 @@ MonoBehaviour:
   alcoholVolume: 0
   abv: 0
   drinkParts: []
+  otherLiquid: {fileID: 0}
+  otherLiquidMask: {fileID: 0}
+  myMask: {fileID: 0}
   isBeingPoured: 0
 --- !u!114 &114375559934117460
 MonoBehaviour:
@@ -49348,6 +50787,8 @@ MonoBehaviour:
   pourRate: 1
   isEvaluated: 0
   totalVolume: 0
+  myDrinkBase: 0
+  myMixer: 0
   coasters: []
   sodaVolume: 0
   tonicVolume: 0
@@ -49370,6 +50811,9 @@ MonoBehaviour:
   alcoholVolume: 0
   abv: 0
   drinkParts: []
+  otherLiquid: {fileID: 0}
+  otherLiquidMask: {fileID: 0}
+  myMask: {fileID: 0}
   isBeingPoured: 0
 --- !u!114 &114376095611896108
 MonoBehaviour:
@@ -49386,6 +50830,8 @@ MonoBehaviour:
   pourRate: 100
   isEvaluated: 0
   totalVolume: 0
+  myDrinkBase: 0
+  myMixer: 0
   coasters: []
   sodaVolume: 0
   tonicVolume: 0
@@ -49408,6 +50854,9 @@ MonoBehaviour:
   alcoholVolume: 0
   abv: 0
   drinkParts: []
+  otherLiquid: {fileID: 0}
+  otherLiquidMask: {fileID: 0}
+  myMask: {fileID: 0}
   isBeingPoured: 0
 --- !u!114 &114376973088648482
 MonoBehaviour:
@@ -49466,6 +50915,8 @@ MonoBehaviour:
   pourRate: 1
   isEvaluated: 0
   totalVolume: 0
+  myDrinkBase: 0
+  myMixer: 0
   coasters: []
   sodaVolume: 0
   tonicVolume: 0
@@ -49488,6 +50939,9 @@ MonoBehaviour:
   alcoholVolume: 0
   abv: 0
   drinkParts: []
+  otherLiquid: {fileID: 0}
+  otherLiquidMask: {fileID: 0}
+  myMask: {fileID: 0}
   isBeingPoured: 0
 --- !u!114 &114383219390161612
 MonoBehaviour:
@@ -49546,6 +51000,8 @@ MonoBehaviour:
   pourRate: 1
   isEvaluated: 0
   totalVolume: 0
+  myDrinkBase: 0
+  myMixer: 0
   coasters: []
   sodaVolume: 0
   tonicVolume: 0
@@ -49568,6 +51024,9 @@ MonoBehaviour:
   alcoholVolume: 0
   abv: 0
   drinkParts: []
+  otherLiquid: {fileID: 0}
+  otherLiquidMask: {fileID: 0}
+  myMask: {fileID: 0}
   isBeingPoured: 0
 --- !u!114 &114385616443603824
 MonoBehaviour:
@@ -49594,6 +51053,7 @@ MonoBehaviour:
   hasLiquid: 0
   isFull: 0
   isDirty: 0
+  liquid: {fileID: 0}
   glassType: 0
 --- !u!114 &114386080473219274
 MonoBehaviour:
@@ -49652,6 +51112,8 @@ MonoBehaviour:
   pourRate: 100
   isEvaluated: 0
   totalVolume: 0
+  myDrinkBase: 0
+  myMixer: 0
   coasters: []
   sodaVolume: 0
   tonicVolume: 0
@@ -49674,6 +51136,9 @@ MonoBehaviour:
   alcoholVolume: 0
   abv: 0
   drinkParts: []
+  otherLiquid: {fileID: 0}
+  otherLiquidMask: {fileID: 0}
+  myMask: {fileID: 0}
   isBeingPoured: 0
 --- !u!114 &114397857283685856
 MonoBehaviour:
@@ -49726,6 +51191,7 @@ MonoBehaviour:
   hasLiquid: 0
   isFull: 0
   isDirty: 0
+  liquid: {fileID: 0}
   glassType: 0
 --- !u!114 &114399356010308228
 MonoBehaviour:
@@ -49742,6 +51208,8 @@ MonoBehaviour:
   pourRate: 100
   isEvaluated: 0
   totalVolume: 0
+  myDrinkBase: 0
+  myMixer: 0
   coasters: []
   sodaVolume: 0
   tonicVolume: 0
@@ -49764,6 +51232,9 @@ MonoBehaviour:
   alcoholVolume: 0
   abv: 0
   drinkParts: []
+  otherLiquid: {fileID: 0}
+  otherLiquidMask: {fileID: 0}
+  myMask: {fileID: 0}
   isBeingPoured: 0
 --- !u!114 &114399383150063492
 MonoBehaviour:
@@ -49780,6 +51251,8 @@ MonoBehaviour:
   pourRate: 100
   isEvaluated: 0
   totalVolume: 0
+  myDrinkBase: 0
+  myMixer: 0
   coasters: []
   sodaVolume: 0
   tonicVolume: 0
@@ -49802,6 +51275,9 @@ MonoBehaviour:
   alcoholVolume: 0
   abv: 0
   drinkParts: []
+  otherLiquid: {fileID: 0}
+  otherLiquidMask: {fileID: 0}
+  myMask: {fileID: 0}
   isBeingPoured: 0
 --- !u!114 &114399585148802658
 MonoBehaviour:
@@ -49860,6 +51336,8 @@ MonoBehaviour:
   pourRate: 100
   isEvaluated: 0
   totalVolume: 0
+  myDrinkBase: 0
+  myMixer: 0
   coasters: []
   sodaVolume: 0
   tonicVolume: 0
@@ -49882,6 +51360,9 @@ MonoBehaviour:
   alcoholVolume: 0
   abv: 0
   drinkParts: []
+  otherLiquid: {fileID: 0}
+  otherLiquidMask: {fileID: 0}
+  myMask: {fileID: 0}
   isBeingPoured: 0
 --- !u!114 &114412303019258652
 MonoBehaviour:
@@ -49898,6 +51379,8 @@ MonoBehaviour:
   pourRate: 100
   isEvaluated: 0
   totalVolume: 0
+  myDrinkBase: 0
+  myMixer: 0
   coasters: []
   sodaVolume: 0
   tonicVolume: 0
@@ -49920,6 +51403,9 @@ MonoBehaviour:
   alcoholVolume: 0
   abv: 0
   drinkParts: []
+  otherLiquid: {fileID: 0}
+  otherLiquidMask: {fileID: 0}
+  myMask: {fileID: 0}
   isBeingPoured: 0
 --- !u!114 &114414305805936102
 MonoBehaviour:
@@ -49936,6 +51422,8 @@ MonoBehaviour:
   pourRate: 100
   isEvaluated: 0
   totalVolume: 0
+  myDrinkBase: 0
+  myMixer: 0
   coasters: []
   sodaVolume: 0
   tonicVolume: 0
@@ -49958,6 +51446,9 @@ MonoBehaviour:
   alcoholVolume: 0
   abv: 0
   drinkParts: []
+  otherLiquid: {fileID: 0}
+  otherLiquidMask: {fileID: 0}
+  myMask: {fileID: 0}
   isBeingPoured: 0
 --- !u!114 &114414422839620258
 MonoBehaviour:
@@ -50000,6 +51491,8 @@ MonoBehaviour:
   pourRate: 1
   isEvaluated: 0
   totalVolume: 0
+  myDrinkBase: 0
+  myMixer: 0
   coasters: []
   sodaVolume: 0
   tonicVolume: 0
@@ -50022,6 +51515,9 @@ MonoBehaviour:
   alcoholVolume: 0
   abv: 0
   drinkParts: []
+  otherLiquid: {fileID: 0}
+  otherLiquidMask: {fileID: 0}
+  myMask: {fileID: 0}
   isBeingPoured: 0
 --- !u!114 &114418322734412648
 MonoBehaviour:
@@ -50048,6 +51544,7 @@ MonoBehaviour:
   hasLiquid: 0
   isFull: 0
   isDirty: 0
+  liquid: {fileID: 0}
   glassType: 0
 --- !u!114 &114419348930226624
 MonoBehaviour:
@@ -50090,6 +51587,8 @@ MonoBehaviour:
   pourRate: 1
   isEvaluated: 0
   totalVolume: 0
+  myDrinkBase: 0
+  myMixer: 0
   coasters: []
   sodaVolume: 0
   tonicVolume: 0
@@ -50112,6 +51611,9 @@ MonoBehaviour:
   alcoholVolume: 0
   abv: 0
   drinkParts: []
+  otherLiquid: {fileID: 0}
+  otherLiquidMask: {fileID: 0}
+  myMask: {fileID: 0}
   isBeingPoured: 0
 --- !u!114 &114422530299863354
 MonoBehaviour:
@@ -50154,6 +51656,8 @@ MonoBehaviour:
   pourRate: 100
   isEvaluated: 0
   totalVolume: 0
+  myDrinkBase: 0
+  myMixer: 0
   coasters: []
   sodaVolume: 0
   tonicVolume: 0
@@ -50176,6 +51680,9 @@ MonoBehaviour:
   alcoholVolume: 0
   abv: 0
   drinkParts: []
+  otherLiquid: {fileID: 0}
+  otherLiquidMask: {fileID: 0}
+  myMask: {fileID: 0}
   isBeingPoured: 0
 --- !u!114 &114430349076894018
 MonoBehaviour:
@@ -50192,6 +51699,8 @@ MonoBehaviour:
   pourRate: 100
   isEvaluated: 0
   totalVolume: 0
+  myDrinkBase: 0
+  myMixer: 0
   coasters: []
   sodaVolume: 0
   tonicVolume: 0
@@ -50214,6 +51723,9 @@ MonoBehaviour:
   alcoholVolume: 0
   abv: 0
   drinkParts: []
+  otherLiquid: {fileID: 0}
+  otherLiquidMask: {fileID: 0}
+  myMask: {fileID: 0}
   isBeingPoured: 0
 --- !u!114 &114430696228300428
 MonoBehaviour:
@@ -50240,6 +51752,7 @@ MonoBehaviour:
   hasLiquid: 0
   isFull: 0
   isDirty: 0
+  liquid: {fileID: 0}
   glassType: 0
 --- !u!114 &114431335030634154
 MonoBehaviour:
@@ -50282,6 +51795,8 @@ MonoBehaviour:
   pourRate: 1
   isEvaluated: 0
   totalVolume: 0
+  myDrinkBase: 0
+  myMixer: 0
   coasters: []
   sodaVolume: 0
   tonicVolume: 0
@@ -50304,6 +51819,9 @@ MonoBehaviour:
   alcoholVolume: 0
   abv: 0
   drinkParts: []
+  otherLiquid: {fileID: 0}
+  otherLiquidMask: {fileID: 0}
+  myMask: {fileID: 0}
   isBeingPoured: 0
 --- !u!114 &114445166447077668
 MonoBehaviour:
@@ -50336,6 +51854,8 @@ MonoBehaviour:
   pourRate: 100
   isEvaluated: 0
   totalVolume: 0
+  myDrinkBase: 0
+  myMixer: 0
   coasters: []
   sodaVolume: 0
   tonicVolume: 0
@@ -50358,6 +51878,9 @@ MonoBehaviour:
   alcoholVolume: 0
   abv: 0
   drinkParts: []
+  otherLiquid: {fileID: 0}
+  otherLiquidMask: {fileID: 0}
+  myMask: {fileID: 0}
   isBeingPoured: 0
 --- !u!114 &114451915563274306
 MonoBehaviour:
@@ -50400,6 +51923,7 @@ MonoBehaviour:
   hasLiquid: 0
   isFull: 0
   isDirty: 0
+  liquid: {fileID: 0}
   glassType: 0
 --- !u!114 &114452328128283266
 MonoBehaviour:
@@ -50468,6 +51992,8 @@ MonoBehaviour:
   pourRate: 1
   isEvaluated: 0
   totalVolume: 0
+  myDrinkBase: 0
+  myMixer: 0
   coasters: []
   sodaVolume: 0
   tonicVolume: 0
@@ -50490,6 +52016,9 @@ MonoBehaviour:
   alcoholVolume: 0
   abv: 0
   drinkParts: []
+  otherLiquid: {fileID: 0}
+  otherLiquidMask: {fileID: 0}
+  myMask: {fileID: 0}
   isBeingPoured: 0
 --- !u!114 &114462682372880684
 MonoBehaviour:
@@ -50506,6 +52035,8 @@ MonoBehaviour:
   pourRate: 100
   isEvaluated: 0
   totalVolume: 0
+  myDrinkBase: 0
+  myMixer: 0
   coasters: []
   sodaVolume: 0
   tonicVolume: 0
@@ -50528,6 +52059,9 @@ MonoBehaviour:
   alcoholVolume: 0
   abv: 0
   drinkParts: []
+  otherLiquid: {fileID: 0}
+  otherLiquidMask: {fileID: 0}
+  myMask: {fileID: 0}
   isBeingPoured: 0
 --- !u!114 &114464170849854750
 MonoBehaviour:
@@ -50580,6 +52114,7 @@ MonoBehaviour:
   hasLiquid: 0
   isFull: 0
   isDirty: 0
+  liquid: {fileID: 0}
   glassType: 0
 --- !u!114 &114465535666857106
 MonoBehaviour:
@@ -50596,6 +52131,8 @@ MonoBehaviour:
   pourRate: 100
   isEvaluated: 0
   totalVolume: 0
+  myDrinkBase: 0
+  myMixer: 0
   coasters: []
   sodaVolume: 0
   tonicVolume: 0
@@ -50618,6 +52155,9 @@ MonoBehaviour:
   alcoholVolume: 0
   abv: 0
   drinkParts: []
+  otherLiquid: {fileID: 0}
+  otherLiquidMask: {fileID: 0}
+  myMask: {fileID: 0}
   isBeingPoured: 0
 --- !u!114 &114465697028401644
 MonoBehaviour:
@@ -50634,6 +52174,8 @@ MonoBehaviour:
   pourRate: 1
   isEvaluated: 0
   totalVolume: 0
+  myDrinkBase: 0
+  myMixer: 0
   coasters: []
   sodaVolume: 0
   tonicVolume: 0
@@ -50656,6 +52198,9 @@ MonoBehaviour:
   alcoholVolume: 0
   abv: 0
   drinkParts: []
+  otherLiquid: {fileID: 0}
+  otherLiquidMask: {fileID: 0}
+  myMask: {fileID: 0}
   isBeingPoured: 0
 --- !u!114 &114467594455890506
 MonoBehaviour:
@@ -50682,6 +52227,7 @@ MonoBehaviour:
   hasLiquid: 0
   isFull: 0
   isDirty: 0
+  liquid: {fileID: 0}
   glassType: 0
 --- !u!114 &114472846498791760
 MonoBehaviour:
@@ -50698,6 +52244,8 @@ MonoBehaviour:
   pourRate: 1
   isEvaluated: 0
   totalVolume: 0
+  myDrinkBase: 0
+  myMixer: 0
   coasters: []
   sodaVolume: 0
   tonicVolume: 0
@@ -50720,6 +52268,9 @@ MonoBehaviour:
   alcoholVolume: 0
   abv: 0
   drinkParts: []
+  otherLiquid: {fileID: 0}
+  otherLiquidMask: {fileID: 0}
+  myMask: {fileID: 0}
   isBeingPoured: 0
 --- !u!114 &114475291034343092
 MonoBehaviour:
@@ -50736,6 +52287,8 @@ MonoBehaviour:
   pourRate: 100
   isEvaluated: 0
   totalVolume: 0
+  myDrinkBase: 0
+  myMixer: 0
   coasters: []
   sodaVolume: 0
   tonicVolume: 0
@@ -50758,6 +52311,9 @@ MonoBehaviour:
   alcoholVolume: 0
   abv: 0
   drinkParts: []
+  otherLiquid: {fileID: 0}
+  otherLiquidMask: {fileID: 0}
+  myMask: {fileID: 0}
   isBeingPoured: 0
 --- !u!114 &114475747394903512
 MonoBehaviour:
@@ -50784,6 +52340,7 @@ MonoBehaviour:
   hasLiquid: 0
   isFull: 0
   isDirty: 0
+  liquid: {fileID: 0}
   glassType: 0
 --- !u!114 &114477396091569272
 MonoBehaviour:
@@ -50800,6 +52357,8 @@ MonoBehaviour:
   pourRate: 1
   isEvaluated: 0
   totalVolume: 0
+  myDrinkBase: 0
+  myMixer: 0
   coasters: []
   sodaVolume: 0
   tonicVolume: 0
@@ -50822,6 +52381,9 @@ MonoBehaviour:
   alcoholVolume: 0
   abv: 0
   drinkParts: []
+  otherLiquid: {fileID: 0}
+  otherLiquidMask: {fileID: 0}
+  myMask: {fileID: 0}
   isBeingPoured: 0
 --- !u!114 &114477670254343604
 MonoBehaviour:
@@ -50838,6 +52400,8 @@ MonoBehaviour:
   pourRate: 1
   isEvaluated: 0
   totalVolume: 0
+  myDrinkBase: 0
+  myMixer: 0
   coasters: []
   sodaVolume: 0
   tonicVolume: 0
@@ -50860,6 +52424,9 @@ MonoBehaviour:
   alcoholVolume: 0
   abv: 0
   drinkParts: []
+  otherLiquid: {fileID: 0}
+  otherLiquidMask: {fileID: 0}
+  myMask: {fileID: 0}
   isBeingPoured: 0
 --- !u!114 &114478441044275252
 MonoBehaviour:
@@ -50886,6 +52453,7 @@ MonoBehaviour:
   hasLiquid: 0
   isFull: 0
   isDirty: 0
+  liquid: {fileID: 0}
   glassType: 0
 --- !u!114 &114479652291245806
 MonoBehaviour:
@@ -50912,6 +52480,7 @@ MonoBehaviour:
   hasLiquid: 0
   isFull: 0
   isDirty: 0
+  liquid: {fileID: 0}
   glassType: 0
 --- !u!114 &114481273596304092
 MonoBehaviour:
@@ -50928,6 +52497,8 @@ MonoBehaviour:
   pourRate: 100
   isEvaluated: 0
   totalVolume: 0
+  myDrinkBase: 0
+  myMixer: 0
   coasters: []
   sodaVolume: 0
   tonicVolume: 0
@@ -50950,6 +52521,9 @@ MonoBehaviour:
   alcoholVolume: 0
   abv: 0
   drinkParts: []
+  otherLiquid: {fileID: 0}
+  otherLiquidMask: {fileID: 0}
+  myMask: {fileID: 0}
   isBeingPoured: 0
 --- !u!114 &114481624838142320
 MonoBehaviour:
@@ -50966,6 +52540,8 @@ MonoBehaviour:
   pourRate: 1
   isEvaluated: 0
   totalVolume: 0
+  myDrinkBase: 0
+  myMixer: 0
   coasters: []
   sodaVolume: 0
   tonicVolume: 0
@@ -50988,6 +52564,9 @@ MonoBehaviour:
   alcoholVolume: 0
   abv: 0
   drinkParts: []
+  otherLiquid: {fileID: 0}
+  otherLiquidMask: {fileID: 0}
+  myMask: {fileID: 0}
   isBeingPoured: 0
 --- !u!114 &114484339820114712
 MonoBehaviour:
@@ -51004,6 +52583,8 @@ MonoBehaviour:
   pourRate: 100
   isEvaluated: 0
   totalVolume: 0
+  myDrinkBase: 0
+  myMixer: 0
   coasters: []
   sodaVolume: 0
   tonicVolume: 0
@@ -51026,6 +52607,9 @@ MonoBehaviour:
   alcoholVolume: 0
   abv: 0
   drinkParts: []
+  otherLiquid: {fileID: 0}
+  otherLiquidMask: {fileID: 0}
+  myMask: {fileID: 0}
   isBeingPoured: 0
 --- !u!114 &114484644203740436
 MonoBehaviour:
@@ -51068,6 +52652,8 @@ MonoBehaviour:
   pourRate: 1
   isEvaluated: 0
   totalVolume: 0
+  myDrinkBase: 0
+  myMixer: 0
   coasters: []
   sodaVolume: 0
   tonicVolume: 0
@@ -51090,6 +52676,9 @@ MonoBehaviour:
   alcoholVolume: 0
   abv: 0
   drinkParts: []
+  otherLiquid: {fileID: 0}
+  otherLiquidMask: {fileID: 0}
+  myMask: {fileID: 0}
   isBeingPoured: 0
 --- !u!114 &114499996692459240
 MonoBehaviour:
@@ -51132,6 +52721,8 @@ MonoBehaviour:
   pourRate: 100
   isEvaluated: 0
   totalVolume: 0
+  myDrinkBase: 0
+  myMixer: 0
   coasters: []
   sodaVolume: 0
   tonicVolume: 0
@@ -51154,6 +52745,9 @@ MonoBehaviour:
   alcoholVolume: 0
   abv: 0
   drinkParts: []
+  otherLiquid: {fileID: 0}
+  otherLiquidMask: {fileID: 0}
+  myMask: {fileID: 0}
   isBeingPoured: 0
 --- !u!114 &114504508513322112
 MonoBehaviour:
@@ -51170,6 +52764,8 @@ MonoBehaviour:
   pourRate: 1
   isEvaluated: 0
   totalVolume: 0
+  myDrinkBase: 0
+  myMixer: 0
   coasters: []
   sodaVolume: 0
   tonicVolume: 0
@@ -51192,6 +52788,9 @@ MonoBehaviour:
   alcoholVolume: 0
   abv: 0
   drinkParts: []
+  otherLiquid: {fileID: 0}
+  otherLiquidMask: {fileID: 0}
+  myMask: {fileID: 0}
   isBeingPoured: 0
 --- !u!114 &114507965367944852
 MonoBehaviour:
@@ -51208,6 +52807,8 @@ MonoBehaviour:
   pourRate: 1
   isEvaluated: 0
   totalVolume: 0
+  myDrinkBase: 0
+  myMixer: 0
   coasters: []
   sodaVolume: 0
   tonicVolume: 0
@@ -51230,6 +52831,9 @@ MonoBehaviour:
   alcoholVolume: 0
   abv: 0
   drinkParts: []
+  otherLiquid: {fileID: 0}
+  otherLiquidMask: {fileID: 0}
+  myMask: {fileID: 0}
   isBeingPoured: 0
 --- !u!114 &114509822496265568
 MonoBehaviour:
@@ -51282,6 +52886,7 @@ MonoBehaviour:
   hasLiquid: 0
   isFull: 0
   isDirty: 0
+  liquid: {fileID: 0}
   glassType: 0
 --- !u!114 &114514540778067658
 MonoBehaviour:
@@ -51298,6 +52903,8 @@ MonoBehaviour:
   pourRate: 100
   isEvaluated: 0
   totalVolume: 0
+  myDrinkBase: 0
+  myMixer: 0
   coasters: []
   sodaVolume: 0
   tonicVolume: 0
@@ -51320,6 +52927,9 @@ MonoBehaviour:
   alcoholVolume: 0
   abv: 0
   drinkParts: []
+  otherLiquid: {fileID: 0}
+  otherLiquidMask: {fileID: 0}
+  myMask: {fileID: 0}
   isBeingPoured: 0
 --- !u!114 &114514829927029068
 MonoBehaviour:
@@ -51424,6 +53034,7 @@ MonoBehaviour:
   hasLiquid: 0
   isFull: 0
   isDirty: 0
+  liquid: {fileID: 0}
   glassType: 0
 --- !u!114 &114533466687036210
 MonoBehaviour:
@@ -51450,6 +53061,7 @@ MonoBehaviour:
   hasLiquid: 0
   isFull: 0
   isDirty: 0
+  liquid: {fileID: 0}
   glassType: 0
 --- !u!114 &114539338105747474
 MonoBehaviour:
@@ -51466,6 +53078,8 @@ MonoBehaviour:
   pourRate: 100
   isEvaluated: 0
   totalVolume: 0
+  myDrinkBase: 0
+  myMixer: 0
   coasters: []
   sodaVolume: 0
   tonicVolume: 0
@@ -51488,6 +53102,9 @@ MonoBehaviour:
   alcoholVolume: 0
   abv: 0
   drinkParts: []
+  otherLiquid: {fileID: 0}
+  otherLiquidMask: {fileID: 0}
+  myMask: {fileID: 0}
   isBeingPoured: 0
 --- !u!114 &114543328031981300
 MonoBehaviour:
@@ -51514,6 +53131,7 @@ MonoBehaviour:
   hasLiquid: 0
   isFull: 0
   isDirty: 0
+  liquid: {fileID: 0}
   glassType: 0
 --- !u!114 &114543611199418092
 MonoBehaviour:
@@ -51530,6 +53148,8 @@ MonoBehaviour:
   pourRate: 100
   isEvaluated: 0
   totalVolume: 0
+  myDrinkBase: 0
+  myMixer: 0
   coasters: []
   sodaVolume: 0
   tonicVolume: 0
@@ -51552,6 +53172,9 @@ MonoBehaviour:
   alcoholVolume: 0
   abv: 0
   drinkParts: []
+  otherLiquid: {fileID: 0}
+  otherLiquidMask: {fileID: 0}
+  myMask: {fileID: 0}
   isBeingPoured: 0
 --- !u!114 &114543781888130770
 MonoBehaviour:
@@ -51568,6 +53191,8 @@ MonoBehaviour:
   pourRate: 1
   isEvaluated: 0
   totalVolume: 0
+  myDrinkBase: 0
+  myMixer: 0
   coasters: []
   sodaVolume: 0
   tonicVolume: 0
@@ -51590,6 +53215,9 @@ MonoBehaviour:
   alcoholVolume: 0
   abv: 0
   drinkParts: []
+  otherLiquid: {fileID: 0}
+  otherLiquidMask: {fileID: 0}
+  myMask: {fileID: 0}
   isBeingPoured: 0
 --- !u!114 &114544385663204872
 MonoBehaviour:
@@ -51606,6 +53234,8 @@ MonoBehaviour:
   pourRate: 1
   isEvaluated: 0
   totalVolume: 0
+  myDrinkBase: 0
+  myMixer: 0
   coasters: []
   sodaVolume: 0
   tonicVolume: 0
@@ -51628,6 +53258,9 @@ MonoBehaviour:
   alcoholVolume: 0
   abv: 0
   drinkParts: []
+  otherLiquid: {fileID: 0}
+  otherLiquidMask: {fileID: 0}
+  myMask: {fileID: 0}
   isBeingPoured: 0
 --- !u!114 &114549594082508022
 MonoBehaviour:
@@ -51686,6 +53319,8 @@ MonoBehaviour:
   pourRate: 100
   isEvaluated: 0
   totalVolume: 0
+  myDrinkBase: 0
+  myMixer: 0
   coasters: []
   sodaVolume: 0
   tonicVolume: 0
@@ -51708,6 +53343,9 @@ MonoBehaviour:
   alcoholVolume: 0
   abv: 0
   drinkParts: []
+  otherLiquid: {fileID: 0}
+  otherLiquidMask: {fileID: 0}
+  myMask: {fileID: 0}
   isBeingPoured: 0
 --- !u!114 &114553467664360570
 MonoBehaviour:
@@ -51750,6 +53388,7 @@ MonoBehaviour:
   hasLiquid: 0
   isFull: 0
   isDirty: 0
+  liquid: {fileID: 0}
   glassType: 0
 --- !u!114 &114554857388257288
 MonoBehaviour:
@@ -51776,6 +53415,7 @@ MonoBehaviour:
   hasLiquid: 0
   isFull: 0
   isDirty: 0
+  liquid: {fileID: 0}
   glassType: 0
 --- !u!114 &114556842645776048
 MonoBehaviour:
@@ -51844,6 +53484,8 @@ MonoBehaviour:
   pourRate: 100
   isEvaluated: 0
   totalVolume: 0
+  myDrinkBase: 0
+  myMixer: 0
   coasters: []
   sodaVolume: 0
   tonicVolume: 0
@@ -51866,6 +53508,9 @@ MonoBehaviour:
   alcoholVolume: 0
   abv: 0
   drinkParts: []
+  otherLiquid: {fileID: 0}
+  otherLiquidMask: {fileID: 0}
+  myMask: {fileID: 0}
   isBeingPoured: 0
 --- !u!114 &114559485025189886
 MonoBehaviour:
@@ -51918,6 +53563,7 @@ MonoBehaviour:
   hasLiquid: 0
   isFull: 0
   isDirty: 0
+  liquid: {fileID: 0}
   glassType: 0
 --- !u!114 &114563421809592928
 MonoBehaviour:
@@ -51934,6 +53580,8 @@ MonoBehaviour:
   pourRate: 100
   isEvaluated: 0
   totalVolume: 0
+  myDrinkBase: 0
+  myMixer: 0
   coasters: []
   sodaVolume: 0
   tonicVolume: 0
@@ -51956,6 +53604,9 @@ MonoBehaviour:
   alcoholVolume: 0
   abv: 0
   drinkParts: []
+  otherLiquid: {fileID: 0}
+  otherLiquidMask: {fileID: 0}
+  myMask: {fileID: 0}
   isBeingPoured: 0
 --- !u!114 &114567419913300722
 MonoBehaviour:
@@ -51972,6 +53623,8 @@ MonoBehaviour:
   pourRate: 100
   isEvaluated: 0
   totalVolume: 0
+  myDrinkBase: 0
+  myMixer: 0
   coasters: []
   sodaVolume: 0
   tonicVolume: 0
@@ -51994,6 +53647,9 @@ MonoBehaviour:
   alcoholVolume: 0
   abv: 0
   drinkParts: []
+  otherLiquid: {fileID: 0}
+  otherLiquidMask: {fileID: 0}
+  myMask: {fileID: 0}
   isBeingPoured: 0
 --- !u!114 &114567638983894526
 MonoBehaviour:
@@ -52010,6 +53666,8 @@ MonoBehaviour:
   pourRate: 100
   isEvaluated: 0
   totalVolume: 0
+  myDrinkBase: 0
+  myMixer: 0
   coasters: []
   sodaVolume: 0
   tonicVolume: 0
@@ -52032,6 +53690,9 @@ MonoBehaviour:
   alcoholVolume: 0
   abv: 0
   drinkParts: []
+  otherLiquid: {fileID: 0}
+  otherLiquidMask: {fileID: 0}
+  myMask: {fileID: 0}
   isBeingPoured: 0
 --- !u!114 &114567871184492148
 MonoBehaviour:
@@ -52058,6 +53719,7 @@ MonoBehaviour:
   hasLiquid: 0
   isFull: 0
   isDirty: 0
+  liquid: {fileID: 0}
   glassType: 0
 --- !u!114 &114568106045637464
 MonoBehaviour:
@@ -52074,6 +53736,8 @@ MonoBehaviour:
   pourRate: 100
   isEvaluated: 0
   totalVolume: 0
+  myDrinkBase: 0
+  myMixer: 0
   coasters: []
   sodaVolume: 0
   tonicVolume: 0
@@ -52096,6 +53760,9 @@ MonoBehaviour:
   alcoholVolume: 0
   abv: 0
   drinkParts: []
+  otherLiquid: {fileID: 0}
+  otherLiquidMask: {fileID: 0}
+  myMask: {fileID: 0}
   isBeingPoured: 0
 --- !u!114 &114571927907734240
 MonoBehaviour:
@@ -52128,6 +53795,8 @@ MonoBehaviour:
   pourRate: 1
   isEvaluated: 0
   totalVolume: 0
+  myDrinkBase: 0
+  myMixer: 0
   coasters: []
   sodaVolume: 0
   tonicVolume: 0
@@ -52150,6 +53819,9 @@ MonoBehaviour:
   alcoholVolume: 0
   abv: 0
   drinkParts: []
+  otherLiquid: {fileID: 0}
+  otherLiquidMask: {fileID: 0}
+  myMask: {fileID: 0}
   isBeingPoured: 0
 --- !u!114 &114572604404770908
 MonoBehaviour:
@@ -52166,6 +53838,8 @@ MonoBehaviour:
   pourRate: 100
   isEvaluated: 0
   totalVolume: 0
+  myDrinkBase: 0
+  myMixer: 0
   coasters: []
   sodaVolume: 0
   tonicVolume: 0
@@ -52188,6 +53862,9 @@ MonoBehaviour:
   alcoholVolume: 0
   abv: 0
   drinkParts: []
+  otherLiquid: {fileID: 0}
+  otherLiquidMask: {fileID: 0}
+  myMask: {fileID: 0}
   isBeingPoured: 0
 --- !u!114 &114573398445628082
 MonoBehaviour:
@@ -52204,6 +53881,8 @@ MonoBehaviour:
   pourRate: 1
   isEvaluated: 0
   totalVolume: 0
+  myDrinkBase: 0
+  myMixer: 0
   coasters: []
   sodaVolume: 0
   tonicVolume: 0
@@ -52226,6 +53905,9 @@ MonoBehaviour:
   alcoholVolume: 0
   abv: 0
   drinkParts: []
+  otherLiquid: {fileID: 0}
+  otherLiquidMask: {fileID: 0}
+  myMask: {fileID: 0}
   isBeingPoured: 0
 --- !u!114 &114574248287684184
 MonoBehaviour:
@@ -52242,6 +53924,8 @@ MonoBehaviour:
   pourRate: 100
   isEvaluated: 0
   totalVolume: 0
+  myDrinkBase: 0
+  myMixer: 0
   coasters: []
   sodaVolume: 0
   tonicVolume: 0
@@ -52264,6 +53948,9 @@ MonoBehaviour:
   alcoholVolume: 0
   abv: 0
   drinkParts: []
+  otherLiquid: {fileID: 0}
+  otherLiquidMask: {fileID: 0}
+  myMask: {fileID: 0}
   isBeingPoured: 0
 --- !u!114 &114576522957345498
 MonoBehaviour:
@@ -52342,6 +54029,7 @@ MonoBehaviour:
   hasLiquid: 0
   isFull: 0
   isDirty: 0
+  liquid: {fileID: 0}
   glassType: 0
 --- !u!114 &114580062422084758
 MonoBehaviour:
@@ -52358,6 +54046,8 @@ MonoBehaviour:
   pourRate: 100
   isEvaluated: 0
   totalVolume: 0
+  myDrinkBase: 0
+  myMixer: 0
   coasters: []
   sodaVolume: 0
   tonicVolume: 0
@@ -52380,6 +54070,9 @@ MonoBehaviour:
   alcoholVolume: 0
   abv: 0
   drinkParts: []
+  otherLiquid: {fileID: 0}
+  otherLiquidMask: {fileID: 0}
+  myMask: {fileID: 0}
   isBeingPoured: 0
 --- !u!114 &114581867984956738
 MonoBehaviour:
@@ -52396,6 +54089,8 @@ MonoBehaviour:
   pourRate: 100
   isEvaluated: 0
   totalVolume: 0
+  myDrinkBase: 0
+  myMixer: 0
   coasters: []
   sodaVolume: 0
   tonicVolume: 0
@@ -52418,6 +54113,9 @@ MonoBehaviour:
   alcoholVolume: 0
   abv: 0
   drinkParts: []
+  otherLiquid: {fileID: 0}
+  otherLiquidMask: {fileID: 0}
+  myMask: {fileID: 0}
   isBeingPoured: 0
 --- !u!114 &114582137825061654
 MonoBehaviour:
@@ -52434,6 +54132,8 @@ MonoBehaviour:
   pourRate: 100
   isEvaluated: 0
   totalVolume: 0
+  myDrinkBase: 0
+  myMixer: 0
   coasters: []
   sodaVolume: 0
   tonicVolume: 0
@@ -52456,6 +54156,9 @@ MonoBehaviour:
   alcoholVolume: 0
   abv: 0
   drinkParts: []
+  otherLiquid: {fileID: 0}
+  otherLiquidMask: {fileID: 0}
+  myMask: {fileID: 0}
   isBeingPoured: 0
 --- !u!114 &114584084898951502
 MonoBehaviour:
@@ -52514,6 +54217,8 @@ MonoBehaviour:
   pourRate: 100
   isEvaluated: 0
   totalVolume: 0
+  myDrinkBase: 0
+  myMixer: 0
   coasters: []
   sodaVolume: 0
   tonicVolume: 0
@@ -52536,6 +54241,9 @@ MonoBehaviour:
   alcoholVolume: 0
   abv: 0
   drinkParts: []
+  otherLiquid: {fileID: 0}
+  otherLiquidMask: {fileID: 0}
+  myMask: {fileID: 0}
   isBeingPoured: 0
 --- !u!114 &114594281621677630
 MonoBehaviour:
@@ -52562,6 +54270,7 @@ MonoBehaviour:
   hasLiquid: 0
   isFull: 0
   isDirty: 0
+  liquid: {fileID: 0}
   glassType: 0
 --- !u!114 &114596362995326136
 MonoBehaviour:
@@ -52604,6 +54313,8 @@ MonoBehaviour:
   pourRate: 1
   isEvaluated: 0
   totalVolume: 0
+  myDrinkBase: 0
+  myMixer: 0
   coasters: []
   sodaVolume: 0
   tonicVolume: 0
@@ -52626,6 +54337,9 @@ MonoBehaviour:
   alcoholVolume: 0
   abv: 0
   drinkParts: []
+  otherLiquid: {fileID: 0}
+  otherLiquidMask: {fileID: 0}
+  myMask: {fileID: 0}
   isBeingPoured: 0
 --- !u!114 &114601833976454090
 MonoBehaviour:
@@ -52668,6 +54382,8 @@ MonoBehaviour:
   pourRate: 1
   isEvaluated: 0
   totalVolume: 0
+  myDrinkBase: 0
+  myMixer: 0
   coasters: []
   sodaVolume: 0
   tonicVolume: 0
@@ -52690,6 +54406,9 @@ MonoBehaviour:
   alcoholVolume: 0
   abv: 0
   drinkParts: []
+  otherLiquid: {fileID: 0}
+  otherLiquidMask: {fileID: 0}
+  myMask: {fileID: 0}
   isBeingPoured: 0
 --- !u!114 &114612432989769300
 MonoBehaviour:
@@ -52706,6 +54425,8 @@ MonoBehaviour:
   pourRate: 100
   isEvaluated: 0
   totalVolume: 0
+  myDrinkBase: 0
+  myMixer: 0
   coasters: []
   sodaVolume: 0
   tonicVolume: 0
@@ -52728,6 +54449,9 @@ MonoBehaviour:
   alcoholVolume: 0
   abv: 0
   drinkParts: []
+  otherLiquid: {fileID: 0}
+  otherLiquidMask: {fileID: 0}
+  myMask: {fileID: 0}
   isBeingPoured: 0
 --- !u!114 &114614314920253594
 MonoBehaviour:
@@ -52744,6 +54468,8 @@ MonoBehaviour:
   pourRate: 1
   isEvaluated: 0
   totalVolume: 0
+  myDrinkBase: 0
+  myMixer: 0
   coasters: []
   sodaVolume: 0
   tonicVolume: 0
@@ -52766,6 +54492,9 @@ MonoBehaviour:
   alcoholVolume: 0
   abv: 0
   drinkParts: []
+  otherLiquid: {fileID: 0}
+  otherLiquidMask: {fileID: 0}
+  myMask: {fileID: 0}
   isBeingPoured: 0
 --- !u!114 &114617665922135474
 MonoBehaviour:
@@ -52808,6 +54537,8 @@ MonoBehaviour:
   pourRate: 1
   isEvaluated: 0
   totalVolume: 0
+  myDrinkBase: 0
+  myMixer: 0
   coasters: []
   sodaVolume: 0
   tonicVolume: 0
@@ -52830,6 +54561,9 @@ MonoBehaviour:
   alcoholVolume: 0
   abv: 0
   drinkParts: []
+  otherLiquid: {fileID: 0}
+  otherLiquidMask: {fileID: 0}
+  myMask: {fileID: 0}
   isBeingPoured: 0
 --- !u!114 &114618382869748326
 MonoBehaviour:
@@ -52846,6 +54580,8 @@ MonoBehaviour:
   pourRate: 100
   isEvaluated: 0
   totalVolume: 0
+  myDrinkBase: 0
+  myMixer: 0
   coasters: []
   sodaVolume: 0
   tonicVolume: 0
@@ -52868,6 +54604,9 @@ MonoBehaviour:
   alcoholVolume: 0
   abv: 0
   drinkParts: []
+  otherLiquid: {fileID: 0}
+  otherLiquidMask: {fileID: 0}
+  myMask: {fileID: 0}
   isBeingPoured: 0
 --- !u!114 &114618734848356628
 MonoBehaviour:
@@ -52894,6 +54633,7 @@ MonoBehaviour:
   hasLiquid: 0
   isFull: 0
   isDirty: 0
+  liquid: {fileID: 0}
   glassType: 0
 --- !u!114 &114621778040846598
 MonoBehaviour:
@@ -52920,6 +54660,7 @@ MonoBehaviour:
   hasLiquid: 0
   isFull: 0
   isDirty: 0
+  liquid: {fileID: 0}
   glassType: 0
 --- !u!114 &114623807952163738
 MonoBehaviour:
@@ -52936,6 +54677,8 @@ MonoBehaviour:
   pourRate: 1
   isEvaluated: 0
   totalVolume: 0
+  myDrinkBase: 0
+  myMixer: 0
   coasters: []
   sodaVolume: 0
   tonicVolume: 0
@@ -52958,6 +54701,9 @@ MonoBehaviour:
   alcoholVolume: 0
   abv: 0
   drinkParts: []
+  otherLiquid: {fileID: 0}
+  otherLiquidMask: {fileID: 0}
+  myMask: {fileID: 0}
   isBeingPoured: 0
 --- !u!114 &114624279477847832
 MonoBehaviour:
@@ -52974,6 +54720,8 @@ MonoBehaviour:
   pourRate: 100
   isEvaluated: 0
   totalVolume: 0
+  myDrinkBase: 0
+  myMixer: 0
   coasters: []
   sodaVolume: 0
   tonicVolume: 0
@@ -52996,6 +54744,9 @@ MonoBehaviour:
   alcoholVolume: 0
   abv: 0
   drinkParts: []
+  otherLiquid: {fileID: 0}
+  otherLiquidMask: {fileID: 0}
+  myMask: {fileID: 0}
   isBeingPoured: 0
 --- !u!114 &114625052374991640
 MonoBehaviour:
@@ -53064,6 +54815,8 @@ MonoBehaviour:
   pourRate: 1
   isEvaluated: 0
   totalVolume: 0
+  myDrinkBase: 0
+  myMixer: 0
   coasters: []
   sodaVolume: 0
   tonicVolume: 0
@@ -53086,6 +54839,9 @@ MonoBehaviour:
   alcoholVolume: 0
   abv: 0
   drinkParts: []
+  otherLiquid: {fileID: 0}
+  otherLiquidMask: {fileID: 0}
+  myMask: {fileID: 0}
   isBeingPoured: 0
 --- !u!114 &114630035485907812
 MonoBehaviour:
@@ -53112,6 +54868,7 @@ MonoBehaviour:
   hasLiquid: 0
   isFull: 0
   isDirty: 0
+  liquid: {fileID: 0}
   glassType: 0
 --- !u!114 &114630309819930770
 MonoBehaviour:
@@ -53138,6 +54895,7 @@ MonoBehaviour:
   hasLiquid: 0
   isFull: 0
   isDirty: 0
+  liquid: {fileID: 0}
   glassType: 0
 --- !u!114 &114630415904760074
 MonoBehaviour:
@@ -53206,6 +54964,7 @@ MonoBehaviour:
   hasLiquid: 0
   isFull: 0
   isDirty: 0
+  liquid: {fileID: 0}
   glassType: 0
 --- !u!114 &114633315957671594
 MonoBehaviour:
@@ -53222,6 +54981,8 @@ MonoBehaviour:
   pourRate: 100
   isEvaluated: 0
   totalVolume: 0
+  myDrinkBase: 0
+  myMixer: 0
   coasters: []
   sodaVolume: 0
   tonicVolume: 0
@@ -53244,6 +55005,9 @@ MonoBehaviour:
   alcoholVolume: 0
   abv: 0
   drinkParts: []
+  otherLiquid: {fileID: 0}
+  otherLiquidMask: {fileID: 0}
+  myMask: {fileID: 0}
   isBeingPoured: 0
 --- !u!114 &114633907230093390
 MonoBehaviour:
@@ -53260,6 +55024,8 @@ MonoBehaviour:
   pourRate: 1
   isEvaluated: 0
   totalVolume: 0
+  myDrinkBase: 0
+  myMixer: 0
   coasters: []
   sodaVolume: 0
   tonicVolume: 0
@@ -53282,6 +55048,9 @@ MonoBehaviour:
   alcoholVolume: 0
   abv: 0
   drinkParts: []
+  otherLiquid: {fileID: 0}
+  otherLiquidMask: {fileID: 0}
+  myMask: {fileID: 0}
   isBeingPoured: 0
 --- !u!114 &114636777957386060
 MonoBehaviour:
@@ -53308,6 +55077,7 @@ MonoBehaviour:
   hasLiquid: 0
   isFull: 0
   isDirty: 0
+  liquid: {fileID: 0}
   glassType: 0
 --- !u!114 &114638369427357176
 MonoBehaviour:
@@ -53350,6 +55120,8 @@ MonoBehaviour:
   pourRate: 100
   isEvaluated: 0
   totalVolume: 0
+  myDrinkBase: 0
+  myMixer: 0
   coasters: []
   sodaVolume: 0
   tonicVolume: 0
@@ -53372,6 +55144,9 @@ MonoBehaviour:
   alcoholVolume: 0
   abv: 0
   drinkParts: []
+  otherLiquid: {fileID: 0}
+  otherLiquidMask: {fileID: 0}
+  myMask: {fileID: 0}
   isBeingPoured: 0
 --- !u!114 &114641318295876630
 MonoBehaviour:
@@ -53388,6 +55163,8 @@ MonoBehaviour:
   pourRate: 1
   isEvaluated: 0
   totalVolume: 0
+  myDrinkBase: 0
+  myMixer: 0
   coasters: []
   sodaVolume: 0
   tonicVolume: 0
@@ -53410,6 +55187,9 @@ MonoBehaviour:
   alcoholVolume: 0
   abv: 0
   drinkParts: []
+  otherLiquid: {fileID: 0}
+  otherLiquidMask: {fileID: 0}
+  myMask: {fileID: 0}
   isBeingPoured: 0
 --- !u!114 &114642664477732552
 MonoBehaviour:
@@ -53426,6 +55206,8 @@ MonoBehaviour:
   pourRate: 1
   isEvaluated: 0
   totalVolume: 0
+  myDrinkBase: 0
+  myMixer: 0
   coasters: []
   sodaVolume: 0
   tonicVolume: 0
@@ -53448,6 +55230,9 @@ MonoBehaviour:
   alcoholVolume: 0
   abv: 0
   drinkParts: []
+  otherLiquid: {fileID: 0}
+  otherLiquidMask: {fileID: 0}
+  myMask: {fileID: 0}
   isBeingPoured: 0
 --- !u!114 &114643841464023868
 MonoBehaviour:
@@ -53464,6 +55249,8 @@ MonoBehaviour:
   pourRate: 100
   isEvaluated: 0
   totalVolume: 0
+  myDrinkBase: 0
+  myMixer: 0
   coasters: []
   sodaVolume: 0
   tonicVolume: 0
@@ -53486,6 +55273,9 @@ MonoBehaviour:
   alcoholVolume: 0
   abv: 0
   drinkParts: []
+  otherLiquid: {fileID: 0}
+  otherLiquidMask: {fileID: 0}
+  myMask: {fileID: 0}
   isBeingPoured: 0
 --- !u!114 &114647988795691862
 MonoBehaviour:
@@ -53512,6 +55302,7 @@ MonoBehaviour:
   hasLiquid: 0
   isFull: 0
   isDirty: 0
+  liquid: {fileID: 0}
   glassType: 0
 --- !u!114 &114648242106454246
 MonoBehaviour:
@@ -53528,6 +55319,8 @@ MonoBehaviour:
   pourRate: 100
   isEvaluated: 0
   totalVolume: 0
+  myDrinkBase: 0
+  myMixer: 0
   coasters: []
   sodaVolume: 0
   tonicVolume: 0
@@ -53550,6 +55343,9 @@ MonoBehaviour:
   alcoholVolume: 0
   abv: 0
   drinkParts: []
+  otherLiquid: {fileID: 0}
+  otherLiquidMask: {fileID: 0}
+  myMask: {fileID: 0}
   isBeingPoured: 0
 --- !u!114 &114651226948370562
 MonoBehaviour:
@@ -53592,6 +55388,8 @@ MonoBehaviour:
   pourRate: 1
   isEvaluated: 0
   totalVolume: 0
+  myDrinkBase: 0
+  myMixer: 0
   coasters: []
   sodaVolume: 0
   tonicVolume: 0
@@ -53614,6 +55412,9 @@ MonoBehaviour:
   alcoholVolume: 0
   abv: 0
   drinkParts: []
+  otherLiquid: {fileID: 0}
+  otherLiquidMask: {fileID: 0}
+  myMask: {fileID: 0}
   isBeingPoured: 0
 --- !u!114 &114656489991864952
 MonoBehaviour:
@@ -53630,6 +55431,8 @@ MonoBehaviour:
   pourRate: 1
   isEvaluated: 0
   totalVolume: 0
+  myDrinkBase: 0
+  myMixer: 0
   coasters: []
   sodaVolume: 0
   tonicVolume: 0
@@ -53652,6 +55455,9 @@ MonoBehaviour:
   alcoholVolume: 0
   abv: 0
   drinkParts: []
+  otherLiquid: {fileID: 0}
+  otherLiquidMask: {fileID: 0}
+  myMask: {fileID: 0}
   isBeingPoured: 0
 --- !u!114 &114658247316504700
 MonoBehaviour:
@@ -53678,6 +55484,7 @@ MonoBehaviour:
   hasLiquid: 0
   isFull: 0
   isDirty: 0
+  liquid: {fileID: 0}
   glassType: 0
 --- !u!114 &114659220162791526
 MonoBehaviour:
@@ -53720,6 +55527,8 @@ MonoBehaviour:
   pourRate: 100
   isEvaluated: 0
   totalVolume: 0
+  myDrinkBase: 0
+  myMixer: 0
   coasters: []
   sodaVolume: 0
   tonicVolume: 0
@@ -53742,6 +55551,9 @@ MonoBehaviour:
   alcoholVolume: 0
   abv: 0
   drinkParts: []
+  otherLiquid: {fileID: 0}
+  otherLiquidMask: {fileID: 0}
+  myMask: {fileID: 0}
   isBeingPoured: 0
 --- !u!114 &114662179240494000
 MonoBehaviour:
@@ -53768,6 +55580,7 @@ MonoBehaviour:
   hasLiquid: 0
   isFull: 0
   isDirty: 0
+  liquid: {fileID: 0}
   glassType: 0
 --- !u!114 &114663602478487666
 MonoBehaviour:
@@ -53794,6 +55607,7 @@ MonoBehaviour:
   hasLiquid: 0
   isFull: 0
   isDirty: 0
+  liquid: {fileID: 0}
   glassType: 0
 --- !u!114 &114677938951566790
 MonoBehaviour:
@@ -53820,6 +55634,7 @@ MonoBehaviour:
   hasLiquid: 0
   isFull: 0
   isDirty: 0
+  liquid: {fileID: 0}
   glassType: 0
 --- !u!114 &114680191592705894
 MonoBehaviour:
@@ -53846,6 +55661,7 @@ MonoBehaviour:
   hasLiquid: 0
   isFull: 0
   isDirty: 0
+  liquid: {fileID: 0}
   glassType: 0
 --- !u!114 &114684371647980620
 MonoBehaviour:
@@ -53862,6 +55678,8 @@ MonoBehaviour:
   pourRate: 1
   isEvaluated: 0
   totalVolume: 0
+  myDrinkBase: 0
+  myMixer: 0
   coasters: []
   sodaVolume: 0
   tonicVolume: 0
@@ -53884,6 +55702,9 @@ MonoBehaviour:
   alcoholVolume: 0
   abv: 0
   drinkParts: []
+  otherLiquid: {fileID: 0}
+  otherLiquidMask: {fileID: 0}
+  myMask: {fileID: 0}
   isBeingPoured: 0
 --- !u!114 &114689373701157776
 MonoBehaviour:
@@ -53910,6 +55731,7 @@ MonoBehaviour:
   hasLiquid: 0
   isFull: 0
   isDirty: 0
+  liquid: {fileID: 0}
   glassType: 0
 --- !u!114 &114689716685519432
 MonoBehaviour:
@@ -53936,6 +55758,7 @@ MonoBehaviour:
   hasLiquid: 0
   isFull: 0
   isDirty: 0
+  liquid: {fileID: 0}
   glassType: 0
 --- !u!114 &114691492163976998
 MonoBehaviour:
@@ -53952,6 +55775,8 @@ MonoBehaviour:
   pourRate: 1
   isEvaluated: 0
   totalVolume: 0
+  myDrinkBase: 0
+  myMixer: 0
   coasters: []
   sodaVolume: 0
   tonicVolume: 0
@@ -53974,6 +55799,9 @@ MonoBehaviour:
   alcoholVolume: 0
   abv: 0
   drinkParts: []
+  otherLiquid: {fileID: 0}
+  otherLiquidMask: {fileID: 0}
+  myMask: {fileID: 0}
   isBeingPoured: 0
 --- !u!114 &114692328488914692
 MonoBehaviour:
@@ -54016,6 +55844,8 @@ MonoBehaviour:
   pourRate: 100
   isEvaluated: 0
   totalVolume: 0
+  myDrinkBase: 0
+  myMixer: 0
   coasters: []
   sodaVolume: 0
   tonicVolume: 0
@@ -54038,6 +55868,9 @@ MonoBehaviour:
   alcoholVolume: 0
   abv: 0
   drinkParts: []
+  otherLiquid: {fileID: 0}
+  otherLiquidMask: {fileID: 0}
+  myMask: {fileID: 0}
   isBeingPoured: 0
 --- !u!114 &114696258978699766
 MonoBehaviour:
@@ -54064,6 +55897,7 @@ MonoBehaviour:
   hasLiquid: 0
   isFull: 0
   isDirty: 0
+  liquid: {fileID: 0}
   glassType: 0
 --- !u!114 &114697494957555742
 MonoBehaviour:
@@ -54080,6 +55914,8 @@ MonoBehaviour:
   pourRate: 100
   isEvaluated: 0
   totalVolume: 0
+  myDrinkBase: 0
+  myMixer: 0
   coasters: []
   sodaVolume: 0
   tonicVolume: 0
@@ -54102,6 +55938,9 @@ MonoBehaviour:
   alcoholVolume: 0
   abv: 0
   drinkParts: []
+  otherLiquid: {fileID: 0}
+  otherLiquidMask: {fileID: 0}
+  myMask: {fileID: 0}
   isBeingPoured: 0
 --- !u!114 &114702412967392004
 MonoBehaviour:
@@ -54118,6 +55957,8 @@ MonoBehaviour:
   pourRate: 1
   isEvaluated: 0
   totalVolume: 0
+  myDrinkBase: 0
+  myMixer: 0
   coasters: []
   sodaVolume: 0
   tonicVolume: 0
@@ -54140,6 +55981,9 @@ MonoBehaviour:
   alcoholVolume: 0
   abv: 0
   drinkParts: []
+  otherLiquid: {fileID: 0}
+  otherLiquidMask: {fileID: 0}
+  myMask: {fileID: 0}
   isBeingPoured: 0
 --- !u!114 &114702483999461470
 MonoBehaviour:
@@ -54156,6 +56000,8 @@ MonoBehaviour:
   pourRate: 1
   isEvaluated: 0
   totalVolume: 0
+  myDrinkBase: 0
+  myMixer: 0
   coasters: []
   sodaVolume: 0
   tonicVolume: 0
@@ -54178,6 +56024,9 @@ MonoBehaviour:
   alcoholVolume: 0
   abv: 0
   drinkParts: []
+  otherLiquid: {fileID: 0}
+  otherLiquidMask: {fileID: 0}
+  myMask: {fileID: 0}
   isBeingPoured: 0
 --- !u!114 &114707127854115348
 MonoBehaviour:
@@ -54194,6 +56043,8 @@ MonoBehaviour:
   pourRate: 100
   isEvaluated: 0
   totalVolume: 0
+  myDrinkBase: 0
+  myMixer: 0
   coasters: []
   sodaVolume: 0
   tonicVolume: 0
@@ -54216,6 +56067,9 @@ MonoBehaviour:
   alcoholVolume: 0
   abv: 0
   drinkParts: []
+  otherLiquid: {fileID: 0}
+  otherLiquidMask: {fileID: 0}
+  myMask: {fileID: 0}
   isBeingPoured: 0
 --- !u!114 &114708590149844244
 MonoBehaviour:
@@ -54268,6 +56122,7 @@ MonoBehaviour:
   hasLiquid: 0
   isFull: 0
   isDirty: 0
+  liquid: {fileID: 0}
   glassType: 0
 --- !u!114 &114710261433494764
 MonoBehaviour:
@@ -54294,6 +56149,7 @@ MonoBehaviour:
   hasLiquid: 0
   isFull: 0
   isDirty: 0
+  liquid: {fileID: 0}
   glassType: 0
 --- !u!114 &114711627597206410
 MonoBehaviour:
@@ -54310,6 +56166,8 @@ MonoBehaviour:
   pourRate: 100
   isEvaluated: 0
   totalVolume: 0
+  myDrinkBase: 0
+  myMixer: 0
   coasters: []
   sodaVolume: 0
   tonicVolume: 0
@@ -54332,6 +56190,9 @@ MonoBehaviour:
   alcoholVolume: 0
   abv: 0
   drinkParts: []
+  otherLiquid: {fileID: 0}
+  otherLiquidMask: {fileID: 0}
+  myMask: {fileID: 0}
   isBeingPoured: 0
 --- !u!114 &114712871885647654
 MonoBehaviour:
@@ -54348,6 +56209,8 @@ MonoBehaviour:
   pourRate: 100
   isEvaluated: 0
   totalVolume: 0
+  myDrinkBase: 0
+  myMixer: 0
   coasters: []
   sodaVolume: 0
   tonicVolume: 0
@@ -54370,6 +56233,9 @@ MonoBehaviour:
   alcoholVolume: 0
   abv: 0
   drinkParts: []
+  otherLiquid: {fileID: 0}
+  otherLiquidMask: {fileID: 0}
+  myMask: {fileID: 0}
   isBeingPoured: 0
 --- !u!114 &114713170773181632
 MonoBehaviour:
@@ -54402,6 +56268,8 @@ MonoBehaviour:
   pourRate: 100
   isEvaluated: 0
   totalVolume: 0
+  myDrinkBase: 0
+  myMixer: 0
   coasters: []
   sodaVolume: 0
   tonicVolume: 0
@@ -54424,6 +56292,9 @@ MonoBehaviour:
   alcoholVolume: 0
   abv: 0
   drinkParts: []
+  otherLiquid: {fileID: 0}
+  otherLiquidMask: {fileID: 0}
+  myMask: {fileID: 0}
   isBeingPoured: 0
 --- !u!114 &114717572098192562
 MonoBehaviour:
@@ -54440,6 +56311,8 @@ MonoBehaviour:
   pourRate: 100
   isEvaluated: 0
   totalVolume: 0
+  myDrinkBase: 0
+  myMixer: 0
   coasters: []
   sodaVolume: 0
   tonicVolume: 0
@@ -54462,6 +56335,9 @@ MonoBehaviour:
   alcoholVolume: 0
   abv: 0
   drinkParts: []
+  otherLiquid: {fileID: 0}
+  otherLiquidMask: {fileID: 0}
+  myMask: {fileID: 0}
   isBeingPoured: 0
 --- !u!114 &114718894404961128
 MonoBehaviour:
@@ -54488,6 +56364,7 @@ MonoBehaviour:
   hasLiquid: 0
   isFull: 0
   isDirty: 0
+  liquid: {fileID: 0}
   glassType: 0
 --- !u!114 &114719112030604900
 MonoBehaviour:
@@ -54530,6 +56407,8 @@ MonoBehaviour:
   pourRate: 100
   isEvaluated: 0
   totalVolume: 0
+  myDrinkBase: 0
+  myMixer: 0
   coasters: []
   sodaVolume: 0
   tonicVolume: 0
@@ -54552,6 +56431,9 @@ MonoBehaviour:
   alcoholVolume: 0
   abv: 0
   drinkParts: []
+  otherLiquid: {fileID: 0}
+  otherLiquidMask: {fileID: 0}
+  myMask: {fileID: 0}
   isBeingPoured: 0
 --- !u!114 &114723202050976316
 MonoBehaviour:
@@ -54568,6 +56450,8 @@ MonoBehaviour:
   pourRate: 1
   isEvaluated: 0
   totalVolume: 0
+  myDrinkBase: 0
+  myMixer: 0
   coasters: []
   sodaVolume: 0
   tonicVolume: 0
@@ -54590,6 +56474,9 @@ MonoBehaviour:
   alcoholVolume: 0
   abv: 0
   drinkParts: []
+  otherLiquid: {fileID: 0}
+  otherLiquidMask: {fileID: 0}
+  myMask: {fileID: 0}
   isBeingPoured: 0
 --- !u!114 &114723263443056044
 MonoBehaviour:
@@ -54632,6 +56519,7 @@ MonoBehaviour:
   hasLiquid: 0
   isFull: 0
   isDirty: 0
+  liquid: {fileID: 0}
   glassType: 0
 --- !u!114 &114727508152648370
 MonoBehaviour:
@@ -54674,6 +56562,7 @@ MonoBehaviour:
   hasLiquid: 0
   isFull: 0
   isDirty: 0
+  liquid: {fileID: 0}
   glassType: 0
 --- !u!114 &114735705563683708
 MonoBehaviour:
@@ -54690,6 +56579,8 @@ MonoBehaviour:
   pourRate: 100
   isEvaluated: 0
   totalVolume: 0
+  myDrinkBase: 0
+  myMixer: 0
   coasters: []
   sodaVolume: 0
   tonicVolume: 0
@@ -54712,6 +56603,9 @@ MonoBehaviour:
   alcoholVolume: 0
   abv: 0
   drinkParts: []
+  otherLiquid: {fileID: 0}
+  otherLiquidMask: {fileID: 0}
+  myMask: {fileID: 0}
   isBeingPoured: 0
 --- !u!114 &114738813983700478
 MonoBehaviour:
@@ -54738,6 +56632,7 @@ MonoBehaviour:
   hasLiquid: 0
   isFull: 0
   isDirty: 0
+  liquid: {fileID: 0}
   glassType: 0
 --- !u!114 &114740772235868494
 MonoBehaviour:
@@ -54780,6 +56675,8 @@ MonoBehaviour:
   pourRate: 1
   isEvaluated: 0
   totalVolume: 0
+  myDrinkBase: 0
+  myMixer: 0
   coasters: []
   sodaVolume: 0
   tonicVolume: 0
@@ -54802,6 +56699,9 @@ MonoBehaviour:
   alcoholVolume: 0
   abv: 0
   drinkParts: []
+  otherLiquid: {fileID: 0}
+  otherLiquidMask: {fileID: 0}
+  myMask: {fileID: 0}
   isBeingPoured: 0
 --- !u!114 &114743024052657828
 MonoBehaviour:
@@ -54884,6 +56784,7 @@ MonoBehaviour:
   hasLiquid: 0
   isFull: 0
   isDirty: 0
+  liquid: {fileID: 0}
   glassType: 0
 --- !u!114 &114746460128283582
 MonoBehaviour:
@@ -54900,6 +56801,8 @@ MonoBehaviour:
   pourRate: 1
   isEvaluated: 0
   totalVolume: 0
+  myDrinkBase: 0
+  myMixer: 0
   coasters: []
   sodaVolume: 0
   tonicVolume: 0
@@ -54922,6 +56825,9 @@ MonoBehaviour:
   alcoholVolume: 0
   abv: 0
   drinkParts: []
+  otherLiquid: {fileID: 0}
+  otherLiquidMask: {fileID: 0}
+  myMask: {fileID: 0}
   isBeingPoured: 0
 --- !u!114 &114748768466050960
 MonoBehaviour:
@@ -54948,6 +56854,7 @@ MonoBehaviour:
   hasLiquid: 0
   isFull: 0
   isDirty: 0
+  liquid: {fileID: 0}
   glassType: 0
 --- !u!114 &114750075540800558
 MonoBehaviour:
@@ -54964,6 +56871,8 @@ MonoBehaviour:
   pourRate: 100
   isEvaluated: 0
   totalVolume: 0
+  myDrinkBase: 0
+  myMixer: 0
   coasters: []
   sodaVolume: 0
   tonicVolume: 0
@@ -54986,6 +56895,9 @@ MonoBehaviour:
   alcoholVolume: 0
   abv: 0
   drinkParts: []
+  otherLiquid: {fileID: 0}
+  otherLiquidMask: {fileID: 0}
+  myMask: {fileID: 0}
   isBeingPoured: 0
 --- !u!114 &114752077917171108
 MonoBehaviour:
@@ -55028,6 +56940,8 @@ MonoBehaviour:
   pourRate: 1
   isEvaluated: 0
   totalVolume: 0
+  myDrinkBase: 0
+  myMixer: 0
   coasters: []
   sodaVolume: 0
   tonicVolume: 0
@@ -55050,6 +56964,9 @@ MonoBehaviour:
   alcoholVolume: 0
   abv: 0
   drinkParts: []
+  otherLiquid: {fileID: 0}
+  otherLiquidMask: {fileID: 0}
+  myMask: {fileID: 0}
   isBeingPoured: 0
 --- !u!114 &114754631927687356
 MonoBehaviour:
@@ -55066,6 +56983,8 @@ MonoBehaviour:
   pourRate: 1
   isEvaluated: 0
   totalVolume: 0
+  myDrinkBase: 0
+  myMixer: 0
   coasters: []
   sodaVolume: 0
   tonicVolume: 0
@@ -55088,6 +57007,9 @@ MonoBehaviour:
   alcoholVolume: 0
   abv: 0
   drinkParts: []
+  otherLiquid: {fileID: 0}
+  otherLiquidMask: {fileID: 0}
+  myMask: {fileID: 0}
   isBeingPoured: 0
 --- !u!114 &114754733986092964
 MonoBehaviour:
@@ -55104,6 +57026,8 @@ MonoBehaviour:
   pourRate: 100
   isEvaluated: 0
   totalVolume: 0
+  myDrinkBase: 0
+  myMixer: 0
   coasters: []
   sodaVolume: 0
   tonicVolume: 0
@@ -55126,6 +57050,9 @@ MonoBehaviour:
   alcoholVolume: 0
   abv: 0
   drinkParts: []
+  otherLiquid: {fileID: 0}
+  otherLiquidMask: {fileID: 0}
+  myMask: {fileID: 0}
   isBeingPoured: 0
 --- !u!114 &114754951727251442
 MonoBehaviour:
@@ -55152,6 +57079,7 @@ MonoBehaviour:
   hasLiquid: 0
   isFull: 0
   isDirty: 0
+  liquid: {fileID: 0}
   glassType: 0
 --- !u!114 &114755371568368600
 MonoBehaviour:
@@ -55168,6 +57096,8 @@ MonoBehaviour:
   pourRate: 1
   isEvaluated: 0
   totalVolume: 0
+  myDrinkBase: 0
+  myMixer: 0
   coasters: []
   sodaVolume: 0
   tonicVolume: 0
@@ -55190,6 +57120,9 @@ MonoBehaviour:
   alcoholVolume: 0
   abv: 0
   drinkParts: []
+  otherLiquid: {fileID: 0}
+  otherLiquidMask: {fileID: 0}
+  myMask: {fileID: 0}
   isBeingPoured: 0
 --- !u!114 &114756354261404006
 MonoBehaviour:
@@ -55206,6 +57139,8 @@ MonoBehaviour:
   pourRate: 1
   isEvaluated: 0
   totalVolume: 0
+  myDrinkBase: 0
+  myMixer: 0
   coasters: []
   sodaVolume: 0
   tonicVolume: 0
@@ -55228,6 +57163,9 @@ MonoBehaviour:
   alcoholVolume: 0
   abv: 0
   drinkParts: []
+  otherLiquid: {fileID: 0}
+  otherLiquidMask: {fileID: 0}
+  myMask: {fileID: 0}
   isBeingPoured: 0
 --- !u!114 &114759405402405244
 MonoBehaviour:
@@ -55296,6 +57234,8 @@ MonoBehaviour:
   pourRate: 100
   isEvaluated: 0
   totalVolume: 0
+  myDrinkBase: 0
+  myMixer: 0
   coasters: []
   sodaVolume: 0
   tonicVolume: 0
@@ -55318,6 +57258,9 @@ MonoBehaviour:
   alcoholVolume: 0
   abv: 0
   drinkParts: []
+  otherLiquid: {fileID: 0}
+  otherLiquidMask: {fileID: 0}
+  myMask: {fileID: 0}
   isBeingPoured: 0
 --- !u!114 &114767870738195702
 MonoBehaviour:
@@ -55334,6 +57277,8 @@ MonoBehaviour:
   pourRate: 100
   isEvaluated: 0
   totalVolume: 0
+  myDrinkBase: 0
+  myMixer: 0
   coasters: []
   sodaVolume: 0
   tonicVolume: 0
@@ -55356,6 +57301,9 @@ MonoBehaviour:
   alcoholVolume: 0
   abv: 0
   drinkParts: []
+  otherLiquid: {fileID: 0}
+  otherLiquidMask: {fileID: 0}
+  myMask: {fileID: 0}
   isBeingPoured: 0
 --- !u!114 &114768242587561860
 MonoBehaviour:
@@ -55372,6 +57320,8 @@ MonoBehaviour:
   pourRate: 1
   isEvaluated: 0
   totalVolume: 0
+  myDrinkBase: 0
+  myMixer: 0
   coasters: []
   sodaVolume: 0
   tonicVolume: 0
@@ -55394,6 +57344,9 @@ MonoBehaviour:
   alcoholVolume: 0
   abv: 0
   drinkParts: []
+  otherLiquid: {fileID: 0}
+  otherLiquidMask: {fileID: 0}
+  myMask: {fileID: 0}
   isBeingPoured: 0
 --- !u!114 &114768930163052588
 MonoBehaviour:
@@ -55420,6 +57373,7 @@ MonoBehaviour:
   hasLiquid: 0
   isFull: 0
   isDirty: 0
+  liquid: {fileID: 0}
   glassType: 0
 --- !u!114 &114769232366981320
 MonoBehaviour:
@@ -55436,6 +57390,8 @@ MonoBehaviour:
   pourRate: 100
   isEvaluated: 0
   totalVolume: 0
+  myDrinkBase: 0
+  myMixer: 0
   coasters: []
   sodaVolume: 0
   tonicVolume: 0
@@ -55458,6 +57414,9 @@ MonoBehaviour:
   alcoholVolume: 0
   abv: 0
   drinkParts: []
+  otherLiquid: {fileID: 0}
+  otherLiquidMask: {fileID: 0}
+  myMask: {fileID: 0}
   isBeingPoured: 0
 --- !u!114 &114769478869865814
 MonoBehaviour:
@@ -55564,6 +57523,8 @@ MonoBehaviour:
   pourRate: 1
   isEvaluated: 0
   totalVolume: 0
+  myDrinkBase: 0
+  myMixer: 0
   coasters: []
   sodaVolume: 0
   tonicVolume: 0
@@ -55586,6 +57547,9 @@ MonoBehaviour:
   alcoholVolume: 0
   abv: 0
   drinkParts: []
+  otherLiquid: {fileID: 0}
+  otherLiquidMask: {fileID: 0}
+  myMask: {fileID: 0}
   isBeingPoured: 0
 --- !u!114 &114781062377432320
 MonoBehaviour:
@@ -55602,6 +57566,8 @@ MonoBehaviour:
   pourRate: 1
   isEvaluated: 0
   totalVolume: 0
+  myDrinkBase: 0
+  myMixer: 0
   coasters: []
   sodaVolume: 0
   tonicVolume: 0
@@ -55624,6 +57590,9 @@ MonoBehaviour:
   alcoholVolume: 0
   abv: 0
   drinkParts: []
+  otherLiquid: {fileID: 0}
+  otherLiquidMask: {fileID: 0}
+  myMask: {fileID: 0}
   isBeingPoured: 0
 --- !u!114 &114782445937460102
 MonoBehaviour:
@@ -55640,6 +57609,8 @@ MonoBehaviour:
   pourRate: 1
   isEvaluated: 0
   totalVolume: 0
+  myDrinkBase: 0
+  myMixer: 0
   coasters: []
   sodaVolume: 0
   tonicVolume: 0
@@ -55662,6 +57633,9 @@ MonoBehaviour:
   alcoholVolume: 0
   abv: 0
   drinkParts: []
+  otherLiquid: {fileID: 0}
+  otherLiquidMask: {fileID: 0}
+  myMask: {fileID: 0}
   isBeingPoured: 0
 --- !u!114 &114783360754422812
 MonoBehaviour:
@@ -55688,6 +57662,7 @@ MonoBehaviour:
   hasLiquid: 0
   isFull: 0
   isDirty: 0
+  liquid: {fileID: 0}
   glassType: 0
 --- !u!114 &114784483213251066
 MonoBehaviour:
@@ -55704,6 +57679,8 @@ MonoBehaviour:
   pourRate: 1
   isEvaluated: 0
   totalVolume: 0
+  myDrinkBase: 0
+  myMixer: 0
   coasters: []
   sodaVolume: 0
   tonicVolume: 0
@@ -55726,6 +57703,9 @@ MonoBehaviour:
   alcoholVolume: 0
   abv: 0
   drinkParts: []
+  otherLiquid: {fileID: 0}
+  otherLiquidMask: {fileID: 0}
+  myMask: {fileID: 0}
   isBeingPoured: 0
 --- !u!114 &114793994005993720
 MonoBehaviour:
@@ -55742,6 +57722,8 @@ MonoBehaviour:
   pourRate: 1
   isEvaluated: 0
   totalVolume: 0
+  myDrinkBase: 0
+  myMixer: 0
   coasters: []
   sodaVolume: 0
   tonicVolume: 0
@@ -55764,6 +57746,9 @@ MonoBehaviour:
   alcoholVolume: 0
   abv: 0
   drinkParts: []
+  otherLiquid: {fileID: 0}
+  otherLiquidMask: {fileID: 0}
+  myMask: {fileID: 0}
   isBeingPoured: 0
 --- !u!114 &114794379284272700
 MonoBehaviour:
@@ -55790,6 +57775,7 @@ MonoBehaviour:
   hasLiquid: 0
   isFull: 0
   isDirty: 0
+  liquid: {fileID: 0}
   glassType: 0
 --- !u!114 &114795070063771400
 MonoBehaviour:
@@ -55806,6 +57792,8 @@ MonoBehaviour:
   pourRate: 1
   isEvaluated: 0
   totalVolume: 0
+  myDrinkBase: 0
+  myMixer: 0
   coasters: []
   sodaVolume: 0
   tonicVolume: 0
@@ -55828,6 +57816,9 @@ MonoBehaviour:
   alcoholVolume: 0
   abv: 0
   drinkParts: []
+  otherLiquid: {fileID: 0}
+  otherLiquidMask: {fileID: 0}
+  myMask: {fileID: 0}
   isBeingPoured: 0
 --- !u!114 &114796978328598224
 MonoBehaviour:
@@ -55844,6 +57835,8 @@ MonoBehaviour:
   pourRate: 1
   isEvaluated: 0
   totalVolume: 0
+  myDrinkBase: 0
+  myMixer: 0
   coasters: []
   sodaVolume: 0
   tonicVolume: 0
@@ -55866,6 +57859,9 @@ MonoBehaviour:
   alcoholVolume: 0
   abv: 0
   drinkParts: []
+  otherLiquid: {fileID: 0}
+  otherLiquidMask: {fileID: 0}
+  myMask: {fileID: 0}
   isBeingPoured: 0
 --- !u!114 &114798661564459740
 MonoBehaviour:
@@ -55892,6 +57888,7 @@ MonoBehaviour:
   hasLiquid: 0
   isFull: 0
   isDirty: 0
+  liquid: {fileID: 0}
   glassType: 0
 --- !u!114 &114800637114786354
 MonoBehaviour:
@@ -55918,6 +57915,7 @@ MonoBehaviour:
   hasLiquid: 0
   isFull: 0
   isDirty: 0
+  liquid: {fileID: 0}
   glassType: 0
 --- !u!114 &114801338048832338
 MonoBehaviour:
@@ -55934,6 +57932,8 @@ MonoBehaviour:
   pourRate: 100
   isEvaluated: 0
   totalVolume: 0
+  myDrinkBase: 0
+  myMixer: 0
   coasters: []
   sodaVolume: 0
   tonicVolume: 0
@@ -55956,6 +57956,9 @@ MonoBehaviour:
   alcoholVolume: 0
   abv: 0
   drinkParts: []
+  otherLiquid: {fileID: 0}
+  otherLiquidMask: {fileID: 0}
+  myMask: {fileID: 0}
   isBeingPoured: 0
 --- !u!114 &114801510225781156
 MonoBehaviour:
@@ -55998,6 +58001,8 @@ MonoBehaviour:
   pourRate: 1
   isEvaluated: 0
   totalVolume: 0
+  myDrinkBase: 0
+  myMixer: 0
   coasters: []
   sodaVolume: 0
   tonicVolume: 0
@@ -56020,6 +58025,9 @@ MonoBehaviour:
   alcoholVolume: 0
   abv: 0
   drinkParts: []
+  otherLiquid: {fileID: 0}
+  otherLiquidMask: {fileID: 0}
+  myMask: {fileID: 0}
   isBeingPoured: 0
 --- !u!114 &114807132932876990
 MonoBehaviour:
@@ -56036,6 +58044,8 @@ MonoBehaviour:
   pourRate: 100
   isEvaluated: 0
   totalVolume: 0
+  myDrinkBase: 0
+  myMixer: 0
   coasters: []
   sodaVolume: 0
   tonicVolume: 0
@@ -56058,6 +58068,9 @@ MonoBehaviour:
   alcoholVolume: 0
   abv: 0
   drinkParts: []
+  otherLiquid: {fileID: 0}
+  otherLiquidMask: {fileID: 0}
+  myMask: {fileID: 0}
   isBeingPoured: 0
 --- !u!114 &114807230782994790
 MonoBehaviour:
@@ -56116,6 +58129,8 @@ MonoBehaviour:
   pourRate: 1
   isEvaluated: 0
   totalVolume: 0
+  myDrinkBase: 0
+  myMixer: 0
   coasters: []
   sodaVolume: 0
   tonicVolume: 0
@@ -56138,6 +58153,9 @@ MonoBehaviour:
   alcoholVolume: 0
   abv: 0
   drinkParts: []
+  otherLiquid: {fileID: 0}
+  otherLiquidMask: {fileID: 0}
+  myMask: {fileID: 0}
   isBeingPoured: 0
 --- !u!114 &114812476589156488
 MonoBehaviour:
@@ -56154,6 +58172,8 @@ MonoBehaviour:
   pourRate: 1
   isEvaluated: 0
   totalVolume: 0
+  myDrinkBase: 0
+  myMixer: 0
   coasters: []
   sodaVolume: 0
   tonicVolume: 0
@@ -56176,6 +58196,9 @@ MonoBehaviour:
   alcoholVolume: 0
   abv: 0
   drinkParts: []
+  otherLiquid: {fileID: 0}
+  otherLiquidMask: {fileID: 0}
+  myMask: {fileID: 0}
   isBeingPoured: 0
 --- !u!114 &114813783217355262
 MonoBehaviour:
@@ -56202,6 +58225,7 @@ MonoBehaviour:
   hasLiquid: 0
   isFull: 0
   isDirty: 0
+  liquid: {fileID: 0}
   glassType: 0
 --- !u!114 &114815569505793082
 MonoBehaviour:
@@ -56244,6 +58268,7 @@ MonoBehaviour:
   hasLiquid: 0
   isFull: 0
   isDirty: 0
+  liquid: {fileID: 0}
   glassType: 0
 --- !u!114 &114819021672421212
 MonoBehaviour:
@@ -56270,6 +58295,7 @@ MonoBehaviour:
   hasLiquid: 0
   isFull: 0
   isDirty: 0
+  liquid: {fileID: 0}
   glassType: 0
 --- !u!114 &114822136938758190
 MonoBehaviour:
@@ -56286,6 +58312,8 @@ MonoBehaviour:
   pourRate: 1
   isEvaluated: 0
   totalVolume: 0
+  myDrinkBase: 0
+  myMixer: 0
   coasters: []
   sodaVolume: 0
   tonicVolume: 0
@@ -56308,6 +58336,9 @@ MonoBehaviour:
   alcoholVolume: 0
   abv: 0
   drinkParts: []
+  otherLiquid: {fileID: 0}
+  otherLiquidMask: {fileID: 0}
+  myMask: {fileID: 0}
   isBeingPoured: 0
 --- !u!114 &114826510080241244
 MonoBehaviour:
@@ -56350,6 +58381,8 @@ MonoBehaviour:
   pourRate: 100
   isEvaluated: 0
   totalVolume: 0
+  myDrinkBase: 0
+  myMixer: 0
   coasters: []
   sodaVolume: 0
   tonicVolume: 0
@@ -56372,6 +58405,9 @@ MonoBehaviour:
   alcoholVolume: 0
   abv: 0
   drinkParts: []
+  otherLiquid: {fileID: 0}
+  otherLiquidMask: {fileID: 0}
+  myMask: {fileID: 0}
   isBeingPoured: 0
 --- !u!114 &114836537753697996
 MonoBehaviour:
@@ -56404,6 +58440,8 @@ MonoBehaviour:
   pourRate: 100
   isEvaluated: 0
   totalVolume: 0
+  myDrinkBase: 0
+  myMixer: 0
   coasters: []
   sodaVolume: 0
   tonicVolume: 0
@@ -56426,6 +58464,9 @@ MonoBehaviour:
   alcoholVolume: 0
   abv: 0
   drinkParts: []
+  otherLiquid: {fileID: 0}
+  otherLiquidMask: {fileID: 0}
+  myMask: {fileID: 0}
   isBeingPoured: 0
 --- !u!114 &114839920323869670
 MonoBehaviour:
@@ -56442,6 +58483,8 @@ MonoBehaviour:
   pourRate: 100
   isEvaluated: 0
   totalVolume: 0
+  myDrinkBase: 0
+  myMixer: 0
   coasters: []
   sodaVolume: 0
   tonicVolume: 0
@@ -56464,6 +58507,9 @@ MonoBehaviour:
   alcoholVolume: 0
   abv: 0
   drinkParts: []
+  otherLiquid: {fileID: 0}
+  otherLiquidMask: {fileID: 0}
+  myMask: {fileID: 0}
   isBeingPoured: 0
 --- !u!114 &114841779087605262
 MonoBehaviour:
@@ -56532,6 +58578,7 @@ MonoBehaviour:
   hasLiquid: 0
   isFull: 0
   isDirty: 0
+  liquid: {fileID: 0}
   glassType: 0
 --- !u!114 &114847881004016714
 MonoBehaviour:
@@ -56626,6 +58673,8 @@ MonoBehaviour:
   pourRate: 1
   isEvaluated: 0
   totalVolume: 0
+  myDrinkBase: 0
+  myMixer: 0
   coasters: []
   sodaVolume: 0
   tonicVolume: 0
@@ -56648,6 +58697,9 @@ MonoBehaviour:
   alcoholVolume: 0
   abv: 0
   drinkParts: []
+  otherLiquid: {fileID: 0}
+  otherLiquidMask: {fileID: 0}
+  myMask: {fileID: 0}
   isBeingPoured: 0
 --- !u!114 &114856424059357790
 MonoBehaviour:
@@ -56664,6 +58716,8 @@ MonoBehaviour:
   pourRate: 1
   isEvaluated: 0
   totalVolume: 0
+  myDrinkBase: 0
+  myMixer: 0
   coasters: []
   sodaVolume: 0
   tonicVolume: 0
@@ -56686,6 +58740,9 @@ MonoBehaviour:
   alcoholVolume: 0
   abv: 0
   drinkParts: []
+  otherLiquid: {fileID: 0}
+  otherLiquidMask: {fileID: 0}
+  myMask: {fileID: 0}
   isBeingPoured: 0
 --- !u!114 &114861959908691570
 MonoBehaviour:
@@ -56744,6 +58801,8 @@ MonoBehaviour:
   pourRate: 1
   isEvaluated: 0
   totalVolume: 0
+  myDrinkBase: 0
+  myMixer: 0
   coasters: []
   sodaVolume: 0
   tonicVolume: 0
@@ -56766,6 +58825,9 @@ MonoBehaviour:
   alcoholVolume: 0
   abv: 0
   drinkParts: []
+  otherLiquid: {fileID: 0}
+  otherLiquidMask: {fileID: 0}
+  myMask: {fileID: 0}
   isBeingPoured: 0
 --- !u!114 &114868160612368872
 MonoBehaviour:
@@ -56782,6 +58844,8 @@ MonoBehaviour:
   pourRate: 100
   isEvaluated: 0
   totalVolume: 0
+  myDrinkBase: 0
+  myMixer: 0
   coasters: []
   sodaVolume: 0
   tonicVolume: 0
@@ -56804,6 +58868,9 @@ MonoBehaviour:
   alcoholVolume: 0
   abv: 0
   drinkParts: []
+  otherLiquid: {fileID: 0}
+  otherLiquidMask: {fileID: 0}
+  myMask: {fileID: 0}
   isBeingPoured: 0
 --- !u!114 &114870028065416436
 MonoBehaviour:
@@ -56830,6 +58897,7 @@ MonoBehaviour:
   hasLiquid: 0
   isFull: 0
   isDirty: 0
+  liquid: {fileID: 0}
   glassType: 0
 --- !u!114 &114870485409173020
 MonoBehaviour:
@@ -56856,6 +58924,7 @@ MonoBehaviour:
   hasLiquid: 0
   isFull: 0
   isDirty: 0
+  liquid: {fileID: 0}
   glassType: 0
 --- !u!114 &114871822853111100
 MonoBehaviour:
@@ -56872,6 +58941,8 @@ MonoBehaviour:
   pourRate: 100
   isEvaluated: 0
   totalVolume: 0
+  myDrinkBase: 0
+  myMixer: 0
   coasters: []
   sodaVolume: 0
   tonicVolume: 0
@@ -56894,6 +58965,9 @@ MonoBehaviour:
   alcoholVolume: 0
   abv: 0
   drinkParts: []
+  otherLiquid: {fileID: 0}
+  otherLiquidMask: {fileID: 0}
+  myMask: {fileID: 0}
   isBeingPoured: 0
 --- !u!114 &114872587038427852
 MonoBehaviour:
@@ -56910,6 +58984,8 @@ MonoBehaviour:
   pourRate: 1
   isEvaluated: 0
   totalVolume: 0
+  myDrinkBase: 0
+  myMixer: 0
   coasters: []
   sodaVolume: 0
   tonicVolume: 0
@@ -56932,6 +59008,9 @@ MonoBehaviour:
   alcoholVolume: 0
   abv: 0
   drinkParts: []
+  otherLiquid: {fileID: 0}
+  otherLiquidMask: {fileID: 0}
+  myMask: {fileID: 0}
   isBeingPoured: 0
 --- !u!114 &114872594723234586
 MonoBehaviour:
@@ -56984,6 +59063,7 @@ MonoBehaviour:
   hasLiquid: 0
   isFull: 0
   isDirty: 0
+  liquid: {fileID: 0}
   glassType: 0
 --- !u!114 &114876925059109686
 MonoBehaviour:
@@ -57010,6 +59090,7 @@ MonoBehaviour:
   hasLiquid: 0
   isFull: 0
   isDirty: 0
+  liquid: {fileID: 0}
   glassType: 0
 --- !u!114 &114879649453599276
 MonoBehaviour:
@@ -57036,6 +59117,7 @@ MonoBehaviour:
   hasLiquid: 0
   isFull: 0
   isDirty: 0
+  liquid: {fileID: 0}
   glassType: 0
 --- !u!114 &114882201708440056
 MonoBehaviour:
@@ -57062,6 +59144,7 @@ MonoBehaviour:
   hasLiquid: 0
   isFull: 0
   isDirty: 0
+  liquid: {fileID: 0}
   glassType: 0
 --- !u!114 &114884008422561200
 MonoBehaviour:
@@ -57078,6 +59161,8 @@ MonoBehaviour:
   pourRate: 100
   isEvaluated: 0
   totalVolume: 0
+  myDrinkBase: 0
+  myMixer: 0
   coasters: []
   sodaVolume: 0
   tonicVolume: 0
@@ -57100,6 +59185,9 @@ MonoBehaviour:
   alcoholVolume: 0
   abv: 0
   drinkParts: []
+  otherLiquid: {fileID: 0}
+  otherLiquidMask: {fileID: 0}
+  myMask: {fileID: 0}
   isBeingPoured: 0
 --- !u!114 &114884526913513186
 MonoBehaviour:
@@ -57132,6 +59220,8 @@ MonoBehaviour:
   pourRate: 100
   isEvaluated: 0
   totalVolume: 0
+  myDrinkBase: 0
+  myMixer: 0
   coasters: []
   sodaVolume: 0
   tonicVolume: 0
@@ -57154,6 +59244,9 @@ MonoBehaviour:
   alcoholVolume: 0
   abv: 0
   drinkParts: []
+  otherLiquid: {fileID: 0}
+  otherLiquidMask: {fileID: 0}
+  myMask: {fileID: 0}
   isBeingPoured: 0
 --- !u!114 &114888369655307994
 MonoBehaviour:
@@ -57222,6 +59315,8 @@ MonoBehaviour:
   pourRate: 100
   isEvaluated: 0
   totalVolume: 0
+  myDrinkBase: 0
+  myMixer: 0
   coasters: []
   sodaVolume: 0
   tonicVolume: 0
@@ -57244,6 +59339,9 @@ MonoBehaviour:
   alcoholVolume: 0
   abv: 0
   drinkParts: []
+  otherLiquid: {fileID: 0}
+  otherLiquidMask: {fileID: 0}
+  myMask: {fileID: 0}
   isBeingPoured: 0
 --- !u!114 &114892323799580070
 MonoBehaviour:
@@ -57260,6 +59358,8 @@ MonoBehaviour:
   pourRate: 1
   isEvaluated: 0
   totalVolume: 0
+  myDrinkBase: 0
+  myMixer: 0
   coasters: []
   sodaVolume: 0
   tonicVolume: 0
@@ -57282,6 +59382,9 @@ MonoBehaviour:
   alcoholVolume: 0
   abv: 0
   drinkParts: []
+  otherLiquid: {fileID: 0}
+  otherLiquidMask: {fileID: 0}
+  myMask: {fileID: 0}
   isBeingPoured: 0
 --- !u!114 &114892359238484644
 MonoBehaviour:
@@ -57298,6 +59401,8 @@ MonoBehaviour:
   pourRate: 100
   isEvaluated: 0
   totalVolume: 0
+  myDrinkBase: 0
+  myMixer: 0
   coasters: []
   sodaVolume: 0
   tonicVolume: 0
@@ -57320,6 +59425,9 @@ MonoBehaviour:
   alcoholVolume: 0
   abv: 0
   drinkParts: []
+  otherLiquid: {fileID: 0}
+  otherLiquidMask: {fileID: 0}
+  myMask: {fileID: 0}
   isBeingPoured: 0
 --- !u!114 &114894439928623270
 MonoBehaviour:
@@ -57357,6 +59465,7 @@ MonoBehaviour:
   hasLiquid: 0
   isFull: 0
   isDirty: 0
+  liquid: {fileID: 0}
   glassType: 0
 --- !u!114 &114897270346672236
 MonoBehaviour:
@@ -57373,6 +59482,8 @@ MonoBehaviour:
   pourRate: 1
   isEvaluated: 0
   totalVolume: 0
+  myDrinkBase: 0
+  myMixer: 0
   coasters: []
   sodaVolume: 0
   tonicVolume: 0
@@ -57395,6 +59506,9 @@ MonoBehaviour:
   alcoholVolume: 0
   abv: 0
   drinkParts: []
+  otherLiquid: {fileID: 0}
+  otherLiquidMask: {fileID: 0}
+  myMask: {fileID: 0}
   isBeingPoured: 0
 --- !u!114 &114900760809754968
 MonoBehaviour:
@@ -57421,6 +59535,7 @@ MonoBehaviour:
   hasLiquid: 0
   isFull: 0
   isDirty: 0
+  liquid: {fileID: 0}
   glassType: 0
 --- !u!114 &114901138260425654
 MonoBehaviour:
@@ -57437,6 +59552,8 @@ MonoBehaviour:
   pourRate: 100
   isEvaluated: 0
   totalVolume: 0
+  myDrinkBase: 0
+  myMixer: 0
   coasters: []
   sodaVolume: 0
   tonicVolume: 0
@@ -57459,6 +59576,9 @@ MonoBehaviour:
   alcoholVolume: 0
   abv: 0
   drinkParts: []
+  otherLiquid: {fileID: 0}
+  otherLiquidMask: {fileID: 0}
+  myMask: {fileID: 0}
   isBeingPoured: 0
 --- !u!114 &114908950876974512
 MonoBehaviour:
@@ -57491,6 +59611,8 @@ MonoBehaviour:
   pourRate: 1
   isEvaluated: 0
   totalVolume: 0
+  myDrinkBase: 0
+  myMixer: 0
   coasters: []
   sodaVolume: 0
   tonicVolume: 0
@@ -57513,6 +59635,9 @@ MonoBehaviour:
   alcoholVolume: 0
   abv: 0
   drinkParts: []
+  otherLiquid: {fileID: 0}
+  otherLiquidMask: {fileID: 0}
+  myMask: {fileID: 0}
   isBeingPoured: 0
 --- !u!114 &114913917525633030
 MonoBehaviour:
@@ -57545,6 +59670,8 @@ MonoBehaviour:
   pourRate: 100
   isEvaluated: 0
   totalVolume: 0
+  myDrinkBase: 0
+  myMixer: 0
   coasters: []
   sodaVolume: 0
   tonicVolume: 0
@@ -57567,6 +59694,9 @@ MonoBehaviour:
   alcoholVolume: 0
   abv: 0
   drinkParts: []
+  otherLiquid: {fileID: 0}
+  otherLiquidMask: {fileID: 0}
+  myMask: {fileID: 0}
   isBeingPoured: 0
 --- !u!114 &114918163636055498
 MonoBehaviour:
@@ -57593,6 +59723,7 @@ MonoBehaviour:
   hasLiquid: 0
   isFull: 0
   isDirty: 0
+  liquid: {fileID: 0}
   glassType: 0
 --- !u!114 &114918842575404432
 MonoBehaviour:
@@ -57619,6 +59750,7 @@ MonoBehaviour:
   hasLiquid: 0
   isFull: 0
   isDirty: 0
+  liquid: {fileID: 0}
   glassType: 0
 --- !u!114 &114919756175757576
 MonoBehaviour:
@@ -57635,6 +59767,8 @@ MonoBehaviour:
   pourRate: 100
   isEvaluated: 0
   totalVolume: 0
+  myDrinkBase: 0
+  myMixer: 0
   coasters: []
   sodaVolume: 0
   tonicVolume: 0
@@ -57657,6 +59791,9 @@ MonoBehaviour:
   alcoholVolume: 0
   abv: 0
   drinkParts: []
+  otherLiquid: {fileID: 0}
+  otherLiquidMask: {fileID: 0}
+  myMask: {fileID: 0}
   isBeingPoured: 0
 --- !u!114 &114921482847619152
 MonoBehaviour:
@@ -57673,6 +59810,8 @@ MonoBehaviour:
   pourRate: 1
   isEvaluated: 0
   totalVolume: 0
+  myDrinkBase: 0
+  myMixer: 0
   coasters: []
   sodaVolume: 0
   tonicVolume: 0
@@ -57695,6 +59834,9 @@ MonoBehaviour:
   alcoholVolume: 0
   abv: 0
   drinkParts: []
+  otherLiquid: {fileID: 0}
+  otherLiquidMask: {fileID: 0}
+  myMask: {fileID: 0}
   isBeingPoured: 0
 --- !u!114 &114921865461449048
 MonoBehaviour:
@@ -57779,6 +59921,8 @@ MonoBehaviour:
   pourRate: 1
   isEvaluated: 0
   totalVolume: 0
+  myDrinkBase: 0
+  myMixer: 0
   coasters: []
   sodaVolume: 0
   tonicVolume: 0
@@ -57801,6 +59945,9 @@ MonoBehaviour:
   alcoholVolume: 0
   abv: 0
   drinkParts: []
+  otherLiquid: {fileID: 0}
+  otherLiquidMask: {fileID: 0}
+  myMask: {fileID: 0}
   isBeingPoured: 0
 --- !u!114 &114925551507616434
 MonoBehaviour:
@@ -57833,6 +59980,8 @@ MonoBehaviour:
   pourRate: 100
   isEvaluated: 0
   totalVolume: 0
+  myDrinkBase: 0
+  myMixer: 0
   coasters: []
   sodaVolume: 0
   tonicVolume: 0
@@ -57855,6 +60004,9 @@ MonoBehaviour:
   alcoholVolume: 0
   abv: 0
   drinkParts: []
+  otherLiquid: {fileID: 0}
+  otherLiquidMask: {fileID: 0}
+  myMask: {fileID: 0}
   isBeingPoured: 0
 --- !u!114 &114928938856366576
 MonoBehaviour:
@@ -57897,6 +60049,8 @@ MonoBehaviour:
   pourRate: 100
   isEvaluated: 0
   totalVolume: 0
+  myDrinkBase: 0
+  myMixer: 0
   coasters: []
   sodaVolume: 0
   tonicVolume: 0
@@ -57919,6 +60073,9 @@ MonoBehaviour:
   alcoholVolume: 0
   abv: 0
   drinkParts: []
+  otherLiquid: {fileID: 0}
+  otherLiquidMask: {fileID: 0}
+  myMask: {fileID: 0}
   isBeingPoured: 0
 --- !u!114 &114933095279693024
 MonoBehaviour:
@@ -57945,6 +60102,7 @@ MonoBehaviour:
   hasLiquid: 0
   isFull: 0
   isDirty: 0
+  liquid: {fileID: 0}
   glassType: 0
 --- !u!114 &114934010152162514
 MonoBehaviour:
@@ -57971,6 +60129,7 @@ MonoBehaviour:
   hasLiquid: 0
   isFull: 0
   isDirty: 0
+  liquid: {fileID: 0}
   glassType: 0
 --- !u!114 &114934505823334930
 MonoBehaviour:
@@ -57997,6 +60156,7 @@ MonoBehaviour:
   hasLiquid: 0
   isFull: 0
   isDirty: 0
+  liquid: {fileID: 0}
   glassType: 0
 --- !u!114 &114937266552515670
 MonoBehaviour:
@@ -58023,6 +60183,7 @@ MonoBehaviour:
   hasLiquid: 0
   isFull: 0
   isDirty: 0
+  liquid: {fileID: 0}
   glassType: 0
 --- !u!114 &114937478454978902
 MonoBehaviour:
@@ -58049,6 +60210,7 @@ MonoBehaviour:
   hasLiquid: 0
   isFull: 0
   isDirty: 0
+  liquid: {fileID: 0}
   glassType: 0
 --- !u!114 &114940329721467026
 MonoBehaviour:
@@ -58065,6 +60227,8 @@ MonoBehaviour:
   pourRate: 100
   isEvaluated: 0
   totalVolume: 0
+  myDrinkBase: 0
+  myMixer: 0
   coasters: []
   sodaVolume: 0
   tonicVolume: 0
@@ -58087,6 +60251,9 @@ MonoBehaviour:
   alcoholVolume: 0
   abv: 0
   drinkParts: []
+  otherLiquid: {fileID: 0}
+  otherLiquidMask: {fileID: 0}
+  myMask: {fileID: 0}
   isBeingPoured: 0
 --- !u!114 &114943406176129696
 MonoBehaviour:
@@ -58113,6 +60280,7 @@ MonoBehaviour:
   hasLiquid: 0
   isFull: 0
   isDirty: 0
+  liquid: {fileID: 0}
   glassType: 0
 --- !u!114 &114948911256161686
 MonoBehaviour:
@@ -58129,6 +60297,8 @@ MonoBehaviour:
   pourRate: 100
   isEvaluated: 0
   totalVolume: 0
+  myDrinkBase: 0
+  myMixer: 0
   coasters: []
   sodaVolume: 0
   tonicVolume: 0
@@ -58151,6 +60321,9 @@ MonoBehaviour:
   alcoholVolume: 0
   abv: 0
   drinkParts: []
+  otherLiquid: {fileID: 0}
+  otherLiquidMask: {fileID: 0}
+  myMask: {fileID: 0}
   isBeingPoured: 0
 --- !u!114 &114951057193631658
 MonoBehaviour:
@@ -58209,6 +60382,8 @@ MonoBehaviour:
   pourRate: 1
   isEvaluated: 0
   totalVolume: 0
+  myDrinkBase: 0
+  myMixer: 0
   coasters: []
   sodaVolume: 0
   tonicVolume: 0
@@ -58231,6 +60406,9 @@ MonoBehaviour:
   alcoholVolume: 0
   abv: 0
   drinkParts: []
+  otherLiquid: {fileID: 0}
+  otherLiquidMask: {fileID: 0}
+  myMask: {fileID: 0}
   isBeingPoured: 0
 --- !u!114 &114956927152733860
 MonoBehaviour:
@@ -58325,6 +60503,7 @@ MonoBehaviour:
   hasLiquid: 0
   isFull: 0
   isDirty: 0
+  liquid: {fileID: 0}
   glassType: 0
 --- !u!114 &114963516801558670
 MonoBehaviour:
@@ -58341,6 +60520,8 @@ MonoBehaviour:
   pourRate: 100
   isEvaluated: 0
   totalVolume: 0
+  myDrinkBase: 0
+  myMixer: 0
   coasters: []
   sodaVolume: 0
   tonicVolume: 0
@@ -58363,6 +60544,9 @@ MonoBehaviour:
   alcoholVolume: 0
   abv: 0
   drinkParts: []
+  otherLiquid: {fileID: 0}
+  otherLiquidMask: {fileID: 0}
+  myMask: {fileID: 0}
   isBeingPoured: 0
 --- !u!114 &114963926515165970
 MonoBehaviour:
@@ -58379,6 +60563,8 @@ MonoBehaviour:
   pourRate: 100
   isEvaluated: 0
   totalVolume: 0
+  myDrinkBase: 0
+  myMixer: 0
   coasters: []
   sodaVolume: 0
   tonicVolume: 0
@@ -58401,6 +60587,9 @@ MonoBehaviour:
   alcoholVolume: 0
   abv: 0
   drinkParts: []
+  otherLiquid: {fileID: 0}
+  otherLiquidMask: {fileID: 0}
+  myMask: {fileID: 0}
   isBeingPoured: 0
 --- !u!114 &114968225373719790
 MonoBehaviour:
@@ -58427,6 +60616,7 @@ MonoBehaviour:
   hasLiquid: 0
   isFull: 0
   isDirty: 0
+  liquid: {fileID: 0}
   glassType: 0
 --- !u!114 &114968749808551058
 MonoBehaviour:
@@ -58443,6 +60633,8 @@ MonoBehaviour:
   pourRate: 1
   isEvaluated: 0
   totalVolume: 0
+  myDrinkBase: 0
+  myMixer: 0
   coasters: []
   sodaVolume: 0
   tonicVolume: 0
@@ -58465,6 +60657,9 @@ MonoBehaviour:
   alcoholVolume: 0
   abv: 0
   drinkParts: []
+  otherLiquid: {fileID: 0}
+  otherLiquidMask: {fileID: 0}
+  myMask: {fileID: 0}
   isBeingPoured: 0
 --- !u!114 &114973532368339418
 MonoBehaviour:
@@ -58497,6 +60692,8 @@ MonoBehaviour:
   pourRate: 100
   isEvaluated: 0
   totalVolume: 0
+  myDrinkBase: 0
+  myMixer: 0
   coasters: []
   sodaVolume: 0
   tonicVolume: 0
@@ -58519,6 +60716,9 @@ MonoBehaviour:
   alcoholVolume: 0
   abv: 0
   drinkParts: []
+  otherLiquid: {fileID: 0}
+  otherLiquidMask: {fileID: 0}
+  myMask: {fileID: 0}
   isBeingPoured: 0
 --- !u!114 &114975874024310330
 MonoBehaviour:
@@ -58535,6 +60735,8 @@ MonoBehaviour:
   pourRate: 1
   isEvaluated: 0
   totalVolume: 0
+  myDrinkBase: 0
+  myMixer: 0
   coasters: []
   sodaVolume: 0
   tonicVolume: 0
@@ -58557,6 +60759,9 @@ MonoBehaviour:
   alcoholVolume: 0
   abv: 0
   drinkParts: []
+  otherLiquid: {fileID: 0}
+  otherLiquidMask: {fileID: 0}
+  myMask: {fileID: 0}
   isBeingPoured: 0
 --- !u!114 &114978612340814440
 MonoBehaviour:
@@ -58609,6 +60814,7 @@ MonoBehaviour:
   hasLiquid: 0
   isFull: 0
   isDirty: 0
+  liquid: {fileID: 0}
   glassType: 0
 --- !u!114 &114980816964349174
 MonoBehaviour:
@@ -58625,6 +60831,8 @@ MonoBehaviour:
   pourRate: 100
   isEvaluated: 0
   totalVolume: 0
+  myDrinkBase: 0
+  myMixer: 0
   coasters: []
   sodaVolume: 0
   tonicVolume: 0
@@ -58647,6 +60855,9 @@ MonoBehaviour:
   alcoholVolume: 0
   abv: 0
   drinkParts: []
+  otherLiquid: {fileID: 0}
+  otherLiquidMask: {fileID: 0}
+  myMask: {fileID: 0}
   isBeingPoured: 0
 --- !u!114 &114981427002120970
 MonoBehaviour:
@@ -58663,6 +60874,8 @@ MonoBehaviour:
   pourRate: 1
   isEvaluated: 0
   totalVolume: 0
+  myDrinkBase: 0
+  myMixer: 0
   coasters: []
   sodaVolume: 0
   tonicVolume: 0
@@ -58685,6 +60898,9 @@ MonoBehaviour:
   alcoholVolume: 0
   abv: 0
   drinkParts: []
+  otherLiquid: {fileID: 0}
+  otherLiquidMask: {fileID: 0}
+  myMask: {fileID: 0}
   isBeingPoured: 0
 --- !u!114 &114981451440541366
 MonoBehaviour:
@@ -58743,6 +60959,8 @@ MonoBehaviour:
   pourRate: 1
   isEvaluated: 0
   totalVolume: 0
+  myDrinkBase: 0
+  myMixer: 0
   coasters: []
   sodaVolume: 0
   tonicVolume: 0
@@ -58765,6 +60983,9 @@ MonoBehaviour:
   alcoholVolume: 0
   abv: 0
   drinkParts: []
+  otherLiquid: {fileID: 0}
+  otherLiquidMask: {fileID: 0}
+  myMask: {fileID: 0}
   isBeingPoured: 0
 --- !u!114 &114983980144322774
 MonoBehaviour:
@@ -58817,6 +61038,7 @@ MonoBehaviour:
   hasLiquid: 0
   isFull: 0
   isDirty: 0
+  liquid: {fileID: 0}
   glassType: 0
 --- !u!114 &114989152475379832
 MonoBehaviour:
@@ -58885,6 +61107,7 @@ MonoBehaviour:
   hasLiquid: 0
   isFull: 0
   isDirty: 0
+  liquid: {fileID: 0}
   glassType: 0
 --- !u!114 &114994014773281488
 MonoBehaviour:
@@ -58911,6 +61134,7 @@ MonoBehaviour:
   hasLiquid: 0
   isFull: 0
   isDirty: 0
+  liquid: {fileID: 0}
   glassType: 0
 --- !u!114 &114994472990622506
 MonoBehaviour:
@@ -58963,6 +61187,7 @@ MonoBehaviour:
   hasLiquid: 0
   isFull: 0
   isDirty: 0
+  liquid: {fileID: 0}
   glassType: 0
 --- !u!114 &114997764000283964
 MonoBehaviour:
@@ -61981,7 +64206,7 @@ SkinnedMeshRenderer:
   m_Mesh: {fileID: 4300000, guid: 6e448beaa5ced4d6499b40a9ea987fc1, type: 3}
   m_Bones: []
   m_BlendShapeWeights:
-  - 100
+  - 0
   m_RootBone: {fileID: 0}
   m_AABB:
     m_Center: {x: 0.000000022351742, y: 0.4350929, z: -0.000000037252903}
