@@ -205,8 +205,8 @@ public class Liquid : MonoBehaviour {
 		spiciness = 0;
 		alcoholVolume = 0;
 		abv = 0;
-		myLiquid.SetBlendShapeWeight(0, 100);
-
+		myLiquidVolume = 100;
+		myLiquid.SetBlendShapeWeight(0, myLiquidVolume);
 	}
 
 	float remapRange(float oldValue, float oldMin, float oldMax, float newMin, float newMax )

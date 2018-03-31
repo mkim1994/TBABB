@@ -414,6 +414,17 @@ public class PlayerInput : MonoBehaviour
 		//one-handed actions
 		if (i_startUseLeft && !Services.TweenManager.tweensAreActive)
 		{
+			if (sink != null)
+			{
+				if (pickupableInLeftHand != null)
+				{
+					if (pickupableInLeftHand.GetComponent<Glass>() != null)
+					{
+						Glass leftHandGlass = pickupableInLeftHand.GetComponent<Glass>();
+						leftHandGlass.EmptyGlass();
+					}
+				}
+			}
 			if (pickupableInLeftHand != null && pickupable != null){
 				if (targetDropzone != null)
 				{
@@ -579,6 +590,14 @@ public class PlayerInput : MonoBehaviour
 		#region Use Right
 		if(i_startUseRight && !Services.TweenManager.tweensAreActive){
 			//one-handed use on something on bar
+			if (pickupableInRightHand != null)
+			{
+				if (pickupableInRightHand.GetComponent<Glass>() != null)
+				{
+					Glass rightHandGlass = pickupableInRightHand.GetComponent<Glass>();
+					rightHandGlass.EmptyGlass();
+				}
+			}
 			if (pickupableInRightHand != null && pickupable != null)
 			{
 				if (targetDropzone != null)
@@ -752,26 +771,26 @@ public class PlayerInput : MonoBehaviour
 				lightSwitch.EndDay();
 			}
 
-			if (sink != null)
-			{
-				if (pickupableInLeftHand != null)
-				{
-					if (pickupableInLeftHand.GetComponent<Glass>() != null)
-					{
-						Glass leftHandGlass = pickupableInLeftHand.GetComponent<Glass>();
-						leftHandGlass.EmptyGlass();
-					}
-				}
+			// if (sink != null)
+			// {
+			// 	if (pickupableInLeftHand != null)
+			// 	{
+			// 		if (pickupableInLeftHand.GetComponent<Glass>() != null)
+			// 		{
+			// 			Glass leftHandGlass = pickupableInLeftHand.GetComponent<Glass>();
+			// 			leftHandGlass.EmptyGlass();
+			// 		}
+			// 	}
 
-				if (pickupableInRightHand != null)
-				{
-					if (pickupableInRightHand.GetComponent<Glass>() != null)
-					{
-						Glass rightHandGlass = pickupableInRightHand.GetComponent<Glass>();
-						rightHandGlass.EmptyGlass();
-					}
-				}
-			}
+			// 	if (pickupableInRightHand != null)
+			// 	{
+			// 		if (pickupableInRightHand.GetComponent<Glass>() != null)
+			// 		{
+			// 			Glass rightHandGlass = pickupableInRightHand.GetComponent<Glass>();
+			// 			rightHandGlass.EmptyGlass();
+			// 		}
+			// 	}
+			// }
 			
 			if (backdoor != null)
 			{

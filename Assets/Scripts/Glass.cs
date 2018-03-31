@@ -172,7 +172,6 @@ public class Glass : Pickupable
 		Vector3 moveToPos = Vector3.forward + new Vector3(-0.482f, 0, 0.5f);
 		sequence.Append(transform.DOLocalMove(moveToPos, 0.5f, false));
 		sequence.Append(transform.DOLocalMove(startPos, 0.5f, false));
-//		sequence.Append(transform.DOLocalMove(endPos, 0.5f, false));
 		sequence.OnComplete(() => DeclareInactiveTween());
 		
 		Sequence rotateSequence = DOTween.Sequence();
