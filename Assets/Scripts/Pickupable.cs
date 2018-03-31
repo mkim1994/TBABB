@@ -146,6 +146,17 @@ public class Pickupable : MonoBehaviour
         tweenSequences.Add(sequence);
     }
 
+     public virtual void MoveTween(Vector3 dropPos){
+        DeclareActiveTween();
+        Sequence sequence = DOTween.Sequence();
+        sequence.Append(transform.DOLocalMove(dropPos + dropOffset, pickupDropTime, false));
+        transform.DOLocalRotate(Vector3.zero, pickupDropTime, RotateMode.Fast);
+        sequence.OnComplete(() => DeclareInactiveTween());
+        StartCoroutine(ChangeToWorldLayer(pickupDropTime));
+        pickedUp = false;
+        tweenSequences.Add(sequence);
+    }
+
     public virtual void RotateTween(Vector3 rotation){
         DeclareActiveTween();
         Sequence sequence = DOTween.Sequence();

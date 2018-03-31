@@ -182,4 +182,8 @@ public class Glass : Pickupable
 //		liquid.empty;
 	}
 
+	public void UseIceMaker(Vector3 pos){
+		MoveTween(pos);
+	}
+
 }
