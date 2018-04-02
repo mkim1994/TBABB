@@ -46,7 +46,13 @@ public enum Customer{
 	IvoryDefault,
 	IvoryDynamic,
 	SahanaDefault,
-	SaharaDynamic
+	SaharaDynamic,
+	IzzyDefault,
+	IzzyDynamic,
+	JuliaDefault,
+	JuliaDynamic,
+	ShayDefault,
+	ShayDynamic
 }
 
 public class DrinkDictionary {	

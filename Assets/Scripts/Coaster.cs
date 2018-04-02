@@ -27,8 +27,20 @@ public class Coaster : MonoBehaviour
 				myCustomer = Services.GameManager.CustomerSahana;
 				myCustomer.myCoaster = this;
 			break;
+			case Customer.IzzyDefault:
+				myCustomer = Services.GameManager.CustomerIzzy;
+				myCustomer.myCoaster = this;
+				break;
+			case Customer.JuliaDefault:
+				myCustomer = Services.GameManager.CustomerJulia;
+				myCustomer.myCoaster = this;
+				break;
+			case Customer.ShayDefault:
+				myCustomer = Services.GameManager.CustomerShay;
+				myCustomer.myCoaster = this;	
+				break;
 			default:
-			break;
+				break;
 		}
 
 		if(drinkOnCoaster != null){
