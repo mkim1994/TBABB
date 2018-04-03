@@ -112,8 +112,7 @@ public class DayCycleManager : MonoBehaviour
         Services.GameManager.audioController.bgm.Stop();
         Services.GameManager.audioController.signhum.Stop();
         currentDay++;
-        Services.GameManager.playerInput.isInputEnabled = false;
-        WaitTillNextDay();
+        StartCoroutine(WaitTillNextDay());
     }
 
     public void Update()
@@ -178,15 +177,31 @@ public class DayCycleManager : MonoBehaviour
         dayReallyStarted = true;
     }
 
-    void WaitTillNextDay(){
+    IEnumerator WaitTillNextDay(){
         // give some time delay
+        yield return new WaitForSeconds(3f);
+        blackPanel.GetComponentInChildren<Text>().text = "DAY "+(currentDay+1);
+        yield return new WaitForSeconds(3f);
         BeginDay();
     }
 
+
     void BeginDay(){
+
+        Services.GameManager.player.transform.position =
+            new Vector3(spawnPoint1.position.x,
+                        Services.GameManager.player.transform.position.y,
+                        spawnPoint1.position.z);
+        Services.GameManager.player.transform.rotation = spawnPoint1.rotation;
 
         elapsedTime = Time.timeSinceLevelLoad - offsetTime;
         offsetTime = elapsedTime; //no need to keep track of time
+
+        dayReallyStarted = false;
+
+        Services.GameManager.audioController.signhum.Play();
+        blackPanel.SetActive(false);
+        Services.GameManager.playerInput.isInputEnabled = true;
     }
 
 
