@@ -1,0 +1,237 @@
+title: 1Yun
+tags: 
+colorID: 0
+position: 114,209
+---
+<<if $drinkScoreIvory is -1 and $stateIvory is -1>>
+    <<set $hasOrderedIvory = false>>
+    <<set $progressIvory = 0>>
+    <<order Ivory n 0 n 0 whiskey 1.0>>
+    <<set $stateIvory = 0>>
+    Customer: Ha...
+    <<set $hasOrderedIvory = true>>
+    Customer: Whiskey please.
+<<else>>
+    <<if $progressIvory is 0>>
+        <<if $drinkScoreIvory is -1>>
+            <<set $hasOrderedIvory = true>>
+            Customer: Whiskey.
+        <<else>>
+            <<if $hasOrderedIvory is false>>
+                Customer: Hah, I didn't even tell you what I wanted.
+            <<endif>>
+            <<if $drinkScoreIvory is 0>>
+                Customer: Alright.
+                <<set $hasOrderedIvory = true>>
+                Customer: You take one of the whiskey bottles...
+                Customer: And you pour it into a glass.
+                Customer: It's not that hard, is it?
+            <<else>>
+                <<if $drinkScoreIvory <= 0.1>>
+                    <<setsprite Ivory unhappy>>
+                    Customer: This isn't enough...
+                    Customer: Get me more, won't you?
+                <<else>>
+                    <<if $drinkScoreIvory >= 0.8>>
+                        <<set $stateIvory = 1>>
+                        <<setsprite Ivory happy>>
+                        Customer: Thanks.
+                        <<set $progressIvory = 1>>
+                    <<elseif $drinkScoreIvory >= 0.5>>
+                        <<set $stateIvory = 1>>
+                        <<setsprite Ivory unhappy>>
+                        Customer: Thanks...?
+                        Customer: Sigh.
+                        <<set $progressIvory = 1>>
+                    <<else>>
+                        <<setsprite Ivory unhappy>>
+                        <<set $hasOrderedIvory = true>>
+                        Customer: Does this even have whiskey in it?
+                        Customer: Just get me whiskey, can't be that hard.
+                    <<endif>>
+                <<endif>>
+            <<endif>>
+        <<endif>>
+    <<else>>
+        <<if $progressIvory is 1>>
+            <<set $progressIvory = 2>>
+            Customer: Been a while since I've ended up here.
+            <<setsprite Ivory idle>>
+            Customer: I don't think I've seen you around.
+            Customer: You new?
+            [[Yes|1IvoryA]]
+            [[No, not really|1IvoryB]]
+        <<else>>
+            <<if $progressIvory is 2>>
+                <<if $drinkScoreIvory is 0>>
+                    Customer: Sigh...
+                    Customer: I want whiskey in a glass again.
+                <<else>>
+                    <<if $drinkScoreIvory >= 0.8>>
+                        Customer: Thanks!
+                    <<else>>
+                        Customer: Sigh.
+                    <<endif>>
+                    <<set $progressIvory = 3>>
+                    <<set $stateIvory = 1>>
+                <<endif>>
+            <<else>>
+                <<if $progressIvory is 3>>
+                <<endif>>
+            <<endif>>
+        <<endif>>
+    <<endif>>
+<<endif>>
+===
+title: 1YunA
+tags: 
+colorID: 0
+position: 559,114
+---
+Customer: Oh. Okay.
+Customer: Wonder what happened to the last bartender.
+Customer: Doesn't matter though.
+Customer: I've missed this.
+Customer: Well. 
+Customer: See you around.
+Customer: Maybe I'll come again tomorrow.
+<<set $stateIvory = 5>>
+===
+title: 1YunB
+tags: 
+colorID: 0
+position: 563,341
+---
+Customer: Huh.
+Customer: I must've been away longer than I thought.
+Customer: Though I find that hard to believe.
+Customer: I'm pretty sure you're new...
+Customer: ...
+Customer: I've missed this.
+Customer: Well. 
+Customer: See you around.
+Customer: Maybe I'll come again tomorrow.
+<<set $stateIvory = 5>>
+===
+title: 3AIvoryDay1
+tags: 
+colorID: 0
+position: 1652,266
+---
+Customer: I don't know if I want to talk about it...
+Customer: But thanks for asking.
+Customer: Roommate troubles, et cetera.
+Customer: Anyway, that's it for today then.
+Customer: I'll be back, unfortunately.
+Customer: See you around.
+
+<<set $gameover to true>>
+<<customerleave Dialogue>>
+===
+title: 3BIvoryDay1
+tags: 
+colorID: 0
+position: 1669,518
+---
+Customer: Bet I didn't help with that.
+Customer: Haha...
+Customer: Yep. You know it.
+Customer: Anyway, that's it for today then.
+Customer: I'll be back, unfortunately.
+Customer: See you around.
+
+<<set $gameover to true>>
+<<customerleave Dialogue>>
+===
+title: GetGlassDrink2IvoryDay1
+tags: 
+colorID: 0
+position: 1166,175
+---
+<<if $rightdrink < 2>>
+Customer: Thanks.
+<<else>>
+Customer: Hey, you got it right this time.
+Customer: Haha.
+<<endif>>
+
+<<set $rightdrink to 0>>
+
+Customer: This is some smooth whiskey.
+Customer: Thanks again.
+Customer: Nice break from all the shit that's been happening.
+
+[[What's been happening?|3AIvoryDay1]]
+[[You know it.|3BIvoryDay1]]
+===
+title: GetNotDrink2IvoryDay1
+tags: 
+colorID: 0
+position: 1165,419
+---
+<<if $rightdrink < 2>>
+Customer: Uhh.
+Customer: Did I not order whiskey the first time...?
+<<else>>
+Customer: Okay.
+Customer: Uh.
+Customer: I know you're new and all, but seriously?
+<<endif>>
+
+<<set $rightdrink to 2>>
+
+Customer: Whatever.
+Customer: It's not the worst thing that happened today, I guess.
+
+[[What's the worst thing?|3AIvoryDay1]]
+[[Sorry.|3CIvoryDay1]]
+
+===
+title: GetDrink2IvoryDay1
+tags: 
+colorID: 0
+position: 1108,748
+---
+<<if $rightdrink is 1>>
+Customer: Again?
+Customer: C'mon, man. Just put it in a cup...
+<<else>>
+Customer: Uh...this is a lot.
+Customer: Can't you just give it to me in a glass? Or something?
+<<endif>>
+===
+title: 3CIvoryDay1
+tags: 
+colorID: 0
+position: 1399,688
+---
+Customer: Ah...
+Customer: Sorry, I'm being an asshole, aren't I.
+Customer: It's fine.
+Customer: It's just some shit I'm going through.
+Customer: Roommate's mad, no one likes me, boo hoo.
+Customer: ...
+Customer: Anyway, that's it for today then.
+Customer: I'll be back, unfortunately.
+Customer: See you around.
+
+<<set $gameover to true>>
+<<customerleave Dialogue>>
+===
+title: GetEmptyGlass2IvoryDay1
+tags: 
+colorID: 0
+position: 775,755
+---
+Customer: Haha, dude--you managed to give me something last time!
+Customer: You take one of those bottles there...
+Customer: And you pour it into a glass.
+Customer: It's not that hard, is it?
+===
+title: 1OrderYun
+tags: 
+colorID: 0
+position: -107,216
+---
+<<order Yun n 0 n 0 whiskey 1.0>>
+===
