@@ -18,6 +18,6 @@ public class IceMaker : MonoBehaviour {
 	}
 
 	public void SpawnIce(){
-
+		
 	}
 }
