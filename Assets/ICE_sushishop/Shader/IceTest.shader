@@ -23,7 +23,7 @@ Shader "Custom/IceTest" {
     SubShader {
         Tags {
             "RenderType"="Opaque"
-            "Queue"="Opaque"
+            "Queue"="Transparent-1"
         }
         GrabPass{ }
         Pass {
