@@ -150,7 +150,7 @@ Material:
     - _ReflectBrightness: 1
     - _Refraction: 0.329
     - _Shininess: 1
-    - _Smoothness: 0.653
+    - _Smoothness: 0.9
     - _SmoothnessTextureChannel: 0
     - _SoapAmount: 0.5
     - _Specular: 0

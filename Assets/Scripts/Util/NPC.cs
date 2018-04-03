@@ -115,7 +115,7 @@ public class NPC : MonoBehaviour
         switch (mixer)
         {
             case "applejuice":
-                myMixer = Mixer.apple_juice;
+                myMixer = Mixer.vermouth;
                 break;
             case "orangejuice":
                 myMixer = Mixer.orange_juice;

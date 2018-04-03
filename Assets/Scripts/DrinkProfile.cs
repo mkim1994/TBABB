@@ -191,7 +191,7 @@ public class DrinkProfile {
 		}
 
 		switch(mixer){
-			case Mixer.apple_juice:
+			case Mixer.vermouth:
 				order.appleJuiceRate = newMixerPref;
 			break;
 			case Mixer.lemon_juice:

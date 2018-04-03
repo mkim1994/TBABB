@@ -307,7 +307,7 @@ public class UIControls : MonoBehaviour {
 						case Mixer.tonic:
 							targetObj = "tonic";
 						break;
-						case Mixer.apple_juice:
+						case Mixer.vermouth:
 							targetObj = "apple juice";
 						break;
 						case Mixer.soda:

@@ -265,7 +265,7 @@ public class Liquid : MonoBehaviour {
 					+ Services.DrinkDictionary.drinkBases[DrinkBase.vodka].sweetness*vodkaVolume
 					+ Services.MixerDictionary.mixers[Mixer.soda].sweetness * sodaVolume 
 					+ Services.MixerDictionary.mixers[Mixer.tonic].sweetness * tonicVolume 
-					+ Services.MixerDictionary.mixers[Mixer.apple_juice].sweetness * appleJuiceVolume
+					+ Services.MixerDictionary.mixers[Mixer.vermouth].sweetness * appleJuiceVolume
 					+ Services.MixerDictionary.mixers[Mixer.lemon_juice].sweetness * lemonJuiceVolume
 					+ Services.MixerDictionary.mixers[Mixer.orange_juice].sweetness * orangeJuiceVolume;
 
@@ -284,7 +284,7 @@ public class Liquid : MonoBehaviour {
 					+ Services.DrinkDictionary.drinkBases[DrinkBase.vodka].bitterness*vodkaVolume
 					+ Services.MixerDictionary.mixers[Mixer.soda].bitterness * sodaVolume 
 					+ Services.MixerDictionary.mixers[Mixer.tonic].bitterness * tonicVolume 
-					+ Services.MixerDictionary.mixers[Mixer.apple_juice].bitterness * appleJuiceVolume
+					+ Services.MixerDictionary.mixers[Mixer.vermouth].bitterness * appleJuiceVolume
 					+ Services.MixerDictionary.mixers[Mixer.lemon_juice].bitterness * lemonJuiceVolume
 					+ Services.MixerDictionary.mixers[Mixer.orange_juice].bitterness * orangeJuiceVolume;
 		return _bitterRate/height;
@@ -302,7 +302,7 @@ public class Liquid : MonoBehaviour {
 					+ Services.DrinkDictionary.drinkBases[DrinkBase.vodka].sourness*vodkaVolume
 					+ Services.MixerDictionary.mixers[Mixer.soda].sourness * sodaVolume 
 					+ Services.MixerDictionary.mixers[Mixer.tonic].sourness * tonicVolume 
-					+ Services.MixerDictionary.mixers[Mixer.apple_juice].sourness * appleJuiceVolume
+					+ Services.MixerDictionary.mixers[Mixer.vermouth].sourness * appleJuiceVolume
 					+ Services.MixerDictionary.mixers[Mixer.lemon_juice].sourness * lemonJuiceVolume
 					+ Services.MixerDictionary.mixers[Mixer.orange_juice].sourness * orangeJuiceVolume;
 		return _sourRate/height;	

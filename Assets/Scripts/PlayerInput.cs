@@ -47,7 +47,7 @@ public class PlayerInput : MonoBehaviour
 	private CharacterController cc;
 //	[SerializeField]Coaster targetCoaster;
 	public NPC npc;
-
+	public IceMaker iceMaker;
 	public Vector3 dropPos;
 	protected Camera myCam;
 	//raycast management
@@ -425,6 +425,24 @@ public class PlayerInput : MonoBehaviour
 					}
 				}
 			}
+
+			if (iceMaker != null)
+			{
+				if (pickupableInLeftHand != null)
+				{
+					if (pickupableInLeftHand.GetComponent<Glass>() != null)
+					{
+						Debug.Log("Ice maker activate!");
+						Glass lefthandGlass = pickupableInLeftHand.GetComponent<Glass>();
+						Sequence iceSequence = DOTween.Sequence();
+						Services.TweenManager.tweensAreActive = true;
+						iceSequence.Append(lefthandGlass.transform.DOLocalMove(iceMaker.iceSpawner.transform.position + (Vector3.down * 0.1f), 0.75f, false));
+//						iceMaker.iceSpawner.
+						iceMaker.iceSpawner.DoSpawnTaskSequence();
+					}
+				}
+			}
+
 			if (pickupableInLeftHand != null && pickupable != null){
 				if (targetDropzone != null)
 				{
@@ -886,6 +904,14 @@ public class PlayerInput : MonoBehaviour
 				lightSwitch = null;
 			}
 
+			if (hitObj.GetComponent<IceMaker>() != null)
+			{
+				iceMaker = hitObj.GetComponent<IceMaker>();
+			} else if (hitObj.GetComponent<IceMaker>() == null)
+			{
+				iceMaker = null;
+			}
+
 			if (hitObj.GetComponent<Sink>() != null && Vector3.Distance(transform.position, hitObj.transform.position) <= maxInteractionDist)
 			{
 				sink = hitObj.GetComponent<Sink>();
@@ -907,6 +933,7 @@ public class PlayerInput : MonoBehaviour
 			lightSwitch = null;
 			sink = null;
 			backdoor = null;
+			iceMaker = null;
 		}
 	}
 
