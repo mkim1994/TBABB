@@ -1,88 +1,104 @@
-title: Sahana1
+title: 2OrderSahana
 tags: 
 colorID: 0
-position: -332,39
+position: -888,-113
 ---
-Customer: Hello!
-Customer: Uhm...
-Customer: I've never been here before...
-
-[[First time drinking?|1ASahanaDay2]]
-[[First time here?|1BSahanaDay2]]
+<<order Sahana n 0 n 0 n 0>>
 ===
-title: 1ASahanaDay2
+title: 2Sahana
 tags: 
 colorID: 0
-position: 6,19
+position: -887,101
+---
+<<if $drinkScoreSahana is -1 and $stateSahana is -1>>
+    <<set $hasOrderedSahana = false>>
+    <<set $progressSahana = 0>>
+    <<order Sahana n 0 n 0 whiskey 1.0>>
+    <<set $stateSahana = 0>>
+    Customer: Hello!
+    Customer: Uhm...
+    Customer: I've never been here before...
+    [[First time drinking?|2SahanaA]]
+    [[First time here?|2SahanaB]]
+<<else>>
+    <<if $progressSahana is 0>>
+        <<if $drinkScoreSahana is -1>>
+            <<set $hasOrderedSahana = true>>
+            Customer: Anything, just not alcoholic...
+        <<else>>
+            <<if $hasOrderedSahana is false>>
+                Customer: Uhm...wow!
+                Customer: I hadn't even asked for anything yet...
+            <<endif>>
+            <<if $drinkScoreSahana is 0>>
+                Customer: I think I just want something non-alcoholic.
+                <<set $hasOrderedSahana = true>>
+                Customer: That's still possible in a bar, right?
+                Customer: ...Right?
+            <<else>>
+                <<if $drinkScoreSahana <= 0.1>>
+                    <<setsprite Sahana unhappy>>
+                    Customer: Uhm...
+                    Customer: I guess this amount is fine...?
+                    Customer: ...No, actually, get me more please.
+                <<else>>
+                    <<set $stateSahana = 1>>
+                    <<setsprite Sahana happy>>
+                    <<set $progressSahana = 1>>
+                    Customer: Thank you!
+                <<endif>>
+            <<endif>>
+        <<endif>>
+    <<else>>
+        <<if $progressSahana is 1>>
+            <<set $progressSahana = 2>>
+            <<if $drinkAlcohol >= 50>>
+                Customer: Mm.
+                Customer: This is pretty bitter...
+                Customer: I don't think I've tasted something like this before.
+                Customer: You didn't actually give me something alcoholic, did you?
+                
+                [[Nope. No alcohol.|2SahanaA2]]
+                [[No promises.|2SahanaB2]]
+            <<else>>
+                Customer: This doesn't taste bitter at all.
+                Customer: Thank you.
+                Customer: I know I'm kind of missing the point coming here to drink this but...
+                Customer: It's just nice to get what I ask for, for once.
+                Customer: I think that's all I needed right now.
+                Customer: Thank you again--bye.
+            <<endif>>
+        <<else>>
+        <<endif>>
+    <<endif>>
+<<endif>>
+===
+title: 2SahanaA
+tags: 
+colorID: 0
+position: -653,-113
 ---
 Customer: Haha, yes...
+<<order Sahana n 0 n 0 n 0>>
+<<set $hasOrderedSahana = true>>
 Customer: Uhm... give me anything, just no alcohol.
-
-
-
 ===
-title: 1BSahanaDay2
+title: 2SahanaB
 tags: 
 colorID: 0
-position: -7,321
+position: -653,100
 ---
 Customer: Yes, but I mean I've never been to a bar in general.
 Customer: Or drank anything alcoholic.
 Customer: I might try it but...
+<<order Sahana n 0 n 0 n 0>>
+<<set $hasOrderedSahana = true>>
 Customer: Nevermind, give me anything, just no alcohol.
 ===
-title: GetDrink1SahanaDay2
+title: 2SahanaA2
 tags: 
 colorID: 0
-position: -190,614
----
-Customer: I can't take this much of anything.
-Customer: Can't you pour it in a cup? Glass? Something?
-Customer: How does it work in bars...
-===
-title: GetGlassDrink1ASahanaDay2
-tags: 
-colorID: 0
-position: 345,189
----
-<<$set alcoholicaf to true>>
-
-Customer: Mm.
-Customer: This is pretty bitter...
-Customer: I don't think I've tasted something like this before.
-Customer: You didn't actually give me something alcoholic, did you?
-
-[[Nope. No alcohol.|2ASahanaDay2]]
-[[No promises.|2BSahanaDay2]]
-===
-title: GetEmptyGlass1SahanaDay2
-tags: 
-colorID: 0
-position: 55,597
----
-Customer: You're hilarious.
-Customer: Please just get me anything. Not alcoholic.
-===
-title: GetGlassDrink1BSahanaDay2
-tags: 
-colorID: 0
-position: 415,484
----
-<<$set alcoholicaf to false>>
-
-Customer: This doesn't taste bitter at all.
-Customer: Thank you.
-Customer: I know I'm kind of missing the point coming here to drink this but...
-Customer: It's just nice to get what I ask for, for once.
-Customer: I think that's all I needed right now.
-Customer: Thank you again--bye.
-
-<<customerleave Dialogue>>
-===
-title: 2ASahanaDay2
-tags: 
-colorID: 0
-position: 737,-29
+position: -881,366
 ---
 Customer: Alright.
 Customer: I mean...
@@ -94,13 +110,12 @@ Customer: You're the idiot.
 Customer: ...
 Customer: I'm so sorry, I don't know what I just said.
 Customer: I'm going to leave now, bye!
-
-<<customerleave Dialogue>>
+<<set $stateSahana = 5>>
 ===
-title: 2BSahanaDay2
+title: 2SahanaB2
 tags: 
 colorID: 0
-position: 724,235
+position: -1101,367
 ---
 Customer: You're kidding.
 Customer: ...
@@ -111,7 +126,7 @@ Customer: Thinking they can just step all over me.
 Customer: Fuuuck.
 Customer: ...
 Customer: I'm so sorry, I don't know what I just said.
-Customer: I'm going to leave now, bye!
-
-<<customerleave Dialogue>>
+Customer: I'm. Going to leave now.
+Customer: Bye.
+<<set $stateSahana = 5>>
 ===

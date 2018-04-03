@@ -1,0 +1,65 @@
+title: 2Julia
+tags: 
+colorID: 0
+position: 114,209
+---
+<<if $drinkScoreJulia is -1 and $stateJulia is -1>>
+    <<set $hasOrderedJulia  = false>>
+    <<set $progressJulia = 0>>
+    <<order Julia n 0 vermouth 1.0 gin 1.0>>
+    <<set $stateJulia = 0>>
+    Customer: The usual--
+    Customer: Ah.
+    Customer: I skip one day and they already replaced the last one?
+    Customer: Ugh, what a pain.
+    Customer: I really don't like going into detail again to get a decent cocktail.
+    Customer: I assume you're new, too, so let's do a simple martini?
+    <<set $hasOrderedJulia = true>>
+    Customer: That's gin and vermouth on the rocks.
+<<else>>
+    <<if $progressJulia is 0>>
+        <<if $drinkScoreJulia is -1>>
+            <<set $hasOrderedJulia = true>>
+            Customer: Gin, vermouth, on the rocks.
+        <<else>>
+            <<if $hasOrderedJulia is false>>
+                Customer: Didn't even order the usual yet...
+            <<endif>>
+            <<if $drinkScoreJulia is 0>>
+                Customer: Seriously?
+                <<set $hasOrderedJulia = true>>
+                Customer: I can tell you're new, but please.
+            <<else>>
+                <<if $drinkScoreJulia <= 0.1>>
+                    Customer: Don't be shy, pour me more.
+                <<else>>
+                    <<if $drinkScoreJulia >= 0.8>>
+                        <<set $stateJulia = 2>>
+                        Customer: Finally.
+                        <<leave Julia 60>>
+                        <<set $progressJulia = 1>>
+                    <<elseif $drinkScoreJulia >= 0.5>>
+                        <<set $stateJulia = 2>>
+                        Customer: This isn't...
+                        Customer: Whatever.
+                        Customer: You're new, you'll learn.
+                        Customer: It's always the same with you bartenders here.
+                        <<leave Julia 30>>
+                        <<set $progressJulia = 1>>
+                    <<else>>
+                        <<set $hasOrderedJulia = true>>
+                        Customer: Did you even listen to what I asked for?
+                    <<endif>>
+                <<endif>>
+            <<endif>>
+        <<endif>>
+    <<endif>>
+<<endif>>
+===
+title: 2OrderJulia
+tags: 
+colorID: 0
+position: -107,216
+---
+<<order Julia n 0 vermouth 1.0 gin 1.0>>
+===

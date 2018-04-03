@@ -75,7 +75,7 @@ GameObject:
   - component: {fileID: 114851358535057914}
   - component: {fileID: 65369364684817758}
   m_Layer: 10
-  m_Name: Shay
+  m_Name: Yun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -867,9 +867,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3419b57eb638f44db88701b5b33b8af8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  characterName: Shay
+  characterName: Yun
   myCoaster: {fileID: 0}
-  talkToNode: Shay
+  talkToNode: Yun
   scriptToLoad: {fileID: 0}
   insideBar: 0
   seatLocations:

@@ -475,6 +475,51 @@ MonoBehaviour:
   - name: stateSahana
     value: -1
     type: 0
+  - name: drinkScoreJulia
+    value: -1
+    type: 0
+  - name: drinkAlcoholJulia
+    value: -1
+    type: 0
+  - name: contentJulia
+    value: -1
+    type: 0
+  - name: drunkJulia
+    value: -1
+    type: 0
+  - name: stateJulia
+    value: -1
+    type: 0
+  - name: drinkScoreIzzy
+    value: -1
+    type: 0
+  - name: drinkAlcoholIzzy
+    value: -1
+    type: 0
+  - name: contentIzzy
+    value: -1
+    type: 0
+  - name: drunkIzzy
+    value: -1
+    type: 0
+  - name: stateIzzy
+    value: -1
+    type: 0
+  - name: drinkScoreYun
+    value: -1
+    type: 0
+  - name: drinkAlcoholYun
+    value: -1
+    type: 0
+  - name: contentYun
+    value: -1
+    type: 0
+  - name: drunkYun
+    value: -1
+    type: 0
+  - name: stateYun
+    value: -1
+    type: 0
   debugTextView: {fileID: 0}
 --- !u!114 &114363662100448426
 MonoBehaviour:
@@ -544,6 +589,9 @@ MonoBehaviour:
   sourceText:
   - {fileID: 4900000, guid: 664b128d53a282c4cb48645dba769903, type: 3}
   - {fileID: 4900000, guid: 199b18caeea52400bb40ac2ab4ebec19, type: 3}
+  - {fileID: 4900000, guid: 438dbe3f4f94b4d23b7bfed555b6bf30, type: 3}
+  - {fileID: 4900000, guid: a82ac3bd18cd7460c90bcff8021c8c35, type: 3}
+  - {fileID: 4900000, guid: 86fbb947bfadc42aaa863a0a79b23a52, type: 3}
   stringGroups: []
   shouldOverrideLanguage: 0
   overrideLanguage: 10

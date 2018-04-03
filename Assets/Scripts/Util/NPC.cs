@@ -61,6 +61,17 @@ public class NPC : MonoBehaviour
         Services.GameManager.dialogue.variableStorage.SetValue("$drinkScore" + characterName, new Yarn.Value(-1));
     }
 
+    [YarnCommand("leave")]
+    public void DelayLeave(float seconds){
+        StartCoroutine(DelayFor(seconds));
+
+        Services.GameManager.dialogue.variableStorage.SetValue("$state" + characterName, new Yarn.Value(5));
+    }
+
+    IEnumerator DelayFor(float seconds){
+        yield return new WaitForSeconds(seconds);
+    }
+
     [YarnCommand("order")]
     public void OrderDrink(string flavor, string f, string mixer, string m, string drinkbase, string b){
         Flavor myFlavor = Flavor.none;
