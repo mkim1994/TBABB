@@ -53,6 +53,16 @@ position: 114,209
                 <<endif>>
             <<endif>>
         <<endif>>
+    <<else>>
+        <<if $progressJulia is 1>>
+            <<set $progressJulia = 2>>
+            Customer: I don't particularly feel talkative tonight.
+        <<elseif $progressJulia is 2>>
+            <<set $progressJulia = 3>>
+            Customer: Seriously? Leave me alone.
+        <<elseif $progressJulia is 3>>
+            Customer: ...
+        <<endif>>
     <<endif>>
 <<endif>>
 ===

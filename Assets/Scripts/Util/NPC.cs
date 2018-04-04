@@ -77,6 +77,11 @@ public class NPC : MonoBehaviour
 
     IEnumerator DelayFor(float seconds){
         yield return new WaitForSeconds(seconds);
+        while(Services.GameManager.dialogue.currentNodeName.Contains(characterName)){
+            yield return null;
+        }
+        //yield return new WaitForSeconds(5f);
+        /*might want to change this so the light fades out instead of complete darkness where they are*/
     }
 
     [YarnCommand("order")]
