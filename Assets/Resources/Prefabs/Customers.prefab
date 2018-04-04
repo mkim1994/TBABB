@@ -896,7 +896,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   daysvisiting:
   - 10
-  - 20
+  - 120
   - 0
   - 10
   - 0

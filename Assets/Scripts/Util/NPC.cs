@@ -57,6 +57,13 @@ public class NPC : MonoBehaviour
         fsm.Update();
     }
 
+    IEnumerator RunPreemptiveOrder(){
+        while(Services.GameManager.dialogue.isDialogueRunning){
+            yield return null;
+        }
+        PreemptiveOrder();
+    }
+
     public void ResetDrinkScore(){
         Services.GameManager.dialogue.variableStorage.SetValue("$drinkScore" + characterName, new Yarn.Value(-1));
     }
@@ -213,7 +220,6 @@ public class NPC : MonoBehaviour
     }
 
     public void EnterBarAction(){
-        PreemptiveOrder();
         Services.GameManager.audioController.dooropen.Play();
         Services.GameManager.audioController.doorbell.Play();
         silhouette.gameObject.SetActive(true);
@@ -242,6 +248,7 @@ public class NPC : MonoBehaviour
         GetComponent<BoxCollider>().enabled = true;
         GetComponentInChildren<SpriteRenderer>().enabled = true;
         GetComponentInChildren<Light>().enabled = true;
+        StartCoroutine(RunPreemptiveOrder());
 
     }
 

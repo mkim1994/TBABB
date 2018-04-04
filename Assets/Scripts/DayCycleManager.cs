@@ -106,6 +106,7 @@ public class DayCycleManager : MonoBehaviour
     public void ResetDay()
     {
         dayHasEnded = false;
+        dayReallyStarted = false;
         switchOff = false;
         blackPanel.SetActive(true);
         Services.GameManager.audioController.spotlightsfx.Play();
@@ -127,7 +128,6 @@ public class DayCycleManager : MonoBehaviour
         {
             //if(Services.GameManager.player.)
             if(offsetTime == elapsedTime){ //need to do offsetTime to account for the beginning sequence
-                Debug.Log("yea");
                 offsetTime = Time.timeSinceLevelLoad;
             }
             if (!dayHasEnded)
@@ -187,17 +187,20 @@ public class DayCycleManager : MonoBehaviour
 
 
     void BeginDay(){
-
+        Debug.Log("beginning the next day");
         Services.GameManager.player.transform.position =
             new Vector3(spawnPoint1.position.x,
                         Services.GameManager.player.transform.position.y,
                         spawnPoint1.position.z);
         Services.GameManager.player.transform.rotation = spawnPoint1.rotation;
 
+
         elapsedTime = Time.timeSinceLevelLoad - offsetTime;
         offsetTime = elapsedTime; //no need to keep track of time
 
-        dayReallyStarted = false;
+        Debug.Log("elapsedTime: " + elapsedTime);
+        //Debug.Log("offsetTime: " + offsetTime);
+
 
         Services.GameManager.audioController.signhum.Play();
         blackPanel.SetActive(false);
