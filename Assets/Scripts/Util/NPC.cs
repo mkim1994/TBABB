@@ -85,14 +85,16 @@ public class NPC : MonoBehaviour
     }
 
     [YarnCommand("order")]
-    public void OrderDrink(string flavor, string f, string mixer, string m, string drinkbase, string b){
+    public void OrderDrink(string ice, string flavor, string f, string mixer, string m, string drinkbase, string b){;
         Flavor myFlavor = Flavor.none;
         Mixer myMixer = Mixer.none;
         DrinkBase myBase = DrinkBase.none;
-        float fF = 0f; float mF = 0f; float bF = 0f;
+        float fF = 0f; float mF = 0f; float bF = 0f; int iceValue = 0;
         float.TryParse(f, out fF);
         float.TryParse(m, out mF);
         float.TryParse(b, out bF);
+        int.TryParse(ice, out iceValue);
+        
         switch (flavor)
         {
             case "bitter":
@@ -155,10 +157,10 @@ public class NPC : MonoBehaviour
         }
         if (myCoaster != null)
         {
-            myCoaster.TakeOrder(DrinkProfile.OrderDrink(myFlavor, fF, myBase, bF, myMixer, mF));
-            Debug.Log("Ordered flavor " + myFlavor + " " + fF);
-            Debug.Log("ordered base " + myBase + " " + bF);   
-            Debug.Log("Ordered mixer " + myMixer + " " + mF);
+            myCoaster.TakeOrder(DrinkProfile.OrderDrink(iceValue, myFlavor, fF, myBase, bF, myMixer, mF));
+            // Debug.Log("Ordered flavor " + myFlavor + " " + fF);
+            // Debug.Log("ordered base " + myBase + " " + bF);   
+            // Debug.Log("Ordered mixer " + myMixer + " " + mF);
         }
     }
 

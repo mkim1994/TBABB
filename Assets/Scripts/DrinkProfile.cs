@@ -140,10 +140,10 @@ public class DrinkProfile {
 //		
 //	}
 
-	public static DrinkProfile OrderDrink(	Flavor flavor = Flavor.none, float newFlavorPref = 0, 
+	public static DrinkProfile OrderDrink( int newIceOrder = 0,	Flavor flavor = Flavor.none, float newFlavorPref = 0, 
 											DrinkBase dBase = DrinkBase.none, float newBasePref = 0, 
 											Mixer mixer = Mixer.none, float newMixerPref = 0,
-											Garnish garnish = Garnish.none, float newGarnishPref = 0, int newIceOrder = 0){
+											Garnish garnish = Garnish.none, float newGarnishPref = 0){
 												
 		DrinkProfile order = new DrinkProfile();
 		switch(flavor){
@@ -216,6 +216,9 @@ public class DrinkProfile {
 		}
 
 		order.ice = newIceOrder;
+		//no ice = -1
+		//on the rocks = 1
+		//whatever = 0
 		
 		return order;	
 	}
