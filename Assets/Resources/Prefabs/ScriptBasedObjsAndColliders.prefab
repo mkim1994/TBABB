@@ -303,6 +303,24 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1017306544427156
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4227643301661746}
+  - component: {fileID: 33367922672206394}
+  - component: {fileID: 23168902038604514}
+  - component: {fileID: 95321679925015346}
+  m_Layer: 0
+  m_Name: bottle
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
 --- !u!1 &1017622322312960
 GameObject:
   m_ObjectHideFlags: 1
@@ -1965,24 +1983,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 0
---- !u!1 &1120248355358124
-GameObject:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 4819467623599998}
-  - component: {fileID: 33780847114019292}
-  - component: {fileID: 23674364568941144}
-  - component: {fileID: 95146818928520654}
-  m_Layer: 0
-  m_Name: bottle
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
 --- !u!1 &1120878859491488
 GameObject:
   m_ObjectHideFlags: 1
@@ -2347,24 +2347,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!1 &1148577752516908
-GameObject:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 4701313022295738}
-  - component: {fileID: 33502145143289444}
-  - component: {fileID: 23596419472600442}
-  - component: {fileID: 95396287995895190}
-  m_Layer: 0
-  m_Name: bottle
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
 --- !u!1 &1148834093401120
 GameObject:
   m_ObjectHideFlags: 1
@@ -2692,25 +2674,6 @@ GameObject:
   - component: {fileID: 114514540778067658}
   m_Layer: 0
   m_Name: glassDrinkCylinder
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!1 &1165238535166670
-GameObject:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 4137695010852840}
-  - component: {fileID: 65871049460236990}
-  - component: {fileID: 114978612340814440}
-  - component: {fileID: 114604953674083372}
-  - component: {fileID: 54845840179206708}
-  m_Layer: 0
-  m_Name: DefaultBottle (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3663,25 +3626,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!1 &1241476539793250
-GameObject:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 4414129917842704}
-  - component: {fileID: 65562095427559544}
-  - component: {fileID: 114301802257756554}
-  - component: {fileID: 114599801859311792}
-  - component: {fileID: 54974417480984478}
-  m_Layer: 0
-  m_Name: DefaultBottle (43)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
 --- !u!1 &1245070811219602
 GameObject:
   m_ObjectHideFlags: 1
@@ -3898,6 +3842,25 @@ GameObject:
   - component: {fileID: 95617962458024024}
   m_Layer: 0
   m_Name: bottle
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1265111349728586
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4304476173402694}
+  - component: {fileID: 65916729303797584}
+  - component: {fileID: 114431037572412292}
+  - component: {fileID: 114859694762263656}
+  - component: {fileID: 54978524646863602}
+  m_Layer: 0
+  m_Name: VermouthBottle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5729,6 +5692,24 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1416958593729710
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4449855369674676}
+  - component: {fileID: 33062701087579290}
+  - component: {fileID: 23001093006762070}
+  - component: {fileID: 95190987252712876}
+  m_Layer: 0
+  m_Name: bottle
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
 --- !u!1 &1418574251447538
 GameObject:
   m_ObjectHideFlags: 1
@@ -6585,6 +6566,24 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1482122498582406
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4951601047060372}
+  - component: {fileID: 33152390961379886}
+  - component: {fileID: 23595621852373576}
+  - component: {fileID: 95518655497007922}
+  m_Layer: 12
+  m_Name: vermouthbottle
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1482720702222504
 GameObject:
   m_ObjectHideFlags: 1
@@ -6980,6 +6979,25 @@ GameObject:
   - component: {fileID: 23795676386689124}
   m_Layer: 12
   m_Name: IceSpawnpoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1516236066276032
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4942725066215554}
+  - component: {fileID: 65743238141405928}
+  - component: {fileID: 114574281745458000}
+  - component: {fileID: 114025281179899548}
+  - component: {fileID: 54571989570446096}
+  m_Layer: 0
+  m_Name: GinBottle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10028,6 +10046,24 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1811095668902568
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4642436794493182}
+  - component: {fileID: 33493564282451334}
+  - component: {fileID: 23698649132421376}
+  - component: {fileID: 95569298493341660}
+  m_Layer: 12
+  m_Name: ginbottle
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1811489105709434
 GameObject:
   m_ObjectHideFlags: 1
@@ -10193,20 +10229,19 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 0
---- !u!1 &1828825101596894
+--- !u!1 &1827985701051684
 GameObject:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 5
   m_Component:
-  - component: {fileID: 4586355742755090}
-  - component: {fileID: 65712495466632834}
-  - component: {fileID: 114261287154559476}
-  - component: {fileID: 114201938810437668}
-  - component: {fileID: 54227113109602952}
-  m_Layer: 0
-  m_Name: DefaultBottle (3)
+  - component: {fileID: 4520555915004602}
+  - component: {fileID: 33861294066912298}
+  - component: {fileID: 23783248806658726}
+  - component: {fileID: 95186571761358958}
+  m_Layer: 12
+  m_Name: sodabottle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10629,6 +10664,24 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1862359960880116
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4853239970872744}
+  - component: {fileID: 33577639473016810}
+  - component: {fileID: 23856933314476546}
+  - component: {fileID: 95779175416508502}
+  m_Layer: 0
+  m_Name: bottle
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
 --- !u!1 &1865371918408360
 GameObject:
   m_ObjectHideFlags: 1
@@ -11107,6 +11160,25 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1902686734766714
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4722341236728306}
+  - component: {fileID: 65482539999909838}
+  - component: {fileID: 114662032116239756}
+  - component: {fileID: 114885935203497096}
+  - component: {fileID: 54993371492107064}
+  m_Layer: 0
+  m_Name: SodaBottle
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1903399646461968
 GameObject:
   m_ObjectHideFlags: 1
@@ -11285,24 +11357,6 @@ GameObject:
   - component: {fileID: 95515340073356800}
   m_Layer: 0
   m_Name: GlassModel
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!1 &1927895518410326
-GameObject:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 4329966417071780}
-  - component: {fileID: 33665435267215972}
-  - component: {fileID: 23326459824336316}
-  - component: {fileID: 95562162787104680}
-  m_Layer: 0
-  m_Name: bottle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13194,20 +13248,6 @@ Transform:
   m_Father: {fileID: 4258624004506724}
   m_RootOrder: 107
   m_LocalEulerAnglesHint: {x: 0, y: 48.335003, z: 0}
---- !u!4 &4137695010852840
-Transform:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1165238535166670}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.53, y: 4.643, z: 3.12}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 4329966417071780}
-  m_Father: {fileID: 4861439855706366}
-  m_RootOrder: 7
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4137799239295732
 Transform:
   m_ObjectHideFlags: 1
@@ -14151,6 +14191,19 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4171476119206860}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4227643301661746
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1017306544427156}
+  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4722341236728306}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4232791030450608
@@ -15110,6 +15163,21 @@ Transform:
   m_Father: {fileID: 4174320290193702}
   m_RootOrder: 23
   m_LocalEulerAnglesHint: {x: 0, y: -4.564, z: 0}
+--- !u!4 &4304476173402694
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1265111349728586}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -2.39, y: 4.643, z: 3.95}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 4951601047060372}
+  - {fileID: 4449855369674676}
+  m_Father: {fileID: 4861439855706366}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4305275953870528
 Transform:
   m_ObjectHideFlags: 1
@@ -15388,19 +15456,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 4176932352893790}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &4329966417071780
-Transform:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1927895518410326}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 4137695010852840}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4334260958018960
 Transform:
@@ -16246,20 +16301,6 @@ Transform:
   m_Father: {fileID: 4874478020581736}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &4414129917842704
-Transform:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1241476539793250}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.463, y: 3.058, z: 3.043}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 4701313022295738}
-  m_Father: {fileID: 4861439855706366}
-  m_RootOrder: 45
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4416519404922178
 Transform:
   m_ObjectHideFlags: 1
@@ -16719,6 +16760,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 4564905347112762}
   m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4449855369674676
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1416958593729710}
+  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4304476173402694}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4450175734384744
 Transform:
@@ -17358,6 +17412,19 @@ Transform:
   m_Father: {fileID: 4861439855706366}
   m_RootOrder: 51
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4520555915004602
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1827985701051684}
+  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0, y: 0, z: 0}
+  m_LocalScale: {x: 0.9, y: 0.9, z: 0.9}
+  m_Children: []
+  m_Father: {fileID: 4722341236728306}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4528063054677834
 Transform:
   m_ObjectHideFlags: 1
@@ -17847,20 +17914,6 @@ Transform:
   m_Father: {fileID: 4258624004506724}
   m_RootOrder: 43
   m_LocalEulerAnglesHint: {x: 0, y: -108.41, z: 0}
---- !u!4 &4586355742755090
-Transform:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1828825101596894}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.39, y: 4.643, z: 3.95}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 4819467623599998}
-  m_Father: {fileID: 4861439855706366}
-  m_RootOrder: 5
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4589343774995528
 Transform:
   m_ObjectHideFlags: 1
@@ -18199,6 +18252,19 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4504458028109566}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4642436794493182
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1811095668902568}
+  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4942725066215554}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4643871267597922
@@ -18618,19 +18684,6 @@ Transform:
   m_Father: {fileID: 4258624004506724}
   m_RootOrder: 44
   m_LocalEulerAnglesHint: {x: 0, y: -108.41, z: 0}
---- !u!4 &4701313022295738
-Transform:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1148577752516908}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 4414129917842704}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4701502390964210
 Transform:
   m_ObjectHideFlags: 1
@@ -18807,6 +18860,21 @@ Transform:
   m_Father: {fileID: 4533169868728076}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
+--- !u!4 &4722341236728306
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1902686734766714}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -2.53, y: 4.643, z: 3.12}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 4520555915004602}
+  - {fileID: 4227643301661746}
+  m_Father: {fileID: 4861439855706366}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4724066908011394
 Transform:
   m_ObjectHideFlags: 1
@@ -19608,19 +19676,6 @@ Transform:
   m_Father: {fileID: 4234827596550472}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &4819467623599998
-Transform:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1120248355358124}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 4586355742755090}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4820811641654520
 Transform:
   m_ObjectHideFlags: 1
@@ -19825,6 +19880,19 @@ Transform:
   m_Father: {fileID: 4252980590712962}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4853239970872744
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1862359960880116}
+  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4942725066215554}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4853708486890166
 Transform:
   m_ObjectHideFlags: 1
@@ -19922,9 +19990,9 @@ Transform:
   - {fileID: 4496688280730950}
   - {fileID: 4879365468281840}
   - {fileID: 4436806082581702}
-  - {fileID: 4586355742755090}
+  - {fileID: 4304476173402694}
   - {fileID: 4242369113788992}
-  - {fileID: 4137695010852840}
+  - {fileID: 4722341236728306}
   - {fileID: 4809970377616324}
   - {fileID: 4510146127593454}
   - {fileID: 4279272131089210}
@@ -19962,7 +20030,7 @@ Transform:
   - {fileID: 4360687729388898}
   - {fileID: 4202503200814352}
   - {fileID: 4474066747795734}
-  - {fileID: 4414129917842704}
+  - {fileID: 4942725066215554}
   - {fileID: 4631736244700178}
   - {fileID: 4870079075969880}
   - {fileID: 4915194518702530}
@@ -20774,6 +20842,21 @@ Transform:
   m_Father: {fileID: 4769530244118090}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4942725066215554
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1516236066276032}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -2.463, y: 3.058, z: 3.043}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 4642436794493182}
+  - {fileID: 4853239970872744}
+  m_Father: {fileID: 4861439855706366}
+  m_RootOrder: 45
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4944933152684004
 Transform:
   m_ObjectHideFlags: 1
@@ -20880,6 +20963,19 @@ Transform:
   m_Father: {fileID: 4258624004506724}
   m_RootOrder: 42
   m_LocalEulerAnglesHint: {x: 0, y: -108.41, z: 0}
+--- !u!4 &4951601047060372
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1482122498582406}
+  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0, y: 0, z: 0}
+  m_LocalScale: {x: 0.9151868, y: 1.0168742, z: 0.9151868}
+  m_Children: []
+  m_Father: {fileID: 4304476173402694}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4953481139544750
 Transform:
   m_ObjectHideFlags: 1
@@ -21295,6 +21391,40 @@ Transform:
   m_Father: {fileID: 4342726862919814}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!23 &23001093006762070
+MeshRenderer:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1416958593729710}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_Materials:
+  - {fileID: 2100000, guid: 8481cdd9647ca4f5db48a84ee2a4837a, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
 --- !u!23 &23004192530544074
 MeshRenderer:
   m_ObjectHideFlags: 1
@@ -23335,6 +23465,40 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!23 &23168902038604514
+MeshRenderer:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1017306544427156}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_Materials:
+  - {fileID: 2100000, guid: 8481cdd9647ca4f5db48a84ee2a4837a, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
 --- !u!23 &23171577449938468
 MeshRenderer:
   m_ObjectHideFlags: 1
@@ -25315,40 +25479,6 @@ MeshRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1741289214503694}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_Materials:
-  - {fileID: 2100000, guid: 8481cdd9647ca4f5db48a84ee2a4837a, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 0
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
---- !u!23 &23326459824336316
-MeshRenderer:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1927895518410326}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -27894,13 +28024,13 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!23 &23596043334399164
+--- !u!23 &23595621852373576
 MeshRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1166897636434400}
-  m_Enabled: 0
+  m_GameObject: {fileID: 1482122498582406}
+  m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -27908,7 +28038,9 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 0}
+  - {fileID: 2100000, guid: 3798c7ae5edae42e89558f12a947471e, type: 2}
+  - {fileID: 2100000, guid: 608b698dd751440daab8a563908525cc, type: 2}
+  - {fileID: 2100000, guid: 382791e08998a4c58b4dce7a9e556721, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -27928,13 +28060,13 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!23 &23596419472600442
+--- !u!23 &23596043334399164
 MeshRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1148577752516908}
-  m_Enabled: 1
+  m_GameObject: {fileID: 1166897636434400}
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -27942,7 +28074,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 8481cdd9647ca4f5db48a84ee2a4837a, type: 2}
+  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -28506,40 +28638,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!23 &23674364568941144
-MeshRenderer:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1120248355358124}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_Materials:
-  - {fileID: 2100000, guid: 8481cdd9647ca4f5db48a84ee2a4837a, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 0
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
 --- !u!23 &23674698369357016
 MeshRenderer:
   m_ObjectHideFlags: 1
@@ -28827,6 +28925,42 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_Materials:
   - {fileID: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!23 &23698649132421376
+MeshRenderer:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1811095668902568}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_Materials:
+  - {fileID: 2100000, guid: 9c21c4d3ff5c541c8b6f42bca522e2fb, type: 2}
+  - {fileID: 2100000, guid: d9a24b5029eaf4110bf0cd6a1534143d, type: 2}
+  - {fileID: 2100000, guid: 231c24b52f8394b4884325461de2d3b5, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -29813,6 +29947,41 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_Materials:
   - {fileID: 2100000, guid: 8481cdd9647ca4f5db48a84ee2a4837a, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!23 &23783248806658726
+MeshRenderer:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1827985701051684}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_Materials:
+  - {fileID: 2100000, guid: b82b569df365a4336949a1f0e52f1508, type: 2}
+  - {fileID: 2100000, guid: 2ae2da2b41c064365896850ffa61b343, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -30926,6 +31095,40 @@ MeshRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1234074633511236}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_Materials:
+  - {fileID: 2100000, guid: 8481cdd9647ca4f5db48a84ee2a4837a, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!23 &23856933314476546
+MeshRenderer:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1862359960880116}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -32175,6 +32378,13 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1781707888981338}
   m_Mesh: {fileID: 4300000, guid: 953380112456940edb3d7c011c8126f4, type: 3}
+--- !u!33 &33062701087579290
+MeshFilter:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1416958593729710}
+  m_Mesh: {fileID: 4300000, guid: 953380112456940edb3d7c011c8126f4, type: 3}
 --- !u!33 &33064291335489520
 MeshFilter:
   m_ObjectHideFlags: 1
@@ -32413,6 +32623,13 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1615306721127918}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!33 &33152390961379886
+MeshFilter:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1482122498582406}
+  m_Mesh: {fileID: 4300000, guid: 7a659c4db226d4f20b45395426987fe4, type: 3}
 --- !u!33 &33156639321882236
 MeshFilter:
   m_ObjectHideFlags: 1
@@ -33001,6 +33218,13 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1924193225369862}
   m_Mesh: {fileID: 4300000, guid: 27d0ced3b7c5740c681e79e32c4b432b, type: 3}
+--- !u!33 &33367922672206394
+MeshFilter:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1017306544427156}
+  m_Mesh: {fileID: 4300000, guid: 953380112456940edb3d7c011c8126f4, type: 3}
 --- !u!33 &33371593850363362
 MeshFilter:
   m_ObjectHideFlags: 1
@@ -33267,6 +33491,13 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1674370431476426}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!33 &33493564282451334
+MeshFilter:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1811095668902568}
+  m_Mesh: {fileID: 4300000, guid: 7d0ac403dca9d432c912edd8375c83e2, type: 3}
 --- !u!33 &33493970221338310
 MeshFilter:
   m_ObjectHideFlags: 1
@@ -33281,13 +33512,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1617315419182992}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!33 &33502145143289444
-MeshFilter:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1148577752516908}
-  m_Mesh: {fileID: 4300000, guid: 953380112456940edb3d7c011c8126f4, type: 3}
 --- !u!33 &33504133778251442
 MeshFilter:
   m_ObjectHideFlags: 1
@@ -33434,6 +33658,13 @@ MeshFilter:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1198229462200934}
+  m_Mesh: {fileID: 4300000, guid: 953380112456940edb3d7c011c8126f4, type: 3}
+--- !u!33 &33577639473016810
+MeshFilter:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1862359960880116}
   m_Mesh: {fileID: 4300000, guid: 953380112456940edb3d7c011c8126f4, type: 3}
 --- !u!33 &33578629449511284
 MeshFilter:
@@ -33589,13 +33820,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1629375570672212}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!33 &33665435267215972
-MeshFilter:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1927895518410326}
-  m_Mesh: {fileID: 4300000, guid: 953380112456940edb3d7c011c8126f4, type: 3}
 --- !u!33 &33666110407864188
 MeshFilter:
   m_ObjectHideFlags: 1
@@ -33771,13 +33995,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1527551814294930}
   m_Mesh: {fileID: 4300000, guid: 6ffe8365171a3204698c4de86c5d1f73, type: 3}
---- !u!33 &33780847114019292
-MeshFilter:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1120248355358124}
-  m_Mesh: {fileID: 4300000, guid: 953380112456940edb3d7c011c8126f4, type: 3}
 --- !u!33 &33790014947249194
 MeshFilter:
   m_ObjectHideFlags: 1
@@ -33911,6 +34128,13 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1916008710863066}
   m_Mesh: {fileID: 4300000, guid: 27d0ced3b7c5740c681e79e32c4b432b, type: 3}
+--- !u!33 &33861294066912298
+MeshFilter:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1827985701051684}
+  m_Mesh: {fileID: 4300000, guid: 801cf09b72d39417d879a6dbac86ff9c, type: 3}
 --- !u!33 &33864167013534406
 MeshFilter:
   m_ObjectHideFlags: 1
@@ -34935,21 +35159,6 @@ Rigidbody:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1834709846449012}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 0
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
---- !u!54 &54227113109602952
-Rigidbody:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1828825101596894}
   serializedVersion: 2
   m_Mass: 1
   m_Drag: 0
@@ -36069,6 +36278,21 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!54 &54571989570446096
+Rigidbody:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1516236066276032}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!54 &54572172014680176
 Rigidbody:
   m_ObjectHideFlags: 1
@@ -37059,21 +37283,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!54 &54845840179206708
-Rigidbody:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1165238535166670}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 0
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!54 &54846332455781366
 Rigidbody:
   m_ObjectHideFlags: 1
@@ -37524,12 +37733,12 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!54 &54974417480984478
+--- !u!54 &54974593203229066
 Rigidbody:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1241476539793250}
+  m_GameObject: {fileID: 1813374822211590}
   serializedVersion: 2
   m_Mass: 1
   m_Drag: 0
@@ -37539,12 +37748,12 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!54 &54974593203229066
+--- !u!54 &54978524646863602
 Rigidbody:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1813374822211590}
+  m_GameObject: {fileID: 1265111349728586}
   serializedVersion: 2
   m_Mass: 1
   m_Drag: 0
@@ -37594,6 +37803,21 @@ Rigidbody:
   m_Mass: 1
   m_Drag: 0
   m_AngularDrag: 0
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!54 &54993371492107064
+Rigidbody:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1902686734766714}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
   m_UseGravity: 0
   m_IsKinematic: 1
   m_Interpolate: 0
@@ -38742,6 +38966,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!65 &65482539999909838
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1902686734766714}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.2903633, y: 1.0811474, z: 0.27520943}
+  m_Center: {x: -0.0018167496, y: 0.54, z: 0.0038790703}
 --- !u!65 &65485469359216360
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -38916,18 +39152,6 @@ BoxCollider:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1067452322799796}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.2903633, y: 1.0811474, z: 0.27520943}
-  m_Center: {x: -0.0018167496, y: 0.54, z: 0.0038790703}
---- !u!65 &65562095427559544
-BoxCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1241476539793250}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
@@ -39246,18 +39470,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.2903633, y: 1.0811474, z: 0.27520943}
   m_Center: {x: -0.0018167496, y: 0.54, z: 0.0038790703}
---- !u!65 &65712495466632834
-BoxCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1828825101596894}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.2903633, y: 1.0811474, z: 0.27520943}
-  m_Center: {x: -0.0018167496, y: 0.54, z: 0.0038790703}
 --- !u!65 &65713800609867250
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -39300,6 +39512,18 @@ BoxCollider:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1432288736595866}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.2903633, y: 1.0811474, z: 0.27520943}
+  m_Center: {x: -0.0018167496, y: 0.54, z: 0.0038790703}
+--- !u!65 &65743238141405928
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1516236066276032}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
@@ -39618,18 +39842,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!65 &65871049460236990
-BoxCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1165238535166670}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.2903633, y: 1.0811474, z: 0.27520943}
-  m_Center: {x: -0.0018167496, y: 0.54, z: 0.0038790703}
 --- !u!65 &65878363357938428
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -39690,6 +39902,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.2903633, y: 1.0811474, z: 0.27520943}
   m_Center: {x: -0.0018167496, y: 0.53, z: 0.0038790703}
+--- !u!65 &65916729303797584
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1265111349728586}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.2903633, y: 1.0811474, z: 0.27520943}
+  m_Center: {x: -0.0018167496, y: 0.54, z: 0.0038790703}
 --- !u!65 &65918830510028382
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -40874,23 +41098,6 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
---- !u!95 &95146818928520654
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1120248355358124}
-  m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: 953380112456940edb3d7c011c8126f4, type: 3}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
 --- !u!95 &95148228781665870
 Animator:
   serializedVersion: 3
@@ -41087,6 +41294,40 @@ Animator:
   m_GameObject: {fileID: 1186179375036362}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 27d0ced3b7c5740c681e79e32c4b432b, type: 3}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+--- !u!95 &95186571761358958
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1827985701051684}
+  m_Enabled: 1
+  m_Avatar: {fileID: 9000000, guid: 801cf09b72d39417d879a6dbac86ff9c, type: 3}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+--- !u!95 &95190987252712876
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1416958593729710}
+  m_Enabled: 1
+  m_Avatar: {fileID: 9000000, guid: 953380112456940edb3d7c011c8126f4, type: 3}
   m_Controller: {fileID: 0}
   m_CullingMode: 0
   m_UpdateMode: 0
@@ -41775,6 +42016,23 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!95 &95321679925015346
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1017306544427156}
+  m_Enabled: 1
+  m_Avatar: {fileID: 9000000, guid: 953380112456940edb3d7c011c8126f4, type: 3}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!95 &95322311054886134
 Animator:
   serializedVersion: 3
@@ -42141,23 +42399,6 @@ Animator:
   m_GameObject: {fileID: 1147458144485978}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 27d0ced3b7c5740c681e79e32c4b432b, type: 3}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
---- !u!95 &95396287995895190
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1148577752516908}
-  m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: 953380112456940edb3d7c011c8126f4, type: 3}
   m_Controller: {fileID: 0}
   m_CullingMode: 0
   m_UpdateMode: 0
@@ -42931,6 +43172,23 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!95 &95518655497007922
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1482122498582406}
+  m_Enabled: 1
+  m_Avatar: {fileID: 9000000, guid: 7a659c4db226d4f20b45395426987fe4, type: 3}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!95 &95520208906728170
 Animator:
   serializedVersion: 3
@@ -43186,23 +43444,6 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
---- !u!95 &95562162787104680
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1927895518410326}
-  m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: 953380112456940edb3d7c011c8126f4, type: 3}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
 --- !u!95 &95567719982679184
 Animator:
   serializedVersion: 3
@@ -43214,6 +43455,23 @@ Animator:
   m_Avatar: {fileID: 9000000, guid: 6e448beaa5ced4d6499b40a9ea987fc1, type: 3}
   m_Controller: {fileID: 0}
   m_CullingMode: 1
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+--- !u!95 &95569298493341660
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1811095668902568}
+  m_Enabled: 1
+  m_Avatar: {fileID: 9000000, guid: 7d0ac403dca9d432c912edd8375c83e2, type: 3}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
@@ -44419,6 +44677,23 @@ Animator:
   m_GameObject: {fileID: 1186895232619046}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 27d0ced3b7c5740c681e79e32c4b432b, type: 3}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+--- !u!95 &95779175416508502
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1862359960880116}
+  m_Enabled: 1
+  m_Avatar: {fileID: 9000000, guid: 953380112456940edb3d7c011c8126f4, type: 3}
   m_Controller: {fileID: 0}
   m_CullingMode: 0
   m_UpdateMode: 0
@@ -45882,6 +46157,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a433c2afe0a76e4bb72e41952f91ec8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasIce: 0
   height: 0
   pourRate: 100
   isEvaluated: 0
@@ -45940,6 +46216,7 @@ MonoBehaviour:
   myLiquid: {fileID: 114648242106454246}
   myIceList: []
   hasLiquid: 0
+  hasIce: 0
   isFull: 0
   isDirty: 0
   liquid: {fileID: 0}
@@ -45970,6 +46247,7 @@ MonoBehaviour:
   myLiquid: {fileID: 114412303019258652}
   myIceList: []
   hasLiquid: 0
+  hasIce: 0
   isFull: 0
   isDirty: 0
   liquid: {fileID: 0}
@@ -45985,6 +46263,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a433c2afe0a76e4bb72e41952f91ec8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasIce: 0
   height: 0
   pourRate: 100
   isEvaluated: 0
@@ -46044,6 +46323,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a433c2afe0a76e4bb72e41952f91ec8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasIce: 0
   height: 0
   pourRate: 100
   isEvaluated: 0
@@ -46103,6 +46383,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a433c2afe0a76e4bb72e41952f91ec8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasIce: 0
   height: 0
   pourRate: 1
   isEvaluated: 0
@@ -46146,6 +46427,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a433c2afe0a76e4bb72e41952f91ec8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasIce: 0
   height: 0
   pourRate: 1
   isEvaluated: 0
@@ -46217,8 +46499,53 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a433c2afe0a76e4bb72e41952f91ec8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasIce: 0
   height: 0
   pourRate: 100
+  isEvaluated: 0
+  totalVolume: 0
+  myDrinkBase: 0
+  myMixer: 0
+  coasters: []
+  sodaVolume: 0
+  tonicVolume: 0
+  appleJuiceVolume: 0
+  orangeJuiceVolume: 0
+  lemonJuiceVolume: 0
+  whiskeyVolume: 0
+  tequilaVolume: 0
+  rumVolume: 0
+  ginVolume: 0
+  beerVolume: 0
+  wineVolume: 0
+  brandyVolume: 0
+  vodkaVolume: 0
+  smokiness: 0
+  sweetness: 0
+  sourness: 0
+  bitterness: 0
+  spiciness: 0
+  alcoholVolume: 0
+  abv: 0
+  drinkParts: []
+  otherLiquid: {fileID: 0}
+  otherLiquidMask: {fileID: 0}
+  myMask: {fileID: 0}
+  isBeingPoured: 0
+--- !u!114 &114025281179899548
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1516236066276032}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a433c2afe0a76e4bb72e41952f91ec8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hasIce: 0
+  height: 0
+  pourRate: 1
   isEvaluated: 0
   totalVolume: 0
   myDrinkBase: 0
@@ -46275,6 +46602,7 @@ MonoBehaviour:
   myLiquid: {fileID: 114612432989769300}
   myIceList: []
   hasLiquid: 0
+  hasIce: 0
   isFull: 0
   isDirty: 0
   liquid: {fileID: 0}
@@ -46290,6 +46618,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a433c2afe0a76e4bb72e41952f91ec8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasIce: 0
   height: 0
   pourRate: 1
   isEvaluated: 0
@@ -46348,6 +46677,7 @@ MonoBehaviour:
   myLiquid: {fileID: 114152310652330600}
   myIceList: []
   hasLiquid: 0
+  hasIce: 0
   isFull: 0
   isDirty: 0
   liquid: {fileID: 0}
@@ -46363,6 +46693,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a433c2afe0a76e4bb72e41952f91ec8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasIce: 0
   height: 0
   pourRate: 100
   isEvaluated: 0
@@ -46406,6 +46737,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a433c2afe0a76e4bb72e41952f91ec8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasIce: 0
   height: 0
   pourRate: 1
   isEvaluated: 0
@@ -46465,6 +46797,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a433c2afe0a76e4bb72e41952f91ec8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasIce: 0
   height: 0
   pourRate: 1
   isEvaluated: 0
@@ -46524,6 +46857,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a433c2afe0a76e4bb72e41952f91ec8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasIce: 0
   height: 0
   pourRate: 100
   isEvaluated: 0
@@ -46583,6 +46917,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a433c2afe0a76e4bb72e41952f91ec8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasIce: 0
   height: 0
   pourRate: 100
   isEvaluated: 0
@@ -46626,6 +46961,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a433c2afe0a76e4bb72e41952f91ec8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasIce: 0
   height: 0
   pourRate: 100
   isEvaluated: 0
@@ -46740,6 +47076,7 @@ MonoBehaviour:
   myLiquid: {fileID: 114462682372880684}
   myIceList: []
   hasLiquid: 0
+  hasIce: 0
   isFull: 0
   isDirty: 0
   liquid: {fileID: 0}
@@ -46755,6 +47092,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a433c2afe0a76e4bb72e41952f91ec8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasIce: 0
   height: 0
   pourRate: 100
   isEvaluated: 0
@@ -46813,6 +47151,7 @@ MonoBehaviour:
   myLiquid: {fileID: 114712871885647654}
   myIceList: []
   hasLiquid: 0
+  hasIce: 0
   isFull: 0
   isDirty: 0
   liquid: {fileID: 0}
@@ -46856,6 +47195,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a433c2afe0a76e4bb72e41952f91ec8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasIce: 0
   height: 0
   pourRate: 1
   isEvaluated: 0
@@ -46914,6 +47254,7 @@ MonoBehaviour:
   myLiquid: {fileID: 114481273596304092}
   myIceList: []
   hasLiquid: 0
+  hasIce: 0
   isFull: 0
   isDirty: 0
   liquid: {fileID: 0}
@@ -46944,6 +47285,7 @@ MonoBehaviour:
   myLiquid: {fileID: 114376095611896108}
   myIceList: []
   hasLiquid: 0
+  hasIce: 0
   isFull: 0
   isDirty: 0
   liquid: {fileID: 0}
@@ -47003,6 +47345,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a433c2afe0a76e4bb72e41952f91ec8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasIce: 0
   height: 0
   pourRate: 1
   isEvaluated: 0
@@ -47046,6 +47389,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a433c2afe0a76e4bb72e41952f91ec8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasIce: 0
   height: 0
   pourRate: 1
   isEvaluated: 0
@@ -47089,6 +47433,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a433c2afe0a76e4bb72e41952f91ec8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasIce: 0
   height: 0
   pourRate: 1
   isEvaluated: 0
@@ -47132,6 +47477,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a433c2afe0a76e4bb72e41952f91ec8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasIce: 0
   height: 0
   pourRate: 1
   isEvaluated: 0
@@ -47175,6 +47521,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a433c2afe0a76e4bb72e41952f91ec8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasIce: 0
   height: 0
   pourRate: 1
   isEvaluated: 0
@@ -47218,6 +47565,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a433c2afe0a76e4bb72e41952f91ec8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasIce: 0
   height: 0
   pourRate: 100
   isEvaluated: 0
@@ -47261,6 +47609,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a433c2afe0a76e4bb72e41952f91ec8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasIce: 0
   height: 0
   pourRate: 100
   isEvaluated: 0
@@ -47320,6 +47669,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a433c2afe0a76e4bb72e41952f91ec8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasIce: 0
   height: 0
   pourRate: 100
   isEvaluated: 0
@@ -47363,6 +47713,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a433c2afe0a76e4bb72e41952f91ec8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasIce: 0
   height: 0
   pourRate: 100
   isEvaluated: 0
@@ -47406,6 +47757,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a433c2afe0a76e4bb72e41952f91ec8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasIce: 0
   height: 0
   pourRate: 100
   isEvaluated: 0
@@ -47477,6 +47829,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a433c2afe0a76e4bb72e41952f91ec8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasIce: 0
   height: 0
   pourRate: 1
   isEvaluated: 0
@@ -47551,6 +47904,7 @@ MonoBehaviour:
   myLiquid: {fileID: 114412128452102780}
   myIceList: []
   hasLiquid: 0
+  hasIce: 0
   isFull: 0
   isDirty: 0
   liquid: {fileID: 0}
@@ -47566,6 +47920,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a433c2afe0a76e4bb72e41952f91ec8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasIce: 0
   height: 0
   pourRate: 1
   isEvaluated: 0
@@ -47624,6 +47979,7 @@ MonoBehaviour:
   myLiquid: {fileID: 114839920323869670}
   myIceList: []
   hasLiquid: 0
+  hasIce: 0
   isFull: 0
   isDirty: 0
   liquid: {fileID: 0}
@@ -47654,6 +48010,7 @@ MonoBehaviour:
   myLiquid: {fileID: 114963516801558670}
   myIceList: []
   hasLiquid: 0
+  hasIce: 0
   isFull: 0
   isDirty: 0
   liquid: {fileID: 0}
@@ -47669,6 +48026,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a433c2afe0a76e4bb72e41952f91ec8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasIce: 0
   height: 0
   pourRate: 100
   isEvaluated: 0
@@ -47712,6 +48070,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a433c2afe0a76e4bb72e41952f91ec8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasIce: 0
   height: 0
   pourRate: 1
   isEvaluated: 0
@@ -47827,6 +48186,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a433c2afe0a76e4bb72e41952f91ec8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasIce: 0
   height: 0
   pourRate: 100
   isEvaluated: 0
@@ -47898,6 +48258,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a433c2afe0a76e4bb72e41952f91ec8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasIce: 0
   height: 0
   pourRate: 100
   isEvaluated: 0
@@ -47941,6 +48302,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a433c2afe0a76e4bb72e41952f91ec8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasIce: 0
   height: 0
   pourRate: 1
   isEvaluated: 0
@@ -47984,6 +48346,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a433c2afe0a76e4bb72e41952f91ec8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasIce: 0
   height: 0
   pourRate: 1
   isEvaluated: 0
@@ -48155,6 +48518,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a433c2afe0a76e4bb72e41952f91ec8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasIce: 0
   height: 0
   pourRate: 1
   isEvaluated: 0
@@ -48198,6 +48562,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a433c2afe0a76e4bb72e41952f91ec8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasIce: 0
   height: 0
   pourRate: 100
   isEvaluated: 0
@@ -48241,6 +48606,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a433c2afe0a76e4bb72e41952f91ec8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasIce: 0
   height: 0
   pourRate: 1
   isEvaluated: 0
@@ -48284,6 +48650,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a433c2afe0a76e4bb72e41952f91ec8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasIce: 0
   height: 0
   pourRate: 1
   isEvaluated: 0
@@ -48327,6 +48694,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a433c2afe0a76e4bb72e41952f91ec8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasIce: 0
   height: 0
   pourRate: 1
   isEvaluated: 0
@@ -48497,6 +48865,7 @@ MonoBehaviour:
   myLiquid: {fileID: 114581867984956738}
   myIceList: []
   hasLiquid: 0
+  hasIce: 0
   isFull: 0
   isDirty: 0
   liquid: {fileID: 0}
@@ -48527,6 +48896,7 @@ MonoBehaviour:
   myLiquid: {fileID: 114271306146144972}
   myIceList: []
   hasLiquid: 0
+  hasIce: 0
   isFull: 0
   isDirty: 0
   liquid: {fileID: 0}
@@ -48542,6 +48912,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a433c2afe0a76e4bb72e41952f91ec8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasIce: 0
   height: 0
   pourRate: 100
   isEvaluated: 0
@@ -48585,6 +48956,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a433c2afe0a76e4bb72e41952f91ec8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasIce: 0
   height: 0
   pourRate: 1
   isEvaluated: 0
@@ -48685,6 +49057,7 @@ MonoBehaviour:
   myLiquid: {fileID: 114948911256161686}
   myIceList: []
   hasLiquid: 0
+  hasIce: 0
   isFull: 0
   isDirty: 0
   liquid: {fileID: 0}
@@ -48700,6 +49073,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a433c2afe0a76e4bb72e41952f91ec8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasIce: 0
   height: 0
   pourRate: 100
   isEvaluated: 0
@@ -48759,6 +49133,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a433c2afe0a76e4bb72e41952f91ec8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasIce: 0
   height: 0
   pourRate: 1
   isEvaluated: 0
@@ -48817,6 +49192,7 @@ MonoBehaviour:
   myLiquid: {fileID: 114769232366981320}
   myIceList: []
   hasLiquid: 0
+  hasIce: 0
   isFull: 0
   isDirty: 0
   liquid: {fileID: 0}
@@ -48832,6 +49208,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a433c2afe0a76e4bb72e41952f91ec8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasIce: 0
   height: 0
   pourRate: 1
   isEvaluated: 0
@@ -48946,6 +49323,7 @@ MonoBehaviour:
   myLiquid: {fileID: 114884008422561200}
   myIceList: []
   hasLiquid: 0
+  hasIce: 0
   isFull: 0
   isDirty: 0
   liquid: {fileID: 0}
@@ -48977,6 +49355,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a433c2afe0a76e4bb72e41952f91ec8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasIce: 0
   height: 0
   pourRate: 1
   isEvaluated: 0
@@ -49035,6 +49414,7 @@ MonoBehaviour:
   myLiquid: {fileID: 114633315957671594}
   myIceList: []
   hasLiquid: 0
+  hasIce: 0
   isFull: 0
   isDirty: 0
   liquid: {fileID: 0}
@@ -49093,6 +49473,7 @@ MonoBehaviour:
   myLiquid: {fileID: 114271240448732798}
   myIceList: []
   hasLiquid: 0
+  hasIce: 0
   isFull: 0
   isDirty: 0
   liquid: {fileID: 0}
@@ -49123,6 +49504,7 @@ MonoBehaviour:
   myLiquid: {fileID: 114694372450683838}
   myIceList: []
   hasLiquid: 0
+  hasIce: 0
   isFull: 0
   isDirty: 0
   liquid: {fileID: 0}
@@ -49155,49 +49537,6 @@ MonoBehaviour:
   myMixer: 0
   leftHandPourRot: {x: 80, y: 25, z: 0}
   rightHandPourRot: {x: 80, y: -25, z: 6.915}
---- !u!114 &114201938810437668
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1828825101596894}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8a433c2afe0a76e4bb72e41952f91ec8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  height: 0
-  pourRate: 1
-  isEvaluated: 0
-  totalVolume: 0
-  myDrinkBase: 0
-  myMixer: 0
-  coasters: []
-  sodaVolume: 0
-  tonicVolume: 0
-  appleJuiceVolume: 0
-  orangeJuiceVolume: 0
-  lemonJuiceVolume: 0
-  whiskeyVolume: 0
-  tequilaVolume: 0
-  rumVolume: 0
-  ginVolume: 0
-  beerVolume: 0
-  wineVolume: 0
-  brandyVolume: 0
-  vodkaVolume: 0
-  smokiness: 0
-  sweetness: 0
-  sourness: 0
-  bitterness: 0
-  spiciness: 0
-  alcoholVolume: 0
-  abv: 0
-  drinkParts: []
-  otherLiquid: {fileID: 0}
-  otherLiquidMask: {fileID: 0}
-  myMask: {fileID: 0}
-  isBeingPoured: 0
 --- !u!114 &114202068658019046
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -49209,6 +49548,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a433c2afe0a76e4bb72e41952f91ec8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasIce: 0
   height: 0
   pourRate: 100
   isEvaluated: 0
@@ -49252,6 +49592,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a433c2afe0a76e4bb72e41952f91ec8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasIce: 0
   height: 0
   pourRate: 100
   isEvaluated: 0
@@ -49295,6 +49636,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a433c2afe0a76e4bb72e41952f91ec8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasIce: 0
   height: 0
   pourRate: 1
   isEvaluated: 0
@@ -49354,6 +49696,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a433c2afe0a76e4bb72e41952f91ec8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasIce: 0
   height: 0
   pourRate: 1
   isEvaluated: 0
@@ -49397,6 +49740,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a433c2afe0a76e4bb72e41952f91ec8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasIce: 0
   height: 0
   pourRate: 100
   isEvaluated: 0
@@ -49440,6 +49784,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a433c2afe0a76e4bb72e41952f91ec8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasIce: 0
   height: 0
   pourRate: 1
   isEvaluated: 0
@@ -49498,6 +49843,7 @@ MonoBehaviour:
   myLiquid: {fileID: 114277987371399276}
   myIceList: []
   hasLiquid: 0
+  hasIce: 0
   isFull: 0
   isDirty: 0
   liquid: {fileID: 0}
@@ -49541,6 +49887,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a433c2afe0a76e4bb72e41952f91ec8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasIce: 0
   height: 0
   pourRate: 100
   isEvaluated: 0
@@ -49644,6 +49991,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a433c2afe0a76e4bb72e41952f91ec8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasIce: 0
   height: 0
   pourRate: 100
   isEvaluated: 0
@@ -49687,6 +50035,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a433c2afe0a76e4bb72e41952f91ec8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasIce: 0
   height: 0
   pourRate: 100
   isEvaluated: 0
@@ -49730,6 +50079,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a433c2afe0a76e4bb72e41952f91ec8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasIce: 0
   height: 0
   pourRate: 1
   isEvaluated: 0
@@ -49832,6 +50182,7 @@ MonoBehaviour:
   myLiquid: {fileID: 114980816964349174}
   myIceList: []
   hasLiquid: 0
+  hasIce: 0
   isFull: 0
   isDirty: 0
   liquid: {fileID: 0}
@@ -49890,6 +50241,7 @@ MonoBehaviour:
   myLiquid: {fileID: 114719587434607646}
   myIceList: []
   hasLiquid: 0
+  hasIce: 0
   isFull: 0
   isDirty: 0
   liquid: {fileID: 0}
@@ -49905,6 +50257,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a433c2afe0a76e4bb72e41952f91ec8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasIce: 0
   height: 0
   pourRate: 100
   isEvaluated: 0
@@ -49963,6 +50316,7 @@ MonoBehaviour:
   myLiquid: {fileID: 114126501527521400}
   myIceList: []
   hasLiquid: 0
+  hasIce: 0
   isFull: 0
   isDirty: 0
   liquid: {fileID: 0}
@@ -49993,38 +50347,11 @@ MonoBehaviour:
   myLiquid: {fileID: 114717572098192562}
   myIceList: []
   hasLiquid: 0
+  hasIce: 0
   isFull: 0
   isDirty: 0
   liquid: {fileID: 0}
   glassType: 0
---- !u!114 &114261287154559476
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1828825101596894}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 99b9acb760e670a429ef08ffc808a5ab, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isForDropzoneOnly: 1
-  leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
-  rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
-  targetDropzone: {fileID: 0}
-  startPos: {x: 0, y: 0, z: 0}
-  dropPos: {x: 0, y: 0, z: 0}
-  tweenTime: 0.75
-  tweenEndTime: 0.5
-  pickupDropTime: 0.25
-  pickedUp: 0
-  myChildDropzone: {fileID: 0}
-  myName: 
-  myLiquid: {fileID: 0}
-  myDrinkBase: 8
-  myMixer: 0
-  leftHandPourRot: {x: 80, y: 25, z: 0}
-  rightHandPourRot: {x: 80, y: -25, z: 6.915}
 --- !u!114 &114261315918539136
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -50079,6 +50406,7 @@ MonoBehaviour:
   myLiquid: {fileID: 114309534542177140}
   myIceList: []
   hasLiquid: 0
+  hasIce: 0
   isFull: 0
   isDirty: 0
   liquid: {fileID: 0}
@@ -50094,6 +50422,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a433c2afe0a76e4bb72e41952f91ec8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasIce: 0
   height: 0
   pourRate: 1
   isEvaluated: 0
@@ -50153,6 +50482,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a433c2afe0a76e4bb72e41952f91ec8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasIce: 0
   height: 0
   pourRate: 1
   isEvaluated: 0
@@ -50224,6 +50554,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a433c2afe0a76e4bb72e41952f91ec8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasIce: 0
   height: 0
   pourRate: 100
   isEvaluated: 0
@@ -50267,6 +50598,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a433c2afe0a76e4bb72e41952f91ec8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasIce: 0
   height: 0
   pourRate: 100
   isEvaluated: 0
@@ -50325,6 +50657,7 @@ MonoBehaviour:
   myLiquid: {fileID: 114963926515165970}
   myIceList: []
   hasLiquid: 0
+  hasIce: 0
   isFull: 0
   isDirty: 0
   liquid: {fileID: 0}
@@ -50356,6 +50689,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a433c2afe0a76e4bb72e41952f91ec8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasIce: 0
   height: 0
   pourRate: 1
   isEvaluated: 0
@@ -50427,6 +50761,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a433c2afe0a76e4bb72e41952f91ec8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasIce: 0
   height: 0
   pourRate: 100
   isEvaluated: 0
@@ -50470,6 +50805,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a433c2afe0a76e4bb72e41952f91ec8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasIce: 0
   height: 0
   pourRate: 100
   isEvaluated: 0
@@ -50513,6 +50849,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a433c2afe0a76e4bb72e41952f91ec8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasIce: 0
   height: 0
   pourRate: 1
   isEvaluated: 0
@@ -50615,6 +50952,7 @@ MonoBehaviour:
   myLiquid: {fileID: 114101104086712676}
   myIceList: []
   hasLiquid: 0
+  hasIce: 0
   isFull: 0
   isDirty: 0
   liquid: {fileID: 0}
@@ -50645,6 +50983,7 @@ MonoBehaviour:
   myLiquid: {fileID: 114868160612368872}
   myIceList: []
   hasLiquid: 0
+  hasIce: 0
   isFull: 0
   isDirty: 0
   liquid: {fileID: 0}
@@ -50675,6 +51014,7 @@ MonoBehaviour:
   myLiquid: {fileID: 114750075540800558}
   myIceList: []
   hasLiquid: 0
+  hasIce: 0
   isFull: 0
   isDirty: 0
   liquid: {fileID: 0}
@@ -50705,6 +51045,7 @@ MonoBehaviour:
   myLiquid: {fileID: 114475291034343092}
   myIceList: []
   hasLiquid: 0
+  hasIce: 0
   isFull: 0
   isDirty: 0
   liquid: {fileID: 0}
@@ -50720,6 +51061,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a433c2afe0a76e4bb72e41952f91ec8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasIce: 0
   height: 0
   pourRate: 1
   isEvaluated: 0
@@ -50778,6 +51120,7 @@ MonoBehaviour:
   myLiquid: {fileID: 114919756175757576}
   myIceList: []
   hasLiquid: 0
+  hasIce: 0
   isFull: 0
   isDirty: 0
   liquid: {fileID: 0}
@@ -50793,6 +51136,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a433c2afe0a76e4bb72e41952f91ec8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasIce: 0
   height: 0
   pourRate: 100
   isEvaluated: 0
@@ -50836,6 +51180,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a433c2afe0a76e4bb72e41952f91ec8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasIce: 0
   height: 0
   pourRate: 1
   isEvaluated: 0
@@ -50879,6 +51224,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a433c2afe0a76e4bb72e41952f91ec8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasIce: 0
   height: 0
   pourRate: 1
   isEvaluated: 0
@@ -50969,38 +51315,11 @@ MonoBehaviour:
   myLiquid: {fileID: 114397172574929294}
   myIceList: []
   hasLiquid: 0
+  hasIce: 0
   isFull: 0
   isDirty: 0
   liquid: {fileID: 0}
   glassType: 0
---- !u!114 &114301802257756554
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1241476539793250}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 99b9acb760e670a429ef08ffc808a5ab, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isForDropzoneOnly: 1
-  leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
-  rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
-  targetDropzone: {fileID: 0}
-  startPos: {x: 0, y: 0, z: 0}
-  dropPos: {x: 0, y: 0, z: 0}
-  tweenTime: 0.75
-  tweenEndTime: 0.5
-  pickupDropTime: 0.25
-  pickedUp: 0
-  myChildDropzone: {fileID: 0}
-  myName: 
-  myLiquid: {fileID: 0}
-  myDrinkBase: 8
-  myMixer: 0
-  leftHandPourRot: {x: 80, y: 25, z: 0}
-  rightHandPourRot: {x: 80, y: -25, z: 6.915}
 --- !u!114 &114302412628277514
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -51028,6 +51347,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a433c2afe0a76e4bb72e41952f91ec8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasIce: 0
   height: 0
   pourRate: 1
   isEvaluated: 0
@@ -51086,6 +51406,7 @@ MonoBehaviour:
   myLiquid: {fileID: 114886367685562176}
   myIceList: []
   hasLiquid: 0
+  hasIce: 0
   isFull: 0
   isDirty: 0
   liquid: {fileID: 0}
@@ -51101,6 +51422,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a433c2afe0a76e4bb72e41952f91ec8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasIce: 0
   height: 0
   pourRate: 100
   isEvaluated: 0
@@ -51304,6 +51626,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a433c2afe0a76e4bb72e41952f91ec8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasIce: 0
   height: 0
   pourRate: 1
   isEvaluated: 0
@@ -51363,6 +51686,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a433c2afe0a76e4bb72e41952f91ec8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasIce: 0
   height: 0
   pourRate: 1
   isEvaluated: 0
@@ -51434,6 +51758,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a433c2afe0a76e4bb72e41952f91ec8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasIce: 0
   height: 0
   pourRate: 1
   isEvaluated: 0
@@ -51561,6 +51886,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a433c2afe0a76e4bb72e41952f91ec8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasIce: 0
   height: 0
   pourRate: 1
   isEvaluated: 0
@@ -51632,6 +51958,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a433c2afe0a76e4bb72e41952f91ec8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasIce: 0
   height: 0
   pourRate: 100
   isEvaluated: 0
@@ -51690,6 +52017,7 @@ MonoBehaviour:
   myLiquid: {fileID: 114643841464023868}
   myIceList: []
   hasLiquid: 0
+  hasIce: 0
   isFull: 0
   isDirty: 0
   liquid: {fileID: 0}
@@ -51705,6 +52033,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a433c2afe0a76e4bb72e41952f91ec8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasIce: 0
   height: 0
   pourRate: 1
   isEvaluated: 0
@@ -51776,6 +52105,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a433c2afe0a76e4bb72e41952f91ec8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasIce: 0
   height: 0
   pourRate: 100
   isEvaluated: 0
@@ -51847,6 +52177,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a433c2afe0a76e4bb72e41952f91ec8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasIce: 0
   height: 0
   pourRate: 1
   isEvaluated: 0
@@ -51921,6 +52252,7 @@ MonoBehaviour:
   myLiquid: {fileID: 114567638983894526}
   myIceList: []
   hasLiquid: 0
+  hasIce: 0
   isFull: 0
   isDirty: 0
   liquid: {fileID: 0}
@@ -51936,6 +52268,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a433c2afe0a76e4bb72e41952f91ec8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasIce: 0
   height: 0
   pourRate: 100
   isEvaluated: 0
@@ -52050,6 +52383,7 @@ MonoBehaviour:
   myLiquid: {fileID: 114219627515508486}
   myIceList: []
   hasLiquid: 0
+  hasIce: 0
   isFull: 0
   isDirty: 0
   liquid: {fileID: 0}
@@ -52065,6 +52399,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a433c2afe0a76e4bb72e41952f91ec8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasIce: 0
   height: 0
   pourRate: 1
   isEvaluated: 0
@@ -52108,6 +52443,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a433c2afe0a76e4bb72e41952f91ec8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasIce: 0
   height: 0
   pourRate: 100
   isEvaluated: 0
@@ -52167,6 +52503,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a433c2afe0a76e4bb72e41952f91ec8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasIce: 0
   height: 0
   pourRate: 1
   isEvaluated: 0
@@ -52266,6 +52603,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a433c2afe0a76e4bb72e41952f91ec8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasIce: 0
   height: 0
   pourRate: 1
   isEvaluated: 0
@@ -52309,6 +52647,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a433c2afe0a76e4bb72e41952f91ec8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasIce: 0
   height: 0
   pourRate: 100
   isEvaluated: 0
@@ -52396,6 +52735,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a433c2afe0a76e4bb72e41952f91ec8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasIce: 0
   height: 0
   pourRate: 1
   isEvaluated: 0
@@ -52483,6 +52823,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a433c2afe0a76e4bb72e41952f91ec8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasIce: 0
   height: 0
   pourRate: 1
   isEvaluated: 0
@@ -52541,6 +52882,7 @@ MonoBehaviour:
   myLiquid: {fileID: 114588933254131320}
   myIceList: []
   hasLiquid: 0
+  hasIce: 0
   isFull: 0
   isDirty: 0
   liquid: {fileID: 0}
@@ -52614,6 +52956,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a433c2afe0a76e4bb72e41952f91ec8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasIce: 0
   height: 0
   pourRate: 100
   isEvaluated: 0
@@ -52700,6 +53043,7 @@ MonoBehaviour:
   myLiquid: {fileID: 114697494957555742}
   myIceList: []
   hasLiquid: 0
+  hasIce: 0
   isFull: 0
   isDirty: 0
   liquid: {fileID: 0}
@@ -52715,6 +53059,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a433c2afe0a76e4bb72e41952f91ec8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasIce: 0
   height: 0
   pourRate: 100
   isEvaluated: 0
@@ -52758,6 +53103,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a433c2afe0a76e4bb72e41952f91ec8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasIce: 0
   height: 0
   pourRate: 100
   isEvaluated: 0
@@ -52845,6 +53191,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a433c2afe0a76e4bb72e41952f91ec8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasIce: 0
   height: 0
   pourRate: 100
   isEvaluated: 0
@@ -52888,6 +53235,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a433c2afe0a76e4bb72e41952f91ec8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasIce: 0
   height: 0
   pourRate: 100
   isEvaluated: 0
@@ -52931,6 +53279,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a433c2afe0a76e4bb72e41952f91ec8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasIce: 0
   height: 0
   pourRate: 100
   isEvaluated: 0
@@ -53002,6 +53351,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a433c2afe0a76e4bb72e41952f91ec8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasIce: 0
   height: 0
   pourRate: 1
   isEvaluated: 0
@@ -53060,6 +53410,7 @@ MonoBehaviour:
   myLiquid: {fileID: 114711627597206410}
   myIceList: []
   hasLiquid: 0
+  hasIce: 0
   isFull: 0
   isDirty: 0
   liquid: {fileID: 0}
@@ -53103,6 +53454,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a433c2afe0a76e4bb72e41952f91ec8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasIce: 0
   height: 0
   pourRate: 1
   isEvaluated: 0
@@ -53174,6 +53526,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a433c2afe0a76e4bb72e41952f91ec8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasIce: 0
   height: 0
   pourRate: 100
   isEvaluated: 0
@@ -53217,6 +53570,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a433c2afe0a76e4bb72e41952f91ec8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasIce: 0
   height: 0
   pourRate: 100
   isEvaluated: 0
@@ -53275,10 +53629,39 @@ MonoBehaviour:
   myLiquid: {fileID: 114766317130377094}
   myIceList: []
   hasLiquid: 0
+  hasIce: 0
   isFull: 0
   isDirty: 0
   liquid: {fileID: 0}
   glassType: 0
+--- !u!114 &114431037572412292
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1265111349728586}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99b9acb760e670a429ef08ffc808a5ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isForDropzoneOnly: 0
+  leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
+  rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
+  targetDropzone: {fileID: 0}
+  startPos: {x: 0, y: 0, z: 0}
+  dropPos: {x: 0, y: 0, z: 0}
+  tweenTime: 0.75
+  tweenEndTime: 0.5
+  pickupDropTime: 0.25
+  pickedUp: 0
+  myChildDropzone: {fileID: 0}
+  myName: 
+  myLiquid: {fileID: 0}
+  myDrinkBase: 0
+  myMixer: 5
+  leftHandPourRot: {x: 80, y: 25, z: 0}
+  rightHandPourRot: {x: 80, y: -25, z: 6.915}
 --- !u!114 &114431335030634154
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -53318,6 +53701,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a433c2afe0a76e4bb72e41952f91ec8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasIce: 0
   height: 0
   pourRate: 1
   isEvaluated: 0
@@ -53377,6 +53761,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a433c2afe0a76e4bb72e41952f91ec8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasIce: 0
   height: 0
   pourRate: 100
   isEvaluated: 0
@@ -53451,6 +53836,7 @@ MonoBehaviour:
   myLiquid: {fileID: 114563421809592928}
   myIceList: []
   hasLiquid: 0
+  hasIce: 0
   isFull: 0
   isDirty: 0
   liquid: {fileID: 0}
@@ -53522,6 +53908,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a433c2afe0a76e4bb72e41952f91ec8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasIce: 0
   height: 0
   pourRate: 1
   isEvaluated: 0
@@ -53565,6 +53952,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a433c2afe0a76e4bb72e41952f91ec8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasIce: 0
   height: 0
   pourRate: 100
   isEvaluated: 0
@@ -53651,6 +54039,7 @@ MonoBehaviour:
   myLiquid: {fileID: 114430349076894018}
   myIceList: []
   hasLiquid: 0
+  hasIce: 0
   isFull: 0
   isDirty: 0
   liquid: {fileID: 0}
@@ -53666,6 +54055,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a433c2afe0a76e4bb72e41952f91ec8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasIce: 0
   height: 0
   pourRate: 100
   isEvaluated: 0
@@ -53709,6 +54099,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a433c2afe0a76e4bb72e41952f91ec8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasIce: 0
   height: 0
   pourRate: 1
   isEvaluated: 0
@@ -53767,6 +54158,7 @@ MonoBehaviour:
   myLiquid: {fileID: 114574248287684184}
   myIceList: []
   hasLiquid: 0
+  hasIce: 0
   isFull: 0
   isDirty: 0
   liquid: {fileID: 0}
@@ -53782,6 +54174,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a433c2afe0a76e4bb72e41952f91ec8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasIce: 0
   height: 0
   pourRate: 1
   isEvaluated: 0
@@ -53825,6 +54218,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a433c2afe0a76e4bb72e41952f91ec8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasIce: 0
   height: 0
   pourRate: 100
   isEvaluated: 0
@@ -53883,6 +54277,7 @@ MonoBehaviour:
   myLiquid: {fileID: 114399383150063492}
   myIceList: []
   hasLiquid: 0
+  hasIce: 0
   isFull: 0
   isDirty: 0
   liquid: {fileID: 0}
@@ -53898,6 +54293,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a433c2afe0a76e4bb72e41952f91ec8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasIce: 0
   height: 0
   pourRate: 1
   isEvaluated: 0
@@ -53941,6 +54337,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a433c2afe0a76e4bb72e41952f91ec8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasIce: 0
   height: 0
   pourRate: 1
   isEvaluated: 0
@@ -53999,6 +54396,7 @@ MonoBehaviour:
   myLiquid: {fileID: 114227475109180710}
   myIceList: []
   hasLiquid: 0
+  hasIce: 0
   isFull: 0
   isDirty: 0
   liquid: {fileID: 0}
@@ -54029,6 +54427,7 @@ MonoBehaviour:
   myLiquid: {fileID: 114054658711866628}
   myIceList: []
   hasLiquid: 0
+  hasIce: 0
   isFull: 0
   isDirty: 0
   liquid: {fileID: 0}
@@ -54044,6 +54443,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a433c2afe0a76e4bb72e41952f91ec8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasIce: 0
   height: 0
   pourRate: 100
   isEvaluated: 0
@@ -54087,6 +54487,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a433c2afe0a76e4bb72e41952f91ec8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasIce: 0
   height: 0
   pourRate: 1
   isEvaluated: 0
@@ -54130,6 +54531,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a433c2afe0a76e4bb72e41952f91ec8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasIce: 0
   height: 0
   pourRate: 100
   isEvaluated: 0
@@ -54201,6 +54603,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a433c2afe0a76e4bb72e41952f91ec8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasIce: 0
   height: 0
   pourRate: 1
   isEvaluated: 0
@@ -54272,6 +54675,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a433c2afe0a76e4bb72e41952f91ec8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasIce: 0
   height: 0
   pourRate: 100
   isEvaluated: 0
@@ -54315,6 +54719,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a433c2afe0a76e4bb72e41952f91ec8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasIce: 0
   height: 0
   pourRate: 1
   isEvaluated: 0
@@ -54358,6 +54763,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a433c2afe0a76e4bb72e41952f91ec8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasIce: 0
   height: 0
   pourRate: 1
   isEvaluated: 0
@@ -54444,6 +54850,7 @@ MonoBehaviour:
   myLiquid: {fileID: 114032641590299836}
   myIceList: []
   hasLiquid: 0
+  hasIce: 0
   isFull: 0
   isDirty: 0
   liquid: {fileID: 0}
@@ -54475,6 +54882,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a433c2afe0a76e4bb72e41952f91ec8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasIce: 0
   height: 0
   pourRate: 100
   isEvaluated: 0
@@ -54617,6 +55025,7 @@ MonoBehaviour:
   myLiquid: {fileID: 114371512284005690}
   myIceList: []
   hasLiquid: 0
+  hasIce: 0
   isFull: 0
   isDirty: 0
   liquid: {fileID: 0}
@@ -54647,6 +55056,7 @@ MonoBehaviour:
   myLiquid: {fileID: 114501470413624248}
   myIceList: []
   hasLiquid: 0
+  hasIce: 0
   isFull: 0
   isDirty: 0
   liquid: {fileID: 0}
@@ -54662,6 +55072,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a433c2afe0a76e4bb72e41952f91ec8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasIce: 0
   height: 0
   pourRate: 100
   isEvaluated: 0
@@ -54720,6 +55131,7 @@ MonoBehaviour:
   myLiquid: {fileID: 114399356010308228}
   myIceList: []
   hasLiquid: 0
+  hasIce: 0
   isFull: 0
   isDirty: 0
   liquid: {fileID: 0}
@@ -54735,6 +55147,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a433c2afe0a76e4bb72e41952f91ec8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasIce: 0
   height: 0
   pourRate: 100
   isEvaluated: 0
@@ -54778,6 +55191,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a433c2afe0a76e4bb72e41952f91ec8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasIce: 0
   height: 0
   pourRate: 1
   isEvaluated: 0
@@ -54821,6 +55235,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a433c2afe0a76e4bb72e41952f91ec8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasIce: 0
   height: 0
   pourRate: 1
   isEvaluated: 0
@@ -54908,6 +55323,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a433c2afe0a76e4bb72e41952f91ec8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasIce: 0
   height: 0
   pourRate: 100
   isEvaluated: 0
@@ -54982,6 +55398,7 @@ MonoBehaviour:
   myLiquid: {fileID: 114055719859845962}
   myIceList: []
   hasLiquid: 0
+  hasIce: 0
   isFull: 0
   isDirty: 0
   liquid: {fileID: 0}
@@ -55012,6 +55429,7 @@ MonoBehaviour:
   myLiquid: {fileID: 114660572306325268}
   myIceList: []
   hasLiquid: 0
+  hasIce: 0
   isFull: 0
   isDirty: 0
   liquid: {fileID: 0}
@@ -55083,6 +55501,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a433c2afe0a76e4bb72e41952f91ec8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasIce: 0
   height: 0
   pourRate: 100
   isEvaluated: 0
@@ -55169,6 +55588,7 @@ MonoBehaviour:
   myLiquid: {fileID: 114618382869748326}
   myIceList: []
   hasLiquid: 0
+  hasIce: 0
   isFull: 0
   isDirty: 0
   liquid: {fileID: 0}
@@ -55184,6 +55604,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a433c2afe0a76e4bb72e41952f91ec8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasIce: 0
   height: 0
   pourRate: 100
   isEvaluated: 0
@@ -55227,6 +55648,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a433c2afe0a76e4bb72e41952f91ec8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasIce: 0
   height: 0
   pourRate: 100
   isEvaluated: 0
@@ -55270,6 +55692,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a433c2afe0a76e4bb72e41952f91ec8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasIce: 0
   height: 0
   pourRate: 100
   isEvaluated: 0
@@ -55328,6 +55751,7 @@ MonoBehaviour:
   myLiquid: {fileID: 114624279477847832}
   myIceList: []
   hasLiquid: 0
+  hasIce: 0
   isFull: 0
   isDirty: 0
   liquid: {fileID: 0}
@@ -55343,6 +55767,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a433c2afe0a76e4bb72e41952f91ec8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasIce: 0
   height: 0
   pourRate: 100
   isEvaluated: 0
@@ -55402,6 +55827,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a433c2afe0a76e4bb72e41952f91ec8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasIce: 0
   height: 0
   pourRate: 1
   isEvaluated: 0
@@ -55445,6 +55871,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a433c2afe0a76e4bb72e41952f91ec8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasIce: 0
   height: 0
   pourRate: 100
   isEvaluated: 0
@@ -55488,6 +55915,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a433c2afe0a76e4bb72e41952f91ec8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasIce: 0
   height: 0
   pourRate: 1
   isEvaluated: 0
@@ -55531,6 +55959,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a433c2afe0a76e4bb72e41952f91ec8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasIce: 0
   height: 0
   pourRate: 100
   isEvaluated: 0
@@ -55563,6 +55992,34 @@ MonoBehaviour:
   otherLiquidMask: {fileID: 0}
   myMask: {fileID: 0}
   isBeingPoured: 0
+--- !u!114 &114574281745458000
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1516236066276032}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99b9acb760e670a429ef08ffc808a5ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isForDropzoneOnly: 0
+  leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
+  rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
+  targetDropzone: {fileID: 0}
+  startPos: {x: 0, y: 0, z: 0}
+  dropPos: {x: 0, y: 0, z: 0}
+  tweenTime: 0.75
+  tweenEndTime: 0.5
+  pickupDropTime: 0.25
+  pickedUp: 0
+  myChildDropzone: {fileID: 0}
+  myName: 
+  myLiquid: {fileID: 0}
+  myDrinkBase: 2
+  myMixer: 0
+  leftHandPourRot: {x: 80, y: 25, z: 0}
+  rightHandPourRot: {x: 80, y: -25, z: 6.915}
 --- !u!114 &114576522957345498
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -55645,6 +56102,7 @@ MonoBehaviour:
   myLiquid: {fileID: 114572604404770908}
   myIceList: []
   hasLiquid: 0
+  hasIce: 0
   isFull: 0
   isDirty: 0
   liquid: {fileID: 0}
@@ -55660,6 +56118,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a433c2afe0a76e4bb72e41952f91ec8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasIce: 0
   height: 0
   pourRate: 100
   isEvaluated: 0
@@ -55703,6 +56162,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a433c2afe0a76e4bb72e41952f91ec8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasIce: 0
   height: 0
   pourRate: 100
   isEvaluated: 0
@@ -55746,6 +56206,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a433c2afe0a76e4bb72e41952f91ec8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasIce: 0
   height: 0
   pourRate: 100
   isEvaluated: 0
@@ -55833,6 +56294,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a433c2afe0a76e4bb72e41952f91ec8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasIce: 0
   height: 0
   pourRate: 100
   isEvaluated: 0
@@ -55891,6 +56353,7 @@ MonoBehaviour:
   myLiquid: {fileID: 114006730530558860}
   myIceList: []
   hasLiquid: 0
+  hasIce: 0
   isFull: 0
   isDirty: 0
   liquid: {fileID: 0}
@@ -55923,49 +56386,6 @@ MonoBehaviour:
   myMixer: 0
   leftHandPourRot: {x: 80, y: 25, z: 0}
   rightHandPourRot: {x: 80, y: -25, z: 6.915}
---- !u!114 &114599801859311792
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1241476539793250}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8a433c2afe0a76e4bb72e41952f91ec8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  height: 0
-  pourRate: 1
-  isEvaluated: 0
-  totalVolume: 0
-  myDrinkBase: 0
-  myMixer: 0
-  coasters: []
-  sodaVolume: 0
-  tonicVolume: 0
-  appleJuiceVolume: 0
-  orangeJuiceVolume: 0
-  lemonJuiceVolume: 0
-  whiskeyVolume: 0
-  tequilaVolume: 0
-  rumVolume: 0
-  ginVolume: 0
-  beerVolume: 0
-  wineVolume: 0
-  brandyVolume: 0
-  vodkaVolume: 0
-  smokiness: 0
-  sweetness: 0
-  sourness: 0
-  bitterness: 0
-  spiciness: 0
-  alcoholVolume: 0
-  abv: 0
-  drinkParts: []
-  otherLiquid: {fileID: 0}
-  otherLiquidMask: {fileID: 0}
-  myMask: {fileID: 0}
-  isBeingPoured: 0
 --- !u!114 &114601833976454090
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -55994,49 +56414,6 @@ MonoBehaviour:
   myMixer: 0
   leftHandPourRot: {x: 80, y: 25, z: 0}
   rightHandPourRot: {x: 80, y: -25, z: 6.915}
---- !u!114 &114604953674083372
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1165238535166670}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8a433c2afe0a76e4bb72e41952f91ec8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  height: 0
-  pourRate: 1
-  isEvaluated: 0
-  totalVolume: 0
-  myDrinkBase: 0
-  myMixer: 0
-  coasters: []
-  sodaVolume: 0
-  tonicVolume: 0
-  appleJuiceVolume: 0
-  orangeJuiceVolume: 0
-  lemonJuiceVolume: 0
-  whiskeyVolume: 0
-  tequilaVolume: 0
-  rumVolume: 0
-  ginVolume: 0
-  beerVolume: 0
-  wineVolume: 0
-  brandyVolume: 0
-  vodkaVolume: 0
-  smokiness: 0
-  sweetness: 0
-  sourness: 0
-  bitterness: 0
-  spiciness: 0
-  alcoholVolume: 0
-  abv: 0
-  drinkParts: []
-  otherLiquid: {fileID: 0}
-  otherLiquidMask: {fileID: 0}
-  myMask: {fileID: 0}
-  isBeingPoured: 0
 --- !u!114 &114611260694200056
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -56062,6 +56439,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a433c2afe0a76e4bb72e41952f91ec8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasIce: 0
   height: 0
   pourRate: 100
   isEvaluated: 0
@@ -56105,6 +56483,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a433c2afe0a76e4bb72e41952f91ec8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasIce: 0
   height: 0
   pourRate: 1
   isEvaluated: 0
@@ -56176,6 +56555,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a433c2afe0a76e4bb72e41952f91ec8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasIce: 0
   height: 0
   pourRate: 1
   isEvaluated: 0
@@ -56219,6 +56599,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a433c2afe0a76e4bb72e41952f91ec8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasIce: 0
   height: 0
   pourRate: 100
   isEvaluated: 0
@@ -56277,6 +56658,7 @@ MonoBehaviour:
   myLiquid: {fileID: 114414305805936102}
   myIceList: []
   hasLiquid: 0
+  hasIce: 0
   isFull: 0
   isDirty: 0
   liquid: {fileID: 0}
@@ -56307,6 +56689,7 @@ MonoBehaviour:
   myLiquid: {fileID: 114807132932876990}
   myIceList: []
   hasLiquid: 0
+  hasIce: 0
   isFull: 0
   isDirty: 0
   liquid: {fileID: 0}
@@ -56322,6 +56705,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a433c2afe0a76e4bb72e41952f91ec8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasIce: 0
   height: 0
   pourRate: 1
   isEvaluated: 0
@@ -56365,6 +56749,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a433c2afe0a76e4bb72e41952f91ec8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasIce: 0
   height: 0
   pourRate: 100
   isEvaluated: 0
@@ -56464,6 +56849,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a433c2afe0a76e4bb72e41952f91ec8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasIce: 0
   height: 0
   pourRate: 1
   isEvaluated: 0
@@ -56522,6 +56908,7 @@ MonoBehaviour:
   myLiquid: {fileID: 114543611199418092}
   myIceList: []
   hasLiquid: 0
+  hasIce: 0
   isFull: 0
   isDirty: 0
   liquid: {fileID: 0}
@@ -56552,6 +56939,7 @@ MonoBehaviour:
   myLiquid: {fileID: 114202068658019046}
   myIceList: []
   hasLiquid: 0
+  hasIce: 0
   isFull: 0
   isDirty: 0
   liquid: {fileID: 0}
@@ -56626,6 +57014,7 @@ MonoBehaviour:
   myLiquid: {fileID: 114232312739045356}
   myIceList: []
   hasLiquid: 0
+  hasIce: 0
   isFull: 0
   isDirty: 0
   liquid: {fileID: 0}
@@ -56641,6 +57030,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a433c2afe0a76e4bb72e41952f91ec8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasIce: 0
   height: 0
   pourRate: 100
   isEvaluated: 0
@@ -56684,6 +57074,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a433c2afe0a76e4bb72e41952f91ec8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasIce: 0
   height: 0
   pourRate: 1
   isEvaluated: 0
@@ -56742,6 +57133,7 @@ MonoBehaviour:
   myLiquid: {fileID: 114298123615274260}
   myIceList: []
   hasLiquid: 0
+  hasIce: 0
   isFull: 0
   isDirty: 0
   liquid: {fileID: 0}
@@ -56785,6 +57177,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a433c2afe0a76e4bb72e41952f91ec8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasIce: 0
   height: 0
   pourRate: 100
   isEvaluated: 0
@@ -56828,6 +57221,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a433c2afe0a76e4bb72e41952f91ec8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasIce: 0
   height: 0
   pourRate: 1
   isEvaluated: 0
@@ -56871,6 +57265,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a433c2afe0a76e4bb72e41952f91ec8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasIce: 0
   height: 0
   pourRate: 1
   isEvaluated: 0
@@ -56914,6 +57309,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a433c2afe0a76e4bb72e41952f91ec8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasIce: 0
   height: 0
   pourRate: 100
   isEvaluated: 0
@@ -56972,6 +57368,7 @@ MonoBehaviour:
   myLiquid: {fileID: 114203969075425684}
   myIceList: []
   hasLiquid: 0
+  hasIce: 0
   isFull: 0
   isDirty: 0
   liquid: {fileID: 0}
@@ -56987,6 +57384,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a433c2afe0a76e4bb72e41952f91ec8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasIce: 0
   height: 0
   pourRate: 100
   isEvaluated: 0
@@ -57058,6 +57456,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a433c2afe0a76e4bb72e41952f91ec8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasIce: 0
   height: 0
   pourRate: 1
   isEvaluated: 0
@@ -57101,6 +57500,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a433c2afe0a76e4bb72e41952f91ec8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasIce: 0
   height: 0
   pourRate: 1
   isEvaluated: 0
@@ -57159,6 +57559,7 @@ MonoBehaviour:
   myLiquid: {fileID: 114568106045637464}
   myIceList: []
   hasLiquid: 0
+  hasIce: 0
   isFull: 0
   isDirty: 0
   liquid: {fileID: 0}
@@ -57202,6 +57603,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a433c2afe0a76e4bb72e41952f91ec8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasIce: 0
   height: 0
   pourRate: 100
   isEvaluated: 0
@@ -57234,6 +57636,34 @@ MonoBehaviour:
   otherLiquidMask: {fileID: 0}
   myMask: {fileID: 0}
   isBeingPoured: 0
+--- !u!114 &114662032116239756
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1902686734766714}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99b9acb760e670a429ef08ffc808a5ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isForDropzoneOnly: 0
+  leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
+  rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
+  targetDropzone: {fileID: 0}
+  startPos: {x: 0, y: 0, z: 0}
+  dropPos: {x: 0, y: 0, z: 0}
+  tweenTime: 0.75
+  tweenEndTime: 0.5
+  pickupDropTime: 0.25
+  pickedUp: 0
+  myChildDropzone: {fileID: 0}
+  myName: 
+  myLiquid: {fileID: 0}
+  myDrinkBase: 0
+  myMixer: 1
+  leftHandPourRot: {x: 80, y: 25, z: 0}
+  rightHandPourRot: {x: 80, y: -25, z: 6.915}
 --- !u!114 &114662179240494000
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -57260,6 +57690,7 @@ MonoBehaviour:
   myLiquid: {fileID: 114129907200328778}
   myIceList: []
   hasLiquid: 0
+  hasIce: 0
   isFull: 0
   isDirty: 0
   liquid: {fileID: 0}
@@ -57290,6 +57721,7 @@ MonoBehaviour:
   myLiquid: {fileID: 114580062422084758}
   myIceList: []
   hasLiquid: 0
+  hasIce: 0
   isFull: 0
   isDirty: 0
   liquid: {fileID: 0}
@@ -57320,6 +57752,7 @@ MonoBehaviour:
   myLiquid: {fileID: 114871822853111100}
   myIceList: []
   hasLiquid: 0
+  hasIce: 0
   isFull: 0
   isDirty: 0
   liquid: {fileID: 0}
@@ -57350,6 +57783,7 @@ MonoBehaviour:
   myLiquid: {fileID: 114006416854432356}
   myIceList: []
   hasLiquid: 0
+  hasIce: 0
   isFull: 0
   isDirty: 0
   liquid: {fileID: 0}
@@ -57365,6 +57799,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a433c2afe0a76e4bb72e41952f91ec8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasIce: 0
   height: 0
   pourRate: 1
   isEvaluated: 0
@@ -57423,6 +57858,7 @@ MonoBehaviour:
   myLiquid: {fileID: 114174544581215276}
   myIceList: []
   hasLiquid: 0
+  hasIce: 0
   isFull: 0
   isDirty: 0
   liquid: {fileID: 0}
@@ -57453,6 +57889,7 @@ MonoBehaviour:
   myLiquid: {fileID: 114559215614330986}
   myIceList: []
   hasLiquid: 0
+  hasIce: 0
   isFull: 0
   isDirty: 0
   liquid: {fileID: 0}
@@ -57468,6 +57905,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a433c2afe0a76e4bb72e41952f91ec8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasIce: 0
   height: 0
   pourRate: 1
   isEvaluated: 0
@@ -57539,6 +57977,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a433c2afe0a76e4bb72e41952f91ec8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasIce: 0
   height: 0
   pourRate: 100
   isEvaluated: 0
@@ -57597,6 +58036,7 @@ MonoBehaviour:
   myLiquid: {fileID: 114465535666857106}
   myIceList: []
   hasLiquid: 0
+  hasIce: 0
   isFull: 0
   isDirty: 0
   liquid: {fileID: 0}
@@ -57612,6 +58052,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a433c2afe0a76e4bb72e41952f91ec8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasIce: 0
   height: 0
   pourRate: 100
   isEvaluated: 0
@@ -57655,6 +58096,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a433c2afe0a76e4bb72e41952f91ec8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasIce: 0
   height: 0
   pourRate: 1
   isEvaluated: 0
@@ -57698,6 +58140,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a433c2afe0a76e4bb72e41952f91ec8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasIce: 0
   height: 0
   pourRate: 1
   isEvaluated: 0
@@ -57741,6 +58184,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a433c2afe0a76e4bb72e41952f91ec8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasIce: 0
   height: 0
   pourRate: 100
   isEvaluated: 0
@@ -57827,6 +58271,7 @@ MonoBehaviour:
   myLiquid: {fileID: 114975805570130288}
   myIceList: []
   hasLiquid: 0
+  hasIce: 0
   isFull: 0
   isDirty: 0
   liquid: {fileID: 0}
@@ -57857,6 +58302,7 @@ MonoBehaviour:
   myLiquid: {fileID: 114105478491697712}
   myIceList: []
   hasLiquid: 0
+  hasIce: 0
   isFull: 0
   isDirty: 0
   liquid: {fileID: 0}
@@ -57872,6 +58318,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a433c2afe0a76e4bb72e41952f91ec8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasIce: 0
   height: 0
   pourRate: 100
   isEvaluated: 0
@@ -57915,6 +58362,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a433c2afe0a76e4bb72e41952f91ec8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasIce: 0
   height: 0
   pourRate: 100
   isEvaluated: 0
@@ -57974,6 +58422,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a433c2afe0a76e4bb72e41952f91ec8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasIce: 0
   height: 0
   pourRate: 100
   isEvaluated: 0
@@ -58017,6 +58466,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a433c2afe0a76e4bb72e41952f91ec8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasIce: 0
   height: 0
   pourRate: 100
   isEvaluated: 0
@@ -58075,6 +58525,7 @@ MonoBehaviour:
   myLiquid: {fileID: 114582137825061654}
   myIceList: []
   hasLiquid: 0
+  hasIce: 0
   isFull: 0
   isDirty: 0
   liquid: {fileID: 0}
@@ -58118,6 +58569,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a433c2afe0a76e4bb72e41952f91ec8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasIce: 0
   height: 0
   pourRate: 100
   isEvaluated: 0
@@ -58161,6 +58613,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a433c2afe0a76e4bb72e41952f91ec8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasIce: 0
   height: 0
   pourRate: 1
   isEvaluated: 0
@@ -58235,6 +58688,7 @@ MonoBehaviour:
   myLiquid: {fileID: 114715783443917092}
   myIceList: []
   hasLiquid: 0
+  hasIce: 0
   isFull: 0
   isDirty: 0
   liquid: {fileID: 0}
@@ -58281,6 +58735,7 @@ MonoBehaviour:
   myLiquid: {fileID: 114539338105747474}
   myIceList: []
   hasLiquid: 0
+  hasIce: 0
   isFull: 0
   isDirty: 0
   liquid: {fileID: 0}
@@ -58296,6 +58751,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a433c2afe0a76e4bb72e41952f91ec8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasIce: 0
   height: 0
   pourRate: 100
   isEvaluated: 0
@@ -58354,6 +58810,7 @@ MonoBehaviour:
   myLiquid: {fileID: 114639210919097396}
   myIceList: []
   hasLiquid: 0
+  hasIce: 0
   isFull: 0
   isDirty: 0
   liquid: {fileID: 0}
@@ -58397,6 +58854,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a433c2afe0a76e4bb72e41952f91ec8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasIce: 0
   height: 0
   pourRate: 1
   isEvaluated: 0
@@ -58513,6 +58971,7 @@ MonoBehaviour:
   myLiquid: {fileID: 114010281704421190}
   myIceList: []
   hasLiquid: 0
+  hasIce: 0
   isFull: 0
   isDirty: 0
   liquid: {fileID: 0}
@@ -58528,6 +58987,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a433c2afe0a76e4bb72e41952f91ec8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasIce: 0
   height: 0
   pourRate: 1
   isEvaluated: 0
@@ -58586,6 +59046,7 @@ MonoBehaviour:
   myLiquid: {fileID: 114451245962020106}
   myIceList: []
   hasLiquid: 0
+  hasIce: 0
   isFull: 0
   isDirty: 0
   liquid: {fileID: 0}
@@ -58601,6 +59062,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a433c2afe0a76e4bb72e41952f91ec8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasIce: 0
   height: 0
   pourRate: 100
   isEvaluated: 0
@@ -58688,6 +59150,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a433c2afe0a76e4bb72e41952f91ec8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasIce: 0
   height: 0
   pourRate: 1
   isEvaluated: 0
@@ -58731,6 +59194,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a433c2afe0a76e4bb72e41952f91ec8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasIce: 0
   height: 0
   pourRate: 1
   isEvaluated: 0
@@ -58774,6 +59238,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a433c2afe0a76e4bb72e41952f91ec8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasIce: 0
   height: 0
   pourRate: 100
   isEvaluated: 0
@@ -58832,6 +59297,7 @@ MonoBehaviour:
   myLiquid: {fileID: 114925926578515494}
   myIceList: []
   hasLiquid: 0
+  hasIce: 0
   isFull: 0
   isDirty: 0
   liquid: {fileID: 0}
@@ -58847,6 +59313,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a433c2afe0a76e4bb72e41952f91ec8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasIce: 0
   height: 0
   pourRate: 1
   isEvaluated: 0
@@ -58890,6 +59357,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a433c2afe0a76e4bb72e41952f91ec8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasIce: 0
   height: 0
   pourRate: 1
   isEvaluated: 0
@@ -58989,6 +59457,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a433c2afe0a76e4bb72e41952f91ec8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasIce: 0
   height: 0
   pourRate: 100
   isEvaluated: 0
@@ -59032,6 +59501,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a433c2afe0a76e4bb72e41952f91ec8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasIce: 0
   height: 0
   pourRate: 100
   isEvaluated: 0
@@ -59075,6 +59545,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a433c2afe0a76e4bb72e41952f91ec8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasIce: 0
   height: 0
   pourRate: 1
   isEvaluated: 0
@@ -59133,6 +59604,7 @@ MonoBehaviour:
   myLiquid: {fileID: 114048994515740634}
   myIceList: []
   hasLiquid: 0
+  hasIce: 0
   isFull: 0
   isDirty: 0
   liquid: {fileID: 0}
@@ -59148,6 +59620,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a433c2afe0a76e4bb72e41952f91ec8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasIce: 0
   height: 0
   pourRate: 100
   isEvaluated: 0
@@ -59283,6 +59756,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a433c2afe0a76e4bb72e41952f91ec8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasIce: 0
   height: 0
   pourRate: 1
   isEvaluated: 0
@@ -59340,6 +59814,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a433c2afe0a76e4bb72e41952f91ec8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasIce: 0
   height: 0
   pourRate: 1
   isEvaluated: 0
@@ -59383,6 +59858,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a433c2afe0a76e4bb72e41952f91ec8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasIce: 0
   height: 0
   pourRate: 1
   isEvaluated: 0
@@ -59441,6 +59917,7 @@ MonoBehaviour:
   myLiquid: {fileID: 114940329721467026}
   myIceList: []
   hasLiquid: 0
+  hasIce: 0
   isFull: 0
   isDirty: 0
   liquid: {fileID: 0}
@@ -59456,6 +59933,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a433c2afe0a76e4bb72e41952f91ec8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasIce: 0
   height: 0
   pourRate: 1
   isEvaluated: 0
@@ -59499,6 +59977,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a433c2afe0a76e4bb72e41952f91ec8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasIce: 0
   height: 0
   pourRate: 1
   isEvaluated: 0
@@ -59557,6 +60036,7 @@ MonoBehaviour:
   myLiquid: {fileID: 114182180354049904}
   myIceList: []
   hasLiquid: 0
+  hasIce: 0
   isFull: 0
   isDirty: 0
   liquid: {fileID: 0}
@@ -59572,6 +60052,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a433c2afe0a76e4bb72e41952f91ec8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasIce: 0
   height: 0
   pourRate: 1
   isEvaluated: 0
@@ -59615,6 +60096,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a433c2afe0a76e4bb72e41952f91ec8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasIce: 0
   height: 0
   pourRate: 1
   isEvaluated: 0
@@ -59673,6 +60155,7 @@ MonoBehaviour:
   myLiquid: {fileID: 114552323690844674}
   myIceList: []
   hasLiquid: 0
+  hasIce: 0
   isFull: 0
   isDirty: 0
   liquid: {fileID: 0}
@@ -59703,6 +60186,7 @@ MonoBehaviour:
   myLiquid: {fileID: 114347107117576976}
   myIceList: []
   hasLiquid: 0
+  hasIce: 0
   isFull: 0
   isDirty: 0
   liquid: {fileID: 0}
@@ -59718,6 +60202,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a433c2afe0a76e4bb72e41952f91ec8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasIce: 0
   height: 0
   pourRate: 100
   isEvaluated: 0
@@ -59789,6 +60274,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a433c2afe0a76e4bb72e41952f91ec8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasIce: 0
   height: 0
   pourRate: 1
   isEvaluated: 0
@@ -59832,6 +60318,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a433c2afe0a76e4bb72e41952f91ec8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasIce: 0
   height: 0
   pourRate: 100
   isEvaluated: 0
@@ -59919,6 +60406,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a433c2afe0a76e4bb72e41952f91ec8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasIce: 0
   height: 0
   pourRate: 1
   isEvaluated: 0
@@ -59962,6 +60450,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a433c2afe0a76e4bb72e41952f91ec8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasIce: 0
   height: 0
   pourRate: 1
   isEvaluated: 0
@@ -60020,6 +60509,7 @@ MonoBehaviour:
   myLiquid: {fileID: 114484339820114712}
   myIceList: []
   hasLiquid: 0
+  hasIce: 0
   isFull: 0
   isDirty: 0
   liquid: {fileID: 0}
@@ -60066,6 +60556,7 @@ MonoBehaviour:
   myLiquid: {fileID: 114892359238484644}
   myIceList: []
   hasLiquid: 0
+  hasIce: 0
   isFull: 0
   isDirty: 0
   liquid: {fileID: 0}
@@ -60096,6 +60587,7 @@ MonoBehaviour:
   myLiquid: {fileID: 114839178645939420}
   myIceList: []
   hasLiquid: 0
+  hasIce: 0
   isFull: 0
   isDirty: 0
   liquid: {fileID: 0}
@@ -60111,6 +60603,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a433c2afe0a76e4bb72e41952f91ec8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasIce: 0
   height: 0
   pourRate: 1
   isEvaluated: 0
@@ -60182,6 +60675,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a433c2afe0a76e4bb72e41952f91ec8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasIce: 0
   height: 0
   pourRate: 100
   isEvaluated: 0
@@ -60241,6 +60735,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a433c2afe0a76e4bb72e41952f91ec8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasIce: 0
   height: 0
   pourRate: 100
   isEvaluated: 0
@@ -60284,6 +60779,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a433c2afe0a76e4bb72e41952f91ec8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasIce: 0
   height: 0
   pourRate: 100
   isEvaluated: 0
@@ -60386,6 +60882,7 @@ MonoBehaviour:
   myLiquid: {fileID: 114917081830328142}
   myIceList: []
   hasLiquid: 0
+  hasIce: 0
   isFull: 0
   isDirty: 0
   liquid: {fileID: 0}
@@ -60485,6 +60982,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a433c2afe0a76e4bb72e41952f91ec8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasIce: 0
   height: 0
   pourRate: 1
   isEvaluated: 0
@@ -60542,6 +61040,51 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a433c2afe0a76e4bb72e41952f91ec8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasIce: 0
+  height: 0
+  pourRate: 1
+  isEvaluated: 0
+  totalVolume: 0
+  myDrinkBase: 0
+  myMixer: 0
+  coasters: []
+  sodaVolume: 0
+  tonicVolume: 0
+  appleJuiceVolume: 0
+  orangeJuiceVolume: 0
+  lemonJuiceVolume: 0
+  whiskeyVolume: 0
+  tequilaVolume: 0
+  rumVolume: 0
+  ginVolume: 0
+  beerVolume: 0
+  wineVolume: 0
+  brandyVolume: 0
+  vodkaVolume: 0
+  smokiness: 0
+  sweetness: 0
+  sourness: 0
+  bitterness: 0
+  spiciness: 0
+  alcoholVolume: 0
+  abv: 0
+  drinkParts: []
+  otherLiquid: {fileID: 0}
+  otherLiquidMask: {fileID: 0}
+  myMask: {fileID: 0}
+  isBeingPoured: 0
+--- !u!114 &114859694762263656
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1265111349728586}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a433c2afe0a76e4bb72e41952f91ec8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hasIce: 0
   height: 0
   pourRate: 1
   isEvaluated: 0
@@ -60629,6 +61172,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a433c2afe0a76e4bb72e41952f91ec8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasIce: 0
   height: 0
   pourRate: 1
   isEvaluated: 0
@@ -60672,6 +61216,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a433c2afe0a76e4bb72e41952f91ec8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasIce: 0
   height: 0
   pourRate: 100
   isEvaluated: 0
@@ -60730,6 +61275,7 @@ MonoBehaviour:
   myLiquid: {fileID: 114735705563683708}
   myIceList: []
   hasLiquid: 0
+  hasIce: 0
   isFull: 0
   isDirty: 0
   liquid: {fileID: 0}
@@ -60760,6 +61306,7 @@ MonoBehaviour:
   myLiquid: {fileID: 114102320221851634}
   myIceList: []
   hasLiquid: 0
+  hasIce: 0
   isFull: 0
   isDirty: 0
   liquid: {fileID: 0}
@@ -60775,6 +61322,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a433c2afe0a76e4bb72e41952f91ec8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasIce: 0
   height: 0
   pourRate: 100
   isEvaluated: 0
@@ -60818,6 +61366,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a433c2afe0a76e4bb72e41952f91ec8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasIce: 0
   height: 0
   pourRate: 1
   isEvaluated: 0
@@ -60904,6 +61453,7 @@ MonoBehaviour:
   myLiquid: {fileID: 114514540778067658}
   myIceList: []
   hasLiquid: 0
+  hasIce: 0
   isFull: 0
   isDirty: 0
   liquid: {fileID: 0}
@@ -60934,6 +61484,7 @@ MonoBehaviour:
   myLiquid: {fileID: 114257440959231394}
   myIceList: []
   hasLiquid: 0
+  hasIce: 0
   isFull: 0
   isDirty: 0
   liquid: {fileID: 0}
@@ -60964,6 +61515,7 @@ MonoBehaviour:
   myLiquid: {fileID: 114834426388675496}
   myIceList: []
   hasLiquid: 0
+  hasIce: 0
   isFull: 0
   isDirty: 0
   liquid: {fileID: 0}
@@ -60994,6 +61546,7 @@ MonoBehaviour:
   myLiquid: {fileID: 114351836053114980}
   myIceList: []
   hasLiquid: 0
+  hasIce: 0
   isFull: 0
   isDirty: 0
   liquid: {fileID: 0}
@@ -61009,6 +61562,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a433c2afe0a76e4bb72e41952f91ec8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasIce: 0
   height: 0
   pourRate: 100
   isEvaluated: 0
@@ -61057,6 +61611,50 @@ MonoBehaviour:
   playerIsLooking: 0
   objectsInMe: []
   _distance: 0
+--- !u!114 &114885935203497096
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1902686734766714}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a433c2afe0a76e4bb72e41952f91ec8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hasIce: 0
+  height: 0
+  pourRate: 1
+  isEvaluated: 0
+  totalVolume: 0
+  myDrinkBase: 0
+  myMixer: 0
+  coasters: []
+  sodaVolume: 0
+  tonicVolume: 0
+  appleJuiceVolume: 0
+  orangeJuiceVolume: 0
+  lemonJuiceVolume: 0
+  whiskeyVolume: 0
+  tequilaVolume: 0
+  rumVolume: 0
+  ginVolume: 0
+  beerVolume: 0
+  wineVolume: 0
+  brandyVolume: 0
+  vodkaVolume: 0
+  smokiness: 0
+  sweetness: 0
+  sourness: 0
+  bitterness: 0
+  spiciness: 0
+  alcoholVolume: 0
+  abv: 0
+  drinkParts: []
+  otherLiquid: {fileID: 0}
+  otherLiquidMask: {fileID: 0}
+  myMask: {fileID: 0}
+  isBeingPoured: 0
 --- !u!114 &114886367685562176
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -61068,6 +61666,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a433c2afe0a76e4bb72e41952f91ec8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasIce: 0
   height: 0
   pourRate: 100
   isEvaluated: 0
@@ -61167,6 +61766,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a433c2afe0a76e4bb72e41952f91ec8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasIce: 0
   height: 0
   pourRate: 100
   isEvaluated: 0
@@ -61210,6 +61810,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a433c2afe0a76e4bb72e41952f91ec8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasIce: 0
   height: 0
   pourRate: 1
   isEvaluated: 0
@@ -61253,6 +61854,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a433c2afe0a76e4bb72e41952f91ec8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasIce: 0
   height: 0
   pourRate: 100
   isEvaluated: 0
@@ -61322,6 +61924,7 @@ MonoBehaviour:
   myLiquid: {fileID: 114426733586095372}
   myIceList: []
   hasLiquid: 0
+  hasIce: 0
   isFull: 0
   isDirty: 0
   liquid: {fileID: 0}
@@ -61337,6 +61940,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a433c2afe0a76e4bb72e41952f91ec8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasIce: 0
   height: 0
   pourRate: 1
   isEvaluated: 0
@@ -61395,6 +61999,7 @@ MonoBehaviour:
   myLiquid: {fileID: 114567419913300722}
   myIceList: []
   hasLiquid: 0
+  hasIce: 0
   isFull: 0
   isDirty: 0
   liquid: {fileID: 0}
@@ -61410,6 +62015,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a433c2afe0a76e4bb72e41952f91ec8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasIce: 0
   height: 0
   pourRate: 100
   isEvaluated: 0
@@ -61469,6 +62075,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a433c2afe0a76e4bb72e41952f91ec8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasIce: 0
   height: 0
   pourRate: 1
   isEvaluated: 0
@@ -61528,6 +62135,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a433c2afe0a76e4bb72e41952f91ec8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasIce: 0
   height: 0
   pourRate: 100
   isEvaluated: 0
@@ -61586,6 +62194,7 @@ MonoBehaviour:
   myLiquid: {fileID: 114096769224915830}
   myIceList: []
   hasLiquid: 0
+  hasIce: 0
   isFull: 0
   isDirty: 0
   liquid: {fileID: 0}
@@ -61616,6 +62225,7 @@ MonoBehaviour:
   myLiquid: {fileID: 114932746469112480}
   myIceList: []
   hasLiquid: 0
+  hasIce: 0
   isFull: 0
   isDirty: 0
   liquid: {fileID: 0}
@@ -61631,6 +62241,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a433c2afe0a76e4bb72e41952f91ec8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasIce: 0
   height: 0
   pourRate: 100
   isEvaluated: 0
@@ -61674,6 +62285,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a433c2afe0a76e4bb72e41952f91ec8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasIce: 0
   height: 0
   pourRate: 1
   isEvaluated: 0
@@ -61789,6 +62401,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a433c2afe0a76e4bb72e41952f91ec8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasIce: 0
   height: 0
   pourRate: 1
   isEvaluated: 0
@@ -61862,6 +62475,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a433c2afe0a76e4bb72e41952f91ec8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasIce: 0
   height: 0
   pourRate: 100
   isEvaluated: 0
@@ -61933,6 +62547,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a433c2afe0a76e4bb72e41952f91ec8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasIce: 0
   height: 0
   pourRate: 100
   isEvaluated: 0
@@ -61991,6 +62606,7 @@ MonoBehaviour:
   myLiquid: {fileID: 114707127854115348}
   myIceList: []
   hasLiquid: 0
+  hasIce: 0
   isFull: 0
   isDirty: 0
   liquid: {fileID: 0}
@@ -62021,6 +62637,7 @@ MonoBehaviour:
   myLiquid: {fileID: 114023115595876102}
   myIceList: []
   hasLiquid: 0
+  hasIce: 0
   isFull: 0
   isDirty: 0
   liquid: {fileID: 0}
@@ -62051,6 +62668,7 @@ MonoBehaviour:
   myLiquid: {fileID: 114097387713255088}
   myIceList: []
   hasLiquid: 0
+  hasIce: 0
   isFull: 0
   isDirty: 0
   liquid: {fileID: 0}
@@ -62081,6 +62699,7 @@ MonoBehaviour:
   myLiquid: {fileID: 114901138260425654}
   myIceList: []
   hasLiquid: 0
+  hasIce: 0
   isFull: 0
   isDirty: 0
   liquid: {fileID: 0}
@@ -62111,6 +62730,7 @@ MonoBehaviour:
   myLiquid: {fileID: 114278592755372454}
   myIceList: []
   hasLiquid: 0
+  hasIce: 0
   isFull: 0
   isDirty: 0
   liquid: {fileID: 0}
@@ -62126,6 +62746,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a433c2afe0a76e4bb72e41952f91ec8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasIce: 0
   height: 0
   pourRate: 100
   isEvaluated: 0
@@ -62184,6 +62805,7 @@ MonoBehaviour:
   myLiquid: {fileID: 114357738873188480}
   myIceList: []
   hasLiquid: 0
+  hasIce: 0
   isFull: 0
   isDirty: 0
   liquid: {fileID: 0}
@@ -62199,6 +62821,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a433c2afe0a76e4bb72e41952f91ec8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasIce: 0
   height: 0
   pourRate: 100
   isEvaluated: 0
@@ -62286,6 +62909,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a433c2afe0a76e4bb72e41952f91ec8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasIce: 0
   height: 0
   pourRate: 1
   isEvaluated: 0
@@ -62416,6 +63040,7 @@ MonoBehaviour:
   myLiquid: {fileID: 114071114865159726}
   myIceList: []
   hasLiquid: 0
+  hasIce: 0
   isFull: 0
   isDirty: 0
   liquid: {fileID: 0}
@@ -62431,6 +63056,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a433c2afe0a76e4bb72e41952f91ec8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasIce: 0
   height: 0
   pourRate: 100
   isEvaluated: 0
@@ -62474,6 +63100,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a433c2afe0a76e4bb72e41952f91ec8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasIce: 0
   height: 0
   pourRate: 100
   isEvaluated: 0
@@ -62532,6 +63159,7 @@ MonoBehaviour:
   myLiquid: {fileID: 114754733986092964}
   myIceList: []
   hasLiquid: 0
+  hasIce: 0
   isFull: 0
   isDirty: 0
   liquid: {fileID: 0}
@@ -62547,6 +63175,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a433c2afe0a76e4bb72e41952f91ec8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasIce: 0
   height: 0
   pourRate: 1
   isEvaluated: 0
@@ -62606,6 +63235,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a433c2afe0a76e4bb72e41952f91ec8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasIce: 0
   height: 0
   pourRate: 100
   isEvaluated: 0
@@ -62649,6 +63279,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a433c2afe0a76e4bb72e41952f91ec8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasIce: 0
   height: 0
   pourRate: 1
   isEvaluated: 0
@@ -62681,34 +63312,6 @@ MonoBehaviour:
   otherLiquidMask: {fileID: 0}
   myMask: {fileID: 0}
   isBeingPoured: 0
---- !u!114 &114978612340814440
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1165238535166670}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 99b9acb760e670a429ef08ffc808a5ab, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isForDropzoneOnly: 1
-  leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
-  rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
-  targetDropzone: {fileID: 0}
-  startPos: {x: 0, y: 0, z: 0}
-  dropPos: {x: 0, y: 0, z: 0}
-  tweenTime: 0.75
-  tweenEndTime: 0.5
-  pickupDropTime: 0.25
-  pickedUp: 0
-  myChildDropzone: {fileID: 0}
-  myName: 
-  myLiquid: {fileID: 0}
-  myDrinkBase: 8
-  myMixer: 0
-  leftHandPourRot: {x: 80, y: 25, z: 0}
-  rightHandPourRot: {x: 80, y: -25, z: 6.915}
 --- !u!114 &114979703068066550
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -62735,6 +63338,7 @@ MonoBehaviour:
   myLiquid: {fileID: 114767870738195702}
   myIceList: []
   hasLiquid: 0
+  hasIce: 0
   isFull: 0
   isDirty: 0
   liquid: {fileID: 0}
@@ -62750,6 +63354,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a433c2afe0a76e4bb72e41952f91ec8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasIce: 0
   height: 0
   pourRate: 100
   isEvaluated: 0
@@ -62793,6 +63398,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a433c2afe0a76e4bb72e41952f91ec8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasIce: 0
   height: 0
   pourRate: 1
   isEvaluated: 0
@@ -62880,6 +63486,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a433c2afe0a76e4bb72e41952f91ec8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasIce: 0
   height: 0
   pourRate: 1
   isEvaluated: 0
@@ -62966,6 +63573,7 @@ MonoBehaviour:
   myLiquid: {fileID: 114237746618795974}
   myIceList: []
   hasLiquid: 0
+  hasIce: 0
   isFull: 0
   isDirty: 0
   liquid: {fileID: 0}
@@ -63040,6 +63648,7 @@ MonoBehaviour:
   myLiquid: {fileID: 114890006589729082}
   myIceList: []
   hasLiquid: 0
+  hasIce: 0
   isFull: 0
   isDirty: 0
   liquid: {fileID: 0}
@@ -63070,6 +63679,7 @@ MonoBehaviour:
   myLiquid: {fileID: 114801338048832338}
   myIceList: []
   hasLiquid: 0
+  hasIce: 0
   isFull: 0
   isDirty: 0
   liquid: {fileID: 0}
@@ -63128,6 +63738,7 @@ MonoBehaviour:
   myLiquid: {fileID: 114118346768664436}
   myIceList: []
   hasLiquid: 0
+  hasIce: 0
   isFull: 0
   isDirty: 0
   liquid: {fileID: 0}
