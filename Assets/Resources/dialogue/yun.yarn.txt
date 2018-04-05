@@ -6,7 +6,7 @@ position: 114,209
 <<if $drinkScoreIvory is -1 and $stateIvory is -1>>
     <<set $hasOrderedIvory = false>>
     <<set $progressIvory = 0>>
-    <<order Ivory n 0 n 0 whiskey 1.0>>
+    <<order Ivory 0 n 0 n 0 whiskey 1.0>>
     <<set $stateIvory = 0>>
     Customer: Ha...
     <<set $hasOrderedIvory = true>>
@@ -118,5 +118,5 @@ tags:
 colorID: 0
 position: -107,216
 ---
-<<order Yun n 0 n 0 whiskey 1.0>>
+<<order Yun 0 n 0 n 0 whiskey 1.0>>
 ===
