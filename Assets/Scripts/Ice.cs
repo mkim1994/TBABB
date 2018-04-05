@@ -24,7 +24,9 @@ public class Ice : MonoBehaviour {
 			sequence.Append(transform.DOLocalRotate(transform.localEulerAngles, 0.75f));
 			sequence.Append(transform.DOLocalMove(Vector3.zero + new Vector3 (Random.Range(-0.1f,0.1f), 0.25f+yIncrement, Random.Range(-0.1f,0.1f)), 0.5f, false).SetEase(Ease.InSine));
 			thisGlass.myIceList.Add(this);
-			thisGlass.hasIce = true;
+			if(thisGlass.myIceList.Count >= 3){
+				thisGlass.hasIce = true;
+			}
  		}
 	}
 
@@ -37,6 +39,9 @@ public class Ice : MonoBehaviour {
 			sequence.Append(transform.DOLocalRotate(transform.localEulerAngles, 0.75f));
 			sequence.Append(transform.DOLocalMove(Vector3.zero + new Vector3 (Random.Range(-0.1f,0.1f), 0.25f+yIncrement, Random.Range(-0.1f,0.1f)), 0.5f, false).SetEase(Ease.InSine));
 			thisGlass.myIceList.Add(this);
+			if(thisGlass.myIceList.Count >= 3){
+				thisGlass.hasIce = true;
+			}
 		}
 	}
 

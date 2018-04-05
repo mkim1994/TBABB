@@ -16,6 +16,8 @@ public class DrinkProfile {
  
 	public float drinkSimilarity = 0;
 	public float totalVolume;
+
+	public int ice = 0;
 		
 	public DrinkProfile(float _sodaRate = 0, float _tonicRate = 0, float _appleJuiceRate = 0, float _orangeJuiceRate = 0,
 						float _lemonJuiceRate = 0, //mixers
@@ -28,7 +30,7 @@ public class DrinkProfile {
 						
 						float _alcoholicStrength = 0, 
 						
-						float _smokiness = 0, float _sweetness = 0, float _sourness = 0, float _bitterness = 0, float _spiciness = 0){ //mixers
+						float _smokiness = 0, float _sweetness = 0, float _sourness = 0, float _bitterness = 0, float _spiciness = 0, int _ice = 0){ 
 		
 		//mixers
 		sodaRate = _sodaRate;
@@ -64,6 +66,9 @@ public class DrinkProfile {
 		sourness = _sourness;
 		bitterness = _bitterness;
 		spiciness = _spiciness;
+		
+		//ice
+		ice = _ice;
 	}
 
 
@@ -138,7 +143,7 @@ public class DrinkProfile {
 	public static DrinkProfile OrderDrink(	Flavor flavor = Flavor.none, float newFlavorPref = 0, 
 											DrinkBase dBase = DrinkBase.none, float newBasePref = 0, 
 											Mixer mixer = Mixer.none, float newMixerPref = 0,
-											Garnish garnish = Garnish.none, float newGarnishPref = 0){
+											Garnish garnish = Garnish.none, float newGarnishPref = 0, int newIceOrder = 0){
 												
 		DrinkProfile order = new DrinkProfile();
 		switch(flavor){
@@ -209,6 +214,9 @@ public class DrinkProfile {
 			default:
 			break;
 		}
+
+		order.ice = newIceOrder;
+		
 		return order;	
 	}
 

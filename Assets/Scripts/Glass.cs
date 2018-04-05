@@ -51,7 +51,14 @@ public class Glass : Pickupable
 			default:
 				break;
 		}
+	}
 
+	void Update(){
+		if(myIceList.Count >= 3){
+			liquid.hasIce = true;
+		} else {
+			liquid.hasIce = false;
+		}
 	}
 
 

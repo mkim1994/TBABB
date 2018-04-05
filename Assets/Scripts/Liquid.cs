@@ -4,6 +4,10 @@ using System.Xml;
 using UnityEngine;
 
 public class Liquid : MonoBehaviour {
+
+	public bool hasIce;
+
+	private int ice = 0;
  	private DrinkProfile myDrinkProfile;
 	private float previousAlcoholVolume;
 	private float prevABV;
@@ -48,13 +52,14 @@ public class Liquid : MonoBehaviour {
  		} else if (gameObject.GetComponent<SkinnedMeshRenderer>() == null)
 		{
 		}
- 
+
+
 
 		DetectCoasters ();
  		thisCocktail = new DrinkProfile (sodaVolume/height, tonicVolume/height, appleJuiceVolume/height, lemonJuiceVolume/height, 0, 0, 0, 0, 0, 0, 0, 
-			whiskeyVolume/height, ginVolume/height, tequilaVolume/height, vodkaVolume/height, rumVolume/height, beerVolume/height, 
-			wineVolume/height, brandyVolume/height, abv, 
-			smokiness, sweetness, sourness, bitterness, spiciness);
+		whiskeyVolume/height, ginVolume/height, tequilaVolume/height, vodkaVolume/height, rumVolume/height, beerVolume/height, 
+		wineVolume/height, brandyVolume/height, abv, 
+		smokiness, sweetness, sourness, bitterness, spiciness, ice);
         originalX = transform.localScale.x;
         originalZ = transform.localScale.z;
         if (GetComponent<Bottle>() == null)
@@ -78,6 +83,11 @@ public class Liquid : MonoBehaviour {
 		if (thisCocktail != null)
 		{
 			thisCocktail.totalVolume = totalVolume;
+			if(hasIce){
+				thisCocktail.ice = 1;
+			} else {
+				thisCocktail.ice = -1;
+			}
  		}
 
 		if (isBeingPoured)
@@ -178,7 +188,6 @@ public class Liquid : MonoBehaviour {
 
 	public void LetItPour()
 	{
-		Debug.Log("LetItPour is being called");
 		isBeingPoured = true;
 	}
 
@@ -351,7 +360,7 @@ public class Liquid : MonoBehaviour {
 			if (Vector3.Distance (coaster.gameObject.transform.position, transform.position) <= 0.55f) {
 				if(!isEvaluated)
 				{
- 					coaster.EvaluateDrink (this.thisCocktail, this);
+ 					coaster.EvaluateDrink (this.thisCocktail, this);	
 					isEvaluated = true;
 				}        
  			}

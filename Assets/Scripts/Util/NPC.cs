@@ -200,7 +200,7 @@ public class NPC : MonoBehaviour
     }
 
     public void SetCustomerVars(float score, float alcohol){
-        Debug.Log("set customer vars(score = " + score + ", alcohol = " + alcohol);
+        // Debug.Log("set customer vars(score = " + score + ", alcohol = " + alcohol);
         //float f1 = Services.GameManager.dialogue.variableStorage.GetValue("$drinkType" + characterName).AsNumber;
         var v1 = new Yarn.Value(score);
         var v2 = new Yarn.Value(alcohol);
