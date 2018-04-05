@@ -3,7 +3,7 @@ tags:
 colorID: 0
 position: -888,-113
 ---
-<<order Sahana n 0 n 0 n 0>>
+<<order Sahana 0 n 0 n 0 n 0>>
 ===
 title: 2Sahana
 tags: 
@@ -79,7 +79,7 @@ colorID: 0
 position: -653,-113
 ---
 Customer: Haha, yes...
-<<order Sahana n 0 n 0 n 0>>
+<<order Sahana 0 n 0 n 0 n 0>>
 <<set $hasOrderedSahana = true>>
 Customer: Uhm... give me anything, just no alcohol.
 ===
