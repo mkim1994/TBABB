@@ -43,61 +43,51 @@ public class Spawner : MonoBehaviour
 //		}
 	}
 
-	public void DoSpawnTaskSequence()
+	public void DoSpawnTaskSequence(int handNum)
 	{
-		Debug.Log("Started task sequence!");
-		_tm.Do(new ActionTask(SpawnIce))
-			.Then(new Wait(0.1f))
-			.Then(new ActionTask(SpawnIce))
-			.Then(new Wait(0.1f))
-			.Then(new ActionTask(SpawnIce))
-			.Then(new Wait(0.1f))
-			.Then(new ActionTask(SpawnIce))
-			.Then(new Wait(0.1f))
-			.Then(new ActionTask(SpawnIce))
-			.Then(new Wait(0.1f))
-			.Then(new ActionTask(SpawnIce));
+		StartCoroutine(SpawnIce(handNum));
 	}
 
-	public void SpawnIce()
+	public IEnumerator SpawnIce(int handNum)
 	{
-		switch (_spawnables)
-		{
-			case Spawnables.Garnish:
-//				List<GameObject> leftCreeps = new List<GameObject>();
-//				leftCreeps.Add(Instantiate(Resources.Load("Prefabs/enemy"), new Vector3(-13.83f, 4.7f, 0), Quaternion.identity) as GameObject);
-//				leftCreeps.Add(Instantiate(Resources.Load("Prefabs/enemy"), new Vector3(-12.83f, 4.7f, 0), Quaternion.identity) as GameObject);
-//				leftCreeps.Add(Instantiate(Resources.Load("Prefabs/enemy"), new Vector3(-11.83f, 4.7f, 0), Quaternion.identity) as GameObject);
-//				foreach (var creep in leftCreeps)
-//				{
-////					creep.GetComponent<Ice>().direction = 1f;
-//					creep.layer = 10;
-////					creep.GetComponent<MeshRenderer>().material = creep.GetComponent<Ice>().blueMat;
-////					creep.GetComponent<Ice>().teamNum = 0;
-//				}
-				break;
-			
-			case Spawnables.Glass:
-//				List<GameObject> rightCreeps = new List<GameObject>();
-//				rightCreeps.Add(Instantiate(Resources.Load("Prefabs/enemy"), new Vector3(15.21f, -4.969f, 0), Quaternion.identity) as GameObject);
-//				rightCreeps.Add(Instantiate(Resources.Load("Prefabs/enemy"), new Vector3(14.21f, -4.969f, 0), Quaternion.identity) as GameObject);
-//				rightCreeps.Add(Instantiate(Resources.Load("Prefabs/enemy"), new Vector3(13.21f, -4.969f, 0), Quaternion.identity) as GameObject);
-//				foreach (var creep in rightCreeps)
-//				{
-////					creep.GetComponent<Ice>().direction = -1f;
-//					creep.layer = 11;
-//					creep.GetComponent<MeshRenderer>().material = creep.GetComponent<Ice>().pinkMat;
-//					creep.GetComponent<Ice>().teamNum = 1;
-//				}
-				break;
-			
-			case Spawnables.Ice:
-				List<GameObject> icecubes = new List<GameObject>();
-				icecubes.Add(Instantiate(Resources.Load("Prefabs/icecube"), _iceMaker.iceSpawner.transform.position, Quaternion.identity) as GameObject);
- 				break;
+		switch(handNum){
+			case 0:
+				yield return new WaitForSeconds(0.1f);
+				GameObject newIcecube = Instantiate(Resources.Load("Prefabs/icecube"), _iceMaker.iceSpawnpointPos, Quaternion.identity) as GameObject;
+				newIcecube.transform.position = _iceMaker.iceSpawnpointPos;
+				newIcecube.GetComponent<Ice>().TweenToLeftGlass();
+
+				yield return new WaitForSeconds(0.1f);
+				GameObject newIcecube1 = Instantiate(Resources.Load("Prefabs/icecube"), _iceMaker.iceSpawnpointPos, Quaternion.identity) as GameObject;
+				newIcecube1.transform.position = _iceMaker.iceSpawnpointPos;
+				newIcecube1.GetComponent<Ice>().TweenToLeftGlass();
+
+				yield return new WaitForSeconds(0.1f);
+				GameObject newIcecube2 = Instantiate(Resources.Load("Prefabs/icecube"), _iceMaker.iceSpawnpointPos, Quaternion.identity) as GameObject;
+				newIcecube2.transform.position = _iceMaker.iceSpawnpointPos;
+				newIcecube2.GetComponent<Ice>().TweenToLeftGlass();
+			break;
+			case 1:
+				yield return new WaitForSeconds(0.1f);
+				GameObject newIcecube3 = Instantiate(Resources.Load("Prefabs/icecube"), _iceMaker.iceSpawnpointPos, Quaternion.identity) as GameObject;
+				newIcecube3.transform.position = _iceMaker.iceSpawnpointPos;
+				newIcecube3.GetComponent<Ice>().TweenToRightGlass();
+
+				yield return new WaitForSeconds(0.1f);
+				GameObject newIcecube4 = Instantiate(Resources.Load("Prefabs/icecube"), _iceMaker.iceSpawnpointPos, Quaternion.identity) as GameObject;
+				newIcecube4.transform.position = _iceMaker.iceSpawnpointPos;
+				newIcecube4.GetComponent<Ice>().TweenToRightGlass();
+
+				yield return new WaitForSeconds(0.1f);
+				GameObject newIcecube5 = Instantiate(Resources.Load("Prefabs/icecube"), _iceMaker.iceSpawnpointPos, Quaternion.identity) as GameObject;
+				newIcecube5.transform.position = _iceMaker.iceSpawnpointPos;
+				newIcecube5.GetComponent<Ice>().TweenToRightGlass();
+			break;
 			default:
-				break;
+			break;
 		}
+
+	
 	}
 
 }

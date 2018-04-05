@@ -13,7 +13,7 @@ using UnityEngine.SceneManagement;
 public class PlayerInput : MonoBehaviour
 {
 
-
+	public Camera myFirstPersonCamera; 
 	// [SerializeField]float smoothing = 2.0f;
 	public delegate void TweenManagerDelegate();
 	private TweenManagerDelegate _tweenManagerDelegate;
@@ -126,6 +126,10 @@ public class PlayerInput : MonoBehaviour
 		{
 			GetInput();
 			ProcessInput();
+			if(!Services.TweenManager.tweensAreActive){
+				ProcessMouseLook();
+				ProcessMovement();
+			}
 			InteractionRay();
 			DropzoneRay();
 			NonPickupableRay();
@@ -185,8 +189,7 @@ public class PlayerInput : MonoBehaviour
 		i_choose1 = player.GetButtonDown("Choose1");
 		i_choose2 = player.GetButtonDown("Choose2");
 	}
-
-	private void ProcessInput(){		
+	private void ProcessMovement(){
 		#region Movement
 		//which direction you'll move in
 		Vector3 moveDir = new Vector3 (moveVector.x, 0, moveVector.z);
@@ -196,7 +199,9 @@ public class PlayerInput : MonoBehaviour
 
 		cc.Move (moveDir * moveSpeed * Time.deltaTime);
 		#endregion
+	}
 
+	private void ProcessMouseLook(){
 		#region MouseLook
 		
 		verticalLook -= lookVector.y * lookSensitivity;
@@ -212,10 +217,10 @@ public class PlayerInput : MonoBehaviour
 			t += 4f * Time.deltaTime;
 			lookSensitivity = Mathf.Lerp(lookSensitivity, lookSensitivityAtStart, t);
 		}			
-	
-
-
 		#endregion
+	}
+
+	private void ProcessInput(){		
 		
 		#region Pick Up Left / Drop Left
 		if(i_pickupLeft && !Services.TweenManager.tweensAreActive){
@@ -432,14 +437,23 @@ public class PlayerInput : MonoBehaviour
 				{
 					if (pickupableInLeftHand.GetComponent<Glass>() != null)
 					{
-						Debug.Log("Ice maker activate!");
-						Glass lefthandGlass = pickupableInLeftHand.GetComponent<Glass>();
-						Sequence iceSequence = DOTween.Sequence();
+ 						Glass lefthandGlass = pickupableInLeftHand.GetComponent<Glass>();
 						Services.TweenManager.tweensAreActive = true;
-						iceSequence.Append(lefthandGlass.transform.DOLocalMove(iceMaker.iceSpawner.transform.position + (Vector3.down * 0.1f), 0.75f, false));
-//						iceMaker.iceSpawner.
-						iceMaker.iceSpawner.DoSpawnTaskSequence();
-					}
+						Sequence iceSequence = DOTween.Sequence();
+						iceSequence.Append(lefthandGlass.transform.DOMove(iceMaker.glassDropPos, 0.75f, false));
+						iceSequence.Append(lefthandGlass.transform.DOMove(iceMaker.glassDropPos, 1f, false));
+						iceSequence.Append(lefthandGlass.transform.DOLocalMove(lefthandGlass.leftHandPos, 0.75f, false));
+						iceSequence.OnComplete(()=>lefthandGlass.DeclareInactiveTween());
+						Sequence iceRotSequence = DOTween.Sequence();
+						iceRotSequence.Append(lefthandGlass.transform.DORotate(Vector3.zero, 0.75f));
+						iceRotSequence.Append(lefthandGlass.transform.DORotate(Vector3.zero, 1f));
+						iceRotSequence.Append(lefthandGlass.transform.DOLocalRotate(Vector3.zero, 0.75f));
+ 						iceMaker.SpawnIce(0);
+						StartCoroutine(pickupableInLeftHand.ChangeToWorldLayer(0.1f));
+						StartCoroutine(pickupableInLeftHand.ChangeToFirstPersonLayer(0.75f + 1f + 0.75f));
+						TweenFOV(myCam, 30, 60, 0.75f, 1f, 0.75f);
+						TweenFOV(myFirstPersonCamera, 30, 60, 0.75f, 1f, 0.75f);
+ 					}
 				}
 			}
 
@@ -461,7 +475,7 @@ public class PlayerInput : MonoBehaviour
 								StartCoroutine(startPourCoroutine);					
 								bottle.StartPourTween(Vector3.forward + new Vector3(-0.64f, 0, 0.5f));
 								bottle.RotateTween(bottle.leftHandPourRot);
- 							 
+
 							} 
 						}
 						else
@@ -488,7 +502,7 @@ public class PlayerInput : MonoBehaviour
 		}
 		
 		if(i_endUseLeft){
-			if(pickupableInLeftHand != null){
+ 			if(pickupableInLeftHand != null){
 				if (targetDropzone != null)
 				{
 					if (targetDropzone.GetComponentInParent<Coaster>() != null)
@@ -609,7 +623,7 @@ public class PlayerInput : MonoBehaviour
 		#region Use Right
 		if(i_startUseRight && !Services.TweenManager.tweensAreActive){
 			//one-handed use on something on bar
-			if (pickupableInRightHand != null)
+ 			if (pickupableInRightHand != null)
 			{
 				if (pickupableInRightHand.GetComponent<Glass>() != null)
 				{
@@ -635,7 +649,7 @@ public class PlayerInput : MonoBehaviour
 								StartCoroutine(WaitThenSetBoolToTrue(bottle.tweenTime, glass.liquid));
 								StartCoroutine(startPourCoroutine);					
 								bottle.StartPourTween(Vector3.forward + new Vector3(0.64f, 0, 0.5f));
-								bottle.RotateTween(bottle.rightHandPourRot);
+								bottle.RotateTween(bottle.rightHandPourRot);  
  							}
 						}
 						else
@@ -655,7 +669,6 @@ public class PlayerInput : MonoBehaviour
 							StartCoroutine(startPourCoroutine);					
 							bottle.StartPourTween(Vector3.forward + new Vector3(0.64f, 0, 0.5f));
 							bottle.RotateTween(bottle.rightHandPourRot);
- 
 						}
 					}
 				}
@@ -663,7 +676,7 @@ public class PlayerInput : MonoBehaviour
 		}
 		
 		if(i_endUseRight){
-			if(pickupableInRightHand != null){
+ 			if(pickupableInRightHand != null){
 				if (targetDropzone != null)
 				{
 					if (targetDropzone.GetComponentInParent<Coaster>() != null)
@@ -964,6 +977,13 @@ public class PlayerInput : MonoBehaviour
 	{
 		yield return new WaitForSeconds(0.1f);
 		_glass.EndPourFromBottle();
+	}
+
+	private void TweenFOV(Camera camToTween, float zoomFov, float unzoomFov, float zoomDuration, float waitTime, float unzoomDuration){
+		Sequence fovSequence = DOTween.Sequence();
+		fovSequence.Append(camToTween.DOFieldOfView(zoomFov, zoomDuration));
+		fovSequence.Append(camToTween.DOFieldOfView(zoomFov, waitTime));
+		fovSequence.Append(camToTween.DOFieldOfView(unzoomFov, unzoomDuration));
 	}
 }
 

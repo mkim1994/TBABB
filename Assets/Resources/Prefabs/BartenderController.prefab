@@ -1553,12 +1553,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d16bc231d7a9d4d4290ca16737e4fe57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  myFirstPersonCamera: {fileID: 20219987243707838}
   playerId: 0
   npc: {fileID: 0}
+  iceMaker: {fileID: 0}
   dropPos: {x: 0, y: 0, z: 0}
   targetDropzone: {fileID: 0}
-  lightSwitch: {fileID: 0}
-  sink: {fileID: 0}
+  backdoor: {fileID: 0}
   layerMask:
     serializedVersion: 2
     m_Bits: 4294965499

@@ -6,9 +6,9 @@ public class Pickupable : MonoBehaviour
 {
 
     public bool isForDropzoneOnly;    
-    private Vector3 leftHandPos = new Vector3 (-0.64f, -0.89f, 1.241f);
+    public Vector3 leftHandPos = new Vector3 (-0.64f, -0.89f, 1.241f);
     protected Vector3 dropOffset;
-    private Vector3 rightHandPos = new Vector3 (0.64f, -0.89f, 1.473f);
+    public Vector3 rightHandPos = new Vector3 (0.64f, -0.89f, 1.473f);
     public Dropzone targetDropzone;
     public Vector3 startPos;
     public Vector3 dropPos;
@@ -195,7 +195,7 @@ public class Pickupable : MonoBehaviour
         pickedUp = true;
     }
 
-    IEnumerator ChangeToFirstPersonLayer(float delay)
+    public IEnumerator ChangeToFirstPersonLayer(float delay)
     {
         yield return new WaitForSeconds(delay);
         int children = transform.childCount;
@@ -218,7 +218,7 @@ public class Pickupable : MonoBehaviour
         }
     }
 
-    protected IEnumerator ChangeToWorldLayer(float delay)
+    public IEnumerator ChangeToWorldLayer(float delay)
     {
         yield return new WaitForSeconds(delay);
         startPos = transform.localPosition;

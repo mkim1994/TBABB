@@ -6,6 +6,7 @@ using DG.Tweening;
 
 public class Glass : Pickupable
 {
+	public List<Ice> myIceList = new List<Ice>();
 	public bool hasLiquid;
 	[SerializeField] private bool isFull;
 	public bool isDirty;
