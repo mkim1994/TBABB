@@ -35,6 +35,7 @@ public class UIControls : MonoBehaviour {
 	private GameObject rightHandObj;
 	private bool isExceptionTextRequired = false;
 	private int stringOffset;
+	private PlayerInput player;
 	private string[] buttonAndKeyStrings =
 	{
 		"",
@@ -55,6 +56,7 @@ public class UIControls : MonoBehaviour {
 	[SerializeField]private bool isMessageOverrideOn = false;
 	
 	void Start(){
+		player = Services.GameManager.playerInput;
 		clearTextCoroutine = ClearTextCoroutine(centerText, 3);
 		botCenterImg.SetActive(false);
 		myCam = FindObjectOfType<Camera>();
@@ -91,7 +93,6 @@ public class UIControls : MonoBehaviour {
 		{
 			rightHandObj = null;
 		}
-
 
 		if(leftHandObj != null && rightHandObj != null){ //if both hands have object in them
 			//case 1: if bottle in one, glass in the other
@@ -141,6 +142,7 @@ public class UIControls : MonoBehaviour {
 //		left hand not empty; right hand empty
 		else if(leftHandObj != null && rightHandObj == null)
 		{	
+			
 //			inRightHandText[0].text = "";
 //			inRightHandText[1].text = "";
 			ClearTextArray(inRightHandText);
@@ -308,7 +310,7 @@ public class UIControls : MonoBehaviour {
 							targetObj = "tonic";
 						break;
 						case Mixer.vermouth:
-							targetObj = "apple juice";
+							targetObj = "vermouth";
 						break;
 						case Mixer.soda:
 							targetObj = "soda";
@@ -359,7 +361,22 @@ public class UIControls : MonoBehaviour {
 				{
 					ClearUI();
 				}
-			} 
+			}
+			else if (hitObj.GetComponent<IceMaker>() != null){
+				if(player.pickupableInLeftHand != null){
+					if(player.pickupableInLeftHand.GetComponent<Glass>() != null){
+						leftHandActionImage.enabled = true;
+						inLeftHandText[0].text = buttonAndKeyStrings[0 + stringOffset];
+						inLeftHandText[1].text = "get ice";
+					} 
+				} else if(player.pickupableInRightHand != null){
+					if(player.pickupableInRightHand.GetComponent<Glass>() != null){
+						inRightHandText[0].text = buttonAndKeyStrings[1 + stringOffset];
+						rightHandActionImage.enabled = true;
+						inRightHandText[1].text = "get ice";
+					}
+				}
+			}
 			//ray hits glass
 			else if (hitObj.GetComponent<Glass>() != null && !isExceptionTextRequired)
 			{
@@ -405,7 +422,8 @@ public class UIControls : MonoBehaviour {
 				{
 					ClearUI();
 				}
-			} 
+			}
+			
 			//ray hits NPC
 			else if (hitObj.GetComponent<NPC>() != null)
 			{

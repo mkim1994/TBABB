@@ -4,7 +4,7 @@ using UnityEngine;
 public class DrinkProfile {
 
 	 //mixers 
-	public float 	sodaRate, tonicRate, appleJuiceRate, orangeJuiceRate, lemonJuiceRate; 
+	public float 	sodaRate, tonicRate, vermouthRate, orangeJuiceRate, lemonJuiceRate; 
 	
 	//garnish
 	public float 	lemonSliceRate, orangePeelRate, bitterGarnishRate, sugarRate, 
@@ -19,7 +19,7 @@ public class DrinkProfile {
 
 	public int ice = 0;
 		
-	public DrinkProfile(float _sodaRate = 0, float _tonicRate = 0, float _appleJuiceRate = 0, float _orangeJuiceRate = 0,
+	public DrinkProfile(float _sodaRate = 0, float _tonicRate = 0, float _vermouthRate = 0, float _orangeJuiceRate = 0,
 						float _lemonJuiceRate = 0, //mixers
 						
 						float _lemonSliceRate = 0, float _orangePeelRate = 0, float _bitterGarnishRate = 0,
@@ -35,7 +35,7 @@ public class DrinkProfile {
 		//mixers
 		sodaRate = _sodaRate;
 		tonicRate = _tonicRate;
-		appleJuiceRate = _appleJuiceRate;
+		vermouthRate = _vermouthRate;
 		orangeJuiceRate = _orangeJuiceRate;
 		lemonJuiceRate = _lemonJuiceRate;
 
@@ -77,7 +77,7 @@ public class DrinkProfile {
 		if(one != null && two != null){
 			_similarity = 	Mathf.Abs(one.sodaRate - two.sodaRate)
 						+ Mathf.Abs(one.tonicRate - two.tonicRate) 
-						+ Mathf.Abs(one.appleJuiceRate - two.appleJuiceRate)
+						+ Mathf.Abs(one.vermouthRate - two.vermouthRate)
 						+ Mathf.Abs (one.orangeJuiceRate - two.orangeJuiceRate)
 						+ Mathf.Abs (one.lemonJuiceRate - two.lemonJuiceRate)
 						+ Mathf.Abs(one.lemonSliceRate - two.lemonSliceRate)
@@ -197,7 +197,7 @@ public class DrinkProfile {
 
 		switch(mixer){
 			case Mixer.vermouth:
-				order.appleJuiceRate = newMixerPref;
+				order.vermouthRate = newMixerPref;
 			break;
 			case Mixer.lemon_juice:
 				order.lemonJuiceRate = newMixerPref;
