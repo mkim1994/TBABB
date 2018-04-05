@@ -24,6 +24,7 @@ public class PlayerInput : MonoBehaviour
 	private IEnumerator tweenManagerCoroutine;
 	private IEnumerator startPourCoroutine;
 
+	private IEnumerator setIsPouringToTrueCoroutine;
 	public enum InteractionState
 	{
 		BothHandsInUse,
@@ -462,7 +463,8 @@ public class PlayerInput : MonoBehaviour
 								Glass glass = pickupable.GetComponent<Glass>();
 								_startPourDelegate = glass.ReceivePourFromBottle;
 								startPourCoroutine = UtilCoroutines.WaitThenPour(bottle.tweenTime, glass.ReceivePourFromBottle, bottle, 0);
-								StartCoroutine(WaitThenSetBoolToTrue(bottle.tweenTime, glass.liquid));
+								setIsPouringToTrueCoroutine = WaitThenSetBoolToTrue(bottle.tweenTime, glass.liquid);
+								StartCoroutine(setIsPouringToTrueCoroutine);
 								StartCoroutine(startPourCoroutine);					
 								bottle.StartPourTween(Vector3.forward + new Vector3(-0.64f, 0, 0.5f));
 								bottle.RotateTween(bottle.leftHandPourRot);
@@ -484,6 +486,7 @@ public class PlayerInput : MonoBehaviour
 							startPourCoroutine = UtilCoroutines.WaitThenPour(bottle.tweenTime, glass.ReceivePourFromBottle, bottle, 0);
 							StartCoroutine(WaitThenSetBoolToTrue(bottle.tweenTime, glass.liquid));
 							StartCoroutine(startPourCoroutine);					
+							setIsPouringToTrueCoroutine = WaitThenSetBoolToTrue(bottle.tweenTime, glass.liquid);
 							bottle.StartPourTween(Vector3.forward + new Vector3(-0.64f, 0, 0.5f));
 							bottle.RotateTween(bottle.leftHandPourRot);
 						} 
@@ -529,7 +532,7 @@ public class PlayerInput : MonoBehaviour
 					else
 					{
 						StopCoroutine(startPourCoroutine);
-						if (pickupableInLeftHand.GetComponent<Bottle>() != null)
+ 						if (pickupableInLeftHand.GetComponent<Bottle>() != null)
 						{
 							Bottle bottle = pickupableInLeftHand.GetComponent<Bottle>();
  							foreach (var sequence in bottle.tweenSequences)
@@ -615,7 +618,9 @@ public class PlayerInput : MonoBehaviour
 								_startPourDelegate = glass.ReceivePourFromBottle;
 								startPourCoroutine = UtilCoroutines.WaitThenPour(bottle.tweenTime, glass.ReceivePourFromBottle, bottle, 1);
 								StartCoroutine(WaitThenSetBoolToTrue(bottle.tweenTime, glass.liquid));
-								StartCoroutine(startPourCoroutine);					
+								StartCoroutine(startPourCoroutine);		
+								setIsPouringToTrueCoroutine = WaitThenSetBoolToTrue(bottle.tweenTime, glass.liquid);
+								StartCoroutine(setIsPouringToTrueCoroutine);
 								bottle.StartPourTween(Vector3.forward + new Vector3(0.64f, 0, 0.5f));
 								bottle.RotateTween(bottle.rightHandPourRot);  
  							}
@@ -654,7 +659,7 @@ public class PlayerInput : MonoBehaviour
 							//if customer is present, and has not accepted the drink, then end properly 
 						{ 
 							StopCoroutine(startPourCoroutine);
-							if (pickupableInRightHand.GetComponent<Bottle>() != null)
+ 							if (pickupableInRightHand.GetComponent<Bottle>() != null)
 							{
 								Bottle bottle = pickupableInRightHand.GetComponent<Bottle>();
  								foreach (var sequence in bottle.tweenSequences)
@@ -682,7 +687,7 @@ public class PlayerInput : MonoBehaviour
 					else
 					{
 						StopCoroutine(startPourCoroutine);
-						if (pickupableInRightHand.GetComponent<Bottle>() != null)
+ 						if (pickupableInRightHand.GetComponent<Bottle>() != null)
 						{
 							Bottle bottle = pickupableInRightHand.GetComponent<Bottle>();
 							foreach (var sequence in bottle.tweenSequences)
@@ -713,7 +718,7 @@ public class PlayerInput : MonoBehaviour
 
 		#region Two-handed Interactions
 
-		if (i_useLeft && i_useRight && !Services.TweenManager.tweensAreActive)
+		if (i_startUseLeft && i_startUseRight)
 		{
 			switch (_interactionState)
 			{
@@ -721,39 +726,89 @@ public class PlayerInput : MonoBehaviour
  					Bottle bottle = pickupableInLeftHand.GetComponent<Bottle>();
 					Glass glass = pickupableInRightHand.GetComponent<Glass>();
 					glass.ReceivePourFromBottle(bottle, 1);
-					bottle.StartPourTween(Vector3.forward + new Vector3(-0.482f, 1.5f, 0.5f));
-					bottle.RotateTween(bottle.leftHandPourRot);
+					// bottle.StartPourTween(Vector3.forward + new Vector3(-0.482f, 1.5f, 0.5f));
+					// bottle.RotateTween(bottle.leftHandPourRot);
+					_startPourDelegate = glass.ReceivePourFromBottle;
+					startPourCoroutine = UtilCoroutines.WaitThenPour(bottle.tweenTime, glass.ReceivePourFromBottle, bottle, 1);
+					StartCoroutine(WaitThenSetBoolToTrue(bottle.tweenTime, glass.liquid));
+					StartCoroutine(startPourCoroutine);					
+					bottle.StartPourTween(Vector3.forward + new Vector3(-0.64f, 0, 0.5f));
+					bottle.RotateTween(bottle.leftHandPourRot);  
 					break;
 				case InteractionState.LeftHasGlass_RightHasBottle:
- 					Glass glass0 = pickupableInLeftHand.GetComponent<Glass>();
-					Bottle bottle0 = pickupableInRightHand.GetComponent<Bottle>();
+ 					Bottle bottle0 = pickupableInRightHand.GetComponent<Bottle>();
+					Glass glass0 = pickupableInLeftHand.GetComponent<Glass>();
 					glass0.ReceivePourFromBottle(bottle0, 0);
-					bottle0.StartPourTween(Vector3.forward + new Vector3(0.482f, 1.5f, 0.5f));
-					bottle0.RotateTween(bottle0.rightHandPourRot);
+					// bottle.StartPourTween(Vector3.forward + new Vector3(-0.482f, 1.5f, 0.5f));
+					// bottle.RotateTween(bottle.leftHandPourRot);
+					_startPourDelegate = glass0.ReceivePourFromBottle;
+					startPourCoroutine = UtilCoroutines.WaitThenPour(bottle0.tweenTime, glass0.ReceivePourFromBottle, bottle0, 1);
+					StartCoroutine(WaitThenSetBoolToTrue(bottle0.tweenTime, glass0.liquid));
+					StartCoroutine(startPourCoroutine);					
+					bottle0.StartPourTween(Vector3.forward + new Vector3(0.64f, 0, 0.5f));
+					bottle0.RotateTween(bottle0.rightHandPourRot);  
 					break;
 				default:
 					break;
 			}
 		}
-		else if (i_useLeft && i_endUseRight)
+		else if (i_endUseRight || i_endUseLeft)
 		{
 			switch (_interactionState)
 			{
 				case InteractionState.LeftHasBottle_RightHasGlass:
-					Bottle bottle = pickupableInLeftHand.GetComponent<Bottle>();
-					Glass glass = pickupableInRightHand.GetComponent<Glass>();
-					bottle.RotateToZeroTween();
-					bottle.EndPourTween();
-					glass.EndPourFromBottle();
-					glass.EndPourTween();
+					StopCoroutine(startPourCoroutine);
+					if (pickupableInLeftHand.GetComponent<Bottle>() != null)
+					{
+						Bottle bottle = pickupableInLeftHand.GetComponent<Bottle>();
+						foreach (var sequence in bottle.tweenSequences)
+						{
+							sequence.Kill(false);
+						}
+					}
+					if (pickupableInRightHand != null)
+					{
+						if (pickupableInRightHand.GetComponent<Glass>() != null)
+						{
+							Glass glass = pickupableInRightHand.GetComponent<Glass>();
+							glass.liquid.isBeingPoured = false;
+							IEnumerator isBeingPouredCoroutine = WaitThenCallFunction(glass);
+							StartCoroutine(isBeingPouredCoroutine);
+						}
+					}
+					pickupableInLeftHand.RotateToZeroTween();
+					pickupableInLeftHand.EndPourTween();
+					pickupableInRightHand.RotateToZeroTween();
+					pickupableInRightHand.EndPourTween();
+					StartCoroutine(UtilCoroutines.WaitThenSetTweensToInactive(pickupableInLeftHand.tweenEndTime, _tweenManagerDelegate));
 					break;
 				case InteractionState.LeftHasGlass_RightHasBottle:
-					Glass glass0 = pickupableInLeftHand.GetComponent<Glass>();
-					Bottle bottle0 = pickupableInRightHand.GetComponent<Bottle>();
-					bottle0.RotateToZeroTween();
-					bottle0.EndPourTween();
-					glass0.EndPourFromBottle();
-					glass0.EndPourTween();
+					StopCoroutine(startPourCoroutine);
+					if(pickupableInRightHand != null){
+						if (pickupableInRightHand.GetComponent<Bottle>() != null)
+						{
+							Bottle bottle = pickupableInRightHand.GetComponent<Bottle>();
+							foreach (var sequence in bottle.tweenSequences)
+							{
+								sequence.Kill(false);
+							}
+						}
+					}
+					if (pickupableInLeftHand != null)
+					{
+						if (pickupableInLeftHand.GetComponent<Glass>() != null)
+						{
+							Glass glass = pickupableInLeftHand.GetComponent<Glass>();
+							glass.liquid.isBeingPoured = false;
+							IEnumerator isBeingPouredCoroutine = WaitThenCallFunction(glass);
+							StartCoroutine(isBeingPouredCoroutine);
+						}
+					}
+					pickupableInLeftHand.RotateToZeroTween();
+					pickupableInLeftHand.EndPourTween();
+					pickupableInRightHand.RotateToZeroTween();
+					pickupableInRightHand.EndPourTween();
+					StartCoroutine(UtilCoroutines.WaitThenSetTweensToInactive(pickupableInLeftHand.tweenEndTime, _tweenManagerDelegate));
 					break;
 				default:
 					break;
@@ -901,12 +956,14 @@ public class PlayerInput : MonoBehaviour
 	{
 		yield return new WaitForSeconds(delay);
 		liquid.isBeingPoured = true;
+		Debug.Log("Whooo time to pourrrr");
 	}
 
 	public IEnumerator WaitThenCallFunction(Glass _glass)
 	{
-		yield return new WaitForSeconds(0.1f);
+		yield return new WaitForSeconds(0.95f);
 		_glass.EndPourFromBottle();
+		_glass.liquid.isBeingPoured = false;
 	}
 
 	private void TweenFOV(Camera camToTween, float zoomFov, float unzoomFov, float zoomDuration, float waitTime, float unzoomDuration){

@@ -8,6 +8,7 @@ public class Glass : Pickupable
 {
 	public List<Ice> myIceList = new List<Ice>();
 	public bool hasLiquid;
+	public bool hasIce;
 	[SerializeField] private bool isFull;
 	public bool isDirty;
 
@@ -178,8 +179,9 @@ public class Glass : Pickupable
 		rotateSequence.Append(transform.DOLocalRotate(leftHandPourRot, 0.5f, RotateMode.Fast));
 		rotateSequence.Append(transform.DOLocalRotate(Vector3.zero, 0.5f, RotateMode.Fast));
 		rotateSequence.OnComplete(() => liquid.EmptyLiquid());
-		
-//		liquid.empty;
+		// rotateSequence.OnComplete(()=>ClearIce());
+		ClearIce();
+ //		liquid.empty;
 	}
 	
 	public void RightHandEmptyGlass()
@@ -195,12 +197,17 @@ public class Glass : Pickupable
 		rotateSequence.Append(transform.DOLocalRotate(rightHandPourRot, 0.5f, RotateMode.Fast));
 		rotateSequence.Append(transform.DOLocalRotate(Vector3.zero, 0.5f, RotateMode.Fast));
 		rotateSequence.OnComplete(() => liquid.EmptyLiquid());
-		
+		// rotateSequence.OnComplete(()=>ClearIce());
+		ClearIce();
 //		liquid.empty;
 	}
 
-	public void UseIceMaker(Vector3 pos){
-		MoveTween(pos);
+	public void ClearIce(){
+		foreach (var ice in myIceList){
+			//Do stuff
+			Destroy(ice.gameObject);
+		}
+		myIceList.Clear();
 	}
 
 }
