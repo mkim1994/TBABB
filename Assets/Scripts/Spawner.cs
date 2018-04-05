@@ -55,33 +55,33 @@ public class Spawner : MonoBehaviour
 				yield return new WaitForSeconds(0.1f);
 				GameObject newIcecube = Instantiate(Resources.Load("Prefabs/icecube"), _iceMaker.iceSpawnpointPos, Quaternion.identity) as GameObject;
 				newIcecube.transform.position = _iceMaker.iceSpawnpointPos;
-				newIcecube.GetComponent<Ice>().TweenToLeftGlass();
+				newIcecube.GetComponent<Ice>().TweenToLeftGlass(0);
 
 				yield return new WaitForSeconds(0.1f);
 				GameObject newIcecube1 = Instantiate(Resources.Load("Prefabs/icecube"), _iceMaker.iceSpawnpointPos, Quaternion.identity) as GameObject;
 				newIcecube1.transform.position = _iceMaker.iceSpawnpointPos;
-				newIcecube1.GetComponent<Ice>().TweenToLeftGlass();
+				newIcecube1.GetComponent<Ice>().TweenToLeftGlass(0.1f);
 
 				yield return new WaitForSeconds(0.1f);
 				GameObject newIcecube2 = Instantiate(Resources.Load("Prefabs/icecube"), _iceMaker.iceSpawnpointPos, Quaternion.identity) as GameObject;
 				newIcecube2.transform.position = _iceMaker.iceSpawnpointPos;
-				newIcecube2.GetComponent<Ice>().TweenToLeftGlass();
+				newIcecube2.GetComponent<Ice>().TweenToLeftGlass(0.2f);
 			break;
 			case 1:
 				yield return new WaitForSeconds(0.1f);
 				GameObject newIcecube3 = Instantiate(Resources.Load("Prefabs/icecube"), _iceMaker.iceSpawnpointPos, Quaternion.identity) as GameObject;
 				newIcecube3.transform.position = _iceMaker.iceSpawnpointPos;
-				newIcecube3.GetComponent<Ice>().TweenToRightGlass();
+				newIcecube3.GetComponent<Ice>().TweenToRightGlass(0);
 
 				yield return new WaitForSeconds(0.1f);
 				GameObject newIcecube4 = Instantiate(Resources.Load("Prefabs/icecube"), _iceMaker.iceSpawnpointPos, Quaternion.identity) as GameObject;
 				newIcecube4.transform.position = _iceMaker.iceSpawnpointPos;
-				newIcecube4.GetComponent<Ice>().TweenToRightGlass();
+				newIcecube4.GetComponent<Ice>().TweenToRightGlass(0.1f);
 
 				yield return new WaitForSeconds(0.1f);
 				GameObject newIcecube5 = Instantiate(Resources.Load("Prefabs/icecube"), _iceMaker.iceSpawnpointPos, Quaternion.identity) as GameObject;
 				newIcecube5.transform.position = _iceMaker.iceSpawnpointPos;
-				newIcecube5.GetComponent<Ice>().TweenToRightGlass();
+				newIcecube5.GetComponent<Ice>().TweenToRightGlass(0.2f);
 			break;
 			default:
 			break;

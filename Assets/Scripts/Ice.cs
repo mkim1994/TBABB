@@ -13,22 +13,25 @@ public class Ice : MonoBehaviour {
 		
 	}
 
-	public void TweenToLeftGlass(){
+	public void TweenToLeftGlass(float yIncrement){
 		if(Services.GameManager.playerInput.pickupableInLeftHand != null){
 			transform.SetParent(Services.GameManager.playerInput.pickupableInLeftHand.transform);
+			transform.eulerAngles = new Vector3(Random.Range(1,360), Random.Range(1,360), Random.Range(1,360));
 			// transform.localPosition = Vector3.zero;
 			Sequence sequence = DOTween.Sequence();
-			sequence.Append(transform.DOLocalRotate(Vector3.zero, 0.75f));
-			sequence.Append(transform.DOLocalMove(Vector3.zero + new Vector3 (0, 0.25f, 0), 0.5f, false).SetEase(Ease.InSine));
+			sequence.Append(transform.DOLocalRotate(transform.localEulerAngles, 0.75f));
+			sequence.Append(transform.DOLocalMove(Vector3.zero + new Vector3 (Random.Range(-0.1f,0.1f), 0.25f+yIncrement, Random.Range(-0.1f,0.1f)), 0.5f, false).SetEase(Ease.InSine));
+
 		}
 	}
 
-	public void TweenToRightGlass(){
+	public void TweenToRightGlass(float yIncrement){
 		if(Services.GameManager.playerInput.pickupableInRightHand != null){
 			transform.SetParent(Services.GameManager.playerInput.pickupableInRightHand.transform);
 			Sequence sequence = DOTween.Sequence();
-			sequence.Append(transform.DOLocalRotate(Vector3.zero, 0.75f));
-			sequence.Append(transform.DOLocalMove(Vector3.zero + new Vector3 (0, 0.25f, 0), 0.5f, false).SetEase(Ease.InSine));
+			transform.eulerAngles = new Vector3(Random.Range(1,360), Random.Range(1,360), Random.Range(1,360));
+			sequence.Append(transform.DOLocalRotate(transform.localEulerAngles, 0.75f));
+			sequence.Append(transform.DOLocalMove(Vector3.zero + new Vector3 (Random.Range(-0.1f,0.1f), 0.25f+yIncrement, Random.Range(-0.1f,0.1f)), 0.5f, false).SetEase(Ease.InSine));
 		}
 	}
 

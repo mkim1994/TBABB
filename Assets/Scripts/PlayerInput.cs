@@ -362,15 +362,6 @@ public class PlayerInput : MonoBehaviour
 					}
  				}		
 			} 
-//			 else if (pickupable != null && pickupableInRightHand != null && targetDropzone != null)
-//			 {
-//				 if (!targetDropzone.isOccupied)
-//				 {
-//					 pickupableInRightHand.dropPos = targetDropzone.transform.position;
-//					 pickupableInRightHand.targetDropzone = targetDropzone;
-//					 pickupableInRightHand.InteractRightHand();
-//				 }
-//			 }
 			 else if (pickupable != null && pickupableInRightHand != null && targetDropzone != null){ //swap
 				if(dropPos != Vector3.zero){
 					if (targetDropzone.GetComponentInParent<Coaster>() == null)
@@ -565,72 +556,49 @@ public class PlayerInput : MonoBehaviour
 			}
 		} 
 		
-//		if(i_useLeft && !Services.TweenManager.tweensAreActive){
-//			//one-handed use on something on bar
-//			if (pickupableInLeftHand != null && pickupable != null && pickupableInRightHand == null){ 
-//				pickupableInLeftHand.UseLeftHand();
-//			} 
-//			
-//			else if (pickupableInLeftHand != null && pickupableInRightHand != null) { //two-handed use (left hand)
-//				if (pickupableInLeftHand.GetComponent<Bottle>() != null && pickupableInRightHand.GetComponent<Glass>() != null) { //BOTTLE : GLASS
-//					pickupableInLeftHand.GetComponent<Bottle>().PourIntoPickedUpGlass();
-//					pickupableInRightHand.GetComponent<Glass>().ReceivePourFromBottle(pickupableInLeftHand.GetComponent<Bottle>(), 1);
-//				} else if (pickupableInRightHand.GetComponent<Bottle>() != null && pickupableInLeftHand.GetComponent<Bottle>() != null){ //BOTTLE : BOTTLE
-//					pickupableInLeftHand.UseLeftHand();				
-//				}
-//			}
-//		
-////			if (pickupableInLeftHand != null && pickupableInRightHand != null) { //two-handed use (right hand)
-////                if (pickupableInRightHand.GetComponent<Bottle>() != null && pickupableInLeftHand.GetComponent<Glass>() != null) {
-//// 					pickupableInRightHand.GetComponent<Bottle>().PourIntoPickedUpGlass();
-////					pickupableInLeftHand.GetComponent<Glass>().ReceivePourFromBottle(pickupableInRightHand.GetComponent<Bottle>(), 0);
-////                } else if (pickupableInRightHand.GetComponent<Bottle>() != null && pickupableInLeftHand.GetComponent<Rag>() != null){
-//// 				} 
-////			}	  
-//		} 
-		
-//		if(i_endUseLeft){
-//			if(pickupableInLeftHand != null){
-//				pickupableInLeftHand.RotateToZeroTween();
-//				pickupableInLeftHand.EndPourTween();
-//				if (pickupable != null)
-//				{
-//					if (pickupable.GetComponent<Glass>() != null)
-//					{
-//						pickupable.GetComponent<Glass>().EndPourFromBottle();
-//					}
-//				}
-//			}
-//			if (pickupableInLeftHand != null && pickupableInRightHand != null){
-//				pickupableInLeftHand.RotateToZeroTween();
-//				pickupableInRightHand.RotateToZeroTween();
-//				if(pickupableInLeftHand.GetComponent<Glass>() != null){	
-//					pickupableInLeftHand.GetComponent<Glass>().EndPourFromBottle();
-//					pickupableInLeftHand.GetComponent<Glass>().EndPourTween();
-//					pickupableInRightHand.EndPourTween();
-//
-//				}
-//				if(pickupableInRightHand.GetComponent<Glass>() != null){	
-//					pickupableInRightHand.GetComponent<Glass>().EndPourFromBottle();
-//					pickupableInRightHand.GetComponent<Glass>().EndPourTween();
-//					pickupableInLeftHand.EndPourTween();
-//				}
-//			}
-//		} 
-		
 		#endregion
 
 		#region Use Right
 		if(i_startUseRight && !Services.TweenManager.tweensAreActive){
 			//one-handed use on something on bar
- 			if (pickupableInRightHand != null)
+			if (sink != null)
 			{
-				if (pickupableInRightHand.GetComponent<Glass>() != null)
+				if (pickupableInRightHand != null)
 				{
-					Glass rightHandGlass = pickupableInRightHand.GetComponent<Glass>();
-					rightHandGlass.RightHandEmptyGlass();
+					if (pickupableInRightHand.GetComponent<Glass>() != null)
+					{
+						Glass rightHandGlass = pickupableInRightHand.GetComponent<Glass>();
+						rightHandGlass.RightHandEmptyGlass();
+					}
 				}
 			}
+
+			if (iceMaker != null)
+			{
+				if (pickupableInRightHand != null)
+				{
+					if (pickupableInRightHand.GetComponent<Glass>() != null)
+					{
+ 						Glass rightHandGlass = pickupableInRightHand.GetComponent<Glass>();
+						Services.TweenManager.tweensAreActive = true;
+						Sequence iceSequence = DOTween.Sequence();
+						iceSequence.Append(rightHandGlass.transform.DOMove(iceMaker.glassDropPos, 0.75f, false));
+						iceSequence.Append(rightHandGlass.transform.DOMove(iceMaker.glassDropPos, 1f, false));
+						iceSequence.Append(rightHandGlass.transform.DOLocalMove(rightHandGlass.rightHandPos, 0.75f, false));
+						iceSequence.OnComplete(()=>rightHandGlass.DeclareInactiveTween());
+						Sequence iceRotSequence = DOTween.Sequence();
+						iceRotSequence.Append(rightHandGlass.transform.DORotate(Vector3.zero, 0.75f));
+						iceRotSequence.Append(rightHandGlass.transform.DORotate(Vector3.zero, 1f));
+						iceRotSequence.Append(rightHandGlass.transform.DOLocalRotate(Vector3.zero, 0.75f));
+ 						iceMaker.SpawnIce(1);
+						StartCoroutine(pickupableInRightHand.ChangeToWorldLayer(0.1f));
+						StartCoroutine(pickupableInRightHand.ChangeToFirstPersonLayer(0.75f + 1f + 0.75f));
+						TweenFOV(myCam, 30, 60, 0.75f, 1f, 0.75f);
+						TweenFOV(myFirstPersonCamera, 30, 60, 0.75f, 1f, 0.75f);
+ 					}
+				}
+			}
+
 			if (pickupableInRightHand != null && pickupable != null)
 			{
 				if (targetDropzone != null)
@@ -805,27 +773,6 @@ public class PlayerInput : MonoBehaviour
 			{
 				lightSwitch.EndDay();
 			}
-
-			// if (sink != null)
-			// {
-			// 	if (pickupableInLeftHand != null)
-			// 	{
-			// 		if (pickupableInLeftHand.GetComponent<Glass>() != null)
-			// 		{
-			// 			Glass leftHandGlass = pickupableInLeftHand.GetComponent<Glass>();
-			// 			leftHandGlass.EmptyGlass();
-			// 		}
-			// 	}
-
-			// 	if (pickupableInRightHand != null)
-			// 	{
-			// 		if (pickupableInRightHand.GetComponent<Glass>() != null)
-			// 		{
-			// 			Glass rightHandGlass = pickupableInRightHand.GetComponent<Glass>();
-			// 			rightHandGlass.EmptyGlass();
-			// 		}
-			// 	}
-			// }
 			
 			if (backdoor != null)
 			{
@@ -949,23 +896,6 @@ public class PlayerInput : MonoBehaviour
 			iceMaker = null;
 		}
 	}
-
-//	private void CoasterRay(){
-//		Ray ray = new Ray(myCam.transform.position, myCam.transform.forward);
-//		float rayDist = Mathf.Infinity;
-//		RaycastHit hit = new RaycastHit();
-//		
-//		if(Physics.Raycast(ray, out hit, rayDist, coasterLayerMask)){
-//			GameObject hitObj = hit.transform.gameObject; //if you're actually looking at something
-// 			if(hitObj.GetComponent<Coaster>() != null && Vector3.Distance(transform.position, hitObj.transform.position) <= maxTalkingDist){ //check if object looked at can be picked up
-// 				targetCoaster = hitObj.GetComponent<Coaster>(); //if it's NPC and close enough, assign it to NPC.				  
-// 			} else if (hitObj.GetComponent<Coaster>() == null || Vector3.Distance(transform.position, hitObj.transform.position) > maxTalkingDist){
-//				targetCoaster = null;
-// 			} 	
-//		} else {
-//			targetCoaster = null;
-//		}
-//	}
 	
 	public IEnumerator WaitThenSetBoolToTrue(float delay, Liquid liquid)
 	{
