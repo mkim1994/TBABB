@@ -199,8 +199,8 @@ namespace Yarn.Unity
         {
 
             // Stop any processes that might be running already
-            StopAllCoroutines ();
-            dialogueUI.StopAllCoroutines ();
+           // StopAllCoroutines ();
+           // dialogueUI.StopAllCoroutines ();
 
             // Get it going
             StartCoroutine (RunDialogue (startNode));

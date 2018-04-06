@@ -57,6 +57,7 @@ position: -886,101
                 Customer: It's just nice to get what I ask for, for once.
                 Customer: I think that's all I needed right now.
                 Customer: Thank you again--bye.
+                <<set $stateSahana = 5>>
             <<else>>
                 Customer: Mm.
                 Customer: This is pretty bitter...
@@ -84,7 +85,7 @@ Customer: Uhm... give me anything, just no alcohol.
 title: 2SahanaB
 tags: 
 colorID: 0
-position: -653,100
+position: -520,109
 ---
 Customer: Yes, but I mean I've never been to a bar in general.
 Customer: Or drank anything alcoholic.
