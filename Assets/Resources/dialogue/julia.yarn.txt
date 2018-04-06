@@ -30,20 +30,20 @@ position: 114,209
                 <<set $hasOrderedJulia = true>>
                 Customer: I can tell you're new, but please.
             <<else>>
-                <<if $drinkScoreJulia <= 0.1>>
+                <<if $drinkScoreJulia <= 10>>
                     Customer: Don't be shy, pour me more.
                 <<else>>
-                    <<if $drinkScoreJulia >= 0.8>>
+                    <<if $drinkScoreJulia >= 80>>
                         <<set $stateJulia = 2>>
                         Customer: Finally.
-                        <<if $drinkScoreJulia neq 0.85 or $drinkScoreJulia neq 0.95>>
+                        <<if $drinkScoreJulia neq 85 or $drinkScoreJulia neq 95>>
                             Customer: ...No ice though?
                             Customer: Do you know what "on the rocks" means?
                             Customer: Ice it next time.
                         <<endif>>
                         <<leave Julia 60>>
                         <<set $progressJulia = 1>>
-                    <<elseif $drinkScoreJulia >= 0.5>>
+                    <<elseif $drinkScoreJulia >= 50>>
                         <<set $stateJulia = 2>>
                         Customer: This isn't...
                         Customer: Whatever.
