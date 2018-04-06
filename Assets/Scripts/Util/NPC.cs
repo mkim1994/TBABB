@@ -282,6 +282,8 @@ public class NPC : MonoBehaviour
     }
 
     public void TakeSeatAction(){
+
+        Services.GameManager.dialogue.variableStorage.SetValue("$state" + characterName, new Yarn.Value(-1));
         Services.GameManager.audioController.spotlightsfx.Play();
         silhouette.transform.position = silhouetteLocation;
         silhouette.gameObject.SetActive(false);
