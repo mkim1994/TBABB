@@ -160,7 +160,7 @@ Customer: It's not the worst thing that happened today, I guess.
 title: 1OrderIvory
 tags: 
 colorID: 0
-position: -107,216
+position: -107,215
 ---
 <<order Ivory 0 n 0 n 0 whiskey 1.0>>
 ===
@@ -169,7 +169,7 @@ tags:
 colorID: 0
 position: -213,600
 ---
-<<order Ivory 1.0 n 0 n 0 whiskey 1.0>>
+<<order Ivory 1 n 0 n 0 whiskey 1.0>>
 ===
 title: 2Ivory
 tags: 
@@ -179,7 +179,7 @@ position: 57,631
 <<if $drinkScoreIvory is -1 and $stateIvory is -1>>
     <<set $hasOrderedIvory = false>>
     <<set $progressIvory = 0>>
-    <<order Ivory 1.0 n 0 n 0 whiskey 1.0>>
+    <<order Ivory 1 n 0 n 0 whiskey 1.0>>
     <<set $stateIvory = 0>>
     Customer: Hey, you know what I want.
     Customer: Oh! On the rocks this time.

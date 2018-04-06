@@ -6,7 +6,7 @@ position: 114,209
 <<if $drinkScoreJulia is -1 and $stateJulia is -1>>
     <<set $hasOrderedJulia  = false>>
     <<set $progressJulia = 0>>
-    <<order Julia 1.0 n 0 vermouth 0.5 gin 0.5>>
+    <<order Julia 1 n 0 vermouth 0.5 gin 0.5>>
     <<set $stateJulia = 0>>
     Customer: The usual--
     Customer: Ah.
@@ -76,5 +76,5 @@ tags:
 colorID: 0
 position: -107,216
 ---
-<<order Julia 1.0 n 0 vermouth 0.5 gin 0.5>>
+<<order Julia 1 n 0 vermouth 0.5 gin 0.5>>
 ===
