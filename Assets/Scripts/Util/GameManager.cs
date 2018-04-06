@@ -67,10 +67,10 @@ public class GameManager : MonoBehaviour {
 		//Services.SceneStackManager = new SceneStackManager<TransitionData>(sceneRoot, Services.Prefabs.Scenes);
 	}
 
-	void Reset(Reset e)
-	{
-		SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-	}
+	// void Reset(Reset e)
+	// {
+	// 	SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+	// }
 
     //UI buttons
 

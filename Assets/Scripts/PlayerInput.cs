@@ -107,6 +107,7 @@ public class PlayerInput : MonoBehaviour
 
 	void Start()
 	{
+		EventManager.Instance.Register<DayEndEvent>(DropEverything);
 		 _tweenManagerDelegate = Pickupable.DeclareAllTweensInactive; 
 		if (isUsingController)
 		{
@@ -266,7 +267,7 @@ public class PlayerInput : MonoBehaviour
 						if (!targetCoaster.myCustomer.IsCustomerPresent())
 						{
  							GetComponent<UIControls>().ChangeCenterText("no one to serve");
-						} else if (targetCoaster.myCustomer.IsCustomerPresent() && !targetCoaster.myCustomer.HasAcceptedDrink())
+						} else if (targetCoaster.myCustomer.IsCustomerPresent() && !targetCoaster.myCustomer.HasAcceptedDrink() && !Services.GameManager.dialogue.isDialogueRunning)
 						{
 							pickupableInLeftHand.dropPos = dropPos;
 							pickupableInLeftHand.targetDropzone = targetDropzone;
@@ -324,7 +325,7 @@ public class PlayerInput : MonoBehaviour
 						 Coaster targetCoaster = targetDropzone.GetComponentInParent<Coaster>();
 						 if (targetCoaster.myCustomer.IsCustomerPresent() && !targetCoaster.myCustomer.HasAcceptedDrink()) //if  customer is present and customer HAS NOT accepted drink, then you can get it
 						 {
-							 pickupable.InteractRightHand();						
+							pickupable.InteractRightHand();						
 //							 targetDropzone.isOccupied = false;
 						 }
 						 else if(!targetCoaster.myCustomer.insideBar)
@@ -356,11 +357,15 @@ public class PlayerInput : MonoBehaviour
 						if (!targetCoaster.myCustomer.IsCustomerPresent())
 						{
  							GetComponent<UIControls>().ChangeCenterText("no one to serve");
-						} else if (targetCoaster.myCustomer.IsCustomerPresent() && !targetCoaster.myCustomer.HasAcceptedDrink())
+						} else if (targetCoaster.myCustomer.IsCustomerPresent() && !targetCoaster.myCustomer.HasAcceptedDrink() && !Services.GameManager.dialogue.isDialogueRunning)
 						{
-							pickupableInRightHand.dropPos = dropPos;
-							pickupableInRightHand.targetDropzone = targetDropzone;
-							pickupableInRightHand.InteractRightHand();
+							if(!Services.GameManager.dialogue.isDialogueRunning){
+								pickupableInRightHand.dropPos = dropPos;
+								pickupableInRightHand.targetDropzone = targetDropzone;
+								pickupableInRightHand.InteractRightHand();
+							} else {
+								GetComponent<UIControls>().ChangeCenterText("it's rude to interrupt");
+							}
 						}
 					}
  				}		
@@ -978,6 +983,20 @@ public class PlayerInput : MonoBehaviour
 		fovSequence.Append(camToTween.DOFieldOfView(zoomFov, zoomDuration));
 		fovSequence.Append(camToTween.DOFieldOfView(zoomFov, waitTime));
 		fovSequence.Append(camToTween.DOFieldOfView(unzoomFov, unzoomDuration));
+	}
+
+	public void DropEverything(GameEvent e){
+		DayEndEvent dayEndEvent = (DayEndEvent)e;
+		if(pickupableInLeftHand != null){
+			pickupableInLeftHand.transform.SetParent(null);
+			pickupableInLeftHand.transform.DOMove(pickupableInLeftHand.origPos, 1f, false);
+			pickupableInLeftHand = null;
+		}
+		if(pickupableInRightHand != null){
+			pickupableInRightHand.transform.SetParent(null);
+			pickupableInRightHand.transform.DOMove(pickupableInRightHand.origPos, 1f, false);
+			pickupableInRightHand = null;
+		}
 	}
 }
 

@@ -18,7 +18,7 @@ public class Pickupable : MonoBehaviour
     public bool pickedUp = false;
     public List<Sequence> tweenSequences = new List<Sequence>();
 
-
+    public Vector3 origPos;
     [SerializeField] private Dropzone myChildDropzone;
  
     public string myName = "";
@@ -28,6 +28,8 @@ public class Pickupable : MonoBehaviour
     protected virtual void Start()
     {
         CreateDropzone();
+        origPos = transform.position;
+        EventManager.Instance.Register<DayEndEvent>(ReturnHome);
     }
 
     public void CreateDropzone()
@@ -237,14 +239,36 @@ public class Pickupable : MonoBehaviour
 
     private void SetupDropzoneThenDestroySelf()
     {
-        
         myChildDropzone.objectsInMe.Clear();
         myChildDropzone.isOccupied = false;
-         Destroy(gameObject);
+        Destroy(gameObject);
     }
 
     private void OnDestroy()
     {
+        EventManager.Instance.Unregister<DayEndEvent>(ReturnHome);
+    }
 
+    public void ReturnHome(GameEvent e){
+        DayEndEvent dayEndEvent = e as DayEndEvent;
+        transform.position = origPos;
+        pickedUp = false;
+        transform.eulerAngles = Vector3.zero;
+        StartCoroutine(ChangeToWorldLayer(1f));
+        if(GetComponent<Glass>() != null){
+            Glass glass = GetComponent<Glass>();
+            glass.ClearIce();
+            glass.liquid.EmptyLiquid();
+            if (GetComponent<Bottle>() == null)
+            {
+                glass.liquid.transform.localScale = new Vector3(0, 0, 0);
+            }
+        }
     }
 }
+
+public class DayEndEvent : GameEvent{
+
+}
+
+

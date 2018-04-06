@@ -24,6 +24,7 @@ public class LightSwitch : MonoBehaviour
 		if (dayCycleManager.dayHasEnded)
 		{
 			dayCycleManager.switchOff = true;
+			EventManager.Instance.Fire(new DayEndEvent());
  		}
 	}
 }
