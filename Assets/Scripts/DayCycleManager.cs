@@ -110,7 +110,7 @@ public class DayCycleManager : MonoBehaviour
         switchOff = false;
         blackPanel.SetActive(true);
         Services.GameManager.audioController.spotlightsfx.Play();
-        Services.GameManager.audioController.bgm.Stop();
+        Services.GameManager.audioController.currentlyPlayingBgm.Stop();
         Services.GameManager.audioController.signhum.Stop();
         currentDay++;
         StartCoroutine(WaitTillNextDay());

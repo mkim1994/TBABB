@@ -33,6 +33,9 @@ public class NPC : MonoBehaviour
     public bool isReadyToTalk;
     public bool isReadyToServe;
     public bool hasAcceptedDrink;
+
+    [HideInInspector]
+    public AudioSource bgm;
  
     void Start()
     {
@@ -43,6 +46,24 @@ public class NPC : MonoBehaviour
             FindObjectOfType<DialogueRunner>().AddScript(scriptToLoad);
         }
         enterBarAnimFinished = false;
+
+        switch(characterName){
+            case "Ivory":
+                bgm = Services.GameManager.audioController.bgmIvory;
+                break;
+            case "Julia":
+                bgm = Services.GameManager.audioController.bgmJulia;
+                break;
+            case "Sahana":
+                bgm = Services.GameManager.audioController.bgmSahana;
+                break;
+            case "Yun":
+                bgm = Services.GameManager.audioController.bgmYun;
+                break;
+            case "Izzy":
+                bgm = Services.GameManager.audioController.bgmIzzy;
+                break;
+        }
 
         customerData = GetComponent<CustomerData>();
         fsm = new FSM<NPC>(this);
@@ -191,9 +212,21 @@ public class NPC : MonoBehaviour
         Debug.Log("initiating dialogue");
         if (isReadyToTalk)
         {
-            if (!Services.GameManager.audioController.bgm.isPlaying)
+            if(bgm.isPlaying && Services.GameManager.audioController.currentlyPlayingBgm != bgm){
+                Services.GameManager.audioController.currentlyPlayingBgm.DOFade(0f, 1f);
+                Services.GameManager.audioController.currentlyPlayingBgm = bgm;
+                bgm.DOFade(1f, 1f);
+            } else if(!bgm.isPlaying)
             {
-                Services.GameManager.audioController.bgm.Play();
+                Debug.Log("hm?");
+                if (Services.GameManager.audioController.currentlyPlayingBgm != null)
+                {
+                    Debug.Log("hi");
+                    Services.GameManager.audioController.currentlyPlayingBgm.DOFade(0f, 1f);
+                }
+                Services.GameManager.audioController.currentlyPlayingBgm = bgm;
+                bgm.Play();
+
             }
             //need to add 1 to currentDay to offset the 0 start
             //Services.GameManager.dialogue.variableStorage.SetValue("$content" + characterName, defaultVar);

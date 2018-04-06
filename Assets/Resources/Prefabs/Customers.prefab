@@ -303,15 +303,15 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1645828151872604}
-  m_LocalRotation: {x: -0, y: 0.3967597, z: -0, w: 0.91792256}
-  m_LocalPosition: {x: 7.32, y: 4.8099995, z: 10.62}
+  m_LocalRotation: {x: -0, y: 0.48931512, z: -0, w: 0.8721071}
+  m_LocalPosition: {x: 7.850078, y: 4.8099995, z: 10.032539}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4629402601367438}
   - {fileID: 4557640441273694}
   m_Father: {fileID: 4207081351955884}
   m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 46.752003, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 58.591003, z: 0}
 --- !u!4 &4207081351955884
 Transform:
   m_ObjectHideFlags: 1
@@ -420,7 +420,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1897625734822776}
   m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: -0.7, y: 9, z: -1.34}
+  m_LocalPosition: {x: -0.13, y: 9, z: -0.22}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4393222535431572}
@@ -433,7 +433,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1715182921896336}
   m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: -0.7, y: 9, z: -1.34}
+  m_LocalPosition: {x: 0, y: 9, z: -0.96}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4146748408756318}
@@ -636,7 +636,7 @@ Light:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1715182921896336}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 8
   m_Type: 0
   m_Color: {r: 0.9485294, g: 0.46729022, b: 0.46729022, a: 1}
@@ -744,7 +744,7 @@ Light:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1897625734822776}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 8
   m_Type: 0
   m_Color: {r: 0.9485294, g: 0.46729022, b: 0.46729022, a: 1}
@@ -834,6 +834,7 @@ MonoBehaviour:
   isReadyToTalk: 0
   isReadyToServe: 0
   hasAcceptedDrink: 0
+  bgm: {fileID: 0}
 --- !u!114 &114177151826701256
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -883,6 +884,7 @@ MonoBehaviour:
   isReadyToTalk: 0
   isReadyToServe: 0
   hasAcceptedDrink: 0
+  bgm: {fileID: 0}
 --- !u!114 &114273037733688660
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -965,6 +967,7 @@ MonoBehaviour:
   isReadyToTalk: 0
   isReadyToServe: 0
   hasAcceptedDrink: 0
+  bgm: {fileID: 0}
 --- !u!114 &114518940624565574
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1003,6 +1006,7 @@ MonoBehaviour:
   isReadyToTalk: 0
   isReadyToServe: 0
   hasAcceptedDrink: 0
+  bgm: {fileID: 0}
 --- !u!114 &114652257479172276
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1030,6 +1034,7 @@ MonoBehaviour:
   isReadyToTalk: 0
   isReadyToServe: 0
   hasAcceptedDrink: 0
+  bgm: {fileID: 0}
 --- !u!114 &114694410589545504
 MonoBehaviour:
   m_ObjectHideFlags: 1
