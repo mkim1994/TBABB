@@ -1296,6 +1296,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f302c71fb5613047a16fd9bac0e22ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isLookingAtEmptyDropzone: 0
+  pickupableBeingLookedAt: {fileID: 0}
   controlsMask:
     serializedVersion: 2
     m_Bits: 4294966783
@@ -1325,9 +1327,9 @@ MonoBehaviour:
   - {fileID: 114246193758293542}
   targetObj: 
   myCanvas: {fileID: 223688907964543262}
+  leftHandObj: {fileID: 0}
+  rightHandObj: {fileID: 0}
   isMessageOverrideOn: 0
-  isLookingAtEmptyDropzone: 0
-  pickupableBeingLookedAt: {fileID: 0}
 --- !u!114 &114467932124016912
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1728,7 +1730,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: TO BE A BETTER BARTENDER
+  m_Text: DAY 1
 --- !u!114 &114767188292423258
 MonoBehaviour:
   m_ObjectHideFlags: 1

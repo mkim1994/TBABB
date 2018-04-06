@@ -94,6 +94,18 @@ public class DayCycleManager : MonoBehaviour
                         spawnPoint1.position.z);
         Services.GameManager.player.transform.rotation = spawnPoint1.rotation;
 
+        if(currentDay == 0){
+            StartCoroutine(StartGame());
+        }
+
+    }
+
+    IEnumerator StartGame(){
+        Services.GameManager.playerInput.isInputEnabled = false;
+        blackPanel.SetActive(true);
+        yield return new WaitForSeconds(3f);
+        blackPanel.SetActive(false);
+        Services.GameManager.playerInput.isInputEnabled = true;
     }
 
     void AddCustomersDays(NPC cust, List<List<NPC>> list){
@@ -116,6 +128,19 @@ public class DayCycleManager : MonoBehaviour
         dayHasEnded = false;
         dayReallyStarted = false;
         switchOff = false;
+        switch (currentDay)
+        {
+            //blackPanel.GetComponentInChildren<Text>().text =;
+            case 0:
+                blackPanel.GetComponentInChildren<Text>().text = "TO BE A BETTER BARTENDER";
+                break;
+            case 1:
+                blackPanel.GetComponentInChildren<Text>().text = "RAISE YOUR HANDS";
+                break;
+            case 2:
+                blackPanel.GetComponentInChildren<Text>().text = "AS IF IN PRAYER";
+                break;
+        }
         blackPanel.SetActive(true);
         Services.GameManager.audioController.spotlightsfx.Play();
         //Services.GameManager.audioController.currentlyPlayingBgm.Stop();
