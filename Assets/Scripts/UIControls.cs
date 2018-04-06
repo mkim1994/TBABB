@@ -6,6 +6,10 @@ using UnityEngine.UI;
  
 
 public class UIControls : MonoBehaviour {
+	[SerializeField]private bool isLookingAtEmptyDropzone = false;
+	private GameObject dropzoneBeingLookedAtGO;
+	[SerializeField]private GameObject pickupableBeingLookedAt;
+	private Dropzone dropzoneBeingLookedAt;
 	
 	[SerializeField]LayerMask controlsMask;
 	[SerializeField] private LayerMask dropzoneOnlyMask;
@@ -31,8 +35,8 @@ public class UIControls : MonoBehaviour {
  	[SerializeField]string targetObj;
 	[SerializeField] private Canvas myCanvas;
 	private Camera myCam;
-	private GameObject leftHandObj;
-	private GameObject rightHandObj;
+	[SerializeField]private GameObject leftHandObj;
+	[SerializeField]private GameObject rightHandObj;
 	private bool isExceptionTextRequired = false;
 	private int stringOffset;
 	private PlayerInput player;
@@ -72,7 +76,6 @@ public class UIControls : MonoBehaviour {
 		{
 			UIRay();		
 		}
-
 		
 		//find the objects in hand
  
@@ -142,11 +145,11 @@ public class UIControls : MonoBehaviour {
 //		left hand not empty; right hand empty
 		else if(leftHandObj != null && rightHandObj == null)
 		{	
-			
-//			inRightHandText[0].text = "";
-//			inRightHandText[1].text = "";
+			inRightHandText[0].text = "";
+			inRightHandText[1].text = "";
 			ClearTextArray(inRightHandText);
 			rightHandActionImage.enabled = false;
+			   
 			if (Services.GameManager.playerInput.pickupable != null)
 			{
 				//looking at glass, holding bottle
@@ -158,20 +161,29 @@ public class UIControls : MonoBehaviour {
 						inLeftHandText[1].text = "pour";			
 					}
 				}
+			} 
+
+			else if (Services.GameManager.playerInput.iceMaker != null){
+				if(leftHandObj.GetComponent<Glass>() != null){
+					leftHandActionImage.enabled = true;
+					inLeftHandText[0].text = buttonAndKeyStrings[0 + stringOffset];
+					inLeftHandText[1].text = "get ice";
+				}
 			}
+
 			else
 			{
 				ClearTextArray(inLeftHandText);
 				leftHandActionImage.enabled = false;
-				ClearTextArray(inRightHandText);
-				rightHandActionImage.enabled = false;
+				// ClearTextArray(inRightHandText);
+				// rightHandActionImage.enabled = false;
 			}
 		}
 //		left hand empty, right hand not empty
 		else if (leftHandObj == null && rightHandObj != null)
 		{			
-//			inLeftHandText[0].text = "";
-//			inLeftHandText[1].text = "";
+			inLeftHandText[0].text = "";
+			inLeftHandText[1].text = "";
 			ClearTextArray(inLeftHandText);
 			leftHandActionImage.enabled = false;
 			if (Services.GameManager.playerInput.pickupable != null)
@@ -184,12 +196,21 @@ public class UIControls : MonoBehaviour {
 						inRightHandText[0].text = buttonAndKeyStrings[1 + stringOffset];
 						inRightHandText[1].text = "pour";			
 					}
+				} 
+			} 
+			//using icemaker
+			else if (Services.GameManager.playerInput.iceMaker != null){
+				if(rightHandObj.GetComponent<Glass>() != null){
+					rightHandActionImage.enabled = true;
+					inRightHandText[0].text = buttonAndKeyStrings[0 + stringOffset];
+					inRightHandText[1].text = "get ice";
 				}
 			}
+
 			else
 			{
-				leftHandActionImage.enabled = false;
-				ClearTextArray(inLeftHandText);
+				// leftHandActionImage.enabled = false;
+				// ClearTextArray(inLeftHandText);
 				rightHandActionImage.enabled = false;
 				ClearTextArray(inRightHandText);
 			}
@@ -203,11 +224,7 @@ public class UIControls : MonoBehaviour {
 		}
 	}
 
-	[SerializeField]private bool isLookingAtEmptyDropzone = false;
-	private GameObject dropzoneBeingLookedAtGO;
-	[SerializeField]private GameObject pickupableBeingLookedAt;
-	private Dropzone dropzoneBeingLookedAt;
-	
+
 	private void DropzoneOnlyRay()
 	{
 		Ray ray = new Ray(myCam.transform.position, myCam.transform.forward);
@@ -362,21 +379,12 @@ public class UIControls : MonoBehaviour {
 					ClearUI();
 				}
 			}
-			else if (hitObj.GetComponent<IceMaker>() != null){
-				if(player.pickupableInLeftHand != null){
-					if(player.pickupableInLeftHand.GetComponent<Glass>() != null){
-						leftHandActionImage.enabled = true;
-						inLeftHandText[0].text = buttonAndKeyStrings[0 + stringOffset];
-						inLeftHandText[1].text = "get ice";
-					} 
-				} else if(player.pickupableInRightHand != null){
-					if(player.pickupableInRightHand.GetComponent<Glass>() != null){
-						inRightHandText[0].text = buttonAndKeyStrings[1 + stringOffset];
-						rightHandActionImage.enabled = true;
-						inRightHandText[1].text = "get ice";
-					}
-				}
+
+			else if (hitObj.GetComponent<IceMaker>() != null && !isExceptionTextRequired)
+			{
+				centerText.text = "ice dispenser";
 			}
+
 			//ray hits glass
 			else if (hitObj.GetComponent<Glass>() != null && !isExceptionTextRequired)
 			{
@@ -423,7 +431,11 @@ public class UIControls : MonoBehaviour {
 					ClearUI();
 				}
 			}
-			
+			else if (hitObj.GetComponent<Backdoor>() != null){
+				botCenterImg.SetActive(true);
+				bottomCenterText.text = buttonAndKeyStrings[4 + stringOffset];
+				bottomCenterInsText.text = "open";
+			}
 			//ray hits NPC
 			else if (hitObj.GetComponent<NPC>() != null)
 			{
@@ -599,12 +611,12 @@ public class UIControls : MonoBehaviour {
 
 	private void ClearNonCenteredUI()
 	{
-		rightHandPickUpImage.enabled = false;
-		rightHandControlsText[0].text = "";
-		rightHandControlsText[1].text = "";
-		leftHandPickUpImage.enabled = false;
-		leftHandControlsText[0].text = "";
-		leftHandControlsText[1].text = "";
+		// rightHandPickUpImage.enabled = false;
+		// rightHandControlsText[0].text = "";
+		// rightHandControlsText[1].text = "";
+		// leftHandPickUpImage.enabled = false;
+		// leftHandControlsText[0].text = "";
+		// leftHandControlsText[1].text = "";
 	}
 
 	void ClearTextArray(Text[] texts)

@@ -55,7 +55,7 @@ public class PlayerInput : MonoBehaviour
 	public Dropzone targetDropzone;
 	private LightSwitch lightSwitch;
 	private Sink sink;
-	[SerializeField]private Backdoor backdoor;
+	public Backdoor backdoor;
 	public LayerMask layerMask;
 	public LayerMask dropzoneLayerMask;
 	public LayerMask nonPickupableLayerMask;

@@ -32,7 +32,7 @@ public class Ice : MonoBehaviour {
 
 	public void TweenToRightGlass(float yIncrement){
 		if(Services.GameManager.playerInput.pickupableInRightHand != null){
-			Glass thisGlass = Services.GameManager.playerInput.pickupableInLeftHand.GetComponent<Glass>();
+			Glass thisGlass = Services.GameManager.playerInput.pickupableInRightHand.GetComponent<Glass>();
 			transform.SetParent(Services.GameManager.playerInput.pickupableInRightHand.transform);
 			transform.eulerAngles = new Vector3(Random.Range(1,360), Random.Range(1,360), Random.Range(1,360));
 			Sequence sequence = DOTween.Sequence();
