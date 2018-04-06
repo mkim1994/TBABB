@@ -8,12 +8,12 @@ position: -888,-113
 title: 2Sahana
 tags: 
 colorID: 0
-position: -887,101
+position: -886,101
 ---
 <<if $drinkScoreSahana is -1 and $stateSahana is -1>>
     <<set $hasOrderedSahana = false>>
     <<set $progressSahana = 0>>
-    <<order Sahana n 0 n 0 whiskey 1.0>>
+    <<order Sahana 0 n 0 n 0 n 0>>
     <<set $stateSahana = 0>>
     Customer: Hello!
     Customer: Uhm...
@@ -91,7 +91,7 @@ position: -653,100
 Customer: Yes, but I mean I've never been to a bar in general.
 Customer: Or drank anything alcoholic.
 Customer: I might try it but...
-<<order Sahana n 0 n 0 n 0>>
+<<order Sahana 0 n 0 n 0 n 0>>
 <<set $hasOrderedSahana = true>>
 Customer: Nevermind, give me anything, just no alcohol.
 ===
