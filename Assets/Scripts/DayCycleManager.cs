@@ -58,7 +58,7 @@ public class DayCycleManager : MonoBehaviour
         doorOpened = false;
         currentCustomers = new List<NPC>();
         elapsedTime = 0f;
-        currentDay = 0; // 0th day is day 1
+        currentDay = 1; // 0th day is day 1
         offsetTime = 0f;
         dayReallyStarted = false;
         resetPos = Services.GameManager.player.transform.position;

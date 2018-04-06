@@ -57,7 +57,7 @@ public class UIControls : MonoBehaviour {
 
 	private IEnumerator clearTextCoroutine;
 //	private bool isUsingKeyboard = true;
-	[SerializeField]private bool isMessageOverrideOn = false;
+	public bool isMessageOverrideOn = false;
 	
 	void Start(){
 		player = Services.GameManager.playerInput;
@@ -431,10 +431,11 @@ public class UIControls : MonoBehaviour {
 					ClearUI();
 				}
 			}
-			else if (hitObj.GetComponent<Backdoor>() != null){
+
+			else if (hitObj.GetComponent<Backdoor>() != null ){
 				botCenterImg.SetActive(true);
 				bottomCenterText.text = buttonAndKeyStrings[4 + stringOffset];
-				bottomCenterInsText.text = "open";
+				bottomCenterInsText.text = "start the day";
 			}
 			//ray hits NPC
 			else if (hitObj.GetComponent<NPC>() != null)
@@ -533,19 +534,21 @@ public class UIControls : MonoBehaviour {
 					{
 						centerText.text = "end the day";
 					}
-
-					if (distanceToObj <= Services.GameManager.playerInput.maxInteractionDist)
+					Debug.Log(distanceToObj);
+					if (distanceToObj <= player.maxInteractionDist)
 					{
 						botCenterImg.SetActive(true);
 						bottomCenterInsText.text = "use";
 						bottomCenterText.text = buttonAndKeyStrings[4 + stringOffset];
 						if (Services.GameManager.playerInput.i_talk)
 						{
+							centerText.text = "there are still customers to serve";
 							if (!isMessageOverrideOn)
 							{
-								isMessageOverrideOn = true;
-								centerText.text = "there are still customers to serve";
+								// Debug.Log("There are still customers to serve!");
+ 								// centerText.text = "there are still customers to serve";
 								StartCoroutine(clearTextCoroutine);
+								isMessageOverrideOn = true;
 							}					
 						}
 						else if (!Services.GameManager.playerInput.i_talk && !isMessageOverrideOn)
@@ -596,7 +599,7 @@ public class UIControls : MonoBehaviour {
 		}
 	}
 
-	private void ClearUI()
+	public void ClearUI()
 	{
 		botCenterImg.SetActive(false);
 		bottomCenterText.text = "";

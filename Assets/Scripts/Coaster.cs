@@ -78,29 +78,29 @@ public class Coaster : MonoBehaviour
 					if(_cocktail.alcoholicStrength >= 0.25f){
 //						Debug.Log("Case 1 true!");
 						if(getIceValue == 0){
-							myCustomer.SetCustomerVars (0.9f, 100);
+							myCustomer.SetCustomerVars (90, 100);
 							myCustomer.InitiateDialogue();
 						} else if (getIceValue == 1 || getIceValue == -1){
-							myCustomer.SetCustomerVars(0.95f, 100);
+							myCustomer.SetCustomerVars(95, 100);
 							myCustomer.InitiateDialogue();
 						}
 					} else if (_cocktail.alcoholicStrength < 0.25f && _cocktail.alcoholicStrength >= 0.10f){
 //						Debug.Log("Case 2 true!");
 						if(getIceValue == 0){
-							myCustomer.SetCustomerVars(0.9f, 50);
+							myCustomer.SetCustomerVars(90, 50);
 							myCustomer.InitiateDialogue();
 						} else if (getIceValue == 1 || getIceValue == -1){
-							myCustomer.SetCustomerVars(0.95f, 50);
+							myCustomer.SetCustomerVars(95, 50);
 							myCustomer.InitiateDialogue();
 						}
 					} else if (_cocktail.alcoholicStrength < 0.10f){
 						//true when you drop a whole bottle or an empty glass.
 //						Debug.Log("Case 3 true!");	
 						if(getIceValue == 0){
-							myCustomer.SetCustomerVars(0.9f, 0);
+							myCustomer.SetCustomerVars(90, 0);
 							myCustomer.InitiateDialogue();
 						} else if (getIceValue == 1 || getIceValue == -1){
-							myCustomer.SetCustomerVars(0.95f, 0);
+							myCustomer.SetCustomerVars(95, 0);
 							myCustomer.InitiateDialogue();
 						}
 					} 
@@ -108,29 +108,29 @@ public class Coaster : MonoBehaviour
 					if(_cocktail.alcoholicStrength >= 0.25f){
 //						Debug.Log("Case 4 true!");
 						if(getIceValue == 0){
-							myCustomer.SetCustomerVars (0.8f, 100);
+							myCustomer.SetCustomerVars (80, 100);
 							myCustomer.InitiateDialogue();
 						} else if (getIceValue == 1 || getIceValue == -1){
-							myCustomer.SetCustomerVars (0.85f, 100);
+							myCustomer.SetCustomerVars (85, 100);
 							myCustomer.InitiateDialogue();
 						}
 					} else if (_cocktail.alcoholicStrength < 0.25f && _cocktail.alcoholicStrength >= 0.10f){
 //						Debug.Log("Case 5 true!");
 						if(getIceValue == 0){
-							myCustomer.SetCustomerVars(0.8f, 50);
+							myCustomer.SetCustomerVars(80, 50);
 							myCustomer.InitiateDialogue();
 						}
 						else if (getIceValue == 1 || getIceValue == -1){
-							myCustomer.SetCustomerVars (0.85f, 100);
+							myCustomer.SetCustomerVars (85, 100);
 							myCustomer.InitiateDialogue();
 						}
 					} else if (_cocktail.alcoholicStrength < 0.10f){
 //						Debug.Log("Case 6 true!");
 						if(getIceValue == 0){
-							myCustomer.SetCustomerVars(0.8f, 0);
+							myCustomer.SetCustomerVars(80, 0);
 							myCustomer.InitiateDialogue(); 
 						} else if (getIceValue == -1 || getIceValue == 1 ){
-							myCustomer.SetCustomerVars(0.85f, 0);
+							myCustomer.SetCustomerVars(85, 0);
 							myCustomer.InitiateDialogue(); 							
 						}
 					}
@@ -154,29 +154,29 @@ public class Coaster : MonoBehaviour
 					if(_cocktail.alcoholicStrength >= 0.25f){
 //						Debug.Log("Case 7 true!");
 						if(getIceValue == 0){
-							myCustomer.SetCustomerVars (0.5f, 100);
+							myCustomer.SetCustomerVars (50, 100);
 							myCustomer.InitiateDialogue();
 						} else if (getIceValue == 1 || getIceValue == -1){
-							myCustomer.SetCustomerVars (0.55f, 100);
+							myCustomer.SetCustomerVars (55, 100);
 							myCustomer.InitiateDialogue();
 						}
 					} else if (_cocktail.alcoholicStrength < 0.25f && _cocktail.alcoholicStrength >= 0.10f){
 //						Debug.Log("Case 8 true!");
 						if(getIceValue == 0){
-							myCustomer.SetCustomerVars(0.5f, 50);
+							myCustomer.SetCustomerVars(50, 50);
 							myCustomer.InitiateDialogue();
 						} else if (getIceValue == 1 || getIceValue == -1){
-							myCustomer.SetCustomerVars(0.55f, 50);
+							myCustomer.SetCustomerVars(55, 50);
 							myCustomer.InitiateDialogue();
 						}
 					} else if (_cocktail.alcoholicStrength < 0.10f){
 //						Debug.Log("Case 9 true!");
 						if(getIceValue == 0){
-							myCustomer.SetCustomerVars(0.5f, 0);
+							myCustomer.SetCustomerVars(50, 0);
 							myCustomer.InitiateDialogue();
 						}
 						else if (getIceValue == 1 || getIceValue == -1){
-							myCustomer.SetCustomerVars(0.55f, 50);
+							myCustomer.SetCustomerVars(55, 50);
 							myCustomer.InitiateDialogue();
 						}
 					}    	
@@ -186,29 +186,29 @@ public class Coaster : MonoBehaviour
 					if(_cocktail.alcoholicStrength >= 0.25f){
 //						Debug.Log("Case 7 true!");
 						if(getIceValue == 0){
-							myCustomer.SetCustomerVars (0.3f, 100);
+							myCustomer.SetCustomerVars (30, 100);
 							myCustomer.InitiateDialogue();
 						} else if (getIceValue == -1 || getIceValue == 1){
-							myCustomer.SetCustomerVars (0.35f, 100);
+							myCustomer.SetCustomerVars (35, 100);
 							myCustomer.InitiateDialogue();
 						}
 					} else if (_cocktail.alcoholicStrength < 0.25f && _cocktail.alcoholicStrength >= 0.10f){
 //						Debug.Log("Case 8 true!");
 						if(getIceValue == 0){
-							myCustomer.SetCustomerVars(0.3f, 50);
+							myCustomer.SetCustomerVars(30, 50);
 							myCustomer.InitiateDialogue();
 						}
 						else if (getIceValue == -1 || getIceValue == 1){
-							myCustomer.SetCustomerVars (0.35f, 100);
+							myCustomer.SetCustomerVars (35, 50);
 							myCustomer.InitiateDialogue();
 						}
 					} else if (_cocktail.alcoholicStrength < 0.10f){
 //						Debug.Log("Case 9 true!");
 						if(getIceValue == 0){
-							myCustomer.SetCustomerVars(0.3f, 0);
+							myCustomer.SetCustomerVars(30, 0);
 							myCustomer.InitiateDialogue();
 						} else if (getIceValue == -1 || getIceValue == 1){
-							myCustomer.SetCustomerVars(0.35f, 0);
+							myCustomer.SetCustomerVars(35, 0);
 							myCustomer.InitiateDialogue();
 						}
 					}
@@ -216,7 +216,7 @@ public class Coaster : MonoBehaviour
 				
 				else if (drinkDeviation <= 0)
 				{
- 					myCustomer.SetCustomerVars(0.5f, 0);
+ 					myCustomer.SetCustomerVars(50, 0);
 					myCustomer.InitiateDialogue();
 				}
 
@@ -224,7 +224,7 @@ public class Coaster : MonoBehaviour
 			}
 			 else if (_cocktail.totalVolume < minAcceptableVolume && _cocktail.totalVolume > 0) //not enough drink in glass
 			 {
-				 myCustomer.SetCustomerVars(0.1f, 0);
+				 myCustomer.SetCustomerVars(10, 0);
 				 myCustomer.InitiateDialogue();
 			 }
 			  

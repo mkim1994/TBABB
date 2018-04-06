@@ -804,8 +804,8 @@ public class PlayerInput : MonoBehaviour
 							StartCoroutine(isBeingPouredCoroutine);
 						}
 					}
-					pickupableInLeftHand.RotateToZeroTween();
-					pickupableInLeftHand.EndPourTween();
+					// pickupableInLeftHand.RotateToZeroTween();
+					// pickupableInLeftHand.EndPourTween();
 					pickupableInRightHand.RotateToZeroTween();
 					pickupableInRightHand.EndPourTween();
 					StartCoroutine(UtilCoroutines.WaitThenSetTweensToInactive(pickupableInLeftHand.tweenEndTime, _tweenManagerDelegate));
@@ -831,22 +831,27 @@ public class PlayerInput : MonoBehaviour
 			
 			if (backdoor != null)
 			{
+				backdoor.GetComponent<Collider>().enabled = false;
  				Services.GameManager.dayManager.doorOpened = true;
-			}
+				StartCoroutine(TurnOnBoxColliderOnDoor(3f, backdoor));
+ 			}
 		}
 		#endregion
 		
 		#region Dialogue Selection
 		if(i_choose1){
-			// Services.GameManager.dialogue.dialogueUI.ChooseOption(0);
- 			Services.GameManager.dialogue.GetComponent<DialogueUI>().ChooseOption(0);
+  			Services.GameManager.dialogue.GetComponent<DialogueUI>().ChooseOption(0);
 		}
 
 		if(i_choose2){
-			// Services.GameManager.dialogue.dialogueUI.ChooseOption(1);
-			Services.GameManager.dialogue.GetComponent<DialogueUI>().ChooseOption(0);
+ 			Services.GameManager.dialogue.GetComponent<DialogueUI>().ChooseOption(0);
  		}
 		#endregion
+	}
+
+	private IEnumerator TurnOnBoxColliderOnDoor(float delay, Backdoor backdoor){
+		yield return new WaitForSeconds(delay);
+		backdoor.GetComponent<Collider>().enabled = true;
 	}
 
 	private void InteractionRay(){
