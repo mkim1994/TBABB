@@ -37,7 +37,7 @@ position: 114,209
                     <<if $drinkScoreJulia >= 80>>
                         <<set $stateJulia = 2>>
                         <<if $preemptiveJulia is true>>
-                            Customer: But you somehow knew what I like, huh?
+                            Customer: You somehow knew what I like, huh?
                             Customer: Competence or luck?
                         <<else>>
                             Customer: Finally.

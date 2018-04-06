@@ -4,6 +4,7 @@ using UnityEngine;
 using DG.Tweening;
 using UnityEngine.UI;
 using Yarn.Unity;
+using System.Linq;
 
 public class DayCycleManager : MonoBehaviour
 {
@@ -74,11 +75,18 @@ public class DayCycleManager : MonoBehaviour
         AddCustomersDays(Services.GameManager.CustomerIzzy, npcsDaysOrder);
         AddCustomersDays(Services.GameManager.CustomerJulia, npcsDaysOrder);
 
+        for (int n1 = 0; n1 < npcsDaysOrder.Count; ++n1){
+            for (int n2 = 0; n2 < npcsDaysOrder[n1].Count; n2++){
+                npcsDaysOrder[n2] = npcsDaysOrder[n2].Distinct().ToList();
+            }
+        }
+
         days = new List<Day>();
         for (int d = 0; d < 7; ++d)
         {
             days.Add(new Day(npcsDaysOrder[d])); //first day
         }
+
 
         Services.GameManager.player.transform.position =
             new Vector3(spawnPoint1.position.x,
@@ -137,15 +145,20 @@ public class DayCycleManager : MonoBehaviour
                 {
                     if (elapsedTime >= days[currentDay].customers[i].GetComponent<CustomerData>().daysvisiting[currentDay])
                     {
-                        days[currentDay].customers[i].insideBar = true;
-                        currentCustomers.Add(days[currentDay].customers[i]);
-                        days[currentDay].customers.RemoveAt(i);
-                        break;
+
+                        if (!currentCustomers.Contains(days[currentDay].customers[i]))
+                        {
+                            days[currentDay].customers[i].insideBar = true;
+                            currentCustomers.Add(days[currentDay].customers[i]);
+                            days[currentDay].customers.RemoveAt(i);
+                            break;
+                        }
                     }
                 }
                 if (days[currentDay].customers.Count == 0 && currentCustomers.Count == 0)
                 {
                     dayHasEnded = true;
+                    days[currentDay].customers.Clear();
                 }
 
             }
@@ -161,6 +174,7 @@ public class DayCycleManager : MonoBehaviour
         }
 
     }
+
 
     IEnumerator TransitionSequence(){
         //fade

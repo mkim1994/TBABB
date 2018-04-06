@@ -94,14 +94,14 @@ public class NPC : MonoBehaviour
         float.TryParse(seconds, out s);
         StartCoroutine(DelayFor(s));
 
-        Services.GameManager.dialogue.variableStorage.SetValue("$state" + characterName, new Yarn.Value(5));
     }
 
     IEnumerator DelayFor(float seconds){
         yield return new WaitForSeconds(seconds);
-        while(Services.GameManager.dialogue.currentNodeName.Contains(characterName)){
+        while(Services.GameManager.dialogue.isDialogueRunning && Services.GameManager.dialogue.currentNodeName.Contains(characterName)){
             yield return null;
         }
+        Services.GameManager.dialogue.variableStorage.SetValue("$state" + characterName, new Yarn.Value(5));
         //yield return new WaitForSeconds(5f);
         /*might want to change this so the light fades out instead of complete darkness where they are*/
     }
@@ -385,6 +385,7 @@ public class NPC : MonoBehaviour
                     Context.isReadyToTalk = false;
                     Services.GameManager.dialogue.variableStorage.SetValue("$state" + Context.characterName, new Yarn.Value(-1));
                     TransitionTo<LeavingBar>();
+                   // Debug.Log(characterN)
                     return;
                 }
                 else if (Services.GameManager.dialogue.variableStorage.GetValue("$state" + Context.characterName).AsString == "0")
