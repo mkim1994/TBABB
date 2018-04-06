@@ -36,7 +36,7 @@ position: -886,101
                 Customer: That's still possible in a bar, right?
                 Customer: ...Right?
             <<else>>
-                <<if $drinkScoreSahana <= 0.1>>
+                <<if $drinkScoreSahana <= 10>>
                     <<setsprite Sahana unhappy>>
                     Customer: Uhm...
                     Customer: I guess this amount is fine...?
@@ -52,7 +52,7 @@ position: -886,101
     <<else>>
         <<if $progressSahana is 1>>
             <<set $progressSahana = 2>>
-            <<if $drinkAlcohol >= 50>>
+            <<if $drinkAlcohol > 0>>
                 Customer: Mm.
                 Customer: This is pretty bitter...
                 Customer: I don't think I've tasted something like this before.

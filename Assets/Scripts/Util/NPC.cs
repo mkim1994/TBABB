@@ -68,8 +68,10 @@ public class NPC : MonoBehaviour
     }
 
     [YarnCommand("leave")]
-    public void DelayLeave(float seconds){
-        StartCoroutine(DelayFor(seconds));
+    public void DelayLeave(string seconds){
+        float s;
+        float.TryParse(seconds, out s);
+        StartCoroutine(DelayFor(s));
 
         Services.GameManager.dialogue.variableStorage.SetValue("$state" + characterName, new Yarn.Value(5));
     }
