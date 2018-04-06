@@ -118,7 +118,13 @@ public class DayCycleManager : MonoBehaviour
         switchOff = false;
         blackPanel.SetActive(true);
         Services.GameManager.audioController.spotlightsfx.Play();
-        Services.GameManager.audioController.currentlyPlayingBgm.Stop();
+        //Services.GameManager.audioController.currentlyPlayingBgm.Stop();
+        Services.GameManager.audioController.bgmIvory.Stop();
+        Services.GameManager.audioController.bgmIzzy.Stop();
+        Services.GameManager.audioController.bgmJulia.Stop();
+        Services.GameManager.audioController.bgmSahana.Stop();
+        Services.GameManager.audioController.bgmYun.Stop();
+        Services.GameManager.audioController.currentlyPlayingBgm = null;
         Services.GameManager.audioController.signhum.Stop();
         currentDay++;
         StartCoroutine(WaitTillNextDay());
