@@ -174,7 +174,7 @@ position: -213,600
 title: 2Ivory
 tags: 
 colorID: 0
-position: 57,630
+position: 55,627
 ---
 <<if $drinkScoreIvory is -1 and $stateIvory is -1>>
     <<set $hasOrderedIvory = false>>
@@ -282,7 +282,7 @@ Customer: Yep. You know it.
 Customer: Anyway, that's it for today then.
 Customer: I'll be back...unfortunately.
 Customer: See you around.
-<<set $stateIvory = true>>
+<<set $stateIvory = 5>>
 ===
 title: 2IvoryC
 tags: 
