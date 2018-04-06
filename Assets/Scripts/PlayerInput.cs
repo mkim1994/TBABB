@@ -5,7 +5,9 @@ using DG.Tweening;
 using UnityEngine;
 using Rewired;
 using Rewired.ComponentControls.Data;
+#if UNITY_EDITOR
 using UnityEditor;
+#endif
 using UnityEngine.Networking;
 using UnityEngine.SceneManagement;
 

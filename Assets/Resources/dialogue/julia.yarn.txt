@@ -23,6 +23,7 @@ position: 114,209
             Customer: Gin, vermouth, on the rocks.
         <<else>>
             <<if $hasOrderedJulia is false>>
+                <<set $preemptiveJulia = true>>
                 Customer: Didn't even order the usual yet...
             <<endif>>
             <<if $drinkScoreJulia is 0>>
@@ -35,11 +36,20 @@ position: 114,209
                 <<else>>
                     <<if $drinkScoreJulia >= 80>>
                         <<set $stateJulia = 2>>
-                        Customer: Finally.
+                        <<if $preemptiveJulia is true>>
+                            Customer: But you somehow knew what I like, huh?
+                            Customer: Competence or luck?
+                        <<else>>
+                            Customer: Finally.
+                        <<endif>>
                         <<if $drinkScoreJulia neq 85 and $drinkScoreJulia neq 95>>
-                            Customer: ...No ice though?
-                            Customer: Do you know what "on the rocks" means?
-                            Customer: Ice it next time.
+                            <<if $preemptiveJulia is true>>
+                                Customer: Would've preferred it on the rocks though.
+                            <<else>>
+                                Customer: ...No ice though?
+                                Customer: Do you know what "on the rocks" means?
+                                Customer: Ice it next time.
+                            <<endif>>
                         <<endif>>
                         <<leave Julia 60>>
                         <<set $progressJulia = 1>>
