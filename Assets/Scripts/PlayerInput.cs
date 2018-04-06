@@ -14,7 +14,7 @@ using UnityEngine.SceneManagement;
 [RequireComponent(typeof(CharacterController))]
 public class PlayerInput : MonoBehaviour
 {
-
+	private bool isTwoHandedPouring = false;
 	public Camera myFirstPersonCamera; 
 	// [SerializeField]float smoothing = 2.0f;
 	public delegate void TweenManagerDelegate();
@@ -725,7 +725,8 @@ public class PlayerInput : MonoBehaviour
 
 		#region Two-handed Interactions
 
-		if (i_startUseLeft && i_startUseRight)
+			
+		if (i_useLeft && i_useRight && !isTwoHandedPouring)
 		{
 			switch (_interactionState)
 			{
@@ -758,6 +759,7 @@ public class PlayerInput : MonoBehaviour
 				default:
 					break;
 			}
+			isTwoHandedPouring = false;
 		}
 		else if (i_endUseRight || i_endUseLeft)
 		{
@@ -851,7 +853,7 @@ public class PlayerInput : MonoBehaviour
 		}
 
 		if(i_choose2){
- 			Services.GameManager.dialogue.GetComponent<DialogueUI>().ChooseOption(0);
+ 			Services.GameManager.dialogue.GetComponent<DialogueUI>().ChooseOption(1);
  		}
 		#endregion
 	}
