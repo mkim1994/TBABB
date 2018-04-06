@@ -63,14 +63,13 @@ public class Coaster : MonoBehaviour
   		if(_cocktail !=null){
 			float drinkDeviation = DrinkProfile.GetProfileDeviation(_cocktail, currentOrder);
 			int getIceValue = 0;
-			// float abvSimilarity = DrinkProfile.GetABV
-//			float abvDeviation = DrinkProfile.GetABVdeviation(_cocktail, currentOrder);
-//			Debug.Log("drink deviation is " + drinkDeviation);
-			if(_cocktail.ice == currentOrder.ice){ //_cocktail.ice will never be 0, so if they're equal, it's 1 or -1
+			Debug.Log("cocktail.ice == " + _cocktail.ice);
+			Debug.Log("currentOrder.ice ==" + currentOrder.ice);
+			if(_cocktail.ice != 0){ //_cocktail.ice will never be 0, so if they're equal, it's 1 or -1
 				getIceValue = 1;
-			} else if(currentOrder.ice == 0){ //if the customer expects whatever, getIceValue is whatever, regardless of _cocktail.ice value
+ 			} else if(currentOrder.ice == 0){ //if the customer expects whatever, getIceValue is whatever, regardless of _cocktail.ice value
 				getIceValue = 0;  
-			}
+ 			}
 
 			if (_cocktail.totalVolume >= minAcceptableVolume)
 			{
@@ -176,7 +175,8 @@ public class Coaster : MonoBehaviour
 							myCustomer.InitiateDialogue();
 						}
 						else if (getIceValue == 1 || getIceValue == -1){
-							myCustomer.SetCustomerVars(55, 50);
+							Debug.Log(_cocktail.alcoholicStrength);
+							myCustomer.SetCustomerVars(55, 0);
 							myCustomer.InitiateDialogue();
 						}
 					}    	

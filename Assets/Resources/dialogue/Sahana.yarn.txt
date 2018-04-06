@@ -52,7 +52,14 @@ position: -886,101
     <<else>>
         <<if $progressSahana is 1>>
             <<set $progressSahana = 2>>
-            <<if $drinkAlcohol > 0>>
+            <<if $drinkAlcoholSahana is 0>>
+                 Customer: This doesn't taste bitter at all.
+                Customer: Thank you.
+                Customer: I know I'm kind of missing the point coming here to drink this but...
+                Customer: It's just nice to get what I ask for, for once.
+                Customer: I think that's all I needed right now.
+                Customer: Thank you again--bye.
+            <<else>>
                 Customer: Mm.
                 Customer: This is pretty bitter...
                 Customer: I don't think I've tasted something like this before.
@@ -60,13 +67,6 @@ position: -886,101
                 
                 [[Nope. No alcohol.|2SahanaA2]]
                 [[No promises.|2SahanaB2]]
-            <<else>>
-                Customer: This doesn't taste bitter at all.
-                Customer: Thank you.
-                Customer: I know I'm kind of missing the point coming here to drink this but...
-                Customer: It's just nice to get what I ask for, for once.
-                Customer: I think that's all I needed right now.
-                Customer: Thank you again--bye.
             <<endif>>
         <<else>>
         <<endif>>
