@@ -37,13 +37,11 @@ position: -886,101
                 Customer: ...Right?
             <<else>>
                 <<if $drinkScoreSahana <= 10>>
-                    <<setsprite Sahana unhappy>>
                     Customer: Uhm...
                     Customer: I guess this amount is fine...?
                     Customer: ...No, actually, get me more please.
                 <<else>>
                     <<set $stateSahana = 1>>
-                    <<setsprite Sahana happy>>
                     <<set $progressSahana = 1>>
                     Customer: Thank you!
                 <<endif>>
