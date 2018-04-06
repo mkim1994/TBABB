@@ -209,6 +209,11 @@ position: 57,631
                         <<set $stateIvory = 1>>
                         <<setsprite Ivory happy>>
                         Customer: Nice! Thanks.
+                        <<if $drinkScoreIvory neq 0.85 or $drinkScoreIvory neq 0.95>>
+                            <<setsprite Ivory unhappy>>
+                            Customer: ...Though you did forget the ice.
+                            Customer: It's fine though, you're new and all.
+                        <<endif>>
                         <<set $gooddrink = true>>
                         <<set $progressIvory = 1>>
                     <<elseif $drinkScoreIvory >= 0.5>>

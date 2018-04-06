@@ -36,6 +36,11 @@ position: 114,209
                     <<if $drinkScoreJulia >= 0.8>>
                         <<set $stateJulia = 2>>
                         Customer: Finally.
+                        <<if $drinkScoreJulia neq 0.85 or $drinkScoreJulia neq 0.95>>
+                            Customer: ...No ice though?
+                            Customer: Do you know what "on the rocks" means?
+                            Customer: Ice it next time.
+                        <<endif>>
                         <<leave Julia 60>>
                         <<set $progressJulia = 1>>
                     <<elseif $drinkScoreJulia >= 0.5>>
