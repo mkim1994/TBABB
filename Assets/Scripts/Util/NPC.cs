@@ -296,6 +296,7 @@ public class NPC : MonoBehaviour
 
     public void LeavingBarAction(){
         Services.GameManager.dialogue.variableStorage.SetValue("$state" + characterName, new Yarn.Value(-1));
+        Services.GameManager.dialogue.variableStorage.SetValue("$drinkScore" + characterName, new Yarn.Value(-1));
         insideBar = false;
         Services.GameManager.dayManager.currentCustomers.Remove(this);
         GetComponent<BoxCollider>().enabled = false;
