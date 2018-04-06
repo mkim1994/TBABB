@@ -534,7 +534,7 @@ public class UIControls : MonoBehaviour {
 					{
 						centerText.text = "end the day";
 					}
-					Debug.Log(distanceToObj);
+					// Debug.Log(distanceToObj);
 					if (distanceToObj <= player.maxInteractionDist)
 					{
 						botCenterImg.SetActive(true);

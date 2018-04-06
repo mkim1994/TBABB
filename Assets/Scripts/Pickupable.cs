@@ -258,7 +258,11 @@ public class Pickupable : MonoBehaviour
         if(GetComponent<Glass>() != null){
             Glass glass = GetComponent<Glass>();
             glass.ClearIce();
+            glass.hasIce = false;
+            glass.liquid.isEvaluated = false;
             glass.liquid.EmptyLiquid();
+            glass.liquid.myDrinkBase = DrinkBase.none;
+            glass.liquid.myMixer = Mixer.none;
             if (GetComponent<Bottle>() == null)
             {
                 glass.liquid.transform.localScale = new Vector3(0, 0, 0);
