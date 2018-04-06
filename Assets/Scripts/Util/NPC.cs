@@ -98,7 +98,7 @@ public class NPC : MonoBehaviour
 
     IEnumerator DelayFor(float seconds){
         yield return new WaitForSeconds(seconds);
-        while(Services.GameManager.dialogue.currentNodeName.Contains(characterName)){
+        while(Services.GameManager.dialogue.isDialogueRunning && Services.GameManager.dialogue.currentNodeName.Contains(characterName)){
             yield return null;
         }
         Services.GameManager.dialogue.variableStorage.SetValue("$state" + characterName, new Yarn.Value(5));
