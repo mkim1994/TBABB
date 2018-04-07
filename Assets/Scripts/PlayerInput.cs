@@ -903,7 +903,7 @@ public class PlayerInput : MonoBehaviour
 			{
 				backdoor.GetComponent<Collider>().enabled = false;
  				Services.GameManager.dayManager.doorOpened = true;
-				StartCoroutine(TurnOnBoxColliderOnDoor(3f, backdoor));
+				StartCoroutine(TurnOnBoxColliderOnDoor(6f, backdoor));
  			}
 		}
 		#endregion
