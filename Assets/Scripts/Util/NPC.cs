@@ -434,6 +434,7 @@ public class NPC : MonoBehaviour
         public override void OnEnter()
         {
             Debug.Log("waiting for drink");
+            Context.hasAcceptedDrink = false;
             Context.isReadyToTalk = true; //can talk to clarify order
         }
         public override void Update(){
