@@ -269,9 +269,9 @@ position: 56,627
                 <<if $drinkScoreIvory neq 85 and $drinkScoreIvory neq 95>>
                     <<setsprite Ivory unhappy>>
                     Customer: ...Though you did forget the ice.
-                    <<set $goodIvory = 1>>
-                    <<set $progressIvory = 3>>
                 <<endif>>
+                <<set $goodIvory = 1>>
+                <<set $progressIvory = 3>>
             <<elseif $drinkScoreIvory >= 50>>
                 <<set $stateIvory = 1>>
                 <<setsprite Ivory unhappy>>
