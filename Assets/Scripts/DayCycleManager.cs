@@ -166,7 +166,15 @@ public class DayCycleManager : MonoBehaviour
         Services.GameManager.audioController.currentlyPlayingBgm = null;
         Services.GameManager.audioController.signhum.Stop();
         currentDay++;
-        StartCoroutine(WaitTillNextDay());
+
+        if (skipTutorial)
+        {
+            blackPanel.GetComponentInChildren<Text>().text = "THE END (FOR NOW)";
+        }
+        else
+        {
+            StartCoroutine(WaitTillNextDay());
+        }
     }
 
     public void Update()
