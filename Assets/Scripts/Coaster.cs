@@ -63,8 +63,8 @@ public class Coaster : MonoBehaviour
   		if(_cocktail !=null){
 			float drinkDeviation = DrinkProfile.GetProfileDeviation(_cocktail, currentOrder);
 			int getIceValue = 0;
-			Debug.Log("cocktail.ice == " + _cocktail.ice);
-			Debug.Log("currentOrder.ice ==" + currentOrder.ice);
+			Debug.Log("Customer ordered ice " + currentOrder.ice);
+			Debug.Log("You served " + _cocktail.ice);
 			if(_cocktail.ice == currentOrder.ice && _cocktail.ice == 1 && currentOrder.ice == 1){ //_cocktail.ice will never be 0, so if they're equal, it's 1 or -1
 				getIceValue = 1;
  			} else if(currentOrder.ice == 0 //customer doesn't care, so ice  or no ice, it's fine.
