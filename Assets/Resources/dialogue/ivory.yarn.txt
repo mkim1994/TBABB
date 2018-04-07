@@ -300,11 +300,11 @@ position: 356,554
 Customer: I don't know if I want to talk about it...
 Customer: But thanks for asking.
 Customer: Roommate troubles, et cetera.
-<<set $stateIvory = 0>>
 Customer: ...Think I need another one.
 <<order Ivory 1 n 0 n 0 whiskey 1.0>>
 Customer: Can you get me another shot of whiskey?
 Customer: On the rocks, of course.
+<<set $stateIvory = 0>>
 ===
 title: 2IvoryB
 tags: 
@@ -314,11 +314,11 @@ position: 405,847
 Customer: Haha...
 Customer: Bet I didn't help with that.
 Customer: Yep. You know it.
-<<set $stateIvory = 0>>
 Customer: ...Think I need another one.
 <<order Ivory 1 n 0 n 0 whiskey 1.0>>
 Customer: Can you get me another shot of whiskey?
 Customer: On the rocks, of course.
+<<set $stateIvory = 0>>
 ===
 title: 2IvoryC
 tags: 
@@ -332,11 +332,11 @@ Customer: It's just some shit I'm going through.
 Customer: Roommate's mad, nobody likes me, boo hoo.
 Customer: ...
 Customer: Ugh.
-<<set $stateIvory = 0>>
 Customer: ...Think I need another one.
 <<order Ivory 1 n 0 n 0 whiskey 1.0>>
 Customer: Can you get me another shot of whiskey?
 Customer: On the rocks, of course.
+<<set $stateIvory = 0>>
 ===
 title: 2IvoryD
 tags: 
