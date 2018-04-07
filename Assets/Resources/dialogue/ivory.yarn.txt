@@ -217,9 +217,11 @@ position: 56,627
                             <<setsprite Ivory unhappy>>
                             <<if $preemptiveIvory is true>>
                                 Customer: Was gonna ask it on the rocks though.
+                                <<setsprite Ivory idle>>
                                 Customer: But this is fine.
                             <<else>>
                                 Customer: ...Though you did forget the ice.
+                                <<setsprite Ivory idle>>
                                 Customer: It's fine though, you're new and all.
                             <<endif>>
                         <<endif>>
@@ -270,6 +272,7 @@ position: 56,627
                     <<setsprite Ivory unhappy>>
                     Customer: ...Though you did forget the ice.
                 <<endif>>
+                <<setsprite Ivory idle>>
                 <<set $goodIvory = 1>>
                 <<set $progressIvory = 3>>
             <<elseif $drinkScoreIvory >= 50>>
