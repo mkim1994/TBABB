@@ -52,7 +52,7 @@ public class Spawner : MonoBehaviour
 	{
 		switch(handNum){
 			case 0:
-				yield return new WaitForSeconds(0.1f);
+				yield return new WaitForSeconds(0.75f);
 				GameObject newIcecube = Instantiate(Resources.Load("Prefabs/icecube"), _iceMaker.iceSpawnpointPos, Quaternion.identity) as GameObject;
 				newIcecube.transform.position = _iceMaker.iceSpawnpointPos;
 				newIcecube.GetComponent<Ice>().TweenToLeftGlass(0);
@@ -68,7 +68,7 @@ public class Spawner : MonoBehaviour
 				newIcecube2.GetComponent<Ice>().TweenToLeftGlass(0.2f);
 			break;
 			case 1:
-				yield return new WaitForSeconds(0.1f);
+				yield return new WaitForSeconds(0.75f);
 				GameObject newIcecube3 = Instantiate(Resources.Load("Prefabs/icecube"), _iceMaker.iceSpawnpointPos, Quaternion.identity) as GameObject;
 				newIcecube3.transform.position = _iceMaker.iceSpawnpointPos;
 				newIcecube3.GetComponent<Ice>().TweenToRightGlass(0);

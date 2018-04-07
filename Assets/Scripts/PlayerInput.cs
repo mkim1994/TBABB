@@ -442,18 +442,18 @@ public class PlayerInput : MonoBehaviour
 						Services.TweenManager.tweensAreActive = true;
 						Sequence iceSequence = DOTween.Sequence();
 						iceSequence.Append(lefthandGlass.transform.DOMove(iceMaker.glassDropPos, 0.75f, false));
-						iceSequence.Append(lefthandGlass.transform.DOMove(iceMaker.glassDropPos, 1f, false));
+						iceSequence.Append(lefthandGlass.transform.DOMove(iceMaker.glassDropPos, 2f, false));
 						iceSequence.Append(lefthandGlass.transform.DOLocalMove(lefthandGlass.leftHandPos, 0.75f, false));
 						iceSequence.OnComplete(()=>lefthandGlass.DeclareInactiveTween());
 						Sequence iceRotSequence = DOTween.Sequence();
 						iceRotSequence.Append(lefthandGlass.transform.DORotate(Vector3.zero, 0.75f));
-						iceRotSequence.Append(lefthandGlass.transform.DORotate(Vector3.zero, 1f));
+						iceRotSequence.Append(lefthandGlass.transform.DORotate(Vector3.zero, 2f));
 						iceRotSequence.Append(lefthandGlass.transform.DOLocalRotate(Vector3.zero, 0.75f));
  						iceMaker.SpawnIce(0);
 						StartCoroutine(pickupableInLeftHand.ChangeToWorldLayer(0.1f));
-						StartCoroutine(pickupableInLeftHand.ChangeToFirstPersonLayer(0.75f + 1f + 0.75f));
-						TweenFOV(myCam, 30, 60, 0.75f, 1f, 0.75f);
-						TweenFOV(myFirstPersonCamera, 30, 60, 0.75f, 1f, 0.75f);
+						StartCoroutine(pickupableInLeftHand.ChangeToFirstPersonLayer(0.75f + 2f + 0.75f));
+						TweenFOV(myCam, 30, 60, 0.75f, 2f, 0.75f);
+						TweenFOV(myFirstPersonCamera, 30, 60, 0.75f, 2f, 0.75f);
  					}
 				}
 			}
@@ -595,18 +595,18 @@ public class PlayerInput : MonoBehaviour
 						Services.TweenManager.tweensAreActive = true;
 						Sequence iceSequence = DOTween.Sequence();
 						iceSequence.Append(rightHandGlass.transform.DOMove(iceMaker.glassDropPos, 0.75f, false));
-						iceSequence.Append(rightHandGlass.transform.DOMove(iceMaker.glassDropPos, 1f, false));
+						iceSequence.Append(rightHandGlass.transform.DOMove(iceMaker.glassDropPos, 2f, false));
 						iceSequence.Append(rightHandGlass.transform.DOLocalMove(rightHandGlass.rightHandPos, 0.75f, false));
 						iceSequence.OnComplete(()=>rightHandGlass.DeclareInactiveTween());
 						Sequence iceRotSequence = DOTween.Sequence();
 						iceRotSequence.Append(rightHandGlass.transform.DORotate(Vector3.zero, 0.75f));
-						iceRotSequence.Append(rightHandGlass.transform.DORotate(Vector3.zero, 1f));
+						iceRotSequence.Append(rightHandGlass.transform.DORotate(Vector3.zero, 2f));
 						iceRotSequence.Append(rightHandGlass.transform.DOLocalRotate(Vector3.zero, 0.75f));
  						iceMaker.SpawnIce(1);
 						StartCoroutine(pickupableInRightHand.ChangeToWorldLayer(0.1f));
-						StartCoroutine(pickupableInRightHand.ChangeToFirstPersonLayer(0.75f + 1f + 0.75f));
-						TweenFOV(myCam, 30, 60, 0.75f, 1f, 0.75f);
-						TweenFOV(myFirstPersonCamera, 30, 60, 0.75f, 1f, 0.75f);
+						StartCoroutine(pickupableInRightHand.ChangeToFirstPersonLayer(0.75f + 2f + 0.75f));
+						TweenFOV(myCam, 30, 60, 0.75f, 2f, 0.75f);
+						TweenFOV(myFirstPersonCamera, 30, 60, 0.75f, 2f, 0.75f);
  					}
 				}
 			}
@@ -790,11 +790,15 @@ public class PlayerInput : MonoBehaviour
 							StartCoroutine(isBeingPouredCoroutine);
 						}
 					}
-					pickupableInLeftHand.RotateToZeroTween();
-					pickupableInLeftHand.EndPourTween();
-					pickupableInRightHand.RotateToZeroTween();
-					pickupableInRightHand.EndPourTween();
-					StartCoroutine(UtilCoroutines.WaitThenSetTweensToInactive(pickupableInLeftHand.tweenEndTime, _tweenManagerDelegate));
+					if(pickupableInLeftHand != null){
+						pickupableInLeftHand.RotateToZeroTween();
+						pickupableInLeftHand.EndPourTween();
+					}
+					if(pickupableInRightHand != null){
+						pickupableInRightHand.RotateToZeroTween();
+						pickupableInRightHand.EndPourTween();
+					}
+					// StartCoroutine(UtilCoroutines.WaitThenSetTweensToInactive(pickupableInLeftHand.tweenEndTime, _tweenManagerDelegate));
 					break;
 				case InteractionState.LeftHasGlass_RightHasBottle:
 					StopCoroutine(startPourCoroutine);
@@ -818,11 +822,15 @@ public class PlayerInput : MonoBehaviour
 							StartCoroutine(isBeingPouredCoroutine);
 						}
 					}
-					// pickupableInLeftHand.RotateToZeroTween();
-					pickupableInLeftHand.EndPourTween();
-					pickupableInRightHand.RotateToZeroTween();
-					pickupableInRightHand.EndPourTween();
-					StartCoroutine(UtilCoroutines.WaitThenSetTweensToInactive(pickupableInLeftHand.tweenEndTime, _tweenManagerDelegate));
+					if(pickupableInLeftHand != null){
+						pickupableInLeftHand.RotateToZeroTween();
+						pickupableInLeftHand.EndPourTween();
+					}
+					if(pickupableInRightHand != null){
+						pickupableInRightHand.RotateToZeroTween();
+						pickupableInRightHand.EndPourTween();
+					}
+					// StartCoroutine(UtilCoroutines.WaitThenSetTweensToInactive(pickupableInLeftHand.tweenEndTime, _tweenManagerDelegate));
 					break;
 				default:
 					break;
