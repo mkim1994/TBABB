@@ -174,7 +174,7 @@ position: -213,600
 title: 2Ivory
 tags: 
 colorID: 0
-position: 55,627
+position: 56,627
 ---
 <<if $drinkScoreIvory is -1 and $stateIvory is -1>>
     <<set $hasOrderedIvory = false>>
@@ -223,12 +223,12 @@ position: 55,627
                                 Customer: It's fine though, you're new and all.
                             <<endif>>
                         <<endif>>
-                        <<set $gooddrink = true>>
+                        <<set $goodIvory = 1>>
                         <<set $progressIvory = 1>>
                     <<elseif $drinkScoreIvory >= 50>>
                         <<set $stateIvory = 1>>
                         <<setsprite Ivory unhappy>>
-                        <<set $gooddrink = false>>
+                        <<set $goodIvory = 0>>
                         Customer: Gee, thanks.
                         <<set $progressIvory = 1>>
                     <<else>>
@@ -240,54 +240,91 @@ position: 55,627
                 <<endif>>
             <<endif>>
         <<endif>>
-    <<else>>
-        <<if $progressIvory is 1>>
-            <<set $progressIvory = 2>>
-            <<if $gooddrink is true>>
-                Customer: Thanks again.
-                Customer: Nice break from all the shit that's been happening.
-                [[What's been happening?|2IvoryA]]
-                [[You know it.|2IvoryB]]
-            <<else>>
-                Customer: This drink's probably the second worst thing that happened today.
-                [[What's the first?|2IvoryA]]
-                [[Sorry.|2IvoryC]]
-            <<endif>>
+    <<elseif $progressIvory is 1>>
+        <<set $progressIvory = 2>>
+        <<if $goodIvory is 1>>
+            Customer: Thanks again.
+            Customer: Nice break from all the shit that's been happening.
+            [[What's been happening?|2IvoryA]]
+            [[You know it.|2IvoryB]]
         <<else>>
+            Customer: This drink's probably the second worst thing that happened today.
+            [[What's the first?|2IvoryA]]
+            [[Sorry.|2IvoryC]]
         <<endif>>
+    <<elseif $progressIvory is 2>>
+        <<if $drinkScoreIvory is -1>>
+            Customer: Whiskey...on the rocks.
+        <<elseif $drinkScoreIvory is 0>>
+            Customer: Glass of whiskey...with ice.
+        <<else>>
+            <<if $drinkScoreIvory <= 10>>
+                <<setsprite Ivory unhappy>>
+                Customer: This isn't enough...
+                Customer: Get me more, won't you?
+            <<elseif $drinkScoreIvory >= 80>>
+                <<set $stateIvory = 1>>
+                <<setsprite Ivory happy>>
+                Customer: Awesome.
+                <<if $drinkScoreIvory neq 85 and $drinkScoreIvory neq 95>>
+                    <<setsprite Ivory unhappy>>
+                    Customer: ...Though you did forget the ice.
+                    <<set $goodIvory = 1>>
+                    <<set $progressIvory = 3>>
+                <<endif>>
+            <<elseif $drinkScoreIvory >= 50>>
+                <<set $stateIvory = 1>>
+                <<setsprite Ivory unhappy>>
+                <<set $goodIvory = 0>>
+                Customer: Geez.
+                <<set $progressIvory = 3>>
+            <<else>>
+                <<setsprite Ivory unhappy>>
+                Customer: Seriously, not that hard.
+                Customer: It's a repeat order.
+            <<endif>>
+        <<endif>>
+    <<elseif $progressIvory is 3>>
+        Customer: Hah...
+        Customer: You ever wonder why you're here, dear bartender?
+        [[Are you drunk?|2IvoryD]]
+        [[I'm tending the bar.|2IvoryE]]
+    <<endif>>
     <<endif>>
 <<endif>>
 ===
 title: 2IvoryA
 tags: 
 colorID: 0
-position: 355,554
+position: 356,554
 ---
 Customer: I don't know if I want to talk about it...
 Customer: But thanks for asking.
 Customer: Roommate troubles, et cetera.
-Customer: Anyway, that's it for today.
-Customer: I'll be back...unfortunately.
-Customer: See you around.
-<<set $stateIvory = 5>>
+<<set $stateIvory = 0>>
+Customer: ...Think I need another one.
+<<order Ivory 1 n 0 n 0 whiskey 1.0>>
+Customer: Can you get me another shot of whiskey?
+Customer: On the rocks, of course.
 ===
 title: 2IvoryB
 tags: 
 colorID: 0
 position: 405,847
 ---
-Customer: Bet I didn't help with that.
 Customer: Haha...
+Customer: Bet I didn't help with that.
 Customer: Yep. You know it.
-Customer: Anyway, that's it for today then.
-Customer: I'll be back...unfortunately.
-Customer: See you around.
-<<set $stateIvory = 5>>
+<<set $stateIvory = 0>>
+Customer: ...Think I need another one.
+<<order Ivory 1 n 0 n 0 whiskey 1.0>>
+Customer: Can you get me another shot of whiskey?
+Customer: On the rocks, of course.
 ===
 title: 2IvoryC
 tags: 
 colorID: 0
-position: 26,889
+position: 77,868
 ---
 Customer: Ah...
 Customer: Sorry, I'm being an asshole, aren't I.
@@ -296,9 +333,96 @@ Customer: It's just some shit I'm going through.
 Customer: Roommate's mad, nobody likes me, boo hoo.
 Customer: ...
 Customer: Ugh.
-Customer: Guess you'll see me again later.
-Customer: Unfortunately.
-Customer: See you around.
+<<set $stateIvory = 0>>
+Customer: ...Think I need another one.
+<<order Ivory 1 n 0 n 0 whiskey 1.0>>
+Customer: Can you get me another shot of whiskey?
+Customer: On the rocks, of course.
+===
+title: 2IvoryD
+tags: 
+colorID: 0
+position: -333,1010
+---
+<<setsprite Ivory happy>>
+Customer: Hahahaha.
+<<setsprite Ivory idle>>
+Customer: Haha.
+Customer: Nah, I wish.
+Customer: Takes a little more than that to get me drunk.
+Customer: I'm trying to watch it tonight.
+Customer: Or uh, for the past few days.
+Customer: Yeah yeah, why am I at a bar if I'm not looking to get drunk.
+Customer: Yeah.
+[[Trying to get drunk?|2IvoryF]]
+[[I don't judge.|2IvoryG]]
+===
+title: 2IvoryE
+tags: 
+colorID: 0
+position: 529,1108
+---
+<<setsprite Ivory happy>>
+Customer: Hahahaha.
+<<setsprite Ivory idle>>
+Customer: Yeah, sorry for the shitty question.
+Customer: Just...curious.
+Customer: I did ask the previous bartender the same question, you know.
+Customer: They said the same thing.
+Customer: The same...
+Customer: Yeah.
+[[Previous bartender?|2IvoryH]]
+[[You okay?|2IvoryI]]
+===
+title: 2IvoryF
+tags: 
+colorID: 0
+position: -390,1285
+---
+Customer: Well, it's either that or actually think about things.
+Customer: You're here. Even as a bartender.
+Customer: I think you understand that, don't you?
+Customer: The previous bartender did, at least.
+[[Previous bartender?|2IvoryH]]
+[[You okay?|2IvoryI]]
+===
+title: 2IvoryG
+tags: 
+colorID: 0
+position: -68,1129
+---
+Customer: Yeah, I know you don't.
+Customer: The previous bartender said the same thing, you know?
+Customer: The same...
+Customer: Yeah.
+[[Previous bartender?|2IvoryH]]
+[[You okay?|2IvoryI]]
+===
+title: 2IvoryH
+tags: 
+colorID: 0
+position: 39,1421
+---
+Customer: Yep.
+Customer: I mean, obviously you're not the same person.
+Customer: It's just funny, you know?
+Customer: It's certainly why I keep coming back here.
+Customer: ...Yeah. This is fine.
+Customer: I'll just go home and see what happens.
+Customer: See you if my roommate doesn't kill me.
 <<set $stateIvory = 5>>
-
+===
+title: 2IvoryI
+tags: 
+colorID: 0
+position: 339,1413
+---
+Customer: Haha.
+Customer: Yeah, I'm fine.
+Customer: I think.
+Customer: Just need a moment.
+Customer: Just...a moment.
+Customer: And then I'll just go home and see what happens.
+Customer: See you if my roommate doesn't kill me.
+<<set $stateIvory = 5>>
 ===
