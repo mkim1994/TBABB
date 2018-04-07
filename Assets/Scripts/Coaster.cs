@@ -65,9 +65,10 @@ public class Coaster : MonoBehaviour
 			int getIceValue = 0;
 			Debug.Log("cocktail.ice == " + _cocktail.ice);
 			Debug.Log("currentOrder.ice ==" + currentOrder.ice);
-			if(_cocktail.ice != 0){ //_cocktail.ice will never be 0, so if they're equal, it's 1 or -1
+			if(_cocktail.ice == currentOrder.ice && _cocktail.ice == 1 && currentOrder.ice == 1){ //_cocktail.ice will never be 0, so if they're equal, it's 1 or -1
 				getIceValue = 1;
- 			} else if(currentOrder.ice == 0){ //if the customer expects whatever, getIceValue is whatever, regardless of _cocktail.ice value
+ 			} else if(currentOrder.ice == 0 //customer doesn't care, so ice  or no ice, it's fine.
+			 || (_cocktail.ice == -1 && currentOrder.ice == -1)){ //if player successfully fulfills the "no ice" order (-1, -1)
 				getIceValue = 0;  
  			}
 
