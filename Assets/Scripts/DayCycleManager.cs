@@ -9,6 +9,7 @@ using System.Linq;
 public class DayCycleManager : MonoBehaviour
 {
 
+    public int maxDays = 3; //actually 7
     public bool dayHasEnded;
 
     public bool dayReallyStarted;
@@ -167,7 +168,7 @@ public class DayCycleManager : MonoBehaviour
         Services.GameManager.audioController.signhum.Stop();
         currentDay++;
 
-        if (skipTutorial)
+        if (skipTutorial && currentDay + 1 == maxDays)
         {
             blackPanel.GetComponentInChildren<Text>().text = "THE END (FOR NOW)";
         }
