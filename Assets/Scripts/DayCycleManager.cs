@@ -29,7 +29,10 @@ public class DayCycleManager : MonoBehaviour
     private float offsetTime;
     public bool doorOpened;
 
+
     public Transform spawnPoint1, spawnPoint2;
+
+    public bool skipTutorial;
 
     /*
      * order:
@@ -56,6 +59,7 @@ public class DayCycleManager : MonoBehaviour
     public void Start()
     {
         DOTween.Init();
+        //skipTutorial 
         doorOpened = false;
         currentCustomers = new List<NPC>();
         elapsedTime = 0f;
@@ -88,11 +92,13 @@ public class DayCycleManager : MonoBehaviour
         }
 
 
-        Services.GameManager.player.transform.position =
-            new Vector3(spawnPoint1.position.x,
-                        Services.GameManager.player.transform.position.y,
-                        spawnPoint1.position.z);
-        Services.GameManager.player.transform.rotation = spawnPoint1.rotation;
+        if (skipTutorial)
+        {
+            MovePlayerTo(spawnPoint2); //next to the bar
+            dayReallyStarted = true;
+        } else{
+            MovePlayerTo(spawnPoint1);
+        }
 
         if(currentDay == 0){
             StartCoroutine(StartGame());
@@ -100,7 +106,15 @@ public class DayCycleManager : MonoBehaviour
 
     }
 
-    IEnumerator StartGame(){
+    void MovePlayerTo(Transform t){
+        Services.GameManager.player.transform.position =
+            new Vector3(t.position.x,
+                        Services.GameManager.player.transform.position.y,
+                        t.position.z);
+        Services.GameManager.player.transform.rotation = t.rotation;
+    }
+
+    IEnumerator StartGame(){ //showing Day 1 card
         Services.GameManager.playerInput.isInputEnabled = false;
         blackPanel.SetActive(true);
         yield return new WaitForSeconds(3f);
@@ -213,12 +227,9 @@ public class DayCycleManager : MonoBehaviour
         whitePanel.GetComponentInChildren<Image>().DOFade(1f, 3f);
         yield return new WaitForSeconds(3f);
         whitePanel.GetComponentInChildren<Image>().DOFade(0f, 1f).OnComplete(() => whitePanel.SetActive(false));
-        Services.GameManager.player.transform.position =
-                    new Vector3(spawnPoint2.position.x,
-                        Services.GameManager.player.transform.position.y,
-                        spawnPoint2.position.z);
 
-        Services.GameManager.player.transform.rotation = spawnPoint2.rotation;
+        MovePlayerTo(spawnPoint2);
+
         dayReallyStarted = true;
     }
 
@@ -233,11 +244,14 @@ public class DayCycleManager : MonoBehaviour
 
     void BeginDay(){
         Debug.Log("beginning the next day");
-        Services.GameManager.player.transform.position =
-            new Vector3(spawnPoint1.position.x,
-                        Services.GameManager.player.transform.position.y,
-                        spawnPoint1.position.z);
-        Services.GameManager.player.transform.rotation = spawnPoint1.rotation;
+
+        if (skipTutorial)
+        {
+            MovePlayerTo(spawnPoint2);
+            dayReallyStarted = true;
+        } else{
+            MovePlayerTo(spawnPoint1);
+        }
 
 
         elapsedTime = Time.timeSinceLevelLoad - offsetTime;
@@ -250,6 +264,7 @@ public class DayCycleManager : MonoBehaviour
         Services.GameManager.audioController.signhum.Play();
         blackPanel.SetActive(false);
         Services.GameManager.playerInput.isInputEnabled = true;
+
     }
 
 
