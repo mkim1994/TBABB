@@ -188,8 +188,7 @@ public class Glass : Pickupable
 		rotateSequence.OnComplete(() => liquid.EmptyLiquid());
 		// rotateSequence.OnComplete(()=>ClearIce());
 		ClearIce();
- //		liquid.empty;
-	}
+ 	}
 	
 	public void RightHandEmptyGlass()
 	{	

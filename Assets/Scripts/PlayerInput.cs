@@ -14,6 +14,7 @@ using UnityEngine.SceneManagement;
 [RequireComponent(typeof(CharacterController))]
 public class PlayerInput : MonoBehaviour
 {
+	private UIControls ui;
 	private bool isTwoHandedPouring = false;
 	public Camera myFirstPersonCamera; 
 	// [SerializeField]float smoothing = 2.0f;
@@ -50,13 +51,13 @@ public class PlayerInput : MonoBehaviour
 	private CharacterController cc;
 //	[SerializeField]Coaster targetCoaster;
 	public NPC npc;
+	public Sink sink;
 	public IceMaker iceMaker;
 	public Vector3 dropPos;
 	protected Camera myCam;
 	//raycast management
 	public Dropzone targetDropzone;
 	private LightSwitch lightSwitch;
-	private Sink sink;
 	public Backdoor backdoor;
 	public LayerMask layerMask;
 	public LayerMask dropzoneLayerMask;
@@ -107,6 +108,7 @@ public class PlayerInput : MonoBehaviour
 
 	void Start()
 	{
+		ui = FindObjectOfType<UIControls>();
 		EventManager.Instance.Register<DayEndEvent>(DropEverything);
 		_tweenManagerDelegate = Pickupable.DeclareAllTweensInactive; 
 		if (isUsingController)
@@ -247,7 +249,7 @@ public class PlayerInput : MonoBehaviour
 						}
 						else
 						{
-							GetComponent<UIControls>().ChangeCenterText("customer is still drinking");
+							GetComponent<UIControls>().ChangeCenterTextWithLinger("customer is still drinking");
 						}
 					}
 					else
@@ -268,12 +270,16 @@ public class PlayerInput : MonoBehaviour
 						Coaster targetCoaster = targetDropzone.GetComponentInParent<Coaster>();
 						if (!targetCoaster.myCustomer.IsCustomerPresent())
 						{
- 							GetComponent<UIControls>().ChangeCenterText("no one to serve");
-						} else if (targetCoaster.myCustomer.IsCustomerPresent() && !targetCoaster.myCustomer.HasAcceptedDrink() && !Services.GameManager.dialogue.isDialogueRunning)
+ 							GetComponent<UIControls>().ChangeCenterTextWithLinger("no one to serve");
+						} else if (targetCoaster.myCustomer.IsCustomerPresent() && !targetCoaster.myCustomer.HasAcceptedDrink())
 						{
-							pickupableInLeftHand.dropPos = dropPos;
-							pickupableInLeftHand.targetDropzone = targetDropzone;
-							pickupableInLeftHand.InteractLeftHand();
+							if(!Services.GameManager.dialogue.isDialogueRunning){
+								pickupableInLeftHand.dropPos = dropPos;
+								pickupableInLeftHand.targetDropzone = targetDropzone;
+								pickupableInLeftHand.InteractLeftHand();
+							} else {
+								GetComponent<UIControls>().ChangeCenterTextWithLinger("it's rude to interrupt");
+							}
 						}
 					}
 				}		
@@ -309,7 +315,7 @@ public class PlayerInput : MonoBehaviour
 						}
 						else if (targetCoaster.myCustomer.HasAcceptedDrink())
 						{
-							GetComponent<UIControls>().ChangeCenterText("customer is still drinking");
+							GetComponent<UIControls>().ChangeCenterTextWithLinger("customer is still drinking");
 						}
 					}
 				}
@@ -336,7 +342,7 @@ public class PlayerInput : MonoBehaviour
 						 }
 						 else
 						 {
-							 GetComponent<UIControls>().ChangeCenterText("customer is still drinking");
+							 GetComponent<UIControls>().ChangeCenterTextWithLinger("customer is still drinking");
 						 }
 					 }
 					 else
@@ -358,15 +364,15 @@ public class PlayerInput : MonoBehaviour
 						Coaster targetCoaster = targetDropzone.GetComponentInParent<Coaster>();
 						if (!targetCoaster.myCustomer.IsCustomerPresent())
 						{
- 							GetComponent<UIControls>().ChangeCenterText("no one to serve");
-						} else if (targetCoaster.myCustomer.IsCustomerPresent() && !targetCoaster.myCustomer.HasAcceptedDrink() && !Services.GameManager.dialogue.isDialogueRunning)
+ 							GetComponent<UIControls>().ChangeCenterTextWithLinger("no one to serve");
+						} else if (targetCoaster.myCustomer.IsCustomerPresent() && !targetCoaster.myCustomer.HasAcceptedDrink())
 						{
 							if(!Services.GameManager.dialogue.isDialogueRunning){
 								pickupableInRightHand.dropPos = dropPos;
 								pickupableInRightHand.targetDropzone = targetDropzone;
 								pickupableInRightHand.InteractRightHand();
 							} else {
-								GetComponent<UIControls>().ChangeCenterText("it's rude to interrupt");
+								GetComponent<UIControls>().ChangeCenterTextWithLinger("it's rude to interrupt");
 							}
 						}
 					}
@@ -402,7 +408,7 @@ public class PlayerInput : MonoBehaviour
 							pickupable.SwapRightHand();							
 						} else if (targetCoaster.myCustomer.HasAcceptedDrink())
 						{
-							GetComponent<UIControls>().ChangeCenterText("customer is still drinking");
+							GetComponent<UIControls>().ChangeCenterTextWithLinger("customer is still drinking");
 							
 						}
 					}				
@@ -485,7 +491,7 @@ public class PlayerInput : MonoBehaviour
 						}
 						else
 						{
-							GetComponent<UIControls>().ChangeCenterText("customer is still drinking");
+							GetComponent<UIControls>().ChangeCenterTextWithLinger("customer is still drinking");
 						}
 					}
 					else //no coaster--i.e. normal on-bar pouring.
@@ -655,7 +661,7 @@ public class PlayerInput : MonoBehaviour
 						}
 						else
 						{
-							GetComponent<UIControls>().ChangeCenterText("customer is still drinking");
+							GetComponent<UIControls>().ChangeCenterTextWithLinger("customer is still drinking");
 						}
 					}
 					else // no coaster
@@ -996,10 +1002,10 @@ public class PlayerInput : MonoBehaviour
 				iceMaker = null;
 			}
 
-			if (hitObj.GetComponent<Sink>() != null && Vector3.Distance(transform.position, hitObj.transform.position) <= maxInteractionDist)
+			if (hitObj.GetComponent<Sink>() != null)
 			{
 				sink = hitObj.GetComponent<Sink>();
-			} else if (hitObj.GetComponent<Sink>() == null)
+ 			} else if (hitObj.GetComponent<Sink>() == null)
 			{
 				sink = null;
 			}
@@ -1025,7 +1031,7 @@ public class PlayerInput : MonoBehaviour
 	{
 		yield return new WaitForSeconds(delay);
 		liquid.isBeingPoured = true;
-		Debug.Log("Whooo time to pourrrr");
+		// Debug.Log("Whooo time to pourrrr");
 	}
 
 	public IEnumerator WaitThenCallFunction(Glass _glass)

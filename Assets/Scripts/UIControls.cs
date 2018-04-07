@@ -37,7 +37,7 @@ public class UIControls : MonoBehaviour {
 	private Camera myCam;
 	[SerializeField]private GameObject leftHandObj;
 	[SerializeField]private GameObject rightHandObj;
-	private bool isExceptionTextRequired = false;
+	[SerializeField]private bool isExceptionTextRequired = false;
 	private int stringOffset;
 	private PlayerInput player;
 	private string[] buttonAndKeyStrings =
@@ -103,12 +103,25 @@ public class UIControls : MonoBehaviour {
 			|| rightHandObj.GetComponent<Bottle>() != null  && leftHandObj.GetComponent<Glass>() != null
 			)
 			{
-				inLeftHandText[0].text = buttonAndKeyStrings[0 + stringOffset];
-				leftHandActionImage.enabled = true;
-				inLeftHandText[1].text = "pour";
-				inRightHandText[0].text = buttonAndKeyStrings[1 + stringOffset];
-				rightHandActionImage.enabled = true;
-				inRightHandText[1].text = "pour";
+				if(Services.GameManager.playerInput.sink == null && Services.GameManager.playerInput.iceMaker == null && player.pickupable == null){
+					inLeftHandText[0].text = buttonAndKeyStrings[0 + stringOffset];
+					leftHandActionImage.enabled = true;
+					inLeftHandText[1].text = "pour";
+					inRightHandText[0].text = buttonAndKeyStrings[1 + stringOffset];
+					rightHandActionImage.enabled = true;
+					inRightHandText[1].text = "pour";
+				} else if (player.sink != null){
+					if(leftHandObj.GetComponent<Glass>() != null){
+						leftHandActionImage.enabled = true;
+						inLeftHandText[0].text = buttonAndKeyStrings[0 + stringOffset];
+						inLeftHandText[1].text = "empty glass";
+					} 
+					if(rightHandObj.GetComponent<Glass>() != null){
+						rightHandActionImage.enabled = true;
+						inRightHandText[0].text = buttonAndKeyStrings[0 + stringOffset];
+						inRightHandText[1].text = "empty glass";
+					}
+				} 
 			}
 			//case 2: bottle in both hands
 			else if (leftHandObj.GetComponent<Bottle>() != null && rightHandObj.GetComponent<Bottle>() != null)
@@ -131,15 +144,27 @@ public class UIControls : MonoBehaviour {
 					rightHandActionImage.enabled = false;
 					leftHandActionImage.enabled = false;
 					ClearTextArray(inLeftHandText);
+					ClearTextArray(inRightHandText);
 				}
 			}
 			//case 3: glass in both hands
-			else if (leftHandObj.GetComponent<Bottle>() != null && rightHandObj.GetComponent<Bottle>() != null)
+			else if (leftHandObj.GetComponent<Glass>() != null && rightHandObj.GetComponent<Glass>() != null)
 			{
-				ClearTextArray(inLeftHandText);
-				leftHandActionImage.enabled = false;
-				ClearTextArray(inRightHandText);
-				rightHandActionImage.enabled = false;
+				if(player.sink != null){
+					leftHandActionImage.enabled = true;
+					inLeftHandText[0].text = buttonAndKeyStrings[0 + stringOffset];
+					inLeftHandText[1].text = "empty glass";
+
+					rightHandActionImage.enabled = true;
+					inRightHandText[0].text = buttonAndKeyStrings[0 + stringOffset];
+					inRightHandText[1].text = "empty glass";
+				}
+				else {
+					ClearTextArray(inLeftHandText);
+					leftHandActionImage.enabled = false;
+					ClearTextArray(inRightHandText);
+					rightHandActionImage.enabled = false;
+				}
 			}
 		}
 //		left hand not empty; right hand empty
@@ -168,6 +193,12 @@ public class UIControls : MonoBehaviour {
 					leftHandActionImage.enabled = true;
 					inLeftHandText[0].text = buttonAndKeyStrings[0 + stringOffset];
 					inLeftHandText[1].text = "get ice";
+				}
+			} else if (Services.GameManager.playerInput.sink != null){
+				if(leftHandObj.GetComponent<Glass>() != null){
+					leftHandActionImage.enabled = true;
+					inLeftHandText[0].text = buttonAndKeyStrings[0 + stringOffset];
+					inLeftHandText[1].text = "empty glass";
 				}
 			}
 
@@ -204,6 +235,13 @@ public class UIControls : MonoBehaviour {
 					rightHandActionImage.enabled = true;
 					inRightHandText[0].text = buttonAndKeyStrings[0 + stringOffset];
 					inRightHandText[1].text = "get ice";
+				}
+			}
+			else if (Services.GameManager.playerInput.sink != null){
+				if(rightHandObj.GetComponent<Glass>() != null){
+					rightHandActionImage.enabled = true;
+					inRightHandText[0].text = buttonAndKeyStrings[0 + stringOffset];
+					inRightHandText[1].text = "empty glass";
 				}
 			}
 
@@ -287,6 +325,7 @@ public class UIControls : MonoBehaviour {
 		if(Physics.Raycast(ray, out hit, rayDist, controlsMask)){
 			GameObject hitObj = hit.transform.gameObject; //if you're actually looking at something
 			distanceToObj = Vector3.Distance(transform.position, hitObj.transform.position);
+			Debug.Log(hitObj.name);
 			if(hitObj.GetComponent<Bottle>() != null && !isExceptionTextRequired)
 			{
 				pickupableBeingLookedAt = hitObj;
@@ -383,8 +422,11 @@ public class UIControls : MonoBehaviour {
 			else if (hitObj.GetComponent<IceMaker>() != null && !isExceptionTextRequired)
 			{
 				centerText.text = "ice dispenser";
-			}
+			} 
 
+			else if (hitObj.GetComponent<Sink> () != null && !isExceptionTextRequired){
+				centerText.text = "sink";
+			} 
 			//ray hits glass
 			else if (hitObj.GetComponent<Glass>() != null && !isExceptionTextRequired)
 			{
@@ -665,14 +707,16 @@ public class UIControls : MonoBehaviour {
 	}
 
 
-	public void ChangeCenterText(string text)
+	public void ChangeCenterTextWithLinger(string text)
 	{
 		isExceptionTextRequired = true;
 		centerText.text = text;
-		Debug.Log("Changed center text!");
- 		StartCoroutine(ClearTextCoroutine(centerText, 3));
+  		StartCoroutine(ClearTextCoroutine(centerText, 3));
 	}
 
+	public void SetCenterText(string text){
+		centerText.text = text;
+	}
 	void ClearText(Text text)
 	{
 		text.text = "";
