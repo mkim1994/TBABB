@@ -27,10 +27,12 @@ position: -886,101
             Customer: Anything, just not alcoholic...
         <<else>>
             <<if $hasOrderedSahana is false>>
+                <<set $preemptiveSahana = true>>
                 Customer: Uhm...wow!
                 Customer: I hadn't even asked for anything yet...
             <<endif>>
             <<if $drinkScoreSahana is 0>>
+                <<set $preemptiveSahana = false>>
                 Customer: I think I just want something non-alcoholic.
                 <<set $hasOrderedSahana = true>>
                 Customer: That's still possible in a bar, right?
@@ -51,8 +53,14 @@ position: -886,101
         <<if $progressSahana is 1>>
             <<set $progressSahana = 2>>
             <<if $drinkAlcoholSahana is 0>>
-                 Customer: This doesn't taste bitter at all.
-                Customer: Thank you.
+                <<if $preemptiveSahana is true>>
+                    Customer: I don't know how you knew I wanted something like this.
+                    Customer: I...don't drink, and was a little nervous coming here.
+                    Customer: So this was a welcome surprise.
+                <<else>>
+                    Customer: This doesn't taste bitter at all.
+                    Customer: Thank you.
+                <<endif>>
                 Customer: I know I'm kind of missing the point coming here to drink this but...
                 Customer: It's just nice to get what I ask for, for once.
                 Customer: I think that's all I needed right now.
@@ -62,7 +70,14 @@ position: -886,101
                 Customer: Mm.
                 Customer: This is pretty bitter...
                 Customer: I don't think I've tasted something like this before.
-                Customer: You didn't actually give me something alcoholic, did you?
+                <<if $preemptiveSahana is true>>
+                    Customer: I...
+                    Customer: I guess it's my fault for drinking this without even thinking...
+                    Customer: I assume this is a weird question to ask at a bar but...
+                    Customer: Is this alcoholic?
+                <<else>>
+                    Customer: You didn't actually give me something alcoholic, did you?
+                <<endif>>
                 
                 [[Nope. No alcohol.|2SahanaA2]]
                 [[No promises.|2SahanaB2]]
@@ -101,7 +116,12 @@ position: -881,366
 ---
 Customer: Alright.
 Customer: I mean...
-Customer: What kind of a bartender would you be if you didn't do what I asked?
+<<if $preemptiveOrder is true>>
+    Customer: I should've just told you what I wanted.
+    Customer: Ugh.
+<<else>>
+    Customer: What kind of a bartender would you be if you didn't do what I asked?
+<<endif>>
 Customer: Then again, no one listens to what I say, so whatever.
 Customer: Fuck you and fuck all of them.
 Customer: Thinking I'm a fucking idiot.
