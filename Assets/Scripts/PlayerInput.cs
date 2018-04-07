@@ -108,7 +108,7 @@ public class PlayerInput : MonoBehaviour
 	void Start()
 	{
 		EventManager.Instance.Register<DayEndEvent>(DropEverything);
-		 _tweenManagerDelegate = Pickupable.DeclareAllTweensInactive; 
+		_tweenManagerDelegate = Pickupable.DeclareAllTweensInactive; 
 		if (isUsingController)
 		{
 			lookSensitivity = controllerSens;
@@ -438,22 +438,25 @@ public class PlayerInput : MonoBehaviour
 				{
 					if (pickupableInLeftHand.GetComponent<Glass>() != null)
 					{
+						float midTimeInterval = 2f;
+						float startTimeInterval = 0.75f;
+						float endTimeInterval = 0.75f;
  						Glass lefthandGlass = pickupableInLeftHand.GetComponent<Glass>();
 						Services.TweenManager.tweensAreActive = true;
 						Sequence iceSequence = DOTween.Sequence();
-						iceSequence.Append(lefthandGlass.transform.DOMove(iceMaker.glassDropPos, 0.75f, false));
-						iceSequence.Append(lefthandGlass.transform.DOMove(iceMaker.glassDropPos, 2f, false));
-						iceSequence.Append(lefthandGlass.transform.DOLocalMove(lefthandGlass.leftHandPos, 0.75f, false));
+						iceSequence.Append(lefthandGlass.transform.DOMove(iceMaker.glassDropPos, startTimeInterval, false));
+						iceSequence.Append(lefthandGlass.transform.DOMove(iceMaker.glassDropPos, midTimeInterval, false));
+						iceSequence.Append(lefthandGlass.transform.DOLocalMove(lefthandGlass.leftHandPos, endTimeInterval, false));
 						iceSequence.OnComplete(()=>lefthandGlass.DeclareInactiveTween());
 						Sequence iceRotSequence = DOTween.Sequence();
-						iceRotSequence.Append(lefthandGlass.transform.DORotate(Vector3.zero, 0.75f));
-						iceRotSequence.Append(lefthandGlass.transform.DORotate(Vector3.zero, 2f));
-						iceRotSequence.Append(lefthandGlass.transform.DOLocalRotate(Vector3.zero, 0.75f));
+						iceRotSequence.Append(lefthandGlass.transform.DORotate(Vector3.zero, startTimeInterval));
+						iceRotSequence.Append(lefthandGlass.transform.DORotate(Vector3.zero, midTimeInterval));
+						iceRotSequence.Append(lefthandGlass.transform.DOLocalRotate(Vector3.zero, endTimeInterval));
  						iceMaker.SpawnIce(0);
 						StartCoroutine(pickupableInLeftHand.ChangeToWorldLayer(0.1f));
-						StartCoroutine(pickupableInLeftHand.ChangeToFirstPersonLayer(0.75f + 2f + 0.75f));
-						TweenFOV(myCam, 30, 60, 0.75f, 2f, 0.75f);
-						TweenFOV(myFirstPersonCamera, 30, 60, 0.75f, 2f, 0.75f);
+						StartCoroutine(pickupableInLeftHand.ChangeToFirstPersonLayer(startTimeInterval + midTimeInterval + endTimeInterval));
+						TweenFOV(myCam, 30, 60, startTimeInterval, midTimeInterval, endTimeInterval);
+						TweenFOV(myFirstPersonCamera, 30, 60, startTimeInterval, midTimeInterval, endTimeInterval);
  					}
 				}
 			}
@@ -591,22 +594,25 @@ public class PlayerInput : MonoBehaviour
 				{
 					if (pickupableInRightHand.GetComponent<Glass>() != null)
 					{
+						float midTimeInterval = 2f;
+						float startTimeInterval = 0.75f;
+						float endTimeInterval = 0.75f;
  						Glass rightHandGlass = pickupableInRightHand.GetComponent<Glass>();
 						Services.TweenManager.tweensAreActive = true;
 						Sequence iceSequence = DOTween.Sequence();
-						iceSequence.Append(rightHandGlass.transform.DOMove(iceMaker.glassDropPos, 0.75f, false));
-						iceSequence.Append(rightHandGlass.transform.DOMove(iceMaker.glassDropPos, 2f, false));
-						iceSequence.Append(rightHandGlass.transform.DOLocalMove(rightHandGlass.rightHandPos, 0.75f, false));
+						iceSequence.Append(rightHandGlass.transform.DOMove(iceMaker.glassDropPos, startTimeInterval, false));
+						iceSequence.Append(rightHandGlass.transform.DOMove(iceMaker.glassDropPos, midTimeInterval, false));
+						iceSequence.Append(rightHandGlass.transform.DOLocalMove(rightHandGlass.rightHandPos, endTimeInterval, false));
 						iceSequence.OnComplete(()=>rightHandGlass.DeclareInactiveTween());
 						Sequence iceRotSequence = DOTween.Sequence();
-						iceRotSequence.Append(rightHandGlass.transform.DORotate(Vector3.zero, 0.75f));
-						iceRotSequence.Append(rightHandGlass.transform.DORotate(Vector3.zero, 2f));
-						iceRotSequence.Append(rightHandGlass.transform.DOLocalRotate(Vector3.zero, 0.75f));
+						iceRotSequence.Append(rightHandGlass.transform.DORotate(Vector3.zero, startTimeInterval));
+						iceRotSequence.Append(rightHandGlass.transform.DORotate(Vector3.zero, midTimeInterval));
+						iceRotSequence.Append(rightHandGlass.transform.DOLocalRotate(Vector3.zero, endTimeInterval));
  						iceMaker.SpawnIce(1);
 						StartCoroutine(pickupableInRightHand.ChangeToWorldLayer(0.1f));
-						StartCoroutine(pickupableInRightHand.ChangeToFirstPersonLayer(0.75f + 2f + 0.75f));
-						TweenFOV(myCam, 30, 60, 0.75f, 2f, 0.75f);
-						TweenFOV(myFirstPersonCamera, 30, 60, 0.75f, 2f, 0.75f);
+						StartCoroutine(pickupableInRightHand.ChangeToFirstPersonLayer(startTimeInterval + midTimeInterval + endTimeInterval));
+						TweenFOV(myCam, 30, 60, startTimeInterval, midTimeInterval, endTimeInterval);
+						TweenFOV(myFirstPersonCamera, 30, 60, startTimeInterval, midTimeInterval, endTimeInterval);
  					}
 				}
 			}
@@ -708,6 +714,7 @@ public class PlayerInput : MonoBehaviour
 						{
 							if (pickupable.GetComponent<Glass>() != null)
 							{
+								Debug.Log("LOL UHHH WHY");
 								Glass glass = pickupable.GetComponent<Glass>();
 								glass.liquid.isBeingPoured = false;
 								IEnumerator isBeingPouredCoroutine = WaitThenCallFunction(glass);
@@ -716,6 +723,7 @@ public class PlayerInput : MonoBehaviour
 						}
 						pickupableInRightHand.RotateToZeroTween();
 						pickupableInRightHand.EndPourTween();
+						Debug.Log("OH MY LOL");
 						StartCoroutine(UtilCoroutines.WaitThenSetTweensToInactive(pickupableInRightHand.tweenEndTime, _tweenManagerDelegate));
 					}
 					
@@ -730,7 +738,7 @@ public class PlayerInput : MonoBehaviour
 			
 		if (i_useLeft && i_useRight && !isTwoHandedPouring)
 		{
-			if(pickupable == null){
+			if(pickupable == null && iceMaker == null && sink == null){
 				switch (_interactionState)
 				{
 					case InteractionState.LeftHasBottle_RightHasGlass:
@@ -765,7 +773,7 @@ public class PlayerInput : MonoBehaviour
 				isTwoHandedPouring = true;
 			}
 		}
-		else if (i_endUseRight || i_endUseLeft)
+		else if (isTwoHandedPouring && (i_endUseRight || i_endUseLeft))
 		{	
 			isTwoHandedPouring = false;
 			switch (_interactionState)
@@ -798,10 +806,12 @@ public class PlayerInput : MonoBehaviour
 						pickupableInRightHand.RotateToZeroTween();
 						pickupableInRightHand.EndPourTween();
 					}
-					// StartCoroutine(UtilCoroutines.WaitThenSetTweensToInactive(pickupableInLeftHand.tweenEndTime, _tweenManagerDelegate));
+					StartCoroutine(UtilCoroutines.WaitThenSetTweensToInactive(pickupableInLeftHand.tweenEndTime, _tweenManagerDelegate));
 					break;
 				case InteractionState.LeftHasGlass_RightHasBottle:
-					StopCoroutine(startPourCoroutine);
+					if(startPourCoroutine != null){
+						StopCoroutine(startPourCoroutine);
+					}
 					if(pickupableInRightHand != null){
 						if (pickupableInRightHand.GetComponent<Bottle>() != null)
 						{
@@ -830,13 +840,14 @@ public class PlayerInput : MonoBehaviour
 						pickupableInRightHand.RotateToZeroTween();
 						pickupableInRightHand.EndPourTween();
 					}
-					// StartCoroutine(UtilCoroutines.WaitThenSetTweensToInactive(pickupableInLeftHand.tweenEndTime, _tweenManagerDelegate));
+					StartCoroutine(UtilCoroutines.WaitThenSetTweensToInactive(pickupableInLeftHand.tweenEndTime, _tweenManagerDelegate));
 					break;
 				default:
 					break;
 			}
 		}
 
+ 
 		#endregion
 		
 		

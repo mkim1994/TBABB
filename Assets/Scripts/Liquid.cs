@@ -367,18 +367,14 @@ public class Liquid : MonoBehaviour {
 
 	public void EvaluateDrinkInCoaster(){
 		foreach (var coaster in coasters) {
-			if (Vector3.Distance (coaster.gameObject.transform.position, transform.position) <= 0.55f) {
-				if(!isEvaluated)
+			// Debug.Log("Distance to coaster " + Vector3.Distance (coaster.gameObject.transform.position, transform.position));
+			if (Vector3.Distance (coaster.gameObject.transform.position, transform.position) <= 0.01f) {
+				if(!isEvaluated && !GetComponentInParent<Pickupable>().pickedUp)
 				{
  					coaster.EvaluateDrink (this.thisCocktail, this);	
 					isEvaluated = true;
 				}        
- 			}
-//			else if (Vector3.Distance (coaster.gameObject.transform.position, transform.position) > 1f) 
-//			{
-//				Debug.Log("Setting isEvaluated to false!");
-//				isEvaluated = false;
-//			}
+			}
 		}
 	}
 
