@@ -159,38 +159,24 @@ public class Liquid : MonoBehaviour {
 					default:
 						break;
 				}
-			}
-
-//			EvaluateDrinkInCoaster ();
-			
-			
+			}			
 		}
-		
-//		if (Input.GetKeyDown(KeyCode.CapsLock))
-//		{
-//			isBeingPoured = false;
-//		}
-
- 		
+	
 		EvaluateDrinkInCoaster ();
 
  	}
 
 	public void GrowVertical(){
-//		height -= 1 * Time.deltaTime;
-		height = remapRange(myLiquidVolume, 0, 100, 100, 0);
-//		height = Mathf.Clamp(height, 0, 100f);
-		height = Mathf.Clamp(height, 0, 100);
+ 		height = remapRange(myLiquidVolume, 0, 100, 100, 0);
+ 		height = Mathf.Clamp(height, 0, 100);
 		transform.localScale = new Vector3(1, 1, 1);
  		myLiquidVolume -= pourRate * Time.deltaTime;
 		myLiquid.SetBlendShapeWeight(0, myLiquidVolume);
-//        transform.localScale = new Vector3 (originalX, height, originalZ);
-		thisCocktail = new DrinkProfile (sodaVolume/totalVolume, tonicVolume/totalVolume, vermouthVolume/totalVolume, lemonJuiceVolume/totalVolume, 0, 0, 0, 0, 0, 0, 0, 
+ 		thisCocktail = new DrinkProfile (sodaVolume/totalVolume, tonicVolume/totalVolume, vermouthVolume/totalVolume, lemonJuiceVolume/totalVolume, 0, 0, 0, 0, 0, 0, 0, 
 		whiskeyVolume/totalVolume, ginVolume/totalVolume, tequilaVolume/totalVolume, vodkaVolume/totalVolume, rumVolume/totalVolume, beerVolume/totalVolume, 
 		wineVolume/totalVolume, brandyVolume/totalVolume, abv, 
 		smokiness, sweetness, sourness, bitterness, spiciness);
-//		thisCocktail.totalVolume = totalVolume;
-	}
+ 	}
 
 	public void LetItPour()
 	{
