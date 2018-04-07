@@ -290,7 +290,6 @@ position: 56,627
         [[Are you drunk?|2IvoryD]]
         [[I'm tending the bar.|2IvoryE]]
     <<endif>>
-    <<endif>>
 <<endif>>
 ===
 title: 2IvoryA
