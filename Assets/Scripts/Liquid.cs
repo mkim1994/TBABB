@@ -225,7 +225,7 @@ public class Liquid : MonoBehaviour {
 //		LetItPour();
 		if (Services.DrinkDictionary.drinkBases.ContainsKey(_drinkBase))
 		{
-			Debug.Log(_drinkBase);
+//			Debug.Log(_drinkBase);
 			myDrinkProfile = Services.DrinkDictionary.drinkBases[_drinkBase];		
 			myDrinkBase = _drinkBase;
 		}

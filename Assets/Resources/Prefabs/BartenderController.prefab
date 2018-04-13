@@ -1329,6 +1329,7 @@ MonoBehaviour:
   myCanvas: {fileID: 223688907964543262}
   leftHandObj: {fileID: 0}
   rightHandObj: {fileID: 0}
+  isExceptionTextRequired: 0
   isMessageOverrideOn: 0
 --- !u!114 &114467932124016912
 MonoBehaviour:
@@ -1555,9 +1556,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d16bc231d7a9d4d4290ca16737e4fe57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myFirstPersonCamera: {fileID: 20219987243707838}
+  isTwoHandedPouring: 0
+  myFirstPersonCam: {fileID: 20219987243707838}
   playerId: 0
   npc: {fileID: 0}
+  sink: {fileID: 0}
   iceMaker: {fileID: 0}
   dropPos: {x: 0, y: 0, z: 0}
   targetDropzone: {fileID: 0}

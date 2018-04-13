@@ -15,8 +15,8 @@ using UnityEngine.SceneManagement;
 public class PlayerInput : MonoBehaviour
 {
 	private UIControls ui;
-	private bool isTwoHandedPouring = false;
-	public Camera myFirstPersonCamera; 
+	[SerializeField]private bool isTwoHandedPouring = false;
+	public Camera myFirstPersonCam; 
 	// [SerializeField]float smoothing = 2.0f;
 	public delegate void TweenManagerDelegate();
 	private TweenManagerDelegate _tweenManagerDelegate;
@@ -69,6 +69,7 @@ public class PlayerInput : MonoBehaviour
 //	public List<GameObject> pickupableGOs = new List<GameObject>();
 	public float maxInteractionDist = 4f;
 	public float maxTalkingDist = 8f;
+	Vector3 startLookAngle;
 	
 	[SerializeField]float moveSpeed = 2.0f;
 	public float lookSensitivity;
@@ -126,6 +127,8 @@ public class PlayerInput : MonoBehaviour
 		}
 	}
 
+	private bool isLookingAtGlassWhilePouring = false;
+
 	private void FixedUpdate()
 	{
 		if (isInputEnabled)
@@ -141,6 +144,11 @@ public class PlayerInput : MonoBehaviour
 				DropzoneRay();
 				NonPickupableRay();
 			}
+		}
+
+		if (isLookingAtGlassWhilePouring)
+		{
+			LookAtGlassWhenPouring();
 		}
 	}
 
@@ -461,8 +469,8 @@ public class PlayerInput : MonoBehaviour
  						iceMaker.SpawnIce(0);
 						StartCoroutine(pickupableInLeftHand.ChangeToWorldLayer(0.1f));
 						StartCoroutine(pickupableInLeftHand.ChangeToFirstPersonLayer(startTimeInterval + midTimeInterval + endTimeInterval));
-						TweenFOV(myCam, 30, 60, startTimeInterval, midTimeInterval, endTimeInterval);
-						TweenFOV(myFirstPersonCamera, 30, 60, startTimeInterval, midTimeInterval, endTimeInterval);
+						FullTweenFOV(myCam, 30, 60, startTimeInterval, midTimeInterval, endTimeInterval);
+						FullTweenFOV(myFirstPersonCam, 30, 60, startTimeInterval, midTimeInterval, endTimeInterval);
  					}
 				}
 			}
@@ -479,6 +487,7 @@ public class PlayerInput : MonoBehaviour
 							{
 								Bottle bottle = pickupableInLeftHand.GetComponent<Bottle>();
 								Glass glass = pickupable.GetComponent<Glass>();
+								float startTimeInterval = bottle.tweenTime;
 								_startPourDelegate = glass.ReceivePourFromBottle;
 								startPourCoroutine = UtilCoroutines.WaitThenPour(bottle.tweenTime, glass.ReceivePourFromBottle, bottle, 0);
 								setIsPouringToTrueCoroutine = WaitThenSetBoolToTrue(bottle.tweenTime, glass.liquid);
@@ -486,7 +495,9 @@ public class PlayerInput : MonoBehaviour
 								StartCoroutine(startPourCoroutine);					
 								bottle.StartPourTween(Vector3.forward + new Vector3(-0.64f, 0, 0.5f));
 								bottle.RotateTween(bottle.leftHandPourRot);
-
+								TweenInFOV(myCam, 55, startTimeInterval, true);
+								TweenInFOV(myFirstPersonCam, 30, startTimeInterval, false);
+								EnterTweenRotationWhenPouringIntoGlass(myCam, startTimeInterval);
 							} 
 						}
 						else
@@ -500,13 +511,17 @@ public class PlayerInput : MonoBehaviour
 						{
 							Bottle bottle = pickupableInLeftHand.GetComponent<Bottle>();
 							Glass glass = pickupable.GetComponent<Glass>();
-							_startPourDelegate = glass.ReceivePourFromBottle;
+							float startTimeInterval = bottle.tweenTime;
+ 							_startPourDelegate = glass.ReceivePourFromBottle;
 							startPourCoroutine = UtilCoroutines.WaitThenPour(bottle.tweenTime, glass.ReceivePourFromBottle, bottle, 0);
 							setIsPouringToTrueCoroutine = WaitThenSetBoolToTrue(bottle.tweenTime, glass.liquid);
 							StartCoroutine(setIsPouringToTrueCoroutine);
 							StartCoroutine(startPourCoroutine);					
 							bottle.StartPourTween(Vector3.forward + new Vector3(-0.64f, 0, 0.5f));
 							bottle.RotateTween(bottle.leftHandPourRot);
+							TweenInFOV(myCam, 55, startTimeInterval, true);
+							TweenInFOV(myFirstPersonCam, 30, startTimeInterval, false);
+							EnterTweenRotationWhenPouringIntoGlass(myCam, startTimeInterval);
 						} 
 					}
 				}
@@ -532,6 +547,10 @@ public class PlayerInput : MonoBehaviour
 							if (pickupableInLeftHand.GetComponent<Bottle>() != null)
 							{
 								Bottle bottle = pickupableInLeftHand.GetComponent<Bottle>();
+								ClearTweenSequences(_tweenSequences);
+								TweenOutFOV(myCam, 60, bottle.tweenEndTime, true);
+								TweenOutFOV(myFirstPersonCam, 60, bottle.tweenEndTime, false);
+								ExitTweenRotationWhenPouringIntoGlass(myCam, bottle.tweenEndTime);
  								foreach (var sequence in bottle.tweenSequences)
 								{
 									sequence.Kill(false);
@@ -544,8 +563,10 @@ public class PlayerInput : MonoBehaviour
 									Glass glass = pickupable.GetComponent<Glass>();
 									// glass.liquid.isBeingPoured = false;
 									glass.EndPourFromBottle();
-									// IEnumerator isBeingPouredCoroutine = WaitThenCallFunction(glass);
-									// StartCoroutine(isBeingPouredCoroutine);
+//									myCam.transform.LookAt(glass.focalPoint.transform.position);
+
+									 IEnumerator isBeingPouredCoroutine = WaitThenCallFunction(glass);
+									 StartCoroutine(isBeingPouredCoroutine);
 								}
 							}
 							pickupableInLeftHand.RotateToZeroTween();
@@ -564,6 +585,10 @@ public class PlayerInput : MonoBehaviour
  						if (pickupableInLeftHand.GetComponent<Bottle>() != null)
 						{
 							Bottle bottle = pickupableInLeftHand.GetComponent<Bottle>();
+							ClearTweenSequences(_tweenSequences);
+							TweenOutFOV(myCam, 60, bottle.tweenEndTime, true);
+							TweenOutFOV(myFirstPersonCam, 60, bottle.tweenEndTime, false);
+							ExitTweenRotationWhenPouringIntoGlass(myCam, bottle.tweenEndTime);
  							foreach (var sequence in bottle.tweenSequences)
 							{
 								sequence.Kill(false);
@@ -574,10 +599,10 @@ public class PlayerInput : MonoBehaviour
 							if (pickupable.GetComponent<Glass>() != null)
 							{
 								Glass glass = pickupable.GetComponent<Glass>();
- 								// glass.liquid.isBeingPoured = false;
 								glass.EndPourFromBottle();
-								// IEnumerator isBeingPouredCoroutine = WaitThenCallFunction(glass);
-								// StartCoroutine(isBeingPouredCoroutine);
+//								myCam.transform.LookAt(glass.focalPoint.transform.position);
+								IEnumerator isBeingPouredCoroutine = WaitThenCallFunction(glass);
+								StartCoroutine(isBeingPouredCoroutine);
 							}
 						}
 						pickupableInLeftHand.RotateToZeroTween();
@@ -592,7 +617,7 @@ public class PlayerInput : MonoBehaviour
 		
 		#endregion
 
-		#region Use Right
+		#region Use Right		
 		if(i_startUseRight && !Services.TweenManager.tweensAreActive && !isTwoHandedPouring){
 			//one-handed use on something on bar
 			if (sink != null)
@@ -630,8 +655,8 @@ public class PlayerInput : MonoBehaviour
  						iceMaker.SpawnIce(1);
 						StartCoroutine(pickupableInRightHand.ChangeToWorldLayer(0.1f));
 						StartCoroutine(pickupableInRightHand.ChangeToFirstPersonLayer(startTimeInterval + midTimeInterval + endTimeInterval));
-						TweenFOV(myCam, 30, 60, startTimeInterval, midTimeInterval, endTimeInterval);
-						TweenFOV(myFirstPersonCamera, 30, 60, startTimeInterval, midTimeInterval, endTimeInterval);
+						FullTweenFOV(myCam, 30, 60, startTimeInterval, midTimeInterval, endTimeInterval);
+						FullTweenFOV(myFirstPersonCam, 30, 60, startTimeInterval, midTimeInterval, endTimeInterval);
  					}
 				}
 			}
@@ -647,6 +672,7 @@ public class PlayerInput : MonoBehaviour
 						{
 							if (pickupable.GetComponent<Glass>() != null && pickupableInRightHand.GetComponent<Bottle>() != null)
 							{
+								float startTimeInterval = 0.75f;
 								Bottle bottle = pickupableInRightHand.GetComponent<Bottle>();
 								Glass glass = pickupable.GetComponent<Glass>();
 								_startPourDelegate = glass.ReceivePourFromBottle;
@@ -657,6 +683,9 @@ public class PlayerInput : MonoBehaviour
 								StartCoroutine(setIsPouringToTrueCoroutine);
 								bottle.StartPourTween(Vector3.forward + new Vector3(0.64f, 0, 0.5f));
 								bottle.RotateTween(bottle.rightHandPourRot);  
+								TweenInFOV(myCam, 55, startTimeInterval, true);
+								TweenInFOV(myFirstPersonCam, 30, startTimeInterval, false);
+								EnterTweenRotationWhenPouringIntoGlass(myCam, startTimeInterval);
  							}
 						}
 						else
@@ -668,7 +697,8 @@ public class PlayerInput : MonoBehaviour
 					{
 						if (pickupable.GetComponent<Glass>() != null && pickupableInRightHand.GetComponent<Bottle>() != null)
 						{
-							Bottle bottle = pickupableInRightHand.GetComponent<Bottle>();
+ 							float startTimeInterval = 0.75f;
+ 							Bottle bottle = pickupableInRightHand.GetComponent<Bottle>();
 							Glass glass = pickupable.GetComponent<Glass>();
 							_startPourDelegate = glass.ReceivePourFromBottle;
 							startPourCoroutine = UtilCoroutines.WaitThenPour(bottle.tweenTime, glass.ReceivePourFromBottle, bottle, 0);
@@ -677,6 +707,9 @@ public class PlayerInput : MonoBehaviour
 							StartCoroutine(startPourCoroutine);					
 							bottle.StartPourTween(Vector3.forward + new Vector3(0.64f, 0, 0.5f));
 							bottle.RotateTween(bottle.rightHandPourRot);
+							TweenInFOV(myCam, 55, startTimeInterval, true);
+							TweenInFOV(myFirstPersonCam, 30, startTimeInterval, false);
+							EnterTweenRotationWhenPouringIntoGlass(myCam, startTimeInterval);
 						}
 					}
 				}
@@ -702,6 +735,10 @@ public class PlayerInput : MonoBehaviour
  							if (pickupableInRightHand.GetComponent<Bottle>() != null)
 							{
 								Bottle bottle = pickupableInRightHand.GetComponent<Bottle>();
+								ClearTweenSequences(_tweenSequences);
+								TweenOutFOV(myCam, 60, bottle.tweenEndTime, true);
+								TweenOutFOV(myFirstPersonCam, 60, bottle.tweenEndTime, false);
+								ExitTweenRotationWhenPouringIntoGlass(myCam, bottle.tweenEndTime);
  								foreach (var sequence in bottle.tweenSequences)
 								{
 									sequence.Kill(false);
@@ -713,9 +750,10 @@ public class PlayerInput : MonoBehaviour
 								{
 									Glass glass = pickupable.GetComponent<Glass>();
 									glass.EndPourFromBottle();
+//									myCam.transform.LookAt(glass.focalPoint.transform.position);
 									// glass.liquid.isBeingPoured = false;
-									// IEnumerator isBeingPouredCoroutine = WaitThenCallFunction(glass);
-									// StartCoroutine(isBeingPouredCoroutine);
+									 IEnumerator isBeingPouredCoroutine = WaitThenCallFunction(glass);
+									 StartCoroutine(isBeingPouredCoroutine);
 								}
 							}
 
@@ -736,6 +774,10 @@ public class PlayerInput : MonoBehaviour
  						if (pickupableInRightHand.GetComponent<Bottle>() != null)
 						{
 							Bottle bottle = pickupableInRightHand.GetComponent<Bottle>();
+							ClearTweenSequences(_tweenSequences);
+							TweenOutFOV(myCam, 60, bottle.tweenEndTime, true);
+							TweenOutFOV(myFirstPersonCam, 60, bottle.tweenEndTime, false);
+							ExitTweenRotationWhenPouringIntoGlass(myCam, bottle.tweenEndTime);
 							foreach (var sequence in bottle.tweenSequences)
 							{
 								sequence.Kill(false);
@@ -747,9 +789,11 @@ public class PlayerInput : MonoBehaviour
 							{
  								Glass glass = pickupable.GetComponent<Glass>();
 								glass.EndPourFromBottle();
+//								myCam.transform.LookAt(glass.focalPoint.transform.position);
+
 								// glass.liquid.isBeingPoured = false;
-								// IEnumerator isBeingPouredCoroutine = WaitThenCallFunction(glass);
-								// StartCoroutine(isBeingPouredCoroutine);
+								 IEnumerator isBeingPouredCoroutine = WaitThenCallFunction(glass);
+								 StartCoroutine(isBeingPouredCoroutine);
 							}
 						}
 						pickupableInRightHand.RotateToZeroTween();
@@ -919,6 +963,21 @@ public class PlayerInput : MonoBehaviour
 		#endregion
 	}
 
+	private void LookAtGlassWhenPouring()
+	{
+		if (pickupable != null)
+		{
+			if (pickupable.GetComponent<Glass>() != null)
+			{
+				Glass glass = pickupable.GetComponent<Glass>();
+				myCam.transform.rotation = Quaternion.Slerp(myCam.transform.rotation, Quaternion.LookRotation(glass.focalPoint.transform.position - myCam.transform.position), Time.time * Time.deltaTime);
+				myFirstPersonCam.transform.rotation = Quaternion.Slerp(myFirstPersonCam.transform.rotation, Quaternion.LookRotation(glass.focalPoint.transform.position - myFirstPersonCam.transform.position), Time.time * Time.deltaTime * 0.1f);
+//				myCam.transform.LookAt(glass.focalPoint.transform);
+//				myFirstPersonCamera.transform.LookAt(glass.focalPoint.transform);
+			}
+		}
+	}
+
 	private IEnumerator TurnOnBoxColliderOnDoor(float delay, Backdoor backdoor){
 		yield return new WaitForSeconds(delay);
 		backdoor.GetComponent<Collider>().enabled = true;
@@ -1036,16 +1095,124 @@ public class PlayerInput : MonoBehaviour
 
 	public IEnumerator WaitThenCallFunction(Glass _glass)
 	{
-		yield return new WaitForSeconds(0.95f);
+		yield return new WaitForSeconds(0.1f);
 		_glass.EndPourFromBottle();
 		_glass.liquid.isBeingPoured = false;
 	}
 
-	private void TweenFOV(Camera camToTween, float zoomFov, float unzoomFov, float zoomDuration, float waitTime, float unzoomDuration){
+	private void FullTweenFOV(Camera camToTween, float zoomFov, float unzoomFov, float zoomDuration, float waitTime, float unzoomDuration){
 		Sequence fovSequence = DOTween.Sequence();
 		fovSequence.Append(camToTween.DOFieldOfView(zoomFov, zoomDuration));
 		fovSequence.Append(camToTween.DOFieldOfView(zoomFov, waitTime));
 		fovSequence.Append(camToTween.DOFieldOfView(unzoomFov, unzoomDuration));
+	}
+
+	private void TweenInFOV(Camera camToTween, float zoomFov, float zoomDuration, bool isMoveTween)
+	{
+		Sequence sequence = DOTween.Sequence();
+		sequence.Append(camToTween.DOFieldOfView(zoomFov, zoomDuration));
+		_tweenSequences.Add(sequence);
+		
+		if (isMoveTween)
+		{
+			if (pickupable != null)
+			{
+				if (pickupable.GetComponent<Glass>() != null)
+				{
+					Glass glass = pickupable.GetComponent<Glass>();
+					float targetY = glass.focalPoint.transform.position.y + 0.5f;
+					Sequence moveSequence = DOTween.Sequence();
+					moveSequence.Append(
+						camToTween.transform.DOMoveY(targetY, zoomDuration, false)
+					);
+					_tweenSequences.Add(moveSequence);
+				}
+			}
+
+		}
+
+//		_tweenSequences.Add(rotateSequence);
+//		_tweenSequences.Add(camMoveSequence);
+	}
+
+	private void EnterTweenRotationWhenPouringIntoGlass(Camera camToTween, float tweenTime)
+	{
+		isLookingAtGlassWhilePouring = true;
+		/*
+		if (pickupable != null)
+		{
+			if (pickupable.GetComponent<Glass>() != null)
+			{
+				Glass glass = pickupable.GetComponent<Glass>();
+				Sequence rotateSequence = DOTween.Sequence();
+//				Vector3 glassFocalRot = Quaternion.ToEulerAngles(Quaternion.LookRotation(glass.focalPoint.transform.position - myCam.transform.position));
+//				Quaternion endValue = Quaternion.LookRotation(glass.focalPoint.transform.position - myCam.transform.position);
+//				startLookAngle = myCam.transform.localRotation;
+//				float opposite = (myCam.transform.position.y - 1.14f) - glass.focalPoint.transform.position.y;
+//				float adjacent = myCam.transform.position.x - glass.focalPoint.transform.position.x;
+//				float angle = (Mathf.Atan2(opposite, adjacent) * Mathf.Rad2Deg)/2;
+//				float angle = Mathf.Atan(opposite / adjacent);
+				startLookAngle = transform.localRotation.eulerAngles;
+				rotateSequence.Append(
+					camToTween.transform.DOLocalRotate(
+					new Vector3(angle, 0, 0),
+					tweenTime, RotateMode.Fast)
+				);
+				_tweenSequences.Add(rotateSequence);
+			}
+		}*/
+	}
+	
+	private void ExitTweenRotationWhenPouringIntoGlass(Camera camToTween, float tweenTime)
+	{
+		/*if (pickupable != null)
+		{
+			if (pickupable.GetComponent<Glass>() != null)
+			{
+				Glass glass = pickupable.GetComponent<Glass>();
+				Sequence rotateSequence = DOTween.Sequence();		
+				rotateSequence.Append(camToTween.transform.DOLocalRotate(
+					new Vector3 (60,0,0), tweenTime)
+				);
+				_tweenSequences.Add(rotateSequence);
+				startLookAngle = Vector3.zero;
+			}
+		}*/
+	}
+
+	private List<Sequence> _tweenSequences = new List<Sequence>();
+
+	private void TweenOutFOV(Camera camToTween, float unzoomFov, float unzoomDuration, bool isMoveTween)
+	{
+		Sequence sequence = DOTween.Sequence();
+		sequence.Append(camToTween.DOFieldOfView(unzoomFov, unzoomDuration));
+		_tweenSequences.Add(sequence);
+		if (isMoveTween)
+		{
+			Sequence moveSequence = DOTween.Sequence();
+			moveSequence.Append(
+				camToTween.transform.DOLocalMoveY(0.8f, unzoomDuration, false)		
+				);
+			moveSequence.OnComplete(() => StopLookingAtGlassWhilePouring());
+			_tweenSequences.Add(moveSequence);
+		}
+
+//		camToTween.transform.DORotate(new Vector3(0, camToTween.transform.rotation.y, camToTween.transform.rotation.z),
+//			unzoomDuration, RotateMode.Fast);
+	}
+	
+	private void ClearTweenSequences(List<Sequence> sequences)
+	{
+		foreach (var sequence in sequences)
+		{
+			sequence.Kill(false);
+		}
+		sequences.Clear();
+	}
+
+	private void StopLookingAtGlassWhilePouring()
+	{
+		isLookingAtGlassWhilePouring = false;
 	}
 
 	public void DropEverything(GameEvent e){

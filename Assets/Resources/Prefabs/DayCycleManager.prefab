@@ -51,6 +51,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9ae620ff95244772ab498ba2db18947, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxDays: 3
   dayHasEnded: 0
   dayReallyStarted: 0
   switchOff: 0
@@ -63,3 +64,4 @@ MonoBehaviour:
   doorOpened: 0
   spawnPoint1: {fileID: 0}
   spawnPoint2: {fileID: 0}
+  skipTutorial: 0

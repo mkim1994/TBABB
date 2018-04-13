@@ -6,6 +6,7 @@ using DG.Tweening;
 
 public class Glass : Pickupable
 {
+	public GameObject focalPoint;
 	public List<Ice> myIceList = new List<Ice>();
 	public bool hasLiquid;
 	public bool hasIce;
@@ -13,6 +14,9 @@ public class Glass : Pickupable
 	public bool isDirty;
 
 	public Liquid liquid;
+
+	public GameObject liquidSurfaceParent;
+	public GameObject liquidSurfaceChild;
 
 //	private Vector3 leftHandPourRot = new Vector3(88.76f, 0, 0);
 //	private Vector3 rightHandPourRot = new Vector3(87.7370f, 0, 6.915f);
@@ -53,7 +57,10 @@ public class Glass : Pickupable
 		}
 	}
 
-	void Update(){
+	void Update()
+	{
+//		Slosh();
+		
 		if(myIceList.Count >= 3){
 			liquid.hasIce = true;
 		} else {
@@ -185,7 +192,7 @@ public class Glass : Pickupable
 		Sequence rotateSequence = DOTween.Sequence();
 		rotateSequence.Append(transform.DOLocalRotate(leftHandPourRot, 0.5f, RotateMode.Fast));
 		rotateSequence.Append(transform.DOLocalRotate(Vector3.zero, 0.5f, RotateMode.Fast));
-		rotateSequence.OnComplete(() => liquid.EmptyLiquid());
+		rotateSequence.OnComplete(() => liquid.EmptyLiquid()); 
 		// rotateSequence.OnComplete(()=>ClearIce());
 		ClearIce();
  	}
@@ -214,6 +221,16 @@ public class Glass : Pickupable
 			Destroy(ice.gameObject);
 		}
 		myIceList.Clear();
+	}
+
+	private void Slosh()
+	{
+		Quaternion inverseRotation = Quaternion.Inverse(transform.localRotation);
+
+		Vector3 finalRotation = Quaternion
+			.RotateTowards(liquidSurfaceParent.transform.localRotation, inverseRotation, 60 * Time.deltaTime).eulerAngles;
+
+		liquidSurfaceParent.transform.localEulerAngles = finalRotation;
 	}
 
 }

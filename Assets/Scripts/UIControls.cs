@@ -325,7 +325,7 @@ public class UIControls : MonoBehaviour {
 		if(Physics.Raycast(ray, out hit, rayDist, controlsMask)){
 			GameObject hitObj = hit.transform.gameObject; //if you're actually looking at something
 			distanceToObj = Vector3.Distance(transform.position, hitObj.transform.position);
-			Debug.Log(hitObj.name);
+//			Debug.Log(hitObj.name);
 			if(hitObj.GetComponent<Bottle>() != null && !isExceptionTextRequired)
 			{
 				pickupableBeingLookedAt = hitObj;

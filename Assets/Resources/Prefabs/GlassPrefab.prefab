@@ -47,6 +47,21 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1324262859443550
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4032724506753408}
+  m_Layer: 0
+  m_Name: FocalPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1990981567063706
 GameObject:
   m_ObjectHideFlags: 0
@@ -65,6 +80,19 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!4 &4032724506753408
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1324262859443550}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.924, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4175873300679116}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4175873300679116
 Transform:
   m_ObjectHideFlags: 1
@@ -72,11 +100,12 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1990981567063706}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 7.354, y: 3.816, z: 1.58}
+  m_LocalPosition: {x: -1.585, y: 1.66, z: 10.072}
   m_LocalScale: {x: 0.72233, y: 0.72233, z: 0.72233}
   m_Children:
   - {fileID: 4983605418241212}
   - {fileID: 4849653233933616}
+  - {fileID: 4032724506753408}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -207,14 +236,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a433c2afe0a76e4bb72e41952f91ec8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasIce: 0
   height: 0
-  pourRate: 500
+  pourRate: 100
   isEvaluated: 0
   totalVolume: 0
+  myDrinkBase: 0
+  myMixer: 0
   coasters: []
   sodaVolume: 0
   tonicVolume: 0
-  appleJuiceVolume: 0
+  vermouthVolume: 0
   orangeJuiceVolume: 0
   lemonJuiceVolume: 0
   whiskeyVolume: 0
@@ -233,6 +265,10 @@ MonoBehaviour:
   alcoholVolume: 0
   abv: 0
   drinkParts: []
+  otherLiquid: {fileID: 0}
+  otherLiquidMask: {fileID: 0}
+  myMask: {fileID: 0}
+  isBeingPoured: 0
 --- !u!114 &114969815638737844
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -245,18 +281,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 0
+  leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
+  rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
   startPos: {x: 0, y: 0, z: 0}
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
+  tweenEndTime: 0.5
   pickupDropTime: 0.25
   pickedUp: 0
+  origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
   myName: 
   myLiquid: {fileID: 114534227693515202}
+  focalPoint: {fileID: 1324262859443550}
+  myIceList: []
   hasLiquid: 0
+  hasIce: 0
   isFull: 0
   isDirty: 0
+  liquid: {fileID: 0}
   glassType: 0
 --- !u!136 &136314839369854642
 CapsuleCollider:
@@ -312,7 +356,7 @@ SkinnedMeshRenderer:
   m_Mesh: {fileID: 4300000, guid: 6e448beaa5ced4d6499b40a9ea987fc1, type: 3}
   m_Bones: []
   m_BlendShapeWeights:
-  - 100
+  - 0
   m_RootBone: {fileID: 0}
   m_AABB:
     m_Center: {x: 0.000000022351742, y: 0.4350929, z: -0.000000037252903}
