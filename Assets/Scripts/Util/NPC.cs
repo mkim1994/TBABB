@@ -230,6 +230,8 @@ public class NPC : MonoBehaviour
             }
             //need to add 1 to currentDay to offset the 0 start
             //Services.GameManager.dialogue.variableStorage.SetValue("$content" + characterName, defaultVar);
+            Services.GameManager.dialogue.StopAllCoroutines();
+            Services.GameManager.dialogue.dialogueUI.StopAllCoroutines();
             Services.GameManager.dialogue.StartDialogue((Services.GameManager.dayManager.currentDay + 1) + characterName);
         }
        // }

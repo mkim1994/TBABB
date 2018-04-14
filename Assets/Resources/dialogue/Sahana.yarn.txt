@@ -67,6 +67,7 @@ position: -886,101
                 Customer: Thank you again--bye.
                 <<set $stateSahana = 5>>
             <<else>>
+                <<set $drunkSahana += 1>>
                 Customer: Mm.
                 Customer: This is pretty bitter...
                 Customer: I don't think I've tasted something like this before.
@@ -112,7 +113,7 @@ Customer: Nevermind, give me anything, just no alcohol.
 title: 2SahanaA2
 tags: 
 colorID: 0
-position: -881,366
+position: -883,366
 ---
 Customer: Alright.
 Customer: I mean...
