@@ -83,6 +83,7 @@ public class PlayerInput : MonoBehaviour
 
 	public bool isInputEnabled = true;
 	public bool isUsingController = false;
+	public bool isPourTweenDone = false;
 
 	//buttons
 	bool i_pickupLeft;
@@ -561,12 +562,16 @@ public class PlayerInput : MonoBehaviour
 								if (pickupable.GetComponent<Glass>() != null)
 								{
 									Glass glass = pickupable.GetComponent<Glass>();
-									// glass.liquid.isBeingPoured = false;
-									glass.EndPourFromBottle();
-//									myCam.transform.LookAt(glass.focalPoint.transform.position);
-
-									 IEnumerator isBeingPouredCoroutine = WaitThenCallFunction(glass);
-									 StartCoroutine(isBeingPouredCoroutine);
+									if (isPourTweenDone)
+									{
+										// glass.liquid.isBeingPoured = false;
+										glass.EndPourFromBottle();
+	//									myCam.transform.LookAt(glass.focalPoint.transform.position);
+	//
+	//									IEnumerator isBeingPouredCoroutine = WaitThenCallFunction(glass);
+	//									StartCoroutine(isBeingPouredCoroutine);		
+									}
+									glass.liquid.isBeingPoured = false;
 								}
 							}
 							pickupableInLeftHand.RotateToZeroTween();
@@ -596,13 +601,13 @@ public class PlayerInput : MonoBehaviour
 						}
 						if (pickupable != null)
 						{
-							if (pickupable.GetComponent<Glass>() != null)
-							{
+							if(pickupable.GetComponent<Glass>() != null){
 								Glass glass = pickupable.GetComponent<Glass>();
-								glass.EndPourFromBottle();
-//								myCam.transform.LookAt(glass.focalPoint.transform.position);
-								IEnumerator isBeingPouredCoroutine = WaitThenCallFunction(glass);
-								StartCoroutine(isBeingPouredCoroutine);
+								glass.liquid.isBeingPoured = false;						
+								if (isPourTweenDone)
+								{
+									glass.EndPourFromBottle();
+								}
 							}
 						}
 						pickupableInLeftHand.RotateToZeroTween();
@@ -672,14 +677,13 @@ public class PlayerInput : MonoBehaviour
 						{
 							if (pickupable.GetComponent<Glass>() != null && pickupableInRightHand.GetComponent<Bottle>() != null)
 							{
-								float startTimeInterval = 0.75f;
 								Bottle bottle = pickupableInRightHand.GetComponent<Bottle>();
 								Glass glass = pickupable.GetComponent<Glass>();
+								float startTimeInterval = bottle.tweenTime;
 								_startPourDelegate = glass.ReceivePourFromBottle;
 								startPourCoroutine = UtilCoroutines.WaitThenPour(bottle.tweenTime, glass.ReceivePourFromBottle, bottle, 1);
-								StartCoroutine(WaitThenSetBoolToTrue(bottle.tweenTime, glass.liquid));
-								StartCoroutine(startPourCoroutine);		
 								setIsPouringToTrueCoroutine = WaitThenSetBoolToTrue(bottle.tweenTime, glass.liquid);
+ 								StartCoroutine(startPourCoroutine);		
 								StartCoroutine(setIsPouringToTrueCoroutine);
 								bottle.StartPourTween(Vector3.forward + new Vector3(0.64f, 0, 0.5f));
 								bottle.RotateTween(bottle.rightHandPourRot);  
@@ -749,15 +753,13 @@ public class PlayerInput : MonoBehaviour
 								if (pickupable.GetComponent<Glass>() != null)
 								{
 									Glass glass = pickupable.GetComponent<Glass>();
-									glass.EndPourFromBottle();
-//									myCam.transform.LookAt(glass.focalPoint.transform.position);
-									// glass.liquid.isBeingPoured = false;
-									 IEnumerator isBeingPouredCoroutine = WaitThenCallFunction(glass);
-									 StartCoroutine(isBeingPouredCoroutine);
+									if (isPourTweenDone)
+									{
+										glass.EndPourFromBottle();
+									}
+									glass.liquid.isBeingPoured = false;
 								}
 							}
-
-
 							pickupableInRightHand.RotateToZeroTween();
 							pickupableInRightHand.EndPourTween();
 							StartCoroutine(UtilCoroutines.WaitThenSetTweensToInactive(pickupableInRightHand.tweenEndTime, _tweenManagerDelegate));
@@ -787,13 +789,12 @@ public class PlayerInput : MonoBehaviour
 						{
 							if (pickupable.GetComponent<Glass>() != null)
 							{
- 								Glass glass = pickupable.GetComponent<Glass>();
-								glass.EndPourFromBottle();
-//								myCam.transform.LookAt(glass.focalPoint.transform.position);
-
-								// glass.liquid.isBeingPoured = false;
-								 IEnumerator isBeingPouredCoroutine = WaitThenCallFunction(glass);
-								 StartCoroutine(isBeingPouredCoroutine);
+								Glass glass = pickupable.GetComponent<Glass>();
+								glass.liquid.isBeingPoured = false;
+								if (isPourTweenDone)
+								{
+									glass.EndPourFromBottle();
+								}
 							}
 						}
 						pickupableInRightHand.RotateToZeroTween();
@@ -852,6 +853,7 @@ public class PlayerInput : MonoBehaviour
 		else if (isTwoHandedPouring && (i_endUseRight || i_endUseLeft))
 		{	
 			isTwoHandedPouring = false;
+			Debug.Log("This should NOT be called!");
 			switch (_interactionState)
 			{
 				case InteractionState.LeftHasBottle_RightHasGlass:
@@ -1095,9 +1097,10 @@ public class PlayerInput : MonoBehaviour
 
 	public IEnumerator WaitThenCallFunction(Glass _glass)
 	{
-		yield return new WaitForSeconds(0.1f);
+		yield return new WaitForSeconds(1f);
 		_glass.EndPourFromBottle();
-		_glass.liquid.isBeingPoured = false;
+		Debug.Log("EndPourFromBottle called!");
+//		_glass.liquid.isBeingPoured = false;
 	}
 
 	private void FullTweenFOV(Camera camToTween, float zoomFov, float unzoomFov, float zoomDuration, float waitTime, float unzoomDuration){

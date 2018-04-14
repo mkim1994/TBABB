@@ -20,11 +20,7 @@ public class Pickupable : MonoBehaviour
 
     public Vector3 origPos;
     [SerializeField] private Dropzone myChildDropzone;
- 
-    public string myName = "";
-
-    public Liquid myLiquid;
-
+     
     protected virtual void Start()
     {
         CreateDropzone();
@@ -261,6 +257,7 @@ public class Pickupable : MonoBehaviour
             glass.hasIce = false;
             glass.liquid.isEvaluated = false;
             glass.liquid.EmptyLiquid();
+               
             glass.liquid.myDrinkBase = DrinkBase.none;
             glass.liquid.myMixer = Mixer.none;
             if (GetComponent<Bottle>() == null)

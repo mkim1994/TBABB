@@ -30,6 +30,7 @@ public class Bottle : Pickupable {
 		Services.AudioLoopScript.playerAttackPour = false;
  		Sequence sequence = DOTween.Sequence();
 		sequence.Append(transform.DOLocalMove(moveToPos, tweenTime, false)).SetEase(Ease.InOutQuart);
+		sequence.AppendCallback(()=>Services.GameManager.playerInput.isPourTweenDone = true);
 //		sequence.OnComplete(() => DeclareInactiveTween());		
 		tweenSequences.Add(sequence);
 	}
@@ -40,6 +41,7 @@ public class Bottle : Pickupable {
 		Services.AudioLoopScript.isPlayerPouring = false;
  		Sequence sequence = DOTween.Sequence();
 		sequence.Append(transform.DOLocalMove(startPos, tweenEndTime, false)).SetEase(Ease.InOutSine);
+		sequence.AppendCallback(() => Services.GameManager.playerInput.isPourTweenDone = false);
 //		sequence.OnComplete(() => DeclareInactiveTween());			
 		tweenSequences.Add(sequence);
 	}

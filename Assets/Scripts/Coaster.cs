@@ -63,8 +63,8 @@ public class Coaster : MonoBehaviour
   		if(_cocktail !=null){
 			float drinkDeviation = DrinkProfile.GetProfileDeviation(_cocktail, currentOrder);
 			int getIceValue = 0;
-			Debug.Log("Customer ordered ice " + currentOrder.ice);
-			Debug.Log("You served " + _cocktail.ice);
+//			Debug.Log("Customer ordered ice " + currentOrder.ice);
+//			Debug.Log("You served " + _cocktail.ice);
 			if(_cocktail.ice == currentOrder.ice && _cocktail.ice == 1 && currentOrder.ice == 1){ //_cocktail.ice will never be 0, so if they're equal, it's 1 or -1
 				getIceValue = 1;
  			} else if(currentOrder.ice == 0 //customer doesn't care, so ice  or no ice, it's fine.
@@ -128,10 +128,11 @@ public class Coaster : MonoBehaviour
 //						Debug.Log("Case 6 true!");
 						if(getIceValue == 0){
 							myCustomer.SetCustomerVars(80, 0);
-							myCustomer.InitiateDialogue(); 
+							myCustomer.InitiateDialogue();
+							StartCoroutine(DelayedInitiateDialogue(0.01f)); 
 						} else if (getIceValue == -1 || getIceValue == 1 ){
 							myCustomer.SetCustomerVars(85, 0);
-							myCustomer.InitiateDialogue(); 							
+							myCustomer.InitiateDialogue();
 						}
 					}
 				} 
@@ -139,15 +140,15 @@ public class Coaster : MonoBehaviour
 //					if(_cocktail.alcoholicStrength >= 0.25f){
 //						Debug.Log("Case 7 true!");
 //						myCustomer.SetCustomerVars (0.5f, 100);
-//						myCustomer.InitiateDialogue();
+//						StartCoroutine(DelayedInitiateDialogue(0.1f));
 //					} else if (_cocktail.alcoholicStrength < 0.25f && _cocktail.alcoholicStrength >= 0.10f){
 //						Debug.Log("Case 8 true!");
 //						myCustomer.SetCustomerVars(0.5f, 50);
-//						myCustomer.InitiateDialogue();
+//						StartCoroutine(DelayedInitiateDialogue(0.1f));
 //					} else if (_cocktail.alcoholicStrength < 0.10f){
 //						Debug.Log("Case 9 true!");
 //						myCustomer.SetCustomerVars(0.5f, 0);
-//						myCustomer.InitiateDialogue();
+//						StartCoroutine(DelayedInitiateDialogue(0.1f));
 //					}   	
 //				}
 				else if (drinkDeviation > 1.5f && drinkDeviation <= 1.95f){
@@ -219,7 +220,8 @@ public class Coaster : MonoBehaviour
 				{
  					myCustomer.SetCustomerVars(50, 0);
 					myCustomer.InitiateDialogue();
-				}
+
+ 				}
 
 				//no whiskey at all in glass, but acceptable amount of drink
 			}
@@ -250,5 +252,11 @@ public class Coaster : MonoBehaviour
 			isDrinkHere = true;
 		}
 	}
-	
+
+	IEnumerator DelayedInitiateDialogue(float seconds)
+	{
+		yield return new WaitForSeconds(seconds);
+		myCustomer.InitiateDialogue();
+	}
+
 }

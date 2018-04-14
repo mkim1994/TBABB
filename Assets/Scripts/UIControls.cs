@@ -384,32 +384,35 @@ public class UIControls : MonoBehaviour {
 				centerText.text = targetObj;
 				if (distanceToObj <= Services.GameManager.playerInput.maxInteractionDist)
 				{
-					if (dropzoneBeingLookedAt.objectsInMe.Count > 0)
+					if (dropzoneBeingLookedAt != null)
 					{
-						if (leftHandObj == null)
+						if (dropzoneBeingLookedAt.objectsInMe.Count > 0)
 						{
-							leftHandPickUpImage.enabled = true;
-							leftHandControlsText[0].text = buttonAndKeyStrings[2 + stringOffset];
-							leftHandControlsText[1].text = "pick up";
+							if (leftHandObj == null)
+							{
+								leftHandPickUpImage.enabled = true;
+								leftHandControlsText[0].text = buttonAndKeyStrings[2 + stringOffset];
+								leftHandControlsText[1].text = "pick up";
+							}
+							else if (leftHandObj != null && dropzoneBeingLookedAt.objectsInMe[0] == pickupableBeingLookedAt)
+							{
+								leftHandPickUpImage.enabled = true;
+								leftHandControlsText[0].text = buttonAndKeyStrings[2 + stringOffset];
+								leftHandControlsText[1].text = "swap";
+							}
+							if (rightHandObj == null)
+							{
+								rightHandPickUpImage.enabled = true;
+								rightHandControlsText[0].text = buttonAndKeyStrings[3 + stringOffset];
+								rightHandControlsText[1].text = "pick up";
+							}
+							else
+							{
+								rightHandPickUpImage.enabled = true;
+								rightHandControlsText[0].text = buttonAndKeyStrings[3 + stringOffset];
+								rightHandControlsText[1].text = "swap";
+							}					
 						}
-						else if (leftHandObj != null && dropzoneBeingLookedAt.objectsInMe[0] == pickupableBeingLookedAt)
-						{
-							leftHandPickUpImage.enabled = true;
-							leftHandControlsText[0].text = buttonAndKeyStrings[2 + stringOffset];
-							leftHandControlsText[1].text = "swap";
-						}
-						if (rightHandObj == null)
-						{
-							rightHandPickUpImage.enabled = true;
-							rightHandControlsText[0].text = buttonAndKeyStrings[3 + stringOffset];
-							rightHandControlsText[1].text = "pick up";
-						}
-						else
-						{
-							rightHandPickUpImage.enabled = true;
-							rightHandControlsText[0].text = buttonAndKeyStrings[3 + stringOffset];
-							rightHandControlsText[1].text = "swap";
-						}					
 					}
 				}
 

@@ -25,7 +25,7 @@ public class Glass : Pickupable
 	private Vector3 leftHandPourPos = new Vector3(-0.14f, -0.5f, 1.75f);
 	private Vector3 rightHandPourPos = new Vector3(0.14f, -0.5f, 1.75f);
 
-	private enum GlassType
+	public enum GlassType
 	{
 		Highball,
 		Shot,
@@ -34,27 +34,17 @@ public class Glass : Pickupable
 		Beer_mug
 	}
 
-	[SerializeField] GlassType glassType;
+	[SerializeField]private GlassType glassType;
 
 	protected override void Start()
 	{
 		base.Start();
 		liquid = GetComponentInChildren<Liquid>();
-		switch (glassType)
+		if (liquid != null)
 		{
-			case GlassType.Beer_mug:
-				break;
-			case GlassType.Highball:
-				break;
-			case GlassType.Shot:
-				break;
-			case GlassType.Square:
-				break;
-			case GlassType.Wine_glass:
-				break;
-			default:
-				break;
+			liquid._glassType = glassType;		
 		}
+
 	}
 
 	void Update()
@@ -158,7 +148,7 @@ public class Glass : Pickupable
 //		Liquid liquid = GetComponentInChildren<Liquid>();
 		liquid.isBeingPoured = false;
 		liquid.isEvaluated = false;
-		liquid.EvaluateDrinkInCoaster();
+//		liquid.EvaluateDrinkInCoaster();
 //		liquid.isPouring = false;
 	}
 

@@ -6,16 +6,17 @@ using UnityEngine;
 public class Liquid : MonoBehaviour {
 
 	public bool hasIce;
-
-	private int ice = 0;
+	public Glass.GlassType _glassType;
+	private float myMaxVolume;
+ 	private int ice = 0;
  	private DrinkProfile myDrinkProfile;
 	private float previousAlcoholVolume;
 	private float prevABV;
- 	public float height;
+	public float height;
 	private SkinnedMeshRenderer myLiquid;
 	private float myLiquidVolume = 100;
 	[SerializeField]private float pourRate = 1;
-	public bool isEvaluated = false;
+	[SerializeField] private GameObject liquidSurf;
 	public float totalVolume;
 	[HideInInspector]public DrinkBase myDrinkBase;
 	[HideInInspector]public Mixer myMixer;
@@ -37,7 +38,8 @@ public class Liquid : MonoBehaviour {
 	public GameObject otherLiquidMask;
 	public GameObject myMask;
 
-	public bool isBeingPoured;
+	public bool isBeingPoured = false;
+	public bool isEvaluated = false;
  
 	// Use this for initialization
 	void Start ()
@@ -49,12 +51,8 @@ public class Liquid : MonoBehaviour {
 		if (gameObject.GetComponent<SkinnedMeshRenderer>() != null)
 		{
 			myLiquid = GetComponent<SkinnedMeshRenderer>();
- 		} else if (gameObject.GetComponent<SkinnedMeshRenderer>() == null)
-		{
-		}
-
-
-
+ 		} 
+		
 		DetectCoasters ();
  		thisCocktail = new DrinkProfile (sodaVolume/height, tonicVolume/height, vermouthVolume/height, lemonJuiceVolume/height, 0, 0, 0, 0, 0, 0, 0, 
 		whiskeyVolume/height, ginVolume/height, tequilaVolume/height, vodkaVolume/height, rumVolume/height, beerVolume/height, 
@@ -64,8 +62,25 @@ public class Liquid : MonoBehaviour {
         originalZ = transform.localScale.z;
         if (GetComponent<Bottle>() == null)
         {
-            transform.localScale = new Vector3(0, 0, 0);
+//            transform.localScale = new Vector3(0, 0, 0);
         }
+
+		switch (_glassType)
+		{
+			case Glass.GlassType.Beer_mug:
+				break;
+			case Glass.GlassType.Highball:
+				myMaxVolume = 0.75f;
+				break;
+			case Glass.GlassType.Shot:
+				break;
+			case Glass.GlassType.Square:
+				break;
+			case Glass.GlassType.Wine_glass:
+				break;
+			default:
+				break;
+		}
 	}
 
 	// Update is called once per frame
@@ -167,11 +182,17 @@ public class Liquid : MonoBehaviour {
  	}
 
 	public void GrowVertical(){
- 		height = remapRange(myLiquidVolume, 0, 100, 100, 0);
- 		height = Mathf.Clamp(height, 0, 100);
-		transform.localScale = new Vector3(1, 1, 1);
- 		myLiquidVolume -= pourRate * Time.deltaTime;
-		myLiquid.SetBlendShapeWeight(0, myLiquidVolume);
+
+// 		height = Mathf.Clamp(height, 0, 100);
+//		transform.localScale = new Vector3(1, 1, 1);
+//		myLiquidVolume = liquidSurf.transform.localPosition.y;
+		if (liquidSurf.transform.localPosition.y <= myMaxVolume)
+		{
+			liquidSurf.transform.Translate(Vector3.up * pourRate * Time.deltaTime, Space.Self);		
+		}
+		myLiquidVolume = liquidSurf.transform.localPosition.y;
+ 		height = remapRange(myLiquidVolume, 0, myMaxVolume, 0, 100);
+//		myLiquid.SetBlendShapeWeight(0, myLiquidVolume);
  		thisCocktail = new DrinkProfile (sodaVolume/totalVolume, tonicVolume/totalVolume, vermouthVolume/totalVolume, lemonJuiceVolume/totalVolume, 0, 0, 0, 0, 0, 0, 0, 
 		whiskeyVolume/totalVolume, ginVolume/totalVolume, tequilaVolume/totalVolume, vodkaVolume/totalVolume, rumVolume/totalVolume, beerVolume/totalVolume, 
 		wineVolume/totalVolume, brandyVolume/totalVolume, abv, 
@@ -207,8 +228,8 @@ public class Liquid : MonoBehaviour {
 		spiciness = 0;
 		alcoholVolume = 0;
 		abv = 0;
-		myLiquidVolume = 100;
-		myLiquid.SetBlendShapeWeight(0, myLiquidVolume);
+		myLiquidVolume = 0;
+		liquidSurf.transform.localPosition = Vector3.zero;
 	}
 
 	float remapRange(float oldValue, float oldMin, float oldMax, float newMin, float newMax )
