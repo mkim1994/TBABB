@@ -26,6 +26,7 @@
         float _LightIntensity;
         samplerCUBE _Cube;
         float _CubeBlur;
+        float4x4 _MatrixToSurface;
 
 		struct Input {
             float2 uv_MainTex;
@@ -64,7 +65,11 @@
 		void surf (Input IN, inout SurfaceOutputStandard o) {
 			// ditch anything over the top of the water
 			
-            if(IN.worldPos.y >= _WaterHeight){
+            // if(IN.worldPos.y >= _WaterHeight){
+            //     discard;
+            // }
+            float3 localPos = mul(_MatrixToSurface, float4(IN.worldPos,1)).xyz;
+            if(localPos.y >= 0){
                 discard;
             }
               
@@ -98,9 +103,14 @@
 
         void surf (Input IN, inout SurfaceOutputStandard o) {
             // ditch anything over the top of the water
-            if(IN.worldPos.y >= _WaterHeight){
+            // if(IN.worldPos.y >= _WaterHeight){
+            //     discard;
+            // }
+            float3 localPos = mul(_MatrixToSurface, float4(IN.worldPos,1)).xyz;
+            if(localPos.y >= 0){
                 discard;
             }
+
             //sample main texture
             fixed4 c = tex2D (_MainTex, IN.uv_MainTex) * _Color;
 

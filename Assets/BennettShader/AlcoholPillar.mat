@@ -77,7 +77,7 @@ Material:
     m_Floats:
     - _Brightness: 0.1282051
     - _BumpScale: 1
-    - _CubeBlur: 2.24
+    - _CubeBlur: 2.71
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
     - _DiffuseAmbientLight: 0
