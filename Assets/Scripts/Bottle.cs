@@ -7,9 +7,11 @@ public class Bottle : Pickupable {
 
 	public DrinkBase myDrinkBase;
 	public Mixer myMixer;	
-  	public Vector3 leftHandPourRot = new Vector3(80f, 25, 0);
-	public Vector3 rightHandPourRot = new Vector3(80, -25, 6.915f);
- 	
+  	[HideInInspector]public Vector3 leftHandPourRot = new Vector3(80f, 25, 0);
+	[HideInInspector]public Vector3 rightHandPourRot = new Vector3(80, -25, 6.915f);
+ 	public Vector3 rightHandPourPos;
+
+	public Vector3 leftHandPourPos; 
 	protected override void Start()
 	{
 		base.Start();
@@ -49,7 +51,7 @@ public class Bottle : Pickupable {
 	public override void UseLeftHand(){ 
 		if(Services.GameManager.playerInput.pickupable.GetComponent<Glass>() != null){
  			base.RotateTween(leftHandPourRot);
-			StartPourTween(Vector3.forward + new Vector3(-0.64f, 0, 0.5f));
+			StartPourTween(leftHandPourPos);
 //			Services.GameManager.playerInput.pickupable.GetComponent<Glass>().ReceivePourFromBottle(this, 0);
  		} 
 	}
@@ -57,7 +59,7 @@ public class Bottle : Pickupable {
 	public override void UseRightHand(){
 		if(Services.GameManager.playerInput.pickupable.GetComponent<Glass>() != null){
  			base.RotateTween(rightHandPourRot);
-			StartPourTween(Vector3.forward + new Vector3(0.64f, 0, 0.5f));
+			StartPourTween(rightHandPourPos);
 //			Services.GameManager.playerInput.pickupable.GetComponent<Glass>().ReceivePourFromBottle(this, 1);
  		} 
 	}

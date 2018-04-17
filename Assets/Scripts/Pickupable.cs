@@ -5,10 +5,14 @@ using DG.Tweening;
 public class Pickupable : MonoBehaviour
 {
 
-    public bool isForDropzoneOnly;    
-    public Vector3 leftHandPos = new Vector3 (-0.64f, -0.89f, 1.241f);
+    public bool isForDropzoneOnly;   
+    protected float offsetZ = 2f;
+    protected float offsetY = -1.5f;
+    public Vector3 leftHandPos = new Vector3 (-0.64f, -0.89f, 2f);
+    // public Vector3 leftHandPos = new Vector3 (-0.64f, -0.89f, 1.241f);
     protected Vector3 dropOffset;
-    public Vector3 rightHandPos = new Vector3 (0.64f, -0.89f, 1.473f);
+    public Vector3 rightHandPos = new Vector3 (0.64f, -0.89f, 2f);
+    // public Vector3 rightHandPos = new Vector3 (0.64f, -0.89f, 1.473f);
     public Dropzone targetDropzone;
     public Vector3 startPos;
     public Vector3 dropPos;
@@ -28,6 +32,13 @@ public class Pickupable : MonoBehaviour
         EventManager.Instance.Register<DayEndEvent>(ReturnHome);
     }
 
+
+    public virtual void Update(){
+        if(pickedUp && !Services.TweenManager.tweensAreActive){
+            transform.rotation = Quaternion.identity;
+            transform.localPosition = new Vector3(transform.localPosition.x, transform.localPosition.y, offsetZ);
+         }
+    }
     public void CreateDropzone()
     {
         GameObject dropzoneGO = Instantiate(Resources.Load("Prefabs/dropzoneParent"), transform.position, Quaternion.identity) as GameObject;
@@ -260,10 +271,10 @@ public class Pickupable : MonoBehaviour
                
             glass.liquid.myDrinkBase = DrinkBase.none;
             glass.liquid.myMixer = Mixer.none;
-            if (GetComponent<Bottle>() == null)
-            {
-                glass.liquid.transform.localScale = new Vector3(0, 0, 0);
-            }
+            // if (GetComponent<Bottle>() == null)
+            // {
+            //     glass.liquid.transform.localScale = new Vector3(0, 0, 0);
+            // }
         }
     }
 }

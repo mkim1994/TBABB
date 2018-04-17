@@ -10,7 +10,7 @@
         _CubeBlur ("Cubemap Blur", Range(0,6)) = 2.0
 	}
 	SubShader {
-		Tags { "RenderType"="Opaque" "Queue"="Transparent-5"}
+		Tags { "RenderType"="Opaque" "Queue"="Transparent+5"}
         LOD 100
         
         Blend SrcAlpha OneMinusSrcAlpha
@@ -120,6 +120,7 @@
             //tint it
             o.Albedo *= c.rgb;
 
+            o.Emission = 0.2*o.Albedo; //a little ambient light
             o.Metallic = _Metallic;
             o.Smoothness = _Glossiness;
             o.Alpha = c.a;

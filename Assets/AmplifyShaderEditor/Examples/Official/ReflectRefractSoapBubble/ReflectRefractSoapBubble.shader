@@ -19,7 +19,7 @@ Shader "ASESampleShaders/ReflectRefractSoapBubble"
 
 	SubShader
 	{
-		Tags{ "RenderType" = "Opaque"  "Queue" = "Transparent+0" }
+		Tags{ "RenderType" = "Opaque"  "Queue" = "Transparent+10" }
 		Cull Back
 		GrabPass{ }
 		CGINCLUDE

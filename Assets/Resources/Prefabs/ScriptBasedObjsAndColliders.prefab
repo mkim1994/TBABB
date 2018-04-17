@@ -1193,23 +1193,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!1 &1067163669816524
-GameObject:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 4378778309770352}
-  - component: {fileID: 54881933143809624}
-  - component: {fileID: 145427452376168198}
-  m_Layer: 0
-  m_Name: SpringHolder
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
 --- !u!1 &1067452322799796
 GameObject:
   m_ObjectHideFlags: 1
@@ -4137,24 +4120,6 @@ GameObject:
   - component: {fileID: 114594281621677630}
   m_Layer: 0
   m_Name: GlassPrefab (43)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!1 &1230321170366996
-GameObject:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 4985083022159474}
-  - component: {fileID: 33731612647441496}
-  - component: {fileID: 23248933032855922}
-  - component: {fileID: 95252431090951676}
-  m_Layer: 0
-  m_Name: GlassModel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8656,25 +8621,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 0
---- !u!1 &1519402737910526
-GameObject:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 4892729224025682}
-  - component: {fileID: 33221628613984784}
-  - component: {fileID: 23102284311459602}
-  - component: {fileID: 114575853990855866}
-  - component: {fileID: 114882378652158312}
-  m_Layer: 0
-  m_Name: Water_Pillar
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
 --- !u!1 &1520800951047512
 GameObject:
   m_ObjectHideFlags: 1
@@ -11151,21 +11097,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!1 &1689873123654094
-GameObject:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 4398263464369720}
-  m_Layer: 0
-  m_Name: FocalPoint
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
 --- !u!1 &1689948345691344
 GameObject:
   m_ObjectHideFlags: 1
@@ -11216,23 +11147,6 @@ GameObject:
   - component: {fileID: 54876307165005056}
   m_Layer: 0
   m_Name: DefaultBottle (104)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!1 &1694387274650576
-GameObject:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 4009334753205378}
-  - component: {fileID: 33126635590538306}
-  - component: {fileID: 23807336907383134}
-  m_Layer: 0
-  m_Name: Water_Surface
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13769,22 +13683,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 0
---- !u!1 &1880131218737366
-GameObject:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 4162956717533380}
-  - component: {fileID: 54218354557877708}
-  m_Layer: 0
-  m_Name: SurfaceHolder
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
 --- !u!1 &1883912564413936
 GameObject:
   m_ObjectHideFlags: 1
@@ -13888,6 +13786,7 @@ GameObject:
   - component: {fileID: 4090628453088078}
   - component: {fileID: 33421125395846648}
   - component: {fileID: 23293695993517640}
+  - component: {fileID: 114699732039264726}
   m_Layer: 0
   m_Name: Water_Surface
   m_TagString: Untagged
@@ -14680,24 +14579,6 @@ GameObject:
   - component: {fileID: 114834426388675496}
   m_Layer: 0
   m_Name: glassDrinkCylinder
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!1 &1940153892294442
-GameObject:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 4077431483973054}
-  - component: {fileID: 54991866499428904}
-  - component: {fileID: 136903046195058490}
-  - component: {fileID: 114535632397044112}
-  m_Layer: 0
-  m_Name: GlassWithSpring
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -15610,7 +15491,7 @@ Transform:
   - {fileID: 4589558951442410}
   - {fileID: 4793653355889388}
   m_Father: {fileID: 4258624004506724}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4002527533178468
 Transform:
@@ -15651,19 +15532,6 @@ Transform:
   m_LocalScale: {x: 0.09618961, y: 0.09618966, z: 0.09618966}
   m_Children: []
   m_Father: {fileID: 4092172111748182}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &4009334753205378
-Transform:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1694387274650576}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0.039}
-  m_LocalScale: {x: 0.09618961, y: 0.09618966, z: 0.09618966}
-  m_Children: []
-  m_Father: {fileID: 4162956717533380}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4009403606818716
@@ -16332,24 +16200,6 @@ Transform:
   m_Father: {fileID: 4041144279733594}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &4077431483973054
-Transform:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1940153892294442}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.564, y: 1.6474999, z: 9.952}
-  m_LocalScale: {x: 0.72233, y: 0.7223301, z: 0.7223301}
-  m_Children:
-  - {fileID: 4985083022159474}
-  - {fileID: 4398263464369720}
-  - {fileID: 4892729224025682}
-  - {fileID: 4162956717533380}
-  - {fileID: 4378778309770352}
-  m_Father: {fileID: 4258624004506724}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4078008678783334
 Transform:
   m_ObjectHideFlags: 1
@@ -16862,7 +16712,7 @@ Transform:
   - {fileID: 4973479473158722}
   - {fileID: 4962734041490868}
   m_Father: {fileID: 4258624004506724}
-  m_RootOrder: 10
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4114200659153242
 Transform:
@@ -17268,20 +17118,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 4492784491214698}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &4162956717533380
-Transform:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1880131218737366}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.011, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 4009334753205378}
-  m_Father: {fileID: 4077431483973054}
-  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4163230098169084
 Transform:
@@ -18367,7 +18203,7 @@ Transform:
   m_Children:
   - {fileID: 4249673294790148}
   m_Father: {fileID: 4861439855706366}
-  m_RootOrder: 6
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4246097286870512
 Transform:
@@ -18585,7 +18421,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4450962848872718}
-  - {fileID: 4077431483973054}
   - {fileID: 4001696214146336}
   - {fileID: 4819360269533418}
   - {fileID: 4424446679312676}
@@ -19225,7 +19060,7 @@ Transform:
   - {fileID: 4951601047060372}
   - {fileID: 4449855369674676}
   m_Father: {fileID: 4861439855706366}
-  m_RootOrder: 5
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4305275953870528
 Transform:
@@ -20289,19 +20124,6 @@ Transform:
   m_Father: {fileID: 4861439855706366}
   m_RootOrder: 80
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &4378778309770352
-Transform:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1067163669816524}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.868, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 4077431483973054}
-  m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4378934182111704
 Transform:
   m_ObjectHideFlags: 1
@@ -20518,19 +20340,6 @@ Transform:
   m_Father: {fileID: 4186657392091622}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &4398263464369720
-Transform:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1689873123654094}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.924, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 4077431483973054}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4398902682800516
 Transform:
   m_ObjectHideFlags: 1
@@ -20627,7 +20436,7 @@ Transform:
   m_GameObject: {fileID: 1502962463505860}
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.75023305, y: 0.75023365, z: 0.75023365}
+  m_LocalScale: {x: 0.9082659, y: 0.9082659, z: 0.9082659}
   m_Children: []
   m_Father: {fileID: 4450962848872718}
   m_RootOrder: 2
@@ -20901,7 +20710,7 @@ Transform:
   - {fileID: 4306496086987832}
   - {fileID: 4309041022440694}
   m_Father: {fileID: 4258624004506724}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4424981409188308
 Transform:
@@ -20986,7 +20795,7 @@ Transform:
   - {fileID: 4677837535433290}
   - {fileID: 4932976959827924}
   m_Father: {fileID: 4258624004506724}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4428987966867282
 Transform:
@@ -21360,7 +21169,7 @@ Transform:
   m_Children:
   - {fileID: 4450858089357544}
   m_Father: {fileID: 4861439855706366}
-  m_RootOrder: 4
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4438135313876508
 Transform:
@@ -21572,7 +21381,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1873452307670110}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.056, y: 1.6475, z: 9.989}
+  m_LocalPosition: {x: 2.465, y: 1.6256, z: 9.996}
   m_LocalScale: {x: 0.72233, y: 0.7223301, z: 0.7223301}
   m_Children:
   - {fileID: 4841102992503388}
@@ -21680,7 +21489,7 @@ Transform:
   - {fileID: 4429279307720350}
   - {fileID: 4873446457993082}
   m_Father: {fileID: 4258624004506724}
-  m_RootOrder: 11
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4461105138944728
 Transform:
@@ -21844,7 +21653,7 @@ Transform:
   - {fileID: 4273790158940914}
   - {fileID: 4612895262335636}
   m_Father: {fileID: 4258624004506724}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4481311849353468
 Transform:
@@ -22019,7 +21828,7 @@ Transform:
   m_Children:
   - {fileID: 4428038459012058}
   m_Father: {fileID: 4861439855706366}
-  m_RootOrder: 2
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4496999138523178
 Transform:
@@ -23105,7 +22914,7 @@ Transform:
   - {fileID: 4302008748985026}
   - {fileID: 4537029713458072}
   m_Father: {fileID: 4258624004506724}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4587936843859296
 Transform:
@@ -23794,7 +23603,7 @@ Transform:
   - {fileID: 4734774995301422}
   - {fileID: 4196538856906424}
   m_Father: {fileID: 4258624004506724}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4661612766461192
 Transform:
@@ -24458,7 +24267,7 @@ Transform:
   - {fileID: 4520555915004602}
   - {fileID: 4227643301661746}
   m_Father: {fileID: 4861439855706366}
-  m_RootOrder: 7
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4722398328506362
 Transform:
@@ -25075,7 +24884,7 @@ Transform:
   - {fileID: 4435197603786916}
   - {fileID: 4092172111748182}
   m_Father: {fileID: 4258624004506724}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4776594114043008
 Transform:
@@ -25569,7 +25378,7 @@ Transform:
   - {fileID: 4030541123987404}
   - {fileID: 4352290097990358}
   m_Father: {fileID: 4258624004506724}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4820811641654520
 Transform:
@@ -25936,12 +25745,12 @@ Transform:
   m_Children:
   - {fileID: 4621276439216980}
   - {fileID: 4270528128481322}
+  - {fileID: 4304476173402694}
+  - {fileID: 4722341236728306}
+  - {fileID: 4242369113788992}
   - {fileID: 4496688280730950}
   - {fileID: 4879365468281840}
   - {fileID: 4436806082581702}
-  - {fileID: 4304476173402694}
-  - {fileID: 4242369113788992}
-  - {fileID: 4722341236728306}
   - {fileID: 4809970377616324}
   - {fileID: 4510146127593454}
   - {fileID: 4279272131089210}
@@ -26379,7 +26188,7 @@ Transform:
   m_Children:
   - {fileID: 4024767286149960}
   m_Father: {fileID: 4861439855706366}
-  m_RootOrder: 3
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4883426827189196
 Transform:
@@ -26449,19 +26258,6 @@ Transform:
   m_Father: {fileID: 4431814887362290}
   m_RootOrder: 39
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &4892729224025682
-Transform:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1519402737910526}
-  m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.75023305, y: 0.75023365, z: 0.75023365}
-  m_Children: []
-  m_Father: {fileID: 4077431483973054}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!4 &4894015273354260
 Transform:
   m_ObjectHideFlags: 1
@@ -27474,19 +27270,6 @@ Transform:
   m_Father: {fileID: 4174320290193702}
   m_RootOrder: 39
   m_LocalEulerAnglesHint: {x: 0, y: 63.487003, z: 0}
---- !u!4 &4985083022159474
-Transform:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1230321170366996}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.011003172, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 4077431483973054}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4988640696055656
 Transform:
   m_ObjectHideFlags: 1
@@ -29230,40 +29013,6 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_Materials:
   - {fileID: 2100000, guid: 8481cdd9647ca4f5db48a84ee2a4837a, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 0
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
---- !u!23 &23102284311459602
-MeshRenderer:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1519402737910526}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_Materials:
-  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -31631,40 +31380,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!23 &23248933032855922
-MeshRenderer:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1230321170366996}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_Materials:
-  - {fileID: 2100000, guid: 1c5225c36c15c35418ac47c9b336bfe9, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 0
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
 --- !u!23 &23250865057442434
 MeshRenderer:
   m_ObjectHideFlags: 1
@@ -32318,8 +32033,8 @@ MeshRenderer:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1889308532417708}
   m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
   m_DynamicOccludee: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 1
@@ -39559,40 +39274,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!23 &23807336907383134
-MeshRenderer:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1694387274650576}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_Materials:
-  - {fileID: 2100000, guid: 798f8dec2f7fd43a2b038c46d82aa375, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_PreserveUVs: 1
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 0
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
 --- !u!23 &23812436295706600
 MeshRenderer:
   m_ObjectHideFlags: 1
@@ -42588,13 +42269,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1449641675778468}
   m_Mesh: {fileID: 4300000, guid: 27d0ced3b7c5740c681e79e32c4b432b, type: 3}
---- !u!33 &33126635590538306
-MeshFilter:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1694387274650576}
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!33 &33128438365966144
 MeshFilter:
   m_ObjectHideFlags: 1
@@ -42973,13 +42647,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1169700780566978}
   m_Mesh: {fileID: 4300000, guid: 27d0ced3b7c5740c681e79e32c4b432b, type: 3}
---- !u!33 &33221628613984784
-MeshFilter:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1519402737910526}
-  m_Mesh: {fileID: 4300000, guid: ac3f3c09a754fa549b16216bf78c388f, type: 3}
 --- !u!33 &33222232156177888
 MeshFilter:
   m_ObjectHideFlags: 1
@@ -44520,13 +44187,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1483435995964508}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!33 &33731612647441496
-MeshFilter:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1230321170366996}
-  m_Mesh: {fileID: 4300000, guid: 27d0ced3b7c5740c681e79e32c4b432b, type: 3}
 --- !u!33 &33732154217407032
 MeshFilter:
   m_ObjectHideFlags: 1
@@ -46133,21 +45793,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!54 &54218354557877708
-Rigidbody:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1880131218737366}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 1
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 2
 --- !u!54 &54220051850431214
 Rigidbody:
   m_ObjectHideFlags: 1
@@ -49388,21 +49033,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!54 &54881933143809624
-Rigidbody:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1067163669816524}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 0
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 2
 --- !u!54 &54883847196514674
 Rigidbody:
   m_ObjectHideFlags: 1
@@ -49874,21 +49504,6 @@ Rigidbody:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1082674068880118}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0
-  m_UseGravity: 0
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
---- !u!54 &54991866499428904
-Rigidbody:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1940153892294442}
   serializedVersion: 2
   m_Mass: 1
   m_Drag: 0
@@ -53722,23 +53337,6 @@ Animator:
   m_GameObject: {fileID: 1040882844184518}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 953380112456940edb3d7c011c8126f4, type: 3}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
---- !u!95 &95252431090951676
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1230321170366996}
-  m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: 27d0ced3b7c5740c681e79e32c4b432b, type: 3}
   m_Controller: {fileID: 0}
   m_CullingMode: 0
   m_UpdateMode: 0
@@ -57768,8 +57366,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 0
-  leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
-  rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
+  leftHandPos: {x: -1, y: -0.89, z: 2}
+  rightHandPos: {x: 1, y: -0.89, z: 2}
   targetDropzone: {fileID: 0}
   startPos: {x: 0, y: 0, z: 0}
   dropPos: {x: 0, y: 0, z: 0}
@@ -58056,7 +57654,7 @@ MonoBehaviour:
   hasIce: 0
   _glassType: 0
   height: 0
-  pourRate: 1
+  pourRate: 0.25
   liquidSurf: {fileID: 1486749216967048}
   totalVolume: 0
   myDrinkBase: 0
@@ -58223,6 +57821,8 @@ MonoBehaviour:
   myMixer: 0
   leftHandPourRot: {x: 80, y: 25, z: 0}
   rightHandPourRot: {x: 80, y: -25, z: 6.915}
+  rightHandPourPos: {x: 0.75, y: 0, z: 1.5}
+  leftHandPourPos: {x: -0.64, y: 300, z: 6}
 --- !u!114 &114025281179899548
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -58713,7 +58313,7 @@ MonoBehaviour:
   hasIce: 0
   _glassType: 0
   height: 0
-  pourRate: 1
+  pourRate: 0.25
   liquidSurf: {fileID: 1974293196145104}
   totalVolume: 0
   myDrinkBase: 0
@@ -58864,6 +58464,8 @@ MonoBehaviour:
   myMixer: 0
   leftHandPourRot: {x: 80, y: 25, z: 0}
   rightHandPourRot: {x: 80, y: -25, z: 6.915}
+  rightHandPourPos: {x: 0.75, y: 0, z: 1.5}
+  leftHandPourPos: {x: -0.64, y: 300, z: 6}
 --- !u!114 &114062827063134212
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -58891,6 +58493,8 @@ MonoBehaviour:
   myMixer: 0
   leftHandPourRot: {x: 80, y: 25, z: 0}
   rightHandPourRot: {x: 80, y: -25, z: 6.915}
+  rightHandPourPos: {x: 0.75, y: 0, z: 1.5}
+  leftHandPourPos: {x: -0.64, y: 300, z: 6}
 --- !u!114 &114068689649880494
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -58984,6 +58588,8 @@ MonoBehaviour:
   myMixer: 0
   leftHandPourRot: {x: 80, y: 25, z: 0}
   rightHandPourRot: {x: 80, y: -25, z: 6.915}
+  rightHandPourPos: {x: 0.75, y: 0, z: 1.5}
+  leftHandPourPos: {x: -0.64, y: 300, z: 6}
 --- !u!114 &114076753633621944
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -59205,6 +58811,8 @@ MonoBehaviour:
   myMixer: 0
   leftHandPourRot: {x: 80, y: 25, z: 0}
   rightHandPourRot: {x: 80, y: -25, z: 6.915}
+  rightHandPourPos: {x: 0.75, y: 0, z: 1.5}
+  leftHandPourPos: {x: -0.64, y: 300, z: 6}
 --- !u!114 &114086021760851658
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -59726,8 +59334,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 0
-  leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
-  rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
+  leftHandPos: {x: -1, y: -0.89, z: 2}
+  rightHandPos: {x: 1, y: -0.89, z: 2}
   targetDropzone: {fileID: 0}
   startPos: {x: 0, y: 0, z: 0}
   dropPos: {x: 0, y: 0, z: 0}
@@ -59741,6 +59349,8 @@ MonoBehaviour:
   myMixer: 0
   leftHandPourRot: {x: 80, y: 25, z: 0}
   rightHandPourRot: {x: 80, y: -25, z: 6.915}
+  rightHandPourPos: {x: 0.5, y: 0, z: 2.5}
+  leftHandPourPos: {x: -0.5, y: 0, z: 2.5}
 --- !u!114 &114106460627857050
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -60083,6 +59693,8 @@ MonoBehaviour:
   myMixer: 0
   leftHandPourRot: {x: 80, y: 25, z: 0}
   rightHandPourRot: {x: 80, y: -25, z: 6.915}
+  rightHandPourPos: {x: 0.75, y: 0, z: 1.5}
+  leftHandPourPos: {x: -0.64, y: 300, z: 6}
 --- !u!114 &114125073602430500
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -60143,6 +59755,8 @@ MonoBehaviour:
   myMixer: 0
   leftHandPourRot: {x: 80, y: 25, z: 0}
   rightHandPourRot: {x: 80, y: -25, z: 6.915}
+  rightHandPourPos: {x: 0.75, y: 0, z: 1.5}
+  leftHandPourPos: {x: -0.64, y: 300, z: 6}
 --- !u!114 &114126501527521400
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -60216,6 +59830,8 @@ MonoBehaviour:
   myMixer: 0
   leftHandPourRot: {x: 80, y: 25, z: 0}
   rightHandPourRot: {x: 80, y: -25, z: 6.915}
+  rightHandPourPos: {x: 0.75, y: 0, z: 1.5}
+  leftHandPourPos: {x: -0.64, y: 300, z: 6}
 --- !u!114 &114129478725631358
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -60447,6 +60063,8 @@ MonoBehaviour:
   myMixer: 0
   leftHandPourRot: {x: 80, y: 25, z: 0}
   rightHandPourRot: {x: 80, y: -25, z: 6.915}
+  rightHandPourPos: {x: 0.75, y: 0, z: 1.5}
+  leftHandPourPos: {x: -0.64, y: 300, z: 6}
 --- !u!114 &114140224299196614
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -60474,6 +60092,8 @@ MonoBehaviour:
   myMixer: 0
   leftHandPourRot: {x: 80, y: 25, z: 0}
   rightHandPourRot: {x: 80, y: -25, z: 6.915}
+  rightHandPourPos: {x: 0.75, y: 0, z: 1.5}
+  leftHandPourPos: {x: -0.64, y: 300, z: 6}
 --- !u!114 &114142404774973692
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -60517,6 +60137,8 @@ MonoBehaviour:
   myMixer: 0
   leftHandPourRot: {x: 80, y: 25, z: 0}
   rightHandPourRot: {x: 80, y: -25, z: 6.915}
+  rightHandPourPos: {x: 0.75, y: 0, z: 1.5}
+  leftHandPourPos: {x: -0.64, y: 300, z: 6}
 --- !u!114 &114143820363028026
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -60544,6 +60166,8 @@ MonoBehaviour:
   myMixer: 0
   leftHandPourRot: {x: 80, y: 25, z: 0}
   rightHandPourRot: {x: 80, y: -25, z: 6.915}
+  rightHandPourPos: {x: 0.75, y: 0, z: 1.5}
+  leftHandPourPos: {x: -0.64, y: 300, z: 6}
 --- !u!114 &114143856584799524
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -60602,8 +60226,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 0
-  leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
-  rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
+  leftHandPos: {x: -1, y: -0.89, z: 2}
+  rightHandPos: {x: 1, y: -0.89, z: 2}
   targetDropzone: {fileID: 0}
   startPos: {x: 0, y: 0, z: 0}
   dropPos: {x: 0, y: 0, z: 0}
@@ -60913,6 +60537,8 @@ MonoBehaviour:
   myMixer: 0
   leftHandPourRot: {x: 80, y: 25, z: 0}
   rightHandPourRot: {x: 80, y: -25, z: 6.915}
+  rightHandPourPos: {x: 0.75, y: 0, z: 1.5}
+  leftHandPourPos: {x: -0.64, y: 300, z: 6}
 --- !u!114 &114168089787285444
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -60940,6 +60566,8 @@ MonoBehaviour:
   myMixer: 0
   leftHandPourRot: {x: 80, y: 25, z: 0}
   rightHandPourRot: {x: 80, y: -25, z: 6.915}
+  rightHandPourPos: {x: 0.75, y: 0, z: 1.5}
+  leftHandPourPos: {x: -0.64, y: 300, z: 6}
 --- !u!114 &114168762258515622
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -60967,6 +60595,8 @@ MonoBehaviour:
   myMixer: 0
   leftHandPourRot: {x: 80, y: 25, z: 0}
   rightHandPourRot: {x: 80, y: -25, z: 6.915}
+  rightHandPourPos: {x: 0.75, y: 0, z: 1.5}
+  leftHandPourPos: {x: -0.64, y: 300, z: 6}
 --- !u!114 &114169155877160226
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -60994,6 +60624,8 @@ MonoBehaviour:
   myMixer: 0
   leftHandPourRot: {x: 80, y: 25, z: 0}
   rightHandPourRot: {x: 80, y: -25, z: 6.915}
+  rightHandPourPos: {x: 0.75, y: 0, z: 1.5}
+  leftHandPourPos: {x: -0.64, y: 300, z: 6}
 --- !u!114 &114172298917986156
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -61212,6 +60844,8 @@ MonoBehaviour:
   myMixer: 0
   leftHandPourRot: {x: 80, y: 25, z: 0}
   rightHandPourRot: {x: 80, y: -25, z: 6.915}
+  rightHandPourPos: {x: 0.75, y: 0, z: 1.5}
+  leftHandPourPos: {x: -0.64, y: 300, z: 6}
 --- !u!114 &114177941391080592
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -61460,6 +61094,8 @@ MonoBehaviour:
   myMixer: 0
   leftHandPourRot: {x: 80, y: 25, z: 0}
   rightHandPourRot: {x: 80, y: -25, z: 6.915}
+  rightHandPourPos: {x: 0.75, y: 0, z: 1.5}
+  leftHandPourPos: {x: -0.64, y: 300, z: 6}
 --- !u!114 &114190033989697956
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -61487,6 +61123,8 @@ MonoBehaviour:
   myMixer: 0
   leftHandPourRot: {x: 80, y: 25, z: 0}
   rightHandPourRot: {x: 80, y: -25, z: 6.915}
+  rightHandPourPos: {x: 0.75, y: 0, z: 1.5}
+  leftHandPourPos: {x: -0.64, y: 300, z: 6}
 --- !u!114 &114191079701596526
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -61675,6 +61313,8 @@ MonoBehaviour:
   myMixer: 0
   leftHandPourRot: {x: 80, y: 25, z: 0}
   rightHandPourRot: {x: 80, y: -25, z: 6.915}
+  rightHandPourPos: {x: 0.75, y: 0, z: 1.5}
+  leftHandPourPos: {x: -0.64, y: 300, z: 6}
 --- !u!114 &114196532551157544
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -61801,6 +61441,8 @@ MonoBehaviour:
   myMixer: 0
   leftHandPourRot: {x: 80, y: 25, z: 0}
   rightHandPourRot: {x: 80, y: -25, z: 6.915}
+  rightHandPourPos: {x: 0.75, y: 0, z: 1.5}
+  leftHandPourPos: {x: -0.64, y: 300, z: 6}
 --- !u!114 &114202068658019046
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -62219,6 +61861,8 @@ MonoBehaviour:
   myMixer: 0
   leftHandPourRot: {x: 80, y: 25, z: 0}
   rightHandPourRot: {x: 80, y: -25, z: 6.915}
+  rightHandPourPos: {x: 0.75, y: 0, z: 1.5}
+  leftHandPourPos: {x: -0.64, y: 300, z: 6}
 --- !u!114 &114227475109180710
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -62341,6 +61985,8 @@ MonoBehaviour:
   myMixer: 0
   leftHandPourRot: {x: 80, y: 25, z: 0}
   rightHandPourRot: {x: 80, y: -25, z: 6.915}
+  rightHandPourPos: {x: 0.75, y: 0, z: 1.5}
+  leftHandPourPos: {x: -0.64, y: 300, z: 6}
 --- !u!114 &114230460185024012
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -62571,6 +62217,8 @@ MonoBehaviour:
   myMixer: 0
   leftHandPourRot: {x: 80, y: 25, z: 0}
   rightHandPourRot: {x: 80, y: -25, z: 6.915}
+  rightHandPourPos: {x: 0.75, y: 0, z: 1.5}
+  leftHandPourPos: {x: -0.64, y: 300, z: 6}
 --- !u!114 &114244877397425880
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -62611,6 +62259,8 @@ MonoBehaviour:
   myMixer: 0
   leftHandPourRot: {x: 80, y: 25, z: 0}
   rightHandPourRot: {x: 80, y: -25, z: 6.915}
+  rightHandPourPos: {x: 0.75, y: 0, z: 1.5}
+  leftHandPourPos: {x: -0.64, y: 300, z: 6}
 --- !u!114 &114247933347773698
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -62689,8 +62339,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 0
-  leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
-  rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
+  leftHandPos: {x: -1, y: -0.89, z: 2}
+  rightHandPos: {x: 1, y: -0.89, z: 2}
   targetDropzone: {fileID: 0}
   startPos: {x: 0, y: 0, z: 0}
   dropPos: {x: 0, y: 0, z: 0}
@@ -62882,6 +62532,8 @@ MonoBehaviour:
   myMixer: 0
   leftHandPourRot: {x: 80, y: 25, z: 0}
   rightHandPourRot: {x: 80, y: -25, z: 6.915}
+  rightHandPourPos: {x: 0.75, y: 0, z: 1.5}
+  leftHandPourPos: {x: -0.64, y: 300, z: 6}
 --- !u!114 &114262223601086204
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -63116,6 +62768,8 @@ MonoBehaviour:
   myMixer: 0
   leftHandPourRot: {x: 80, y: 25, z: 0}
   rightHandPourRot: {x: 80, y: -25, z: 6.915}
+  rightHandPourPos: {x: 0.75, y: 0, z: 1.5}
+  leftHandPourPos: {x: -0.64, y: 300, z: 6}
 --- !u!114 &114271240448732798
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -63330,6 +62984,8 @@ MonoBehaviour:
   myMixer: 0
   leftHandPourRot: {x: 80, y: 25, z: 0}
   rightHandPourRot: {x: 80, y: -25, z: 6.915}
+  rightHandPourPos: {x: 0.75, y: 0, z: 1.5}
+  leftHandPourPos: {x: -0.64, y: 300, z: 6}
 --- !u!114 &114277987371399276
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -63495,6 +63151,8 @@ MonoBehaviour:
   myMixer: 0
   leftHandPourRot: {x: 80, y: 25, z: 0}
   rightHandPourRot: {x: 80, y: -25, z: 6.915}
+  rightHandPourPos: {x: 0.75, y: 0, z: 1.5}
+  leftHandPourPos: {x: -0.64, y: 300, z: 6}
 --- !u!114 &114285946434739780
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -64142,6 +63800,8 @@ MonoBehaviour:
   myMixer: 0
   leftHandPourRot: {x: 80, y: 25, z: 0}
   rightHandPourRot: {x: 80, y: -25, z: 6.915}
+  rightHandPourPos: {x: 0.75, y: 0, z: 1.5}
+  leftHandPourPos: {x: -0.64, y: 300, z: 6}
 --- !u!114 &114314301520331080
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -64169,6 +63829,8 @@ MonoBehaviour:
   myMixer: 0
   leftHandPourRot: {x: 80, y: 25, z: 0}
   rightHandPourRot: {x: 80, y: -25, z: 6.915}
+  rightHandPourPos: {x: 0.75, y: 0, z: 1.5}
+  leftHandPourPos: {x: -0.64, y: 300, z: 6}
 --- !u!114 &114315494249876864
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -64212,6 +63874,8 @@ MonoBehaviour:
   myMixer: 0
   leftHandPourRot: {x: 80, y: 25, z: 0}
   rightHandPourRot: {x: 80, y: -25, z: 6.915}
+  rightHandPourPos: {x: 0.75, y: 0, z: 1.5}
+  leftHandPourPos: {x: -0.64, y: 300, z: 6}
 --- !u!114 &114315844521719386
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -64239,6 +63903,8 @@ MonoBehaviour:
   myMixer: 0
   leftHandPourRot: {x: 80, y: 25, z: 0}
   rightHandPourRot: {x: 80, y: -25, z: 6.915}
+  rightHandPourPos: {x: 0.75, y: 0, z: 1.5}
+  leftHandPourPos: {x: -0.64, y: 300, z: 6}
 --- !u!114 &114320779097691268
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -64489,6 +64155,8 @@ MonoBehaviour:
   myMixer: 0
   leftHandPourRot: {x: 80, y: 25, z: 0}
   rightHandPourRot: {x: 80, y: -25, z: 6.915}
+  rightHandPourPos: {x: 0.75, y: 0, z: 1.5}
+  leftHandPourPos: {x: -0.64, y: 300, z: 6}
 --- !u!114 &114338559633730712
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -64562,6 +64230,8 @@ MonoBehaviour:
   myMixer: 0
   leftHandPourRot: {x: 80, y: 25, z: 0}
   rightHandPourRot: {x: 80, y: -25, z: 6.915}
+  rightHandPourPos: {x: 0.75, y: 0, z: 1.5}
+  leftHandPourPos: {x: -0.64, y: 300, z: 6}
 --- !u!114 &114340808142226454
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -64589,6 +64259,8 @@ MonoBehaviour:
   myMixer: 0
   leftHandPourRot: {x: 80, y: 25, z: 0}
   rightHandPourRot: {x: 80, y: -25, z: 6.915}
+  rightHandPourPos: {x: 0.75, y: 0, z: 1.5}
+  leftHandPourPos: {x: -0.64, y: 300, z: 6}
 --- !u!114 &114341878787354654
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -64616,6 +64288,8 @@ MonoBehaviour:
   myMixer: 0
   leftHandPourRot: {x: 80, y: 25, z: 0}
   rightHandPourRot: {x: 80, y: -25, z: 6.915}
+  rightHandPourPos: {x: 0.75, y: 0, z: 1.5}
+  leftHandPourPos: {x: -0.64, y: 300, z: 6}
 --- !u!114 &114342979466704796
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -64722,6 +64396,8 @@ MonoBehaviour:
   myMixer: 0
   leftHandPourRot: {x: 80, y: 25, z: 0}
   rightHandPourRot: {x: 80, y: -25, z: 6.915}
+  rightHandPourPos: {x: 0.75, y: 0, z: 1.5}
+  leftHandPourPos: {x: -0.64, y: 300, z: 6}
 --- !u!114 &114347107117576976
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -64841,6 +64517,8 @@ MonoBehaviour:
   myMixer: 0
   leftHandPourRot: {x: 80, y: 25, z: 0}
   rightHandPourRot: {x: 80, y: -25, z: 6.915}
+  rightHandPourPos: {x: 0.75, y: 0, z: 1.5}
+  leftHandPourPos: {x: -0.64, y: 300, z: 6}
 --- !u!114 &114352676611280250
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -64868,6 +64546,8 @@ MonoBehaviour:
   myMixer: 0
   leftHandPourRot: {x: 80, y: 25, z: 0}
   rightHandPourRot: {x: 80, y: -25, z: 6.915}
+  rightHandPourPos: {x: 0.75, y: 0, z: 1.5}
+  leftHandPourPos: {x: -0.64, y: 300, z: 6}
 --- !u!114 &114353389887978204
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -65036,6 +64716,8 @@ MonoBehaviour:
   myMixer: 0
   leftHandPourRot: {x: 80, y: 25, z: 0}
   rightHandPourRot: {x: 80, y: -25, z: 6.915}
+  rightHandPourPos: {x: 0.75, y: 0, z: 1.5}
+  leftHandPourPos: {x: -0.64, y: 300, z: 6}
 --- !u!114 &114368670516052886
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -65063,6 +64745,8 @@ MonoBehaviour:
   myMixer: 0
   leftHandPourRot: {x: 80, y: 25, z: 0}
   rightHandPourRot: {x: 80, y: -25, z: 6.915}
+  rightHandPourPos: {x: 0.75, y: 0, z: 1.5}
+  leftHandPourPos: {x: -0.64, y: 300, z: 6}
 --- !u!114 &114370062442521052
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -65290,6 +64974,8 @@ MonoBehaviour:
   myMixer: 0
   leftHandPourRot: {x: 80, y: 25, z: 0}
   rightHandPourRot: {x: 80, y: -25, z: 6.915}
+  rightHandPourPos: {x: 0.75, y: 0, z: 1.5}
+  leftHandPourPos: {x: -0.64, y: 300, z: 6}
 --- !u!114 &114375988370714754
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -65317,6 +65003,8 @@ MonoBehaviour:
   myMixer: 0
   leftHandPourRot: {x: 80, y: 25, z: 0}
   rightHandPourRot: {x: 80, y: -25, z: 6.915}
+  rightHandPourPos: {x: 0.75, y: 0, z: 1.5}
+  leftHandPourPos: {x: -0.64, y: 300, z: 6}
 --- !u!114 &114376001943811904
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -65406,6 +65094,8 @@ MonoBehaviour:
   myMixer: 0
   leftHandPourRot: {x: 80, y: 25, z: 0}
   rightHandPourRot: {x: 80, y: -25, z: 6.915}
+  rightHandPourPos: {x: 0.75, y: 0, z: 1.5}
+  leftHandPourPos: {x: -0.64, y: 300, z: 6}
 --- !u!114 &114379135396286044
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -65495,6 +65185,8 @@ MonoBehaviour:
   myMixer: 0
   leftHandPourRot: {x: 80, y: 25, z: 0}
   rightHandPourRot: {x: 80, y: -25, z: 6.915}
+  rightHandPourPos: {x: 0.75, y: 0, z: 1.5}
+  leftHandPourPos: {x: -0.64, y: 300, z: 6}
 --- !u!114 &114385328549690564
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -65634,6 +65326,8 @@ MonoBehaviour:
   myMixer: 0
   leftHandPourRot: {x: 80, y: 25, z: 0}
   rightHandPourRot: {x: 80, y: -25, z: 6.915}
+  rightHandPourPos: {x: 0.75, y: 0, z: 1.5}
+  leftHandPourPos: {x: -0.64, y: 300, z: 6}
 --- !u!114 &114386422320014228
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -65750,6 +65444,8 @@ MonoBehaviour:
   myMixer: 0
   leftHandPourRot: {x: 80, y: 25, z: 0}
   rightHandPourRot: {x: 80, y: -25, z: 6.915}
+  rightHandPourPos: {x: 0.75, y: 0, z: 1.5}
+  leftHandPourPos: {x: -0.64, y: 300, z: 6}
 --- !u!114 &114398013277240688
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -65938,6 +65634,8 @@ MonoBehaviour:
   myMixer: 0
   leftHandPourRot: {x: 80, y: 25, z: 0}
   rightHandPourRot: {x: 80, y: -25, z: 6.915}
+  rightHandPourPos: {x: 0.75, y: 0, z: 1.5}
+  leftHandPourPos: {x: -0.64, y: 300, z: 6}
 --- !u!114 &114412303019258652
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -66057,6 +65755,8 @@ MonoBehaviour:
   myMixer: 0
   leftHandPourRot: {x: 80, y: 25, z: 0}
   rightHandPourRot: {x: 80, y: -25, z: 6.915}
+  rightHandPourPos: {x: 0.75, y: 0, z: 1.5}
+  leftHandPourPos: {x: -0.64, y: 300, z: 6}
 --- !u!114 &114415492123925622
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -66214,8 +65914,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 0
-  leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
-  rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
+  leftHandPos: {x: -1, y: -0.89, z: 2}
+  rightHandPos: {x: 1, y: -0.89, z: 2}
   targetDropzone: {fileID: 0}
   startPos: {x: 0, y: 0, z: 0}
   dropPos: {x: 0, y: 0, z: 0}
@@ -66262,6 +65962,8 @@ MonoBehaviour:
   myMixer: 0
   leftHandPourRot: {x: 80, y: 25, z: 0}
   rightHandPourRot: {x: 80, y: -25, z: 6.915}
+  rightHandPourPos: {x: 0.75, y: 0, z: 1.5}
+  leftHandPourPos: {x: -0.64, y: 300, z: 6}
 --- !u!114 &114422080811922314
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -66320,8 +66022,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 0
-  leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
-  rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
+  leftHandPos: {x: -1, y: -0.89, z: 2}
+  rightHandPos: {x: 1, y: -0.89, z: 2}
   targetDropzone: {fileID: 0}
   startPos: {x: 0, y: 0, z: 0}
   dropPos: {x: 0, y: 0, z: 0}
@@ -66335,6 +66037,8 @@ MonoBehaviour:
   myMixer: 0
   leftHandPourRot: {x: 80, y: 25, z: 0}
   rightHandPourRot: {x: 80, y: -25, z: 6.915}
+  rightHandPourPos: {x: 0.55, y: 0, z: 2.5}
+  leftHandPourPos: {x: -0.55, y: 0, z: 2.5}
 --- !u!114 &114422896403377824
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -66347,8 +66051,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 0
-  leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
-  rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
+  leftHandPos: {x: -1, y: -0.89, z: 2}
+  rightHandPos: {x: 1, y: -0.89, z: 2}
   targetDropzone: {fileID: 0}
   startPos: {x: 0, y: 0, z: 0}
   dropPos: {x: 0, y: 0, z: 0}
@@ -66505,8 +66209,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 0
-  leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
-  rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
+  leftHandPos: {x: -1, y: -0.89, z: 2}
+  rightHandPos: {x: 1, y: -0.89, z: 2}
   targetDropzone: {fileID: 0}
   startPos: {x: 0, y: 0, z: 0}
   dropPos: {x: 0, y: 0, z: 0}
@@ -66520,6 +66224,8 @@ MonoBehaviour:
   myMixer: 5
   leftHandPourRot: {x: 80, y: 25, z: 0}
   rightHandPourRot: {x: 80, y: -25, z: 6.915}
+  rightHandPourPos: {x: 0.55, y: 0, z: 2.5}
+  leftHandPourPos: {x: -0.55, y: 0, z: 2.5}
 --- !u!114 &114431110496114676
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -66560,6 +66266,8 @@ MonoBehaviour:
   myMixer: 0
   leftHandPourRot: {x: 80, y: 25, z: 0}
   rightHandPourRot: {x: 80, y: -25, z: 6.915}
+  rightHandPourPos: {x: 0.75, y: 0, z: 1.5}
+  leftHandPourPos: {x: -0.64, y: 300, z: 6}
 --- !u!114 &114432401379977014
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -66620,7 +66328,7 @@ MonoBehaviour:
   hasIce: 0
   _glassType: 0
   height: 0
-  pourRate: 1
+  pourRate: 0.25
   liquidSurf: {fileID: 1150830350753098}
   totalVolume: 0
   myDrinkBase: 0
@@ -66823,6 +66531,8 @@ MonoBehaviour:
   myMixer: 0
   leftHandPourRot: {x: 80, y: 25, z: 0}
   rightHandPourRot: {x: 80, y: -25, z: 6.915}
+  rightHandPourPos: {x: 0.75, y: 0, z: 1.5}
+  leftHandPourPos: {x: -0.64, y: 300, z: 6}
 --- !u!114 &114452918974604206
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -66883,6 +66593,8 @@ MonoBehaviour:
   myMixer: 0
   leftHandPourRot: {x: 80, y: 25, z: 0}
   rightHandPourRot: {x: 80, y: -25, z: 6.915}
+  rightHandPourPos: {x: 0.75, y: 0, z: 1.5}
+  leftHandPourPos: {x: -0.64, y: 300, z: 6}
 --- !u!114 &114458802945700976
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -67068,6 +66780,8 @@ MonoBehaviour:
   myMixer: 0
   leftHandPourRot: {x: 80, y: 25, z: 0}
   rightHandPourRot: {x: 80, y: -25, z: 6.915}
+  rightHandPourPos: {x: 0.75, y: 0, z: 1.5}
+  leftHandPourPos: {x: -0.64, y: 300, z: 6}
 --- !u!114 &114464292906607424
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -67595,6 +67309,8 @@ MonoBehaviour:
   myMixer: 0
   leftHandPourRot: {x: 80, y: 25, z: 0}
   rightHandPourRot: {x: 80, y: -25, z: 6.915}
+  rightHandPourPos: {x: 0.75, y: 0, z: 1.5}
+  leftHandPourPos: {x: -0.64, y: 300, z: 6}
 --- !u!114 &114485644460567262
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -67734,6 +67450,8 @@ MonoBehaviour:
   myMixer: 0
   leftHandPourRot: {x: 80, y: 25, z: 0}
   rightHandPourRot: {x: 80, y: -25, z: 6.915}
+  rightHandPourPos: {x: 0.75, y: 0, z: 1.5}
+  leftHandPourPos: {x: -0.64, y: 300, z: 6}
 --- !u!114 &114501470413624248
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -67873,7 +67591,7 @@ MonoBehaviour:
   hasIce: 0
   _glassType: 0
   height: 0
-  pourRate: 1
+  pourRate: 0.25
   liquidSurf: {fileID: 1064162603198948}
   totalVolume: 0
   myDrinkBase: 0
@@ -68011,6 +67729,8 @@ MonoBehaviour:
   myMixer: 0
   leftHandPourRot: {x: 80, y: 25, z: 0}
   rightHandPourRot: {x: 80, y: -25, z: 6.915}
+  rightHandPourPos: {x: 0.75, y: 0, z: 1.5}
+  leftHandPourPos: {x: -0.64, y: 300, z: 6}
 --- !u!114 &114514213491326292
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -68100,6 +67820,8 @@ MonoBehaviour:
   myMixer: 0
   leftHandPourRot: {x: 80, y: 25, z: 0}
   rightHandPourRot: {x: 80, y: -25, z: 6.915}
+  rightHandPourPos: {x: 0.75, y: 0, z: 1.5}
+  leftHandPourPos: {x: -0.64, y: 300, z: 6}
 --- !u!114 &114515606279762812
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -68160,6 +67882,8 @@ MonoBehaviour:
   myMixer: 0
   leftHandPourRot: {x: 80, y: 25, z: 0}
   rightHandPourRot: {x: 80, y: -25, z: 6.915}
+  rightHandPourPos: {x: 0.75, y: 0, z: 1.5}
+  leftHandPourPos: {x: -0.64, y: 300, z: 6}
 --- !u!114 &114525108926455708
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -68187,6 +67911,8 @@ MonoBehaviour:
   myMixer: 0
   leftHandPourRot: {x: 80, y: 25, z: 0}
   rightHandPourRot: {x: 80, y: -25, z: 6.915}
+  rightHandPourPos: {x: 0.75, y: 0, z: 1.5}
+  leftHandPourPos: {x: -0.64, y: 300, z: 6}
 --- !u!114 &114525498318769984
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -68317,39 +68043,6 @@ MonoBehaviour:
   isDirty: 0
   liquid: {fileID: 0}
   liquidSurfaceParent: {fileID: 0}
-  liquidSurfaceChild: {fileID: 0}
-  glassType: 0
---- !u!114 &114535632397044112
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1940153892294442}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 95edbbad3d2bee744a787b7918c34047, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isForDropzoneOnly: 0
-  leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
-  rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
-  targetDropzone: {fileID: 0}
-  startPos: {x: 0, y: 0, z: 0}
-  dropPos: {x: 0, y: 0, z: 0}
-  tweenTime: 0.75
-  tweenEndTime: 0.5
-  pickupDropTime: 0.25
-  pickedUp: 0
-  origPos: {x: 0, y: 0, z: 0}
-  myChildDropzone: {fileID: 0}
-  focalPoint: {fileID: 1689873123654094}
-  myIceList: []
-  hasLiquid: 0
-  hasIce: 0
-  isFull: 0
-  isDirty: 0
-  liquid: {fileID: 0}
-  liquidSurfaceParent: {fileID: 1880131218737366}
   liquidSurfaceChild: {fileID: 0}
   glassType: 0
 --- !u!114 &114539338105747474
@@ -68566,6 +68259,8 @@ MonoBehaviour:
   myMixer: 0
   leftHandPourRot: {x: 80, y: 25, z: 0}
   rightHandPourRot: {x: 80, y: -25, z: 6.915}
+  rightHandPourPos: {x: 0.75, y: 0, z: 1.5}
+  leftHandPourPos: {x: -0.64, y: 300, z: 6}
 --- !u!114 &114552323690844674
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -68721,6 +68416,8 @@ MonoBehaviour:
   myMixer: 0
   leftHandPourRot: {x: 80, y: 25, z: 0}
   rightHandPourRot: {x: 80, y: -25, z: 6.915}
+  rightHandPourPos: {x: 0.75, y: 0, z: 1.5}
+  leftHandPourPos: {x: -0.64, y: 300, z: 6}
 --- !u!114 &114557079108330726
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -68748,6 +68445,8 @@ MonoBehaviour:
   myMixer: 0
   leftHandPourRot: {x: 80, y: 25, z: 0}
   rightHandPourRot: {x: 80, y: -25, z: 6.915}
+  rightHandPourPos: {x: 0.75, y: 0, z: 1.5}
+  leftHandPourPos: {x: -0.64, y: 300, z: 6}
 --- !u!114 &114559215614330986
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -68821,6 +68520,8 @@ MonoBehaviour:
   myMixer: 0
   leftHandPourRot: {x: 80, y: 25, z: 0}
   rightHandPourRot: {x: 80, y: -25, z: 6.915}
+  rightHandPourPos: {x: 0.75, y: 0, z: 1.5}
+  leftHandPourPos: {x: -0.64, y: 300, z: 6}
 --- !u!114 &114563421809592928
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -69298,19 +68999,8 @@ MonoBehaviour:
   myMixer: 0
   leftHandPourRot: {x: 80, y: 25, z: 0}
   rightHandPourRot: {x: 80, y: -25, z: 6.915}
---- !u!114 &114575853990855866
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1519402737910526}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b45aae53d3162f648b8a57b892a3776a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ReferenceSurface: {fileID: 4009334753205378}
-  myMaterial: {fileID: 2100000, guid: 5f42c214d58f5469b93c7a1fc0474fa1, type: 2}
+  rightHandPourPos: {x: 0.55, y: 0, z: 2.5}
+  leftHandPourPos: {x: -0.55, y: 0, z: 2.5}
 --- !u!114 &114576522957345498
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -69338,6 +69028,8 @@ MonoBehaviour:
   myMixer: 0
   leftHandPourRot: {x: 80, y: 25, z: 0}
   rightHandPourRot: {x: 80, y: -25, z: 6.915}
+  rightHandPourPos: {x: 0.75, y: 0, z: 1.5}
+  leftHandPourPos: {x: -0.64, y: 300, z: 6}
 --- !u!114 &114577106531560708
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -69365,6 +69057,8 @@ MonoBehaviour:
   myMixer: 0
   leftHandPourRot: {x: 80, y: 25, z: 0}
   rightHandPourRot: {x: 80, y: -25, z: 6.915}
+  rightHandPourPos: {x: 0.75, y: 0, z: 1.5}
+  leftHandPourPos: {x: -0.64, y: 300, z: 6}
 --- !u!114 &114577933844494132
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -69563,6 +69257,8 @@ MonoBehaviour:
   myMixer: 0
   leftHandPourRot: {x: 80, y: 25, z: 0}
   rightHandPourRot: {x: 80, y: -25, z: 6.915}
+  rightHandPourPos: {x: 0.75, y: 0, z: 1.5}
+  leftHandPourPos: {x: -0.64, y: 300, z: 6}
 --- !u!114 &114587818431586486
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -69817,6 +69513,8 @@ MonoBehaviour:
   myMixer: 0
   leftHandPourRot: {x: 80, y: 25, z: 0}
   rightHandPourRot: {x: 80, y: -25, z: 6.915}
+  rightHandPourPos: {x: 0.75, y: 0, z: 1.5}
+  leftHandPourPos: {x: -0.64, y: 300, z: 6}
 --- !u!114 &114601833976454090
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -69844,6 +69542,8 @@ MonoBehaviour:
   myMixer: 0
   leftHandPourRot: {x: 80, y: 25, z: 0}
   rightHandPourRot: {x: 80, y: -25, z: 6.915}
+  rightHandPourPos: {x: 0.75, y: 0, z: 1.5}
+  leftHandPourPos: {x: -0.64, y: 300, z: 6}
 --- !u!114 &114609528781185278
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -70010,6 +69710,8 @@ MonoBehaviour:
   myMixer: 0
   leftHandPourRot: {x: 80, y: 25, z: 0}
   rightHandPourRot: {x: 80, y: -25, z: 6.915}
+  rightHandPourPos: {x: 0.75, y: 0, z: 1.5}
+  leftHandPourPos: {x: -0.64, y: 300, z: 6}
 --- !u!114 &114617672279413722
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -70169,7 +69871,7 @@ MonoBehaviour:
   hasIce: 0
   _glassType: 0
   height: 0
-  pourRate: 1
+  pourRate: 0.25
   liquidSurf: {fileID: 1383336348721036}
   totalVolume: 0
   myDrinkBase: 0
@@ -70320,6 +70022,8 @@ MonoBehaviour:
   myMixer: 0
   leftHandPourRot: {x: 80, y: 25, z: 0}
   rightHandPourRot: {x: 80, y: -25, z: 6.915}
+  rightHandPourPos: {x: 0.75, y: 0, z: 1.5}
+  leftHandPourPos: {x: -0.64, y: 300, z: 6}
 --- !u!114 &114627048893322354
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -70347,6 +70051,8 @@ MonoBehaviour:
   myMixer: 0
   leftHandPourRot: {x: 80, y: 25, z: 0}
   rightHandPourRot: {x: 80, y: -25, z: 6.915}
+  rightHandPourPos: {x: 0.75, y: 0, z: 1.5}
+  leftHandPourPos: {x: -0.64, y: 300, z: 6}
 --- !u!114 &114628318253164090
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -70453,6 +70159,8 @@ MonoBehaviour:
   myMixer: 0
   leftHandPourRot: {x: 80, y: 25, z: 0}
   rightHandPourRot: {x: 80, y: -25, z: 6.915}
+  rightHandPourPos: {x: 0.75, y: 0, z: 1.5}
+  leftHandPourPos: {x: -0.64, y: 300, z: 6}
 --- !u!114 &114630501568337078
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -70720,6 +70428,8 @@ MonoBehaviour:
   myMixer: 0
   leftHandPourRot: {x: 80, y: 25, z: 0}
   rightHandPourRot: {x: 80, y: -25, z: 6.915}
+  rightHandPourPos: {x: 0.75, y: 0, z: 1.5}
+  leftHandPourPos: {x: -0.64, y: 300, z: 6}
 --- !u!114 &114641318295876630
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -70916,8 +70626,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 0
-  leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
-  rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
+  leftHandPos: {x: -1, y: -0.89, z: 2}
+  rightHandPos: {x: 1, y: -0.89, z: 2}
   targetDropzone: {fileID: 0}
   startPos: {x: 0, y: 0, z: 0}
   dropPos: {x: 0, y: 0, z: 0}
@@ -70964,6 +70674,8 @@ MonoBehaviour:
   myMixer: 0
   leftHandPourRot: {x: 80, y: 25, z: 0}
   rightHandPourRot: {x: 80, y: -25, z: 6.915}
+  rightHandPourPos: {x: 0.75, y: 0, z: 1.5}
+  leftHandPourPos: {x: -0.64, y: 300, z: 6}
 --- !u!114 &114652103023234462
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -71149,6 +70861,8 @@ MonoBehaviour:
   myMixer: 0
   leftHandPourRot: {x: 80, y: 25, z: 0}
   rightHandPourRot: {x: 80, y: -25, z: 6.915}
+  rightHandPourPos: {x: 0.75, y: 0, z: 1.5}
+  leftHandPourPos: {x: -0.64, y: 300, z: 6}
 --- !u!114 &114662032116239756
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -71161,8 +70875,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 0
-  leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
-  rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
+  leftHandPos: {x: -1, y: -0.89, z: 2}
+  rightHandPos: {x: 1, y: -0.89, z: 2}
   targetDropzone: {fileID: 0}
   startPos: {x: 0, y: 0, z: 0}
   dropPos: {x: 0, y: 0, z: 0}
@@ -71176,6 +70890,8 @@ MonoBehaviour:
   myMixer: 1
   leftHandPourRot: {x: 80, y: 25, z: 0}
   rightHandPourRot: {x: 80, y: -25, z: 6.915}
+  rightHandPourPos: {x: 0.55, y: 0, z: 2.5}
+  leftHandPourPos: {x: -0.55, y: 0, z: 2.5}
 --- !u!114 &114662179240494000
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -71526,6 +71242,8 @@ MonoBehaviour:
   myMixer: 0
   leftHandPourRot: {x: 80, y: 25, z: 0}
   rightHandPourRot: {x: 80, y: -25, z: 6.915}
+  rightHandPourPos: {x: 0.75, y: 0, z: 1.5}
+  leftHandPourPos: {x: -0.64, y: 300, z: 6}
 --- !u!114 &114694372450683838
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -71697,6 +71415,17 @@ MonoBehaviour:
   myMask: {fileID: 0}
   isBeingPoured: 0
   isEvaluated: 0
+--- !u!114 &114699732039264726
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1889308532417708}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cec92ff97983fc842985c6b1f374bf87, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114701354205152880
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -71742,8 +71471,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 0
-  leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
-  rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
+  leftHandPos: {x: -1, y: -0.89, z: 2}
+  rightHandPos: {x: 1, y: -0.89, z: 2}
   targetDropzone: {fileID: 0}
   startPos: {x: 0, y: 0, z: 0}
   dropPos: {x: 0, y: 0, z: 0}
@@ -71882,6 +71611,8 @@ MonoBehaviour:
   myMixer: 0
   leftHandPourRot: {x: 80, y: 25, z: 0}
   rightHandPourRot: {x: 80, y: -25, z: 6.915}
+  rightHandPourPos: {x: 0.75, y: 0, z: 1.5}
+  leftHandPourPos: {x: -0.64, y: 300, z: 6}
 --- !u!114 &114709603921575134
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -72241,6 +71972,8 @@ MonoBehaviour:
   myMixer: 0
   leftHandPourRot: {x: 80, y: 25, z: 0}
   rightHandPourRot: {x: 80, y: -25, z: 6.915}
+  rightHandPourPos: {x: 0.75, y: 0, z: 1.5}
+  leftHandPourPos: {x: -0.64, y: 300, z: 6}
 --- !u!114 &114719587434607646
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -72511,7 +72244,7 @@ MonoBehaviour:
   hasIce: 0
   _glassType: 0
   height: 0
-  pourRate: 1
+  pourRate: 0.25
   liquidSurf: {fileID: 1889308532417708}
   totalVolume: 0
   myDrinkBase: 0
@@ -72570,6 +72303,8 @@ MonoBehaviour:
   myMixer: 0
   leftHandPourRot: {x: 80, y: 25, z: 0}
   rightHandPourRot: {x: 80, y: -25, z: 6.915}
+  rightHandPourPos: {x: 0.75, y: 0, z: 1.5}
+  leftHandPourPos: {x: -0.64, y: 300, z: 6}
 --- !u!114 &114742172723075600
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -72692,6 +72427,8 @@ MonoBehaviour:
   myMixer: 0
   leftHandPourRot: {x: 80, y: 25, z: 0}
   rightHandPourRot: {x: 80, y: -25, z: 6.915}
+  rightHandPourPos: {x: 0.75, y: 0, z: 1.5}
+  leftHandPourPos: {x: -0.64, y: 300, z: 6}
 --- !u!114 &114744907413054334
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -72953,6 +72690,8 @@ MonoBehaviour:
   myMixer: 0
   leftHandPourRot: {x: 80, y: 25, z: 0}
   rightHandPourRot: {x: 80, y: -25, z: 6.915}
+  rightHandPourPos: {x: 0.75, y: 0, z: 1.5}
+  leftHandPourPos: {x: -0.64, y: 300, z: 6}
 --- !u!114 &114752366874885540
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -73243,6 +72982,8 @@ MonoBehaviour:
   myMixer: 0
   leftHandPourRot: {x: 80, y: 25, z: 0}
   rightHandPourRot: {x: 80, y: -25, z: 6.915}
+  rightHandPourPos: {x: 0.75, y: 0, z: 1.5}
+  leftHandPourPos: {x: -0.64, y: 300, z: 6}
 --- !u!114 &114760069960014304
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -73270,6 +73011,8 @@ MonoBehaviour:
   myMixer: 0
   leftHandPourRot: {x: 80, y: 25, z: 0}
   rightHandPourRot: {x: 80, y: -25, z: 6.915}
+  rightHandPourPos: {x: 0.75, y: 0, z: 1.5}
+  leftHandPourPos: {x: -0.64, y: 300, z: 6}
 --- !u!114 &114766317130377094
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -73501,6 +73244,8 @@ MonoBehaviour:
   myMixer: 0
   leftHandPourRot: {x: 80, y: 25, z: 0}
   rightHandPourRot: {x: 80, y: -25, z: 6.915}
+  rightHandPourPos: {x: 0.75, y: 0, z: 1.5}
+  leftHandPourPos: {x: -0.64, y: 300, z: 6}
 --- !u!114 &114774933036537226
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -73731,7 +73476,7 @@ MonoBehaviour:
   hasIce: 0
   _glassType: 0
   height: 0
-  pourRate: 1
+  pourRate: 0.25
   liquidSurf: {fileID: 1287562418065502}
   totalVolume: 0
   myDrinkBase: 0
@@ -74218,6 +73963,8 @@ MonoBehaviour:
   myMixer: 0
   leftHandPourRot: {x: 80, y: 25, z: 0}
   rightHandPourRot: {x: 80, y: -25, z: 6.915}
+  rightHandPourPos: {x: 0.75, y: 0, z: 1.5}
+  leftHandPourPos: {x: -0.64, y: 300, z: 6}
 --- !u!114 &114802751747640028
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -74291,6 +74038,8 @@ MonoBehaviour:
   myMixer: 0
   leftHandPourRot: {x: 80, y: 25, z: 0}
   rightHandPourRot: {x: 80, y: -25, z: 6.915}
+  rightHandPourPos: {x: 0.75, y: 0, z: 1.5}
+  leftHandPourPos: {x: -0.64, y: 300, z: 6}
 --- !u!114 &114807662514594520
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -74365,8 +74114,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 0
-  leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
-  rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
+  leftHandPos: {x: -1, y: -0.89, z: 2}
+  rightHandPos: {x: 1, y: -0.89, z: 2}
   targetDropzone: {fileID: 0}
   startPos: {x: 0, y: 0, z: 0}
   dropPos: {x: 0, y: 0, z: 0}
@@ -74633,6 +74382,8 @@ MonoBehaviour:
   myMixer: 0
   leftHandPourRot: {x: 80, y: 25, z: 0}
   rightHandPourRot: {x: 80, y: -25, z: 6.915}
+  rightHandPourPos: {x: 0.75, y: 0, z: 1.5}
+  leftHandPourPos: {x: -0.64, y: 300, z: 6}
 --- !u!114 &114828911812706078
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -74647,7 +74398,7 @@ MonoBehaviour:
   hasIce: 0
   _glassType: 0
   height: 0
-  pourRate: 1
+  pourRate: 0.25
   liquidSurf: {fileID: 1075410587467818}
   totalVolume: 0
   myDrinkBase: 0
@@ -74724,8 +74475,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 0
-  leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
-  rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
+  leftHandPos: {x: -1, y: -0.89, z: 2}
+  rightHandPos: {x: 1, y: -0.89, z: 2}
   targetDropzone: {fileID: 0}
   startPos: {x: 0, y: 0, z: 0}
   dropPos: {x: 0, y: 0, z: 0}
@@ -74995,6 +74746,8 @@ MonoBehaviour:
   myMixer: 0
   leftHandPourRot: {x: 80, y: 25, z: 0}
   rightHandPourRot: {x: 80, y: -25, z: 6.915}
+  rightHandPourPos: {x: 0.75, y: 0, z: 1.5}
+  leftHandPourPos: {x: -0.64, y: 300, z: 6}
 --- !u!114 &114845878081536618
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -75055,6 +74808,8 @@ MonoBehaviour:
   myMixer: 0
   leftHandPourRot: {x: 80, y: 25, z: 0}
   rightHandPourRot: {x: 80, y: -25, z: 6.915}
+  rightHandPourPos: {x: 0.75, y: 0, z: 1.5}
+  leftHandPourPos: {x: -0.64, y: 300, z: 6}
 --- !u!114 &114851684817749832
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -75115,6 +74870,8 @@ MonoBehaviour:
   myMixer: 0
   leftHandPourRot: {x: 80, y: 25, z: 0}
   rightHandPourRot: {x: 80, y: -25, z: 6.915}
+  rightHandPourPos: {x: 0.75, y: 0, z: 1.5}
+  leftHandPourPos: {x: -0.64, y: 300, z: 6}
 --- !u!114 &114851989720905684
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -75142,6 +74899,8 @@ MonoBehaviour:
   myMixer: 0
   leftHandPourRot: {x: 80, y: 25, z: 0}
   rightHandPourRot: {x: 80, y: -25, z: 6.915}
+  rightHandPourPos: {x: 0.75, y: 0, z: 1.5}
+  leftHandPourPos: {x: -0.64, y: 300, z: 6}
 --- !u!114 &114852235856654374
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -75436,6 +75195,8 @@ MonoBehaviour:
   myMixer: 0
   leftHandPourRot: {x: 80, y: 25, z: 0}
   rightHandPourRot: {x: 80, y: -25, z: 6.915}
+  rightHandPourPos: {x: 0.75, y: 0, z: 1.5}
+  leftHandPourPos: {x: -0.64, y: 300, z: 6}
 --- !u!114 &114866054548281874
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -75450,7 +75211,7 @@ MonoBehaviour:
   hasIce: 0
   _glassType: 0
   height: 0
-  pourRate: 1
+  pourRate: 0.25
   liquidSurf: {fileID: 1516107877720198}
   totalVolume: 0
   myDrinkBase: 0
@@ -75680,6 +75441,8 @@ MonoBehaviour:
   myMixer: 0
   leftHandPourRot: {x: 80, y: 25, z: 0}
   rightHandPourRot: {x: 80, y: -25, z: 6.915}
+  rightHandPourPos: {x: 0.75, y: 0, z: 1.5}
+  leftHandPourPos: {x: -0.64, y: 300, z: 6}
 --- !u!114 &114872966728475726
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -75727,7 +75490,7 @@ MonoBehaviour:
   hasIce: 0
   _glassType: 0
   height: 0
-  pourRate: 1
+  pourRate: 0.25
   liquidSurf: {fileID: 1625226062011702}
   totalVolume: 0
   myDrinkBase: 0
@@ -75825,52 +75588,6 @@ MonoBehaviour:
   liquidSurfaceParent: {fileID: 0}
   liquidSurfaceChild: {fileID: 0}
   glassType: 0
---- !u!114 &114882378652158312
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1519402737910526}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8a433c2afe0a76e4bb72e41952f91ec8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  hasIce: 0
-  _glassType: 0
-  height: 0
-  pourRate: 0.25
-  liquidSurf: {fileID: 1694387274650576}
-  totalVolume: 0
-  myDrinkBase: 0
-  myMixer: 0
-  coasters: []
-  sodaVolume: 0
-  tonicVolume: 0
-  vermouthVolume: 0
-  orangeJuiceVolume: 0
-  lemonJuiceVolume: 0
-  whiskeyVolume: 0
-  tequilaVolume: 0
-  rumVolume: 0
-  ginVolume: 0
-  beerVolume: 0
-  wineVolume: 0
-  brandyVolume: 0
-  vodkaVolume: 0
-  smokiness: 0
-  sweetness: 0
-  sourness: 0
-  bitterness: 0
-  spiciness: 0
-  alcoholVolume: 0
-  abv: 0
-  drinkParts: []
-  otherLiquid: {fileID: 0}
-  otherLiquidMask: {fileID: 0}
-  myMask: {fileID: 0}
-  isBeingPoured: 0
-  isEvaluated: 0
 --- !u!114 &114883429728600476
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -76019,6 +75736,8 @@ MonoBehaviour:
   myMixer: 0
   leftHandPourRot: {x: 80, y: 25, z: 0}
   rightHandPourRot: {x: 80, y: -25, z: 6.915}
+  rightHandPourPos: {x: 0.75, y: 0, z: 1.5}
+  leftHandPourPos: {x: -0.64, y: 300, z: 6}
 --- !u!114 &114889393741654780
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -76046,6 +75765,8 @@ MonoBehaviour:
   myMixer: 0
   leftHandPourRot: {x: 80, y: 25, z: 0}
   rightHandPourRot: {x: 80, y: -25, z: 6.915}
+  rightHandPourPos: {x: 0.75, y: 0, z: 1.5}
+  leftHandPourPos: {x: -0.64, y: 300, z: 6}
 --- !u!114 &114890006589729082
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -76229,8 +75950,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 0
-  leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
-  rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
+  leftHandPos: {x: -1, y: -0.89, z: 2}
+  rightHandPos: {x: 1, y: -0.89, z: 2}
   targetDropzone: {fileID: 0}
   startPos: {x: 0, y: 0, z: 0}
   dropPos: {x: 0, y: 0, z: 0}
@@ -76836,6 +76557,8 @@ MonoBehaviour:
   myMixer: 0
   leftHandPourRot: {x: 80, y: 25, z: 0}
   rightHandPourRot: {x: 80, y: -25, z: 6.915}
+  rightHandPourPos: {x: 0.75, y: 0, z: 1.5}
+  leftHandPourPos: {x: -0.64, y: 300, z: 6}
 --- !u!114 &114922998002392240
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -76863,6 +76586,8 @@ MonoBehaviour:
   myMixer: 0
   leftHandPourRot: {x: 80, y: 25, z: 0}
   rightHandPourRot: {x: 80, y: -25, z: 6.915}
+  rightHandPourPos: {x: 0.75, y: 0, z: 1.5}
+  leftHandPourPos: {x: -0.64, y: 300, z: 6}
 --- !u!114 &114923709596103618
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -77045,6 +76770,8 @@ MonoBehaviour:
   myMixer: 0
   leftHandPourRot: {x: 80, y: 25, z: 0}
   rightHandPourRot: {x: 80, y: -25, z: 6.915}
+  rightHandPourPos: {x: 0.75, y: 0, z: 1.5}
+  leftHandPourPos: {x: -0.64, y: 300, z: 6}
 --- !u!114 &114929772655506792
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -77395,6 +77122,8 @@ MonoBehaviour:
   myMixer: 0
   leftHandPourRot: {x: 80, y: 25, z: 0}
   rightHandPourRot: {x: 80, y: -25, z: 6.915}
+  rightHandPourPos: {x: 0.75, y: 0, z: 1.5}
+  leftHandPourPos: {x: -0.64, y: 300, z: 6}
 --- !u!114 &114952278355971030
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -77484,6 +77213,8 @@ MonoBehaviour:
   myMixer: 0
   leftHandPourRot: {x: 80, y: 25, z: 0}
   rightHandPourRot: {x: 80, y: -25, z: 6.915}
+  rightHandPourPos: {x: 0.75, y: 0, z: 1.5}
+  leftHandPourPos: {x: -0.64, y: 300, z: 6}
 --- !u!114 &114957942197830030
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -77527,6 +77258,8 @@ MonoBehaviour:
   myMixer: 0
   leftHandPourRot: {x: 80, y: 25, z: 0}
   rightHandPourRot: {x: 80, y: -25, z: 6.915}
+  rightHandPourPos: {x: 0.75, y: 0, z: 1.5}
+  leftHandPourPos: {x: -0.64, y: 300, z: 6}
 --- !u!114 &114963516801558670
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -77631,8 +77364,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 0
-  leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
-  rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
+  leftHandPos: {x: -1, y: -0.89, z: 2}
+  rightHandPos: {x: 1, y: -0.89, z: 2}
   targetDropzone: {fileID: 0}
   startPos: {x: 0, y: 0, z: 0}
   dropPos: {x: 0, y: 0, z: 0}
@@ -77886,7 +77619,7 @@ MonoBehaviour:
   hasIce: 0
   _glassType: 0
   height: 0
-  pourRate: 1
+  pourRate: 0.25
   liquidSurf: {fileID: 1081025936603314}
   totalVolume: 0
   myDrinkBase: 0
@@ -77991,6 +77724,8 @@ MonoBehaviour:
   myMixer: 0
   leftHandPourRot: {x: 80, y: 25, z: 0}
   rightHandPourRot: {x: 80, y: -25, z: 6.915}
+  rightHandPourPos: {x: 0.75, y: 0, z: 1.5}
+  leftHandPourPos: {x: -0.64, y: 300, z: 6}
 --- !u!114 &114982482972859544
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -78080,6 +77815,8 @@ MonoBehaviour:
   myMixer: 0
   leftHandPourRot: {x: 80, y: 25, z: 0}
   rightHandPourRot: {x: 80, y: -25, z: 6.915}
+  rightHandPourPos: {x: 0.75, y: 0, z: 1.5}
+  leftHandPourPos: {x: -0.64, y: 300, z: 6}
 --- !u!114 &114984450088381992
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -78173,6 +77910,8 @@ MonoBehaviour:
   myMixer: 0
   leftHandPourRot: {x: 80, y: 25, z: 0}
   rightHandPourRot: {x: 80, y: -25, z: 6.915}
+  rightHandPourPos: {x: 0.75, y: 0, z: 1.5}
+  leftHandPourPos: {x: -0.64, y: 300, z: 6}
 --- !u!114 &114989187789355174
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -78348,6 +78087,8 @@ MonoBehaviour:
   myMixer: 0
   leftHandPourRot: {x: 80, y: 25, z: 0}
   rightHandPourRot: {x: 80, y: -25, z: 6.915}
+  rightHandPourPos: {x: 0.75, y: 0, z: 1.5}
+  leftHandPourPos: {x: -0.64, y: 300, z: 6}
 --- !u!114 &114995058148527216
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -80750,19 +80491,6 @@ CapsuleCollider:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1636458884525238}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.23617028
-  m_Height: 1
-  m_Direction: 1
-  m_Center: {x: 0, y: 0.46, z: 0}
---- !u!136 &136903046195058490
-CapsuleCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1940153892294442}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
@@ -85247,25 +84975,3 @@ SkinnedMeshRenderer:
     m_Center: {x: 0.000000022351742, y: 0.4350929, z: -0.000000037252903}
     m_Extent: {x: 0.19040704, y: 0.4350929, z: 0.19040707}
   m_DirtyAABB: 0
---- !u!145 &145427452376168198
-SpringJoint:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1067163669816524}
-  m_ConnectedBody: {fileID: 54218354557877708}
-  m_Anchor: {x: 0, y: 0, z: 0}
-  m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0, y: 0.87900037, z: 0}
-  serializedVersion: 2
-  m_Spring: 100
-  m_Damper: 1000
-  m_MinDistance: 0
-  m_MaxDistance: 0
-  m_Tolerance: 0.025
-  m_BreakForce: Infinity
-  m_BreakTorque: Infinity
-  m_EnableCollision: 0
-  m_EnablePreprocessing: 1
-  m_MassScale: 1
-  m_ConnectedMassScale: 1

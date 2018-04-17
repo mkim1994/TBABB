@@ -48,9 +48,8 @@ public class Glass : Pickupable
 	}
 
 	void Update()
-	{
-//		Slosh();
-		
+	{	
+		base.Update();
 		if(myIceList.Count >= 3){
 			liquid.hasIce = true;
 		} else {
@@ -211,16 +210,6 @@ public class Glass : Pickupable
 			Destroy(ice.gameObject);
 		}
 		myIceList.Clear();
-	}
-
-	private void Slosh()
-	{
-		Quaternion inverseRotation = Quaternion.Inverse(transform.localRotation);
-
-		Vector3 finalRotation = Quaternion
-			.RotateTowards(liquidSurfaceParent.transform.localRotation, inverseRotation, 60 * Time.deltaTime).eulerAngles;
-
-		liquidSurfaceParent.transform.localEulerAngles = finalRotation;
 	}
 
 }

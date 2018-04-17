@@ -9,7 +9,7 @@
         _CubeBlur ("Cubemap Blur", Range(0,6)) = 2.0
 	}
 	SubShader {
-		Tags { "RenderType"="Opaque" "Queue"="Transparent-4"}
+		Tags { "RenderType"="Opaque" "Queue"="Transparent+6"}
         Blend SrcAlpha OneMinusSrcAlpha
         ZWrite Off
 

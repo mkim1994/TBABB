@@ -494,7 +494,7 @@ public class PlayerInput : MonoBehaviour
 								setIsPouringToTrueCoroutine = WaitThenSetBoolToTrue(bottle.tweenTime, glass.liquid);
 								StartCoroutine(setIsPouringToTrueCoroutine);
 								StartCoroutine(startPourCoroutine);					
-								bottle.StartPourTween(Vector3.forward + new Vector3(-0.64f, 0, 0.5f));
+								bottle.StartPourTween(bottle.leftHandPourPos);
 								bottle.RotateTween(bottle.leftHandPourRot);
 								TweenInFOV(myCam, 55, startTimeInterval, true);
 								TweenInFOV(myFirstPersonCam, 30, startTimeInterval, false);
@@ -518,7 +518,8 @@ public class PlayerInput : MonoBehaviour
 							setIsPouringToTrueCoroutine = WaitThenSetBoolToTrue(bottle.tweenTime, glass.liquid);
 							StartCoroutine(setIsPouringToTrueCoroutine);
 							StartCoroutine(startPourCoroutine);					
-							bottle.StartPourTween(Vector3.forward + new Vector3(-0.64f, 0, 0.5f));
+							bottle.StartPourTween(bottle.leftHandPourPos);
+							Debug.Log(bottle.leftHandPourPos);
 							bottle.RotateTween(bottle.leftHandPourRot);
 							TweenInFOV(myCam, 55, startTimeInterval, true);
 							TweenInFOV(myFirstPersonCam, 30, startTimeInterval, false);
@@ -685,7 +686,7 @@ public class PlayerInput : MonoBehaviour
 								setIsPouringToTrueCoroutine = WaitThenSetBoolToTrue(bottle.tweenTime, glass.liquid);
  								StartCoroutine(startPourCoroutine);		
 								StartCoroutine(setIsPouringToTrueCoroutine);
-								bottle.StartPourTween(Vector3.forward + new Vector3(0.64f, 0, 0.5f));
+								bottle.StartPourTween(bottle.rightHandPourPos);
 								bottle.RotateTween(bottle.rightHandPourRot);  
 								TweenInFOV(myCam, 55, startTimeInterval, true);
 								TweenInFOV(myFirstPersonCam, 30, startTimeInterval, false);
@@ -709,7 +710,7 @@ public class PlayerInput : MonoBehaviour
 							setIsPouringToTrueCoroutine = WaitThenSetBoolToTrue(bottle.tweenTime, glass.liquid);
 							StartCoroutine(setIsPouringToTrueCoroutine);
 							StartCoroutine(startPourCoroutine);					
-							bottle.StartPourTween(Vector3.forward + new Vector3(0.64f, 0, 0.5f));
+							bottle.StartPourTween(bottle.rightHandPourPos);
 							bottle.RotateTween(bottle.rightHandPourRot);
 							TweenInFOV(myCam, 55, startTimeInterval, true);
 							TweenInFOV(myFirstPersonCam, 30, startTimeInterval, false);
