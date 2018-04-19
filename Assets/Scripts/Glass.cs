@@ -226,4 +226,34 @@ public class Glass : Pickupable
 		myIceList.Clear();
 	}
 
+	public override IEnumerator ChangeToFirstPersonLayer(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        int children = transform.childCount;
+		Debug.Log("Children: " + children);
+        startPos = transform.localPosition;
+
+        if (gameObject.GetComponentInChildren<Liquid>() != null)
+        {
+             Liquid _liquid = gameObject.GetComponentInChildren<Liquid>();
+            _liquid.isEvaluated = false;
+        }
+
+		transform.GetChild(0).gameObject.layer = 14;
+		transform.GetChild(1).gameObject.layer = 14;
+		transform.GetChild(2).gameObject.layer = 14;
+		transform.GetChild(3).gameObject.layer = 14;
+		transform.GetChild(3).GetChild(0).gameObject.layer = 14;
+    }
+	public override IEnumerator ChangeToWorldLayer(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        startPos = transform.localPosition;
+        int children = transform.childCount;
+        for (int i = 0; i < children; ++i)
+        {
+            transform.GetChild(i).gameObject.layer = 0;
+        }
+    }
+
 }

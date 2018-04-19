@@ -204,14 +204,14 @@ public class Pickupable : MonoBehaviour
         pickedUp = true;
     }
 
-    public IEnumerator ChangeToFirstPersonLayer(float delay)
+    public virtual IEnumerator ChangeToFirstPersonLayer(float delay)
     {
         yield return new WaitForSeconds(delay);
         int children = transform.childCount;
         startPos = transform.localPosition;
 //        if (targetDropzone != null)
 //        {
-////            targetDropzone.isOccupied = false;
+//            targetDropzone.isOccupied = false;
 //        }
         if (gameObject.GetComponentInChildren<Liquid>() != null)
         {
@@ -227,7 +227,7 @@ public class Pickupable : MonoBehaviour
         }
     }
 
-    public IEnumerator ChangeToWorldLayer(float delay)
+    public virtual IEnumerator ChangeToWorldLayer(float delay)
     {
         yield return new WaitForSeconds(delay);
         startPos = transform.localPosition;

@@ -39,6 +39,7 @@ GameObject:
   - component: {fileID: 4879397641198434}
   - component: {fileID: 33719498143290216}
   - component: {fileID: 23731291755206636}
+  - component: {fileID: 114174024066571672}
   m_Layer: 0
   m_Name: Water_Surface
   m_TagString: Untagged
@@ -133,8 +134,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1990981567063706}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.451, y: 2.221, z: 10.429}
-  m_LocalScale: {x: 0.72233, y: 0.7223301, z: 0.7223301}
+  m_LocalPosition: {x: -2.336, y: 1.657, z: 10.119}
+  m_LocalScale: {x: 0.72233, y: 0.72233, z: 0.72233}
   m_Children:
   - {fileID: 4983605418241212}
   - {fileID: 4032724506753408}
@@ -177,12 +178,12 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1290422401134344}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0.039}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.09618961, y: 0.09618966, z: 0.09618966}
   m_Children: []
   m_Father: {fileID: 4566988490672254}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -54.33, y: 0, z: 0}
 --- !u!4 &4983605418241212
 Transform:
   m_ObjectHideFlags: 1
@@ -237,8 +238,8 @@ MeshRenderer:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1290422401134344}
   m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
   m_DynamicOccludee: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 1
@@ -271,14 +272,14 @@ MeshRenderer:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1587463971427126}
   m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
   m_DynamicOccludee: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 5f42c214d58f5469b93c7a1fc0474fa1, type: 2}
+  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -364,6 +365,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ReferenceSurface: {fileID: 4879397641198434}
   myMaterial: {fileID: 2100000, guid: 5f42c214d58f5469b93c7a1fc0474fa1, type: 2}
+--- !u!114 &114174024066571672
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1290422401134344}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cec92ff97983fc842985c6b1f374bf87, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114916339484439220
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -378,9 +390,8 @@ MonoBehaviour:
   hasIce: 0
   _glassType: 0
   height: 0
-  pourRate: 1
+  pourRate: 0.25
   liquidSurf: {fileID: 1290422401134344}
-  isEvaluated: 0
   totalVolume: 0
   myDrinkBase: 0
   myMixer: 0
@@ -410,6 +421,7 @@ MonoBehaviour:
   otherLiquidMask: {fileID: 0}
   myMask: {fileID: 0}
   isBeingPoured: 0
+  isEvaluated: 0
 --- !u!114 &114969815638737844
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -422,8 +434,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 0
-  leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
-  rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
+  leftHandPos: {x: -1, y: -0.89, z: 2}
+  rightHandPos: {x: 1, y: -0.89, z: 2}
   targetDropzone: {fileID: 0}
   startPos: {x: 0, y: 0, z: 0}
   dropPos: {x: 0, y: 0, z: 0}
@@ -442,6 +454,9 @@ MonoBehaviour:
   liquid: {fileID: 0}
   liquidSurfaceParent: {fileID: 1661520654507394}
   liquidSurfaceChild: {fileID: 0}
+  _playerLookVec2: {x: 0, y: 0}
+  _playerLookSens: 0
+  _playerLookX: 0
   glassType: 0
 --- !u!136 &136314839369854642
 CapsuleCollider:
