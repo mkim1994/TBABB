@@ -8,7 +8,7 @@ using System.Linq;
 
 public class DayCycleManager : MonoBehaviour
 {
-
+    public bool noteSigned;
     public int maxDays = 3; //actually 7
     public bool dayHasEnded;
 

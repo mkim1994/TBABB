@@ -348,6 +348,7 @@ GameObject:
   - component: {fileID: 33468815216505570}
   - component: {fileID: 23086310139330192}
   - component: {fileID: 95310623092677668}
+  - component: {fileID: 114325558843962048}
   m_Layer: 0
   m_Name: notepad
   m_TagString: Untagged
@@ -583,14 +584,14 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1591108454655286}
-  m_LocalRotation: {x: -0, y: -0.16047625, z: -0, w: 0.98703974}
-  m_LocalPosition: {x: -377.70123, y: 2.414, z: -1.1126473}
+  m_LocalRotation: {x: -0, y: -0.1932069, z: -0, w: 0.9811581}
+  m_LocalPosition: {x: -377.624, y: 2.437, z: -1.233}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4675791066535036}
   m_Father: {fileID: 4076660850717252}
   m_RootOrder: 12
-  m_LocalEulerAnglesHint: {x: 0, y: -18.469002, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -22.28, z: 0}
 --- !u!4 &4588158544428640
 Transform:
   m_ObjectHideFlags: 1
@@ -808,7 +809,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: b6ee05d95f38c4f9190953c20e8b9d5d, type: 3}
+  - {fileID: 2100000, guid: 6e3c81d846bb449d2860190b3858e0aa, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1580,6 +1581,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f280881d207475d46ab2309decfb9390, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114325558843962048
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1904718403019934}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a49e596dcea974ff0b2be259388d2a8d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  notes:
+  - {fileID: 2800000, guid: a30f920d202d0485d9e3be8cb0896eac, type: 3}
+  - {fileID: 2800000, guid: a97df6ee3295f4246b01cb137f504373, type: 3}
+  - {fileID: 2800000, guid: a4e98c6fbbee4489096423e62a18b0a7, type: 3}
+  - {fileID: 2800000, guid: a4e98c6fbbee4489096423e62a18b0a7, type: 3}
+  - {fileID: 2800000, guid: a4e98c6fbbee4489096423e62a18b0a7, type: 3}
+  - {fileID: 2800000, guid: a4e98c6fbbee4489096423e62a18b0a7, type: 3}
+  - {fileID: 2800000, guid: a4e98c6fbbee4489096423e62a18b0a7, type: 3}
+  notesigned: {fileID: 2800000, guid: a4e98c6fbbee4489096423e62a18b0a7, type: 3}
 --- !u!114 &114519512956008262
 MonoBehaviour:
   m_ObjectHideFlags: 1
