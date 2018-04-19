@@ -45,7 +45,7 @@ public class PlayerInput : MonoBehaviour
 
 	//movement
 	private Vector3 moveVector;
-	private Vector2 lookVector;
+	public Vector2 lookVector;
 	public int playerId = 0; 
 	private Player player;
 	private CharacterController cc;
@@ -222,7 +222,7 @@ public class PlayerInput : MonoBehaviour
 		#region MouseLook
 		
 		verticalLook -= lookVector.y * lookSensitivity;
-		verticalLook = Mathf.Clamp (verticalLook, -90f, 90f);
+		verticalLook = Mathf.Clamp (verticalLook, -65f, 65f);
 		myCam.transform.localRotation = Quaternion.Euler (verticalLook, 0, 0);
 		cc.transform.Rotate (0, lookVector.x * lookSensitivity, 0);
 
@@ -519,7 +519,7 @@ public class PlayerInput : MonoBehaviour
 							StartCoroutine(setIsPouringToTrueCoroutine);
 							StartCoroutine(startPourCoroutine);					
 							bottle.StartPourTween(bottle.leftHandPourPos);
-							Debug.Log(bottle.leftHandPourPos);
+							// Debug.Log(bottle.leftHandPourPos);
 							bottle.RotateTween(bottle.leftHandPourRot);
 							TweenInFOV(myCam, 55, startTimeInterval, true);
 							TweenInFOV(myFirstPersonCam, 30, startTimeInterval, false);

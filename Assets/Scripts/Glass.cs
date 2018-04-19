@@ -25,6 +25,10 @@ public class Glass : Pickupable
 	private Vector3 leftHandPourPos = new Vector3(-0.14f, -0.5f, 1.75f);
 	private Vector3 rightHandPourPos = new Vector3(0.14f, -0.5f, 1.75f);
 
+	[SerializeField]private Vector2 _playerLookVec2;
+	[SerializeField]private float _playerLookSens;
+
+	[SerializeField]private float _playerLookX;
 	public enum GlassType
 	{
 		Highball,
@@ -39,6 +43,7 @@ public class Glass : Pickupable
 	protected override void Start()
 	{
 		base.Start();
+		_playerLookSens = Services.GameManager.playerInput.lookSensitivity;
 		liquid = GetComponentInChildren<Liquid>();
 		if (liquid != null)
 		{
@@ -50,12 +55,13 @@ public class Glass : Pickupable
 	private Vector3 myRot = Vector3.zero;
 	public override void Update()
 	{	
+		_playerLookVec2 = Services.GameManager.playerInput.lookVector;
+
  		if(pickedUp && !Services.TweenManager.tweensAreActive){
-			myRot = transform.eulerAngles;
-			myRot.x = Mathf.Clamp(myRot.x, -45, 45);
-			Debug.Log("Before: " + transform.eulerAngles.x);
-			transform.eulerAngles = new Vector3 (myRot.x, transform.eulerAngles.y, transform.eulerAngles.z);
-			Debug.Log("After" + transform.eulerAngles.x);
+			// transform.rotation = Quaternion.identity;
+			// _playerLookX -= _playerLookVec2.y * _playerLookSens;
+			// _playerLookX = Mathf.Clamp (_playerLookX, -75f, -25f);
+			// transform.localRotation = Quaternion.Euler (_playerLookX, 0, 0);	 
 		}
 
 		if(myIceList.Count >= 3){

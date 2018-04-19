@@ -70,7 +70,7 @@ public class Liquid : MonoBehaviour {
 			case Glass.GlassType.Beer_mug:
 				break;
 			case Glass.GlassType.Highball:
-				myMaxVolume = 0.75f;
+				myMaxVolume = 0.5f;
 				break;
 			case Glass.GlassType.Shot:
 				break;

@@ -21381,7 +21381,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1873452307670110}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.465, y: 1.637, z: 9.996}
+  m_LocalPosition: {x: 2.465, y: 1.6256, z: 9.996}
   m_LocalScale: {x: 0.72233, y: 0.7223301, z: 0.7223301}
   m_Children:
   - {fileID: 4841102992503388}
@@ -57304,6 +57304,9 @@ MonoBehaviour:
   liquid: {fileID: 0}
   liquidSurfaceParent: {fileID: 0}
   liquidSurfaceChild: {fileID: 0}
+  _playerLookVec2: {x: 0, y: 0}
+  _playerLookSens: 0
+  _playerLookX: 0
   glassType: 0
 --- !u!114 &114000524133097986
 MonoBehaviour:
@@ -57353,6 +57356,9 @@ MonoBehaviour:
   liquid: {fileID: 0}
   liquidSurfaceParent: {fileID: 0}
   liquidSurfaceChild: {fileID: 0}
+  _playerLookVec2: {x: 0, y: 0}
+  _playerLookSens: 0
+  _playerLookX: 0
   glassType: 0
 --- !u!114 &114002596006558650
 MonoBehaviour:
@@ -57386,6 +57392,9 @@ MonoBehaviour:
   liquid: {fileID: 0}
   liquidSurfaceParent: {fileID: 1552001039007572}
   liquidSurfaceChild: {fileID: 0}
+  _playerLookVec2: {x: 0, y: 0}
+  _playerLookSens: 0
+  _playerLookX: 0
   glassType: 0
 --- !u!114 &114003765481101396
 MonoBehaviour:
@@ -57419,6 +57428,9 @@ MonoBehaviour:
   liquid: {fileID: 0}
   liquidSurfaceParent: {fileID: 0}
   liquidSurfaceChild: {fileID: 0}
+  _playerLookVec2: {x: 0, y: 0}
+  _playerLookSens: 0
+  _playerLookX: 0
   glassType: 0
 --- !u!114 &114006416854432356
 MonoBehaviour:
@@ -57498,6 +57510,9 @@ MonoBehaviour:
   liquid: {fileID: 0}
   liquidSurfaceParent: {fileID: 0}
   liquidSurfaceChild: {fileID: 0}
+  _playerLookVec2: {x: 0, y: 0}
+  _playerLookSens: 0
+  _playerLookX: 0
   glassType: 0
 --- !u!114 &114006669070988048
 MonoBehaviour:
@@ -57531,6 +57546,9 @@ MonoBehaviour:
   liquid: {fileID: 0}
   liquidSurfaceParent: {fileID: 0}
   liquidSurfaceChild: {fileID: 0}
+  _playerLookVec2: {x: 0, y: 0}
+  _playerLookSens: 0
+  _playerLookX: 0
   glassType: 0
 --- !u!114 &114006730530558860
 MonoBehaviour:
@@ -57901,6 +57919,9 @@ MonoBehaviour:
   liquid: {fileID: 0}
   liquidSurfaceParent: {fileID: 0}
   liquidSurfaceChild: {fileID: 0}
+  _playerLookVec2: {x: 0, y: 0}
+  _playerLookSens: 0
+  _playerLookX: 0
   glassType: 0
 --- !u!114 &114026893240816188
 MonoBehaviour:
@@ -57980,6 +58001,9 @@ MonoBehaviour:
   liquid: {fileID: 0}
   liquidSurfaceParent: {fileID: 0}
   liquidSurfaceChild: {fileID: 0}
+  _playerLookVec2: {x: 0, y: 0}
+  _playerLookSens: 0
+  _playerLookX: 0
   glassType: 0
 --- !u!114 &114038829464399242
 MonoBehaviour:
@@ -58075,6 +58099,9 @@ MonoBehaviour:
   liquid: {fileID: 0}
   liquidSurfaceParent: {fileID: 0}
   liquidSurfaceChild: {fileID: 0}
+  _playerLookVec2: {x: 0, y: 0}
+  _playerLookSens: 0
+  _playerLookX: 0
   glassType: 0
 --- !u!114 &114044708823882238
 MonoBehaviour:
@@ -58108,6 +58135,9 @@ MonoBehaviour:
   liquid: {fileID: 0}
   liquidSurfaceParent: {fileID: 0}
   liquidSurfaceChild: {fileID: 0}
+  _playerLookVec2: {x: 0, y: 0}
+  _playerLookSens: 0
+  _playerLookX: 0
   glassType: 0
 --- !u!114 &114045369632259860
 MonoBehaviour:
@@ -58249,6 +58279,9 @@ MonoBehaviour:
   liquid: {fileID: 0}
   liquidSurfaceParent: {fileID: 0}
   liquidSurfaceChild: {fileID: 0}
+  _playerLookVec2: {x: 0, y: 0}
+  _playerLookSens: 0
+  _playerLookX: 0
   glassType: 0
 --- !u!114 &114049610353460900
 MonoBehaviour:
@@ -58298,6 +58331,9 @@ MonoBehaviour:
   liquid: {fileID: 0}
   liquidSurfaceParent: {fileID: 0}
   liquidSurfaceChild: {fileID: 0}
+  _playerLookVec2: {x: 0, y: 0}
+  _playerLookSens: 0
+  _playerLookX: 0
   glassType: 0
 --- !u!114 &114054503986754730
 MonoBehaviour:
@@ -58527,6 +58563,9 @@ MonoBehaviour:
   liquid: {fileID: 0}
   liquidSurfaceParent: {fileID: 0}
   liquidSurfaceChild: {fileID: 0}
+  _playerLookVec2: {x: 0, y: 0}
+  _playerLookSens: 0
+  _playerLookX: 0
   glassType: 0
 --- !u!114 &114072377697920474
 MonoBehaviour:
@@ -58560,6 +58599,9 @@ MonoBehaviour:
   liquid: {fileID: 0}
   liquidSurfaceParent: {fileID: 0}
   liquidSurfaceChild: {fileID: 0}
+  _playerLookVec2: {x: 0, y: 0}
+  _playerLookSens: 0
+  _playerLookX: 0
   glassType: 0
 --- !u!114 &114074348681023308
 MonoBehaviour:
@@ -58668,6 +58710,9 @@ MonoBehaviour:
   liquid: {fileID: 0}
   liquidSurfaceParent: {fileID: 0}
   liquidSurfaceChild: {fileID: 0}
+  _playerLookVec2: {x: 0, y: 0}
+  _playerLookSens: 0
+  _playerLookX: 0
   glassType: 0
 --- !u!114 &114079673673950772
 MonoBehaviour:
@@ -58701,6 +58746,9 @@ MonoBehaviour:
   liquid: {fileID: 0}
   liquidSurfaceParent: {fileID: 0}
   liquidSurfaceChild: {fileID: 0}
+  _playerLookVec2: {x: 0, y: 0}
+  _playerLookSens: 0
+  _playerLookX: 0
   glassType: 0
 --- !u!114 &114081560289535150
 MonoBehaviour:
@@ -58750,6 +58798,9 @@ MonoBehaviour:
   liquid: {fileID: 0}
   liquidSurfaceParent: {fileID: 0}
   liquidSurfaceChild: {fileID: 0}
+  _playerLookVec2: {x: 0, y: 0}
+  _playerLookSens: 0
+  _playerLookX: 0
   glassType: 0
 --- !u!114 &114083716530291934
 MonoBehaviour:
@@ -58783,6 +58834,9 @@ MonoBehaviour:
   liquid: {fileID: 0}
   liquidSurfaceParent: {fileID: 0}
   liquidSurfaceChild: {fileID: 0}
+  _playerLookVec2: {x: 0, y: 0}
+  _playerLookSens: 0
+  _playerLookX: 0
   glassType: 0
 --- !u!114 &114084983146911538
 MonoBehaviour:
@@ -59183,6 +59237,9 @@ MonoBehaviour:
   liquid: {fileID: 0}
   liquidSurfaceParent: {fileID: 0}
   liquidSurfaceChild: {fileID: 0}
+  _playerLookVec2: {x: 0, y: 0}
+  _playerLookSens: 0
+  _playerLookX: 0
   glassType: 0
 --- !u!114 &114101104086712676
 MonoBehaviour:
@@ -59491,6 +59548,9 @@ MonoBehaviour:
   liquid: {fileID: 0}
   liquidSurfaceParent: {fileID: 0}
   liquidSurfaceChild: {fileID: 0}
+  _playerLookVec2: {x: 0, y: 0}
+  _playerLookSens: 0
+  _playerLookX: 0
   glassType: 0
 --- !u!114 &114114580873869870
 MonoBehaviour:
@@ -59524,6 +59584,9 @@ MonoBehaviour:
   liquid: {fileID: 0}
   liquidSurfaceParent: {fileID: 0}
   liquidSurfaceChild: {fileID: 0}
+  _playerLookVec2: {x: 0, y: 0}
+  _playerLookSens: 0
+  _playerLookX: 0
   glassType: 0
 --- !u!114 &114116391169777504
 MonoBehaviour:
@@ -59557,6 +59620,9 @@ MonoBehaviour:
   liquid: {fileID: 0}
   liquidSurfaceParent: {fileID: 0}
   liquidSurfaceChild: {fileID: 0}
+  _playerLookVec2: {x: 0, y: 0}
+  _playerLookSens: 0
+  _playerLookX: 0
   glassType: 0
 --- !u!114 &114118346768664436
 MonoBehaviour:
@@ -59727,6 +59793,9 @@ MonoBehaviour:
   liquid: {fileID: 0}
   liquidSurfaceParent: {fileID: 0}
   liquidSurfaceChild: {fileID: 0}
+  _playerLookVec2: {x: 0, y: 0}
+  _playerLookSens: 0
+  _playerLookX: 0
   glassType: 0
 --- !u!114 &114125870996524596
 MonoBehaviour:
@@ -59864,6 +59933,9 @@ MonoBehaviour:
   liquid: {fileID: 0}
   liquidSurfaceParent: {fileID: 0}
   liquidSurfaceChild: {fileID: 0}
+  _playerLookVec2: {x: 0, y: 0}
+  _playerLookSens: 0
+  _playerLookX: 0
   glassType: 0
 --- !u!114 &114129907200328778
 MonoBehaviour:
@@ -59989,6 +60061,9 @@ MonoBehaviour:
   liquid: {fileID: 0}
   liquidSurfaceParent: {fileID: 0}
   liquidSurfaceChild: {fileID: 0}
+  _playerLookVec2: {x: 0, y: 0}
+  _playerLookSens: 0
+  _playerLookX: 0
   glassType: 0
 --- !u!114 &114134843978882188
 MonoBehaviour:
@@ -60246,6 +60321,9 @@ MonoBehaviour:
   liquid: {fileID: 0}
   liquidSurfaceParent: {fileID: 1383496119994340}
   liquidSurfaceChild: {fileID: 0}
+  _playerLookVec2: {x: 0, y: 0}
+  _playerLookSens: 0
+  _playerLookX: 0
   glassType: 0
 --- !u!114 &114152310652330600
 MonoBehaviour:
@@ -60325,6 +60403,9 @@ MonoBehaviour:
   liquid: {fileID: 0}
   liquidSurfaceParent: {fileID: 0}
   liquidSurfaceChild: {fileID: 0}
+  _playerLookVec2: {x: 0, y: 0}
+  _playerLookSens: 0
+  _playerLookX: 0
   glassType: 0
 --- !u!114 &114158001356919828
 MonoBehaviour:
@@ -60463,6 +60544,9 @@ MonoBehaviour:
   liquid: {fileID: 0}
   liquidSurfaceParent: {fileID: 0}
   liquidSurfaceChild: {fileID: 0}
+  _playerLookVec2: {x: 0, y: 0}
+  _playerLookSens: 0
+  _playerLookX: 0
   glassType: 0
 --- !u!114 &114164718121677658
 MonoBehaviour:
@@ -60658,6 +60742,9 @@ MonoBehaviour:
   liquid: {fileID: 0}
   liquidSurfaceParent: {fileID: 0}
   liquidSurfaceChild: {fileID: 0}
+  _playerLookVec2: {x: 0, y: 0}
+  _playerLookSens: 0
+  _playerLookX: 0
   glassType: 0
 --- !u!114 &114173271926622956
 MonoBehaviour:
@@ -60691,6 +60778,9 @@ MonoBehaviour:
   liquid: {fileID: 0}
   liquidSurfaceParent: {fileID: 0}
   liquidSurfaceChild: {fileID: 0}
+  _playerLookVec2: {x: 0, y: 0}
+  _playerLookSens: 0
+  _playerLookX: 0
   glassType: 0
 --- !u!114 &114173940279009920
 MonoBehaviour:
@@ -60724,6 +60814,9 @@ MonoBehaviour:
   liquid: {fileID: 0}
   liquidSurfaceParent: {fileID: 0}
   liquidSurfaceChild: {fileID: 0}
+  _playerLookVec2: {x: 0, y: 0}
+  _playerLookSens: 0
+  _playerLookX: 0
   glassType: 0
 --- !u!114 &114174544581215276
 MonoBehaviour:
@@ -60892,6 +60985,9 @@ MonoBehaviour:
   liquid: {fileID: 0}
   liquidSurfaceParent: {fileID: 0}
   liquidSurfaceChild: {fileID: 0}
+  _playerLookVec2: {x: 0, y: 0}
+  _playerLookSens: 0
+  _playerLookX: 0
   glassType: 0
 --- !u!114 &114181927385750432
 MonoBehaviour:
@@ -60925,6 +61021,9 @@ MonoBehaviour:
   liquid: {fileID: 0}
   liquidSurfaceParent: {fileID: 0}
   liquidSurfaceChild: {fileID: 0}
+  _playerLookVec2: {x: 0, y: 0}
+  _playerLookSens: 0
+  _playerLookX: 0
   glassType: 0
 --- !u!114 &114182224759134640
 MonoBehaviour:
@@ -61020,6 +61119,9 @@ MonoBehaviour:
   liquid: {fileID: 0}
   liquidSurfaceParent: {fileID: 0}
   liquidSurfaceChild: {fileID: 0}
+  _playerLookVec2: {x: 0, y: 0}
+  _playerLookSens: 0
+  _playerLookX: 0
   glassType: 0
 --- !u!114 &114184362137828546
 MonoBehaviour:
@@ -61157,6 +61259,9 @@ MonoBehaviour:
   liquid: {fileID: 0}
   liquidSurfaceParent: {fileID: 0}
   liquidSurfaceChild: {fileID: 0}
+  _playerLookVec2: {x: 0, y: 0}
+  _playerLookSens: 0
+  _playerLookX: 0
   glassType: 0
 --- !u!114 &114192514071823774
 MonoBehaviour:
@@ -61206,6 +61311,9 @@ MonoBehaviour:
   liquid: {fileID: 0}
   liquidSurfaceParent: {fileID: 0}
   liquidSurfaceChild: {fileID: 0}
+  _playerLookVec2: {x: 0, y: 0}
+  _playerLookSens: 0
+  _playerLookX: 0
   glassType: 0
 --- !u!114 &114193898770008856
 MonoBehaviour:
@@ -61285,6 +61393,9 @@ MonoBehaviour:
   liquid: {fileID: 0}
   liquidSurfaceParent: {fileID: 0}
   liquidSurfaceChild: {fileID: 0}
+  _playerLookVec2: {x: 0, y: 0}
+  _playerLookSens: 0
+  _playerLookX: 0
   glassType: 0
 --- !u!114 &114194833835035338
 MonoBehaviour:
@@ -61347,6 +61458,9 @@ MonoBehaviour:
   liquid: {fileID: 0}
   liquidSurfaceParent: {fileID: 0}
   liquidSurfaceChild: {fileID: 0}
+  _playerLookVec2: {x: 0, y: 0}
+  _playerLookSens: 0
+  _playerLookX: 0
   glassType: 0
 --- !u!114 &114197152823990592
 MonoBehaviour:
@@ -61380,6 +61494,9 @@ MonoBehaviour:
   liquid: {fileID: 0}
   liquidSurfaceParent: {fileID: 0}
   liquidSurfaceChild: {fileID: 0}
+  _playerLookVec2: {x: 0, y: 0}
+  _playerLookSens: 0
+  _playerLookX: 0
   glassType: 0
 --- !u!114 &114200847691666342
 MonoBehaviour:
@@ -61413,6 +61530,9 @@ MonoBehaviour:
   liquid: {fileID: 0}
   liquidSurfaceParent: {fileID: 0}
   liquidSurfaceChild: {fileID: 0}
+  _playerLookVec2: {x: 0, y: 0}
+  _playerLookSens: 0
+  _playerLookX: 0
   glassType: 0
 --- !u!114 &114200960465485890
 MonoBehaviour:
@@ -61675,6 +61795,9 @@ MonoBehaviour:
   liquid: {fileID: 0}
   liquidSurfaceParent: {fileID: 0}
   liquidSurfaceChild: {fileID: 0}
+  _playerLookVec2: {x: 0, y: 0}
+  _playerLookSens: 0
+  _playerLookX: 0
   glassType: 0
 --- !u!114 &114219627515508486
 MonoBehaviour:
@@ -61800,6 +61923,9 @@ MonoBehaviour:
   liquid: {fileID: 0}
   liquidSurfaceParent: {fileID: 0}
   liquidSurfaceChild: {fileID: 0}
+  _playerLookVec2: {x: 0, y: 0}
+  _playerLookSens: 0
+  _playerLookX: 0
   glassType: 0
 --- !u!114 &114226035078624008
 MonoBehaviour:
@@ -61833,6 +61959,9 @@ MonoBehaviour:
   liquid: {fileID: 0}
   liquidSurfaceParent: {fileID: 0}
   liquidSurfaceChild: {fileID: 0}
+  _playerLookVec2: {x: 0, y: 0}
+  _playerLookSens: 0
+  _playerLookX: 0
   glassType: 0
 --- !u!114 &114227163107795788
 MonoBehaviour:
@@ -61957,6 +62086,9 @@ MonoBehaviour:
   liquid: {fileID: 0}
   liquidSurfaceParent: {fileID: 0}
   liquidSurfaceChild: {fileID: 0}
+  _playerLookVec2: {x: 0, y: 0}
+  _playerLookSens: 0
+  _playerLookX: 0
   glassType: 0
 --- !u!114 &114229324365096168
 MonoBehaviour:
@@ -62127,6 +62259,9 @@ MonoBehaviour:
   liquid: {fileID: 0}
   liquidSurfaceParent: {fileID: 0}
   liquidSurfaceChild: {fileID: 0}
+  _playerLookVec2: {x: 0, y: 0}
+  _playerLookSens: 0
+  _playerLookX: 0
   glassType: 0
 --- !u!114 &114243216706050480
 MonoBehaviour:
@@ -62293,6 +62428,9 @@ MonoBehaviour:
   liquid: {fileID: 0}
   liquidSurfaceParent: {fileID: 0}
   liquidSurfaceChild: {fileID: 0}
+  _playerLookVec2: {x: 0, y: 0}
+  _playerLookSens: 0
+  _playerLookX: 0
   glassType: 0
 --- !u!114 &114248775566596036
 MonoBehaviour:
@@ -62326,6 +62464,9 @@ MonoBehaviour:
   liquid: {fileID: 0}
   liquidSurfaceParent: {fileID: 0}
   liquidSurfaceChild: {fileID: 0}
+  _playerLookVec2: {x: 0, y: 0}
+  _playerLookSens: 0
+  _playerLookX: 0
   glassType: 0
 --- !u!114 &114256551918240558
 MonoBehaviour:
@@ -62359,6 +62500,9 @@ MonoBehaviour:
   liquid: {fileID: 0}
   liquidSurfaceParent: {fileID: 1841940068342868}
   liquidSurfaceChild: {fileID: 0}
+  _playerLookVec2: {x: 0, y: 0}
+  _playerLookSens: 0
+  _playerLookX: 0
   glassType: 0
 --- !u!114 &114257440959231394
 MonoBehaviour:
@@ -62438,6 +62582,9 @@ MonoBehaviour:
   liquid: {fileID: 0}
   liquidSurfaceParent: {fileID: 0}
   liquidSurfaceChild: {fileID: 0}
+  _playerLookVec2: {x: 0, y: 0}
+  _playerLookSens: 0
+  _playerLookX: 0
   glassType: 0
 --- !u!114 &114259455470210352
 MonoBehaviour:
@@ -62471,6 +62618,9 @@ MonoBehaviour:
   liquid: {fileID: 0}
   liquidSurfaceParent: {fileID: 0}
   liquidSurfaceChild: {fileID: 0}
+  _playerLookVec2: {x: 0, y: 0}
+  _playerLookSens: 0
+  _playerLookX: 0
   glassType: 0
 --- !u!114 &114259664888029912
 MonoBehaviour:
@@ -62504,6 +62654,9 @@ MonoBehaviour:
   liquid: {fileID: 0}
   liquidSurfaceParent: {fileID: 0}
   liquidSurfaceChild: {fileID: 0}
+  _playerLookVec2: {x: 0, y: 0}
+  _playerLookSens: 0
+  _playerLookX: 0
   glassType: 0
 --- !u!114 &114261315918539136
 MonoBehaviour:
@@ -62566,6 +62719,9 @@ MonoBehaviour:
   liquid: {fileID: 0}
   liquidSurfaceParent: {fileID: 0}
   liquidSurfaceChild: {fileID: 0}
+  _playerLookVec2: {x: 0, y: 0}
+  _playerLookSens: 0
+  _playerLookX: 0
   glassType: 0
 --- !u!114 &114262237200052912
 MonoBehaviour:
@@ -62645,6 +62801,9 @@ MonoBehaviour:
   liquid: {fileID: 0}
   liquidSurfaceParent: {fileID: 0}
   liquidSurfaceChild: {fileID: 0}
+  _playerLookVec2: {x: 0, y: 0}
+  _playerLookSens: 0
+  _playerLookX: 0
   glassType: 0
 --- !u!114 &114266978701658558
 MonoBehaviour:
@@ -62694,6 +62853,9 @@ MonoBehaviour:
   liquid: {fileID: 0}
   liquidSurfaceParent: {fileID: 0}
   liquidSurfaceChild: {fileID: 0}
+  _playerLookVec2: {x: 0, y: 0}
+  _playerLookSens: 0
+  _playerLookX: 0
   glassType: 0
 --- !u!114 &114268765438079284
 MonoBehaviour:
@@ -62894,6 +63056,9 @@ MonoBehaviour:
   liquid: {fileID: 0}
   liquidSurfaceParent: {fileID: 0}
   liquidSurfaceChild: {fileID: 0}
+  _playerLookVec2: {x: 0, y: 0}
+  _playerLookSens: 0
+  _playerLookX: 0
   glassType: 0
 --- !u!114 &114274087123994376
 MonoBehaviour:
@@ -63185,6 +63350,9 @@ MonoBehaviour:
   liquid: {fileID: 0}
   liquidSurfaceParent: {fileID: 0}
   liquidSurfaceChild: {fileID: 0}
+  _playerLookVec2: {x: 0, y: 0}
+  _playerLookSens: 0
+  _playerLookX: 0
   glassType: 0
 --- !u!114 &114288130847803314
 MonoBehaviour:
@@ -63234,6 +63402,9 @@ MonoBehaviour:
   liquid: {fileID: 0}
   liquidSurfaceParent: {fileID: 0}
   liquidSurfaceChild: {fileID: 0}
+  _playerLookVec2: {x: 0, y: 0}
+  _playerLookSens: 0
+  _playerLookX: 0
   glassType: 0
 --- !u!114 &114292436986823244
 MonoBehaviour:
@@ -63267,6 +63438,9 @@ MonoBehaviour:
   liquid: {fileID: 0}
   liquidSurfaceParent: {fileID: 0}
   liquidSurfaceChild: {fileID: 0}
+  _playerLookVec2: {x: 0, y: 0}
+  _playerLookSens: 0
+  _playerLookX: 0
   glassType: 0
 --- !u!114 &114294260527777728
 MonoBehaviour:
@@ -63300,6 +63474,9 @@ MonoBehaviour:
   liquid: {fileID: 0}
   liquidSurfaceParent: {fileID: 0}
   liquidSurfaceChild: {fileID: 0}
+  _playerLookVec2: {x: 0, y: 0}
+  _playerLookSens: 0
+  _playerLookX: 0
   glassType: 0
 --- !u!114 &114295636516154154
 MonoBehaviour:
@@ -63333,6 +63510,9 @@ MonoBehaviour:
   liquid: {fileID: 0}
   liquidSurfaceParent: {fileID: 0}
   liquidSurfaceChild: {fileID: 0}
+  _playerLookVec2: {x: 0, y: 0}
+  _playerLookSens: 0
+  _playerLookX: 0
   glassType: 0
 --- !u!114 &114296350691060832
 MonoBehaviour:
@@ -63412,6 +63592,9 @@ MonoBehaviour:
   liquid: {fileID: 0}
   liquidSurfaceParent: {fileID: 0}
   liquidSurfaceChild: {fileID: 0}
+  _playerLookVec2: {x: 0, y: 0}
+  _playerLookSens: 0
+  _playerLookX: 0
   glassType: 0
 --- !u!114 &114298123615274260
 MonoBehaviour:
@@ -63615,6 +63798,9 @@ MonoBehaviour:
   liquid: {fileID: 0}
   liquidSurfaceParent: {fileID: 0}
   liquidSurfaceChild: {fileID: 0}
+  _playerLookVec2: {x: 0, y: 0}
+  _playerLookSens: 0
+  _playerLookX: 0
   glassType: 0
 --- !u!114 &114302412628277514
 MonoBehaviour:
@@ -63664,6 +63850,9 @@ MonoBehaviour:
   liquid: {fileID: 0}
   liquidSurfaceParent: {fileID: 0}
   liquidSurfaceChild: {fileID: 0}
+  _playerLookVec2: {x: 0, y: 0}
+  _playerLookSens: 0
+  _playerLookX: 0
   glassType: 0
 --- !u!114 &114303597064131430
 MonoBehaviour:
@@ -64015,6 +64204,9 @@ MonoBehaviour:
   liquid: {fileID: 0}
   liquidSurfaceParent: {fileID: 0}
   liquidSurfaceChild: {fileID: 0}
+  _playerLookVec2: {x: 0, y: 0}
+  _playerLookSens: 0
+  _playerLookX: 0
   glassType: 0
 --- !u!114 &114332001165665752
 MonoBehaviour:
@@ -64094,6 +64286,9 @@ MonoBehaviour:
   liquid: {fileID: 0}
   liquidSurfaceParent: {fileID: 0}
   liquidSurfaceChild: {fileID: 0}
+  _playerLookVec2: {x: 0, y: 0}
+  _playerLookSens: 0
+  _playerLookX: 0
   glassType: 0
 --- !u!114 &114333294458931654
 MonoBehaviour:
@@ -64127,6 +64322,9 @@ MonoBehaviour:
   liquid: {fileID: 0}
   liquidSurfaceParent: {fileID: 0}
   liquidSurfaceChild: {fileID: 0}
+  _playerLookVec2: {x: 0, y: 0}
+  _playerLookSens: 0
+  _playerLookX: 0
   glassType: 0
 --- !u!114 &114333788307852096
 MonoBehaviour:
@@ -64322,6 +64520,9 @@ MonoBehaviour:
   liquid: {fileID: 0}
   liquidSurfaceParent: {fileID: 0}
   liquidSurfaceChild: {fileID: 0}
+  _playerLookVec2: {x: 0, y: 0}
+  _playerLookSens: 0
+  _playerLookX: 0
   glassType: 0
 --- !u!114 &114343052699635254
 MonoBehaviour:
@@ -64642,6 +64843,9 @@ MonoBehaviour:
   liquid: {fileID: 0}
   liquidSurfaceParent: {fileID: 0}
   liquidSurfaceChild: {fileID: 0}
+  _playerLookVec2: {x: 0, y: 0}
+  _playerLookSens: 0
+  _playerLookX: 0
   glassType: 0
 --- !u!114 &114357738873188480
 MonoBehaviour:
@@ -64779,6 +64983,9 @@ MonoBehaviour:
   liquid: {fileID: 0}
   liquidSurfaceParent: {fileID: 0}
   liquidSurfaceChild: {fileID: 0}
+  _playerLookVec2: {x: 0, y: 0}
+  _playerLookSens: 0
+  _playerLookX: 0
   glassType: 0
 --- !u!114 &114370433481529632
 MonoBehaviour:
@@ -65219,6 +65426,9 @@ MonoBehaviour:
   liquid: {fileID: 0}
   liquidSurfaceParent: {fileID: 0}
   liquidSurfaceChild: {fileID: 0}
+  _playerLookVec2: {x: 0, y: 0}
+  _playerLookSens: 0
+  _playerLookX: 0
   glassType: 0
 --- !u!114 &114385495397383180
 MonoBehaviour:
@@ -65298,6 +65508,9 @@ MonoBehaviour:
   liquid: {fileID: 0}
   liquidSurfaceParent: {fileID: 0}
   liquidSurfaceChild: {fileID: 0}
+  _playerLookVec2: {x: 0, y: 0}
+  _playerLookSens: 0
+  _playerLookX: 0
   glassType: 0
 --- !u!114 &114386080473219274
 MonoBehaviour:
@@ -65478,6 +65691,9 @@ MonoBehaviour:
   liquid: {fileID: 0}
   liquidSurfaceParent: {fileID: 0}
   liquidSurfaceChild: {fileID: 0}
+  _playerLookVec2: {x: 0, y: 0}
+  _playerLookSens: 0
+  _playerLookX: 0
   glassType: 0
 --- !u!114 &114399356010308228
 MonoBehaviour:
@@ -65573,6 +65789,9 @@ MonoBehaviour:
   liquid: {fileID: 0}
   liquidSurfaceParent: {fileID: 0}
   liquidSurfaceChild: {fileID: 0}
+  _playerLookVec2: {x: 0, y: 0}
+  _playerLookSens: 0
+  _playerLookX: 0
   glassType: 0
 --- !u!114 &114402168370989962
 MonoBehaviour:
@@ -65606,6 +65825,9 @@ MonoBehaviour:
   liquid: {fileID: 0}
   liquidSurfaceParent: {fileID: 0}
   liquidSurfaceChild: {fileID: 0}
+  _playerLookVec2: {x: 0, y: 0}
+  _playerLookSens: 0
+  _playerLookX: 0
   glassType: 0
 --- !u!114 &114409614483092990
 MonoBehaviour:
@@ -65835,6 +66057,9 @@ MonoBehaviour:
   liquid: {fileID: 0}
   liquidSurfaceParent: {fileID: 0}
   liquidSurfaceChild: {fileID: 0}
+  _playerLookVec2: {x: 0, y: 0}
+  _playerLookSens: 0
+  _playerLookX: 0
   glassType: 0
 --- !u!114 &114417439724350260
 MonoBehaviour:
@@ -65868,6 +66093,9 @@ MonoBehaviour:
   liquid: {fileID: 0}
   liquidSurfaceParent: {fileID: 0}
   liquidSurfaceChild: {fileID: 0}
+  _playerLookVec2: {x: 0, y: 0}
+  _playerLookSens: 0
+  _playerLookX: 0
   glassType: 0
 --- !u!114 &114418322734412648
 MonoBehaviour:
@@ -65901,6 +66129,9 @@ MonoBehaviour:
   liquid: {fileID: 0}
   liquidSurfaceParent: {fileID: 0}
   liquidSurfaceChild: {fileID: 0}
+  _playerLookVec2: {x: 0, y: 0}
+  _playerLookSens: 0
+  _playerLookX: 0
   glassType: 0
 --- !u!114 &114419315680981012
 MonoBehaviour:
@@ -65934,6 +66165,9 @@ MonoBehaviour:
   liquid: {fileID: 0}
   liquidSurfaceParent: {fileID: 1329681998182348}
   liquidSurfaceChild: {fileID: 0}
+  _playerLookVec2: {x: 0, y: 0}
+  _playerLookSens: 0
+  _playerLookX: 0
   glassType: 0
 --- !u!114 &114419348930226624
 MonoBehaviour:
@@ -66071,6 +66305,9 @@ MonoBehaviour:
   liquid: {fileID: 0}
   liquidSurfaceParent: {fileID: 1633213391983990}
   liquidSurfaceChild: {fileID: 0}
+  _playerLookVec2: {x: 0, y: 0}
+  _playerLookSens: 0
+  _playerLookX: 0
   glassType: 0
 --- !u!114 &114426733586095372
 MonoBehaviour:
@@ -66196,6 +66433,9 @@ MonoBehaviour:
   liquid: {fileID: 0}
   liquidSurfaceParent: {fileID: 0}
   liquidSurfaceChild: {fileID: 0}
+  _playerLookVec2: {x: 0, y: 0}
+  _playerLookSens: 0
+  _playerLookX: 0
   glassType: 0
 --- !u!114 &114431037572412292
 MonoBehaviour:
@@ -66408,6 +66648,9 @@ MonoBehaviour:
   liquid: {fileID: 0}
   liquidSurfaceParent: {fileID: 0}
   liquidSurfaceChild: {fileID: 0}
+  _playerLookVec2: {x: 0, y: 0}
+  _playerLookSens: 0
+  _playerLookX: 0
   glassType: 0
 --- !u!114 &114451245962020106
 MonoBehaviour:
@@ -66503,6 +66746,9 @@ MonoBehaviour:
   liquid: {fileID: 0}
   liquidSurfaceParent: {fileID: 0}
   liquidSurfaceChild: {fileID: 0}
+  _playerLookVec2: {x: 0, y: 0}
+  _playerLookSens: 0
+  _playerLookX: 0
   glassType: 0
 --- !u!114 &114452328128283266
 MonoBehaviour:
@@ -66565,6 +66811,9 @@ MonoBehaviour:
   liquid: {fileID: 0}
   liquidSurfaceParent: {fileID: 0}
   liquidSurfaceChild: {fileID: 0}
+  _playerLookVec2: {x: 0, y: 0}
+  _playerLookSens: 0
+  _playerLookX: 0
   glassType: 0
 --- !u!114 &114455539147021990
 MonoBehaviour:
@@ -66673,6 +66922,9 @@ MonoBehaviour:
   liquid: {fileID: 0}
   liquidSurfaceParent: {fileID: 0}
   liquidSurfaceChild: {fileID: 0}
+  _playerLookVec2: {x: 0, y: 0}
+  _playerLookSens: 0
+  _playerLookX: 0
   glassType: 0
 --- !u!114 &114461599896450952
 MonoBehaviour:
@@ -66706,6 +66958,9 @@ MonoBehaviour:
   liquid: {fileID: 0}
   liquidSurfaceParent: {fileID: 0}
   liquidSurfaceChild: {fileID: 0}
+  _playerLookVec2: {x: 0, y: 0}
+  _playerLookSens: 0
+  _playerLookX: 0
   glassType: 0
 --- !u!114 &114462682372880684
 MonoBehaviour:
@@ -66814,6 +67069,9 @@ MonoBehaviour:
   liquid: {fileID: 0}
   liquidSurfaceParent: {fileID: 0}
   liquidSurfaceChild: {fileID: 0}
+  _playerLookVec2: {x: 0, y: 0}
+  _playerLookSens: 0
+  _playerLookX: 0
   glassType: 0
 --- !u!114 &114465535666857106
 MonoBehaviour:
@@ -66939,6 +67197,9 @@ MonoBehaviour:
   liquid: {fileID: 0}
   liquidSurfaceParent: {fileID: 0}
   liquidSurfaceChild: {fileID: 0}
+  _playerLookVec2: {x: 0, y: 0}
+  _playerLookSens: 0
+  _playerLookX: 0
   glassType: 0
 --- !u!114 &114472846498791760
 MonoBehaviour:
@@ -67156,6 +67417,9 @@ MonoBehaviour:
   liquid: {fileID: 0}
   liquidSurfaceParent: {fileID: 0}
   liquidSurfaceChild: {fileID: 0}
+  _playerLookVec2: {x: 0, y: 0}
+  _playerLookSens: 0
+  _playerLookX: 0
   glassType: 0
 --- !u!114 &114479652291245806
 MonoBehaviour:
@@ -67189,6 +67453,9 @@ MonoBehaviour:
   liquid: {fileID: 0}
   liquidSurfaceParent: {fileID: 0}
   liquidSurfaceChild: {fileID: 0}
+  _playerLookVec2: {x: 0, y: 0}
+  _playerLookSens: 0
+  _playerLookX: 0
   glassType: 0
 --- !u!114 &114481624838142320
 MonoBehaviour:
@@ -67389,6 +67656,9 @@ MonoBehaviour:
   liquid: {fileID: 0}
   liquidSurfaceParent: {fileID: 0}
   liquidSurfaceChild: {fileID: 0}
+  _playerLookVec2: {x: 0, y: 0}
+  _playerLookSens: 0
+  _playerLookX: 0
   glassType: 0
 --- !u!114 &114493531189260520
 MonoBehaviour:
@@ -67422,6 +67692,9 @@ MonoBehaviour:
   liquid: {fileID: 0}
   liquidSurfaceParent: {fileID: 0}
   liquidSurfaceChild: {fileID: 0}
+  _playerLookVec2: {x: 0, y: 0}
+  _playerLookSens: 0
+  _playerLookX: 0
   glassType: 0
 --- !u!114 &114499996692459240
 MonoBehaviour:
@@ -67530,6 +67803,9 @@ MonoBehaviour:
   liquid: {fileID: 0}
   liquidSurfaceParent: {fileID: 0}
   liquidSurfaceChild: {fileID: 0}
+  _playerLookVec2: {x: 0, y: 0}
+  _playerLookSens: 0
+  _playerLookX: 0
   glassType: 0
 --- !u!114 &114504508513322112
 MonoBehaviour:
@@ -67655,6 +67931,9 @@ MonoBehaviour:
   liquid: {fileID: 0}
   liquidSurfaceParent: {fileID: 0}
   liquidSurfaceChild: {fileID: 0}
+  _playerLookVec2: {x: 0, y: 0}
+  _playerLookSens: 0
+  _playerLookX: 0
   glassType: 0
 --- !u!114 &114507965367944852
 MonoBehaviour:
@@ -67854,6 +68133,9 @@ MonoBehaviour:
   liquid: {fileID: 0}
   liquidSurfaceParent: {fileID: 0}
   liquidSurfaceChild: {fileID: 0}
+  _playerLookVec2: {x: 0, y: 0}
+  _playerLookSens: 0
+  _playerLookX: 0
   glassType: 0
 --- !u!114 &114515739805214268
 MonoBehaviour:
@@ -67945,6 +68227,9 @@ MonoBehaviour:
   liquid: {fileID: 0}
   liquidSurfaceParent: {fileID: 0}
   liquidSurfaceChild: {fileID: 0}
+  _playerLookVec2: {x: 0, y: 0}
+  _playerLookSens: 0
+  _playerLookX: 0
   glassType: 0
 --- !u!114 &114526182021845618
 MonoBehaviour:
@@ -67978,6 +68263,9 @@ MonoBehaviour:
   liquid: {fileID: 0}
   liquidSurfaceParent: {fileID: 0}
   liquidSurfaceChild: {fileID: 0}
+  _playerLookVec2: {x: 0, y: 0}
+  _playerLookSens: 0
+  _playerLookX: 0
   glassType: 0
 --- !u!114 &114529044730710826
 MonoBehaviour:
@@ -68011,6 +68299,9 @@ MonoBehaviour:
   liquid: {fileID: 0}
   liquidSurfaceParent: {fileID: 0}
   liquidSurfaceChild: {fileID: 0}
+  _playerLookVec2: {x: 0, y: 0}
+  _playerLookSens: 0
+  _playerLookX: 0
   glassType: 0
 --- !u!114 &114533466687036210
 MonoBehaviour:
@@ -68044,6 +68335,9 @@ MonoBehaviour:
   liquid: {fileID: 0}
   liquidSurfaceParent: {fileID: 0}
   liquidSurfaceChild: {fileID: 0}
+  _playerLookVec2: {x: 0, y: 0}
+  _playerLookSens: 0
+  _playerLookX: 0
   glassType: 0
 --- !u!114 &114539338105747474
 MonoBehaviour:
@@ -68123,6 +68417,9 @@ MonoBehaviour:
   liquid: {fileID: 0}
   liquidSurfaceParent: {fileID: 0}
   liquidSurfaceChild: {fileID: 0}
+  _playerLookVec2: {x: 0, y: 0}
+  _playerLookSens: 0
+  _playerLookX: 0
   glassType: 0
 --- !u!114 &114543781888130770
 MonoBehaviour:
@@ -68355,6 +68652,9 @@ MonoBehaviour:
   liquid: {fileID: 0}
   liquidSurfaceParent: {fileID: 0}
   liquidSurfaceChild: {fileID: 0}
+  _playerLookVec2: {x: 0, y: 0}
+  _playerLookSens: 0
+  _playerLookX: 0
   glassType: 0
 --- !u!114 &114556514354995360
 MonoBehaviour:
@@ -68388,6 +68688,9 @@ MonoBehaviour:
   liquid: {fileID: 0}
   liquidSurfaceParent: {fileID: 0}
   liquidSurfaceChild: {fileID: 0}
+  _playerLookVec2: {x: 0, y: 0}
+  _playerLookSens: 0
+  _playerLookX: 0
   glassType: 0
 --- !u!114 &114556842645776048
 MonoBehaviour:
@@ -68692,6 +68995,9 @@ MonoBehaviour:
   liquid: {fileID: 0}
   liquidSurfaceParent: {fileID: 0}
   liquidSurfaceChild: {fileID: 0}
+  _playerLookVec2: {x: 0, y: 0}
+  _playerLookSens: 0
+  _playerLookX: 0
   glassType: 0
 --- !u!114 &114567938561870510
 MonoBehaviour:
@@ -68725,6 +69031,9 @@ MonoBehaviour:
   liquid: {fileID: 0}
   liquidSurfaceParent: {fileID: 0}
   liquidSurfaceChild: {fileID: 0}
+  _playerLookVec2: {x: 0, y: 0}
+  _playerLookSens: 0
+  _playerLookX: 0
   glassType: 0
 --- !u!114 &114568106045637464
 MonoBehaviour:
@@ -69091,6 +69400,9 @@ MonoBehaviour:
   liquid: {fileID: 0}
   liquidSurfaceParent: {fileID: 0}
   liquidSurfaceChild: {fileID: 0}
+  _playerLookVec2: {x: 0, y: 0}
+  _playerLookSens: 0
+  _playerLookX: 0
   glassType: 0
 --- !u!114 &114580062422084758
 MonoBehaviour:
@@ -69291,6 +69603,9 @@ MonoBehaviour:
   liquid: {fileID: 0}
   liquidSurfaceParent: {fileID: 0}
   liquidSurfaceChild: {fileID: 0}
+  _playerLookVec2: {x: 0, y: 0}
+  _playerLookSens: 0
+  _playerLookX: 0
   glassType: 0
 --- !u!114 &114587885885675906
 MonoBehaviour:
@@ -69324,6 +69639,9 @@ MonoBehaviour:
   liquid: {fileID: 0}
   liquidSurfaceParent: {fileID: 0}
   liquidSurfaceChild: {fileID: 0}
+  _playerLookVec2: {x: 0, y: 0}
+  _playerLookSens: 0
+  _playerLookX: 0
   glassType: 0
 --- !u!114 &114588420507902758
 MonoBehaviour:
@@ -69419,6 +69737,9 @@ MonoBehaviour:
   liquid: {fileID: 0}
   liquidSurfaceParent: {fileID: 0}
   liquidSurfaceChild: {fileID: 0}
+  _playerLookVec2: {x: 0, y: 0}
+  _playerLookSens: 0
+  _playerLookX: 0
   glassType: 0
 --- !u!114 &114594281621677630
 MonoBehaviour:
@@ -69452,6 +69773,9 @@ MonoBehaviour:
   liquid: {fileID: 0}
   liquidSurfaceParent: {fileID: 0}
   liquidSurfaceChild: {fileID: 0}
+  _playerLookVec2: {x: 0, y: 0}
+  _playerLookSens: 0
+  _playerLookX: 0
   glassType: 0
 --- !u!114 &114594345816272648
 MonoBehaviour:
@@ -69485,6 +69809,9 @@ MonoBehaviour:
   liquid: {fileID: 0}
   liquidSurfaceParent: {fileID: 0}
   liquidSurfaceChild: {fileID: 0}
+  _playerLookVec2: {x: 0, y: 0}
+  _playerLookSens: 0
+  _playerLookX: 0
   glassType: 0
 --- !u!114 &114596362995326136
 MonoBehaviour:
@@ -69576,6 +69903,9 @@ MonoBehaviour:
   liquid: {fileID: 0}
   liquidSurfaceParent: {fileID: 0}
   liquidSurfaceChild: {fileID: 0}
+  _playerLookVec2: {x: 0, y: 0}
+  _playerLookSens: 0
+  _playerLookX: 0
   glassType: 0
 --- !u!114 &114611260694200056
 MonoBehaviour:
@@ -69790,6 +70120,9 @@ MonoBehaviour:
   liquid: {fileID: 0}
   liquidSurfaceParent: {fileID: 0}
   liquidSurfaceChild: {fileID: 0}
+  _playerLookVec2: {x: 0, y: 0}
+  _playerLookSens: 0
+  _playerLookX: 0
   glassType: 0
 --- !u!114 &114618734848356628
 MonoBehaviour:
@@ -69823,6 +70156,9 @@ MonoBehaviour:
   liquid: {fileID: 0}
   liquidSurfaceParent: {fileID: 0}
   liquidSurfaceChild: {fileID: 0}
+  _playerLookVec2: {x: 0, y: 0}
+  _playerLookSens: 0
+  _playerLookX: 0
   glassType: 0
 --- !u!114 &114620664767903520
 MonoBehaviour:
@@ -69856,6 +70192,9 @@ MonoBehaviour:
   liquid: {fileID: 0}
   liquidSurfaceParent: {fileID: 0}
   liquidSurfaceChild: {fileID: 0}
+  _playerLookVec2: {x: 0, y: 0}
+  _playerLookSens: 0
+  _playerLookX: 0
   glassType: 0
 --- !u!114 &114622989356032368
 MonoBehaviour:
@@ -70131,6 +70470,9 @@ MonoBehaviour:
   liquid: {fileID: 0}
   liquidSurfaceParent: {fileID: 0}
   liquidSurfaceChild: {fileID: 0}
+  _playerLookVec2: {x: 0, y: 0}
+  _playerLookSens: 0
+  _playerLookX: 0
   glassType: 0
 --- !u!114 &114630415904760074
 MonoBehaviour:
@@ -70193,6 +70535,9 @@ MonoBehaviour:
   liquid: {fileID: 0}
   liquidSurfaceParent: {fileID: 0}
   liquidSurfaceChild: {fileID: 0}
+  _playerLookVec2: {x: 0, y: 0}
+  _playerLookSens: 0
+  _playerLookX: 0
   glassType: 0
 --- !u!114 &114631155067580676
 MonoBehaviour:
@@ -70242,6 +70587,9 @@ MonoBehaviour:
   liquid: {fileID: 0}
   liquidSurfaceParent: {fileID: 0}
   liquidSurfaceChild: {fileID: 0}
+  _playerLookVec2: {x: 0, y: 0}
+  _playerLookSens: 0
+  _playerLookX: 0
   glassType: 0
 --- !u!114 &114633315957671594
 MonoBehaviour:
@@ -70367,6 +70715,9 @@ MonoBehaviour:
   liquid: {fileID: 0}
   liquidSurfaceParent: {fileID: 0}
   liquidSurfaceChild: {fileID: 0}
+  _playerLookVec2: {x: 0, y: 0}
+  _playerLookSens: 0
+  _playerLookX: 0
   glassType: 0
 --- !u!114 &114636777957386060
 MonoBehaviour:
@@ -70400,6 +70751,9 @@ MonoBehaviour:
   liquid: {fileID: 0}
   liquidSurfaceParent: {fileID: 0}
   liquidSurfaceChild: {fileID: 0}
+  _playerLookVec2: {x: 0, y: 0}
+  _playerLookSens: 0
+  _playerLookX: 0
   glassType: 0
 --- !u!114 &114638369427357176
 MonoBehaviour:
@@ -70567,6 +70921,9 @@ MonoBehaviour:
   liquid: {fileID: 0}
   liquidSurfaceParent: {fileID: 0}
   liquidSurfaceChild: {fileID: 0}
+  _playerLookVec2: {x: 0, y: 0}
+  _playerLookSens: 0
+  _playerLookX: 0
   glassType: 0
 --- !u!114 &114648242106454246
 MonoBehaviour:
@@ -70646,6 +71003,9 @@ MonoBehaviour:
   liquid: {fileID: 0}
   liquidSurfaceParent: {fileID: 1355337796871456}
   liquidSurfaceChild: {fileID: 0}
+  _playerLookVec2: {x: 0, y: 0}
+  _playerLookSens: 0
+  _playerLookX: 0
   glassType: 0
 --- !u!114 &114651226948370562
 MonoBehaviour:
@@ -70708,6 +71068,9 @@ MonoBehaviour:
   liquid: {fileID: 0}
   liquidSurfaceParent: {fileID: 0}
   liquidSurfaceChild: {fileID: 0}
+  _playerLookVec2: {x: 0, y: 0}
+  _playerLookSens: 0
+  _playerLookX: 0
   glassType: 0
 --- !u!114 &114655405660998334
 MonoBehaviour:
@@ -70833,6 +71196,9 @@ MonoBehaviour:
   liquid: {fileID: 0}
   liquidSurfaceParent: {fileID: 0}
   liquidSurfaceChild: {fileID: 0}
+  _playerLookVec2: {x: 0, y: 0}
+  _playerLookSens: 0
+  _playerLookX: 0
   glassType: 0
 --- !u!114 &114659220162791526
 MonoBehaviour:
@@ -70924,6 +71290,9 @@ MonoBehaviour:
   liquid: {fileID: 0}
   liquidSurfaceParent: {fileID: 0}
   liquidSurfaceChild: {fileID: 0}
+  _playerLookVec2: {x: 0, y: 0}
+  _playerLookSens: 0
+  _playerLookX: 0
   glassType: 0
 --- !u!114 &114663602478487666
 MonoBehaviour:
@@ -70957,6 +71326,9 @@ MonoBehaviour:
   liquid: {fileID: 0}
   liquidSurfaceParent: {fileID: 0}
   liquidSurfaceChild: {fileID: 0}
+  _playerLookVec2: {x: 0, y: 0}
+  _playerLookSens: 0
+  _playerLookX: 0
   glassType: 0
 --- !u!114 &114672559341252804
 MonoBehaviour:
@@ -70990,6 +71362,9 @@ MonoBehaviour:
   liquid: {fileID: 0}
   liquidSurfaceParent: {fileID: 0}
   liquidSurfaceChild: {fileID: 0}
+  _playerLookVec2: {x: 0, y: 0}
+  _playerLookSens: 0
+  _playerLookX: 0
   glassType: 0
 --- !u!114 &114677938951566790
 MonoBehaviour:
@@ -71023,6 +71398,9 @@ MonoBehaviour:
   liquid: {fileID: 0}
   liquidSurfaceParent: {fileID: 0}
   liquidSurfaceChild: {fileID: 0}
+  _playerLookVec2: {x: 0, y: 0}
+  _playerLookSens: 0
+  _playerLookX: 0
   glassType: 0
 --- !u!114 &114680191592705894
 MonoBehaviour:
@@ -71056,6 +71434,9 @@ MonoBehaviour:
   liquid: {fileID: 0}
   liquidSurfaceParent: {fileID: 0}
   liquidSurfaceChild: {fileID: 0}
+  _playerLookVec2: {x: 0, y: 0}
+  _playerLookSens: 0
+  _playerLookX: 0
   glassType: 0
 --- !u!114 &114684371647980620
 MonoBehaviour:
@@ -71135,6 +71516,9 @@ MonoBehaviour:
   liquid: {fileID: 0}
   liquidSurfaceParent: {fileID: 0}
   liquidSurfaceChild: {fileID: 0}
+  _playerLookVec2: {x: 0, y: 0}
+  _playerLookSens: 0
+  _playerLookX: 0
   glassType: 0
 --- !u!114 &114689716685519432
 MonoBehaviour:
@@ -71168,6 +71552,9 @@ MonoBehaviour:
   liquid: {fileID: 0}
   liquidSurfaceParent: {fileID: 0}
   liquidSurfaceChild: {fileID: 0}
+  _playerLookVec2: {x: 0, y: 0}
+  _playerLookSens: 0
+  _playerLookX: 0
   glassType: 0
 --- !u!114 &114691492163976998
 MonoBehaviour:
@@ -71335,6 +71722,9 @@ MonoBehaviour:
   liquid: {fileID: 0}
   liquidSurfaceParent: {fileID: 0}
   liquidSurfaceChild: {fileID: 0}
+  _playerLookVec2: {x: 0, y: 0}
+  _playerLookSens: 0
+  _playerLookX: 0
   glassType: 0
 --- !u!114 &114696379950919020
 MonoBehaviour:
@@ -71368,6 +71758,9 @@ MonoBehaviour:
   liquid: {fileID: 0}
   liquidSurfaceParent: {fileID: 0}
   liquidSurfaceChild: {fileID: 0}
+  _playerLookVec2: {x: 0, y: 0}
+  _playerLookSens: 0
+  _playerLookX: 0
   glassType: 0
 --- !u!114 &114697494957555742
 MonoBehaviour:
@@ -71458,6 +71851,9 @@ MonoBehaviour:
   liquid: {fileID: 0}
   liquidSurfaceParent: {fileID: 0}
   liquidSurfaceChild: {fileID: 0}
+  _playerLookVec2: {x: 0, y: 0}
+  _playerLookSens: 0
+  _playerLookX: 0
   glassType: 0
 --- !u!114 &114702154525568814
 MonoBehaviour:
@@ -71491,6 +71887,9 @@ MonoBehaviour:
   liquid: {fileID: 0}
   liquidSurfaceParent: {fileID: 1314714532742326}
   liquidSurfaceChild: {fileID: 0}
+  _playerLookVec2: {x: 0, y: 0}
+  _playerLookSens: 0
+  _playerLookX: 0
   glassType: 0
 --- !u!114 &114702412967392004
 MonoBehaviour:
@@ -71645,6 +72044,9 @@ MonoBehaviour:
   liquid: {fileID: 0}
   liquidSurfaceParent: {fileID: 0}
   liquidSurfaceChild: {fileID: 0}
+  _playerLookVec2: {x: 0, y: 0}
+  _playerLookSens: 0
+  _playerLookX: 0
   glassType: 0
 --- !u!114 &114710261433494764
 MonoBehaviour:
@@ -71678,6 +72080,9 @@ MonoBehaviour:
   liquid: {fileID: 0}
   liquidSurfaceParent: {fileID: 0}
   liquidSurfaceChild: {fileID: 0}
+  _playerLookVec2: {x: 0, y: 0}
+  _playerLookSens: 0
+  _playerLookX: 0
   glassType: 0
 --- !u!114 &114711521780595426
 MonoBehaviour:
@@ -71711,6 +72116,9 @@ MonoBehaviour:
   liquid: {fileID: 0}
   liquidSurfaceParent: {fileID: 0}
   liquidSurfaceChild: {fileID: 0}
+  _playerLookVec2: {x: 0, y: 0}
+  _playerLookSens: 0
+  _playerLookX: 0
   glassType: 0
 --- !u!114 &114711627597206410
 MonoBehaviour:
@@ -71944,6 +72352,9 @@ MonoBehaviour:
   liquid: {fileID: 0}
   liquidSurfaceParent: {fileID: 0}
   liquidSurfaceChild: {fileID: 0}
+  _playerLookVec2: {x: 0, y: 0}
+  _playerLookSens: 0
+  _playerLookX: 0
   glassType: 0
 --- !u!114 &114719112030604900
 MonoBehaviour:
@@ -72114,6 +72525,9 @@ MonoBehaviour:
   liquid: {fileID: 0}
   liquidSurfaceParent: {fileID: 0}
   liquidSurfaceChild: {fileID: 0}
+  _playerLookVec2: {x: 0, y: 0}
+  _playerLookSens: 0
+  _playerLookX: 0
   glassType: 0
 --- !u!114 &114727508152648370
 MonoBehaviour:
@@ -72163,6 +72577,9 @@ MonoBehaviour:
   liquid: {fileID: 0}
   liquidSurfaceParent: {fileID: 0}
   liquidSurfaceChild: {fileID: 0}
+  _playerLookVec2: {x: 0, y: 0}
+  _playerLookSens: 0
+  _playerLookX: 0
   glassType: 0
 --- !u!114 &114733386019893970
 MonoBehaviour:
@@ -72196,6 +72613,9 @@ MonoBehaviour:
   liquid: {fileID: 0}
   liquidSurfaceParent: {fileID: 0}
   liquidSurfaceChild: {fileID: 0}
+  _playerLookVec2: {x: 0, y: 0}
+  _playerLookSens: 0
+  _playerLookX: 0
   glassType: 0
 --- !u!114 &114734110678842132
 MonoBehaviour:
@@ -72229,6 +72649,9 @@ MonoBehaviour:
   liquid: {fileID: 0}
   liquidSurfaceParent: {fileID: 0}
   liquidSurfaceChild: {fileID: 0}
+  _playerLookVec2: {x: 0, y: 0}
+  _playerLookSens: 0
+  _playerLookX: 0
   glassType: 0
 --- !u!114 &114736981163717010
 MonoBehaviour:
@@ -72399,6 +72822,9 @@ MonoBehaviour:
   liquid: {fileID: 0}
   liquidSurfaceParent: {fileID: 0}
   liquidSurfaceChild: {fileID: 0}
+  _playerLookVec2: {x: 0, y: 0}
+  _playerLookSens: 0
+  _playerLookX: 0
   glassType: 0
 --- !u!114 &114744069590623860
 MonoBehaviour:
@@ -72475,6 +72901,9 @@ MonoBehaviour:
   liquid: {fileID: 0}
   liquidSurfaceParent: {fileID: 0}
   liquidSurfaceChild: {fileID: 0}
+  _playerLookVec2: {x: 0, y: 0}
+  _playerLookSens: 0
+  _playerLookX: 0
   glassType: 0
 --- !u!114 &114745989921496174
 MonoBehaviour:
@@ -72508,6 +72937,9 @@ MonoBehaviour:
   liquid: {fileID: 0}
   liquidSurfaceParent: {fileID: 0}
   liquidSurfaceChild: {fileID: 0}
+  _playerLookVec2: {x: 0, y: 0}
+  _playerLookSens: 0
+  _playerLookX: 0
   glassType: 0
 --- !u!114 &114746460128283582
 MonoBehaviour:
@@ -72587,6 +73019,9 @@ MonoBehaviour:
   liquid: {fileID: 0}
   liquidSurfaceParent: {fileID: 0}
   liquidSurfaceChild: {fileID: 0}
+  _playerLookVec2: {x: 0, y: 0}
+  _playerLookSens: 0
+  _playerLookX: 0
   glassType: 0
 --- !u!114 &114749074344262652
 MonoBehaviour:
@@ -72862,6 +73297,9 @@ MonoBehaviour:
   liquid: {fileID: 0}
   liquidSurfaceParent: {fileID: 0}
   liquidSurfaceChild: {fileID: 0}
+  _playerLookVec2: {x: 0, y: 0}
+  _playerLookSens: 0
+  _playerLookX: 0
   glassType: 0
 --- !u!114 &114755371568368600
 MonoBehaviour:
@@ -73091,6 +73529,9 @@ MonoBehaviour:
   liquid: {fileID: 0}
   liquidSurfaceParent: {fileID: 0}
   liquidSurfaceChild: {fileID: 0}
+  _playerLookVec2: {x: 0, y: 0}
+  _playerLookSens: 0
+  _playerLookX: 0
   glassType: 0
 --- !u!114 &114768242587561860
 MonoBehaviour:
@@ -73170,6 +73611,9 @@ MonoBehaviour:
   liquid: {fileID: 0}
   liquidSurfaceParent: {fileID: 0}
   liquidSurfaceChild: {fileID: 0}
+  _playerLookVec2: {x: 0, y: 0}
+  _playerLookSens: 0
+  _playerLookX: 0
   glassType: 0
 --- !u!114 &114769232366981320
 MonoBehaviour:
@@ -73540,6 +73984,9 @@ MonoBehaviour:
   liquid: {fileID: 0}
   liquidSurfaceParent: {fileID: 0}
   liquidSurfaceChild: {fileID: 0}
+  _playerLookVec2: {x: 0, y: 0}
+  _playerLookSens: 0
+  _playerLookX: 0
   glassType: 0
 --- !u!114 &114784483213251066
 MonoBehaviour:
@@ -73619,6 +74066,9 @@ MonoBehaviour:
   liquid: {fileID: 0}
   liquidSurfaceParent: {fileID: 0}
   liquidSurfaceChild: {fileID: 0}
+  _playerLookVec2: {x: 0, y: 0}
+  _playerLookSens: 0
+  _playerLookX: 0
   glassType: 0
 --- !u!114 &114793994005993720
 MonoBehaviour:
@@ -73698,6 +74148,9 @@ MonoBehaviour:
   liquid: {fileID: 0}
   liquidSurfaceParent: {fileID: 0}
   liquidSurfaceChild: {fileID: 0}
+  _playerLookVec2: {x: 0, y: 0}
+  _playerLookSens: 0
+  _playerLookX: 0
   glassType: 0
 --- !u!114 &114795070063771400
 MonoBehaviour:
@@ -73823,6 +74276,9 @@ MonoBehaviour:
   liquid: {fileID: 0}
   liquidSurfaceParent: {fileID: 0}
   liquidSurfaceChild: {fileID: 0}
+  _playerLookVec2: {x: 0, y: 0}
+  _playerLookSens: 0
+  _playerLookX: 0
   glassType: 0
 --- !u!114 &114798661564459740
 MonoBehaviour:
@@ -73856,6 +74312,9 @@ MonoBehaviour:
   liquid: {fileID: 0}
   liquidSurfaceParent: {fileID: 0}
   liquidSurfaceChild: {fileID: 0}
+  _playerLookVec2: {x: 0, y: 0}
+  _playerLookSens: 0
+  _playerLookX: 0
   glassType: 0
 --- !u!114 &114800637114786354
 MonoBehaviour:
@@ -73889,6 +74348,9 @@ MonoBehaviour:
   liquid: {fileID: 0}
   liquidSurfaceParent: {fileID: 0}
   liquidSurfaceChild: {fileID: 0}
+  _playerLookVec2: {x: 0, y: 0}
+  _playerLookSens: 0
+  _playerLookX: 0
   glassType: 0
 --- !u!114 &114801338048832338
 MonoBehaviour:
@@ -74134,6 +74596,9 @@ MonoBehaviour:
   liquid: {fileID: 0}
   liquidSurfaceParent: {fileID: 1526098599076960}
   liquidSurfaceChild: {fileID: 0}
+  _playerLookVec2: {x: 0, y: 0}
+  _playerLookSens: 0
+  _playerLookX: 0
   glassType: 0
 --- !u!114 &114812476589156488
 MonoBehaviour:
@@ -74213,6 +74678,9 @@ MonoBehaviour:
   liquid: {fileID: 0}
   liquidSurfaceParent: {fileID: 0}
   liquidSurfaceChild: {fileID: 0}
+  _playerLookVec2: {x: 0, y: 0}
+  _playerLookSens: 0
+  _playerLookX: 0
   glassType: 0
 --- !u!114 &114815569505793082
 MonoBehaviour:
@@ -74262,6 +74730,9 @@ MonoBehaviour:
   liquid: {fileID: 0}
   liquidSurfaceParent: {fileID: 0}
   liquidSurfaceChild: {fileID: 0}
+  _playerLookVec2: {x: 0, y: 0}
+  _playerLookSens: 0
+  _playerLookX: 0
   glassType: 0
 --- !u!114 &114816521801784392
 MonoBehaviour:
@@ -74295,6 +74766,9 @@ MonoBehaviour:
   liquid: {fileID: 0}
   liquidSurfaceParent: {fileID: 0}
   liquidSurfaceChild: {fileID: 0}
+  _playerLookVec2: {x: 0, y: 0}
+  _playerLookSens: 0
+  _playerLookX: 0
   glassType: 0
 --- !u!114 &114817181152707992
 MonoBehaviour:
@@ -74462,6 +74936,9 @@ MonoBehaviour:
   liquid: {fileID: 0}
   liquidSurfaceParent: {fileID: 0}
   liquidSurfaceChild: {fileID: 0}
+  _playerLookVec2: {x: 0, y: 0}
+  _playerLookSens: 0
+  _playerLookX: 0
   glassType: 0
 --- !u!114 &114832348631128772
 MonoBehaviour:
@@ -74495,6 +74972,9 @@ MonoBehaviour:
   liquid: {fileID: 0}
   liquidSurfaceParent: {fileID: 1720201355073520}
   liquidSurfaceChild: {fileID: 0}
+  _playerLookVec2: {x: 0, y: 0}
+  _playerLookSens: 0
+  _playerLookX: 0
   glassType: 0
 --- !u!114 &114833562460742646
 MonoBehaviour:
@@ -74528,6 +75008,9 @@ MonoBehaviour:
   liquid: {fileID: 0}
   liquidSurfaceParent: {fileID: 0}
   liquidSurfaceChild: {fileID: 0}
+  _playerLookVec2: {x: 0, y: 0}
+  _playerLookSens: 0
+  _playerLookX: 0
   glassType: 0
 --- !u!114 &114833738588255612
 MonoBehaviour:
@@ -74561,6 +75044,9 @@ MonoBehaviour:
   liquid: {fileID: 0}
   liquidSurfaceParent: {fileID: 0}
   liquidSurfaceChild: {fileID: 0}
+  _playerLookVec2: {x: 0, y: 0}
+  _playerLookSens: 0
+  _playerLookX: 0
   glassType: 0
 --- !u!114 &114834426388675496
 MonoBehaviour:
@@ -74656,6 +75142,9 @@ MonoBehaviour:
   liquid: {fileID: 0}
   liquidSurfaceParent: {fileID: 0}
   liquidSurfaceChild: {fileID: 0}
+  _playerLookVec2: {x: 0, y: 0}
+  _playerLookSens: 0
+  _playerLookX: 0
   glassType: 0
 --- !u!114 &114839920323869670
 MonoBehaviour:
@@ -74780,6 +75269,9 @@ MonoBehaviour:
   liquid: {fileID: 0}
   liquidSurfaceParent: {fileID: 0}
   liquidSurfaceChild: {fileID: 0}
+  _playerLookVec2: {x: 0, y: 0}
+  _playerLookSens: 0
+  _playerLookX: 0
   glassType: 0
 --- !u!114 &114847881004016714
 MonoBehaviour:
@@ -74842,6 +75334,9 @@ MonoBehaviour:
   liquid: {fileID: 0}
   liquidSurfaceParent: {fileID: 0}
   liquidSurfaceChild: {fileID: 0}
+  _playerLookVec2: {x: 0, y: 0}
+  _playerLookSens: 0
+  _playerLookX: 0
   glassType: 0
 --- !u!114 &114851889837808148
 MonoBehaviour:
@@ -75039,6 +75534,9 @@ MonoBehaviour:
   liquid: {fileID: 0}
   liquidSurfaceParent: {fileID: 0}
   liquidSurfaceChild: {fileID: 0}
+  _playerLookVec2: {x: 0, y: 0}
+  _playerLookSens: 0
+  _playerLookX: 0
   glassType: 0
 --- !u!114 &114858200820809076
 MonoBehaviour:
@@ -75072,6 +75570,9 @@ MonoBehaviour:
   liquid: {fileID: 0}
   liquidSurfaceParent: {fileID: 0}
   liquidSurfaceChild: {fileID: 0}
+  _playerLookVec2: {x: 0, y: 0}
+  _playerLookSens: 0
+  _playerLookX: 0
   glassType: 0
 --- !u!114 &114859694762263656
 MonoBehaviour:
@@ -75151,6 +75652,9 @@ MonoBehaviour:
   liquid: {fileID: 0}
   liquidSurfaceParent: {fileID: 0}
   liquidSurfaceChild: {fileID: 0}
+  _playerLookVec2: {x: 0, y: 0}
+  _playerLookSens: 0
+  _playerLookX: 0
   glassType: 0
 --- !u!114 &114861959908691570
 MonoBehaviour:
@@ -75321,6 +75825,9 @@ MonoBehaviour:
   liquid: {fileID: 0}
   liquidSurfaceParent: {fileID: 0}
   liquidSurfaceChild: {fileID: 0}
+  _playerLookVec2: {x: 0, y: 0}
+  _playerLookSens: 0
+  _playerLookX: 0
   glassType: 0
 --- !u!114 &114871822853111100
 MonoBehaviour:
@@ -75475,6 +75982,9 @@ MonoBehaviour:
   liquid: {fileID: 0}
   liquidSurfaceParent: {fileID: 0}
   liquidSurfaceChild: {fileID: 0}
+  _playerLookVec2: {x: 0, y: 0}
+  _playerLookSens: 0
+  _playerLookX: 0
   glassType: 0
 --- !u!114 &114874386203363014
 MonoBehaviour:
@@ -75554,6 +76064,9 @@ MonoBehaviour:
   liquid: {fileID: 0}
   liquidSurfaceParent: {fileID: 0}
   liquidSurfaceChild: {fileID: 0}
+  _playerLookVec2: {x: 0, y: 0}
+  _playerLookSens: 0
+  _playerLookX: 0
   glassType: 0
 --- !u!114 &114879649453599276
 MonoBehaviour:
@@ -75587,6 +76100,9 @@ MonoBehaviour:
   liquid: {fileID: 0}
   liquidSurfaceParent: {fileID: 0}
   liquidSurfaceChild: {fileID: 0}
+  _playerLookVec2: {x: 0, y: 0}
+  _playerLookSens: 0
+  _playerLookX: 0
   glassType: 0
 --- !u!114 &114883429728600476
 MonoBehaviour:
@@ -75845,6 +76361,9 @@ MonoBehaviour:
   liquid: {fileID: 0}
   liquidSurfaceParent: {fileID: 0}
   liquidSurfaceChild: {fileID: 0}
+  _playerLookVec2: {x: 0, y: 0}
+  _playerLookSens: 0
+  _playerLookX: 0
   glassType: 0
 --- !u!114 &114892323799580070
 MonoBehaviour:
@@ -75970,6 +76489,9 @@ MonoBehaviour:
   liquid: {fileID: 0}
   liquidSurfaceParent: {fileID: 1823635670158164}
   liquidSurfaceChild: {fileID: 0}
+  _playerLookVec2: {x: 0, y: 0}
+  _playerLookSens: 0
+  _playerLookX: 0
   glassType: 0
 --- !u!114 &114894439928623270
 MonoBehaviour:
@@ -76014,6 +76536,9 @@ MonoBehaviour:
   liquid: {fileID: 0}
   liquidSurfaceParent: {fileID: 0}
   liquidSurfaceChild: {fileID: 0}
+  _playerLookVec2: {x: 0, y: 0}
+  _playerLookSens: 0
+  _playerLookX: 0
   glassType: 0
 --- !u!114 &114897071919669060
 MonoBehaviour:
@@ -76047,6 +76572,9 @@ MonoBehaviour:
   liquid: {fileID: 0}
   liquidSurfaceParent: {fileID: 0}
   liquidSurfaceChild: {fileID: 0}
+  _playerLookVec2: {x: 0, y: 0}
+  _playerLookSens: 0
+  _playerLookX: 0
   glassType: 0
 --- !u!114 &114897270346672236
 MonoBehaviour:
@@ -76126,6 +76654,9 @@ MonoBehaviour:
   liquid: {fileID: 0}
   liquidSurfaceParent: {fileID: 0}
   liquidSurfaceChild: {fileID: 0}
+  _playerLookVec2: {x: 0, y: 0}
+  _playerLookSens: 0
+  _playerLookX: 0
   glassType: 0
 --- !u!114 &114901138260425654
 MonoBehaviour:
@@ -76205,6 +76736,9 @@ MonoBehaviour:
   liquid: {fileID: 0}
   liquidSurfaceParent: {fileID: 0}
   liquidSurfaceChild: {fileID: 0}
+  _playerLookVec2: {x: 0, y: 0}
+  _playerLookSens: 0
+  _playerLookX: 0
   glassType: 0
 --- !u!114 &114908950876974512
 MonoBehaviour:
@@ -76421,6 +76955,9 @@ MonoBehaviour:
   liquid: {fileID: 0}
   liquidSurfaceParent: {fileID: 0}
   liquidSurfaceChild: {fileID: 0}
+  _playerLookVec2: {x: 0, y: 0}
+  _playerLookSens: 0
+  _playerLookX: 0
   glassType: 0
 --- !u!114 &114919756175757576
 MonoBehaviour:
@@ -76742,6 +77279,9 @@ MonoBehaviour:
   liquid: {fileID: 0}
   liquidSurfaceParent: {fileID: 0}
   liquidSurfaceChild: {fileID: 0}
+  _playerLookVec2: {x: 0, y: 0}
+  _playerLookSens: 0
+  _playerLookX: 0
   glassType: 0
 --- !u!114 &114928938856366576
 MonoBehaviour:
@@ -76804,6 +77344,9 @@ MonoBehaviour:
   liquid: {fileID: 0}
   liquidSurfaceParent: {fileID: 0}
   liquidSurfaceChild: {fileID: 0}
+  _playerLookVec2: {x: 0, y: 0}
+  _playerLookSens: 0
+  _playerLookX: 0
   glassType: 0
 --- !u!114 &114934505823334930
 MonoBehaviour:
@@ -76837,6 +77380,9 @@ MonoBehaviour:
   liquid: {fileID: 0}
   liquidSurfaceParent: {fileID: 0}
   liquidSurfaceChild: {fileID: 0}
+  _playerLookVec2: {x: 0, y: 0}
+  _playerLookSens: 0
+  _playerLookX: 0
   glassType: 0
 --- !u!114 &114935102155576056
 MonoBehaviour:
@@ -76870,6 +77416,9 @@ MonoBehaviour:
   liquid: {fileID: 0}
   liquidSurfaceParent: {fileID: 0}
   liquidSurfaceChild: {fileID: 0}
+  _playerLookVec2: {x: 0, y: 0}
+  _playerLookSens: 0
+  _playerLookX: 0
   glassType: 0
 --- !u!114 &114937266552515670
 MonoBehaviour:
@@ -76903,6 +77452,9 @@ MonoBehaviour:
   liquid: {fileID: 0}
   liquidSurfaceParent: {fileID: 0}
   liquidSurfaceChild: {fileID: 0}
+  _playerLookVec2: {x: 0, y: 0}
+  _playerLookSens: 0
+  _playerLookX: 0
   glassType: 0
 --- !u!114 &114937478454978902
 MonoBehaviour:
@@ -76936,6 +77488,9 @@ MonoBehaviour:
   liquid: {fileID: 0}
   liquidSurfaceParent: {fileID: 0}
   liquidSurfaceChild: {fileID: 0}
+  _playerLookVec2: {x: 0, y: 0}
+  _playerLookSens: 0
+  _playerLookX: 0
   glassType: 0
 --- !u!114 &114938142352120562
 MonoBehaviour:
@@ -76969,6 +77524,9 @@ MonoBehaviour:
   liquid: {fileID: 0}
   liquidSurfaceParent: {fileID: 0}
   liquidSurfaceChild: {fileID: 0}
+  _playerLookVec2: {x: 0, y: 0}
+  _playerLookSens: 0
+  _playerLookX: 0
   glassType: 0
 --- !u!114 &114940329721467026
 MonoBehaviour:
@@ -77048,6 +77606,9 @@ MonoBehaviour:
   liquid: {fileID: 0}
   liquidSurfaceParent: {fileID: 0}
   liquidSurfaceChild: {fileID: 0}
+  _playerLookVec2: {x: 0, y: 0}
+  _playerLookSens: 0
+  _playerLookX: 0
   glassType: 0
 --- !u!114 &114948911256161686
 MonoBehaviour:
@@ -77384,6 +77945,9 @@ MonoBehaviour:
   liquid: {fileID: 0}
   liquidSurfaceParent: {fileID: 1894614941769076}
   liquidSurfaceChild: {fileID: 0}
+  _playerLookVec2: {x: 0, y: 0}
+  _playerLookSens: 0
+  _playerLookX: 0
   glassType: 0
 --- !u!114 &114968225373719790
 MonoBehaviour:
@@ -77417,6 +77981,9 @@ MonoBehaviour:
   liquid: {fileID: 0}
   liquidSurfaceParent: {fileID: 0}
   liquidSurfaceChild: {fileID: 0}
+  _playerLookVec2: {x: 0, y: 0}
+  _playerLookSens: 0
+  _playerLookX: 0
   glassType: 0
 --- !u!114 &114968749808551058
 MonoBehaviour:
@@ -77496,6 +78063,9 @@ MonoBehaviour:
   liquid: {fileID: 0}
   liquidSurfaceParent: {fileID: 0}
   liquidSurfaceChild: {fileID: 0}
+  _playerLookVec2: {x: 0, y: 0}
+  _playerLookSens: 0
+  _playerLookX: 0
   glassType: 0
 --- !u!114 &114973532368339418
 MonoBehaviour:
@@ -77849,6 +78419,9 @@ MonoBehaviour:
   liquid: {fileID: 0}
   liquidSurfaceParent: {fileID: 0}
   liquidSurfaceChild: {fileID: 0}
+  _playerLookVec2: {x: 0, y: 0}
+  _playerLookSens: 0
+  _playerLookX: 0
   glassType: 0
 --- !u!114 &114985400886595468
 MonoBehaviour:
@@ -77882,6 +78455,9 @@ MonoBehaviour:
   liquid: {fileID: 0}
   liquidSurfaceParent: {fileID: 0}
   liquidSurfaceChild: {fileID: 0}
+  _playerLookVec2: {x: 0, y: 0}
+  _playerLookSens: 0
+  _playerLookX: 0
   glassType: 0
 --- !u!114 &114989152475379832
 MonoBehaviour:
@@ -77944,6 +78520,9 @@ MonoBehaviour:
   liquid: {fileID: 0}
   liquidSurfaceParent: {fileID: 0}
   liquidSurfaceChild: {fileID: 0}
+  _playerLookVec2: {x: 0, y: 0}
+  _playerLookSens: 0
+  _playerLookX: 0
   glassType: 0
 --- !u!114 &114989224607660254
 MonoBehaviour:
@@ -77977,6 +78556,9 @@ MonoBehaviour:
   liquid: {fileID: 0}
   liquidSurfaceParent: {fileID: 0}
   liquidSurfaceChild: {fileID: 0}
+  _playerLookVec2: {x: 0, y: 0}
+  _playerLookSens: 0
+  _playerLookX: 0
   glassType: 0
 --- !u!114 &114990109702675744
 MonoBehaviour:
@@ -78026,6 +78608,9 @@ MonoBehaviour:
   liquid: {fileID: 0}
   liquidSurfaceParent: {fileID: 0}
   liquidSurfaceChild: {fileID: 0}
+  _playerLookVec2: {x: 0, y: 0}
+  _playerLookSens: 0
+  _playerLookX: 0
   glassType: 0
 --- !u!114 &114994014773281488
 MonoBehaviour:
@@ -78059,6 +78644,9 @@ MonoBehaviour:
   liquid: {fileID: 0}
   liquidSurfaceParent: {fileID: 0}
   liquidSurfaceChild: {fileID: 0}
+  _playerLookVec2: {x: 0, y: 0}
+  _playerLookSens: 0
+  _playerLookX: 0
   glassType: 0
 --- !u!114 &114994472990622506
 MonoBehaviour:
@@ -78121,6 +78709,9 @@ MonoBehaviour:
   liquid: {fileID: 0}
   liquidSurfaceParent: {fileID: 0}
   liquidSurfaceChild: {fileID: 0}
+  _playerLookVec2: {x: 0, y: 0}
+  _playerLookSens: 0
+  _playerLookX: 0
   glassType: 0
 --- !u!114 &114996111642273016
 MonoBehaviour:
@@ -78154,6 +78745,9 @@ MonoBehaviour:
   liquid: {fileID: 0}
   liquidSurfaceParent: {fileID: 0}
   liquidSurfaceChild: {fileID: 0}
+  _playerLookVec2: {x: 0, y: 0}
+  _playerLookSens: 0
+  _playerLookX: 0
   glassType: 0
 --- !u!114 &114997764000283964
 MonoBehaviour:

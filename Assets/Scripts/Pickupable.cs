@@ -35,7 +35,7 @@ public class Pickupable : MonoBehaviour
 
     public virtual void Update(){
         if(pickedUp && !Services.TweenManager.tweensAreActive){
-            transform.rotation = Quaternion.identity;
+            // transform.rotation = Quaternion.identity;
             // transform.localPosition = new Vector3(transform.localPosition.x, transform.localPosition.y, offsetZ);
          }
     }
