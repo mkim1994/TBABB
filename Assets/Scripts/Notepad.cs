@@ -6,24 +6,26 @@ public class Notepad : MonoBehaviour {
 
     public Texture[] notes;
     public Texture notesigned;
+    Material mat;
     bool onlyOnce;
 	// Use this for initialization
 	void Start () {
         onlyOnce = false;
+        mat = GetComponent<MeshRenderer>().material;
 	}
 	
 	// Update is called once per frame
 	void Update () {
-        if(GetComponent<Material>().GetTexture(0) != notes[Services.GameManager.dayManager.currentDay]){
+        if(mat.GetTexture("_MainTex") != notes[Services.GameManager.dayManager.currentDay]){
             if (Services.GameManager.dayManager.currentDay != 0)
             {
-                GetComponent<Material>().SetTexture(0, notes[Services.GameManager.dayManager.currentDay]);
+                mat.SetTexture("_MainTex", notes[Services.GameManager.dayManager.currentDay]);
             }
         }
         if (Services.GameManager.dayManager.noteSigned && !onlyOnce)
         {
-            if (GetComponent<Material>().GetTexture(0) != notesigned){
-                GetComponent<Material>().SetTexture(0, notesigned);
+            if (mat.GetTexture("_MainTex") != notesigned){
+                mat.SetTexture("_MainTex", notesigned);
                 onlyOnce = true;
             }
         }
