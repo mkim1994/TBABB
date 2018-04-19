@@ -47,9 +47,17 @@ public class Glass : Pickupable
 
 	}
 
-	void Update()
+	private Vector3 myRot = Vector3.zero;
+	public override void Update()
 	{	
-		base.Update();
+ 		if(pickedUp && !Services.TweenManager.tweensAreActive){
+			myRot = transform.eulerAngles;
+			myRot.x = Mathf.Clamp(myRot.x, -45, 45);
+			Debug.Log("Before: " + transform.eulerAngles.x);
+			transform.eulerAngles = new Vector3 (myRot.x, transform.eulerAngles.y, transform.eulerAngles.z);
+			Debug.Log("After" + transform.eulerAngles.x);
+		}
+
 		if(myIceList.Count >= 3){
 			liquid.hasIce = true;
 		} else {
