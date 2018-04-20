@@ -239,10 +239,10 @@ public class Glass : Pickupable
             _liquid.isEvaluated = false;
         }
 
-		transform.GetChild(0).gameObject.layer = 14;
-		transform.GetChild(1).gameObject.layer = 14;
-		transform.GetChild(2).gameObject.layer = 14;
-		transform.GetChild(3).gameObject.layer = 14;
+		transform.GetChild(0).gameObject.layer = 13;
+		transform.GetChild(1).gameObject.layer = 13;
+		transform.GetChild(2).gameObject.layer = 13;
+		transform.GetChild(3).gameObject.layer = 13;
 		transform.GetChild(3).GetChild(0).gameObject.layer = 14;
     }
 	public override IEnumerator ChangeToWorldLayer(float delay)

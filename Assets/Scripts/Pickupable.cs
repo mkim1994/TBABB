@@ -176,6 +176,7 @@ public class Pickupable : MonoBehaviour
 
     public virtual void RotateToZeroTween(){
         DeclareActiveTween();
+        Debug.Log("Rotating to zero!");
         Sequence sequence = DOTween.Sequence();
         sequence.Append(transform.DOLocalRotate(Vector3.zero, tweenEndTime, RotateMode.Fast));
         sequence.OnComplete(() => DeclareInactiveTween());
@@ -221,7 +222,6 @@ public class Pickupable : MonoBehaviour
         for (int i = 0; i < children; ++i)
         {
             transform.GetChild(i).gameObject.layer = 13;
-            GameObject grandchildren = transform.GetChild(i).gameObject;
 //            grandchildren.transform.GetChild(i).gameObject.layer = 13;
 
         }

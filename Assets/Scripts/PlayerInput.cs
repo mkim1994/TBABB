@@ -602,19 +602,18 @@ public class PlayerInput : MonoBehaviour
 						}
 						if (pickupable != null)
 						{
-							if(pickupable.GetComponent<Glass>() != null){
+							if(pickupable.GetComponent<Glass>() != null && pickupableInLeftHand.GetComponent<Bottle>() != null){
 								Glass glass = pickupable.GetComponent<Glass>();
 								glass.liquid.isBeingPoured = false;						
 								if (isPourTweenDone)
 								{
 									glass.EndPourFromBottle();
 								}
+								pickupableInLeftHand.RotateToZeroTween();
+								pickupableInLeftHand.EndPourTween();
+								StartCoroutine(UtilCoroutines.WaitThenSetTweensToInactive(pickupableInLeftHand.tweenEndTime, _tweenManagerDelegate));
 							}
 						}
-						pickupableInLeftHand.RotateToZeroTween();
-						pickupableInLeftHand.EndPourTween();
-						StartCoroutine(UtilCoroutines.WaitThenSetTweensToInactive(pickupableInLeftHand.tweenEndTime, _tweenManagerDelegate));
-						// startPourCoroutine = null;
 					}
 					
 				}
@@ -797,10 +796,10 @@ public class PlayerInput : MonoBehaviour
 									glass.EndPourFromBottle();
 								}
 							}
+							pickupableInRightHand.RotateToZeroTween();
+							pickupableInRightHand.EndPourTween();
+							StartCoroutine(UtilCoroutines.WaitThenSetTweensToInactive(pickupableInRightHand.tweenEndTime, _tweenManagerDelegate));
 						}
-						pickupableInRightHand.RotateToZeroTween();
-						pickupableInRightHand.EndPourTween();
- 						StartCoroutine(UtilCoroutines.WaitThenSetTweensToInactive(pickupableInRightHand.tweenEndTime, _tweenManagerDelegate));
 					}
 					
 				}
@@ -1016,7 +1015,7 @@ public class PlayerInput : MonoBehaviour
 				targetDropzone = hitDropzone;
 			} 
 			else if (Vector3.Distance(transform.position, hitObj.transform.position) > maxInteractionDist) {
-				dropPos = Vector3.zero;
+				// dropPos = Vector3.zero;
 				if (targetDropzone != null)
 				{
 					targetDropzone.playerIsLooking = false;				
@@ -1029,7 +1028,7 @@ public class PlayerInput : MonoBehaviour
 			{
 //				targetDropzone.playerIsLooking = false;			
 			}
-			dropPos = Vector3.zero;
+			// dropPos = Vector3.zero;
 			targetDropzone = null;
 		}
 	}
