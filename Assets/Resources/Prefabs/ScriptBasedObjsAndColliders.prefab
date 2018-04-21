@@ -57294,6 +57294,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -57301,7 +57302,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -57346,6 +57346,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -57353,7 +57354,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -57382,6 +57382,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -57389,7 +57390,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -57464,6 +57464,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -57471,7 +57472,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -57500,6 +57500,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -57507,7 +57508,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -57752,6 +57752,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -57759,7 +57760,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -57781,6 +57781,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 0
+  pickupDropTime: 0.25
   leftHandPos: {x: -1, y: -0.89, z: 2}
   rightHandPos: {x: 1, y: -0.89, z: 2}
   targetDropzone: {fileID: 0}
@@ -57788,7 +57789,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -57863,6 +57863,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -57870,7 +57871,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -57945,6 +57945,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -57952,7 +57953,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -57981,6 +57981,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 0
+  pickupDropTime: 0.25
   leftHandPos: {x: -1, y: -0.89, z: 2}
   rightHandPos: {x: 1, y: -0.89, z: 2}
   targetDropzone: {fileID: 0}
@@ -57988,7 +57989,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -58079,6 +58079,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -58086,7 +58087,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -58115,6 +58115,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -58122,7 +58123,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -58259,6 +58259,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -58266,7 +58267,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -58311,6 +58311,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -58318,7 +58319,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -58439,6 +58439,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -58446,7 +58447,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -58468,6 +58468,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -58475,7 +58476,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -58497,6 +58497,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 0
+  pickupDropTime: 0.25
   leftHandPos: {x: -1, y: -0.89, z: 2}
   rightHandPos: {x: 1, y: -0.89, z: 2}
   targetDropzone: {fileID: 0}
@@ -58504,7 +58505,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -58533,6 +58533,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -58540,7 +58541,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -58582,6 +58582,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -58589,7 +58590,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -58618,6 +58618,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -58625,7 +58626,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -58693,6 +58693,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -58700,7 +58701,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -58729,6 +58729,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -58736,7 +58737,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -58781,6 +58781,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -58788,7 +58789,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -58817,6 +58817,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -58824,7 +58825,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -58853,6 +58853,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -58860,7 +58861,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -59303,6 +59303,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -59310,7 +59311,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -59490,6 +59490,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 0
+  pickupDropTime: 0.25
   leftHandPos: {x: -1, y: -0.89, z: 2}
   rightHandPos: {x: 1, y: -0.89, z: 2}
   targetDropzone: {fileID: 0}
@@ -59497,7 +59498,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 1
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -59627,6 +59627,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -59634,7 +59635,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -59663,6 +59663,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -59670,7 +59671,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -59699,6 +59699,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -59706,7 +59707,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -59843,6 +59843,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -59850,7 +59851,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -59885,6 +59885,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -59892,7 +59893,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -59921,6 +59921,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -59928,7 +59929,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -59996,6 +59996,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -60003,7 +60004,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -60025,6 +60025,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -60032,7 +60033,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -60153,6 +60153,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -60160,7 +60161,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -60235,6 +60235,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -60242,7 +60243,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -60264,6 +60264,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -60271,7 +60272,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -60309,6 +60309,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -60316,7 +60317,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -60338,6 +60338,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -60345,7 +60346,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -60459,6 +60459,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -60466,7 +60467,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -60587,6 +60587,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -60594,7 +60595,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -60669,6 +60669,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -60676,7 +60677,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -60698,6 +60698,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -60705,7 +60706,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -60740,6 +60740,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -60747,7 +60748,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -60769,6 +60769,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -60776,7 +60777,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -60798,6 +60798,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -60805,7 +60806,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -60834,6 +60834,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -60841,7 +60842,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -60870,6 +60870,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -60877,7 +60878,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -60998,6 +60998,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -61005,7 +61006,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -61041,6 +61041,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -61048,7 +61049,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -61077,6 +61077,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -61084,7 +61085,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -61175,6 +61175,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -61182,7 +61183,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -61257,6 +61257,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -61264,7 +61265,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -61286,6 +61286,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -61293,7 +61294,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -61315,6 +61315,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -61322,7 +61323,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -61380,6 +61380,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -61387,7 +61388,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -61462,6 +61462,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -61469,7 +61470,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -61498,6 +61498,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -61505,7 +61506,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -61527,6 +61527,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -61534,7 +61535,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -61563,6 +61563,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -61570,7 +61571,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -61599,6 +61599,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -61606,7 +61607,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -61635,6 +61635,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -61642,7 +61643,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -61875,6 +61875,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -61882,7 +61883,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -62003,6 +62003,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -62010,7 +62011,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -62039,6 +62039,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -62046,7 +62047,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -62075,6 +62075,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -62082,7 +62083,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -62166,6 +62166,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -62173,7 +62174,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -62202,6 +62202,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -62209,7 +62210,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -62339,6 +62339,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -62346,7 +62347,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -62437,6 +62437,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -62444,7 +62445,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -62466,6 +62466,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -62473,7 +62474,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -62495,6 +62495,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -62502,7 +62503,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -62531,6 +62531,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -62538,7 +62539,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -62567,6 +62567,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 0
+  pickupDropTime: 0.25
   leftHandPos: {x: -1, y: -0.89, z: 2}
   rightHandPos: {x: 1, y: -0.89, z: 2}
   targetDropzone: {fileID: 0}
@@ -62574,7 +62575,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -62662,6 +62662,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -62669,7 +62670,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -62698,6 +62698,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -62705,7 +62706,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -62734,6 +62734,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -62741,7 +62742,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -62770,6 +62770,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -62777,7 +62778,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -62799,6 +62799,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -62806,7 +62807,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -62881,6 +62881,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -62888,7 +62889,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -62933,6 +62933,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -62940,7 +62941,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -63015,6 +63015,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -63022,7 +63023,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -63136,6 +63136,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -63143,7 +63144,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -63234,6 +63234,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -63241,7 +63242,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -63412,6 +63412,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -63419,7 +63420,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -63441,6 +63441,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -63448,7 +63449,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -63493,6 +63493,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -63500,7 +63501,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -63529,6 +63529,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -63536,7 +63537,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -63565,6 +63565,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -63572,7 +63573,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -63601,6 +63601,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -63608,7 +63609,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -63683,6 +63683,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -63690,7 +63691,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -63889,6 +63889,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -63896,7 +63897,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -63941,6 +63941,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -63948,7 +63949,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -64085,6 +64085,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -64092,7 +64093,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -64114,6 +64114,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -64121,7 +64122,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -64159,6 +64159,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -64166,7 +64167,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -64188,6 +64188,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -64195,7 +64196,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -64295,6 +64295,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -64302,7 +64303,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -64331,6 +64331,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 0
+  pickupDropTime: 0.25
   leftHandPos: {x: -1, y: -0.89, z: 2}
   rightHandPos: {x: 1, y: -0.89, z: 2}
   targetDropzone: {fileID: 0}
@@ -64338,7 +64339,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -64413,6 +64413,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -64420,7 +64421,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -64449,6 +64449,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -64456,7 +64457,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -64485,6 +64485,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -64492,7 +64493,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -64560,6 +64560,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -64567,7 +64568,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -64589,6 +64589,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -64596,7 +64597,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -64618,6 +64618,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -64625,7 +64626,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -64647,6 +64647,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -64654,7 +64655,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -64742,6 +64742,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -64749,7 +64750,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -64863,6 +64863,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -64870,7 +64871,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -64892,6 +64892,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -64899,7 +64900,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -64983,6 +64983,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -64990,7 +64991,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -65111,6 +65111,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -65118,7 +65119,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -65140,6 +65140,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -65147,7 +65148,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -65169,6 +65169,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -65176,7 +65177,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -65451,6 +65451,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -65458,7 +65459,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -65480,6 +65480,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -65487,7 +65488,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -65571,6 +65571,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -65578,7 +65579,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -65675,6 +65675,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -65682,7 +65683,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -65704,6 +65704,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -65711,7 +65712,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -65786,6 +65786,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -65793,7 +65794,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -65822,6 +65822,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -65829,7 +65830,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -65927,6 +65927,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -65934,7 +65935,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -65956,6 +65956,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -65963,7 +65964,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -66054,6 +66054,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -66061,7 +66062,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -66090,6 +66090,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -66097,7 +66098,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -66126,6 +66126,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -66133,7 +66134,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -66247,6 +66247,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -66254,7 +66255,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -66322,6 +66322,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -66329,7 +66330,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -66358,6 +66358,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -66365,7 +66366,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -66394,6 +66394,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -66401,7 +66402,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -66430,6 +66430,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -66437,7 +66438,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -66505,6 +66505,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 0
+  pickupDropTime: 0.25
   leftHandPos: {x: -1, y: -0.89, z: 2}
   rightHandPos: {x: 1, y: -0.89, z: 2}
   targetDropzone: {fileID: 0}
@@ -66512,7 +66513,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 1
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -66637,6 +66637,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -66644,7 +66645,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -66673,6 +66673,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 0
+  pickupDropTime: 0.25
   leftHandPos: {x: -1, y: -0.89, z: 2}
   rightHandPos: {x: 1, y: -0.89, z: 2}
   targetDropzone: {fileID: 0}
@@ -66680,7 +66681,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -66702,6 +66702,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -66709,7 +66710,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -66839,6 +66839,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -66846,7 +66847,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -66875,6 +66875,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 0
+  pickupDropTime: 0.25
   leftHandPos: {x: -1, y: -0.89, z: 2}
   rightHandPos: {x: 1, y: -0.89, z: 2}
   targetDropzone: {fileID: 0}
@@ -66882,7 +66883,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -66973,6 +66973,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -66980,7 +66981,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -67009,6 +67009,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -67016,7 +67017,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -67038,6 +67038,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -67045,7 +67046,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -67074,6 +67074,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -67081,7 +67082,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -67149,6 +67149,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -67156,7 +67157,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -67185,6 +67185,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -67192,7 +67193,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -67267,6 +67267,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -67274,7 +67275,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -67296,6 +67296,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -67303,7 +67304,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -67424,6 +67424,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -67431,7 +67432,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -67644,6 +67644,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -67651,7 +67652,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -67680,6 +67680,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -67687,7 +67688,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -67808,6 +67808,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -67815,7 +67816,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -67883,6 +67883,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -67890,7 +67891,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -67919,6 +67919,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -67926,7 +67927,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -67955,6 +67955,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -67962,7 +67963,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -68030,6 +68030,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -68037,7 +68038,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -68112,6 +68112,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -68119,7 +68120,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -68194,6 +68194,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -68201,7 +68202,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -68285,6 +68285,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -68292,7 +68293,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -68314,6 +68314,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -68321,7 +68322,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -68350,6 +68350,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -68357,7 +68358,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -68379,6 +68379,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -68386,7 +68387,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -68408,6 +68408,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -68415,7 +68416,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -68444,6 +68444,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -68451,7 +68452,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -68480,6 +68480,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -68487,7 +68488,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -68516,6 +68516,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -68523,7 +68524,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -68598,6 +68598,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -68605,7 +68606,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -68742,6 +68742,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -68749,7 +68750,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -68833,6 +68833,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -68840,7 +68841,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -68869,6 +68869,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 0
+  pickupDropTime: 0.25
   leftHandPos: {x: -1, y: -0.89, z: 2}
   rightHandPos: {x: 1, y: -0.89, z: 2}
   targetDropzone: {fileID: 0}
@@ -68876,7 +68877,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -68905,6 +68905,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -68912,7 +68913,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -68941,6 +68941,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -68948,7 +68949,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -68970,6 +68970,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -68977,7 +68978,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -69091,6 +69091,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -69098,7 +69099,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -69269,6 +69269,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -69276,7 +69277,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -69305,6 +69305,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -69312,7 +69313,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -69644,14 +69644,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 0
-  leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
-  rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
+  pickupDropTime: 0.25
+  leftHandPos: {x: -1, y: -0.89, z: 2}
+  rightHandPos: {x: 1, y: -0.89, z: 2}
   targetDropzone: {fileID: 0}
   startPos: {x: 0, y: 0, z: 0}
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -69673,6 +69673,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -69680,7 +69681,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -69702,6 +69702,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -69709,7 +69710,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -69731,6 +69731,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -69738,7 +69739,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -69905,6 +69905,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -69912,7 +69913,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -69934,6 +69934,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -69941,7 +69942,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -69970,6 +69970,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -69977,7 +69978,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -70068,6 +70068,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -70075,7 +70076,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -70104,6 +70104,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -70111,7 +70112,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -70140,6 +70140,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -70147,7 +70148,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -70176,6 +70176,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -70183,7 +70184,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -70205,6 +70205,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -70212,7 +70213,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -70234,6 +70234,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -70241,7 +70242,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -70376,6 +70376,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -70383,7 +70384,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -70451,6 +70451,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -70458,7 +70459,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -70487,6 +70487,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -70494,7 +70495,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -70523,6 +70523,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -70530,7 +70531,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -70664,6 +70664,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -70671,7 +70672,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -70693,6 +70693,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -70700,7 +70701,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -70768,6 +70768,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -70775,7 +70776,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -70804,6 +70804,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -70811,7 +70812,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -70833,6 +70833,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -70840,7 +70841,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -70885,6 +70885,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -70892,7 +70893,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -71013,6 +71013,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -71020,7 +71021,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -71049,6 +71049,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -71056,7 +71057,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -71085,6 +71085,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -71092,7 +71093,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -71206,6 +71206,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -71213,7 +71214,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -71288,6 +71288,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -71295,7 +71296,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -71317,6 +71317,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -71324,7 +71325,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -71445,6 +71445,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -71452,7 +71453,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -71481,6 +71481,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -71488,7 +71489,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -71510,6 +71510,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 0
+  pickupDropTime: 0.25
   leftHandPos: {x: -1, y: -0.89, z: 2}
   rightHandPos: {x: 1, y: -0.89, z: 2}
   targetDropzone: {fileID: 0}
@@ -71517,7 +71518,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -71539,6 +71539,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -71546,7 +71547,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -71575,6 +71575,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -71582,7 +71583,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -71622,6 +71622,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -71629,7 +71630,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -71658,6 +71658,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -71665,7 +71666,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -71694,6 +71694,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -71701,7 +71702,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -71730,6 +71730,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 0
+  pickupDropTime: 0.25
   leftHandPos: {x: -1, y: -0.89, z: 2}
   rightHandPos: {x: 1, y: -0.89, z: 2}
   targetDropzone: {fileID: 0}
@@ -71737,7 +71738,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -71812,6 +71812,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 0
+  pickupDropTime: 0.25
   leftHandPos: {x: -1, y: -0.89, z: 2}
   rightHandPos: {x: 1, y: -0.89, z: 2}
   targetDropzone: {fileID: 0}
@@ -71819,7 +71820,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -71848,6 +71848,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -71855,7 +71856,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -71884,6 +71884,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -71891,7 +71892,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -71966,6 +71966,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -71973,7 +71974,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -72041,6 +72041,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -72048,7 +72049,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -72077,6 +72077,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -72084,7 +72085,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -72159,6 +72159,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -72166,7 +72167,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -72287,6 +72287,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -72294,7 +72295,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -72316,6 +72316,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -72323,7 +72324,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -72352,6 +72352,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -72359,7 +72360,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -72388,6 +72388,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -72395,7 +72396,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -72670,6 +72670,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -72677,7 +72678,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -72706,6 +72706,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -72713,7 +72714,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -72843,6 +72843,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 0
+  pickupDropTime: 0.25
   leftHandPos: {x: -1, y: -0.89, z: 2}
   rightHandPos: {x: 1, y: -0.89, z: 2}
   targetDropzone: {fileID: 0}
@@ -72850,7 +72851,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -72879,6 +72879,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -72886,7 +72887,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -72931,6 +72931,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -72938,7 +72939,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -72967,6 +72967,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -72974,7 +72975,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -73003,6 +73003,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -73010,7 +73011,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -73039,6 +73039,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -73046,7 +73047,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -73130,6 +73130,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -73137,7 +73138,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -73166,6 +73166,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -73173,7 +73174,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -73209,6 +73209,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -73216,7 +73217,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -73245,6 +73245,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -73252,7 +73253,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -73327,6 +73327,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -73334,7 +73335,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -73425,6 +73425,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -73432,7 +73433,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -73592,6 +73592,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -73599,7 +73600,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -73720,6 +73720,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -73727,7 +73728,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -73749,6 +73749,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -73756,7 +73757,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -73824,6 +73824,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -73831,7 +73832,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -73906,6 +73906,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -73913,7 +73914,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -73988,6 +73988,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -73995,7 +73996,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -74233,6 +74233,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -74240,7 +74241,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -74315,6 +74315,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -74322,7 +74323,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -74397,6 +74397,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -74404,7 +74405,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -74525,6 +74525,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -74532,7 +74533,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -74561,6 +74561,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -74568,7 +74569,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -74597,6 +74597,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -74604,7 +74605,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -74679,6 +74679,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -74686,7 +74687,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -74754,6 +74754,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -74761,7 +74762,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -74891,6 +74891,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -74898,7 +74899,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -74943,6 +74943,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -74950,7 +74951,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -74990,6 +74990,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -74997,7 +74998,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -75072,6 +75072,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -75079,7 +75080,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -75101,6 +75101,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -75108,7 +75109,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -75137,6 +75137,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -75144,7 +75145,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -75173,6 +75173,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -75180,7 +75181,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -75282,6 +75282,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -75289,7 +75290,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -75380,6 +75380,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -75387,7 +75388,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -75409,6 +75409,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -75416,7 +75417,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -75445,6 +75445,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -75452,7 +75453,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -75474,6 +75474,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -75481,7 +75482,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -75510,6 +75510,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -75517,7 +75518,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -75539,6 +75539,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -75546,7 +75547,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -75674,6 +75674,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -75681,7 +75682,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -75710,6 +75710,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -75717,7 +75718,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -75792,6 +75792,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -75799,7 +75800,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -75855,6 +75855,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -75862,7 +75863,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -75930,6 +75930,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -75937,7 +75938,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -76104,6 +76104,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -76111,7 +76112,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -76133,6 +76133,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -76140,7 +76141,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -76169,6 +76169,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -76176,7 +76177,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -76205,6 +76205,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -76212,7 +76213,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -76349,6 +76349,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -76356,7 +76357,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -76378,6 +76378,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -76385,7 +76386,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -76499,6 +76499,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -76506,7 +76507,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -76638,6 +76638,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -76645,7 +76646,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -76674,6 +76674,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -76681,7 +76682,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -76756,6 +76756,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -76763,7 +76764,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -76838,6 +76838,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -76845,7 +76846,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -77044,6 +77044,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -77051,7 +77052,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -77188,6 +77188,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -77195,7 +77196,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -77217,6 +77217,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -77224,7 +77225,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -77368,6 +77368,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -77375,7 +77376,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -77404,6 +77404,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -77411,7 +77412,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -77433,6 +77433,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -77440,7 +77441,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -77469,6 +77469,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -77476,7 +77477,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -77505,6 +77505,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -77512,7 +77513,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -77541,6 +77541,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -77548,7 +77549,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -77577,6 +77577,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -77584,7 +77585,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -77613,6 +77613,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -77620,7 +77621,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -77695,6 +77695,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -77702,7 +77703,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -77788,6 +77788,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -77795,7 +77796,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -77879,6 +77879,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 0
+  pickupDropTime: 0.25
   leftHandPos: {x: -1, y: -0.89, z: 2}
   rightHandPos: {x: 1, y: -0.89, z: 2}
   targetDropzone: {fileID: 0}
@@ -77886,7 +77887,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -77915,6 +77915,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -77922,7 +77923,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -77960,6 +77960,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -77967,7 +77968,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -78081,6 +78081,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -78088,7 +78089,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -78163,6 +78163,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -78170,7 +78171,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -78353,6 +78353,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -78360,7 +78361,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -78490,6 +78490,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -78497,7 +78498,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -78519,6 +78519,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -78526,7 +78527,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -78555,6 +78555,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -78562,7 +78563,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -78591,6 +78591,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -78598,7 +78599,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -78620,6 +78620,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -78627,7 +78628,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -78656,6 +78656,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -78663,7 +78664,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -78708,6 +78708,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -78715,7 +78716,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -78744,6 +78744,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -78751,7 +78752,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -78780,6 +78780,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -78787,7 +78788,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -78809,6 +78809,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -78816,7 +78817,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
@@ -78845,6 +78845,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 1
+  pickupDropTime: 0.25
   leftHandPos: {x: -0.64, y: -0.89, z: 1.241}
   rightHandPos: {x: 0.64, y: -0.89, z: 1.473}
   targetDropzone: {fileID: 0}
@@ -78852,7 +78853,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
