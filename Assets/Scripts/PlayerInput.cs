@@ -510,6 +510,13 @@ public class PlayerInput : MonoBehaviour
 				}
 			}
 
+			if(pickupableInLeftHand != null){
+				if(pickupableInLeftHand.GetComponent<Pen>() != null){
+					Pen pen = pickupableInLeftHand.GetComponent<Pen>();
+					pen.WriteSomething();
+				}
+			}
+
 			if (iceMaker != null)
 			{
 				if (pickupableInLeftHand != null)
@@ -1141,8 +1148,9 @@ public class PlayerInput : MonoBehaviour
 		
 		if(Physics.Raycast(ray, out hit, rayDist, layerMask)){
 			GameObject hitObj = hit.transform.gameObject; //if you're actually looking at something
+			// Debug.Log(hitObj);				  
  			if(hitObj.GetComponent<Pickupable>() != null && Vector3.Distance(transform.position, hitObj.transform.position) <= maxInteractionDist){ //check if object looked at can be picked up
-				pickupable = hitObj.GetComponent<Pickupable>(); //if it's Pickupable and close enough, assign it to pickupable.				  
+				pickupable = hitObj.GetComponent<Pickupable>(); //if it's Pickupable and close enough, assign it to pickupable.
  			} else if (hitObj.GetComponent<Pickupable>() == null || Vector3.Distance(transform.position, hitObj.transform.position) > maxInteractionDist ){
 				pickupable = null;
 				t = 0;

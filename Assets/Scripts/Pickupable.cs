@@ -40,6 +40,7 @@ public class Pickupable : MonoBehaviour
     public void CreateDropzone()
     {
         GameObject dropzoneGO = Instantiate(Resources.Load("Prefabs/dropzoneParent"), transform.position, Quaternion.identity) as GameObject;
+        // Debug.Log("Dropzone created for " + gameObject.name);
         myChildDropzone = dropzoneGO.GetComponentInChildren<Dropzone>();
         if (isForDropzoneOnly)
         {
