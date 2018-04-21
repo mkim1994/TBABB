@@ -254,6 +254,7 @@ public class Glass : Pickupable
         {
             transform.GetChild(i).gameObject.layer = 0;
         }
+		transform.GetChild(3).GetChild(0).gameObject.layer = 0;
     }
 
 }

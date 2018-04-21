@@ -4,8 +4,8 @@ using UnityEngine;
 using DG.Tweening;
 public class Pickupable : MonoBehaviour
 {
-
     public bool isForDropzoneOnly;   
+    public float pickupDropTime;
     protected float offsetZ = 2f;
     protected float offsetY = -1.5f;
     public Vector3 leftHandPos = new Vector3 (-0.64f, -0.89f, 2f);
@@ -18,10 +18,8 @@ public class Pickupable : MonoBehaviour
     public Vector3 dropPos;
     public float tweenTime;
     public float tweenEndTime;
-    public float pickupDropTime;
     public bool pickedUp = false;
     public List<Sequence> tweenSequences = new List<Sequence>();
-
     public Vector3 origPos;
     [SerializeField] private Dropzone myChildDropzone;
      
@@ -55,6 +53,7 @@ public class Pickupable : MonoBehaviour
     public virtual void InteractLeftHand(){
         if(!pickedUp){
             //pick up with left hand
+            Debug.Log("Interact Left Hand called in Pickupable");
             transform.SetParent(Services.GameManager.player.transform.GetChild(0));
             Services.GameManager.player.GetComponent<PlayerInput>().pickupableInLeftHand = this;
             PickupTween(leftHandPos);
@@ -88,6 +87,7 @@ public class Pickupable : MonoBehaviour
             transform.SetParent(null);
             Services.GameManager.player.GetComponent<PlayerInput>().pickupableInLeftHand = null;
             DropTween(dropPos, dropOffset, targetDropzone);               
+            Debug.Log("Swap called!");
             pickedUp = false;
         }
         else if(!pickedUp){
@@ -138,6 +138,7 @@ public class Pickupable : MonoBehaviour
         sequence.Append(transform.DOLocalMove(moveToPos, pickupDropTime, false));
         transform.DOLocalRotate(Vector3.zero, pickupDropTime, RotateMode.Fast);
         sequence.OnComplete(() => DeclareInactiveTween());
+        Debug.Log("Pickup Tween called!");
         StartCoroutine(ChangeToFirstPersonLayer(pickupDropTime));
         pickedUp = true;
         tweenSequences.Add(sequence);
@@ -188,6 +189,7 @@ public class Pickupable : MonoBehaviour
     }
     
     public virtual void DeclareInactiveTween(){
+        Debug.Log("Declare inactive tween called!");
         Services.TweenManager.tweensAreActive = false;
     }
 
@@ -222,6 +224,7 @@ public class Pickupable : MonoBehaviour
         for (int i = 0; i < children; ++i)
         {
             transform.GetChild(i).gameObject.layer = 13;
+    
 //            grandchildren.transform.GetChild(i).gameObject.layer = 13;
 
         }
