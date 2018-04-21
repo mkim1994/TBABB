@@ -87,7 +87,7 @@ public class PlayerInput : MonoBehaviour
 	public bool isUsingController = false;
 	public bool isPourTweenDone = false;
 
-	private bool isPouring = false;
+	[SerializeField]private bool isPouring = false;
 
 	//buttons
 	bool i_pickupLeft;
@@ -197,8 +197,8 @@ public class PlayerInput : MonoBehaviour
 		moveVector.z = player.GetAxis("Move Vertical");
 		lookVector.x = player.GetAxis("Look Horizontal");
 		lookVector.y = player.GetAxis("Look Vertical");
- 		i_pickupLeft = player.GetButtonDown("Pick Up Left");
-		i_pickupRight = player.GetButtonDown("Pick Up Right");
+ 		// i_pickupLeft = player.GetButtonDown("Pick Up Left");
+		// i_pickupRight = player.GetButtonDown("Pick Up Right");
 		i_startUseLeft = player.GetButtonDown("Use Left");
 		i_startUseRight = player.GetButtonDown("Use Right");
 		i_useLeft = player.GetButton("Use Left");
@@ -244,190 +244,190 @@ public class PlayerInput : MonoBehaviour
 	private void ProcessInput(){		
 		
 		#region Pick Up Left / Drop Left
-		if(i_pickupLeft && !Services.TweenManager.tweensAreActive){
-			if(pickupable != null && pickupableInLeftHand == null){ //PICK UP WITH LEFT HAND, CHECK IF LEFT HAND IS EMPTY
-				if (targetDropzone != null)
-				{
-					if (targetDropzone.GetComponentInParent<Coaster>() != null)
-					{
-						Coaster targetCoaster = targetDropzone.GetComponentInParent<Coaster>();
-						if (targetCoaster.myCustomer.IsCustomerPresent() && !targetCoaster.myCustomer.HasAcceptedDrink()) //if  customer is present and customer HAS NOT accepted drink, then you can get it
-						{
-							pickupable.InteractLeftHand();						
-//							targetDropzone.isOccupied = false;
-						}
-						else if(!targetCoaster.myCustomer.insideBar)
-						{
-							pickupable.InteractLeftHand();
-						}
-						else
-						{
-							GetComponent<UIControls>().ChangeCenterTextWithLinger("customer is still drinking");
-						}
-					}
-					else
-					{
-						pickupable.InteractLeftHand();
-					}
-				}
-			} else if(pickupable == null && pickupableInLeftHand != null && targetDropzone != null){ //DROP
-				if(dropPos != Vector3.zero && !targetDropzone.isOccupied){
-					if (targetDropzone.GetComponentInParent<Coaster>() == null)
-					{
-						pickupableInLeftHand.dropPos = dropPos;
-						pickupableInLeftHand.targetDropzone = targetDropzone;
-						pickupableInLeftHand.InteractLeftHand();
-					}
-					else
-					{
-						Coaster targetCoaster = targetDropzone.GetComponentInParent<Coaster>();
-						if (!targetCoaster.myCustomer.IsCustomerPresent())
-						{
- 							GetComponent<UIControls>().ChangeCenterTextWithLinger("no one to serve");
-						} else if (targetCoaster.myCustomer.IsCustomerPresent() && !targetCoaster.myCustomer.HasAcceptedDrink())
-						{
-							if(!Services.GameManager.dialogue.isDialogueRunning){
-								pickupableInLeftHand.dropPos = dropPos;
-								pickupableInLeftHand.targetDropzone = targetDropzone;
-								pickupableInLeftHand.InteractLeftHand();
-							} else {
-								GetComponent<UIControls>().ChangeCenterTextWithLinger("it's rude to interrupt");
-							}
-						}
-					}
-				}		
-			} else if (pickupable != null && pickupableInLeftHand != null && targetDropzone != null){ //swap
-				if(dropPos != Vector3.zero){			
-					if (targetDropzone.GetComponentInParent<Coaster>() == null)
-					{
-						pickupableInLeftHand.dropPos = dropPos;
-						pickupableInLeftHand.targetDropzone = targetDropzone;
-						if (pickupableInLeftHand.targetDropzone.objectsInMe.Count > 0)
-						{
-							if (pickupable.gameObject == pickupableInLeftHand.targetDropzone.objectsInMe[0])
-							{
-								pickupableInLeftHand.SwapLeftHand();
-								pickupable.SwapLeftHand();	
-							}
-							else
-							{
-								pickupableInLeftHand.InteractLeftHand();
-							}
-						}
+// 		if(i_pickupLeft && !Services.TweenManager.tweensAreActive){
+// 			if(pickupable != null && pickupableInLeftHand == null){ //PICK UP WITH LEFT HAND, CHECK IF LEFT HAND IS EMPTY
+// 				if (targetDropzone != null)
+// 				{
+// 					if (targetDropzone.GetComponentInParent<Coaster>() != null)
+// 					{
+// 						Coaster targetCoaster = targetDropzone.GetComponentInParent<Coaster>();
+// 						if (targetCoaster.myCustomer.IsCustomerPresent() && !targetCoaster.myCustomer.HasAcceptedDrink()) //if  customer is present and customer HAS NOT accepted drink, then you can get it
+// 						{
+// 							pickupable.InteractLeftHand();						
+// //							targetDropzone.isOccupied = false;
+// 						}
+// 						else if(!targetCoaster.myCustomer.insideBar)
+// 						{
+// 							pickupable.InteractLeftHand();
+// 						}
+// 						else
+// 						{
+// 							GetComponent<UIControls>().ChangeCenterTextWithLinger("customer is still drinking");
+// 						}
+// 					}
+// 					else
+// 					{
+// 						pickupable.InteractLeftHand();
+// 					}
+// 				}
+// 			} else if(pickupable == null && pickupableInLeftHand != null && targetDropzone != null){ //DROP
+// 				if(dropPos != Vector3.zero && !targetDropzone.isOccupied){
+// 					if (targetDropzone.GetComponentInParent<Coaster>() == null)
+// 					{
+// 						pickupableInLeftHand.dropPos = dropPos;
+// 						pickupableInLeftHand.targetDropzone = targetDropzone;
+// 						pickupableInLeftHand.InteractLeftHand();
+// 					}
+// 					else
+// 					{
+// 						Coaster targetCoaster = targetDropzone.GetComponentInParent<Coaster>();
+// 						if (!targetCoaster.myCustomer.IsCustomerPresent())
+// 						{
+//  							GetComponent<UIControls>().ChangeCenterTextWithLinger("no one to serve");
+// 						} else if (targetCoaster.myCustomer.IsCustomerPresent() && !targetCoaster.myCustomer.HasAcceptedDrink())
+// 						{
+// 							if(!Services.GameManager.dialogue.isDialogueRunning){
+// 								pickupableInLeftHand.dropPos = dropPos;
+// 								pickupableInLeftHand.targetDropzone = targetDropzone;
+// 								pickupableInLeftHand.InteractLeftHand();
+// 							} else {
+// 								GetComponent<UIControls>().ChangeCenterTextWithLinger("it's rude to interrupt");
+// 							}
+// 						}
+// 					}
+// 				}		
+// 			} else if (pickupable != null && pickupableInLeftHand != null && targetDropzone != null){ //swap
+// 				if(dropPos != Vector3.zero){			
+// 					if (targetDropzone.GetComponentInParent<Coaster>() == null)
+// 					{
+// 						pickupableInLeftHand.dropPos = dropPos;
+// 						pickupableInLeftHand.targetDropzone = targetDropzone;
+// 						if (pickupableInLeftHand.targetDropzone.objectsInMe.Count > 0)
+// 						{
+// 							if (pickupable.gameObject == pickupableInLeftHand.targetDropzone.objectsInMe[0])
+// 							{
+// 								pickupableInLeftHand.SwapLeftHand();
+// 								pickupable.SwapLeftHand();	
+// 							}
+// 							else
+// 							{
+// 								pickupableInLeftHand.InteractLeftHand();
+// 							}
+// 						}
 
-					}
-					else
-					{
-						Coaster targetCoaster = targetDropzone.GetComponentInParent<Coaster>();
-						if (!targetCoaster.myCustomer.HasAcceptedDrink())
-						{
-							pickupableInLeftHand.dropPos = dropPos;
-							pickupableInLeftHand.targetDropzone = targetDropzone;
-							pickupableInLeftHand.SwapLeftHand();
-							pickupable.SwapLeftHand();
-						}
-						else if (targetCoaster.myCustomer.HasAcceptedDrink())
-						{
-							GetComponent<UIControls>().ChangeCenterTextWithLinger("customer is still drinking");
-						}
-					}
-				}
-			}
-		}      
+// 					}
+// 					else
+// 					{
+// 						Coaster targetCoaster = targetDropzone.GetComponentInParent<Coaster>();
+// 						if (!targetCoaster.myCustomer.HasAcceptedDrink())
+// 						{
+// 							pickupableInLeftHand.dropPos = dropPos;
+// 							pickupableInLeftHand.targetDropzone = targetDropzone;
+// 							pickupableInLeftHand.SwapLeftHand();
+// 							pickupable.SwapLeftHand();
+// 						}
+// 						else if (targetCoaster.myCustomer.HasAcceptedDrink())
+// 						{
+// 							GetComponent<UIControls>().ChangeCenterTextWithLinger("customer is still drinking");
+// 						}
+// 					}
+// 				}
+// 			}
+// 		}      
 		#endregion 
 		
 		#region Pick Up Right / Drop Right
-		if(i_pickupRight && !Services.TweenManager.tweensAreActive){
- 			if(pickupable != null && pickupableInRightHand == null){ //PICK UP WITH RIGHT HAND, CHECK IF RIGHT HAND IS EMPTY
-				 if (targetDropzone != null)
-				 {
-					 if (targetDropzone.GetComponentInParent<Coaster>() != null)
-					 {
-						 Coaster targetCoaster = targetDropzone.GetComponentInParent<Coaster>();
-						 if (targetCoaster.myCustomer.IsCustomerPresent() && !targetCoaster.myCustomer.HasAcceptedDrink()) //if  customer is present and customer HAS NOT accepted drink, then you can get it
-						 {
-							pickupable.InteractRightHand();						
-//							 targetDropzone.isOccupied = false;
-						 }
-						 else if(!targetCoaster.myCustomer.insideBar)
-						 {
-							 pickupable.InteractRightHand();
-						 }
-						 else
-						 {
-							 GetComponent<UIControls>().ChangeCenterTextWithLinger("customer is still drinking");
-						 }
-					 }
-					 else
-					 {
-						 pickupable.InteractRightHand();
-					 }
-				 }
-			} 
- 			else if(pickupable == null && pickupableInRightHand != null && targetDropzone != null){ //DROP
-				if(dropPos != Vector3.zero && !targetDropzone.isOccupied){
-					if (targetDropzone.GetComponentInParent<Coaster>() == null)
-					{
-						pickupableInRightHand.dropPos = dropPos;
-						pickupableInRightHand.targetDropzone = targetDropzone;
-						pickupableInRightHand.InteractRightHand();
-					}
-					else
-					{
-						Coaster targetCoaster = targetDropzone.GetComponentInParent<Coaster>();
-						if (!targetCoaster.myCustomer.IsCustomerPresent())
-						{
- 							GetComponent<UIControls>().ChangeCenterTextWithLinger("no one to serve");
-						} else if (targetCoaster.myCustomer.IsCustomerPresent() && !targetCoaster.myCustomer.HasAcceptedDrink())
-						{
-							if(!Services.GameManager.dialogue.isDialogueRunning){
-								pickupableInRightHand.dropPos = dropPos;
-								pickupableInRightHand.targetDropzone = targetDropzone;
-								pickupableInRightHand.InteractRightHand();
-							} else {
-								GetComponent<UIControls>().ChangeCenterTextWithLinger("it's rude to interrupt");
-							}
-						}
-					}
- 				}		
-			} 
-			 else if (pickupable != null && pickupableInRightHand != null && targetDropzone != null){ //swap
-				if(dropPos != Vector3.zero){
-					if (targetDropzone.GetComponentInParent<Coaster>() == null)
-					{
-						pickupableInRightHand.dropPos = dropPos;
-						pickupableInRightHand.targetDropzone = targetDropzone;
-						if (pickupableInRightHand.targetDropzone.objectsInMe.Count > 0)
-						{
-							if (pickupable.gameObject == pickupableInRightHand.targetDropzone.objectsInMe[0])
-							{
-								pickupableInRightHand.SwapRightHand();
-								pickupable.SwapRightHand();
-							}
-						}
-						else
-						{
-							pickupableInRightHand.InteractRightHand(); //else just drop
-						}
-					}
-					else
-					{
-						Coaster targetCoaster = targetDropzone.GetComponentInParent<Coaster>();
-						if (!targetCoaster.myCustomer.HasAcceptedDrink())
-						{
-							pickupableInRightHand.dropPos = dropPos;
-							pickupableInRightHand.targetDropzone = targetDropzone;
-							pickupableInRightHand.SwapRightHand();
-							pickupable.SwapRightHand();							
-						} else if (targetCoaster.myCustomer.HasAcceptedDrink())
-						{
-							GetComponent<UIControls>().ChangeCenterTextWithLinger("customer is still drinking");
+// 		if(i_pickupRight && !Services.TweenManager.tweensAreActive){
+//  			if(pickupable != null && pickupableInRightHand == null){ //PICK UP WITH RIGHT HAND, CHECK IF RIGHT HAND IS EMPTY
+// 				 if (targetDropzone != null)
+// 				 {
+// 					 if (targetDropzone.GetComponentInParent<Coaster>() != null)
+// 					 {
+// 						 Coaster targetCoaster = targetDropzone.GetComponentInParent<Coaster>();
+// 						 if (targetCoaster.myCustomer.IsCustomerPresent() && !targetCoaster.myCustomer.HasAcceptedDrink()) //if  customer is present and customer HAS NOT accepted drink, then you can get it
+// 						 {
+// 							pickupable.InteractRightHand();						
+// //							 targetDropzone.isOccupied = false;
+// 						 }
+// 						 else if(!targetCoaster.myCustomer.insideBar)
+// 						 {
+// 							 pickupable.InteractRightHand();
+// 						 }
+// 						 else
+// 						 {
+// 							 GetComponent<UIControls>().ChangeCenterTextWithLinger("customer is still drinking");
+// 						 }
+// 					 }
+// 					 else
+// 					 {
+// 						 pickupable.InteractRightHand();
+// 					 }
+// 				 }
+// 			} 
+//  			else if(pickupable == null && pickupableInRightHand != null && targetDropzone != null){ //DROP
+// 				if(dropPos != Vector3.zero && !targetDropzone.isOccupied){
+// 					if (targetDropzone.GetComponentInParent<Coaster>() == null)
+// 					{
+// 						pickupableInRightHand.dropPos = dropPos;
+// 						pickupableInRightHand.targetDropzone = targetDropzone;
+// 						pickupableInRightHand.InteractRightHand();
+// 					}
+// 					else
+// 					{
+// 						Coaster targetCoaster = targetDropzone.GetComponentInParent<Coaster>();
+// 						if (!targetCoaster.myCustomer.IsCustomerPresent())
+// 						{
+//  							GetComponent<UIControls>().ChangeCenterTextWithLinger("no one to serve");
+// 						} else if (targetCoaster.myCustomer.IsCustomerPresent() && !targetCoaster.myCustomer.HasAcceptedDrink())
+// 						{
+// 							if(!Services.GameManager.dialogue.isDialogueRunning){
+// 								pickupableInRightHand.dropPos = dropPos;
+// 								pickupableInRightHand.targetDropzone = targetDropzone;
+// 								pickupableInRightHand.InteractRightHand();
+// 							} else {
+// 								GetComponent<UIControls>().ChangeCenterTextWithLinger("it's rude to interrupt");
+// 							}
+// 						}
+// 					}
+//  				}		
+// 			} 
+// 			 else if (pickupable != null && pickupableInRightHand != null && targetDropzone != null){ //swap
+// 				if(dropPos != Vector3.zero){
+// 					if (targetDropzone.GetComponentInParent<Coaster>() == null)
+// 					{
+// 						pickupableInRightHand.dropPos = dropPos;
+// 						pickupableInRightHand.targetDropzone = targetDropzone;
+// 						if (pickupableInRightHand.targetDropzone.objectsInMe.Count > 0)
+// 						{
+// 							if (pickupable.gameObject == pickupableInRightHand.targetDropzone.objectsInMe[0])
+// 							{
+// 								pickupableInRightHand.SwapRightHand();
+// 								pickupable.SwapRightHand();
+// 							}
+// 						}
+// 						else
+// 						{
+// 							pickupableInRightHand.InteractRightHand(); //else just drop
+// 						}
+// 					}
+// 					else
+// 					{
+// 						Coaster targetCoaster = targetDropzone.GetComponentInParent<Coaster>();
+// 						if (!targetCoaster.myCustomer.HasAcceptedDrink())
+// 						{
+// 							pickupableInRightHand.dropPos = dropPos;
+// 							pickupableInRightHand.targetDropzone = targetDropzone;
+// 							pickupableInRightHand.SwapRightHand();
+// 							pickupable.SwapRightHand();							
+// 						} else if (targetCoaster.myCustomer.HasAcceptedDrink())
+// 						{
+// 							GetComponent<UIControls>().ChangeCenterTextWithLinger("customer is still drinking");
 							
-						}
-					}				
-				}
-			}
-		}   
+// 						}
+// 					}				
+// 				}
+// 			}
+// 		}   
 		#endregion
 
 		#region Test
@@ -437,6 +437,8 @@ public class PlayerInput : MonoBehaviour
 
 		#region Use Left 
 		//one-handed actions
+
+		//Lefthand pickup
 		if(i_endUseLeft && !Services.TweenManager.tweensAreActive && !isTwoHandedPouring){
 			if(pickupable != null && pickupableInLeftHand == null){ //PICK UP WITH LEFT HAND, CHECK IF LEFT HAND IS EMPTY
 				if (targetDropzone != null)
@@ -447,8 +449,7 @@ public class PlayerInput : MonoBehaviour
 						if (targetCoaster.myCustomer.IsCustomerPresent() && !targetCoaster.myCustomer.HasAcceptedDrink()) //if  customer is present and customer HAS NOT accepted drink, then you can get it
 						{
 							pickupable.InteractLeftHand();						
-//							targetDropzone.isOccupied = false;
-						}
+ 						}
 						else if(!targetCoaster.myCustomer.insideBar)
 						{
 							pickupable.InteractLeftHand();
@@ -470,8 +471,7 @@ public class PlayerInput : MonoBehaviour
 						pickupableInLeftHand.dropPos = dropPos;
 						pickupableInLeftHand.targetDropzone = targetDropzone;
 						pickupableInLeftHand.InteractLeftHand();
-						// interactionTimer = 0;
-					}
+ 					}
 					else
 					{
 						Coaster targetCoaster = targetDropzone.GetComponentInParent<Coaster>();
@@ -492,43 +492,6 @@ public class PlayerInput : MonoBehaviour
 					}
 				}		
 			} 
-			// else if (pickupable != null && pickupableInLeftHand != null && targetDropzone != null && !Services.TweenManager.tweensAreActive){ //swap
-			// 	if(dropPos != Vector3.zero){			
-			// 		if (targetDropzone.GetComponentInParent<Coaster>() == null)
-			// 		{
-			// 			pickupableInLeftHand.dropPos = dropPos;
-			// 			pickupableInLeftHand.targetDropzone = targetDropzone;
-			// 			if (pickupableInLeftHand.targetDropzone.objectsInMe.Count > 0)
-			// 			{
-			// 				if (pickupable.gameObject == pickupableInLeftHand.targetDropzone.objectsInMe[0])
-			// 				{
-			// 					pickupableInLeftHand.SwapLeftHand();
-			// 					pickupable.SwapLeftHand();	
-			// 				}
-			// 				else
-			// 				{
-			// 					pickupableInLeftHand.InteractLeftHand();
- 			// 				}
-			// 			}
-
-			// 		}
-			// 		else
-			// 		{
-			// 			Coaster targetCoaster = targetDropzone.GetComponentInParent<Coaster>();
-			// 			if (!targetCoaster.myCustomer.HasAcceptedDrink())
-			// 			{
-			// 				pickupableInLeftHand.dropPos = dropPos;
-			// 				pickupableInLeftHand.targetDropzone = targetDropzone;
-			// 				pickupableInLeftHand.SwapLeftHand();
-			// 				pickupable.SwapLeftHand();
-			// 			}
-			// 			else if (targetCoaster.myCustomer.HasAcceptedDrink())
-			// 			{
-			// 				GetComponent<UIControls>().ChangeCenterTextWithLinger("customer is still drinking");
-			// 			}
-			// 		}
-			// 	}
-			// }
 		}
 
 		if(i_useLeft && !Services.TweenManager.tweensAreActive && !isTwoHandedPouring){
@@ -639,6 +602,7 @@ public class PlayerInput : MonoBehaviour
 			}
 		}
 
+		//lefthand coroutine closer
 		if(i_endUseLeft && !isTwoHandedPouring){
  			if(pickupableInLeftHand != null){
 				if (targetDropzone != null)
@@ -675,12 +639,7 @@ public class PlayerInput : MonoBehaviour
 									Glass glass = pickupable.GetComponent<Glass>();
 									if (isPourTweenDone)
 									{
-										// glass.liquid.isBeingPoured = false;
-										glass.EndPourFromBottle();
-	//									myCam.transform.LookAt(glass.focalPoint.transform.position);
-	//
-	//									IEnumerator isBeingPouredCoroutine = WaitThenCallFunction(glass);
-	//									StartCoroutine(isBeingPouredCoroutine);		
+										glass.EndPourFromBottle();		
 									}
 									glass.liquid.isBeingPoured = false;
 								}
@@ -690,7 +649,7 @@ public class PlayerInput : MonoBehaviour
 							StartCoroutine(UtilCoroutines.WaitThenSetTweensToInactive(pickupableInLeftHand.tweenEndTime, _tweenManagerDelegate));
 						}
 					}
-					else
+					else // LEFTHAND for objects that are not on coaster
 					{
 						if(startPourCoroutine != null){
 							StopCoroutine(startPourCoroutine);
@@ -713,7 +672,10 @@ public class PlayerInput : MonoBehaviour
 						}
 						if (pickupable != null)
 						{
-							if(pickupable.GetComponent<Glass>() != null && pickupableInLeftHand.GetComponent<Bottle>() != null){
+							// Lefthand end glass tweens only if you were pouring
+							if(	pickupable.GetComponent<Glass>() != null && 
+								pickupableInLeftHand.GetComponent<Bottle>() != null)
+							{
 								Glass glass = pickupable.GetComponent<Glass>();
 								glass.liquid.isBeingPoured = false;						
 								if (isPourTweenDone)
@@ -729,122 +691,81 @@ public class PlayerInput : MonoBehaviour
 					
 				}
 			}
-		} 
-
-		//non-timer old method
-/* 
-		if (i_startUseLeft && !Services.TweenManager.tweensAreActive && !isTwoHandedPouring)
-		{
-			if (sink != null)
-			{
-				if (pickupableInLeftHand != null)
-				{
-					if (pickupableInLeftHand.GetComponent<Glass>() != null)
-					{
-						Glass leftHandGlass = pickupableInLeftHand.GetComponent<Glass>();
-						leftHandGlass.LeftHandEmptyGlass();
-					}
-				}
-			}
-
-			if (iceMaker != null)
-			{
-				if (pickupableInLeftHand != null)
-				{
-					if (pickupableInLeftHand.GetComponent<Glass>() != null)
-					{
-						float midTimeInterval = 2f;
-						float startTimeInterval = 0.75f;
-						float endTimeInterval = 0.75f;
- 						Glass lefthandGlass = pickupableInLeftHand.GetComponent<Glass>();
-						Services.TweenManager.tweensAreActive = true;
-						Sequence iceSequence = DOTween.Sequence();
-						iceSequence.Append(lefthandGlass.transform.DOMove(iceMaker.glassDropPos, startTimeInterval, false));
-						iceSequence.Append(lefthandGlass.transform.DOMove(iceMaker.glassDropPos, midTimeInterval, false));
-						iceSequence.Append(lefthandGlass.transform.DOLocalMove(lefthandGlass.leftHandPos, endTimeInterval, false));
-						iceSequence.OnComplete(()=>lefthandGlass.DeclareInactiveTween());
-						Sequence iceRotSequence = DOTween.Sequence();
-						iceRotSequence.Append(lefthandGlass.transform.DORotate(Vector3.zero, startTimeInterval));
-						iceRotSequence.Append(lefthandGlass.transform.DORotate(Vector3.zero, midTimeInterval));
-						iceRotSequence.Append(lefthandGlass.transform.DOLocalRotate(Vector3.zero, endTimeInterval));
- 						iceMaker.SpawnIce(0);
-						StartCoroutine(pickupableInLeftHand.ChangeToWorldLayer(0.1f));
-						StartCoroutine(pickupableInLeftHand.ChangeToFirstPersonLayer(startTimeInterval + midTimeInterval + endTimeInterval));
-						FullTweenFOV(myCam, 30, 60, startTimeInterval, midTimeInterval, endTimeInterval);
-						FullTweenFOV(myFirstPersonCam, 30, 60, startTimeInterval, midTimeInterval, endTimeInterval);
- 					}
-				}
-			}
-
-			if (pickupableInLeftHand != null && pickupable != null){
-				if (targetDropzone != null)
-				{
-					if (targetDropzone.GetComponentInParent<Coaster>() != null)// has a coaster
-					{
-						Coaster targetCoaster = targetDropzone.GetComponentInParent<Coaster>();
-						if (targetCoaster.myCustomer.IsCustomerPresent() && !targetCoaster.myCustomer.HasAcceptedDrink()) //if  customer is present and customer HAS NOT accepted drink, then you can pour into it
-						{ 
-							if (pickupable.GetComponent<Glass>() != null && pickupableInLeftHand.GetComponent<Bottle>() != null)
-							{
-								Bottle bottle = pickupableInLeftHand.GetComponent<Bottle>();
-								Glass glass = pickupable.GetComponent<Glass>();
-								float startTimeInterval = bottle.tweenTime;
-								_startPourDelegate = glass.ReceivePourFromBottle;
-								startPourCoroutine = UtilCoroutines.WaitThenPour(bottle.tweenTime, glass.ReceivePourFromBottle, bottle, 0);
-								setIsPouringToTrueCoroutine = WaitThenSetBoolToTrue(bottle.tweenTime, glass.liquid);
-								StartCoroutine(setIsPouringToTrueCoroutine);
-								StartCoroutine(startPourCoroutine);					
-								bottle.StartPourTween(bottle.leftHandPourPos);
-								bottle.RotateTween(bottle.leftHandPourRot);
-								TweenInFOV(myCam, 55, startTimeInterval, true);
-								TweenInFOV(myFirstPersonCam, 30, startTimeInterval, false);
-								EnterTweenRotationWhenPouringIntoGlass(myCam, startTimeInterval);
-							} 
-						}
-						else
-						{
-							GetComponent<UIControls>().ChangeCenterTextWithLinger("customer is still drinking");
-						}
-					}
-					else //no coaster--i.e. normal on-bar pouring.
-					{
-						if (pickupable.GetComponent<Glass>() != null && pickupableInLeftHand.GetComponent<Bottle>() != null)
-						{
-							Bottle bottle = pickupableInLeftHand.GetComponent<Bottle>();
-							Glass glass = pickupable.GetComponent<Glass>();
-							float startTimeInterval = bottle.tweenTime;
- 							_startPourDelegate = glass.ReceivePourFromBottle;
-							startPourCoroutine = UtilCoroutines.WaitThenPour(bottle.tweenTime, glass.ReceivePourFromBottle, bottle, 0);
-							setIsPouringToTrueCoroutine = WaitThenSetBoolToTrue(bottle.tweenTime, glass.liquid);
-							StartCoroutine(setIsPouringToTrueCoroutine);
-							StartCoroutine(startPourCoroutine);					
-							bottle.StartPourTween(bottle.leftHandPourPos);
-							// Debug.Log(bottle.leftHandPourPos);
-							bottle.RotateTween(bottle.leftHandPourRot);
-							TweenInFOV(myCam, 55, startTimeInterval, true);
-							TweenInFOV(myFirstPersonCam, 30, startTimeInterval, false);
-							EnterTweenRotationWhenPouringIntoGlass(myCam, startTimeInterval);
-						} 
-					}
-				}
-			}
-		}*/
-		
-		
-		
+		} 		
 		#endregion
 
-		#region Use Right		
-		if(i_startUseRight && !Services.TweenManager.tweensAreActive && !isTwoHandedPouring){
+		#region Use Right
+
+		//Righthand Pickup
+		if(i_endUseRight && !Services.TweenManager.tweensAreActive && !isTwoHandedPouring){
+			if(pickupable != null && pickupableInRightHand == null){ //PICK UP WITH RIGHT HAND, CHECK IF RIGHT HAND IS EMPTY
+				 if (targetDropzone != null)
+				 {
+					 if (targetDropzone.GetComponentInParent<Coaster>() != null)
+					 {
+						 Coaster targetCoaster = targetDropzone.GetComponentInParent<Coaster>();
+						 if (targetCoaster.myCustomer.IsCustomerPresent() && !targetCoaster.myCustomer.HasAcceptedDrink()) //if  customer is present and customer HAS NOT accepted drink, then you can get it
+						 {
+							pickupable.InteractRightHand();						
+//							 targetDropzone.isOccupied = false;
+						 }
+						 else if(!targetCoaster.myCustomer.insideBar)
+						 {
+							 pickupable.InteractRightHand();
+						 }
+						 else
+						 {
+							 GetComponent<UIControls>().ChangeCenterTextWithLinger("customer is still drinking");
+						 }
+					 }
+					 else
+					 {
+						 pickupable.InteractRightHand();
+					 }
+				 }
+			} 
+ 			else if(pickupable == null && pickupableInRightHand != null && targetDropzone != null){ //DROP
+				if(dropPos != Vector3.zero && !targetDropzone.isOccupied){
+					if (targetDropzone.GetComponentInParent<Coaster>() == null)
+					{
+						pickupableInRightHand.dropPos = dropPos;
+						pickupableInRightHand.targetDropzone = targetDropzone;
+						pickupableInRightHand.InteractRightHand();
+					}
+					else
+					{
+						Coaster targetCoaster = targetDropzone.GetComponentInParent<Coaster>();
+						if (!targetCoaster.myCustomer.IsCustomerPresent())
+						{
+ 							GetComponent<UIControls>().ChangeCenterTextWithLinger("no one to serve");
+						} else if (targetCoaster.myCustomer.IsCustomerPresent() && !targetCoaster.myCustomer.HasAcceptedDrink())
+						{
+							if(!Services.GameManager.dialogue.isDialogueRunning){
+								pickupableInRightHand.dropPos = dropPos;
+								pickupableInRightHand.targetDropzone = targetDropzone;
+								pickupableInRightHand.InteractRightHand();
+							} else {
+								GetComponent<UIControls>().ChangeCenterTextWithLinger("it's rude to interrupt");
+							}
+						}
+					}
+ 				}		
+			} 
+		}
+
+
+		if(i_useRight && !Services.TweenManager.tweensAreActive && !isTwoHandedPouring){
+			interactionTimer += Time.deltaTime;
 			//one-handed use on something on bar
 			if (sink != null)
 			{
 				if (pickupableInRightHand != null)
 				{
-					if (pickupableInRightHand.GetComponent<Glass>() != null)
+					if (pickupableInRightHand.GetComponent<Glass>() != null && interactionTimer >= minHoldTime)
 					{
 						Glass rightHandGlass = pickupableInRightHand.GetComponent<Glass>();
 						rightHandGlass.RightHandEmptyGlass();
+						interactionTimer = 0;
 					}
 				}
 			}
@@ -853,7 +774,7 @@ public class PlayerInput : MonoBehaviour
 			{
 				if (pickupableInRightHand != null)
 				{
-					if (pickupableInRightHand.GetComponent<Glass>() != null)
+					if (pickupableInRightHand.GetComponent<Glass>() != null && interactionTimer >= minHoldTime)
 					{
 						float midTimeInterval = 2f;
 						float startTimeInterval = 0.75f;
@@ -874,6 +795,8 @@ public class PlayerInput : MonoBehaviour
 						StartCoroutine(pickupableInRightHand.ChangeToFirstPersonLayer(startTimeInterval + midTimeInterval + endTimeInterval));
 						FullTweenFOV(myCam, 30, 60, startTimeInterval, midTimeInterval, endTimeInterval);
 						FullTweenFOV(myFirstPersonCam, 30, 60, startTimeInterval, midTimeInterval, endTimeInterval);
+
+						interactionTimer = 0;
  					}
 				}
 			}
@@ -887,7 +810,8 @@ public class PlayerInput : MonoBehaviour
 						Coaster targetCoaster = targetDropzone.GetComponentInParent<Coaster>();
 						if (targetCoaster.myCustomer.IsCustomerPresent() && !targetCoaster.myCustomer.HasAcceptedDrink())
 						{
-							if (pickupable.GetComponent<Glass>() != null && pickupableInRightHand.GetComponent<Bottle>() != null)
+							if (pickupable.GetComponent<Glass>() != null && pickupableInRightHand.GetComponent<Bottle>() != null
+							&& interactionTimer >= minHoldTime)
 							{
 								Bottle bottle = pickupableInRightHand.GetComponent<Bottle>();
 								Glass glass = pickupable.GetComponent<Glass>();
@@ -902,6 +826,9 @@ public class PlayerInput : MonoBehaviour
 								TweenInFOV(myCam, 55, startTimeInterval, true);
 								TweenInFOV(myFirstPersonCam, 30, startTimeInterval, false);
 								EnterTweenRotationWhenPouringIntoGlass(myCam, startTimeInterval);
+
+								isPouring = true;
+								interactionTimer = 0;
  							}
 						}
 						else
@@ -911,7 +838,8 @@ public class PlayerInput : MonoBehaviour
 					}
 					else // no coaster
 					{
-						if (pickupable.GetComponent<Glass>() != null && pickupableInRightHand.GetComponent<Bottle>() != null)
+						if (pickupable.GetComponent<Glass>() != null && pickupableInRightHand.GetComponent<Bottle>() != null
+							&& interactionTimer >= minHoldTime)
 						{
  							float startTimeInterval = 0.75f;
  							Bottle bottle = pickupableInRightHand.GetComponent<Bottle>();
@@ -926,12 +854,16 @@ public class PlayerInput : MonoBehaviour
 							TweenInFOV(myCam, 55, startTimeInterval, true);
 							TweenInFOV(myFirstPersonCam, 30, startTimeInterval, false);
 							EnterTweenRotationWhenPouringIntoGlass(myCam, startTimeInterval);
+							
+							isPouring = true;
+							interactionTimer = 0;
 						}
 					}
 				}
 			}
 		}
 		
+		//Righthand coroutine closer
 		if(i_endUseRight && !isTwoHandedPouring){
  			if(pickupableInRightHand != null){
 				if (targetDropzone != null)
@@ -948,7 +880,7 @@ public class PlayerInput : MonoBehaviour
 							if(setIsPouringToTrueCoroutine != null){
 								StopCoroutine(setIsPouringToTrueCoroutine);
 							}
- 							if (pickupableInRightHand.GetComponent<Bottle>() != null)
+ 							if (pickupableInRightHand.GetComponent<Bottle>() != null && isPouring)
 							{
 								Bottle bottle = pickupableInRightHand.GetComponent<Bottle>();
 								ClearTweenSequences(_tweenSequences);
@@ -959,6 +891,7 @@ public class PlayerInput : MonoBehaviour
 								{
 									sequence.Kill(false);
 								}
+								isPouring = false;
 							}
 							if (pickupable != null)
 							{
@@ -970,14 +903,14 @@ public class PlayerInput : MonoBehaviour
 										glass.EndPourFromBottle();
 									}
 									glass.liquid.isBeingPoured = false;
-								}
+									pickupableInRightHand.RotateToZeroTween();
+									pickupableInRightHand.EndPourTween();
+									StartCoroutine(UtilCoroutines.WaitThenSetTweensToInactive(pickupableInRightHand.tweenEndTime, _tweenManagerDelegate));
+ 								}
 							}
-							pickupableInRightHand.RotateToZeroTween();
-							pickupableInRightHand.EndPourTween();
-							StartCoroutine(UtilCoroutines.WaitThenSetTweensToInactive(pickupableInRightHand.tweenEndTime, _tweenManagerDelegate));
 						}
 					}
-					else
+					else // RIGHTHAND For objects that are not on coaster
 					{
 						if(startPourCoroutine != null){
 							StopCoroutine(startPourCoroutine);
@@ -985,7 +918,7 @@ public class PlayerInput : MonoBehaviour
 						if(setIsPouringToTrueCoroutine != null){
 							StopCoroutine(setIsPouringToTrueCoroutine);
 						}
- 						if (pickupableInRightHand.GetComponent<Bottle>() != null)
+ 						if (pickupableInRightHand.GetComponent<Bottle>() != null && isPouring)
 						{
 							Bottle bottle = pickupableInRightHand.GetComponent<Bottle>();
 							ClearTweenSequences(_tweenSequences);
@@ -996,10 +929,14 @@ public class PlayerInput : MonoBehaviour
 							{
 								sequence.Kill(false);
 							}
+
+							isPouring = false;
 						}
-						if (pickupable != null)
+						if (pickupable != null) 
 						{
-							if (pickupable.GetComponent<Glass>() != null)
+							//Righthand end glass tweens only if you were pouring
+							if (pickupable.GetComponent<Glass>() != null
+							&& pickupableInRightHand.GetComponent<Bottle>() != null)
 							{
 								Glass glass = pickupable.GetComponent<Glass>();
 								glass.liquid.isBeingPoured = false;
@@ -1007,10 +944,10 @@ public class PlayerInput : MonoBehaviour
 								{
 									glass.EndPourFromBottle();
 								}
-							}
-							pickupableInRightHand.RotateToZeroTween();
-							pickupableInRightHand.EndPourTween();
-							StartCoroutine(UtilCoroutines.WaitThenSetTweensToInactive(pickupableInRightHand.tweenEndTime, _tweenManagerDelegate));
+								pickupableInRightHand.RotateToZeroTween();
+								pickupableInRightHand.EndPourTween();
+								StartCoroutine(UtilCoroutines.WaitThenSetTweensToInactive(pickupableInRightHand.tweenEndTime, _tweenManagerDelegate));
+ 							}
 						}
 					}
 					

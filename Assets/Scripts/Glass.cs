@@ -230,7 +230,7 @@ public class Glass : Pickupable
     {
         yield return new WaitForSeconds(delay);
         int children = transform.childCount;
-		Debug.Log("Children: " + children);
+		// Debug.Log("Children: " + children);
         startPos = transform.localPosition;
 
         if (gameObject.GetComponentInChildren<Liquid>() != null)

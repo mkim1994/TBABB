@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 114739140198778196}
   - component: {fileID: 114442831977188336}
   - component: {fileID: 114469227181714596}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: BartenderController
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -36,7 +36,7 @@ GameObject:
   - component: {fileID: 114748969170267936}
   - component: {fileID: 114110072887769014}
   - component: {fileID: 114494071740702374}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: FirstPersonCharacter
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
@@ -360,7 +360,7 @@ GameObject:
   - component: {fileID: 223360520325534006}
   - component: {fileID: 114676300117789696}
   - component: {fileID: 114620136652507896}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: PanelCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -378,7 +378,7 @@ GameObject:
   - component: {fileID: 222812449756924030}
   - component: {fileID: 114246193758293542}
   - component: {fileID: 114020313720889180}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: RighthandInstructionText (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -395,7 +395,7 @@ GameObject:
   - component: {fileID: 224393336492474870}
   - component: {fileID: 222392778445979342}
   - component: {fileID: 114304957212755290}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: 'RightPickupDropImg '
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -413,7 +413,7 @@ GameObject:
   - component: {fileID: 222628842149294186}
   - component: {fileID: 114467932124016912}
   - component: {fileID: 114103415790718196}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: BottomCenterText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -431,7 +431,7 @@ GameObject:
   - component: {fileID: 223688907964543262}
   - component: {fileID: 114437424997458904}
   - component: {fileID: 114696489041770718}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: UICanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -449,7 +449,7 @@ GameObject:
   - component: {fileID: 222296799573484920}
   - component: {fileID: 114811634207850090}
   - component: {fileID: 114171851122801194}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: LefthandInstructionText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -467,7 +467,7 @@ GameObject:
   - component: {fileID: 222778436904223744}
   - component: {fileID: 114945097526644708}
   - component: {fileID: 114961721947526134}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: LefthandText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -485,7 +485,7 @@ GameObject:
   - component: {fileID: 222725143879972606}
   - component: {fileID: 114107806424576816}
   - component: {fileID: 114748651186478056}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: CenterText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -503,7 +503,7 @@ GameObject:
   - component: {fileID: 223093029410017124}
   - component: {fileID: 114744358479763400}
   - component: {fileID: 114181732587308114}
-  m_Layer: 5
+  m_Layer: 15
   m_Name: BlackPanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -520,7 +520,7 @@ GameObject:
   - component: {fileID: 224044932609190304}
   - component: {fileID: 222489284802347434}
   - component: {fileID: 114516392780531308}
-  m_Layer: 5
+  m_Layer: 15
   m_Name: Reticle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -537,7 +537,7 @@ GameObject:
   - component: {fileID: 224078978886618346}
   - component: {fileID: 222125707353093638}
   - component: {fileID: 114763206201439710}
-  m_Layer: 5
+  m_Layer: 15
   m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -554,7 +554,7 @@ GameObject:
   - component: {fileID: 224159075641419330}
   - component: {fileID: 222670207167985704}
   - component: {fileID: 114170378680369964}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: LeftPickupDropImg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -571,7 +571,7 @@ GameObject:
   - component: {fileID: 224922190795741034}
   - component: {fileID: 222691076859361622}
   - component: {fileID: 114970829274596450}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: RightHandActionImg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -588,7 +588,7 @@ GameObject:
   - component: {fileID: 224634253065122286}
   - component: {fileID: 222418498317205000}
   - component: {fileID: 114750525949328590}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: BottomCenterImg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -606,7 +606,7 @@ GameObject:
   - component: {fileID: 222664946787129210}
   - component: {fileID: 114829036142774942}
   - component: {fileID: 114648294402923904}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: LefthandInstructionText (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -623,7 +623,7 @@ GameObject:
   - component: {fileID: 224790940304417796}
   - component: {fileID: 222768148777668380}
   - component: {fileID: 114767188292423258}
-  m_Layer: 5
+  m_Layer: 15
   m_Name: Panel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -641,7 +641,7 @@ GameObject:
   - component: {fileID: 222983074016404200}
   - component: {fileID: 114403877642880778}
   - component: {fileID: 114751179493081026}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: RighthandText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -659,7 +659,7 @@ GameObject:
   - component: {fileID: 222929880832470004}
   - component: {fileID: 114927173548750250}
   - component: {fileID: 114303921967021370}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: BotCenterInstructionText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -675,7 +675,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4105749670385046}
   - component: {fileID: 20219987243707838}
-  m_Layer: 13
+  m_Layer: 15
   m_Name: FirstPersonCamera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -693,7 +693,7 @@ GameObject:
   - component: {fileID: 222156836129088462}
   - component: {fileID: 114078115086541814}
   - component: {fileID: 114749885950807924}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: RighthandInstructionText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -711,7 +711,7 @@ GameObject:
   - component: {fileID: 222858540683141976}
   - component: {fileID: 114834578378722322}
   - component: {fileID: 114926799713779598}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: RightHandActionText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -729,7 +729,7 @@ GameObject:
   - component: {fileID: 223721442464872032}
   - component: {fileID: 114470869291770384}
   - component: {fileID: 114072687060748118}
-  m_Layer: 5
+  m_Layer: 15
   m_Name: WhitePanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -747,7 +747,7 @@ GameObject:
   - component: {fileID: 222753337546397108}
   - component: {fileID: 114402641278035738}
   - component: {fileID: 114366312501957970}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: LeftHandActionText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -764,7 +764,7 @@ GameObject:
   - component: {fileID: 224900556176970166}
   - component: {fileID: 222571753013112462}
   - component: {fileID: 114506412615432964}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: LeftHandActionImg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -781,7 +781,7 @@ GameObject:
   - component: {fileID: 224388308499917788}
   - component: {fileID: 222541045960258170}
   - component: {fileID: 114274765598093880}
-  m_Layer: 5
+  m_Layer: 15
   m_Name: Panel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -797,7 +797,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4990613293878512}
   - component: {fileID: 108920855168389614}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Point light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -854,7 +854,7 @@ Camera:
   m_Depth: 1
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 8224
+    m_Bits: 24608
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -894,7 +894,7 @@ Light:
   m_RenderMode: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 4294955007
+    m_Bits: 4294938623
   m_Lightmapping: 4
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
@@ -1558,6 +1558,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isTwoHandedPouring: 0
   myFirstPersonCam: {fileID: 20219987243707838}
+  lookVector: {x: 0, y: 0}
   playerId: 0
   npc: {fileID: 0}
   sink: {fileID: 0}
@@ -1592,6 +1593,7 @@ MonoBehaviour:
   verticalLook: 0
   isInputEnabled: 1
   isUsingController: 0
+  isPourTweenDone: 0
   i_startUseLeft: 0
   i_startUseRight: 0
   i_useLeft: 0

@@ -53,7 +53,6 @@ public class Pickupable : MonoBehaviour
     public virtual void InteractLeftHand(){
         if(!pickedUp){
             //pick up with left hand
-            Debug.Log("Interact Left Hand called in Pickupable");
             transform.SetParent(Services.GameManager.player.transform.GetChild(0));
             Services.GameManager.player.GetComponent<PlayerInput>().pickupableInLeftHand = this;
             PickupTween(leftHandPos);
@@ -71,12 +70,12 @@ public class Pickupable : MonoBehaviour
         if(!pickedUp){
             transform.SetParent(Services.GameManager.player.transform.GetChild(0));
             Services.GameManager.player.GetComponent<PlayerInput>().pickupableInRightHand = this;
-             PickupTween(rightHandPos);
-        }
-        else if(pickedUp){
+            PickupTween(rightHandPos);
+        } else if(pickedUp){
             transform.SetParent(null);
             Services.GameManager.player.GetComponent<PlayerInput>().pickupableInRightHand = null;
-             if(targetDropzone != null){
+            
+            if(targetDropzone != null){
                 DropTween(dropPos, dropOffset, targetDropzone);
             }
         }
@@ -138,7 +137,7 @@ public class Pickupable : MonoBehaviour
         sequence.Append(transform.DOLocalMove(moveToPos, pickupDropTime, false));
         transform.DOLocalRotate(Vector3.zero, pickupDropTime, RotateMode.Fast);
         sequence.OnComplete(() => DeclareInactiveTween());
-        Debug.Log("Pickup Tween called!");
+        // Debug.Log("Pickup Tween called!");
         StartCoroutine(ChangeToFirstPersonLayer(pickupDropTime));
         pickedUp = true;
         tweenSequences.Add(sequence);
@@ -189,7 +188,7 @@ public class Pickupable : MonoBehaviour
     }
     
     public virtual void DeclareInactiveTween(){
-        Debug.Log("Declare inactive tween called!");
+        // Debug.Log("Declare inactive tween called!");
         Services.TweenManager.tweensAreActive = false;
     }
 
