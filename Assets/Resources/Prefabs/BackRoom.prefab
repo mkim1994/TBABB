@@ -628,9 +628,9 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1904718403019934}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.07, y: 0.07, z: 0.07}
+  m_LocalScale: {x: 0.07000003, y: 0.07, z: 0.07000003}
   m_Children: []
   m_Father: {fileID: 4581624311026570}
   m_RootOrder: 0
@@ -1621,6 +1621,15 @@ MonoBehaviour:
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
+  _notepad: {fileID: 0}
+  _leftHandStartPos: {x: -0.64, y: -0.89, z: 2}
+  _rightHandStartPos: {x: 0.64, y: -0.89, z: 2}
+  _writeLeftHandPos: {x: 0, y: -0.5, z: 2}
+  _writeRightHandPos: {x: 0.38, y: -0.27, z: 2}
+  _leftHandStartRot: {x: 0, y: 0, z: 0}
+  _writeLeftHandRot: {x: 0, y: 0, z: 0}
+  _rightHandStartRot: {x: 0, y: 0, z: 0}
+  _writeRightHandRot: {x: 0, y: 246.89, z: -42.04}
 --- !u!114 &114290680596550120
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1655,6 +1664,14 @@ MonoBehaviour:
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
+  _rightHandStartPos: {x: 0.64, y: -0.89, z: 2}
+  _leftHandStartPos: {x: -0.64, y: -0.89, z: 2}
+  _signRightHandPos: {x: 0, y: -0.5, z: 2}
+  _signLeftHandPos: {x: -0.0425, y: -0.5, z: 2}
+  _rightHandStartRot: {x: 0, y: 0, z: 0}
+  _leftHandStartRot: {x: 0, y: 0, z: 0}
+  _signRightHandRot: {x: 0, y: 0, z: 0}
+  _signLeftHandRot: {x: 60.38, y: 171.23, z: 0}
   notes:
   - {fileID: 2800000, guid: a30f920d202d0485d9e3be8cb0896eac, type: 3}
   - {fileID: 2800000, guid: a97df6ee3295f4246b01cb137f504373, type: 3}
@@ -1664,6 +1681,7 @@ MonoBehaviour:
   - {fileID: 2800000, guid: a4e98c6fbbee4489096423e62a18b0a7, type: 3}
   - {fileID: 2800000, guid: a4e98c6fbbee4489096423e62a18b0a7, type: 3}
   notesigned: {fileID: 2800000, guid: a4e98c6fbbee4489096423e62a18b0a7, type: 3}
+  _pen: {fileID: 0}
 --- !u!114 &114519512956008262
 MonoBehaviour:
   m_ObjectHideFlags: 1

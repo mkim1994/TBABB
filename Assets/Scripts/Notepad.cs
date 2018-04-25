@@ -1,18 +1,30 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
 
 public class Notepad : Pickupable {
 
+    [SerializeField]private Vector3 _rightHandStartPos;
+    [SerializeField]private Vector3 _leftHandStartPos;
+    [SerializeField]private Vector3 _signRightHandPos;
+    [SerializeField]private Vector3 _signLeftHandPos;
+    [SerializeField]private Vector3 _rightHandStartRot;
+    [SerializeField]private Vector3 _leftHandStartRot;
+    [SerializeField]private Vector3 _signRightHandRot;
+    [SerializeField]private Vector3 _signLeftHandRot;
     public Texture[] notes;
     public Texture notesigned;
+    
+    [SerializeField] private Pen _pen;
     Material mat;
     bool onlyOnce;
 	// Use this for initialization
 	protected override void Start () {
-        base.Start();
-        onlyOnce = false;
+        base.Start();        
+		onlyOnce = false;
         mat = GetComponent<MeshRenderer>().material;
+	    _pen = FindObjectOfType<Pen>();
 	}
 	
 	// Update is called once per frame
@@ -31,4 +43,27 @@ public class Notepad : Pickupable {
             }
         }
 	}
+
+    public void SignNoteOnRightHand()
+    {
+        Sequence s = DOTween.Sequence();
+        s.Append(transform.DOLocalMove(_signRightHandPos, 1f));
+        s.Append(transform.DOLocalMove(_rightHandStartPos, 0.75f));
+        s.OnComplete(() => Services.GameManager.dayManager.noteSigned = true);
+	    Sequence r = DOTween.Sequence();
+	    r.Append(transform.DOLocalRotate(_signRightHandRot, 1f));
+	    r.Append(transform.DOLocalRotate(_rightHandStartRot, 0.75f));
+	    
+    }
+
+    public void SignNoteOnLeftHand()
+    {
+        Sequence s = DOTween.Sequence();
+        s.Append(transform.DOLocalMove(_signLeftHandPos, 1f));
+        s.Append(transform.DOLocalMove(_leftHandStartPos, 0.75f));
+        s.OnComplete(() => Services.GameManager.dayManager.noteSigned = true);
+	    Sequence r = DOTween.Sequence();
+	    r.Append(transform.DOLocalRotate(_signLeftHandRot, 1f));
+	    r.Append(transform.DOLocalRotate(_leftHandStartRot, 0.75f));
+    }
 }

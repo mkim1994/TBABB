@@ -514,10 +514,16 @@ public class PlayerInput : MonoBehaviour
 				}
 			}
 
-			if(pickupableInLeftHand != null){
-				if(pickupableInLeftHand.GetComponent<Pen>() != null){
+			if(pickupableInLeftHand != null && pickupableInRightHand != null){
+				if(pickupableInLeftHand.GetComponent<Pen>() != null && 
+				   pickupableInRightHand.GetComponent<Notepad>() != null &&
+				   interactionTimer >= minHoldTime
+				   ){
 					Pen pen = pickupableInLeftHand.GetComponent<Pen>();
-					pen.WriteSomething();
+					pen.WriteLeftHanded();
+					Notepad notepad = pickupableInRightHand.GetComponent<Notepad>();
+					notepad.SignNoteOnRightHand();
+					interactionTimer = 0;
 				}
 			}
 
@@ -778,6 +784,20 @@ public class PlayerInput : MonoBehaviour
 						rightHandGlass.RightHandEmptyGlass();
 						interactionTimer = 0;
 					}
+				}
+			}
+			
+			//pen in right hand, notepad in left
+			if(pickupableInLeftHand != null && pickupableInRightHand != null){
+				if(pickupableInRightHand.GetComponent<Pen>() != null && 
+				   pickupableInLeftHand.GetComponent<Notepad>() != null &&
+				   interactionTimer >= minHoldTime
+				){
+					Pen pen = pickupableInRightHand.GetComponent<Pen>();
+					pen.WriteRightHanded();
+					Notepad notepad = pickupableInLeftHand.GetComponent<Notepad>();
+					notepad.SignNoteOnLeftHand();
+					interactionTimer = 0;
 				}
 			}
 
