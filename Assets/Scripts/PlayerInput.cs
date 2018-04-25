@@ -88,6 +88,9 @@ public class PlayerInput : MonoBehaviour
 	public bool isPourTweenDone = false;
 
 	[SerializeField]private bool isPouring = false;
+	
+	//ui
+	private Crosshair _crosshair;
 
 	//buttons
 	bool i_pickupLeft;
@@ -115,6 +118,7 @@ public class PlayerInput : MonoBehaviour
 	void Start()
 	{
 		ui = FindObjectOfType<UIControls>();
+		_crosshair = FindObjectOfType<Crosshair>();
 		EventManager.Instance.Register<DayEndEvent>(DropEverything);
 		_tweenManagerDelegate = Pickupable.DeclareAllTweensInactive; 
 		if (isUsingController)
@@ -1100,12 +1104,20 @@ public class PlayerInput : MonoBehaviour
 			{
 				lightSwitch.EndDay();
 			}
-			
+
 			if (backdoor != null)
 			{
 				backdoor.GetComponent<Collider>().enabled = false;
- 				Services.GameManager.dayManager.doorOpened = true;
-				StartCoroutine(TurnOnBoxColliderOnDoor(6f, backdoor));
+				if (Services.GameManager.dayManager.noteSigned)
+				{
+					Services.GameManager.dayManager.doorOpened = true;				
+					StartCoroutine(TurnOnBoxColliderOnDoor(6f, backdoor));
+				}
+				else
+				{
+					ui.ChangeCenterTextWithLinger("sign the note first");
+				}
+
  			}
 		}
 		#endregion
@@ -1151,11 +1163,17 @@ public class PlayerInput : MonoBehaviour
 			// Debug.Log(hitObj);				  
  			if(hitObj.GetComponent<Pickupable>() != null && Vector3.Distance(transform.position, hitObj.transform.position) <= maxInteractionDist){ //check if object looked at can be picked up
 				pickupable = hitObj.GetComponent<Pickupable>(); //if it's Pickupable and close enough, assign it to pickupable.
- 			} else if (hitObj.GetComponent<Pickupable>() == null || Vector3.Distance(transform.position, hitObj.transform.position) > maxInteractionDist ){
+				 _crosshair.ChangeCrosshairAlphaOnTargetSighted();
+			 } else if (hitObj.GetComponent<Pickupable>() == null || Vector3.Distance(transform.position, hitObj.transform.position) > maxInteractionDist ){
 				pickupable = null;
 				t = 0;
+ 				 _crosshair.ChangeCrosshairAlphaOnTargetLost();
 			} 	
-		} 
+		}
+		else
+		{
+ 			_crosshair.ChangeCrosshairAlphaOnTargetLost();
+		}
 	}
 
 	private void DropzoneRay(){

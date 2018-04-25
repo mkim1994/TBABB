@@ -286,14 +286,16 @@ public class UIControls : MonoBehaviour {
 					{
 						if (leftHandObj != null)
 						{
-							leftHandPickUpImage.enabled = true;
+							// leftHandPickUpImage.enabled = true;
+							leftHandActionImage.enabled = true;
 							leftHandControlsText[0].text = buttonAndKeyStrings[2 + stringOffset];
 							leftHandControlsText[1].text = "put back";
 						}
 
 						if (rightHandObj != null)
 						{
-							rightHandPickUpImage.enabled = true;
+							// rightHandPickUpImage.enabled = true;
+							rightHandActionImage.enabled = true;
 							rightHandControlsText[0].text = buttonAndKeyStrings[3 + stringOffset];
 							rightHandControlsText[1].text = "put back";
 						}
@@ -390,25 +392,29 @@ public class UIControls : MonoBehaviour {
 						{
 							if (leftHandObj == null)
 							{
-								leftHandPickUpImage.enabled = true;
+								// leftHandPickUpImage.enabled = true;
+								leftHandActionImage.enabled = true;
 								leftHandControlsText[0].text = buttonAndKeyStrings[2 + stringOffset];
 								leftHandControlsText[1].text = "pick up";
 							}
 							else if (leftHandObj != null && dropzoneBeingLookedAt.objectsInMe[0] == pickupableBeingLookedAt)
 							{
-								leftHandPickUpImage.enabled = true;
+								// leftHandPickUpImage.enabled = true;
+								leftHandActionImage.enabled = true;
 								leftHandControlsText[0].text = buttonAndKeyStrings[2 + stringOffset];
 								leftHandControlsText[1].text = "swap";
 							}
 							if (rightHandObj == null)
 							{
-								rightHandPickUpImage.enabled = true;
+								// rightHandPickUpImage.enabled = true;
+								rightHandActionImage.enabled = true;
 								rightHandControlsText[0].text = buttonAndKeyStrings[3 + stringOffset];
 								rightHandControlsText[1].text = "pick up";
 							}
 							else
 							{
-								rightHandPickUpImage.enabled = true;
+								// rightHandPickUpImage.enabled = true;
+								rightHandActionImage.enabled = true;
 								rightHandControlsText[0].text = buttonAndKeyStrings[3 + stringOffset];
 								rightHandControlsText[1].text = "swap";
 							}					
@@ -444,26 +450,30 @@ public class UIControls : MonoBehaviour {
 						{
 							if (leftHandObj == null)
 							{
-								leftHandPickUpImage.enabled = true;
+								// leftHandPickUpImage.enabled = true;
+								leftHandActionImage.enabled = true;
 								leftHandControlsText[0].text = buttonAndKeyStrings[2 + stringOffset];
 								leftHandControlsText[1].text = "pick up";
 							}
 							else if (leftHandObj != null)
 							{
-								leftHandPickUpImage.enabled = true;
+								// leftHandPickUpImage.enabled = true;
+								leftHandActionImage.enabled = true;
 								leftHandControlsText[0].text = buttonAndKeyStrings[2 + stringOffset];
 								leftHandControlsText[1].text = "swap";
 							}
 	
 							if (rightHandObj == null)
 							{
-								rightHandPickUpImage.enabled = true;
+								// rightHandPickUpImage.enabled = true;
+								rightHandActionImage.enabled = true;
 								rightHandControlsText[0].text = buttonAndKeyStrings[3 + stringOffset];
 								rightHandControlsText[1].text = "pick up";
 							}
 							else
 							{
-								rightHandPickUpImage.enabled = true;
+								// rightHandPickUpImage.enabled = true;
+								rightHandActionImage.enabled = true;
 								rightHandControlsText[0].text = buttonAndKeyStrings[3 + stringOffset];
 								rightHandControlsText[1].text = "swap";
 							}
@@ -500,24 +510,28 @@ public class UIControls : MonoBehaviour {
 						bottomCenterInsText.text = "talk";
 						if (rightHandObj != null && distanceToObj <= Services.GameManager.playerInput.maxInteractionDist+1)
 						{
- 							rightHandPickUpImage.enabled = true;
+ 							// rightHandPickUpImage.enabled = true;
+							 rightHandActionImage.enabled = true;
 							rightHandControlsText[0].text = buttonAndKeyStrings[3 + stringOffset];
 							rightHandControlsText[1].text = "serve";
 						} else if (distanceToObj > Services.GameManager.playerInput.maxInteractionDist+1)
 						{
 							ClearTextArray(rightHandControlsText);
-							rightHandPickUpImage.enabled = false;
+							rightHandActionImage.enabled = false;
+							// rightHandPickUpImage.enabled = false;
 						}
 
 						if (leftHandObj != null && distanceToObj <= Services.GameManager.playerInput.maxInteractionDist+1)
 						{
-							leftHandPickUpImage.enabled = true;
+							// leftHandPickUpImage.enabled = true;
+							leftHandActionImage.enabled = true;
 							leftHandControlsText[0].text = buttonAndKeyStrings[2 + stringOffset];
 							leftHandControlsText[1].text = "serve";
 						} else if (distanceToObj > Services.GameManager.playerInput.maxInteractionDist+1)
 						{
 							ClearTextArray(leftHandControlsText);
-							leftHandPickUpImage.enabled = false;
+							leftHandActionImage.enabled = false;
+							// leftHandPickUpImage.enabled = false;
 						}
 					}
 					else if (Services.GameManager.dialogue.isDialogueRunning)
@@ -539,10 +553,12 @@ public class UIControls : MonoBehaviour {
  				
 				if (distanceToObj <= Services.GameManager.playerInput.maxInteractionDist)
 				{
-					leftHandPickUpImage.enabled = true;
+					// leftHandPickUpImage.enabled = true;
+					leftHandActionImage.enabled = true;
 					leftHandControlsText[0].text = buttonAndKeyStrings[2 + stringOffset];
 					leftHandControlsText[1].text = "put back";
-					rightHandPickUpImage.enabled = true;
+					// rightHandPickUpImage.enabled = true;
+					rightHandActionImage.enabled = true;
 					rightHandControlsText[0].text = buttonAndKeyStrings[3 + stringOffset];
 					rightHandControlsText[1].text = "put back";
 				}
@@ -620,10 +636,12 @@ public class UIControls : MonoBehaviour {
 				{
 					centerText.text = "";				
 				}
-				rightHandPickUpImage.enabled = false;
+				// rightHandPickUpImage.enabled = false;
+				rightHandActionImage.enabled = false;
 				rightHandControlsText[0].text = "";
 				rightHandControlsText[1].text = "";			
-				leftHandPickUpImage.enabled = false;
+				// leftHandPickUpImage.enabled = false;
+				leftHandActionImage.enabled = false;
 				leftHandControlsText[0].text = "";
 				leftHandControlsText[1].text = "";
 			} 
@@ -635,10 +653,12 @@ public class UIControls : MonoBehaviour {
 			{
 				centerText.text = "";				
 			}
-			rightHandPickUpImage.enabled = false;
+			// rightHandPickUpImage.enabled = false;
+			rightHandActionImage.enabled = false;
 			rightHandControlsText[0].text = "";
 			rightHandControlsText[1].text = "";	
-			leftHandPickUpImage.enabled = false;
+			// leftHandPickUpImage.enabled = false;
+			leftHandActionImage.enabled = false;
 			leftHandControlsText[0].text = "";
 			leftHandControlsText[1].text = "";		
 		}
@@ -649,10 +669,12 @@ public class UIControls : MonoBehaviour {
 		botCenterImg.SetActive(false);
 		bottomCenterText.text = "";
 		bottomCenterInsText.text = "";
-		rightHandPickUpImage.enabled = false;
+		// rightHandPickUpImage.enabled = false;
+		// rightHandActionImage.enabled = false;
 		rightHandControlsText[0].text = "";
 		rightHandControlsText[1].text = "";
-		leftHandPickUpImage.enabled = false;
+		// leftHandPickUpImage.enabled = false;
+		// leftHandActionImage.enabled = false;
 		leftHandControlsText[0].text = "";
 		leftHandControlsText[1].text = "";
 	}
@@ -694,8 +716,8 @@ public class UIControls : MonoBehaviour {
 		stringOffset = 5;
 		leftHandActionImage.sprite = GetSprite("icon_trigger1");
 		rightHandActionImage.sprite = GetSprite("icon_trigger1");
-		leftHandPickUpImage.sprite = GetSprite("icon_trigger2");
-		rightHandPickUpImage.sprite = GetSprite("icon_trigger2");
+		// leftHandPickUpImage.sprite = GetSprite("icon_trigger2");
+		// rightHandPickUpImage.sprite = GetSprite("icon_trigger2");
 		botCenterImg.GetComponent<Image>().sprite = GetSprite("icon_x");
 	}
 
@@ -704,8 +726,8 @@ public class UIControls : MonoBehaviour {
 		stringOffset = 0;
 		leftHandActionImage.sprite = GetSprite("icon_lmb");
 		rightHandActionImage.sprite = GetSprite("icon_rmb");
-		leftHandPickUpImage.sprite = GetSprite("icon_key");
-		rightHandPickUpImage.sprite = GetSprite("icon_key");
+		// leftHandPickUpImage.sprite = GetSprite("icon_key");
+		// rightHandPickUpImage.sprite = GetSprite("icon_key");
 		botCenterImg.GetComponent<Image>().sprite = GetSprite("icon_key");
 	}
 
