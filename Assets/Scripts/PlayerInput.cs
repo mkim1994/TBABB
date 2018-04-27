@@ -451,13 +451,13 @@ public class PlayerInput : MonoBehaviour
 					{
 						Coaster targetCoaster = targetDropzone.GetComponentInParent<Coaster>();
 						if (targetCoaster.myCustomer.IsCustomerPresent() && !targetCoaster.myCustomer.HasAcceptedDrink()) //if  customer is present and customer HAS NOT accepted drink, then you can get it
-						{
-							pickupable.InteractLeftHand();						
- 						}
+						{ 
+							pickupable.InteractLeftHand();
+  						}
 						else if(!targetCoaster.myCustomer.insideBar)
 						{
 							pickupable.InteractLeftHand();
-						}
+  						}
 						else
 						{
 							GetComponent<UIControls>().ChangeCenterTextWithLinger("customer is still drinking");
@@ -485,10 +485,11 @@ public class PlayerInput : MonoBehaviour
 						} else if (targetCoaster.myCustomer.IsCustomerPresent() && !targetCoaster.myCustomer.HasAcceptedDrink())
 						{
 							if(!Services.GameManager.dialogue.isDialogueRunning){
+								Debug.Log("Dropped " + pickupableInLeftHand);
 								pickupableInLeftHand.dropPos = dropPos;
 								pickupableInLeftHand.targetDropzone = targetDropzone;
 								pickupableInLeftHand.InteractLeftHand();
-								// interactionTimer = 0;
+//								interactionTimer = 0;
 							} else {
 								GetComponent<UIControls>().ChangeCenterTextWithLinger("it's rude to interrupt");
 							}
@@ -570,6 +571,7 @@ public class PlayerInput : MonoBehaviour
 							if (pickupable.GetComponent<Glass>() != null && pickupableInLeftHand.GetComponent<Bottle>() != null
 								&& interactionTimer >= minHoldTime)
 							{
+								Debug.Log("Yeah interactionTimer was greater than minHoldTime!");
 								Bottle bottle = pickupableInLeftHand.GetComponent<Bottle>();
 								Glass glass = pickupable.GetComponent<Glass>();
 								float startTimeInterval = bottle.tweenTime;
@@ -597,6 +599,7 @@ public class PlayerInput : MonoBehaviour
 						if (pickupable.GetComponent<Glass>() != null && pickupableInLeftHand.GetComponent<Bottle>() != null
 							&& interactionTimer >= minHoldTime)
 						{
+							Debug.Log("This is getting called DESPITE A COASTER being present.");
 							Bottle bottle = pickupableInLeftHand.GetComponent<Bottle>();
 							Glass glass = pickupable.GetComponent<Glass>();
 							float startTimeInterval = bottle.tweenTime;
@@ -630,12 +633,6 @@ public class PlayerInput : MonoBehaviour
 						if (targetCoaster.myCustomer.IsCustomerPresent() && !targetCoaster.myCustomer.HasAcceptedDrink()) 
 							//if customer is present, and has not accepted the drink, then end properly 
 						{ 
-							if(startPourCoroutine != null){
-								StopCoroutine(startPourCoroutine);
-							}
-							if(setIsPouringToTrueCoroutine != null){
-								StopCoroutine(setIsPouringToTrueCoroutine);
-							}
 							if (pickupableInLeftHand.GetComponent<Bottle>() != null && isPouring)
 							{
 								Bottle bottle = pickupableInLeftHand.GetComponent<Bottle>();
@@ -646,6 +643,19 @@ public class PlayerInput : MonoBehaviour
  								foreach (var sequence in bottle.tweenSequences)
 								{
 									sequence.Kill(false);
+									Debug.Log("3. This should not be called");
+								}
+								if(startPourCoroutine != null){
+									StopCoroutine(startPourCoroutine);
+									Debug.Log("1. This should not be called");
+									pickupableInLeftHand.RotateToZeroTween();
+									pickupableInLeftHand.EndPourTween();
+									StartCoroutine(UtilCoroutines.WaitThenSetTweensToInactive(pickupableInLeftHand.tweenEndTime, _tweenManagerDelegate));
+									Debug.Log("Rotate to zero and end pour tween were called! BAD!");
+								}
+								if(setIsPouringToTrueCoroutine != null){
+									StopCoroutine(setIsPouringToTrueCoroutine);
+									Debug.Log("2. This should not be called");
 								}
 								isPouring = false;
 							}
@@ -661,9 +671,10 @@ public class PlayerInput : MonoBehaviour
 									glass.liquid.isBeingPoured = false;
 								}
 							}
-							pickupableInLeftHand.RotateToZeroTween();
-							pickupableInLeftHand.EndPourTween();
-							StartCoroutine(UtilCoroutines.WaitThenSetTweensToInactive(pickupableInLeftHand.tweenEndTime, _tweenManagerDelegate));
+//							pickupableInLeftHand.RotateToZeroTween();
+//							pickupableInLeftHand.EndPourTween();
+//							StartCoroutine(UtilCoroutines.WaitThenSetTweensToInactive(pickupableInLeftHand.tweenEndTime, _tweenManagerDelegate));
+//							Debug.Log("Rotate to zero and end pour tween were called! BAD!");
 						}
 					}
 					else // LEFTHAND for objects that are not on coaster
@@ -724,8 +735,7 @@ public class PlayerInput : MonoBehaviour
 						 if (targetCoaster.myCustomer.IsCustomerPresent() && !targetCoaster.myCustomer.HasAcceptedDrink()) //if  customer is present and customer HAS NOT accepted drink, then you can get it
 						 {
 							pickupable.InteractRightHand();						
-//							 targetDropzone.isOccupied = false;
-						 }
+ 						 }
 						 else if(!targetCoaster.myCustomer.insideBar)
 						 {
 							 pickupable.InteractRightHand();
@@ -844,6 +854,8 @@ public class PlayerInput : MonoBehaviour
 							if (pickupable.GetComponent<Glass>() != null && pickupableInRightHand.GetComponent<Bottle>() != null
 							&& interactionTimer >= minHoldTime)
 							{
+								Debug.Log("Yeah interactionTimer was greater than minHoldTime!");
+								
 								Bottle bottle = pickupableInRightHand.GetComponent<Bottle>();
 								Glass glass = pickupable.GetComponent<Glass>();
 								float startTimeInterval = bottle.tweenTime;
@@ -872,9 +884,9 @@ public class PlayerInput : MonoBehaviour
 						if (pickupable.GetComponent<Glass>() != null && pickupableInRightHand.GetComponent<Bottle>() != null
 							&& interactionTimer >= minHoldTime)
 						{
- 							float startTimeInterval = 0.75f;
  							Bottle bottle = pickupableInRightHand.GetComponent<Bottle>();
 							Glass glass = pickupable.GetComponent<Glass>();
+ 							float startTimeInterval = bottle.tweenTime;
 							_startPourDelegate = glass.ReceivePourFromBottle;
 							startPourCoroutine = UtilCoroutines.WaitThenPour(bottle.tweenTime, glass.ReceivePourFromBottle, bottle, 0);
 							setIsPouringToTrueCoroutine = WaitThenSetBoolToTrue(bottle.tweenTime, glass.liquid);
@@ -905,12 +917,6 @@ public class PlayerInput : MonoBehaviour
 						if (targetCoaster.myCustomer.IsCustomerPresent() && !targetCoaster.myCustomer.HasAcceptedDrink()) 
 							//if customer is present, and has not accepted the drink, then end properly 
 						{ 
-							if(startPourCoroutine != null){
-								StopCoroutine(startPourCoroutine);
-							}
-							if(setIsPouringToTrueCoroutine != null){
-								StopCoroutine(setIsPouringToTrueCoroutine);
-							}
  							if (pickupableInRightHand.GetComponent<Bottle>() != null && isPouring)
 							{
 								Bottle bottle = pickupableInRightHand.GetComponent<Bottle>();
@@ -922,6 +928,17 @@ public class PlayerInput : MonoBehaviour
 								{
 									sequence.Kill(false);
 								}
+								if(startPourCoroutine != null){
+									StopCoroutine(startPourCoroutine);
+									startPourCoroutine = null;
+									pickupableInRightHand.RotateToZeroTween();
+									pickupableInRightHand.EndPourTween();
+									StartCoroutine(UtilCoroutines.WaitThenSetTweensToInactive(pickupableInRightHand.tweenEndTime, _tweenManagerDelegate));
+								}
+								if(setIsPouringToTrueCoroutine != null){
+									StopCoroutine(setIsPouringToTrueCoroutine);
+									setIsPouringToTrueCoroutine = null;
+								}								
 								isPouring = false;
 							}
 							if (pickupable != null)
@@ -934,9 +951,6 @@ public class PlayerInput : MonoBehaviour
 										glass.EndPourFromBottle();
 									}
 									glass.liquid.isBeingPoured = false;
-									pickupableInRightHand.RotateToZeroTween();
-									pickupableInRightHand.EndPourTween();
-									StartCoroutine(UtilCoroutines.WaitThenSetTweensToInactive(pickupableInRightHand.tweenEndTime, _tweenManagerDelegate));
  								}
 							}
 						}

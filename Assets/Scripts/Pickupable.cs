@@ -56,7 +56,7 @@ public class Pickupable : MonoBehaviour
             //pick up with left hand
             transform.SetParent(Services.GameManager.player.transform.GetChild(0));
             Services.GameManager.player.GetComponent<PlayerInput>().pickupableInLeftHand = this;
-            PickupTween(leftHandPos);
+            PickupTween(leftHandPos, Vector3.zero);
         } else if(pickedUp){
             transform.SetParent(null);
             Services.GameManager.player.GetComponent<PlayerInput>().pickupableInLeftHand = null;
@@ -71,7 +71,7 @@ public class Pickupable : MonoBehaviour
         if(!pickedUp){
             transform.SetParent(Services.GameManager.player.transform.GetChild(0));
             Services.GameManager.player.GetComponent<PlayerInput>().pickupableInRightHand = this;
-            PickupTween(rightHandPos);
+            PickupTween(rightHandPos, Vector3.zero);
         } else if(pickedUp){
             transform.SetParent(null);
             Services.GameManager.player.GetComponent<PlayerInput>().pickupableInRightHand = null;
@@ -87,14 +87,13 @@ public class Pickupable : MonoBehaviour
             transform.SetParent(null);
             Services.GameManager.player.GetComponent<PlayerInput>().pickupableInLeftHand = null;
             DropTween(dropPos, dropOffset, targetDropzone);               
-            Debug.Log("Swap called!");
             pickedUp = false;
         }
         else if(!pickedUp){
             Services.GameManager.player.GetComponent<PlayerInput>().pickupableInLeftHand = this;
             pickedUp = true;
             transform.SetParent(Services.GameManager.player.transform.GetChild(0));
-            PickupTween(leftHandPos);
+            PickupTween(leftHandPos, Vector3.zero);
         }
     }
 
@@ -109,7 +108,7 @@ public class Pickupable : MonoBehaviour
             Services.GameManager.player.GetComponent<PlayerInput>().pickupableInRightHand = this;
             pickedUp = true;
             transform.SetParent(Services.GameManager.player.transform.GetChild(0));
-            PickupTween(rightHandPos);
+            PickupTween(rightHandPos, Vector3.zero);
         }
     }
 
@@ -129,7 +128,7 @@ public class Pickupable : MonoBehaviour
       
     }
 
-    public virtual void PickupTween(Vector3 moveToPos){
+    public virtual void PickupTween(Vector3 moveToPos, Vector3 pickupRot){
          DeclareActiveTween();
 //         if(targetDropzone != null){
 //             targetDropzone.isOccupied = false;
@@ -177,7 +176,6 @@ public class Pickupable : MonoBehaviour
 
     public virtual void RotateToZeroTween(){
         DeclareActiveTween();
-        Debug.Log("Rotating to zero!");
         Sequence sequence = DOTween.Sequence();
         sequence.Append(transform.DOLocalRotate(Vector3.zero, tweenEndTime, RotateMode.Fast));
         sequence.OnComplete(() => DeclareInactiveTween());

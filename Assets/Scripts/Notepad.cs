@@ -35,7 +35,7 @@ public class Notepad : Pickupable {
                 mat.SetTexture("_MainTex", notes[Services.GameManager.dayManager.currentDay]);
             }
         }
-        if (Services.GameManager.dayManager.noteSigned && !onlyOnce)
+		if (Services.GameManager.dayManager.noteSigned && !onlyOnce)
         {
             if (mat.GetTexture("_MainTex") != notesigned){
                 mat.SetTexture("_MainTex", notesigned);
@@ -53,7 +53,6 @@ public class Notepad : Pickupable {
 	    Sequence r = DOTween.Sequence();
 	    r.Append(transform.DOLocalRotate(_signRightHandRot, 1f));
 	    r.Append(transform.DOLocalRotate(_rightHandStartRot, 0.75f));
-	    
     }
 
     public void SignNoteOnLeftHand()
@@ -66,4 +65,51 @@ public class Notepad : Pickupable {
 	    r.Append(transform.DOLocalRotate(_signLeftHandRot, 1f));
 	    r.Append(transform.DOLocalRotate(_leftHandStartRot, 0.75f));
     }
+	
+	public override void InteractLeftHand(){
+		if(!pickedUp){
+			//pick up with left hand
+			transform.SetParent(Services.GameManager.player.transform.GetChild(0));
+			Services.GameManager.player.GetComponent<PlayerInput>().pickupableInLeftHand = this;
+			PickupTween(_leftHandStartPos, _leftHandStartRot);
+		} else if(pickedUp){
+			transform.SetParent(null);
+			Services.GameManager.player.GetComponent<PlayerInput>().pickupableInLeftHand = null;
+ 
+			if(targetDropzone != null){
+				DropTween(dropPos, dropOffset, targetDropzone);
+			}
+		}
+	}
+
+	public override void InteractRightHand(){
+		if(!pickedUp){
+			transform.SetParent(Services.GameManager.player.transform.GetChild(0));
+			Services.GameManager.player.GetComponent<PlayerInput>().pickupableInRightHand = this;
+			PickupTween(_rightHandStartPos, _rightHandStartRot);
+		} else if(pickedUp){
+			transform.SetParent(null);
+			Services.GameManager.player.GetComponent<PlayerInput>().pickupableInRightHand = null;
+            
+			if(targetDropzone != null){
+				DropTween(dropPos, dropOffset, targetDropzone);
+			}
+		}
+	}
+	
+	public override void PickupTween(Vector3 moveToPos, Vector3 startRotation){
+		DeclareActiveTween();
+//         if(targetDropzone != null){
+//             targetDropzone.isOccupied = false;
+//         }
+		Sequence sequence = DOTween.Sequence();
+		sequence.Append(transform.DOLocalMove(moveToPos, pickupDropTime, false));
+		transform.DOLocalRotate(startRotation, pickupDropTime, RotateMode.FastBeyond360);
+		sequence.OnComplete(() => DeclareInactiveTween());
+		// Debug.Log("Pickup Tween called!");
+		StartCoroutine(ChangeToFirstPersonLayer(pickupDropTime));
+		pickedUp = true;
+		tweenSequences.Add(sequence);
+	}
+	
 }
