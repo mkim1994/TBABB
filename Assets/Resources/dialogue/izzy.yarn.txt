@@ -1,122 +1,130 @@
-title: 1Izzy
+title: 3Izzy
 tags: 
 colorID: 0
 position: 114,209
 ---
-<<if $drinkScoreIvory is -1 and $stateIvory is -1>>
-    <<set $hasOrderedIvory = false>>
-    <<set $progressIvory = 0>>
-    <<order Ivory 0 n 0 n 0 whiskey 1.0>>
-    <<set $stateIvory = 0>>
-    Customer: Ha...
-    <<set $hasOrderedIvory = true>>
-    Customer: Whiskey please.
+<<if $drinkScoreIzzy is -1 and $stateIzzy is -1>>
+    <<set $hasOrderedIzzy = false>>
+    <<set $progressIzzy = 0>>
+    <<order Izzy 0 n 0 n 0 n 0>>
+    <<set $stateIzzy = 0>>
+    Customer: Hey.
+    Customer: Did the old bartender leave?
+    [[Yes.|3IzzyA]]
+    [[You a regular?|3IzzyB]]
 <<else>>
-    <<if $progressIvory is 0>>
-        <<if $drinkScoreIvory is -1>>
-            <<set $hasOrderedIvory = true>>
-            Customer: Whiskey.
+    <<if $progressIzzy is 0>>
+        <<if $drinkScoreIzzy is -1>>
+            <<set $hasOrderedIzzy = true>>
+            Customer: Soda, I guess.
         <<else>>
-            <<if $hasOrderedIvory is false>>
-                Customer: Hah, I didn't even tell you what I wanted.
+            <<if $hasOrderedIzzy is false>>
+                <<set $preemptiveIzzy = true>>
+                Customer: Uhh. Haha.
+                Customer: I'm not in the habit of ordering anything here.
+                Customer: So no thanks.
+                Customer: Never seen you before. Did the old bartender leave?
+                [[Yes.|3IzzyA]]
+                [[Are you a regular?|3IzzyB]]
             <<endif>>
-            <<if $drinkScoreIvory is 0>>
-                Customer: Alright.
-                <<set $hasOrderedIvory = true>>
-                Customer: You take one of the whiskey bottles...
-                Customer: And you pour it into a glass.
-                Customer: It's not that hard, is it?
+            <<if $drinkScoreIzzy is 0>>
+                <<set $preemptiveIzzy = false>>
+                Customer: Just water.
+                <<set $hasOrderedIzzy = true>>
             <<else>>
-                <<if $drinkScoreIvory <= 10>>
-                    <<setsprite Ivory unhappy>>
-                    Customer: This isn't enough...
-                    Customer: Get me more, won't you?
+                <<if $drinkScoreIzzy <= 10>>
+                    Customer: A little more please?
                 <<else>>
-                    <<if $drinkScoreIvory >= 80>>
-                        <<set $stateIvory = 1>>
-                        <<setsprite Ivory happy>>
-                        Customer: Thanks.
-                        <<set $progressIvory = 1>>
-                    <<elseif $drinkScoreIvory >= 50>>
-                        <<set $stateIvory = 1>>
-                        <<setsprite Ivory unhappy>>
-                        Customer: Thanks...?
-                        Customer: Sigh.
-                        <<set $progressIvory = 1>>
-                    <<else>>
-                        <<setsprite Ivory unhappy>>
-                        <<set $hasOrderedIvory = true>>
-                        Customer: Does this even have whiskey in it?
-                        Customer: Just get me whiskey, can't be that hard.
-                    <<endif>>
+                    <<set $stateIzzy = 1>>
+                    <<set $progressIzzy = 1>>
+                    Customer: Thanks.
                 <<endif>>
             <<endif>>
         <<endif>>
     <<else>>
-        <<if $progressIvory is 1>>
-            <<set $progressIvory = 2>>
-            Customer: Been a while since I've ended up here.
-            <<setsprite Ivory idle>>
-            Customer: I don't think I've seen you around.
-            Customer: You new?
-            [[Yes|1IvoryA]]
-            [[No, not really|1IvoryB]]
-        <<else>>
-            <<if $progressIvory is 2>>
-                <<if $drinkScoreIvory is 0>>
-                    Customer: Sigh...
-                    Customer: I want whiskey in a glass again.
+        <<if $progressIzzy is 1>>
+            <<set $progressIzzy = 2>>
+            <<if $drinkAlcoholIzzy is 0>>
+                <<if $preemptiveIzzy is true>>
+                    Customer: Surprised you didn't just give me straight up beer.
+                    Customer: Glad I look like a sober guy though.
                 <<else>>
-                    <<if $drinkScoreIvory >= 80>>
-                        Customer: Thanks!
-                    <<else>>
-                        Customer: Sigh.
-                    <<endif>>
-                    <<set $progressIvory = 3>>
-                    <<set $stateIvory = 1>>
+                    Customer: Nice simple soda.
                 <<endif>>
+                <<set $progressIzzy+=1>>
             <<else>>
-                <<if $progressIvory is 3>>
+                <<set $drunkIzzy += 1>>
+                Customer: This...isn't soda.
+                <<if $preemptiveIzzy is true>>
+                <<else>>
+                    Customer: I literally just asked for soda.
                 <<endif>>
+                Customer: Listen, I only recently stopped drinking.
+                Customer: I'm not here to get slipped a drink.
+                Customer: Not anymore.
+                Customer: Bye.
+                <<set $stateIzzy = 5>>
             <<endif>>
+        <<elseif $progressIzzy is 2>>
+            Customer: Progress 2.
         <<endif>>
     <<endif>>
 <<endif>>
 ===
-title: 1IzzyA
+title: 3IzzyA
 tags: 
 colorID: 0
-position: 559,114
+position: 432,112
 ---
-Customer: Oh. Okay.
-Customer: Wonder what happened to the last bartender.
-Customer: Doesn't matter though.
-Customer: I've missed this.
-Customer: Well. 
-Customer: See you around.
-Customer: Maybe I'll come again tomorrow.
-<<set $stateIvory = 5>>
+Customer: Grats on getting the job!
+Customer: Though I noticed this bar cycles through bartenders a lot.
+Customer: Think I could get a job here?
+Customer: ...Oh no, I didn't mean--
+Customer: I didn't mean to make it awkward for you.
+Customer: It's just...
+[[Job search not going well?|3IzzyC]]
+[[Is there anything you need?|3IzzyD]]
+
+<<order Izzy 0 n 0 n 0 n 0>>
+<<set $hasOrderedIzzy = true>>
 ===
-title: 1IzzyB
+title: 3IzzyB
 tags: 
 colorID: 0
-position: 563,341
+position: 432,351
 ---
-Customer: Huh.
-Customer: I must've been away longer than I thought.
-Customer: Though I find that hard to believe.
-Customer: I'm pretty sure you're new...
-Customer: ...
-Customer: I've missed this.
-Customer: Well. 
-Customer: See you around.
-Customer: Maybe I'll come again tomorrow.
-<<set $stateIvory = 5>>
+Customer: Used to be.
+Customer: Now I come by every other week or so to chill.
+Customer: This week's gonna be especially bad though...
+Customer: Hah...looking for jobs. Yay.
+
+[[The search not going well?|3IzzyC]]
+[[Is there anything you need?|3IzzyD]]
 ===
-title: 1OrderIzzy
+title: 3OrderIzzy
 tags: 
 colorID: 0
 position: -106,216
 ---
-<<order Izzy 0 n 0 n 0 whiskey 1.0>>
+<<order Izzy 0 n 0 n 0 n 0>>
+===
+title: 3IzzyC
+tags: 
+colorID: 0
+position: 694,128
+---
+Customer: How'd you guess?
+Customer: What's new though.
+Customer: Thirsty for money, just hire me please.
+Customer: ...I'm actually thirsty though, can you get me some soda?
+<<order Izzy 0 n 0 n 0 n 0>>
+===
+title: 3IzzyD
+tags: 
+colorID: 0
+position: 737,377
+---
+Customer: Ah, nothing, just your company is fine.
+Customer: Maybe some soda would be nice, though.
+<<order Izzy 0 n 0 n 0 n 0>>
 ===
