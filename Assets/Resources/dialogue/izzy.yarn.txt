@@ -29,7 +29,7 @@ position: 114,209
             <<endif>>
             <<if $drinkScoreIzzy is 0>>
                 <<set $preemptiveIzzy = false>>
-                Customer: Just water.
+                Customer: Just soda.
                 <<set $hasOrderedIzzy = true>>
             <<else>>
                 <<if $drinkScoreIzzy <= 10>>
@@ -116,6 +116,7 @@ position: 694,128
 Customer: How'd you guess?
 Customer: What's new though.
 Customer: Thirsty for money, just hire me please.
+<<set $hasOrderedIzzy = true>>
 Customer: ...I'm actually thirsty though, can you get me some soda?
 <<order Izzy 0 n 0 n 0 n 0>>
 ===
@@ -125,6 +126,7 @@ colorID: 0
 position: 737,377
 ---
 Customer: Ah, nothing, just your company is fine.
+<<set $hasOrderedIzzy = true>>
 Customer: Maybe some soda would be nice, though.
 <<order Izzy 0 n 0 n 0 n 0>>
 ===
