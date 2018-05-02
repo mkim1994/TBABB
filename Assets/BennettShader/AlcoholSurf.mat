@@ -27,7 +27,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Cube:
-        m_Texture: {fileID: 8900000, guid: e5f81e784b6984ccbb03c92469976755, type: 3}
+        m_Texture: {fileID: 8900000, guid: 0a93b78531d69e141a3ce3b2a4cba9c1, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _DetailAlbedoMap:
@@ -85,12 +85,12 @@ Material:
     - _EmissionIntensity: 2.111111
     - _Gloss: 0
     - _GlossMapScale: 1
-    - _Glossiness: 0.754
+    - _Glossiness: 1
     - _GlossyReflections: 1
     - _IOR: 1.445
-    - _LightIntensity: 1
+    - _LightIntensity: 3
     - _MaxY: 152
-    - _Metallic: 0.353
+    - _Metallic: 0
     - _MinY: -1.02
     - _Mode: 0
     - _MultiplyBaseColor: 10
@@ -111,7 +111,7 @@ Material:
     - _WaterHeight: 1
     - _ZWrite: 1
     m_Colors:
-    - _Color: {r: 0.8156863, g: 0.25882354, b: 0.25882354, a: 1}
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0.30882353, g: 0.20546474, b: 0.1589533, a: 1}
     - _EmissionMixingColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
     - _MixingColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}

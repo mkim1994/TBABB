@@ -40,7 +40,10 @@ public class Liquid : MonoBehaviour {
 
 	public bool isBeingPoured = false;
 	public bool isEvaluated = false;
- 
+
+	[SerializeField] private WaterPillarRender waterPillar;
+
+	[SerializeField] private WaterSurface waterSurface;
 	// Use this for initialization
 	void Start ()
 	{
@@ -60,6 +63,7 @@ public class Liquid : MonoBehaviour {
 		smokiness, sweetness, sourness, bitterness, spiciness, ice);
         originalX = transform.localScale.x;
         originalZ = transform.localScale.z;
+		
         if (GetComponent<Bottle>() == null)
         {
 //            transform.localScale = new Vector3(0, 0, 0);
@@ -242,18 +246,13 @@ public class Liquid : MonoBehaviour {
 	}
 
 	public void AddIngredient(DrinkBase _drinkBase){
-//		GrowVertical();
-//		LetItPour();
 		if (Services.DrinkDictionary.drinkBases.ContainsKey(_drinkBase))
 		{
 //			Debug.Log(_drinkBase);
 			myDrinkProfile = Services.DrinkDictionary.drinkBases[_drinkBase];		
 			myDrinkBase = _drinkBase;
+			waterPillar.SetMaterialColorOnPour(_drinkBase);
 		}
-//		baseBeingPoured = _drinkBase;
-		
-		// alcoholVolume = myDrinkProfile.alcoholVolume * height;
-		// abv = alcoholVolume/height;		
 	}
 
 	public void AddMixer(Mixer _mixer){
@@ -262,6 +261,7 @@ public class Liquid : MonoBehaviour {
 			myDrinkProfile = Services.MixerDictionary.mixers[_mixer];
 	//		mixerBeingPoured = _mixer;
 			myMixer = _mixer;
+			waterPillar.SetMaterialColorOnPour(DrinkBase.none, _mixer);
 		}
 
 	}

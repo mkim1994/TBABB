@@ -190,6 +190,55 @@ public class CustomerDictionary{
 			0,
 			0.2f
 		)}
+	};	
+}
+
+public class Util
+{
+	public static float remapRange(float oldValue, float oldMin, float oldMax, float newMin, float newMax )
+	{
+		float newValue = 0;
+		float oldRange = (oldMax - oldMin);
+		float newRange = (newMax - newMin);
+		newValue = (((oldValue - oldMin) * newRange) / oldRange) + newMin;
+		return newValue;
+	}
+	
+	public static float GetRemappedColorFloat(float color)
+	{
+		color = remapRange(color, 0, 255, 0, 1);
+		return color;
+	}
+	
+	public static Color CombineColors(params Color[] aColors)
+	{
+		Color result = new Color(0,0,0,1);
+		foreach(Color c in aColors)
+		{
+			result += c;
+		}
+		result /= aColors.Length;
+		return result;
+	}
+	
+}
+
+public class LiquidColors
+{
+	public static Dictionary<DrinkBase, Vector4> DrinkToColorDictionary = new Dictionary<DrinkBase, Vector4>()
+	{
+		{ DrinkBase.beer, Color.yellow },
+		{ DrinkBase.brandy, new Vector4(Util.GetRemappedColorFloat(209), Util.GetRemappedColorFloat(80), 0, 1)},
+		{ DrinkBase.gin, Color.gray},
+		{ DrinkBase.whiskey, new Vector4(Util.GetRemappedColorFloat(183), Util.GetRemappedColorFloat(97), 0, 1)},
+		
+		//rgb(139,69,19)
+	};
+
+	public static Dictionary<Mixer, Vector4> MixerToColorDictionary = new Dictionary<Mixer, Vector4>()
+	{
+		{ Mixer.soda, new Vector4(Util.GetRemappedColorFloat(139), Util.GetRemappedColorFloat(69), Util.GetRemappedColorFloat(19), 1)},
+		{ Mixer.vermouth, Color.gray }
 	};
 
 }

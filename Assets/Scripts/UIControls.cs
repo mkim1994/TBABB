@@ -13,6 +13,7 @@ public class UIControls : MonoBehaviour {
 	
 	[SerializeField]LayerMask controlsMask;
 	[SerializeField] private LayerMask dropzoneOnlyMask;
+	private Crosshair _crosshair;
 	
 	//images
 	[SerializeField] private Image leftHandActionImage;
@@ -59,7 +60,9 @@ public class UIControls : MonoBehaviour {
 //	private bool isUsingKeyboard = true;
 	public bool isMessageOverrideOn = false;
 	
-	void Start(){
+	void Start()
+	{
+		_crosshair = FindObjectOfType<Crosshair>();
 		player = Services.GameManager.playerInput;
 		clearTextCoroutine = ClearTextCoroutine(centerText, 3);
 		botCenterImg.SetActive(false);
@@ -705,7 +708,7 @@ public class UIControls : MonoBehaviour {
 		isMessageOverrideOn = false;
 	}
 	
-	protected Sprite GetSprite(string _fileName){
+	public static Sprite GetSprite(string _fileName){
 		Sprite mySprite;
 		mySprite = Resources.Load<Sprite>("UI/" + _fileName);
 		return mySprite; 

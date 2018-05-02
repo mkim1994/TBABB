@@ -134,7 +134,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1990981567063706}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.336, y: 1.657, z: 10.119}
+  m_LocalPosition: {x: -0.776, y: 2.263, z: 10.304}
   m_LocalScale: {x: 0.72233, y: 0.72233, z: 0.72233}
   m_Children:
   - {fileID: 4983605418241212}
@@ -365,6 +365,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ReferenceSurface: {fileID: 4879397641198434}
   myMaterial: {fileID: 2100000, guid: 5f42c214d58f5469b93c7a1fc0474fa1, type: 2}
+  liquid: {fileID: 0}
 --- !u!114 &114174024066571672
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -422,6 +423,8 @@ MonoBehaviour:
   myMask: {fileID: 0}
   isBeingPoured: 0
   isEvaluated: 0
+  waterPillar: {fileID: 114164318089383750}
+  waterSurface: {fileID: 114174024066571672}
 --- !u!114 &114969815638737844
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -434,6 +437,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 0
+  pickupDropTime: 0.25
   leftHandPos: {x: -1, y: -0.89, z: 2}
   rightHandPos: {x: 1, y: -0.89, z: 2}
   targetDropzone: {fileID: 0}
@@ -441,7 +445,6 @@ MonoBehaviour:
   dropPos: {x: 0, y: 0, z: 0}
   tweenTime: 0.75
   tweenEndTime: 0.5
-  pickupDropTime: 0.25
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}

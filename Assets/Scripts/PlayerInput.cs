@@ -50,15 +50,15 @@ public class PlayerInput : MonoBehaviour
 	private Player player;
 	private CharacterController cc;
 //	[SerializeField]Coaster targetCoaster;
-	public NPC npc;
-	public Sink sink;
-	public IceMaker iceMaker;
+	[HideInInspector] public NPC npc;
+	[HideInInspector] public Sink sink;
+	[HideInInspector] public IceMaker iceMaker;
 	public Vector3 dropPos;
 	protected Camera myCam;
 	//raycast management
 	public Dropzone targetDropzone;
-	private LightSwitch lightSwitch;
-	public Backdoor backdoor;
+	[HideInInspector] public LightSwitch lightSwitch;
+	[HideInInspector] public Backdoor backdoor;
 	public LayerMask layerMask;
 	public LayerMask dropzoneLayerMask;
 	public LayerMask nonPickupableLayerMask;
@@ -73,6 +73,9 @@ public class PlayerInput : MonoBehaviour
 	private float minHoldTime = 0.5f;
 	private float minTapTime = 0.01f;
 	Vector3 startLookAngle;
+	public bool canPourWithLeft = false;
+	public bool canPourWithRight = false;
+	public bool isLookingAtNothing = false;
 	
 	[SerializeField]float moveSpeed = 2.0f;
 	public float lookSensitivity;
@@ -162,7 +165,7 @@ public class PlayerInput : MonoBehaviour
 	}
 
 	void Update(){
-		Cursor.visible = false;
+ 		Cursor.visible = false;
 		Cursor.lockState = CursorLockMode.Locked;
 		
 		//checks what player is holding to change the interaction state
@@ -185,6 +188,32 @@ public class PlayerInput : MonoBehaviour
 			{
 				_interactionState = InteractionState.LeftEmpty_RightHasObject;
 			}
+
+			//you can pour with your left
+		}
+		
+		if (pickupable != null && pickupableInLeftHand != null)
+		{
+			if (pickupableInLeftHand.GetComponent<Bottle>() != null && pickupable.GetComponent<Glass>() !=null)
+			{
+				canPourWithLeft = true;
+			}
+		}
+		else
+		{
+			canPourWithLeft = false;
+		}
+
+		if (pickupable != null && pickupableInRightHand != null)
+		{
+			if (pickupableInRightHand.GetComponent<Bottle>() != null && pickupable.GetComponent<Glass>() !=null)
+			{
+				canPourWithRight = true;
+			}	
+		}
+		else
+		{
+			canPourWithRight = false;
 		}
 		
 		#region Restart
@@ -1197,16 +1226,19 @@ public class PlayerInput : MonoBehaviour
 			// Debug.Log(hitObj);				  
  			if(hitObj.GetComponent<Pickupable>() != null && Vector3.Distance(transform.position, hitObj.transform.position) <= maxInteractionDist){ //check if object looked at can be picked up
 				pickupable = hitObj.GetComponent<Pickupable>(); //if it's Pickupable and close enough, assign it to pickupable.
-				 _crosshair.ChangeCrosshairAlphaOnTargetSighted();
+//				 _crosshair.ChangeCrosshairAlphaOnTargetSighted();
+				 isLookingAtNothing = false;
 			 } else if (hitObj.GetComponent<Pickupable>() == null || Vector3.Distance(transform.position, hitObj.transform.position) > maxInteractionDist ){
 				pickupable = null;
 				t = 0;
- 				 _crosshair.ChangeCrosshairAlphaOnTargetLost();
-			} 	
+				 isLookingAtNothing = true;
+// 				 _crosshair.ChangeCrosshairAlphaOnTargetLost();
+			 } 	
 		}
 		else
 		{
- 			_crosshair.ChangeCrosshairAlphaOnTargetLost();
+			isLookingAtNothing = true;
+// 			_crosshair.ChangeCrosshairAlphaOnTargetLost();
 		}
 	}
 
@@ -1254,39 +1286,42 @@ public class PlayerInput : MonoBehaviour
 				npc = hitObj.GetComponent<NPC>(); //if it's NPC and close enough, assign it to NPC.				  
  			} else if (hitObj.GetComponent<NPC>() == null || Vector3.Distance(transform.position, hitObj.transform.position) > maxTalkingDist){
 				npc = null;
- 			} 
-			
-			if (hitObj.GetComponent<LightSwitch>() != null)
-			{
-				lightSwitch = hitObj.GetComponent<LightSwitch>();
-			} else if (hitObj.GetComponent<LightSwitch>() == null)
-			{
-				lightSwitch = null;
-			}
+ 			}
 
-			if (hitObj.GetComponent<IceMaker>() != null)
+			if (Vector3.Distance(hitObj.transform.position, transform.position) <= maxInteractionDist)
 			{
-				iceMaker = hitObj.GetComponent<IceMaker>();
-			} else if (hitObj.GetComponent<IceMaker>() == null)
-			{
-				iceMaker = null;
-			}
-
-			if (hitObj.GetComponent<Sink>() != null)
-			{
-				sink = hitObj.GetComponent<Sink>();
- 			} else if (hitObj.GetComponent<Sink>() == null)
-			{
-				sink = null;
-			}
-
-			if (hitObj.GetComponent<Backdoor>() != null &&
-			    Vector3.Distance(transform.position, hitObj.transform.position) <= 6f)
-			{
-				backdoor = hitObj.GetComponent<Backdoor>();
-			} else if (hitObj.GetComponent<Backdoor>() == null)
-			{
-				backdoor = null;
+				if (hitObj.GetComponent<LightSwitch>() != null)
+				{
+					lightSwitch = hitObj.GetComponent<LightSwitch>();
+				} else if (hitObj.GetComponent<LightSwitch>() == null)
+				{
+					lightSwitch = null;
+				}
+	
+				if (hitObj.GetComponent<IceMaker>() != null)
+				{
+					iceMaker = hitObj.GetComponent<IceMaker>();
+				} else if (hitObj.GetComponent<IceMaker>() == null)
+				{
+					iceMaker = null;
+				}
+	
+				if (hitObj.GetComponent<Sink>() != null)
+				{
+					sink = hitObj.GetComponent<Sink>();
+				} else if (hitObj.GetComponent<Sink>() == null)
+				{
+					sink = null;
+				}
+	
+				if (hitObj.GetComponent<Backdoor>() != null &&
+					Vector3.Distance(transform.position, hitObj.transform.position) <= 6f)
+				{
+					backdoor = hitObj.GetComponent<Backdoor>();
+				} else if (hitObj.GetComponent<Backdoor>() == null)
+				{
+					backdoor = null;
+				}
 			}
 		} else {
 			npc = null;
