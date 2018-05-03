@@ -65,6 +65,7 @@ position: 123,40
                                 Customer: Ice it next time.
                             <<endif>>
                         <<endif>>
+                        <<finishedDrink Julia>>
                         <<leave Julia 60>>
                         <<set $progressJulia = 1>>
                     <<elseif $drinkScoreJulia >= 50>>
@@ -76,6 +77,7 @@ position: 123,40
                         <<setsprite Julia idle>>
                         Customer: You're new, you'll learn.
                         Customer: It's always the same with you bartenders here.
+                        <<finishedDrink Julia>>
                         <<leave Julia 30>>
                         <<set $progressJulia = 1>>
                     <<else>>
@@ -172,6 +174,7 @@ position: -48,341
                                 Customer: Ice it next time.
                             <<endif>>
                         <<endif>>
+                        <<finishedDrink Julia>>
                         <<leave Julia 60>>
                         <<set $progressJulia = 1>>
                     <<elseif $drinkScoreJulia >= 50>>
@@ -181,6 +184,7 @@ position: -48,341
                         Customer: Surely you're learning.
                         <<setsprite Julia disappointed>>
                         Customer: I'm expecting better tomorrow.
+                        <<finishedDrink Julia>>
                         <<leave Julia 30>>
                         <<set $progressJulia = 1>>
                     <<else>>

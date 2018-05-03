@@ -159,6 +159,7 @@ Customer: I mean...
 <<setsprite Sahana annoyed>>
 Customer: Then again, no one listens to what I say, so whatever.
 <<setsprite Sahana mad>>
+<<finishedDrink Sahana>>
 Customer: Fuck you and fuck all of them.
 <<setsprite Sahana sneaky>>
 Customer: Thinking I'm a fucking idiot.
@@ -187,6 +188,7 @@ Customer: Better than my day job, at least.
 <<setsprite Sahana annoyed>>
 Customer: Fuck everyone there, honestly.
 Customer: Thinking they can just step all over me.
+<<finishedDrink Sahana>>
 <<setsprite Sahana mad>>
 Customer: Fuuuck.
 <<setsprite Sahana annoyed>>
@@ -396,6 +398,7 @@ Customer: I got no fucking respect from anyone.
 <<setsprite Sahana mad>>
 Customer: Fuck, just thinking about it pisses me off.
 <<setspriet Sahana sneaky>>
+<<finishedDrink Sahana>>
 Customer: People drink more when they're pissed, right?
 Customer: Please get me drunk more, whatever's fine.
 <<order Sahana 0 n 0 n 0 n 0>>
@@ -413,6 +416,7 @@ Customer: No, fuck it, I'm doing it!
 <<setsprite Sahana sneaky>>
 Customer: Just like how I'm...going...to get another drink.
 Customer: Please get me more. Whatever's fine.
+<<finishedDrink Sahana>>
 <<order Sahana 0 n 0 n 0 n 0>>
 <<set $stateSahana = 0>>
 ===
@@ -432,6 +436,7 @@ position: -291,862
     Customer: I'm feeling good though.
     Customer: More please.
 <<endif>>
+<<finishedDrink Sahana>>
 <<order Sahana 0 n 0 n 0 n 0>>
 <<set $stateSahana = 0>>
 ===
@@ -457,13 +462,14 @@ position: -545,869
     Customer: I feel fucking excited.
     Customer: Give me more!
 <<endif>>
+<<finishedDrink Sahana>>
 <<order Sahana 0 n 0 n 0 n 0>>
 <<set $stateSahana = 0>>
 ===
 title: 3SahanaG
 tags: 
 colorID: 0
-position: -954,1033
+position: -955,1031
 ---
 <<if $drunkSahana > 2>>
     Customer: I think I fucked it all up...
@@ -509,6 +515,7 @@ Customer: Graduate at the top of my class and what do I get?
 <<setsprite Sahana annoyed>>
 Customer: Some low life barking orders at me.
 <<setsprite Sahana mad>>
+<<finishedDrink Sahana>>
 Customer: I didn't come here to get sassed.
 Customer: Bye.
 <<set $stateSahana = 5>>
@@ -564,6 +571,7 @@ Customer: I thought I was above it all, but...
 <<setsprite Sahana nostalgic>>
 Customer: Turns out they're the ones laughing at me in the end, huh?
 Customer: ...
+<<finishedDrink Sahana>>
 <<setsprite Sahana thoughtful>>
 Customer: I'm going to go home.
 <<setsprite Sahana nostalgic>>
@@ -586,6 +594,7 @@ Customer: Hard truth? To swallow.
 <<setsprite Sahana annoyed>>
 Customer: Just like how fucking terrible alcohol tastes.
 <<setsprite Sahana thoughtful>>
+<<finishedDrink Sahana>>
 Customer: ...I'm going to go home now.
 <<setsprite Sahana nostalgic>>
 Customer: Going to sleep on that road trip idea.
@@ -609,6 +618,7 @@ Customer: Hard truth? To swallow.
 <<setsprite Sahana annoyed>>
 Customer: Just like how fucking terrible alcohol tastes.
 <<setsprite Sahana thoughtful>>
+<<finishedDrink Sahana>>
 Customer: ...I'm going to go home now.
 <<setsprite Sahana nostalgic>>
 Customer: Going to sleep on that road trip idea.

@@ -39,11 +39,14 @@ public class NPC : MonoBehaviour
 
     [HideInInspector]
     public AudioSource bgm;
+
+    public bool finishedDrink;
  
     void Start()
     {
         DOTween.Init();
         insideBar = false;
+        finishedDrink = false;
         if (scriptToLoad != null)
         {
             FindObjectOfType<DialogueRunner>().AddScript(scriptToLoad);
@@ -100,6 +103,11 @@ public class NPC : MonoBehaviour
         float.TryParse(seconds, out s);
         StartCoroutine(DelayFor(s));
 
+    }
+
+    [YarnCommand("finishedDrink")]
+    public void FinishedDrink(){
+        finishedDrink = true;
     }
 
     IEnumerator DelayFor(float seconds){
@@ -388,7 +396,6 @@ public class NPC : MonoBehaviour
          * -1 = reset/nothing
          * 0 = isReadyToServe
          * 1 = ready to talk after receiving a drink.
-         * 2 = 
          * */
         public override void OnEnter()
         {

@@ -232,9 +232,10 @@ Customer: How about you? You got family?
 title: 3IzzyL
 tags: 
 colorID: 0
-position: 928,1152
+position: 926,1152
 ---
 Customer: Hope they're doing well.
+<<finishedDrink Izzy>>
 <<leave Izzy 30>>
 <<set $progressIzzy = 3>>
 ===
@@ -243,6 +244,7 @@ tags:
 colorID: 0
 position: 674,1362
 ---
+<<finishedDrink Izzy>>
 Customer: Ah...
 Customer: Sorry to hear that.
 <<leave Izzy 30>>

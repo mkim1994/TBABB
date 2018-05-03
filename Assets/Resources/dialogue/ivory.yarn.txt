@@ -102,6 +102,7 @@ Customer: Doesn't matter though.
 <<setsprite Ivory nostalgic>>
 Customer: I've missed this.
 <<setsprite Ivory idle>>
+<<finishedDrink Ivory>>
 Customer: Well. 
 Customer: See you around.
 <<setsprite Ivory sneaky>>
@@ -125,6 +126,7 @@ Customer: ...
 <<setsprite Ivory nostalgic>>
 Customer: I've missed this.
 <<setsprite Ivory idle>>
+<<finishedDrink Ivory>>
 Customer: Well. 
 Customer: See you around.
 <<setsprite Ivory sneaky>>
@@ -293,6 +295,7 @@ Customer: Roommate troubles, et cetera.
 Customer: ...Think I need another one.
 <<order Ivory 1 n 0 n 0 whiskey 1.0>>
 <<setsprite Ivory idle>>
+<<finishedDrink Ivory>>
 Customer: Can you get me another shot of whiskey?
 Customer: On the rocks, of course.
 <<set $stateIvory = 0>>
@@ -311,6 +314,8 @@ Customer: Yep. You know it.
 Customer: ...Think I need another one.
 <<order Ivory 1 n 0 n 0 whiskey 1.0>>
 <<setsprite Ivory idle>>
+
+<<finishedDrink Ivory>>
 Customer: Can you get me another shot of whiskey?
 Customer: On the rocks, of course.
 <<set $stateIvory = 0>>
@@ -318,7 +323,7 @@ Customer: On the rocks, of course.
 title: 2IvoryC
 tags: 
 colorID: 0
-position: 77,868
+position: 30,896
 ---
 <<setsprite Ivory distressed>>
 Customer: Ah...
@@ -336,6 +341,7 @@ Customer: ...
 Customer: Ugh.
 Customer: ...Think I need another one.
 <<setsprite Ivory annoyed>>
+<<finishedDrink Ivory>>
 <<order Ivory 1 n 0 n 0 whiskey 1.0>>
 Customer: Can you get me another shot of whiskey?
 <<setsprite Ivory sneaky>>
@@ -369,7 +375,7 @@ Customer: Yeah.
 title: 2IvoryE
 tags: 
 colorID: 0
-position: 529,1108
+position: 269,1089
 ---
 <<setsprite Ivory happy>>
 Customer: Hahahaha.
@@ -388,7 +394,7 @@ Customer: Yeah.
 title: 2IvoryF
 tags: 
 colorID: 0
-position: -390,1285
+position: -538,1293
 ---
 <<setsprite Ivory distressed>>
 Customer: Well, it's either that or actually think about things.
@@ -404,7 +410,7 @@ Customer: The previous bartender did, at least.
 title: 2IvoryG
 tags: 
 colorID: 0
-position: -68,1129
+position: -77,1130
 ---
 <<setsprite Ivory idle>>
 Customer: Yeah, I know you don't.
@@ -419,7 +425,7 @@ Customer: Yeah.
 title: 2IvoryH
 tags: 
 colorID: 0
-position: 39,1421
+position: -107,1538
 ---
 <<setsprite Ivory idle>>
 Customer: Yep.
@@ -434,13 +440,14 @@ Customer: ...Yeah. This is fine.
 <<setsprite Ivory distressed>>
 Customer: I'll just go home and see what happens.
 <<setsprite Ivory sad>>
+<<finishedDrink Ivory>>
 Customer: See you if my roommate doesn't kill me.
 <<set $stateIvory = 5>>
 ===
 title: 2IvoryI
 tags: 
 colorID: 0
-position: 339,1413
+position: 257,1521
 ---
 <<setsprite Ivory idle>>
 Customer: Haha.
@@ -453,6 +460,7 @@ Customer: Just...a moment.
 <<setsprite Ivory distressed>>
 Customer: And then I'll just go home and see what happens.
 <<setsprite Ivory sad>>
+<<finishedDrink Ivory>>
 Customer: See you if my roommate doesn't kill me.
 <<set $stateIvory = 5>>
 ===
