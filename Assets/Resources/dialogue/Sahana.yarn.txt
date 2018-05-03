@@ -16,6 +16,7 @@ position: -886,101
     <<order Sahana 0 n 0 n 0 n 0>>
     <<set $stateSahana = 0>>
     Customer: Hello!
+    <<setsprite Sahana distressed>>
     Customer: Uhm...
     Customer: I've never been here before...
     [[First time drinking?|2SahanaA]]
@@ -28,23 +29,30 @@ position: -886,101
         <<else>>
             <<if $hasOrderedSahana is false>>
                 <<set $preemptiveSahana = true>>
+                <<setsprite Sahana surprised>>
                 Customer: Uhm...wow!
                 Customer: I hadn't even asked for anything yet...
             <<endif>>
             <<if $drinkScoreSahana is 0>>
                 <<set $preemptiveSahana = false>>
+                <<setsprite Sahana nostalgic>>
                 Customer: I think I just want something non-alcoholic.
                 <<set $hasOrderedSahana = true>>
                 Customer: That's still possible in a bar, right?
+                <<setsprite Sahana distressed>>
                 Customer: ...Right?
             <<else>>
                 <<if $drinkScoreSahana <= 10>>
+                    <<setsprite Sahana thoughtful>>
                     Customer: Uhm...
+                    <<setsprite Sahana annoyed>>
                     Customer: I guess this amount is fine...?
+                    <<setsprite Sahana idle>>
                     Customer: ...No, actually, get me more please.
                 <<else>>
                     <<set $stateSahana = 1>>
                     <<set $progressSahana = 1>>
+                    <<setsprite Sahana happy>>
                     Customer: Thank you!
                 <<endif>>
             <<endif>>
@@ -54,30 +62,46 @@ position: -886,101
             <<set $progressSahana = 2>>
             <<if $drinkAlcoholSahana is 0>>
                 <<if $preemptiveSahana is true>>
+                    <<setsprite Sahana nostalgic>>
                     Customer: I don't know how you knew I wanted something like this.
+                    <<setsprite Sahana thoughtful>>
                     Customer: I...don't drink, and was a little nervous coming here.
+                    <<setsprite Sahana happy>>
                     Customer: So this was a welcome surprise.
                 <<else>>
+                    <<setsprite Sahana nostalgic>>
                     Customer: This doesn't taste bitter at all.
+                    <<setsprite Sahana happy>>
                     Customer: Thank you.
                 <<endif>>
+                <<setsprite Sahana thoughtful>>
                 Customer: I know I'm kind of missing the point coming here to drink this but...
+                <<setsprite Sahana nostalgic>>
                 Customer: It's just nice to get what I ask for, for once.
+                <<setsprite Sahana idle>>
                 Customer: I think that's all I needed right now.
+                <<setsprite Sahana happy>>
                 Customer: Thank you again--bye.
                 <<set $stateSahana = 5>>
             <<else>>
                 <<set $drunkSahana += 1>>
                 <<set $gaveSahanaAlcohol += 1>>
+                <<setsprite Sahana thoughtful>>
                 Customer: Mm.
+                <<setsprite Sahana unhappy>>
                 Customer: This is pretty bitter...
+                <<setsprite Sahana distressed>>
                 Customer: I don't think I've tasted something like this before.
                 <<if $preemptiveSahana is true>>
+                    <<setsprite Sahana thoughtful>>
                     Customer: I...
+                    <<setsprite Sahana distressed>>
                     Customer: I guess it's my fault for drinking this without even thinking...
                     Customer: I assume this is a weird question to ask at a bar but...
+                    <<setsprite Sahana unhappy>>
                     Customer: Is this alcoholic?
                 <<else>>
+                    <<setsprite Sahana distressed>>
                     Customer: You didn't actually give me something alcoholic, did you?
                 <<endif>>
                 
@@ -94,9 +118,11 @@ tags:
 colorID: 0
 position: -653,-113
 ---
+<<setsprite Sahana nostalgic>>
 Customer: Haha, yes...
 <<order Sahana 0 n 0 n 0 n 0>>
 <<set $hasOrderedSahana = true>>
+<<setsprite Sahana idle>>
 Customer: Uhm... give me anything, just no alcohol.
 ===
 title: 2SahanaB
@@ -104,11 +130,14 @@ tags:
 colorID: 0
 position: -520,109
 ---
+<<setsprite Sahana thoughtful>>
 Customer: Yes, but I mean I've never been to a bar in general.
+<<setsprite Sahana distressed>>
 Customer: Or drank anything alcoholic.
 Customer: I might try it but...
 <<order Sahana 0 n 0 n 0 n 0>>
 <<set $hasOrderedSahana = true>>
+<<setsprite Sahana idle>>
 Customer: Nevermind, give me anything, just no alcohol.
 ===
 title: 2SahanaA2
@@ -116,19 +145,28 @@ tags:
 colorID: 0
 position: -883,366
 ---
+<<setsprite Sahana thoughtful>>
 Customer: Alright.
 Customer: I mean...
 <<if $preemptiveOrder is true>>
+    <<setsprite Sahana unhappy>>
     Customer: I should've just told you what I wanted.
     Customer: Ugh.
 <<else>>
+    <<setsprite Sahana unhappy>>
     Customer: What kind of a bartender would you be if you didn't do what I asked?
 <<endif>>
+<<setsprite Sahana annoyed>>
 Customer: Then again, no one listens to what I say, so whatever.
+<<setsprite Sahana mad>>
 Customer: Fuck you and fuck all of them.
+<<setsprite Sahana sneaky>>
 Customer: Thinking I'm a fucking idiot.
+<<setsprite Sahana mad>>
 Customer: You're the idiot.
+<<setsprite Sahana annoyed>>
 Customer: ...
+<<setsprite Sahana distressed>>
 Customer: I'm so sorry, I don't know what I just said.
 Customer: I'm going to leave now, bye!
 <<set $stateSahana = 5>>
@@ -138,14 +176,22 @@ tags:
 colorID: 0
 position: -1101,367
 ---
+<<setsprite Sahana surprised>>
 Customer: You're kidding.
+<<setsprite Sahana thoughtful>>
 Customer: ...
+<<setsprite Sahana nostalgic>>
 Customer: I guess it's more interesting this way.
+<<setsprite Sahana sneaky>>
 Customer: Better than my day job, at least.
+<<setsprite Sahana annoyed>>
 Customer: Fuck everyone there, honestly.
 Customer: Thinking they can just step all over me.
+<<setsprite Sahana mad>>
 Customer: Fuuuck.
+<<setsprite Sahana annoyed>>
 Customer: ...
+<<setsprite Sahana distressed>>
 Customer: I'm so sorry, I don't know what I just said.
 Customer: I'm. Going to leave now.
 Customer: Bye.
