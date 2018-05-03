@@ -27,7 +27,7 @@ position: 114,209
                 Customer: And you pour it into a glass.
                 Customer: It's not that hard, is it?
             <<else>>
-                <<if $drinkScoreIvory <= 0.1>>
+                <<if $drinkScoreIvory <= 10>>
                     <<setsprite Ivory unhappy>>
                     Customer: This isn't enough...
                     Customer: Get me more, won't you?

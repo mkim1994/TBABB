@@ -68,6 +68,7 @@ position: -886,101
                 <<set $stateSahana = 5>>
             <<else>>
                 <<set $drunkSahana += 1>>
+                <<set $gaveSahanaAlcohol += 1>>
                 Customer: Mm.
                 Customer: This is pretty bitter...
                 Customer: I don't think I've tasted something like this before.
@@ -148,5 +149,339 @@ Customer: ...
 Customer: I'm so sorry, I don't know what I just said.
 Customer: I'm. Going to leave now.
 Customer: Bye.
+<<set $stateSahana = 5>>
+===
+title: 3OrderSahana
+tags: 
+colorID: 0
+position: -1050,631
+---
+<<order Sahana 0 n 0 n 0 n 0>>
+===
+title: 3Sahana
+tags: 
+colorID: 0
+position: -849,630
+---
+<<if $drinkScoreSahana is -1 and $stateSahana is -1>>
+    <<set $hasOrderedSahana = false>>
+    <<set $progressSahana = 0>>
+    <<order Sahana 0 n 0 n 0 n 0>>
+    <<set $stateSahana = 0>>
+    <<set $drunkSahana = 0>>
+    Customer: Uhm...hi again!
+    Customer: A...anything alcoholic this time.
+<<else>>
+    <<if $progressSahana is 0>>
+        <<if $drinkScoreSahana is -1>>
+            <<set $hasOrderedSahana = true>>
+            Customer: Anything alcoholic...
+        <<else>>
+            <<if $hasOrderedSahana is false>>
+                <<set $preemptiveSahana = true>>
+                Customer: Uhm...wow!
+                Customer: I hadn't even asked for anything yet...
+            <<endif>>
+            <<if $drinkScoreSahana is 0>>
+                <<set $preemptiveSahana = false>>
+                Customer: I think I just want something alcoholic.
+                <<set $hasOrderedSahana = true>>
+            <<else>>
+                <<if $drinkScoreSahana <= 10>>
+                    Customer: Uhm...
+                    Customer: I guess this amount is fine...?
+                    Customer: ...No, actually, get me more please.
+                <<else>>
+                    <<set $stateSahana = 1>>
+                    <<set $progressSahana = 1>>
+                    Customer: Thank you!
+                <<endif>>
+            <<endif>>
+        <<endif>>
+    <<else>>
+        <<if $progressSahana is 1>>
+            <<if $drinkAlcoholSahana is 0>>
+                Customer: No...this....
+                Customer: No, no no.
+                Customer: Get me drunk.
+                Customer: Wine, beer, whatever.
+                <<set $stateSahana = 0>>
+            <<else>>
+                <<set $stateSahana = 1>>
+                <<set $progressSahana = 2>>
+                <<set $drunkSahana += 1>>
+                <<set $gaveSahanaAlcohol += 1>>
+                Customer: Mm.
+                Customer: Yes, this is what I wanted, I think.
+                <<if $preemptiveSahana is true>>
+                    Customer: I'm that transparent, huh?
+                <<endif>>
+                [[You're back here for a reason.|3SahanaA]]
+                [[Why'd you change your mind?|3SahanaB]]
+            <<endif>>
+        <<elseif $progressSahana is 2>>
+            <<if $drinkScoreSahana is -1>>
+                Customer: Just get me drunk...
+            <<else>>
+                <<if $drinkScoreSahana is 0>>
+                    Customer: Please, just get me drunk.
+                <<else>>
+                    <<if $drinkScoreSahana <= 10>>
+                        Customer: No, this amount isn't enough.
+                        Customer: I'm not a total idiot.
+                    <<else>>
+                        <<set $stateSahana = 1>>
+                        <<set $progressSahana = 3>>
+                        Customer: Thaaaank you.
+                    <<endif>>
+                <<endif>>
+            <<endif>>
+        <<elseif $progressSahana is 3>>
+            <<if $drinkAlcoholSahana is 0>>
+            <<else>>
+                <<set $stateSahana = 1>>
+                <<set $progressSahana = 4>>
+                <<set $drunkSahana += 1>>
+                Customer: This is nice!
+                [[You doing alright?|3SahanaE]]
+                [[You're surprisingly excitable.|3SahanaF]]
+            <<endif>>
+        <<elseif $progressSahana is 4>>
+            <<if $drinkScoreSahana is -1>>
+                Customer: Get me druuuunk.
+            <<else>>
+                <<if $drinkScoreSahana is 0>>
+                    Customer: Alcohol! In glass!
+                <<else>>
+                    <<if $drinkScoreSahana <= 10>>
+                        Customer: No, this amount isn't enough!
+                        Customer: I'm not a total idiot.
+                    <<else>>
+                        <<set $stateSahana = 1>>
+                        <<set $progressSahana = 5>>
+                        Customer: Thaaaank you.
+                    <<endif>>
+                <<endif>>
+            <<endif>>
+        <<elseif $progressSahana is 5>>
+            <<if $drinkAlcoholSahana is 0>>
+            <<else>>
+                <<set $stateSahana = 1>>
+                <<set $progressSahana = 6>>
+                <<set $drunkSahana += 1>>
+                Customer: Oh geez.
+                [[What's up?|3SahanaG]]
+                [[Geez?|3SahanaG]]
+            <<endif>>
+        <<endif>>
+    <<endif>>
+<<endif>>
+===
+title: 3SahanaA
+tags: 
+colorID: 0
+position: -596,513
+---
+Customer: Yep.
+Customer: I quit my job.
+Customer: So fucking done with it.
+Customer: This is where people come after they quit their job right?
+Customer: At least that's what happens in movies.
+Customer: That or they take a road trip.
+[[Your job was that bad?|3SahanaC]]
+[[Are you? Going to take a road trip?|3SahanaD]]
+===
+title: 3SahanaB
+tags: 
+colorID: 0
+position: -599,733
+---
+Customer: I wanted to get drunk!
+Customer: I quit my job.
+Customer: So fucking done with it.
+Customer: And I thought, people get drunk after they quit their job, right?
+Customer: At least that's what happens in movies.
+Customer: That or they take a road trip.
+[[Your job was that bad?|3SahanaC]]
+[[Are you? Going to take a road trip?|3SahanaD]]
+===
+title: 3SahanaC
+tags: 
+colorID: 0
+position: -311,507
+---
+Customer: Fuuuck. Yeah.
+Customer: My boss was insufferable.
+Customer: I got no fucking respect from anyone.
+Customer: Fuck, just thinking about it pisses me off.
+Customer: People drink more when they're pissed, right?
+Customer: Please get me drunk more, whatever's fine.
+<<order Sahana 0 n 0 n 0 n 0>>
+<<set $stateSahana = 0>>
+===
+title: 3SahanaD
+tags: 
+colorID: 0
+position: -304,748
+---
+Customer: I'm thinking about it.
+Customer: No, fuck it, I'm doing it!
+Customer: Just like how I'm...going...to get another drink.
+Customer: Please get me more. Whatever's fine.
+<<order Sahana 0 n 0 n 0 n 0>>
+<<set $stateSahana = 0>>
+===
+title: 3SahanaE
+tags: 
+colorID: 0
+position: -280,977
+---
+<<if $drunkSahana > 1>>
+    Customer: Why wouldn't I be?
+    Customer: I just quit my job!!
+    Customer: I'm so fucking alright.
+    Customer: Get me more!
+<<else>>
+    Customer: I'm alright.
+    Customer: I just can't tell what "drunk" actually is.
+    Customer: I'm feeling good though.
+    Customer: More please.
+<<endif>>
+<<order Sahana 0 n 0 n 0 n 0>>
+<<set $stateSahana = 0>>
+===
+title: 3SahanaF
+tags: 
+colorID: 0
+position: -543,980
+---
+<<if $drunkSahana > 1>>
+    Customer: Don't patronize me!!
+    Customer: I have emotions too!
+    Customer: My fellow "co-workers" couldn't get that through their thick heads.
+    Customer: Fuckers.
+    Customer: Fuck, give me more!
+<<else>>
+    Customer: I guess I am.
+    Customer: Excitable seems like an understatement, though.
+    Customer: I feel fucking excited.
+    Customer: Give me more!
+<<endif>>
+<<order Sahana 0 n 0 n 0 n 0>>
+<<set $stateSahana = 0>>
+===
+title: 3SahanaG
+tags: 
+colorID: 0
+position: -954,1033
+---
+<<if $drunkSahana > 2>>
+    Customer: I think I fucked it all up...
+    Customer: Fuck.
+    Customer: Why did I quit today.
+    Customer: I should've at least waited until I found another job.
+    Customer: I'm such a fuckup.
+    [[You're not a fuckup.|3SahanaH]]
+    [[Might've been the smarter thing to do.|3SahanaI]]
+<<else>>
+    Customer: I guess...I'm having second thoughts...
+    Customer: I...I think I have to leave.
+    Customer: Good-bye.
+    <<set $stateSahana = 5>>
+<<endif>>
+===
+title: 3SahanaH
+tags: 
+colorID: 0
+position: -867,1293
+---
+Customer: I...
+Customer: My parents are probably going to disown me.
+Customer: My friends are all on the other side of the country, living their life.
+Customer: They have a real job. Ambitions.
+Customer: What the fuck am I doing here?
+[[Real job?|3SahanaJ]]
+[[Having a drink.|3SahanaK]]
+===
+title: 3SahanaI
+tags: 
+colorID: 0
+position: -568,1344
+---
+Customer: You think I don't know that?!
+Customer: I just...couldn't handle it anymore.
+Customer: Graduate at the top of my class and what do I get?
+Customer: Some low life barking orders at me.
+Customer: I didn't come here to get sassed.
+Customer: Bye.
+<<set $stateSahana = 5>>
+===
+title: 3SahanaJ
+tags: 
+colorID: 0
+position: -1012,1536
+---
+Customer: Yeah, real jobs!!
+Customer: Where your voice actually matters.
+Customer: Where what you do actually fucking matter....
+Customer: That's...not what I've been doing.
+Customer: I've wanted to.
+Customer: I want to.
+Customer: ...
+Customer: You know, I thought I was above all of this.
+Customer: Having a shitty job, getting a drink.
+Customer: I thought it wouldn't happen to me.
+Customer: I thought it wasn't me.
+Customer: But here I fucking am, blabbing to some random bartender.
+Customer: Pathetic, isn't it?
+[[No.|3SahanaL]]
+[[Kind of.|3SahanaM]]
+===
+title: 3SahanaK
+tags: 
+colorID: 0
+position: -742,1552
+---
+Customer: Hahahaha. 
+Customer: So simple, aren't you, bartender?
+Customer: You're not wrong, though.
+Customer: Having a drink, going to a bar...
+Customer: ...People things.
+Customer: I've always refused when people asked.
+Customer: I thought I was above it all, but...
+Customer: Turns out they're the ones laughing at me in the end, huh?
+Customer: ...
+Customer: I'm going to go home.
+Customer: Going to sleep on that road trip.
+Customer: Thank you.
+<<set $stateSahana = 5>>
+===
+title: 3SahanaL
+tags: 
+colorID: 0
+position: -987,1779
+---
+Customer: Hahahaha. 
+Customer: It's...what do you call it?
+Customer: Hard truth? To swallow.
+Customer: Just like how fucking terrible alcohol tastes.
+Customer: ...I'm going to go home now.
+Customer: Going to sleep on that road trip idea.
+Customer: Thank you.
+<<set $stateSahana = 5>>
+===
+title: 3SahanaM
+tags: 
+colorID: 0
+position: -736,1814
+---
+Customer: Hahahaha. 
+Customer: Don't lie, but you're too kind, bartender.
+Customer: It's...what do you call it?
+Customer: Hard truth? To swallow.
+Customer: Just like how fucking terrible alcohol tastes.
+Customer: ...I'm going to go home now.
+Customer: Going to sleep on that road trip idea.
+Customer: Thank you.
 <<set $stateSahana = 5>>
 ===

@@ -35,6 +35,8 @@ public class DayCycleManager : MonoBehaviour
 
     public bool skipTutorial;
 
+    private bool removedSahanaFromDay3;
+
     /*
      * order:
      * if !dayReallyStarted, we're only in the backroom scene.
@@ -62,6 +64,7 @@ public class DayCycleManager : MonoBehaviour
         DOTween.Init();
         //skipTutorial 
         doorOpened = false;
+        removedSahanaFromDay3 = false;
         currentCustomers = new List<NPC>();
         elapsedTime = 0f;
         //currentDay = 0; // 0th day is day 1
@@ -180,6 +183,23 @@ public class DayCycleManager : MonoBehaviour
 
     public void Update()
     {
+        if(currentDay == 2 && !removedSahanaFromDay3) //day 3
+        {
+            if(Services.GameManager.dialogue.variableStorage.GetValue("$gaveSahanaAlcohol").AsNumber < 0){
+                //remove Sahana from day 3
+                /* days is a List of Day, which is a class that has 
+                 * list of NPC called customers
+                 * 
+                 * */
+                //days[currentDay].customers.Remove();
+                for (int i = 0; i < days[currentDay].customers.Count; ++i){
+                    if(days[currentDay].customers[i].characterName == "Sahana"){
+                        days[currentDay].customers.RemoveAt(i);
+                        removedSahanaFromDay3 = true;
+                    }
+                }
+            }
+        }
 
         if(doorOpened){ //doorOpened = true when door interacted with after checking note
             doorOpened = false;

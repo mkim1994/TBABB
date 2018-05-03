@@ -1,7 +1,7 @@
 title: 2Julia
 tags: 
 colorID: 0
-position: 114,209
+position: 123,40
 ---
 <<if $drinkScoreJulia is -1 and $stateJulia is -1>>
     <<set $hasOrderedJulia  = false>>
@@ -15,7 +15,8 @@ position: 114,209
     Customer: I really don't like going into detail again to get a decent cocktail.
     Customer: I assume you're new, too, so let's do a simple martini?
     <<set $hasOrderedJulia = true>>
-    Customer: That's gin and vermouth on the rocks.
+    Customer: That's gin and vermouth.
+    Customer: Ah, since I'm old-fashioned, on the rocks too.
 <<else>>
     <<if $progressJulia is 0>>
         <<if $drinkScoreJulia is -1>>
@@ -84,7 +85,94 @@ position: 114,209
 title: 2OrderJulia
 tags: 
 colorID: 0
-position: -107,216
+position: -150,57
 ---
 <<order Julia 1 n 0 vermouth 0.5 gin 0.5>>
+===
+title: 3OrderJulia
+tags: 
+colorID: 0
+position: -300,299
+---
+<<order Julia 1 n 0 vermouth 0.5 gin 0.5>>
+===
+title: 3Julia
+tags: 
+colorID: 0
+position: -48,341
+---
+<<if $drinkScoreJulia is -1 and $stateJulia is -1>>
+    <<set $hasOrderedJulia  = false>>
+    <<set $progressJulia = 0>>
+    <<order Julia 1 n 0 vermouth 0.5 gin 0.5>>
+    <<set $stateJulia = 0>>
+    Customer: You remember how to make martini, don't you?
+    <<set $hasOrderedJulia = true>>
+    Customer: I prefer it on the rocks.
+<<else>>
+    <<if $progressJulia is 0>>
+        <<if $drinkScoreJulia is -1>>
+            <<set $hasOrderedJulia = true>>
+            Customer: Martini, on the rocks.
+        <<else>>
+            <<if $hasOrderedJulia is false>>
+                <<set $preemptiveJulia = true>>
+                Customer: Fast on the uptake, aren't you?
+            <<endif>>
+            <<if $drinkScoreJulia is 0>>
+                Customer: Seriously?
+                <<set $hasOrderedJulia = true>>
+                Customer: I can tell you're new, but please.
+            <<else>>
+                <<if $drinkScoreJulia <= 10>>
+                    Customer: Don't be shy, pour me more.
+                <<else>>
+                    <<if $drinkScoreJulia >= 80>>
+                        <<set $stateJulia = 2>>
+                        <<if $preemptiveJulia is true>>
+                            Customer: You remembered.
+                        <<else>>
+                            <<set $rightDrinkJulia = true>>
+                            Customer: Not bad.
+                        <<endif>>
+                        <<if $drinkScoreJulia neq 85 and $drinkScoreJulia neq 95>>
+                            <<if $preemptiveJulia is true>>
+                                Customer: Would've preferred it on the rocks though.
+                            <<else>>
+                                Customer: ...No ice though?
+                                Customer: Ice it next time.
+                            <<endif>>
+                        <<endif>>
+                        <<leave Julia 60>>
+                        <<set $progressJulia = 1>>
+                    <<elseif $drinkScoreJulia >= 50>>
+                        <<set $stateJulia = 2>>
+                        Customer: Really? It's the second day.
+                        Customer: Surely you're learning.
+                        Customer: I'm expecting better tomorrow.
+                        <<leave Julia 30>>
+                        <<set $progressJulia = 1>>
+                    <<else>>
+                        <<set $hasOrderedJulia = true>>
+                        Customer: Did you even listen to what I asked for?
+                    <<endif>>
+                <<endif>>
+            <<endif>>
+        <<endif>>
+    <<else>>
+        <<if $progressJulia is 1>>
+            <<set $progressJulia = 2>>
+            Customer: Sorry, I'm just here for a quick drink.
+        <<elseif $progressJulia is 2>>
+            <<set $progressJulia = 3>>
+            Customer: I just want to drink in peace.
+            <<if $rightDrinkJulia is false>>
+                Customer: ...Even if you didn't even get the order right.
+                Customer: A drink's a drink.
+            <<endif>>
+        <<elseif $progressJulia is 3>>
+            Customer: ...
+        <<endif>>
+    <<endif>>
+<<endif>>
 ===

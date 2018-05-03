@@ -29,7 +29,7 @@ position: 114,209
             <<endif>>
             <<if $drinkScoreIzzy is 0>>
                 <<set $preemptiveIzzy = false>>
-                Customer: Just water.
+                Customer: Just soda.
                 <<set $hasOrderedIzzy = true>>
             <<else>>
                 <<if $drinkScoreIzzy <= 10>>
@@ -66,7 +66,13 @@ position: 114,209
                 <<set $stateIzzy = 5>>
             <<endif>>
         <<elseif $progressIzzy is 2>>
-            Customer: Progress 2.
+            Customer: I swear I have to start carrying around a water bottle.
+            Customer: Part-time's a bit tough on me.
+            [[Where do you work?|3IzzyE]]
+            [[Tough?|3IzzyE]]
+        <<elseif $progressIzzy is 3>>
+            Customer: Gonna stay here a bit just to cool off, if you won't mind.
+            <<set $progressIzzy = 4>>
         <<endif>>
     <<endif>>
 <<endif>>
@@ -79,8 +85,7 @@ position: 432,112
 Customer: Grats on getting the job!
 Customer: Though I noticed this bar cycles through bartenders a lot.
 Customer: Think I could get a job here?
-Customer: ...Oh no, I didn't mean--
-Customer: I didn't mean to make it awkward for you.
+Customer: ...Not that I'd take your job.
 Customer: It's just...
 [[Job search not going well?|3IzzyC]]
 [[Is there anything you need?|3IzzyD]]
@@ -116,6 +121,7 @@ position: 694,128
 Customer: How'd you guess?
 Customer: What's new though.
 Customer: Thirsty for money, just hire me please.
+<<set $hasOrderedIzzy = true>>
 Customer: ...I'm actually thirsty though, can you get me some soda?
 <<order Izzy 0 n 0 n 0 n 0>>
 ===
@@ -125,6 +131,121 @@ colorID: 0
 position: 737,377
 ---
 Customer: Ah, nothing, just your company is fine.
+<<set $hasOrderedIzzy = true>>
 Customer: Maybe some soda would be nice, though.
 <<order Izzy 0 n 0 n 0 n 0>>
+===
+title: 3IzzyE
+tags: 
+colorID: 0
+position: 182,507
+---
+Customer: Working construction at the moment.
+Customer: I know, not at all glamorous, but it's money.
+Customer: I used to be quite the frail kid--still am, I guess.
+Customer: ...Do I stink?
+[[You smell fine.|3IzzyF]]
+[[Yep.|3IzzyG]]
+===
+title: 3IzzyF
+tags: 
+colorID: 0
+position: 433,602
+---
+Izzy: You're being nice!
+Izzy: My little sis gets all cranky about it when I get home.
+Izzy: But she used to get cranky about something else entirely before, so...
+Izzy: This is a lot better.
+[[Something else?|3IzzyH]]
+[[Sister?|3IzzyI]]
+===
+title: 3IzzyG
+tags: 
+colorID: 0
+position: 198,758
+---
+Izzy: Haha, ouch!
+Izzy: Not the type to mince words, are you?
+Izzy: I'm used to it...
+Izzy: My little sis get all cranky about it when I get home.
+Izzy: But she used to get cranky about something else entirely before, so...
+Izzy: This is a lot better.
+[[Something else?|3IzzyH]]
+[[Sister?|3IzzyI]]
+===
+title: 3IzzyH
+tags: 
+colorID: 0
+position: 749,674
+---
+Customer: Ahh. Yeah.
+Customer: My little drinking problem.
+Customer: I used to come home really late.
+Customer: Sometimes didn't even get through the door, haha.
+Customer: She'd find me passed out in the morning the next day.
+Customer: It's a lot better now.
+Customer: Now she finds me passed out in my bed because I'm tired from work!
+Customer: Haha.
+[[You're lucky to have her.|3IzzyJ]]
+[[She's lucky to have you.|3IzzyK]]
+===
+title: 3IzzyI
+tags: 
+colorID: 0
+position: 460,911
+---
+Customer: Ahh. Yeah.
+Customer: My little gremlin of a sister.
+Customer: I used to come home really late.
+Customer: Sometimes didn't even get through the door, haha.
+Customer: She'd find me passed out in the morning the next day.
+Customer: It's a lot better now.
+Customer: Now she finds me passed out in my bed because I'm tired from work!
+Customer: Haha.
+[[You're lucky to have her.|3IzzyJ]]
+[[She's lucky to have you.|3IzzyK]]
+===
+title: 3IzzyJ
+tags: 
+colorID: 0
+position: 804,941
+---
+Customer: Hah, don't I know it.
+Customer: Life's been a bit scattered ever since our mom died, but...
+Customer: Yeah, I'm lucky to have her.
+Customer: How about you? You got family?
+[[Yeah.|3IzzyL]]
+[[No.|3IzzyM]]
+===
+title: 3IzzyK
+tags: 
+colorID: 0
+position: 594,1147
+---
+Customer: Hah, you think so?
+Customer: I would think it's the other way around.
+Customer: Life's been a bit scattered ever since our mom died, but...
+Customer: I guess we're both lucky to have each other.
+Customer: How about you? You got family?
+[[Yeah.|3IzzyL]]
+[[No.|3IzzyM]]
+===
+title: 3IzzyL
+tags: 
+colorID: 0
+position: 928,1152
+---
+Customer: Hope they're doing well.
+<<leave Izzy 30>>
+<<set $progressIzzy = 3>>
+===
+title: 3IzzyM
+tags: 
+colorID: 0
+position: 674,1362
+---
+Customer: Ah...
+Customer: Sorry to hear that.
+<<leave Izzy 30>>
+<<set $progressIzzy = 3>>
 ===
