@@ -1053,6 +1053,22 @@ MonoBehaviour:
     sprite: {fileID: 21300000, guid: 9c7ca8c79b7a940cd955b1d904f366f6, type: 3}
   - name: unhappy
     sprite: {fileID: 21300000, guid: cf8f5e1a0ad99408fab8957048d12e8c, type: 3}
+  - name: mad
+    sprite: {fileID: 21300000, guid: b8c757844769a46179bb3a042784e2c4, type: 3}
+  - name: sneaky
+    sprite: {fileID: 21300000, guid: 5b45f70e0263a42219757c259a536c72, type: 3}
+  - name: thoughtful
+    sprite: {fileID: 21300000, guid: 8a74406764ea5430e91409cf29fd7768, type: 3}
+  - name: sad
+    sprite: {fileID: 21300000, guid: b7a9a6ea3e35246669c743627b322445, type: 3}
+  - name: surprised
+    sprite: {fileID: 21300000, guid: caf1a9a006d744408a9d8c162fb067d6, type: 3}
+  - name: distressed
+    sprite: {fileID: 21300000, guid: 1598ba6dcfca0444e8237a8c70e38f9c, type: 3}
+  - name: annoyed
+    sprite: {fileID: 21300000, guid: dcfc9e96131e04668a76ee21f35e3b86, type: 3}
+  - name: nostalgic
+    sprite: {fileID: 21300000, guid: 732c9ee451093409081138b71f2d5619, type: 3}
 --- !u!114 &114851358535057914
 MonoBehaviour:
   m_ObjectHideFlags: 1
