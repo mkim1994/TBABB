@@ -51,7 +51,6 @@ position: 114,209
                 <<else>>
                     Customer: Nice simple soda.
                 <<endif>>
-                <<set $progressIzzy+=1>>
             <<else>>
                 <<set $drunkIzzy += 1>>
                 Customer: This...isn't soda.

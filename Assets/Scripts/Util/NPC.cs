@@ -33,6 +33,9 @@ public class NPC : MonoBehaviour
     public bool isReadyToTalk;
     public bool isReadyToServe;
     public bool hasAcceptedDrink;
+    public bool isTalking;
+
+    private Color originalColor;
 
     [HideInInspector]
     public AudioSource bgm;
@@ -46,6 +49,7 @@ public class NPC : MonoBehaviour
             FindObjectOfType<DialogueRunner>().AddScript(scriptToLoad);
         }
         enterBarAnimFinished = false;
+        originalColor = GetComponentInChildren<SpriteRenderer>().color;
 
         switch(characterName){
             case "Ivory":
@@ -75,6 +79,8 @@ public class NPC : MonoBehaviour
     void Update()
     {
         fsm.Update();
+
+
     }
 
     IEnumerator RunPreemptiveOrder(){
@@ -218,10 +224,8 @@ public class NPC : MonoBehaviour
                 bgm.DOFade(1f, 1f);
             } else if(!bgm.isPlaying)
             {
-                Debug.Log("hm?");
                 if (Services.GameManager.audioController.currentlyPlayingBgm != null)
                 {
-                    Debug.Log("hi");
                     Services.GameManager.audioController.currentlyPlayingBgm.DOFade(0f, 1f);
                 }
                 Services.GameManager.audioController.currentlyPlayingBgm = bgm;
@@ -233,6 +237,14 @@ public class NPC : MonoBehaviour
             Services.GameManager.dialogue.StopAllCoroutines();
             Services.GameManager.dialogue.dialogueUI.StopAllCoroutines();
             Services.GameManager.dialogue.StartDialogue((Services.GameManager.dayManager.currentDay + 1) + characterName);
+            //distinguish who's talking by color
+            for (int i = 0; i < Services.GameManager.dayManager.currentCustomers.Count; ++i){
+                if(Services.GameManager.dayManager.currentCustomers[i] != this){
+                    Services.GameManager.dayManager.currentCustomers[i].GetComponentInChildren<SpriteRenderer>().color = new Color(0.07f, 0.07f, 0.07f);
+
+                } 
+            }
+            GetComponentInChildren<SpriteRenderer>().color = originalColor;
         }
        // }
     }
@@ -290,6 +302,7 @@ public class NPC : MonoBehaviour
         silhouette.gameObject.SetActive(false);
         //transform.position = seatLocations[BestSeat()];
         GetComponent<BoxCollider>().enabled = true;
+        GetComponentInChildren<SpriteRenderer>().color = new Color(0.07f, 0.07f, 0.07f);
         GetComponentInChildren<SpriteRenderer>().enabled = true;
         GetComponentInChildren<Light>().enabled = true;
         StartCoroutine(RunPreemptiveOrder());

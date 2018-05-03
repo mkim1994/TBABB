@@ -161,7 +161,7 @@ public class DayCycleManager : MonoBehaviour
         }
         blackPanel.SetActive(true);
         Services.GameManager.audioController.spotlightsfx.Play();
-        //Services.GameManager.audioController.currentlyPlayingBgm.Stop();
+        Services.GameManager.audioController.currentlyPlayingBgm.Stop();
         Services.GameManager.audioController.bgmIvory.Stop();
         Services.GameManager.audioController.bgmIzzy.Stop();
         Services.GameManager.audioController.bgmJulia.Stop();
@@ -171,7 +171,8 @@ public class DayCycleManager : MonoBehaviour
         Services.GameManager.audioController.signhum.Stop();
         currentDay++;
 
-        if (skipTutorial && currentDay + 1 == maxDays)
+        //if (skipTutorial && currentDay + 1 == maxDays)
+        if(currentDay + 1 > maxDays)
         {
             blackPanel.GetComponentInChildren<Text>().text = "THE END (FOR NOW)";
         }
