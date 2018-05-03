@@ -9,9 +9,13 @@ position: 123,40
     <<order Julia 1 n 0 vermouth 0.5 gin 0.5>>
     <<set $stateJulia = 0>>
     Customer: The usual--
+    <<setsprite Julia approval>>
     Customer: Ah.
+    <<setsprite Julia annoyed>>
     Customer: I skip one day and they already replaced the last one?
+    <<setsprite Julia disappointed>>
     Customer: Ugh, what a pain.
+    <<setsprite Julia idle>>
     Customer: I really don't like going into detail again to get a decent cocktail.
     Customer: I assume you're new, too, so let's do a simple martini?
     <<set $hasOrderedJulia = true>>
@@ -21,34 +25,43 @@ position: 123,40
     <<if $progressJulia is 0>>
         <<if $drinkScoreJulia is -1>>
             <<set $hasOrderedJulia = true>>
+            <<setsprite Julia annoyed>>
             Customer: Gin, vermouth, on the rocks.
         <<else>>
             <<if $hasOrderedJulia is false>>
                 <<set $preemptiveJulia = true>>
+                <<setsprite Julia approval>>
                 Customer: Didn't even order the usual yet...
             <<endif>>
             <<if $drinkScoreJulia is 0>>
+                <<setsprite Julia annoyed>>
                 Customer: Seriously?
                 <<set $hasOrderedJulia = true>>
                 Customer: I can tell you're new, but please.
             <<else>>
                 <<if $drinkScoreJulia <= 10>>
+                    <<setsprite Julia disappointed>>
                     Customer: Don't be shy, pour me more.
                 <<else>>
                     <<if $drinkScoreJulia >= 80>>
                         <<set $stateJulia = 2>>
                         <<if $preemptiveJulia is true>>
+                            <<setsprite Julia approval>>
                             Customer: You somehow knew what I like, huh?
                             Customer: Competence or luck?
                         <<else>>
+                            <<setsprite Julia approval>>
                             Customer: Finally.
                         <<endif>>
                         <<if $drinkScoreJulia neq 85 and $drinkScoreJulia neq 95>>
                             <<if $preemptiveJulia is true>>
+                                <<setsprite Julia disappointed>>
                                 Customer: Would've preferred it on the rocks though.
                             <<else>>
+                                <<setsprite Julia disappointed>>
                                 Customer: ...No ice though?
                                 Customer: Do you know what "on the rocks" means?
+                                <<setsprite Julia idle>>                                
                                 Customer: Ice it next time.
                             <<endif>>
                         <<endif>>
@@ -56,14 +69,18 @@ position: 123,40
                         <<set $progressJulia = 1>>
                     <<elseif $drinkScoreJulia >= 50>>
                         <<set $stateJulia = 2>>
+                        <<setsprite Julia annoyed>>
                         Customer: This isn't...
+                        <<setsprite Julia disappointed>>
                         Customer: Whatever.
+                        <<setsprite Julia idle>>
                         Customer: You're new, you'll learn.
                         Customer: It's always the same with you bartenders here.
                         <<leave Julia 30>>
                         <<set $progressJulia = 1>>
                     <<else>>
                         <<set $hasOrderedJulia = true>>
+                        <<setsprite Julia annoyed>>
                         Customer: Did you even listen to what I asked for?
                     <<endif>>
                 <<endif>>
@@ -72,11 +89,14 @@ position: 123,40
     <<else>>
         <<if $progressJulia is 1>>
             <<set $progressJulia = 2>>
+            <<setsprite Julia disappointed>>
             Customer: I don't particularly feel talkative tonight.
         <<elseif $progressJulia is 2>>
             <<set $progressJulia = 3>>
+            <<setsprite Julia annoyed>>
             Customer: Seriously? Leave me alone.
         <<elseif $progressJulia is 3>>
+            <<setsprite Julia idle>>
             Customer: ...
         <<endif>>
     <<endif>>
@@ -106,29 +126,36 @@ position: -48,341
     <<set $progressJulia = 0>>
     <<order Julia 1 n 0 vermouth 0.5 gin 0.5>>
     <<set $stateJulia = 0>>
+    <<setsprite Julia approval>>
     Customer: You remember how to make martini, don't you?
     <<set $hasOrderedJulia = true>>
-    Customer: I prefer it on the rocks.
+    <<setsprite Julia idle>>
+    Customer: Remember, I prefer it on the rocks.
 <<else>>
     <<if $progressJulia is 0>>
         <<if $drinkScoreJulia is -1>>
             <<set $hasOrderedJulia = true>>
+            <<setsprite Julia annoyed>>
             Customer: Martini, on the rocks.
         <<else>>
             <<if $hasOrderedJulia is false>>
                 <<set $preemptiveJulia = true>>
+                <<setsprite Julia approval>>
                 Customer: Fast on the uptake, aren't you?
             <<endif>>
             <<if $drinkScoreJulia is 0>>
+                <<setsprite Julia annoyed>>
                 Customer: Seriously?
                 <<set $hasOrderedJulia = true>>
                 Customer: I can tell you're new, but please.
             <<else>>
                 <<if $drinkScoreJulia <= 10>>
+                    <<setspriet Julia annoyed>>
                     Customer: Don't be shy, pour me more.
                 <<else>>
                     <<if $drinkScoreJulia >= 80>>
                         <<set $stateJulia = 2>>
+                        <<setsprite Julia approval>>
                         <<if $preemptiveJulia is true>>
                             Customer: You remembered.
                         <<else>>
@@ -136,10 +163,12 @@ position: -48,341
                             Customer: Not bad.
                         <<endif>>
                         <<if $drinkScoreJulia neq 85 and $drinkScoreJulia neq 95>>
+                            <<setsprite Julia disappointed>>
                             <<if $preemptiveJulia is true>>
                                 Customer: Would've preferred it on the rocks though.
                             <<else>>
                                 Customer: ...No ice though?
+                                <<setsprite Julia idle>>
                                 Customer: Ice it next time.
                             <<endif>>
                         <<endif>>
@@ -147,13 +176,16 @@ position: -48,341
                         <<set $progressJulia = 1>>
                     <<elseif $drinkScoreJulia >= 50>>
                         <<set $stateJulia = 2>>
+                        <<setsprite Julia annoyed>>
                         Customer: Really? It's the second day.
                         Customer: Surely you're learning.
+                        <<setsprite Julia disappointed>>
                         Customer: I'm expecting better tomorrow.
                         <<leave Julia 30>>
                         <<set $progressJulia = 1>>
                     <<else>>
                         <<set $hasOrderedJulia = true>>
+                        <<setsprite Julia annoyed>>
                         Customer: Did you even listen to what I asked for?
                     <<endif>>
                 <<endif>>
@@ -162,15 +194,22 @@ position: -48,341
     <<else>>
         <<if $progressJulia is 1>>
             <<set $progressJulia = 2>>
+            <<setsprite Julia annoyed>>
             Customer: Sorry, I'm just here for a quick drink.
+            <<setsprite Julia idle>>
+            Customer: Unlike some people, I have kids to take care of.
         <<elseif $progressJulia is 2>>
             <<set $progressJulia = 3>>
+            <<setsprite Julia disappointed>>
             Customer: I just want to drink in peace.
             <<if $rightDrinkJulia is false>>
+                <<setsprite Julia annoyed>>
                 Customer: ...Even if you didn't even get the order right.
+                <<setsprite Julia idle>>
                 Customer: A drink's a drink.
             <<endif>>
         <<elseif $progressJulia is 3>>
+            <<setsprite Julia annoyed>>
             Customer: ...
         <<endif>>
     <<endif>>

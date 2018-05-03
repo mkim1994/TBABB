@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 114128005684799130}
   - component: {fileID: 114871265547098750}
   - component: {fileID: 65603403629590386}
+  - component: {fileID: 114013177280892038}
   m_Layer: 10
   m_Name: Julia
   m_TagString: Untagged
@@ -775,6 +776,26 @@ Light:
   m_UseColorTemperature: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &114013177280892038
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1006298807147680}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 38c717a794b9f4e66802ee51e19eaf8a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sprites:
+  - name: idle
+    sprite: {fileID: 21300000, guid: 1dcb57243b54547e2ad72870bbb17d73, type: 3}
+  - name: annoyed
+    sprite: {fileID: 21300000, guid: 69b8e28f605264b0b839d6b31cd0e6d6, type: 3}
+  - name: approval
+    sprite: {fileID: 21300000, guid: 0d6f89ab2fa414a99b892622b25adbc7, type: 3}
+  - name: disappointed
+    sprite: {fileID: 21300000, guid: 80ddff6e803974eb49d0bfac89f5ecfa, type: 3}
 --- !u!114 &114060954286683180
 MonoBehaviour:
   m_ObjectHideFlags: 1
