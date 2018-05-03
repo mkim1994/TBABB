@@ -66,9 +66,27 @@ public class Notepad : Pickupable {
 	    r.Append(transform.DOLocalRotate(_leftHandStartRot, 0.75f));
     }
 
-	public void ReadNote()
+	public void ReadNoteLeftHand()
 	{
+		
+		Sequence s = DOTween.Sequence();
+		s.AppendCallback(() => Services.TweenManager.tweensAreActive = true);
+		s.Append(transform.DOLocalMove(_signLeftHandPos, 1f));		
+		s.Append(transform.DOLocalMove(_signLeftHandPos, 5f));
+		s.Append(transform.DOLocalMove(_leftHandStartPos, 0.75f));
+		s.OnComplete(() => Services.TweenManager.tweensAreActive = false);
 	}
+	
+	public void ReadNoteRightHand()
+	{		
+		Sequence s = DOTween.Sequence();
+		s.AppendCallback(() => Services.TweenManager.tweensAreActive = true);
+		s.Append(transform.DOLocalMove(_signRightHandPos, 1f));		
+		s.Append(transform.DOLocalMove(_signRightHandPos, 5f));
+		s.Append(transform.DOLocalMove(_rightHandStartPos, 0.75f));
+		s.OnComplete(() => Services.TweenManager.tweensAreActive = false);
+	}
+
 
 	public override void InteractLeftHand(){
 		if(!pickedUp){

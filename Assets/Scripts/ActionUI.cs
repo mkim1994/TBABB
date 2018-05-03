@@ -47,7 +47,7 @@ public class ActionUI : MonoBehaviour
 		}
 	}
 	
-	private void ShowImage()
+	protected void ShowImage()
 	{
 		image.DOColor(new Color(1, 1, 1, 1), 0.1f);
 		
@@ -58,7 +58,7 @@ public class ActionUI : MonoBehaviour
 		b.Append(image.transform.DOScaleY(newScale, 0.25f));
 	}
 	
-	public void HideImage()
+	protected void HideImage()
 	{
 		image.DOColor(new Color(1, 1, 1, 0), 0.1f);
 		

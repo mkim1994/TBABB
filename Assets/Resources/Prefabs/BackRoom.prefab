@@ -2812,8 +2812,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 9.61291, y: 0.5531114, z: 14.398201}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 9.61291, y: 4.010003, z: 14.398201}
+  m_Center: {x: 0, y: 0.06299359, z: 0}
 --- !u!65 &65154037076220608
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -3212,8 +3212,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 0
   pickupDropTime: 0.5
-  leftHandPos: {x: -0.64, y: -0.89, z: 2}
-  rightHandPos: {x: 0.64, y: -0.89, z: 2}
+  leftHandPos: {x: -0.64, y: -0.48, z: 2}
+  rightHandPos: {x: 0.64, y: -0.48, z: 2}
   targetDropzone: {fileID: 0}
   startPos: {x: 60, y: 171, z: 0}
   dropPos: {x: 120, y: 171, z: 0}
@@ -3222,8 +3222,8 @@ MonoBehaviour:
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
   myChildDropzone: {fileID: 0}
-  _rightHandStartPos: {x: 0.64, y: -0.89, z: 2}
-  _leftHandStartPos: {x: -0.64, y: -0.89, z: 2}
+  _rightHandStartPos: {x: 0.64, y: -0.48, z: 2}
+  _leftHandStartPos: {x: -0.64, y: -0.48, z: 2}
   _signRightHandPos: {x: 0, y: -0.5, z: 2}
   _signLeftHandPos: {x: -0.0425, y: -0.5, z: 2}
   _rightHandStartRot: {x: 113.12, y: 14.5, z: 154.96}
@@ -3510,6 +3510,7 @@ MonoBehaviour:
   _writeLeftHandRot: {x: 0, y: -62, z: -42.04}
   _rightHandStartRot: {x: 0, y: 0, z: -90}
   _writeRightHandRot: {x: 0, y: 246.89, z: -42.04}
+  isWriting: 0
 --- !u!114 &114864366066139430
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3653,10 +3654,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
-  m_Radius: 0.10882187
+  m_Radius: 0.41363996
   m_Height: 1.3027989
   m_Direction: 0
-  m_Center: {x: 0.029533565, y: 0, z: -0.0050358404}
+  m_Center: {x: 7.09415e-10, y: 0, z: -0.017871916}
 --- !u!136 &136310481620659296
 CapsuleCollider:
   m_ObjectHideFlags: 1

@@ -86,11 +86,12 @@ public class PlayerInput : MonoBehaviour
 	public float aimAssistFactor;
 	[SerializeField]float verticalLook = 0f;
 
-	public bool isInputEnabled = true;
-	public bool isUsingController = false;
-	public bool isPourTweenDone = false;
+	[HideInInspector]public bool isInputEnabled = true;
+	[HideInInspector]public bool isUsingController = false;
+	[HideInInspector]public bool isPourTweenDone = false;
+	public bool isDualWield = false;
 
-	[SerializeField]private bool isPouring = false;
+	private bool isPouring = false;
 	
 	//ui
 	private Crosshair _crosshair;
@@ -98,14 +99,14 @@ public class PlayerInput : MonoBehaviour
 	//buttons
 	bool i_pickupLeft;
 	bool i_pickupRight;
-	public bool i_startUseLeft;
-	public bool i_startUseRight;
-	public bool i_useLeft;
-	public bool i_endUseLeft;
-	public bool i_useRight;
-	public bool i_endUseRight;
+	[HideInInspector]public bool i_startUseLeft;
+	[HideInInspector]public bool i_startUseRight;
+	[HideInInspector]public bool i_useLeft;
+	[HideInInspector]public bool i_endUseLeft;
+	[HideInInspector]public bool i_useRight;
+	[HideInInspector]public bool i_endUseRight;
 	bool i_restart;
-	public bool i_talk;
+	[HideInInspector]public bool i_talk;
 	bool i_choose1;
 	bool i_choose2;
 	
@@ -215,7 +216,16 @@ public class PlayerInput : MonoBehaviour
 		{
 			canPourWithRight = false;
 		}
-		
+
+		if (pickupableInLeftHand != null && pickupableInRightHand != null)
+		{
+			isDualWield = true;
+		}
+		else
+		{
+			isDualWield = false;
+		}
+
 		#region Restart
 		i_restart = player.GetButtonDown("Restart");
 		if(i_restart){
@@ -503,8 +513,7 @@ public class PlayerInput : MonoBehaviour
 				if(dropPos != Vector3.zero && !targetDropzone.isOccupied){
 					if (targetDropzone.GetComponentInParent<Coaster>() == null)
 					{
-						Debug.Log("Not a pen has been dropped!");
-						pickupableInLeftHand.dropPos = dropPos;
+ 						pickupableInLeftHand.dropPos = dropPos;
 						pickupableInLeftHand.targetDropzone = targetDropzone;
 						pickupableInLeftHand.InteractLeftHand();
 					}
@@ -552,13 +561,27 @@ public class PlayerInput : MonoBehaviour
 				   pickupableInRightHand.GetComponent<Notepad>() != null &&
 				   interactionTimer >= minHoldTime
 				   ){
-					Pen pen = pickupableInLeftHand.GetComponent<Pen>();
-					pen.WriteLeftHanded();
-					Notepad notepad = pickupableInRightHand.GetComponent<Notepad>();
-					notepad.SignNoteOnRightHand();
-					interactionTimer = 0;
+					if (i_useRight)
+					{
+						Pen pen = pickupableInLeftHand.GetComponent<Pen>();
+						pen.WriteLeftHanded();
+						Notepad notepad = pickupableInRightHand.GetComponent<Notepad>();
+						notepad.SignNoteOnRightHand();
+						interactionTimer = 0;
+					}
  				}
 			}
+
+//			if (pickupableInLeftHand != null)
+//			{
+//				if (pickupableInLeftHand.GetComponent<Notepad>() != null
+//				    && interactionTimer >= minHoldTime)
+//				{
+//					Notepad notepad = pickupableInLeftHand.GetComponent<Notepad>();
+//					notepad.ReadNoteLeftHand();
+//					interactionTimer = 0;
+//				}
+//			}
 
 			if (iceMaker != null)
 			{
@@ -842,6 +865,18 @@ public class PlayerInput : MonoBehaviour
 					interactionTimer = 0;
 				}
 			}
+			
+			//READ NOTE
+//			if (pickupableInRightHand != null)
+//			{
+//				if (pickupableInRightHand.GetComponent<Notepad>() != null
+//				    && interactionTimer >= minHoldTime)
+//				{
+//					Notepad notepad = pickupableInRightHand.GetComponent<Notepad>();
+//					notepad.ReadNoteRightHand();
+//					interactionTimer = 0;
+//				}
+//			}
 
 			if (iceMaker != null)
 			{
