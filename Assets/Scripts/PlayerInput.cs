@@ -1209,7 +1209,8 @@ public class PlayerInput : MonoBehaviour
 				backdoor.GetComponent<Collider>().enabled = false;
 				if (Services.GameManager.dayManager.noteSigned)
 				{
-					Services.GameManager.dayManager.doorOpened = true;				
+					Services.GameManager.dayManager.doorOpened = true;		
+					EventManager.Instance.Fire(new DayEndEvent());		
 					StartCoroutine(TurnOnBoxColliderOnDoor(6f, backdoor));
 				}
 				else
