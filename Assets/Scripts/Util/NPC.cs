@@ -241,10 +241,12 @@ public class NPC : MonoBehaviour
             for (int i = 0; i < Services.GameManager.dayManager.currentCustomers.Count; ++i){
                 if(Services.GameManager.dayManager.currentCustomers[i] != this){
                     Services.GameManager.dayManager.currentCustomers[i].GetComponentInChildren<SpriteRenderer>().color = new Color(0.07f, 0.07f, 0.07f);
+                    Services.GameManager.dayManager.currentCustomers[i].GetComponentInChildren<Light>().enabled = false;
 
                 } 
             }
             GetComponentInChildren<SpriteRenderer>().color = originalColor;
+            GetComponentInChildren<Light>().enabled = true;
         }
        // }
     }
@@ -304,7 +306,7 @@ public class NPC : MonoBehaviour
         GetComponent<BoxCollider>().enabled = true;
         GetComponentInChildren<SpriteRenderer>().color = new Color(0.07f, 0.07f, 0.07f);
         GetComponentInChildren<SpriteRenderer>().enabled = true;
-        GetComponentInChildren<Light>().enabled = true;
+        //GetComponentInChildren<Light>().enabled = true;
         StartCoroutine(RunPreemptiveOrder());
 
     }
