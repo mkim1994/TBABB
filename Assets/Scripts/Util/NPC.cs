@@ -309,6 +309,8 @@ public class NPC : MonoBehaviour
 
         Services.GameManager.audioController.spotlightsfx.Play();
         silhouette.transform.position = silhouetteLocation;
+
+        finishedDrink = false;
         silhouette.gameObject.SetActive(false);
         //transform.position = seatLocations[BestSeat()];
         GetComponent<BoxCollider>().enabled = true;
