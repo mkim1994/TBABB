@@ -79,6 +79,7 @@ position: -886,101
                 <<setsprite Sahana nostalgic>>
                 Customer: It's just nice to get what I ask for, for once.
                 <<setsprite Sahana idle>>
+                <<finishedDrink Sahana>>
                 Customer: I think that's all I needed right now.
                 <<setsprite Sahana happy>>
                 Customer: Thank you again--bye.
