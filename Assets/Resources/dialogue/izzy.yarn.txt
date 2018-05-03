@@ -140,7 +140,9 @@ colorID: 0
 position: 182,507
 ---
 Customer: Working construction at the moment.
-Customer: I know, not at all glamorous, but it's money.
+Customer: I know, I don't look the part, haha.
+Customer: Had to rush to a job interview after.
+Customer: Not at all glamorous, but it's money.
 Customer: I used to be quite the frail kid--still am, I guess.
 Customer: ...Do I stink?
 [[You smell fine.|3IzzyF]]
@@ -151,10 +153,10 @@ tags:
 colorID: 0
 position: 433,602
 ---
-Izzy: You're being nice!
-Izzy: My little sis gets all cranky about it when I get home.
-Izzy: But she used to get cranky about something else entirely before, so...
-Izzy: This is a lot better.
+Customer: You're being nice!
+Customer: My little sis gets all cranky about it when I get home.
+Customer: But she used to get cranky about something else entirely before, so...
+Customer: This is a lot better.
 [[Something else?|3IzzyH]]
 [[Sister?|3IzzyI]]
 ===
@@ -163,12 +165,12 @@ tags:
 colorID: 0
 position: 198,758
 ---
-Izzy: Haha, ouch!
-Izzy: Not the type to mince words, are you?
-Izzy: I'm used to it...
-Izzy: My little sis get all cranky about it when I get home.
-Izzy: But she used to get cranky about something else entirely before, so...
-Izzy: This is a lot better.
+Customer: Haha, ouch!
+Customer: Not the type to mince words, are you?
+Customer: I'm used to it...
+Customer: My little sis get all cranky about it when I get home.
+Customer: But she used to get cranky about something else entirely before, so...
+Customer: This is a lot better.
 [[Something else?|3IzzyH]]
 [[Sister?|3IzzyI]]
 ===
