@@ -150,7 +150,7 @@ position: -213,600
 title: 2Ivory
 tags: 
 colorID: 0
-position: 56,627
+position: 56,625
 ---
 <<if $drinkScoreIvory is -1 and $stateIvory is -1>>
     <<setsprite Ivory sneaky>>
@@ -283,7 +283,7 @@ position: 56,627
 title: 2IvoryA
 tags: 
 colorID: 0
-position: 356,554
+position: 344,450
 ---
 <<setsprite Ivory annoyed>>
 Customer: I don't know if I want to talk about it...
@@ -303,7 +303,7 @@ Customer: On the rocks, of course.
 title: 2IvoryB
 tags: 
 colorID: 0
-position: 405,847
+position: 547,627
 ---
 <<setsprite Ivory nostalgic>>
 Customer: Haha...
@@ -314,7 +314,6 @@ Customer: Yep. You know it.
 Customer: ...Think I need another one.
 <<order Ivory 1 n 0 n 0 whiskey 1.0>>
 <<setsprite Ivory idle>>
-
 <<finishedDrink Ivory>>
 Customer: Can you get me another shot of whiskey?
 Customer: On the rocks, of course.
@@ -323,7 +322,7 @@ Customer: On the rocks, of course.
 title: 2IvoryC
 tags: 
 colorID: 0
-position: 30,896
+position: 572,888
 ---
 <<setsprite Ivory distressed>>
 Customer: Ah...
@@ -375,7 +374,7 @@ Customer: Yeah.
 title: 2IvoryE
 tags: 
 colorID: 0
-position: 269,1089
+position: 190,949
 ---
 <<setsprite Ivory happy>>
 Customer: Hahahaha.
@@ -394,7 +393,7 @@ Customer: Yeah.
 title: 2IvoryF
 tags: 
 colorID: 0
-position: -538,1293
+position: -539,1291
 ---
 <<setsprite Ivory distressed>>
 Customer: Well, it's either that or actually think about things.
