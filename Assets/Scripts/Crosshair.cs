@@ -25,6 +25,7 @@ public class Crosshair : MonoBehaviour
 	private bool _hasShrunken = false;
 	private float origScale = 0f;
 	private float newScale = 0.3f;
+	private string iceMakerText = "hold to get ice";
 	private string sinkText = "hold to empty";
 	private string pourText = "hold to pour";
 	
@@ -61,7 +62,11 @@ public class Crosshair : MonoBehaviour
 			_crosshairLeft.enabled = false;
 			_crosshairRight.enabled = false;
 			_leftText.enabled = false;
-			_rightText.enabled = false;							
+			_rightText.enabled = false;
+			_lButton.enabled = false;
+			_rButton.enabled = false;
+			_r1text.enabled = false;
+			_l1text.enabled = false;
 		}
 		else
 		{
@@ -70,6 +75,10 @@ public class Crosshair : MonoBehaviour
 			_crosshairRight.enabled = true;
 			_leftText.enabled = true;
 			_rightText.enabled = true;
+			_rButton.enabled = true;
+			_lButton.enabled = true;
+			_r1text.enabled = true;
+			_l1text.enabled = true;
 		}
 	}
 
@@ -378,7 +387,13 @@ public class Crosshair : MonoBehaviour
 				if (Context._player.pickupableInLeftHand.GetComponent<Glass>() != null)
 				{
 					Context._crosshairLeft.sprite = UIControls.GetSprite("action_left");
-					Context._leftText.text = Context.sinkText;
+					if (Context._player.sink != null)
+					{
+						Context._leftText.text = Context.sinkText;					
+					} else if (Context._player.iceMaker != null)
+					{
+						Context._leftText.text = Context.iceMakerText;
+					}
 					Context.ShowCrosshairLeft();
 					Context.ShowImage(Context._lButton);
 				}
@@ -389,7 +404,13 @@ public class Crosshair : MonoBehaviour
 				if (Context._player.pickupableInRightHand.GetComponent<Glass>() != null)
 				{
 					Context._crosshairRight.sprite = UIControls.GetSprite("action_right");			
-					Context._rightText.text = Context.sinkText;
+					if (Context._player.sink != null)
+					{
+						Context._rightText.text = Context.sinkText;					
+					} else if (Context._player.iceMaker != null)
+					{
+						Context._rightText.text = Context.iceMakerText;
+					}
 					Context.ShowCrosshairRight();
 					Context.ShowImage(Context._rButton);
 				}
@@ -406,8 +427,16 @@ public class Crosshair : MonoBehaviour
 					Context.ShowCrosshairRight();
 					Context.ShowImage(Context._rButton);
 					Context.ShowImage(Context._lButton);
-					Context._leftText.text = Context.sinkText;
-					Context._rightText.text = Context.sinkText;
+					if (Context._player.sink != null)
+					{
+						Context._leftText.text = Context.sinkText;
+						Context._rightText.text = Context.sinkText;
+					} else if (Context._player.iceMaker != null)
+					{
+						Context._leftText.text = Context.iceMakerText;
+						Context._rightText.text = Context.iceMakerText;
+					}
+
 				} else if (Context._player.pickupableInRightHand.GetComponent<Glass>() != null &&
 				           Context._player.pickupableInLeftHand.GetComponent<Bottle>() != null)
 				{
@@ -417,7 +446,13 @@ public class Crosshair : MonoBehaviour
 					Context.ShowCrosshairRight();
 					Context.ShowImage(Context._rButton);
 					Context._leftText.text = "";
-					Context._rightText.text = Context.sinkText;
+					if (Context._player.sink != null)
+					{
+						Context._rightText.text = Context.sinkText;					
+					} else if (Context._player.iceMaker != null)
+					{
+						Context._rightText.text = Context.iceMakerText;
+					}
 				} else if (Context._player.pickupableInLeftHand.GetComponent<Glass>() != null &&
 				           Context._player.pickupableInRightHand.GetComponent<Bottle>() != null)
 				{
@@ -426,8 +461,14 @@ public class Crosshair : MonoBehaviour
 					Context.HideImage(Context._rButton);
 					Context.ShowCrosshairLeft();
 					Context.ShowImage(Context._lButton);
-					Context._leftText.text = Context.sinkText;
 					Context._rightText.text = "";
+					if (Context._player.sink != null)
+					{
+						Context._leftText.text = Context.sinkText;					
+					} else if (Context._player.iceMaker != null)
+					{
+						Context._leftText.text = Context.iceMakerText;
+					}
 				}
 			}
 		}

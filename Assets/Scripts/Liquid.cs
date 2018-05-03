@@ -41,20 +41,25 @@ public class Liquid : MonoBehaviour {
 	public bool isBeingPoured = false;
 	public bool isEvaluated = false;
 
-	[SerializeField] private WaterPillarRender waterPillar;
+	private MeshRenderer meshRenderer;
 
-	[SerializeField] private WaterSurface waterSurface;
-	// Use this for initialization
+ 	// Use this for initialization
 	void Start ()
 	{
 		drinkParts.Add(sodaVolume);
 		drinkParts.Add(tonicVolume);
 		drinkParts.Add(whiskeyVolume);
-		
-		if (gameObject.GetComponent<SkinnedMeshRenderer>() != null)
+
+		if (GetComponent<MeshRenderer>() != null)
 		{
-			myLiquid = GetComponent<SkinnedMeshRenderer>();
- 		} 
+			meshRenderer = GetComponent<MeshRenderer>();
+			meshRenderer.enabled = false;
+		}
+
+//		if (gameObject.GetComponent<SkinnedMeshRenderer>() != null)
+//		{
+//			myLiquid = GetComponent<SkinnedMeshRenderer>();
+//		} 
 		
 		DetectCoasters ();
  		thisCocktail = new DrinkProfile (sodaVolume/height, tonicVolume/height, vermouthVolume/height, lemonJuiceVolume/height, 0, 0, 0, 0, 0, 0, 0, 
@@ -74,7 +79,7 @@ public class Liquid : MonoBehaviour {
 			case Glass.GlassType.Beer_mug:
 				break;
 			case Glass.GlassType.Highball:
-				myMaxVolume = 0.5f;
+				myMaxVolume = 1f;
 				break;
 			case Glass.GlassType.Shot:
 				break;
@@ -190,6 +195,7 @@ public class Liquid : MonoBehaviour {
 // 		height = Mathf.Clamp(height, 0, 100);
 //		transform.localScale = new Vector3(1, 1, 1);
 //		myLiquidVolume = liquidSurf.transform.localPosition.y;
+		meshRenderer.enabled = true;
 		if (liquidSurf.transform.localPosition.y <= myMaxVolume)
 		{
 			liquidSurf.transform.Translate(Vector3.up * pourRate * Time.deltaTime, Space.Self);		
@@ -210,6 +216,7 @@ public class Liquid : MonoBehaviour {
 
 	public void EmptyLiquid()
 	{
+		meshRenderer.enabled = false;
 		height = 0;
 		sodaVolume = 0;
 		tonicVolume = 0;

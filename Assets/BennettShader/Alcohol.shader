@@ -121,6 +121,7 @@
             o.Albedo *= c.rgb;
 
             o.Emission = 0.2*o.Albedo; //a little ambient light
+            o.Emission += float4(0.1, 0.1, 0.1, 0.0);
             o.Metallic = _Metallic;
             o.Smoothness = _Glossiness;
             o.Alpha = c.a;

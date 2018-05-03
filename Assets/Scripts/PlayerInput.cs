@@ -858,11 +858,15 @@ public class PlayerInput : MonoBehaviour
 				   pickupableInLeftHand.GetComponent<Notepad>() != null &&
 				   interactionTimer >= minHoldTime
 				){
-					Pen pen = pickupableInRightHand.GetComponent<Pen>();
-					pen.WriteRightHanded();
-					Notepad notepad = pickupableInLeftHand.GetComponent<Notepad>();
-					notepad.SignNoteOnLeftHand();
-					interactionTimer = 0;
+					if (i_useLeft)
+					{
+						Pen pen = pickupableInRightHand.GetComponent<Pen>();
+						pen.WriteRightHanded();
+						Notepad notepad = pickupableInLeftHand.GetComponent<Notepad>();
+						notepad.SignNoteOnLeftHand();
+						interactionTimer = 0;
+					}
+
 				}
 			}
 			
