@@ -41,6 +41,10 @@ public class ActionUI : MonoBehaviour
 		{
 			lightText = "end the day\n(there are still customers to serve)";
 		}
+		else
+		{
+			lightText = "end the day";
+		}
 	}
 	
 	private void ShowImage()
@@ -107,7 +111,18 @@ public class ActionUI : MonoBehaviour
 			if (Context.player.npc == null)
 			{
 				TransitionTo<Nothing>();
-			} 
+			}
+
+			if (Services.GameManager.dialogue.isDialogueRunning)
+			{
+				Context.HideImage();
+				Context.text.text = "";
+			}
+			else
+			{
+				Context.text.text = Context.talkText;
+				Context.ShowImage();
+			}
 		}
 	}
 

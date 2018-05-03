@@ -19,6 +19,7 @@ public class Crosshair : MonoBehaviour
 	private bool _hasShrunken = false;
 	private float origScale = 0.1f;
 	private float newScale = 0.3f;
+	private string sinkText = "empty";
 	
 	private enum CrosshairState {
 		Nothing,
@@ -342,7 +343,7 @@ public class Crosshair : MonoBehaviour
 				if (Context._player.pickupableInLeftHand.GetComponent<Glass>() != null)
 				{
 					Context._crosshairLeft.sprite = UIControls.GetSprite("action_left");
-					Context._leftText.text = "use";
+					Context._leftText.text = Context.sinkText;
 					Context.ShowCrosshairLeft();
 				}
 			} 
@@ -352,21 +353,38 @@ public class Crosshair : MonoBehaviour
 				if (Context._player.pickupableInRightHand.GetComponent<Glass>() != null)
 				{
 					Context._crosshairRight.sprite = UIControls.GetSprite("action_right");			
-					Context._rightText.text = "use";
+					Context._rightText.text = Context.sinkText;
 					Context.ShowCrosshairRight();
 				}
 			}
 			
 			else if (Context._player.pickupableInLeftHand != null && Context._player.pickupableInRightHand != null)
 			{
+				//both glass
 				if (Context._player.pickupableInRightHand.GetComponent<Glass>() != null && Context._player.pickupableInLeftHand.GetComponent<Glass>() != null)
 				{
 					Context._crosshairRight.sprite = UIControls.GetSprite("action_right");			
 					Context._crosshairLeft.sprite = UIControls.GetSprite("action_left");
 					Context.ShowCrosshairLeft();
 					Context.ShowCrosshairRight();
-					Context._leftText.text = "use";
-					Context._rightText.text = "use";
+					Context._leftText.text = Context.sinkText;
+					Context._rightText.text = Context.sinkText;
+				} else if (Context._player.pickupableInRightHand.GetComponent<Glass>() != null &&
+				           Context._player.pickupableInLeftHand.GetComponent<Bottle>() != null)
+				{
+					Context._crosshairRight.sprite = UIControls.GetSprite("action_right");			
+ 					Context.HideCrosshairLeft();
+					Context.ShowCrosshairRight();
+					Context._leftText.text = "";
+					Context._rightText.text = Context.sinkText;
+				} else if (Context._player.pickupableInLeftHand.GetComponent<Glass>() != null &&
+				           Context._player.pickupableInRightHand.GetComponent<Bottle>() != null)
+				{
+					Context._crosshairRight.sprite = UIControls.GetSprite("action_right");			
+					Context.HideCrosshairRight();
+					Context.ShowCrosshairLeft();
+					Context._leftText.text = Context.sinkText;
+					Context._rightText.text = "";
 				}
 			}
 		}

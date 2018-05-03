@@ -51,7 +51,7 @@ public class PlayerInput : MonoBehaviour
 	private CharacterController cc;
 //	[SerializeField]Coaster targetCoaster;
 	[HideInInspector] public NPC npc;
-	[HideInInspector] public Sink sink;
+	public Sink sink;
 	public IceMaker iceMaker;
 	public Vector3 dropPos;
 	protected Camera myCam;
@@ -67,7 +67,7 @@ public class PlayerInput : MonoBehaviour
 	public Pickupable pickupableInLeftHand;
 	public Pickupable pickupableInRightHand;
 //	public List<GameObject> pickupableGOs = new List<GameObject>();
-	public float maxInteractionDist = 4f;
+	public float maxInteractionDist = 6f;
 	public float maxTalkingDist = 8f;
 	[SerializeField]private float interactionTimer = 0f;
 	private float minHoldTime = 0.5f;
@@ -1287,15 +1287,13 @@ public class PlayerInput : MonoBehaviour
 				npc = null;
  			}
 			
-			if (Vector3.Distance(hitObj.transform.position, transform.position) <= maxInteractionDist)
+			if (hitObj.GetComponent<Sink>() != null &&
+			    Vector3.Distance(transform.position, hitObj.transform.position) <= maxInteractionDist)
 			{
-				if (hitObj.GetComponent<Sink>() != null)
-				{
-					sink = hitObj.GetComponent<Sink>();
-				} else if (hitObj.GetComponent<Sink>() == null)
-				{
-					sink = null;
-				}
+				sink = hitObj.GetComponent<Sink>();
+			} else if (hitObj.GetComponent<Sink>() == null || Vector3.Distance(transform.position, hitObj.transform.position) > maxInteractionDist)
+			{
+				sink = null;
 			}
 
 			//no distance check
