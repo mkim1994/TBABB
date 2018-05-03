@@ -248,7 +248,7 @@ public class NPC : MonoBehaviour
             //distinguish who's talking by color
             for (int i = 0; i < Services.GameManager.dayManager.currentCustomers.Count; ++i){
                 if(Services.GameManager.dayManager.currentCustomers[i] != this){
-                    Services.GameManager.dayManager.currentCustomers[i].GetComponentInChildren<SpriteRenderer>().color = new Color(0.07f, 0.07f, 0.07f);
+                    Services.GameManager.dayManager.currentCustomers[i].GetComponentInChildren<SpriteRenderer>().color = new Color(0.09f,0.09f, 0.09f);
                     Services.GameManager.dayManager.currentCustomers[i].GetComponentInChildren<Light>().enabled = false;
 
                 } 
@@ -312,7 +312,7 @@ public class NPC : MonoBehaviour
         silhouette.gameObject.SetActive(false);
         //transform.position = seatLocations[BestSeat()];
         GetComponent<BoxCollider>().enabled = true;
-        GetComponentInChildren<SpriteRenderer>().color = new Color(0.07f, 0.07f, 0.07f);
+        GetComponentInChildren<SpriteRenderer>().color = new Color(0.09f, 0.09f, 0.09f);
         GetComponentInChildren<SpriteRenderer>().enabled = true;
         //GetComponentInChildren<Light>().enabled = true;
         StartCoroutine(RunPreemptiveOrder());
