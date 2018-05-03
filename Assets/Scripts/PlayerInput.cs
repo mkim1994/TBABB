@@ -495,16 +495,19 @@ public class PlayerInput : MonoBehaviour
 					else //PICK UP ITEM ON TABLE
 					{
 						pickupable.InteractLeftHand();
+						Debug.Log("Line 498 happened");
 					}
 				}
-			} else if(pickupable == null && pickupableInLeftHand != null && targetDropzone != null){ //DROP
+			} else if(pickupable == null && pickupableInLeftHand != null && targetDropzone != null)
+			{ //DROP
 				if(dropPos != Vector3.zero && !targetDropzone.isOccupied){
 					if (targetDropzone.GetComponentInParent<Coaster>() == null)
 					{
+						Debug.Log("Not a pen has been dropped!");
 						pickupableInLeftHand.dropPos = dropPos;
 						pickupableInLeftHand.targetDropzone = targetDropzone;
 						pickupableInLeftHand.InteractLeftHand();
- 					}
+					}
 					else
 					{
 						Coaster targetCoaster = targetDropzone.GetComponentInParent<Coaster>();
@@ -540,7 +543,7 @@ public class PlayerInput : MonoBehaviour
 						Glass leftHandGlass = pickupableInLeftHand.GetComponent<Glass>();
 						leftHandGlass.LeftHandEmptyGlass();
 						interactionTimer = 0;
- 					}
+  					}
 				}
 			}
 
@@ -554,7 +557,7 @@ public class PlayerInput : MonoBehaviour
 					Notepad notepad = pickupableInRightHand.GetComponent<Notepad>();
 					notepad.SignNoteOnRightHand();
 					interactionTimer = 0;
-				}
+ 				}
 			}
 
 			if (iceMaker != null)

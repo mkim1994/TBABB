@@ -17,6 +17,7 @@ public class Pen : Pickupable
 	[SerializeField]private Vector3 _writeLeftHandRot;
 	[SerializeField]private Vector3 _rightHandStartRot;
 	[SerializeField]private Vector3 _writeRightHandRot;
+	public bool isWriting = false;
 
 	protected override void Start(){
 		base.Start();
@@ -25,8 +26,10 @@ public class Pen : Pickupable
 
 	public void WriteLeftHanded(){
 		Sequence w = DOTween.Sequence();
-		w.Append(transform.DOLocalMove(_writeLeftHandPos, 1f, false));
-		w.Append(transform.DOLocalMove(_leftHandStartPos, 0.75f, false));
+ 		w.AppendCallback(() => Services.TweenManager.tweensAreActive = true);
+		w.Append(transform.DOLocalMove(_writeLeftHandPos, 1f));
+		w.Append(transform.DOLocalMove(_leftHandStartPos, 0.75f));
+ 		w.OnComplete(() => Services.TweenManager.tweensAreActive = false);
 		Sequence r = DOTween.Sequence();
 		r.Append(transform.DOLocalRotate(_writeLeftHandRot, 1f));
 		r.Append(transform.DOLocalRotate(_leftHandStartRot, 0.75f));
@@ -34,9 +37,11 @@ public class Pen : Pickupable
 	
 	public void WriteRightHanded(){
 		Sequence w = DOTween.Sequence();
-		w.Append(transform.DOLocalMove(_writeRightHandPos, 1f, false));
+		w.AppendCallback(() => Services.TweenManager.tweensAreActive = true);
+ 		w.Append(transform.DOLocalMove(_writeRightHandPos, 1f, false));
 		w.Append(transform.DOLocalMove(_rightHandStartPos, 0.75f, false));
-		Sequence r = DOTween.Sequence();
+		w.OnComplete(() => Services.TweenManager.tweensAreActive = false);
+ 		Sequence r = DOTween.Sequence();
 		r.Append(transform.DOLocalRotate((_writeRightHandRot), 1f));
 		r.Append(transform.DOLocalRotate(_rightHandStartRot, 0.75f));
 	}
@@ -74,9 +79,6 @@ public class Pen : Pickupable
 	
 	public override void PickupTween(Vector3 moveToPos, Vector3 startRotation){
 		DeclareActiveTween();
-//         if(targetDropzone != null){
-//             targetDropzone.isOccupied = false;
-//         }
 		Sequence sequence = DOTween.Sequence();
 		sequence.Append(transform.DOLocalMove(moveToPos, pickupDropTime, false));
 		transform.DOLocalRotate(startRotation, pickupDropTime, RotateMode.FastBeyond360);

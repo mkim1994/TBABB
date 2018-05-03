@@ -1067,6 +1067,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00b2e07a9f6594d45a03df0c1f3548cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _crosshairCenter: {fileID: 114595274453327816}
   _crosshairRight: {fileID: 114540597504038040}
   _crosshairLeft: {fileID: 114776861998077428}
   _leftText: {fileID: 114107806424576816}

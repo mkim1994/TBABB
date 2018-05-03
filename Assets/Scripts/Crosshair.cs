@@ -6,7 +6,7 @@ using DG.Tweening;
 
 public class Crosshair : MonoBehaviour
 {
-
+	[SerializeField] private Image _crosshairCenter;
 	[SerializeField] private Image _crosshairRight;
 	[SerializeField] private Image _crosshairLeft;
 	[SerializeField] private Text _leftText;
@@ -30,6 +30,12 @@ public class Crosshair : MonoBehaviour
 	}
 
 	[SerializeField] private CrosshairState _xhairState;
+	
+	[SerializeField]private bool _hasShrunkenLeft = false;
+	[SerializeField] private bool _hasGrownLeft = false;
+	[SerializeField]private bool _hasGrownRight = false;
+	[SerializeField]private bool _hasShrunkenRight = false;
+	
 	// Use this for initialization
 	void Start ()
 	{
@@ -44,6 +50,7 @@ public class Crosshair : MonoBehaviour
 
 		if (Services.TweenManager.tweensAreActive)
 		{
+			_crosshairCenter.enabled = false;
 			_crosshairLeft.enabled = false;
 			_crosshairRight.enabled = false;
 			_leftText.enabled = false;
@@ -51,6 +58,7 @@ public class Crosshair : MonoBehaviour
 		}
 		else
 		{
+			_crosshairCenter.enabled = true;
 			_crosshairLeft.enabled = true;
 			_crosshairRight.enabled = true;
 			_leftText.enabled = true;
@@ -58,59 +66,56 @@ public class Crosshair : MonoBehaviour
 		}
 	}
 
-	public void ChangeCrosshairAlphaOnTargetSighted()
-	{
-		_hasShrunken = false;
+//	public void ChangeCrosshairAlphaOnTargetSighted()
+//	{
+//		_hasShrunken = false;
+//
+//		if (!_hasGrown)
+//		{
+//			_crosshairRight.DOColor(new Color(1, 1, 1, 1), 0.1f);
+//			_crosshairLeft.DOColor(new Color(1, 1, 1, 1), 0.1f);
+//
+//			Sequence a = DOTween.Sequence();
+//			a.Append(_crosshairRight.transform.DOScaleX(newScale, 0.25f));
+//			
+//			Sequence b = DOTween.Sequence();
+//			b.Append(_crosshairRight.transform.DOScaleY(newScale, 0.25f));
+//			
+//			Sequence c = DOTween.Sequence();
+//			c.Append(_crosshairLeft.transform.DOScaleX(newScale, 0.25f));
+//			
+//			Sequence d = DOTween.Sequence();
+//			d.Append(_crosshairLeft.transform.DOScaleY(newScale, 0.25f));
+//			_hasGrown = true;
+//		}
+// 	}
+//	
+//	public void ChangeCrosshairAlphaOnTargetLost()
+//	{
+//		_hasGrown = false;
+//
+//		if (!_hasShrunken)
+//		{
+//			_crosshairRight.DOColor(new Color(1, 1, 1, 0), 0.1f);
+//			_crosshairLeft.DOColor(new Color(1, 1, 1, 0), 0.1f);
+//			
+//			Sequence a = DOTween.Sequence();
+//			a.Append(_crosshairRight.transform.DOScaleX(origScale, 0.25f));
+//			
+//			Sequence b = DOTween.Sequence();
+//			b.Append(_crosshairRight.transform.DOScaleY(origScale, 0.25f));
+//			
+//			Sequence c = DOTween.Sequence();
+//			c.Append(_crosshairLeft.transform.DOScaleX(origScale, 0.25f));
+//			
+//			Sequence d = DOTween.Sequence();
+//			d.Append(_crosshairLeft.transform.DOScaleY(origScale, 0.25f));
+// 
+//			_hasShrunken = true;
+//		}
+//	}
 
-		if (!_hasGrown)
-		{
-			_crosshairRight.DOColor(new Color(1, 1, 1, 1), 0.1f);
-			_crosshairLeft.DOColor(new Color(1, 1, 1, 1), 0.1f);
-
-			Sequence a = DOTween.Sequence();
-			a.Append(_crosshairRight.transform.DOScaleX(newScale, 0.25f));
-			
-			Sequence b = DOTween.Sequence();
-			b.Append(_crosshairRight.transform.DOScaleY(newScale, 0.25f));
-			
-			Sequence c = DOTween.Sequence();
-			c.Append(_crosshairLeft.transform.DOScaleX(newScale, 0.25f));
-			
-			Sequence d = DOTween.Sequence();
-			d.Append(_crosshairLeft.transform.DOScaleY(newScale, 0.25f));
-			_hasGrown = true;
-		}
- 	}
 	
-	public void ChangeCrosshairAlphaOnTargetLost()
-	{
-		_hasGrown = false;
-
-		if (!_hasShrunken)
-		{
-			_crosshairRight.DOColor(new Color(1, 1, 1, 0), 0.1f);
-			_crosshairLeft.DOColor(new Color(1, 1, 1, 0), 0.1f);
-			
-			Sequence a = DOTween.Sequence();
-			a.Append(_crosshairRight.transform.DOScaleX(origScale, 0.25f));
-			
-			Sequence b = DOTween.Sequence();
-			b.Append(_crosshairRight.transform.DOScaleY(origScale, 0.25f));
-			
-			Sequence c = DOTween.Sequence();
-			c.Append(_crosshairLeft.transform.DOScaleX(origScale, 0.25f));
-			
-			Sequence d = DOTween.Sequence();
-			d.Append(_crosshairLeft.transform.DOScaleY(origScale, 0.25f));
- 
-			_hasShrunken = true;
-		}
-	}
-
-	[SerializeField]private bool _hasShrunkenLeft = false;
-	[SerializeField] private bool _hasGrownLeft = false;
-	[SerializeField]private bool _hasGrownRight = false;
-	[SerializeField]private bool _hasShrunkenRight = false;
 	
 	private void ShowCrosshairLeft()
 	{

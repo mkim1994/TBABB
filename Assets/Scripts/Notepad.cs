@@ -65,7 +65,11 @@ public class Notepad : Pickupable {
 	    r.Append(transform.DOLocalRotate(_signLeftHandRot, 1f));
 	    r.Append(transform.DOLocalRotate(_leftHandStartRot, 0.75f));
     }
-	
+
+	public void ReadNote()
+	{
+	}
+
 	public override void InteractLeftHand(){
 		if(!pickedUp){
 			//pick up with left hand
