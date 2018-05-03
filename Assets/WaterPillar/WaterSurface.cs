@@ -14,9 +14,9 @@ public class WaterSurface : MonoBehaviour {
 	{
 		meshRenderer = gameObject.GetComponent<MeshRenderer>();
 		Material matCopy = new Material(myMaterial);
-		meshRenderer.sharedMaterial = matCopy;
+		meshRenderer.material = matCopy;
 		myColor = Color.white;
-	}
+ 	}
 
 	void Update () {
 		transform.rotation = Quaternion.identity;

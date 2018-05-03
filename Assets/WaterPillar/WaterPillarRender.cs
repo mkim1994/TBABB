@@ -27,7 +27,7 @@ public class WaterPillarRender : MonoBehaviour {
 		_colors = new LiquidColors();
 		meshRenderer = gameObject.GetComponent<MeshRenderer>();
 		Material matCopy = new Material(myMaterial);
-		meshRenderer.sharedMaterial = matCopy;
+		meshRenderer.material = matCopy;
 		myColor = Color.white;
 	}
 	
@@ -47,20 +47,20 @@ public class WaterPillarRender : MonoBehaviour {
 	{
 		if (_mixer == Mixer.none)
 		{
-			myColor = Util.CombineColors(LiquidColors.DrinkToColorDictionary[_drinkBase], myColor);
-			meshRenderer.sharedMaterial.color = myColor;
-//			waterSurface.meshRenderer.material.color = myColor;
-			Debug.Log("changing color to drinkbase!");
+			Debug.Log("Adding drinkbase color!");
+			myColor = Util.AddColors(LiquidColors.DrinkToColorDictionary[_drinkBase], myColor);
+			meshRenderer.material.color = myColor;
+			waterSurface.meshRenderer.material.color = myColor;
 			_r = myColor.x;
 			_g = myColor.y;
 			_b = myColor.z;
 		}
 		else if (_drinkBase == DrinkBase.none)
 		{
-			myColor = Util.CombineColors(LiquidColors.MixerToColorDictionary[_mixer], myColor);
-			meshRenderer.sharedMaterial.color = myColor;
-//			waterSurface.meshRenderer.material.color = myColor;
-			Debug.Log("Changing color to mixer!");
+			Debug.Log("Adding mixer color!");
+			myColor = Util.AddColors(LiquidColors.MixerToColorDictionary[_mixer], myColor);
+			meshRenderer.material.color = myColor;
+			waterSurface.meshRenderer.material.color = myColor;
 			_r = myColor.x;
 			_g = myColor.y;
 			_b = myColor.z;

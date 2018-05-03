@@ -8,7 +8,7 @@ using UnityEngine.UI;
 
 public class DualWield : ActionUI
 {
-	private PlayerInput player;
+	private PlayerInput _myPlayer;
 	private enum MyState
 	{
 		None,
@@ -28,7 +28,7 @@ public class DualWield : ActionUI
 	// Use this for initialization
 	void Start ()
 	{
-		player = Services.GameManager.playerInput;
+		_myPlayer = Services.GameManager.playerInput;
 		fsm = new FSM<DualWield>(this);
 		fsm.TransitionTo<NoDualWield>();
 	}
@@ -54,21 +54,21 @@ public class DualWield : ActionUI
 		public override void Update()
 		{
 			base.Update();
-			if (Context.player.pickupableInLeftHand != null)
+			if (Context._myPlayer.pickupableInLeftHand != null)
 			{
-				if (Context.player.pickupableInRightHand != null)
+				if (Context._myPlayer.pickupableInRightHand != null)
 				{
-					if ((Context.player.pickupableInLeftHand.GetComponent<Notepad>() != null &&
-						Context.player.pickupableInRightHand.GetComponent<Pen>() != null) ||
-						(Context.player.pickupableInLeftHand.GetComponent<Pen>() != null &&
-						Context.player.pickupableInRightHand.GetComponent<Notepad>() != null))
+					if ((Context._myPlayer.pickupableInLeftHand.GetComponent<Notepad>() != null &&
+						Context._myPlayer.pickupableInRightHand.GetComponent<Pen>() != null) ||
+						(Context._myPlayer.pickupableInLeftHand.GetComponent<Pen>() != null &&
+						Context._myPlayer.pickupableInRightHand.GetComponent<Notepad>() != null))
 					{
 						TransitionTo<Writing>();
 					}
-					else if ((Context.player.pickupableInLeftHand.GetComponent<Bottle>() != null &&
-							Context.player.pickupableInRightHand.GetComponent<Glass>() != null) ||
-							(Context.player.pickupableInLeftHand.GetComponent<Glass>() != null &&
-							Context.player.pickupableInRightHand.GetComponent<Bottle>() != null))
+					else if ((Context._myPlayer.pickupableInLeftHand.GetComponent<Bottle>() != null &&
+							Context._myPlayer.pickupableInRightHand.GetComponent<Glass>() != null) ||
+							(Context._myPlayer.pickupableInLeftHand.GetComponent<Glass>() != null &&
+							Context._myPlayer.pickupableInRightHand.GetComponent<Bottle>() != null))
 					{
 						TransitionTo<Pouring>();
 					}
@@ -89,7 +89,7 @@ public class DualWield : ActionUI
 
 		public override void Update()
 		{
-			if (!Context.player.isDualWield)
+			if (!Context._myPlayer.isDualWield)
 			{
 				TransitionTo<NoDualWield>();
 			}
@@ -108,7 +108,7 @@ public class DualWield : ActionUI
 		
 		public override void Update()
 		{			
-			if (!Context.player.isDualWield)
+			if (!Context._myPlayer.isDualWield)
 			{
 				TransitionTo<NoDualWield>();
 			}

@@ -58,10 +58,10 @@ public class Glass : Pickupable
 		_playerLookVec2 = Services.GameManager.playerInput.lookVector;
 
  		if(pickedUp && !Services.TweenManager.tweensAreActive){
-			// transform.rotation = Quaternion.identity;
-			// _playerLookX -= _playerLookVec2.y * _playerLookSens;
-			// _playerLookX = Mathf.Clamp (_playerLookX, -75f, -25f);
-			// transform.localRotation = Quaternion.Euler (_playerLookX, 0, 0);	 
+//			transform.rotation = Quaternion.identity;
+//			_playerLookX -= _playerLookVec2.y * _playerLookSens;
+//			_playerLookX = Mathf.Clamp (_playerLookX, -75f, -25f);
+//			transform.localRotation = Quaternion.Euler (_playerLookX, 0, 0);	 
 		}
 
 		if(myIceList.Count >= 3){
@@ -182,7 +182,12 @@ public class Glass : Pickupable
 		}
 	}
 
-	
+	public void GenericEmpty()
+	{
+		liquid.EmptyLiquid();
+		ClearIce();
+	}
+
 	public void LeftHandEmptyGlass()
 	{	
 		DeclareActiveTween();
@@ -217,6 +222,8 @@ public class Glass : Pickupable
 		ClearIce();
 //		liquid.empty;
 	}
+	
+	//if has accepted drink is false && isReadyToTalk is true && if coaster is 
 
 	public void ClearIce(){
 		foreach (var ice in myIceList){

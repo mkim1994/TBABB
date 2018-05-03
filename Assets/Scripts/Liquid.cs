@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using System.Xml;
+using Rewired.Utils.Libraries.TinyJson;
 using UnityEngine;
 
 public class Liquid : MonoBehaviour {
@@ -29,6 +30,8 @@ public class Liquid : MonoBehaviour {
  	[SerializeField]float smokiness, sweetness, sourness, bitterness, spiciness;
 	[SerializeField]float alcoholVolume, abv;
 
+	public NPC myCustomer;
+
 	public List<float> drinkParts = new List<float>();
 
     private float originalX, originalZ;
@@ -42,6 +45,8 @@ public class Liquid : MonoBehaviour {
 	public bool isEvaluated = false;
 
 	private MeshRenderer meshRenderer;
+	[SerializeField] private WaterPillarRender waterPillar;
+	[SerializeField] private WaterSurface waterSurface;
 
  	// Use this for initialization
 	void Start ()
@@ -79,7 +84,7 @@ public class Liquid : MonoBehaviour {
 			case Glass.GlassType.Beer_mug:
 				break;
 			case Glass.GlassType.Highball:
-				myMaxVolume = 1f;
+				myMaxVolume = 0.75f;
 				break;
 			case Glass.GlassType.Shot:
 				break;
@@ -96,7 +101,23 @@ public class Liquid : MonoBehaviour {
 	void Update () {
 		
 //		Debug.Log(gameObject.name + " isBeingPoured is " + isBeingPoured);
- 		
+
+		if (myCustomer != null)
+		{
+			if (myCustomer.finishedDrink)
+			{
+				if (transform.parent != null)
+				{
+					if (transform.parent.GetComponent<Glass>() != null)
+					{
+						EmptyLiquid();
+						transform.parent.GetComponent<Glass>().ClearIce();
+						myCustomer.finishedDrink = false;
+					}
+				}
+			}
+		}
+
 		totalVolume = whiskeyVolume + ginVolume + brandyVolume + vodkaVolume + wineVolume + beerVolume + tequilaVolume + rumVolume 
 					+ sodaVolume + tonicVolume + vermouthVolume + orangeJuiceVolume + lemonJuiceVolume;
  		
@@ -258,7 +279,7 @@ public class Liquid : MonoBehaviour {
 //			Debug.Log(_drinkBase);
 			myDrinkProfile = Services.DrinkDictionary.drinkBases[_drinkBase];		
 			myDrinkBase = _drinkBase;
-//			waterPillar.SetMaterialColorOnPour(_drinkBase);
+			waterPillar.SetMaterialColorOnPour(_drinkBase);
 		}
 	}
 
@@ -268,7 +289,7 @@ public class Liquid : MonoBehaviour {
 			myDrinkProfile = Services.MixerDictionary.mixers[_mixer];
 	//		mixerBeingPoured = _mixer;
 			myMixer = _mixer;
-//			waterPillar.SetMaterialColorOnPour(DrinkBase.none, _mixer);
+			waterPillar.SetMaterialColorOnPour(DrinkBase.none, _mixer);
 		}
 
 	}
@@ -385,7 +406,8 @@ public class Liquid : MonoBehaviour {
 			if (Vector3.Distance (coaster.gameObject.transform.position, transform.position) <= 0.01f) {
 				if(!isEvaluated && !GetComponentInParent<Pickupable>().pickedUp)
 				{
- 					coaster.EvaluateDrink (this.thisCocktail, this);	
+ 					coaster.EvaluateDrink (this.thisCocktail, this);
+					myCustomer = coaster.myCustomer;
 					isEvaluated = true;
 				}        
 			}

@@ -220,6 +220,13 @@ public class Util
 		result /= aColors.Length;
 		return result;
 	}
+
+	public static Color AddColors(Color color1, Color color2)
+	{
+		Color result = (color1 + color2)/2;
+		return result;
+	}
+	
 	
 }
 
@@ -229,7 +236,7 @@ public class LiquidColors
 	{
 		{ DrinkBase.beer, Color.yellow },
 		{ DrinkBase.brandy, new Vector4(Util.GetRemappedColorFloat(209), Util.GetRemappedColorFloat(80), 0, 1)},
-		{ DrinkBase.gin, Color.gray},
+		{ DrinkBase.gin, Color.green},
 		{ DrinkBase.whiskey, new Vector4(Util.GetRemappedColorFloat(183), Util.GetRemappedColorFloat(97), 0, 1)},
 		
 		//rgb(139,69,19)

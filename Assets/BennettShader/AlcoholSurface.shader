@@ -65,6 +65,9 @@
             o.Albedo = texCUBElod (_Cube, float4(IN.worldRefl, _CubeBlur)).rgb ;
             //add some light transmitted through the water from the cubemap
             o.Albedo += texCUBElod (_Cube, float4(-IN.viewDir, _CubeBlur)).rgb * _Color * _LightColor0.rgb*_LightIntensity; //great
+            
+            o.Emission += float4(0.1, 0.1, 0.1, 0.0);
+
             //tint the water 
 			o.Albedo *= c.rgb;
 			o.Metallic = _Metallic;
