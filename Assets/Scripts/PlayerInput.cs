@@ -882,9 +882,7 @@ public class PlayerInput : MonoBehaviour
 						{
 							if (pickupable.GetComponent<Glass>() != null && pickupableInRightHand.GetComponent<Bottle>() != null
 							&& interactionTimer >= minHoldTime)
-							{
-								Debug.Log("Yeah interactionTimer was greater than minHoldTime!");
-								
+							{								
 								Bottle bottle = pickupableInRightHand.GetComponent<Bottle>();
 								Glass glass = pickupable.GetComponent<Glass>();
 								float startTimeInterval = bottle.tweenTime;

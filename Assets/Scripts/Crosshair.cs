@@ -41,6 +41,21 @@ public class Crosshair : MonoBehaviour
 	// Update is called once per frame
 	void Update () {
 		fsm.Update();
+
+		if (Services.TweenManager.tweensAreActive)
+		{
+			_crosshairLeft.enabled = false;
+			_crosshairRight.enabled = false;
+			_leftText.enabled = false;
+			_rightText.enabled = false;							
+		}
+		else
+		{
+			_crosshairLeft.enabled = true;
+			_crosshairRight.enabled = true;
+			_leftText.enabled = true;
+			_rightText.enabled = true;
+		}
 	}
 
 	public void ChangeCrosshairAlphaOnTargetSighted()
@@ -272,6 +287,8 @@ public class Crosshair : MonoBehaviour
 				else
 				{
 					Context.HideCrosshair(Context._crosshairLeft);
+					Context._leftText.text = "";
+
 				} 
 				
 				if (Context._player.pickupableInRightHand == null)
@@ -284,6 +301,7 @@ public class Crosshair : MonoBehaviour
 				else
 				{
 					Context.HideCrosshair(Context._crosshairRight);
+					Context._rightText.text = "";
 				}
 
 			} 
@@ -422,13 +440,13 @@ public class Crosshair : MonoBehaviour
 			Context._xhairState = CrosshairState.Dropzone;
 			Context._crosshairRight.sprite = UIControls.GetSprite("pickup_right");
 			Context._crosshairLeft.sprite = UIControls.GetSprite("pickup_left");
-			if (Context._player.pickupableInLeftHand != null)
+			if (Context._player.pickupableInLeftHand != null && !Context._player.targetDropzone.isOccupied)
 			{
 				Context.ShowCrosshairLeft();		
 				Context._leftText.text = "drop";
 			}
 			
-			if (Context._player.pickupableInRightHand != null)
+			if (Context._player.pickupableInRightHand != null && !Context._player.targetDropzone.isOccupied)
 			{
 				Context.ShowCrosshairRight();	
 				Context._rightText.text = "drop";
@@ -446,6 +464,16 @@ public class Crosshair : MonoBehaviour
 			else if (Context._player.targetDropzone == null && Context._player.isLookingAtNothing)
 			{
 				TransitionTo<LookingAtNothing>();
+			} 
+			else if (Context._player.targetDropzone != null)
+			{
+				if (Context._player.targetDropzone.isOccupied)
+				{
+//					if(Context._player.pickupableInLeftHand != null){
+//						if(Context._player.pickupableInLeftHand)
+//						Context.HideCrosshairLeft();
+//					}
+				}
 			}
 		}
 	}
