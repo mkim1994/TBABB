@@ -251,7 +251,7 @@ public class Liquid : MonoBehaviour {
 //			Debug.Log(_drinkBase);
 			myDrinkProfile = Services.DrinkDictionary.drinkBases[_drinkBase];		
 			myDrinkBase = _drinkBase;
-			waterPillar.SetMaterialColorOnPour(_drinkBase);
+//			waterPillar.SetMaterialColorOnPour(_drinkBase);
 		}
 	}
 
@@ -261,7 +261,7 @@ public class Liquid : MonoBehaviour {
 			myDrinkProfile = Services.MixerDictionary.mixers[_mixer];
 	//		mixerBeingPoured = _mixer;
 			myMixer = _mixer;
-			waterPillar.SetMaterialColorOnPour(DrinkBase.none, _mixer);
+//			waterPillar.SetMaterialColorOnPour(DrinkBase.none, _mixer);
 		}
 
 	}

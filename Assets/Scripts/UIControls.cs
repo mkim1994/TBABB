@@ -109,20 +109,20 @@ public class UIControls : MonoBehaviour {
 				if(Services.GameManager.playerInput.sink == null && Services.GameManager.playerInput.iceMaker == null && player.pickupable == null){
 					inLeftHandText[0].text = buttonAndKeyStrings[0 + stringOffset];
 					leftHandActionImage.enabled = true;
-					inLeftHandText[1].text = "pour";
+					inLeftHandText[1].text = "";
 					inRightHandText[0].text = buttonAndKeyStrings[1 + stringOffset];
 					rightHandActionImage.enabled = true;
-					inRightHandText[1].text = "pour";
+					inRightHandText[1].text = "";
 				} else if (player.sink != null){
 					if(leftHandObj.GetComponent<Glass>() != null){
 						leftHandActionImage.enabled = true;
 						inLeftHandText[0].text = buttonAndKeyStrings[0 + stringOffset];
-						inLeftHandText[1].text = "empty glass";
+						inLeftHandText[1].text = "";
 					} 
 					if(rightHandObj.GetComponent<Glass>() != null){
 						rightHandActionImage.enabled = true;
 						inRightHandText[0].text = buttonAndKeyStrings[0 + stringOffset];
-						inRightHandText[1].text = "empty glass";
+						inRightHandText[1].text = "";
 					}
 				} 
 			}
@@ -136,10 +136,10 @@ public class UIControls : MonoBehaviour {
 					{
 						inLeftHandText[0].text = buttonAndKeyStrings[0 + stringOffset];
 						leftHandActionImage.enabled = true;
-						inLeftHandText[1].text = "pour";
+						inLeftHandText[1].text = "";
 						inRightHandText[0].text = buttonAndKeyStrings[1 + stringOffset];
 						rightHandActionImage.enabled = true;
-						inRightHandText[1].text = "pour";
+						inRightHandText[1].text = "";
 					}	
 				}
 				else
@@ -156,11 +156,11 @@ public class UIControls : MonoBehaviour {
 				if(player.sink != null){
 					leftHandActionImage.enabled = true;
 					inLeftHandText[0].text = buttonAndKeyStrings[0 + stringOffset];
-					inLeftHandText[1].text = "empty glass";
+					inLeftHandText[1].text = "";
 
 					rightHandActionImage.enabled = true;
 					inRightHandText[0].text = buttonAndKeyStrings[0 + stringOffset];
-					inRightHandText[1].text = "empty glass";
+					inRightHandText[1].text = "";
 				}
 				else {
 					ClearTextArray(inLeftHandText);
@@ -186,7 +186,7 @@ public class UIControls : MonoBehaviour {
 					if(leftHandObj.GetComponent<Bottle>() != null){
 						leftHandActionImage.enabled = true;
 						inLeftHandText[0].text = buttonAndKeyStrings[0 + stringOffset];
-						inLeftHandText[1].text = "pour";			
+						inLeftHandText[1].text = "";			
 					}
 				}
 			} 
@@ -201,7 +201,7 @@ public class UIControls : MonoBehaviour {
 				if(leftHandObj.GetComponent<Glass>() != null){
 					leftHandActionImage.enabled = true;
 					inLeftHandText[0].text = buttonAndKeyStrings[0 + stringOffset];
-					inLeftHandText[1].text = "empty glass";
+					inLeftHandText[1].text = "";
 				}
 			}
 
@@ -228,7 +228,7 @@ public class UIControls : MonoBehaviour {
 					if(rightHandObj.GetComponent<Bottle>() != null){
 						rightHandActionImage.enabled = true;
 						inRightHandText[0].text = buttonAndKeyStrings[1 + stringOffset];
-						inRightHandText[1].text = "pour";			
+						inRightHandText[1].text = "";			
 					}
 				} 
 			} 
@@ -244,7 +244,7 @@ public class UIControls : MonoBehaviour {
 				if(rightHandObj.GetComponent<Glass>() != null){
 					rightHandActionImage.enabled = true;
 					inRightHandText[0].text = buttonAndKeyStrings[0 + stringOffset];
-					inRightHandText[1].text = "empty glass";
+					inRightHandText[1].text = "";
 				}
 			}
 
@@ -389,40 +389,40 @@ public class UIControls : MonoBehaviour {
 				centerText.text = targetObj;
 				if (distanceToObj <= Services.GameManager.playerInput.maxInteractionDist)
 				{
-					if (dropzoneBeingLookedAt != null)
-					{
-						if (dropzoneBeingLookedAt.objectsInMe.Count > 0)
-						{
-							if (leftHandObj == null)
-							{
-								// leftHandPickUpImage.enabled = true;
-								leftHandActionImage.enabled = true;
-								leftHandControlsText[0].text = buttonAndKeyStrings[2 + stringOffset];
-								leftHandControlsText[1].text = "pick up";
-							}
-							else if (leftHandObj != null && dropzoneBeingLookedAt.objectsInMe[0] == pickupableBeingLookedAt)
-							{
-								// leftHandPickUpImage.enabled = true;
-								leftHandActionImage.enabled = true;
-								leftHandControlsText[0].text = buttonAndKeyStrings[2 + stringOffset];
-								leftHandControlsText[1].text = "swap";
-							}
-							if (rightHandObj == null)
-							{
-								// rightHandPickUpImage.enabled = true;
-								rightHandActionImage.enabled = true;
-								rightHandControlsText[0].text = buttonAndKeyStrings[3 + stringOffset];
-								rightHandControlsText[1].text = "pick up";
-							}
-							else
-							{
-								// rightHandPickUpImage.enabled = true;
-								rightHandActionImage.enabled = true;
-								rightHandControlsText[0].text = buttonAndKeyStrings[3 + stringOffset];
-								rightHandControlsText[1].text = "swap";
-							}					
-						}
-					}
+//					if (dropzoneBeingLookedAt != null)
+//					{
+//						if (dropzoneBeingLookedAt.objectsInMe.Count > 0)
+//						{
+//							if (leftHandObj == null)
+//							{
+//								// leftHandPickUpImage.enabled = true;
+//								leftHandActionImage.enabled = true;
+//								leftHandControlsText[0].text = buttonAndKeyStrings[2 + stringOffset];
+//								leftHandControlsText[1].text = "pick up";
+//							}
+//							else if (leftHandObj != null && dropzoneBeingLookedAt.objectsInMe[0] == pickupableBeingLookedAt)
+//							{
+//								// leftHandPickUpImage.enabled = true;
+//								leftHandActionImage.enabled = true;
+//								leftHandControlsText[0].text = buttonAndKeyStrings[2 + stringOffset];
+//								leftHandControlsText[1].text = "swap";
+//							}
+//							if (rightHandObj == null)
+//							{
+//								// rightHandPickUpImage.enabled = true;
+//								rightHandActionImage.enabled = true;
+//								rightHandControlsText[0].text = buttonAndKeyStrings[3 + stringOffset];
+//								rightHandControlsText[1].text = "pick up";
+//							}
+//							else
+//							{
+//								// rightHandPickUpImage.enabled = true;
+//								rightHandActionImage.enabled = true;
+//								rightHandControlsText[0].text = buttonAndKeyStrings[3 + stringOffset];
+//								rightHandControlsText[1].text = "swap";
+//							}					
+//						}
+//					}
 				}
 
 				else
@@ -451,35 +451,35 @@ public class UIControls : MonoBehaviour {
 					{
 						if (dropzoneBeingLookedAt.objectsInMe.Count > 0)
 						{
-							if (leftHandObj == null)
-							{
-								// leftHandPickUpImage.enabled = true;
-								leftHandActionImage.enabled = true;
-								leftHandControlsText[0].text = buttonAndKeyStrings[2 + stringOffset];
-								leftHandControlsText[1].text = "pick up";
-							}
-							else if (leftHandObj != null)
-							{
-								// leftHandPickUpImage.enabled = true;
-								leftHandActionImage.enabled = true;
-								leftHandControlsText[0].text = buttonAndKeyStrings[2 + stringOffset];
-								leftHandControlsText[1].text = "swap";
-							}
-	
-							if (rightHandObj == null)
-							{
-								// rightHandPickUpImage.enabled = true;
-								rightHandActionImage.enabled = true;
-								rightHandControlsText[0].text = buttonAndKeyStrings[3 + stringOffset];
-								rightHandControlsText[1].text = "pick up";
-							}
-							else
-							{
-								// rightHandPickUpImage.enabled = true;
-								rightHandActionImage.enabled = true;
-								rightHandControlsText[0].text = buttonAndKeyStrings[3 + stringOffset];
-								rightHandControlsText[1].text = "swap";
-							}
+//							if (leftHandObj == null)
+//							{
+//								// leftHandPickUpImage.enabled = true;
+//								leftHandActionImage.enabled = true;
+//								leftHandControlsText[0].text = buttonAndKeyStrings[2 + stringOffset];
+//								leftHandControlsText[1].text = "pick up";
+//							}
+//							else if (leftHandObj != null)
+//							{
+//								// leftHandPickUpImage.enabled = true;
+//								leftHandActionImage.enabled = true;
+//								leftHandControlsText[0].text = buttonAndKeyStrings[2 + stringOffset];
+//								leftHandControlsText[1].text = "swap";
+//							}
+//	
+//							if (rightHandObj == null)
+//							{
+//								// rightHandPickUpImage.enabled = true;
+//								rightHandActionImage.enabled = true;
+//								rightHandControlsText[0].text = buttonAndKeyStrings[3 + stringOffset];
+//								rightHandControlsText[1].text = "pick up";
+//							}
+//							else
+//							{
+//								// rightHandPickUpImage.enabled = true;
+//								rightHandActionImage.enabled = true;
+//								rightHandControlsText[0].text = buttonAndKeyStrings[3 + stringOffset];
+//								rightHandControlsText[1].text = "swap";
+//							}
 						}						
 					}
 
@@ -491,9 +491,9 @@ public class UIControls : MonoBehaviour {
 			}
 
 			else if (hitObj.GetComponent<Backdoor>() != null ){
-				botCenterImg.SetActive(true);
-				bottomCenterText.text = buttonAndKeyStrings[4 + stringOffset];
-				bottomCenterInsText.text = "start the day";
+//				botCenterImg.SetActive(true);
+//				bottomCenterText.text = buttonAndKeyStrings[4 + stringOffset];
+//				bottomCenterInsText.text = "start the day";
 			}
 			//ray hits NPC
 			else if (hitObj.GetComponent<NPC>() != null)
@@ -505,44 +505,44 @@ public class UIControls : MonoBehaviour {
 				}
 				if (distanceToObj < Services.GameManager.playerInput.maxTalkingDist)
 				{
-					if (!Services.GameManager.dialogue.isDialogueRunning)
-					{
-						//Customer is not talking
-						botCenterImg.SetActive(true);
-						bottomCenterText.text = buttonAndKeyStrings[4 + stringOffset];
-						bottomCenterInsText.text = "talk";
-						if (rightHandObj != null && distanceToObj <= Services.GameManager.playerInput.maxInteractionDist+1)
-						{
- 							// rightHandPickUpImage.enabled = true;
-							 rightHandActionImage.enabled = true;
-							rightHandControlsText[0].text = buttonAndKeyStrings[3 + stringOffset];
-							rightHandControlsText[1].text = "serve";
-						} else if (distanceToObj > Services.GameManager.playerInput.maxInteractionDist+1)
-						{
-							ClearTextArray(rightHandControlsText);
-							rightHandActionImage.enabled = false;
-							// rightHandPickUpImage.enabled = false;
-						}
-
-						if (leftHandObj != null && distanceToObj <= Services.GameManager.playerInput.maxInteractionDist+1)
-						{
-							// leftHandPickUpImage.enabled = true;
-							leftHandActionImage.enabled = true;
-							leftHandControlsText[0].text = buttonAndKeyStrings[2 + stringOffset];
-							leftHandControlsText[1].text = "serve";
-						} else if (distanceToObj > Services.GameManager.playerInput.maxInteractionDist+1)
-						{
-							ClearTextArray(leftHandControlsText);
-							leftHandActionImage.enabled = false;
-							// leftHandPickUpImage.enabled = false;
-						}
-					}
-					else if (Services.GameManager.dialogue.isDialogueRunning)
-					{
-						//customer is talking
-						botCenterImg.SetActive(false);
-						bottomCenterText.text = "";
-					} 
+//					if (!Services.GameManager.dialogue.isDialogueRunning)
+//					{
+//						//Customer is not talking
+//						botCenterImg.SetActive(true);
+//						bottomCenterText.text = buttonAndKeyStrings[4 + stringOffset];
+//						bottomCenterInsText.text = "talk";
+//						if (rightHandObj != null && distanceToObj <= Services.GameManager.playerInput.maxInteractionDist+1)
+//						{
+// 							// rightHandPickUpImage.enabled = true;
+//							 rightHandActionImage.enabled = true;
+//							rightHandControlsText[0].text = buttonAndKeyStrings[3 + stringOffset];
+//							rightHandControlsText[1].text = "serve";
+//						} else if (distanceToObj > Services.GameManager.playerInput.maxInteractionDist+1)
+//						{
+//							ClearTextArray(rightHandControlsText);
+//							rightHandActionImage.enabled = false;
+//							// rightHandPickUpImage.enabled = false;
+//						}
+//
+//						if (leftHandObj != null && distanceToObj <= Services.GameManager.playerInput.maxInteractionDist+1)
+//						{
+//							// leftHandPickUpImage.enabled = true;
+//							leftHandActionImage.enabled = true;
+//							leftHandControlsText[0].text = buttonAndKeyStrings[2 + stringOffset];
+//							leftHandControlsText[1].text = "serve";
+//						} else if (distanceToObj > Services.GameManager.playerInput.maxInteractionDist+1)
+//						{
+//							ClearTextArray(leftHandControlsText);
+//							leftHandActionImage.enabled = false;
+//							// leftHandPickUpImage.enabled = false;
+//						}
+//					}
+//					else if (Services.GameManager.dialogue.isDialogueRunning)
+//					{
+//						//customer is talking
+//						botCenterImg.SetActive(false);
+//						bottomCenterText.text = "";
+//					} 
 				}
 				else
 				{
@@ -577,55 +577,55 @@ public class UIControls : MonoBehaviour {
 				isLookingAtNPC = false;
 				if (Services.GameManager.dayManager.dayHasEnded)
 				{
-					centerText.text = "end the day";
-					if (distanceToObj <= Services.GameManager.playerInput.maxInteractionDist)
-					{
-						botCenterImg.SetActive(true);
-						bottomCenterInsText.text = "use";
-						bottomCenterText.text = buttonAndKeyStrings[4 + stringOffset];
-					} 
-					else
-					{
-						botCenterImg.SetActive(false);
-						bottomCenterInsText.text = "";
-						bottomCenterText.text = "";
-					}
+//					centerText.text = "end the day";
+//					if (distanceToObj <= Services.GameManager.playerInput.maxInteractionDist)
+//					{
+//						botCenterImg.SetActive(true);
+//						bottomCenterInsText.text = "use";
+//						bottomCenterText.text = buttonAndKeyStrings[4 + stringOffset];
+//					} 
+//					else
+//					{
+//						botCenterImg.SetActive(false);
+//						bottomCenterInsText.text = "";
+//						bottomCenterText.text = "";
+//					}
 
 				} 
 				else if (!Services.GameManager.dayManager.dayHasEnded)
 				{
-					if (!isMessageOverrideOn)
-					{
-						centerText.text = "end the day";
-					}
-					// Debug.Log(distanceToObj);
-					if (distanceToObj <= player.maxInteractionDist)
-					{
-						botCenterImg.SetActive(true);
-						bottomCenterInsText.text = "use";
-						bottomCenterText.text = buttonAndKeyStrings[4 + stringOffset];
-						if (Services.GameManager.playerInput.i_talk)
-						{
-							centerText.text = "there are still customers to serve";
-							if (!isMessageOverrideOn)
-							{
-								// Debug.Log("There are still customers to serve!");
- 								// centerText.text = "there are still customers to serve";
-								StartCoroutine(clearTextCoroutine);
-								isMessageOverrideOn = true;
-							}					
-						}
-						else if (!Services.GameManager.playerInput.i_talk && !isMessageOverrideOn)
-						{
-							centerText.text = "end the day";
-						}
-					}
-					else
-					{
-						botCenterImg.SetActive(false);
-						bottomCenterInsText.text = "";
-						bottomCenterText.text = "";
-					}
+//					if (!isMessageOverrideOn)
+//					{
+//						centerText.text = "end the day";
+//					}
+//					// Debug.Log(distanceToObj);
+//					if (distanceToObj <= player.maxInteractionDist)
+//					{
+//						botCenterImg.SetActive(true);
+//						bottomCenterInsText.text = "use";
+//						bottomCenterText.text = buttonAndKeyStrings[4 + stringOffset];
+//						if (Services.GameManager.playerInput.i_talk)
+//						{
+//							centerText.text = "there are still customers to serve";
+//							if (!isMessageOverrideOn)
+//							{
+//								// Debug.Log("There are still customers to serve!");
+// 								// centerText.text = "there are still customers to serve";
+//								StartCoroutine(clearTextCoroutine);
+//								isMessageOverrideOn = true;
+//							}					
+//						}
+//						else if (!Services.GameManager.playerInput.i_talk && !isMessageOverrideOn)
+//						{
+//							centerText.text = "end the day";
+//						}
+//					}
+//					else
+//					{
+//						botCenterImg.SetActive(false);
+//						bottomCenterInsText.text = "";
+//						bottomCenterText.text = "";
+//					}
 				} 
 			} 
 			

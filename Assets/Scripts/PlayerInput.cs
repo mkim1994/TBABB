@@ -47,18 +47,18 @@ public class PlayerInput : MonoBehaviour
 	private Vector3 moveVector;
 	public Vector2 lookVector;
 	public int playerId = 0; 
-	private Player player;
+	[HideInInspector]public Player player;
 	private CharacterController cc;
 //	[SerializeField]Coaster targetCoaster;
 	[HideInInspector] public NPC npc;
 	[HideInInspector] public Sink sink;
-	[HideInInspector] public IceMaker iceMaker;
+	public IceMaker iceMaker;
 	public Vector3 dropPos;
 	protected Camera myCam;
 	//raycast management
 	public Dropzone targetDropzone;
-	[HideInInspector] public LightSwitch lightSwitch;
-	[HideInInspector] public Backdoor backdoor;
+	public LightSwitch lightSwitch;
+	public Backdoor backdoor;
 	public LayerMask layerMask;
 	public LayerMask dropzoneLayerMask;
 	public LayerMask nonPickupableLayerMask;
@@ -1278,34 +1278,17 @@ public class PlayerInput : MonoBehaviour
 		Ray ray = new Ray(myCam.transform.position, myCam.transform.forward);
 		float rayDist = Mathf.Infinity;
 		RaycastHit hit = new RaycastHit();
-		
+
 		if(Physics.Raycast(ray, out hit, rayDist, nonPickupableLayerMask)){
 			GameObject hitObj = hit.transform.gameObject; //if you're actually looking at something
-//			Debug.Log(hitObj);
  			if(hitObj.GetComponent<NPC>() != null && Vector3.Distance(transform.position, hitObj.transform.position) <= maxTalkingDist){ //check if object looked at can be picked up
 				npc = hitObj.GetComponent<NPC>(); //if it's NPC and close enough, assign it to NPC.				  
  			} else if (hitObj.GetComponent<NPC>() == null || Vector3.Distance(transform.position, hitObj.transform.position) > maxTalkingDist){
 				npc = null;
  			}
-
+			
 			if (Vector3.Distance(hitObj.transform.position, transform.position) <= maxInteractionDist)
 			{
-				if (hitObj.GetComponent<LightSwitch>() != null)
-				{
-					lightSwitch = hitObj.GetComponent<LightSwitch>();
-				} else if (hitObj.GetComponent<LightSwitch>() == null)
-				{
-					lightSwitch = null;
-				}
-	
-				if (hitObj.GetComponent<IceMaker>() != null)
-				{
-					iceMaker = hitObj.GetComponent<IceMaker>();
-				} else if (hitObj.GetComponent<IceMaker>() == null)
-				{
-					iceMaker = null;
-				}
-	
 				if (hitObj.GetComponent<Sink>() != null)
 				{
 					sink = hitObj.GetComponent<Sink>();
@@ -1313,16 +1296,33 @@ public class PlayerInput : MonoBehaviour
 				{
 					sink = null;
 				}
-	
-				if (hitObj.GetComponent<Backdoor>() != null &&
-					Vector3.Distance(transform.position, hitObj.transform.position) <= 6f)
-				{
-					backdoor = hitObj.GetComponent<Backdoor>();
-				} else if (hitObj.GetComponent<Backdoor>() == null)
-				{
-					backdoor = null;
-				}
 			}
+
+			//no distance check
+			if (hitObj.GetComponent<Backdoor>() != null &&
+				Vector3.Distance(transform.position, hitObj.transform.position) <= 6)
+			{
+				backdoor = hitObj.GetComponent<Backdoor>();
+			} else if (hitObj.GetComponent<Backdoor>() == null || Vector3.Distance(transform.position, hitObj.transform.position) > 6)
+			{
+				backdoor = null;
+			}
+			if (hitObj.GetComponent<IceMaker>() != null && Vector3.Distance(transform.position, hit.point) <= 6)
+			{
+				iceMaker = hitObj.GetComponent<IceMaker>();
+			} else if (hitObj.GetComponent<IceMaker>() == null || Vector3.Distance(transform.position, hitObj.transform.position) > 6)
+			{
+				iceMaker = null;
+			}
+			if (hitObj.GetComponent<LightSwitch>() != null &&
+			    Vector3.Distance(transform.position, hitObj.transform.position) <= 6)
+			{
+				lightSwitch = hitObj.GetComponent<LightSwitch>();
+			} else if (hitObj.GetComponent<LightSwitch>() == null || Vector3.Distance(transform.position, hitObj.transform.position) > 6)
+			{
+				lightSwitch = null;
+			}
+
 		} else {
 			npc = null;
 			lightSwitch = null;

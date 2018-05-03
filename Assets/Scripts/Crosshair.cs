@@ -3,13 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using DG.Tweening;
-using UnityEngine.XR.WSA.WebCam;
 
 public class Crosshair : MonoBehaviour
 {
 
 	[SerializeField] private Image _crosshairRight;
 	[SerializeField] private Image _crosshairLeft;
+	[SerializeField] private Text _leftText;
+	[SerializeField] private Text _rightText;
 	public FSM<Crosshair> fsm;
 	private float noTargetAlpha;
 	private float targetSightedAlpha;
@@ -19,6 +20,15 @@ public class Crosshair : MonoBehaviour
 	private float origScale = 0.1f;
 	private float newScale = 0.3f;
 	
+	private enum CrosshairState {
+		Nothing,
+		Actionable,
+		Pickupable,
+		Npc,
+		Dropzone
+	}
+
+	[SerializeField] private CrosshairState _xhairState;
 	// Use this for initialization
 	void Start ()
 	{
@@ -80,41 +90,75 @@ public class Crosshair : MonoBehaviour
 			_hasShrunken = true;
 		}
 	}
+
+	[SerializeField]private bool _hasShrunkenLeft = false;
+	[SerializeField] private bool _hasGrownLeft = false;
+	[SerializeField]private bool _hasGrownRight = false;
+	[SerializeField]private bool _hasShrunkenRight = false;
 	
+	private void ShowCrosshairLeft()
+	{
+		_hasShrunkenLeft = false;
+		if (!_hasGrownLeft)
+		{
+			ShowCrosshair(_crosshairLeft);
+			_hasGrownLeft = true;
+		}
+	}
+
+	private void ShowCrosshairRight()
+	{
+		_hasShrunkenRight = false;
+		if (!_hasGrownRight)
+		{
+			ShowCrosshair(_crosshairRight);
+			_hasGrownRight = true;
+		}
+	}
+
+	private void HideCrosshairLeft()
+	{
+		_hasGrownLeft = false;
+		if (!_hasShrunkenLeft)
+		{
+			HideCrosshair(_crosshairLeft);
+			Debug.Log("Hiding left crosshair!");
+			_hasShrunkenLeft = true;
+		}
+
+	}
+
+	private void HideCrosshairRight()
+	{
+		_hasGrownRight = false;
+		if (!_hasShrunkenRight)
+		{
+			HideCrosshair(_crosshairRight);
+			Debug.Log("Hiding right crosshair!");
+			_hasShrunkenRight = true;
+		}
+	}
+
 	private void ShowCrosshair(Image crosshair)
 	{
-		_hasShrunken = false;
-
-		if (!_hasGrown)
-		{
-			crosshair.DOColor(new Color(1, 1, 1, 1), 0.1f);
-			
-			Sequence a = DOTween.Sequence();
-			a.Append(crosshair.transform.DOScaleX(newScale, 0.25f));
-			
-			Sequence b = DOTween.Sequence();
-			b.Append(crosshair.transform.DOScaleY(newScale, 0.25f));
-			
-			_hasGrown = true;
-		}
+		crosshair.DOColor(new Color(1, 1, 1, 1), 0.1f);
+		
+		Sequence a = DOTween.Sequence();
+		a.Append(crosshair.transform.DOScaleX(newScale, 0.25f));
+		
+		Sequence b = DOTween.Sequence();
+		b.Append(crosshair.transform.DOScaleY(newScale, 0.25f));
 	}
 	
 	public void HideCrosshair(Image crosshair)
 	{
-		_hasGrown = false;
-
-		if (!_hasShrunken)
-		{
-			crosshair.DOColor(new Color(1, 1, 1, 0), 0.1f);
- 			
-			Sequence a = DOTween.Sequence();
-			a.Append(crosshair.transform.DOScaleX(origScale, 0.25f));
-			
-			Sequence b = DOTween.Sequence();
-			b.Append(crosshair.transform.DOScaleY(origScale, 0.25f));
-
-			_hasShrunken = true;
-		}
+		crosshair.DOColor(new Color(1, 1, 1, 0), 0.1f);
+		
+		Sequence a = DOTween.Sequence();
+		a.Append(crosshair.transform.DOScaleX(origScale, 0.25f));
+		
+		Sequence b = DOTween.Sequence();
+		b.Append(crosshair.transform.DOScaleY(origScale, 0.25f));	
 	}
 
 	private class LookingAtState : FSM<Crosshair>.State
@@ -126,16 +170,20 @@ public class Crosshair : MonoBehaviour
 		public override void OnEnter()
 		{
 			base.OnEnter();
- 			Context.ChangeCrosshairAlphaOnTargetLost();
+// 			Context.ChangeCrosshairAlphaOnTargetLost();
+			Context._leftText.text = "";
+			Context._rightText.text = "";
+			Context.HideCrosshairLeft();
+			Context.HideCrosshairRight();
+			Context._xhairState = CrosshairState.Nothing;
 //			Context.HideCrosshair(Context._crosshairLeft);
 //			Context.HideCrosshair(Context._crosshairRight);
-			Debug.Log("Looking at nothing!");
-
-		}
+ 		}
 
 		public override void Update()
 		{
 			base.Update();
+
 			if (Context._player.iceMaker != null || Context._player.sink != null)
 			{
 				TransitionTo<LookingAtActionable>();
@@ -148,7 +196,11 @@ public class Crosshair : MonoBehaviour
 			} else if (Context._player.pickupable != null)
 			{
 				TransitionTo<LookingAtPickupable>();
-			} 
+			} else if (Context._player.targetDropzone != null &&
+			           (Context._player.pickupableInLeftHand != null || Context._player.pickupableInRightHand != null))
+			{
+				TransitionTo<LookingAtDropzone>();
+			}
 		}
 	}
 
@@ -157,11 +209,13 @@ public class Crosshair : MonoBehaviour
 		public override void OnEnter()
 		{
 			base.OnEnter();
-			Context._crosshairRight.sprite = UIControls.GetSprite("pickup");
+			Context._xhairState = CrosshairState.Pickupable;
+			Context._crosshairRight.sprite = UIControls.GetSprite("pickup_right");
 			Context._crosshairLeft.sprite = UIControls.GetSprite("pickup_left");
-			Context.ChangeCrosshairAlphaOnTargetSighted();
-			Debug.Log("Looking at pickupable!");
-		}
+			Context.ShowCrosshairLeft();
+			Context.ShowCrosshairRight();
+//			Context.ChangeCrosshairAlphaOnTargetSighted();
+ 		}
 
 		public override void Update()
 		{
@@ -174,30 +228,36 @@ public class Crosshair : MonoBehaviour
 			{
 				Context.ShowCrosshair(Context._crosshairRight);
 				Context._crosshairRight.sprite = UIControls.GetSprite("action_right");
+				Context._rightText.text = "pour";
 
 				if (Context._player.pickupableInLeftHand == null)
 				{
 					Context.ShowCrosshair(Context._crosshairLeft);
 					Context._crosshairLeft.sprite = UIControls.GetSprite("pickup_left");
+					Context._leftText.text = "pick up";
 				}
 				else
 				{
 					Context.HideCrosshair(Context._crosshairLeft);
+					Context._leftText.text = "";
 				}
 			} else if (Context._player.canPourWithLeft && !Context._player.canPourWithRight)
 			{
 				Context.ShowCrosshair(Context._crosshairLeft);
 				Context._crosshairLeft.sprite = UIControls.GetSprite("action_left");
+				Context._leftText.text = "pour";
 //				Context.HideCrosshair(Context._crosshairRight);
 
 				if (Context._player.pickupableInRightHand == null)
 				{
 					Context.ShowCrosshair(Context._crosshairRight);
-					Context._crosshairRight.sprite = UIControls.GetSprite("pickup");
+					Context._crosshairRight.sprite = UIControls.GetSprite("pickup_right");
+					Context._rightText.text = "pick up";
 				}
 				else
 				{
 					Context.HideCrosshair(Context._crosshairRight);
+					Context._rightText.text = "pick up";
 				}
 			}
 			else if (!Context._player.canPourWithLeft && !Context._player.canPourWithRight)
@@ -205,7 +265,8 @@ public class Crosshair : MonoBehaviour
 				if (Context._player.pickupableInLeftHand == null)
 				{
 					Context.ShowCrosshair(Context._crosshairLeft);
-					Context._crosshairLeft.sprite = UIControls.GetSprite("pickup_left");								
+					Context._crosshairLeft.sprite = UIControls.GetSprite("pickup_left");	
+					Context._leftText.text = "pick up";
 				}
 				else
 				{
@@ -215,7 +276,9 @@ public class Crosshair : MonoBehaviour
 				if (Context._player.pickupableInRightHand == null)
 				{
 					Context.ShowCrosshair(Context._crosshairRight);
-					Context._crosshairRight.sprite = UIControls.GetSprite("pickup");
+					Context._crosshairRight.sprite = UIControls.GetSprite("pickup_right");
+					Context._rightText.text = "pick up";
+
 				}
 				else
 				{
@@ -243,12 +306,12 @@ public class Crosshair : MonoBehaviour
 		public override void OnEnter()
 		{
 			base.OnEnter();
+			Context._xhairState = CrosshairState.Npc;
 //			Context._crosshairRight.sprite = UIControls.GetSprite("talk_right");
 //			Context._crosshairLeft.sprite = UIControls.GetSprite("talk_left");
 //			Context.ChangeCrosshairAlphaOnTargetSighted();
 			
-			Debug.Log("Looking at NPC!");
-
+ 
 		}
 		
 		public override void Update()
@@ -273,12 +336,14 @@ public class Crosshair : MonoBehaviour
 		public override void OnEnter()
 		{
 			base.OnEnter();
+			Context._xhairState = CrosshairState.Actionable;
 			if (Context._player.pickupableInLeftHand != null && Context._player.pickupableInRightHand == null)
 			{
 				if (Context._player.pickupableInLeftHand.GetComponent<Glass>() != null)
 				{
 					Context._crosshairLeft.sprite = UIControls.GetSprite("action_left");
-					Context.ShowCrosshair(Context._crosshairLeft);
+					Context._leftText.text = "use";
+					Context.ShowCrosshairLeft();
 				}
 			} 
 			
@@ -287,7 +352,8 @@ public class Crosshair : MonoBehaviour
 				if (Context._player.pickupableInRightHand.GetComponent<Glass>() != null)
 				{
 					Context._crosshairRight.sprite = UIControls.GetSprite("action_right");			
-					Context.ShowCrosshair(Context._crosshairRight);
+					Context._rightText.text = "use";
+					Context.ShowCrosshairRight();
 				}
 			}
 			
@@ -297,10 +363,12 @@ public class Crosshair : MonoBehaviour
 				{
 					Context._crosshairRight.sprite = UIControls.GetSprite("action_right");			
 					Context._crosshairLeft.sprite = UIControls.GetSprite("action_left");
-					Context.ChangeCrosshairAlphaOnTargetSighted();
+					Context.ShowCrosshairLeft();
+					Context.ShowCrosshairRight();
+					Context._leftText.text = "use";
+					Context._rightText.text = "use";
 				}
 			}
-
 		}
 		
 		public override void Update()
@@ -314,16 +382,40 @@ public class Crosshair : MonoBehaviour
 			{
 				TransitionTo<LookingAtNothing>();
 			}
+			
 		}
+
+		public override void OnExit()
+		{
+			base.OnExit();
+ 		}
 	}
 
 	private class LookingAtDropzone : LookingAtState
 	{
+		/*
+		 * conditions needed for this:
+		 * 1. Has to be holding something
+		 * 2. looking at a dropzone
+		 */
 		public override void OnEnter()
 		{
 			base.OnEnter();
-			Context._crosshairRight.sprite = UIControls.GetSprite("pickup");
+			Context._xhairState = CrosshairState.Dropzone;
+			Context._crosshairRight.sprite = UIControls.GetSprite("pickup_right");
 			Context._crosshairLeft.sprite = UIControls.GetSprite("pickup_left");
+			if (Context._player.pickupableInLeftHand != null)
+			{
+				Context.ShowCrosshairLeft();		
+				Context._leftText.text = "drop";
+			}
+			
+			if (Context._player.pickupableInRightHand != null)
+			{
+				Context.ShowCrosshairRight();	
+				Context._rightText.text = "drop";
+			}
+
 		}
 		
 		public override void Update()
@@ -333,7 +425,7 @@ public class Crosshair : MonoBehaviour
 			{
 				TransitionTo<LookingAtPickupable>();
 			}
-			else if (Context._player.isLookingAtNothing)
+			else if (Context._player.targetDropzone == null && Context._player.isLookingAtNothing)
 			{
 				TransitionTo<LookingAtNothing>();
 			}
