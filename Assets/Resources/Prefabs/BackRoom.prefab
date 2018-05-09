@@ -678,7 +678,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4300772546610548}
   - component: {fileID: 33848559417523946}
-  - component: {fileID: 23305564152299820}
   - component: {fileID: 95197740501746638}
   - component: {fileID: 114079367694435086}
   - component: {fileID: 65061093540871400}
@@ -1873,40 +1872,6 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_Materials:
   - {fileID: 2100000, guid: 428533174bfa9421e96e4e540901d406, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 0
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
---- !u!23 &23305564152299820
-MeshRenderer:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1791577383623980}
-  m_Enabled: 0
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_Materials:
-  - {fileID: 2100000, guid: 6e3c81d846bb449d2860190b3858e0aa, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3285,7 +3250,7 @@ MonoBehaviour:
   myChildDropzone: {fileID: 0}
   _rightHandStartPos: {x: 0.64, y: -0.48, z: 2}
   _leftHandStartPos: {x: -0.64, y: -0.48, z: 2}
-  _signRightHandPos: {x: 0, y: -0.5, z: 2}
+  _signRightHandPos: {x: 0.25, y: -0.5, z: 2}
   _signLeftHandPos: {x: -0.0425, y: -0.5, z: 2}
   _rightHandStartRot: {x: 113.12, y: 14.5, z: 154.96}
   _leftHandStartRot: {x: 100, y: -17.9, z: -171.55}
@@ -3299,8 +3264,8 @@ MonoBehaviour:
   - {fileID: 2800000, guid: a4e98c6fbbee4489096423e62a18b0a7, type: 3}
   - {fileID: 2800000, guid: a4e98c6fbbee4489096423e62a18b0a7, type: 3}
   - {fileID: 2800000, guid: a4e98c6fbbee4489096423e62a18b0a7, type: 3}
-  notesigned: {fileID: 2800000, guid: a4e98c6fbbee4489096423e62a18b0a7, type: 3}
-  _pen: {fileID: 0}
+  notesigned: {fileID: 2800000, guid: c457cce71916643d0ae2b1325f41e196, type: 3}
+  _pen: {fileID: 114852177014634790}
 --- !u!114 &114260525604580844
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3565,8 +3530,8 @@ MonoBehaviour:
   _notepad: {fileID: 0}
   _leftHandStartPos: {x: -0.96, y: -0.52, z: 2}
   _rightHandStartPos: {x: 0.96, y: -0.52, z: 2}
-  _writeLeftHandPos: {x: 0, y: -0.5, z: 2}
-  _writeRightHandPos: {x: 0.38, y: -0.5, z: 2}
+  _writeLeftHandPos: {x: -0.1, y: -0.5, z: 1.5}
+  _writeRightHandPos: {x: 0, y: -0.5, z: 1.5}
   _leftHandStartRot: {x: 0, y: 0, z: -83.3}
   _writeLeftHandRot: {x: 0, y: -62, z: -42.04}
   _rightHandStartRot: {x: 0, y: 0, z: -90}

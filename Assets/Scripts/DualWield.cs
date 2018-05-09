@@ -19,8 +19,8 @@ public class DualWield : ActionUI
 	[SerializeField]private MyState _myState;
 
 	[SerializeField] private Text dualWieldText;
-	private string pouringText = "to pour";
-	private string writingText = "to sign note";
+	private string pouringText = "hold to pour";
+	private string writingText = "hold to sign note";
 	
 	private FSM<DualWield> fsm;
 

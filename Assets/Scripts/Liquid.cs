@@ -110,9 +110,10 @@ public class Liquid : MonoBehaviour {
 				{
 					if (transform.parent.GetComponent<Glass>() != null)
 					{
+						Debug.Log("SHOULD BE EMPTYING DRINK");
+						myCustomer.finishedDrink = false;
 						EmptyLiquid();
 						transform.parent.GetComponent<Glass>().ClearIce();
-						myCustomer.finishedDrink = false;
 					}
 				}
 			}

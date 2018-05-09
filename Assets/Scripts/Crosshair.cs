@@ -17,7 +17,7 @@ public class Crosshair : MonoBehaviour
 	[SerializeField] private Image _crosshairLeft;
 	[SerializeField] private Text _leftText;
 	[SerializeField] private Text _rightText;
-	public FSM<Crosshair> fsm;
+	private FSM<Crosshair> fsm;
 	private float noTargetAlpha;
 	private float targetSightedAlpha;
 	private PlayerInput _player;
@@ -26,7 +26,7 @@ public class Crosshair : MonoBehaviour
 	private float origScale = 0f;
 	private float newScale = 0.3f;
 	private string iceMakerText = "hold to get ice";
-	private string sinkText = "hold to empty";
+	private string sinkText = "hold to wash";
 	private string pourText = "hold to pour";
 	
 	private enum CrosshairState {
@@ -81,58 +81,7 @@ public class Crosshair : MonoBehaviour
 			_l1text.enabled = true;
 		}
 	}
-
-//	public void ChangeCrosshairAlphaOnTargetSighted()
-//	{
-//		_hasShrunken = false;
-//
-//		if (!_hasGrown)
-//		{
-//			_crosshairRight.DOColor(new Color(1, 1, 1, 1), 0.1f);
-//			_crosshairLeft.DOColor(new Color(1, 1, 1, 1), 0.1f);
-//
-//			Sequence a = DOTween.Sequence();
-//			a.Append(_crosshairRight.transform.DOScaleX(newScale, 0.25f));
-//			
-//			Sequence b = DOTween.Sequence();
-//			b.Append(_crosshairRight.transform.DOScaleY(newScale, 0.25f));
-//			
-//			Sequence c = DOTween.Sequence();
-//			c.Append(_crosshairLeft.transform.DOScaleX(newScale, 0.25f));
-//			
-//			Sequence d = DOTween.Sequence();
-//			d.Append(_crosshairLeft.transform.DOScaleY(newScale, 0.25f));
-//			_hasGrown = true;
-//		}
-// 	}
-//	
-//	public void ChangeCrosshairAlphaOnTargetLost()
-//	{
-//		_hasGrown = false;
-//
-//		if (!_hasShrunken)
-//		{
-//			_crosshairRight.DOColor(new Color(1, 1, 1, 0), 0.1f);
-//			_crosshairLeft.DOColor(new Color(1, 1, 1, 0), 0.1f);
-//			
-//			Sequence a = DOTween.Sequence();
-//			a.Append(_crosshairRight.transform.DOScaleX(origScale, 0.25f));
-//			
-//			Sequence b = DOTween.Sequence();
-//			b.Append(_crosshairRight.transform.DOScaleY(origScale, 0.25f));
-//			
-//			Sequence c = DOTween.Sequence();
-//			c.Append(_crosshairLeft.transform.DOScaleX(origScale, 0.25f));
-//			
-//			Sequence d = DOTween.Sequence();
-//			d.Append(_crosshairLeft.transform.DOScaleY(origScale, 0.25f));
-// 
-//			_hasShrunken = true;
-//		}
-//	}
-
-	
-	
+		
 	private void ShowCrosshairLeft()
 	{
 		_hasShrunkenLeft = false;
@@ -204,7 +153,6 @@ public class Crosshair : MonoBehaviour
 		public override void OnEnter()
 		{
 			base.OnEnter();
-// 			Context.ChangeCrosshairAlphaOnTargetLost();
 			Context._leftText.text = "";
 			Context._rightText.text = "";
 			Context.HideCrosshairLeft();
@@ -212,8 +160,7 @@ public class Crosshair : MonoBehaviour
 			Context.HideImage(Context._rButton);
 			Context.HideImage(Context._lButton);
 			Context._xhairState = CrosshairState.Nothing;
-//			Context.HideCrosshair(Context._crosshairLeft);
-//			Context.HideCrosshair(Context._crosshairRight);
+
  		}
 
 		public override void Update()
@@ -252,8 +199,7 @@ public class Crosshair : MonoBehaviour
 			Context.ShowImage(Context._lButton);
 			Context.ShowCrosshairLeft();
 			Context.ShowCrosshairRight();
-//			Context.ChangeCrosshairAlphaOnTargetSighted();
- 		}
+  		}
 
 		public override void Update()
 		{
@@ -285,8 +231,7 @@ public class Crosshair : MonoBehaviour
 				Context.ShowImage(Context._crosshairLeft);
 				Context._crosshairLeft.sprite = UIControls.GetSprite("action_left");
 				Context._leftText.text = Context.pourText;
-//				Context.HideCrosshair(Context._crosshairRight);
-
+ 
 				if (Context._player.pickupableInRightHand == null)
 				{
 					Context.ShowImage(Context._crosshairRight);
@@ -340,36 +285,6 @@ public class Crosshair : MonoBehaviour
 				}
 			}
 			else if (Context._player.pickupable == null)
-			{
-				TransitionTo<LookingAtNothing>();
-			}
-		}
-	}
-
-	private class LookingAtNPC : LookingAtState
-	{
-		public override void OnEnter()
-		{
-			base.OnEnter();
-			Context._xhairState = CrosshairState.Npc;
-//			Context._crosshairRight.sprite = UIControls.GetSprite("talk_right");
-//			Context._crosshairLeft.sprite = UIControls.GetSprite("talk_left");
-//			Context.ChangeCrosshairAlphaOnTargetSighted();
-			
- 
-		}
-		
-		public override void Update()
-		{
-			base.Update();
-			if (Context._player.iceMaker != null || Context._player.sink != null)
-			{
-				TransitionTo<LookingAtActionable>();
-			} else if (Context._player.pickupable != null)
-			{
-				TransitionTo<LookingAtPickupable>();
-			}
-			else if (Context._player.npc == null)
 			{
 				TransitionTo<LookingAtNothing>();
 			}

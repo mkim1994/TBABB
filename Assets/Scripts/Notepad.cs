@@ -23,7 +23,7 @@ public class Notepad : Pickupable {
 	protected override void Start () {
         base.Start();        
 		onlyOnce = false;
-        mat = GetComponent<MeshRenderer>().material;
+        mat = GetComponentInChildren<MeshRenderer>().material;
 	    _pen = FindObjectOfType<Pen>();
 	}
 	
@@ -48,22 +48,28 @@ public class Notepad : Pickupable {
     {
         Sequence s = DOTween.Sequence();
         s.Append(transform.DOLocalMove(_signRightHandPos, 1f));
+	    s.Append(transform.DOLocalMove(_signRightHandPos, 0.5f));
+        s.AppendCallback(() => Services.GameManager.dayManager.noteSigned = true);
+	    s.Append(transform.DOLocalMove(_signRightHandPos, 1f));
         s.Append(transform.DOLocalMove(_rightHandStartPos, 0.75f));
-        s.OnComplete(() => Services.GameManager.dayManager.noteSigned = true);
 	    Sequence r = DOTween.Sequence();
-	    r.Append(transform.DOLocalRotate(_signRightHandRot, 1f));
-	    r.Append(transform.DOLocalRotate(_rightHandStartRot, 0.75f));
+//	    r.Append(transform.DOLocalRotate(_signRightHandRot, 1f));
+//	    r.Append(transform.DOLocalRotate(_signRightHandRot, 1f));
+//	    r.Append(transform.DOLocalRotate(_rightHandStartRot, 0.75f));
     }
 
     public void SignNoteOnLeftHand()
     {
         Sequence s = DOTween.Sequence();
         s.Append(transform.DOLocalMove(_signLeftHandPos, 1f));
+	    s.Append(transform.DOLocalMove(_signLeftHandPos, 0.5f));
+	    s.AppendCallback(() => Services.GameManager.dayManager.noteSigned = true);
+	    s.Append(transform.DOLocalMove(_signLeftHandPos, 1f));
         s.Append(transform.DOLocalMove(_leftHandStartPos, 0.75f));
-        s.OnComplete(() => Services.GameManager.dayManager.noteSigned = true);
 	    Sequence r = DOTween.Sequence();
 	    r.Append(transform.DOLocalRotate(_signLeftHandRot, 1f));
-	    r.Append(transform.DOLocalRotate(_leftHandStartRot, 0.75f));
+	    r.Append(transform.DOLocalRotate(_signLeftHandRot, 1f));
+//	    r.Append(transform.DOLocalRotate(_leftHandStartRot, 0.75f));
     }
 
 	public void ReadNoteLeftHand()
