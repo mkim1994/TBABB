@@ -24,6 +24,12 @@ public class Pen : Pickupable
 		_player = Services.GameManager.playerInput;
 	}
 
+	void Update(){
+		if(Services.GameManager.dayManager.currentDay > 0){
+			gameObject.SetActive(false);
+		}
+	}
+
 	public void WriteLeftHanded(){
 		Sequence w = DOTween.Sequence();
  		w.AppendCallback(() => Services.TweenManager.tweensAreActive = true);

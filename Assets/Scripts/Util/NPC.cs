@@ -107,6 +107,7 @@ public class NPC : MonoBehaviour
 
     [YarnCommand("finishedDrink")]
     public void FinishedDrink(){
+        Debug.Log("FINISHED DRINK");
         finishedDrink = true;
     }
 
