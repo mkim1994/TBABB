@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using System.Resources;
+using System.Security.AccessControl;
 using UnityEngine;
 
 public class Dropzone : MonoBehaviour
@@ -10,7 +11,10 @@ public class Dropzone : MonoBehaviour
 	// Use this for initialization
 	Pickupable[] pickupables;
 	public bool playerIsLooking;
-	public List<GameObject> objectsInMe = new List<GameObject>();
+	public bool isForServing;
+	public Coaster myCoaster;
+	private List<Coaster> coasters = new List<Coaster>();
+	[HideInInspector]public List<GameObject> objectsInMe = new List<GameObject>();
 
 	void Start ()
 	{
@@ -18,17 +22,11 @@ public class Dropzone : MonoBehaviour
 		aura = transform.GetChild(0).gameObject; 
 		aura.SetActive(false);
 		pickupables = FindObjectsOfType<Pickupable>();
-//		transform.eulerAngles = new Vector3 (transform.eulerAngles.x, Random.Range(0, 359), transform.eulerAngles.z);
-//		foreach(var pickupable in pickupables){
-// 			if(Vector3.Distance(pickupable.transform.position, this.transform.position) <= 1f){
-//				isOccupied = true;				
-//			}
-//			else
-//			 {
-//				 isOccupied = false;
-//			 }
-//		}
-		// isOccupied = false;
+		if (isForServing)
+		{
+			coasters.AddRange(FindObjectsOfType<Coaster>());
+			myCoaster = MyCoaster();
+		}
 	}
 	
 	// Update is called once per frame
@@ -36,6 +34,18 @@ public class Dropzone : MonoBehaviour
 	void Update()
 	{
 		
+	}
+
+	public Coaster MyCoaster(){
+		Coaster nearest = coasters[0];
+		float shortestDist = Vector3.Distance(coasters[0].transform.position, transform.position);
+		for(int i = 0; i < coasters.Count; i++){			
+			if(Vector3.Distance(coasters[i].transform.position, transform.position) <= shortestDist){
+				shortestDist = Vector3.Distance(coasters[i].transform.position, transform.position);
+				nearest = coasters[i];
+			}
+		}
+		return nearest;
 	}
 
 	[SerializeField]private float _distance; 	
@@ -49,8 +59,13 @@ public class Dropzone : MonoBehaviour
 //			Debug.Log(trigger.name + " " + distance);
 			if (!objectsInMe.Contains(trigger.gameObject) && objectsInMe.Count<1 && distance <= 0.16f)
 			{
-				objectsInMe.Add(trigger.gameObject);		
-	  			isOccupied = true;
+				objectsInMe.Add(trigger.gameObject);
+				if (objectsInMe[0].GetComponent<Glass>() != null && isForServing)
+				{
+					objectsInMe[0].GetComponent<Glass>().isInServeZone = true;
+					objectsInMe[0].GetComponent<Glass>().myServiceDropzone = this;
+				}
+				isOccupied = true;
 			}
 		}
 
@@ -68,12 +83,15 @@ public class Dropzone : MonoBehaviour
 			if (objectsInMe.Contains(exiter.gameObject))
 			{
 				objectsInMe.Remove(exiter.gameObject);
- 				isOccupied = false;
+				if (exiter.gameObject.GetComponent<Glass>() != null)
+				{
+					exiter.gameObject.GetComponent<Glass>().isInServeZone = false;
+//					exiter.GetComponent<Glass>().myServiceDropzone = null;
+				}
+				isOccupied = false;
 			}
 		}
 	}
-
-	
 
 	public void ShowAura()
 	{

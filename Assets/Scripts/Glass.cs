@@ -3,32 +3,11 @@ using System.Collections.Generic;
 using System.Xml.Schema;
 using UnityEngine;
 using DG.Tweening;
+using NUnit.Framework;
+using Vuforia;
 
 public class Glass : Pickupable
 {
-	public GameObject focalPoint;
-	public List<Ice> myIceList = new List<Ice>();
-	public bool hasLiquid;
-	public bool hasIce;
-	[SerializeField] private bool isFull;
-	public bool isDirty;
-
-	public Liquid liquid;
-
-	public GameObject liquidSurfaceParent;
-	public GameObject liquidSurfaceChild;
-
-//	private Vector3 leftHandPourRot = new Vector3(88.76f, 0, 0);
-//	private Vector3 rightHandPourRot = new Vector3(87.7370f, 0, 6.915f);
-	private Vector3 leftHandPourRot = new Vector3(80f, 0, 6.915f);
-	private Vector3 rightHandPourRot = new Vector3(80f, 0, 6.915f);
-	private Vector3 leftHandPourPos = new Vector3(-0.14f, -0.5f, 1.75f);
-	private Vector3 rightHandPourPos = new Vector3(0.14f, -0.5f, 1.75f);
-
-	[SerializeField]private Vector2 _playerLookVec2;
-	[SerializeField]private float _playerLookSens;
-
-	[SerializeField]private float _playerLookX;
 	public enum GlassType
 	{
 		Highball,
@@ -40,9 +19,52 @@ public class Glass : Pickupable
 
 	[SerializeField]private GlassType glassType;
 
+	public enum GlassServeState {
+		ReadyToServe,
+		NotReadyToServe,
+		Served
+	}
+
+	public GlassServeState glassServeState;
+
+	private FSM<Glass> fsm;
+	[HideInInspector]public GameObject focalPoint;
+	[HideInInspector]public List<Ice> myIceList = new List<Ice>();
+	public bool isFull;
+ 	public bool hasIce;
+	public bool isDirty;
+	public bool isInServeZone = false;
+	private Coaster coaster;
+	[HideInInspector]public bool CanBePouredInto;
+	public Dropzone myServiceDropzone;
+	private Vector3 unservedPos;
+	private Vector3 servedPos;
+	[HideInInspector]public Liquid liquid;
+
+	[HideInInspector]public GameObject liquidSurfaceParent;
+	[HideInInspector]public GameObject liquidSurfaceChild;
+
+	private Vector3 leftHandPourRot = new Vector3(80f, 0, 6.915f);
+	private Vector3 rightHandPourRot = new Vector3(80f, 0, 6.915f);
+	private Vector3 leftHandPourPos = new Vector3(-0.14f, -0.5f, 1.75f);
+	private Vector3 rightHandPourPos = new Vector3(0.14f, -0.5f, 1.75f);
+
+	public FSM<Glass>.State CurrentState;
+	public FSM<Glass>.State ReadyToServeState;
+	public FSM<Glass>.State NotReadyToServeState;
+	public FSM<Glass>.State ServedState;
+	
+	private Vector2 _playerLookVec2;
+	private float _playerLookSens;
+	private float _playerLookX;
+
 	protected override void Start()
 	{
 		base.Start();
+		CreateDropzone();
+		origPos = transform.position;
+		fsm = new FSM<Glass>(this);
+		fsm.TransitionTo<NotReadyToServe>();
 		_playerLookSens = Services.GameManager.playerInput.lookSensitivity;
 		liquid = GetComponentInChildren<Liquid>();
 		if (liquid != null)
@@ -51,12 +73,12 @@ public class Glass : Pickupable
 		}
 
 	}
-
-	private Vector3 myRot = Vector3.zero;
+	
 	public override void Update()
 	{	
-		_playerLookVec2 = Services.GameManager.playerInput.lookVector;
-
+//		_playerLookVec2 = Services.GameManager.playerInput.lookVector;
+		fsm.Update();
+		
  		if(pickedUp && !Services.TweenManager.tweensAreActive){
 //			transform.rotation = Quaternion.identity;
 //			_playerLookX -= _playerLookVec2.y * _playerLookSens;
@@ -69,6 +91,7 @@ public class Glass : Pickupable
 		} else {
 			liquid.hasIce = false;
 		}
+	
 	}
 
 
@@ -86,6 +109,37 @@ public class Glass : Pickupable
 			}
 
 			return isFull;
+		}
+	}
+	
+	public override void InteractLeftHand(){
+		if(!pickedUp && CurrentState != ServedState){
+			//pick up with left hand
+			transform.SetParent(Services.GameManager.player.transform.GetChild(0));
+			Services.GameManager.player.GetComponent<PlayerInput>().pickupableInLeftHand = this;
+			PickupTween(leftHandPos, Vector3.zero);
+		} else if(pickedUp){
+			transform.SetParent(null);
+			Services.GameManager.player.GetComponent<PlayerInput>().pickupableInLeftHand = null;
+ 
+			if(targetDropzone != null){
+				DropTween(dropPos, dropOffset, targetDropzone);
+			}
+		}
+	}
+
+	public override void InteractRightHand(){
+		if(!pickedUp && CurrentState != ServedState){
+			transform.SetParent(Services.GameManager.player.transform.GetChild(0));
+			Services.GameManager.player.GetComponent<PlayerInput>().pickupableInRightHand = this;
+			PickupTween(rightHandPos, Vector3.zero);
+		} else if(pickedUp){
+			transform.SetParent(null);
+			Services.GameManager.player.GetComponent<PlayerInput>().pickupableInRightHand = null;
+            
+			if(targetDropzone != null){
+				DropTween(dropPos, dropOffset, targetDropzone);
+			}
 		}
 	}
 
@@ -264,4 +318,140 @@ public class Glass : Pickupable
 		transform.GetChild(3).GetChild(0).gameObject.layer = 0;
     }
 
+	public void Serve()
+	{
+ 		if (myServiceDropzone != null)
+		{
+			if (myServiceDropzone.MyCoaster().myCustomer.IsCustomerPresent() && CurrentState == ReadyToServeState)
+			{
+				unservedPos = myServiceDropzone.transform.parent.position;
+				servedPos = myServiceDropzone.MyCoaster().ServedTargetTransform.position;		
+				DeclareActiveTween();
+				Sequence sequence = DOTween.Sequence();
+				myServiceDropzone.MyCoaster().transform.DOLocalMove(servedPos, 0.5f);
+				sequence.Append(transform.DOLocalMove(servedPos + dropOffset, 0.5f, false));
+				sequence.AppendCallback(() => fsm.TransitionTo<Served>());
+				sequence.OnComplete(() => DeclareInactiveTween());
+			}
+		}
+ 	}
+
+	public void UnServe(GameEvent e)
+	{
+		if (CurrentState == ServedState && !myServiceDropzone.MyCoaster().myCustomer.HasAcceptedDrink())
+		{
+			DrinkRejectedEvent drinkRejectedEvent = (DrinkRejectedEvent) e;	
+			Sequence sequence = DOTween.Sequence();
+			myServiceDropzone.MyCoaster().transform.DOLocalMove(unservedPos, 0.5f);
+			sequence.AppendCallback(() => Services.TweenManager.tweensAreActive = true);
+			sequence.Append(transform.DOLocalMove(unservedPos + dropOffset, 0.5f, false));
+			sequence.AppendCallback(() => fsm.TransitionTo<ReadyToServe>());
+			sequence.OnComplete(() => DeclareInactiveTween());				
+		}
+	}
+	
+//	public void ReturnHome(GameEvent e){
+//		DayEndEvent dayEndEvent = e as DayEndEvent;
+	
+	public override void ReturnHome(GameEvent e){
+		DayEndEvent dayEndEvent = e as DayEndEvent;
+		transform.position = origPos;
+		pickedUp = false;
+		transform.eulerAngles = Vector3.zero;
+		StartCoroutine(ChangeToWorldLayer(1f));
+		ClearIce();
+		fsm.TransitionTo<NotReadyToServe>();
+		hasIce = false;
+		liquid.isEvaluated = false;
+		liquid.EmptyLiquid();
+//		glassServeState = Glass.GlassServeState.NotReadyToServe;
+		liquid.myDrinkBase = DrinkBase.none;
+		liquid.myMixer = Mixer.none;
+		// if (GetComponent<Bottle>() == null)
+		// {
+		//     glass.liquid.transform.localScale = new Vector3(0, 0, 0);
+		// }
+	}
+
+	/*
+	 * STATES *
+	 */
+	private class GlassState : FSM<Glass>.State
+	{
+		
+	}
+
+	private class NotReadyToServe : GlassState
+	{
+		public override void OnEnter()
+		{
+			Debug.Log("Not ready to serve!");
+			base.OnEnter();
+			Context.CanBePouredInto = true;
+			Context.NotReadyToServeState = this;
+			Context.CurrentState = this;
+			Context.glassServeState = GlassServeState.NotReadyToServe;
+		}
+
+		public override void Update()
+		{
+			base.Update();
+			if (!Context.pickedUp && Context.isInServeZone)
+			{
+				TransitionTo<ReadyToServe>();
+			}
+		}
+	}
+
+	private class ReadyToServe : GlassState
+	{
+		public override void OnEnter()
+		{
+			Debug.Log("Ready to serve!");
+			base.OnEnter();
+			Context.CanBePouredInto = true;
+			Context.ReadyToServeState = this;
+			Context.CurrentState = this;
+			Context.glassServeState = GlassServeState.ReadyToServe;
+		}
+
+		public override void Update()
+		{
+			base.Update();
+		}
+
+		public override void OnExit()
+		{
+			base.OnExit();
+		}
+	}
+	
+	private class Served : GlassState
+	{
+		public override void OnEnter()
+		{
+			Debug.Log("Served!");
+			base.OnEnter();			
+			Context.liquid.TalkToCoaster();
+			Context.CanBePouredInto = false;
+			Context.ServedState = this;
+			Context.CurrentState = this;
+			Context.glassServeState = GlassServeState.Served;
+			EventManager.Instance.Register<DrinkRejectedEvent>(Context.UnServe);
+		}
+
+		public override void OnExit()
+		{
+			base.OnExit();			
+			EventManager.Instance.Unregister<DrinkRejectedEvent>(Context.UnServe);
+		}
+	}
+	
 }
+
+public class DrinkRejectedEvent : GameEvent
+{
+	
+}
+
+

@@ -21,7 +21,7 @@ public class Pickupable : MonoBehaviour
     public bool pickedUp = false;
     public List<Sequence> tweenSequences = new List<Sequence>();
     public Vector3 origPos;
-    [SerializeField] private Dropzone myChildDropzone;
+    private Dropzone myChildDropzone;
      
     protected virtual void Start()
     {
@@ -257,26 +257,22 @@ public class Pickupable : MonoBehaviour
         EventManager.Instance.Unregister<DayEndEvent>(ReturnHome);
     }
 
-    public void ReturnHome(GameEvent e){
+    public virtual void ReturnHome(GameEvent e){
         DayEndEvent dayEndEvent = e as DayEndEvent;
         transform.position = origPos;
         pickedUp = false;
         transform.eulerAngles = Vector3.zero;
         StartCoroutine(ChangeToWorldLayer(1f));
-        if(GetComponent<Glass>() != null){
-            Glass glass = GetComponent<Glass>();
-            glass.ClearIce();
-            glass.hasIce = false;
-            glass.liquid.isEvaluated = false;
-            glass.liquid.EmptyLiquid();
-               
-            glass.liquid.myDrinkBase = DrinkBase.none;
-            glass.liquid.myMixer = Mixer.none;
-            // if (GetComponent<Bottle>() == null)
-            // {
-            //     glass.liquid.transform.localScale = new Vector3(0, 0, 0);
-            // }
-        }
+//        if(GetComponent<Glass>() != null){
+//            Glass glass = GetComponent<Glass>();
+//            glass.ClearIce();
+//            glass.hasIce = false;
+//            glass.liquid.isEvaluated = false;
+//            glass.liquid.EmptyLiquid();
+//            glass.glassServeState = Glass.GlassServeState.NotReadyToServe;
+//            glass.liquid.myDrinkBase = DrinkBase.none;
+//            glass.liquid.myMixer = Mixer.none;
+//        }
     }
 }
 

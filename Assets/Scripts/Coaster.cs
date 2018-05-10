@@ -1,22 +1,26 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Yarn;
 
 public class Coaster : MonoBehaviour
 {
 	public NPC myCustomer;
-	private Dropzone myDropzone;
+	[SerializeField]private Dropzone myDropzone;
 	private DrinkProfile currentOrder;
-
 	public bool isDrinkHere = false;
-
 	public Customer currentCustomer;
-	public DrinkProfile drinkOnCoaster;	
-
+	public DrinkProfile drinkOnCoaster;
+	public Glass myDrinkGlass;
+	public Transform ServedTargetTransform;
+	public Vector3 unservedPos; 
 	private float minAcceptableVolume = 25f;
 
 	void Start()
 	{
+		EventManager.Instance.Register<DayEndEvent>(ReturnToServePos);
+		unservedPos = transform.position;
+		
  		switch (currentCustomer)
 		{
 			case Customer.IvoryDefault:
@@ -54,23 +58,39 @@ public class Coaster : MonoBehaviour
 		}
 	}
 
+	private void OnDestroy()
+	{
+		EventManager.Instance.Unregister<DayEndEvent>(ReturnToServePos);
+	}
+
 	void Update()
 	{
-		CheckDropzoneStatus();
+//		CheckDropzoneStatus();
 	}
 
 	public void EvaluateDrink(DrinkProfile _cocktail, Liquid _liquid){
-  		if(_cocktail !=null){
-			float drinkDeviation = DrinkProfile.GetProfileDeviation(_cocktail, currentOrder);
-			int getIceValue = 0;
-//			Debug.Log("Customer ordered ice " + currentOrder.ice);
-//			Debug.Log("You served " + _cocktail.ice);
-			if(_cocktail.ice == currentOrder.ice && _cocktail.ice == 1 && currentOrder.ice == 1){ //_cocktail.ice will never be 0, so if they're equal, it's 1 or -1
-				getIceValue = 1;
- 			} else if(currentOrder.ice == 0 //customer doesn't care, so ice  or no ice, it's fine.
-			 || (_cocktail.ice == -1 && currentOrder.ice == -1)){ //if player successfully fulfills the "no ice" order (-1, -1)
-				getIceValue = 0;  
- 			}
+		if(_cocktail !=null)
+			{
+				//assign glass to myDrinkGlass.
+				if (_liquid.transform.parent != null)
+				{
+				  if(_liquid.transform.parent.GetComponent<Glass>() != null)
+					  myDrinkGlass = _liquid.transform.parent.GetComponent<Glass>();			  
+				}
+				
+				float drinkDeviation = DrinkProfile.GetProfileDeviation(_cocktail, currentOrder);
+				int getIceValue = 0;
+
+				if (currentOrder == null)
+				{
+					Debug.Log("WARNING! current order is null!");
+				}
+				if(_cocktail.ice == currentOrder.ice && _cocktail.ice == 1 && currentOrder.ice == 1){ //_cocktail.ice will never be 0, so if they're equal, it's 1 or -1
+					getIceValue = 1;
+				} else if(currentOrder.ice == 0 //customer doesn't care, so ice  or no ice, it's fine.
+				 || (_cocktail.ice == -1 && currentOrder.ice == -1)){ //if player successfully fulfills the "no ice" order (-1, -1)
+					getIceValue = 0;  
+				}
 
 			if (_cocktail.totalVolume >= minAcceptableVolume)
 			{
@@ -259,4 +279,11 @@ public class Coaster : MonoBehaviour
 		myCustomer.InitiateDialogue();
 	}
 
+	public void ReturnToServePos(GameEvent e)
+	{
+		DayEndEvent dayEndEvent = e as DayEndEvent;
+		transform.position = unservedPos;
+	}
 }
+
+

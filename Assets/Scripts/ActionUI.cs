@@ -15,7 +15,8 @@ public class ActionUI : MonoBehaviour
 	{
 		Nothing,
 		NPC,
-		Fixture
+		Fixture,
+		Serve
 	}
 
 	[SerializeField] private ActionState _actionState;
@@ -24,6 +25,7 @@ public class ActionUI : MonoBehaviour
 	private string talkText = "talk";
 	private string lightText = "end the day";
 	private string doorText = "start the day";
+	private string serveText = "serve";
 	
 	// Use this for initialization
 	void Start ()
@@ -86,7 +88,18 @@ public class ActionUI : MonoBehaviour
 		public override void Update()
 		{
 			base.Update();
-			if (Context.player.npc != null)
+			if (Context.player.pickupable != null)
+			{
+				if (Context.player.pickupable.GetComponent<Glass>() != null)
+				{
+					Glass glass = Context.player.pickupable.GetComponent<Glass>();
+					if (glass.glassServeState == Glass.GlassServeState.ReadyToServe)
+					{
+						TransitionTo<ServeState>();
+					}
+				}
+			}
+			else if (Context.player.npc != null && Context.player.pickupable == null)
 			{
 				TransitionTo<NpcState>();
 			} else if (Context.player.backdoor != null || Context.player.lightSwitch != null)
@@ -142,7 +155,6 @@ public class ActionUI : MonoBehaviour
 			if (Context.player.lightSwitch != null)
 			{
 				Context.text.text = Context.lightText;
-
 			}
 		}
 
@@ -150,6 +162,26 @@ public class ActionUI : MonoBehaviour
 		{
 			base.Update();
 			if (Context.player.backdoor == null && Context.player.lightSwitch == null)
+			{
+				TransitionTo<Nothing>();
+			}
+		}
+	}
+
+	private class ServeState : ActionUiState
+	{
+		public override void OnEnter()
+		{
+			base.OnEnter();
+			Context.ShowImage();
+			Context._actionState = ActionState.Serve;
+			Context.text.text = Context.serveText;
+		}
+		
+		public override void Update()
+		{
+			base.Update();
+			if (Context.player.pickupable == null)
 			{
 				TransitionTo<Nothing>();
 			}

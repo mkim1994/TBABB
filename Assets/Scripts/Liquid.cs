@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Xml;
 using Rewired.Utils.Libraries.TinyJson;
 using UnityEngine;
+using UnityEngine.Assertions;
 
 public class Liquid : MonoBehaviour {
 
@@ -100,30 +101,11 @@ public class Liquid : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		
-//		Debug.Log(gameObject.name + " isBeingPoured is " + isBeingPoured);
-
-		if (myCustomer != null)
-		{
-			if (myCustomer.finishedDrink)
-			{
-				if (transform.parent != null)
-				{
-					if (transform.parent.GetComponent<Glass>() != null)
-					{
-						Debug.Log("SHOULD BE EMPTYING DRINK");
-						myCustomer.finishedDrink = false;
-						EmptyLiquid();
-						transform.parent.GetComponent<Glass>().ClearIce();
-					}
-				}
-			}
-		}
+		EmptyDrinkWhenCustomerFinished();
 
 		totalVolume = whiskeyVolume + ginVolume + brandyVolume + vodkaVolume + wineVolume + beerVolume + tequilaVolume + rumVolume 
 					+ sodaVolume + tonicVolume + vermouthVolume + orangeJuiceVolume + lemonJuiceVolume;
- 		
-//		alcoholVolume = whiskeyVolume + ginVolume + brandyVolume + vodkaVolume + wineVolume + beerVolume + tequilaVolume + rumVolume; 
-		// abv = alcoholVolume/height;
+ 	
 		abv = GetAlcoholicStrength();
 		
 		if (thisCocktail != null)
@@ -167,7 +149,7 @@ public class Liquid : MonoBehaviour {
 				}
 			}
 
-			if(myDrinkBase != DrinkBase.none){
+			else if(myDrinkBase != DrinkBase.none){
 				AddIngredient(myDrinkBase);
 				switch (myDrinkBase){
 					case DrinkBase.whiskey:
@@ -207,10 +189,34 @@ public class Liquid : MonoBehaviour {
 				}
 			}			
 		}
-	
-		EvaluateDrinkInCoaster ();
+		else
+		{
+			myDrinkBase = DrinkBase.none;
+			myMixer = Mixer.none;
+		}
+
+//		TalkToCoaster ();
 
  	}
+
+	private void EmptyDrinkWhenCustomerFinished()
+	{
+		if (myCustomer != null)
+		{
+			if (myCustomer.finishedDrink)
+			{
+				if (transform.parent != null)
+				{
+					if (transform.parent.GetComponent<Glass>() != null)
+					{
+						myCustomer.finishedDrink = false;
+						EmptyLiquid();
+						transform.parent.GetComponent<Glass>().ClearIce();
+					}
+				}
+			}
+		}
+	}
 
 	public void GrowVertical(){
 
@@ -401,13 +407,14 @@ public class Liquid : MonoBehaviour {
 		coasters.AddRange (FindObjectsOfType<Coaster> ());
 	}
 
-	public void EvaluateDrinkInCoaster(){
+	public void TalkToCoaster(){
 		foreach (var coaster in coasters) {
 			// Debug.Log("Distance to coaster " + Vector3.Distance (coaster.gameObject.transform.position, transform.position));
 			if (Vector3.Distance (coaster.gameObject.transform.position, transform.position) <= 0.01f) {
 				if(!isEvaluated && !GetComponentInParent<Pickupable>().pickedUp)
 				{
- 					coaster.EvaluateDrink (this.thisCocktail, this);
+					Assert.IsNotNull(coaster, "WARNING: no coaster!");
+ 					coaster.EvaluateDrink (thisCocktail, this);
 					myCustomer = coaster.myCustomer;
 					isEvaluated = true;
 				}        

@@ -97,6 +97,11 @@ public class NPC : MonoBehaviour
         Services.GameManager.dialogue.variableStorage.SetValue("$drinkScore" + characterName, new Yarn.Value(-1));
     }
 
+    public void RejectDrink()
+    {
+        EventManager.Instance.Fire(new DrinkRejectedEvent());
+    }
+
     [YarnCommand("leave")]
     public void DelayLeave(string seconds){
         float s;
