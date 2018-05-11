@@ -46,8 +46,8 @@ public class Glass : Pickupable
 
 	private Vector3 leftHandPourRot = new Vector3(80f, 0, 6.915f);
 	private Vector3 rightHandPourRot = new Vector3(80f, 0, 6.915f);
-	private Vector3 leftHandPourPos = new Vector3(-0.14f, -0.5f, 1.75f);
-	private Vector3 rightHandPourPos = new Vector3(0.14f, -0.5f, 1.75f);
+	public Vector3 leftHandPourPos = new Vector3(-0.14f, -0.5f, 1.75f);
+	public Vector3 rightHandPourPos = new Vector3(0.14f, -0.5f, 1.75f);
 
 	public FSM<Glass>.State CurrentState;
 	public FSM<Glass>.State ReadyToServeState;
@@ -177,6 +177,28 @@ public class Glass : Pickupable
 					StartPourTween(rightHandPourPos);
 				}
 			}
+		}
+	}
+
+	public void StartInHandPourTween(Vector3 pourPos)
+	{
+		Sequence sequence = DOTween.Sequence();
+		sequence.AppendCallback(()=>DeclareActiveTween());
+		Debug.Log("In hand pour!");
+		Debug.Log(pourPos);
+		sequence.Append(transform.DOLocalMove(pourPos, tweenTime, false));
+		sequence.OnComplete(() => DeclareInactiveTween());	
+	}
+
+	public void ReceiveInHandPour(Bottle bottleInHand, int handNum)
+	{
+		if (bottleInHand.myDrinkBase != DrinkBase.none && bottleInHand.myMixer == Mixer.none)
+		{
+			liquid.AddIngredient(bottleInHand.myDrinkBase);
+		}
+		else if (bottleInHand.myMixer != Mixer.none && bottleInHand.myDrinkBase == DrinkBase.none)
+		{
+			liquid.AddMixer(bottleInHand.myMixer);
 		}
 	}
 
