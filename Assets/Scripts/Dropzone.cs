@@ -66,13 +66,15 @@ public class Dropzone : MonoBehaviour
 					objectsInMe[0].GetComponent<Glass>().myServiceDropzone = this;
 				}
 				isOccupied = true;
+			} else if (objectsInMe.Count > 0)
+			{
+				if (trigger.gameObject.GetComponent<Pickupable>().pickedUp)
+				{
+					isOccupied = false;
+				}
 			}
 		}
-
-		if (trigger.gameObject == null)
-		{
-			isOccupied = false;
-		}
+		
 	}
 
 	void OnTriggerExit(Collider exiter)
@@ -82,13 +84,13 @@ public class Dropzone : MonoBehaviour
 		{
 			if (objectsInMe.Contains(exiter.gameObject))
 			{
+				isOccupied = false;
 				objectsInMe.Remove(exiter.gameObject);
 				if (exiter.gameObject.GetComponent<Glass>() != null)
 				{
 					exiter.gameObject.GetComponent<Glass>().isInServeZone = false;
 //					exiter.GetComponent<Glass>().myServiceDropzone = null;
 				}
-				isOccupied = false;
 			}
 		}
 	}
