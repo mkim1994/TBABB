@@ -238,7 +238,7 @@ public class LiquidColors
 		{ DrinkBase.brandy, new Vector4(Util.GetRemappedColorFloat(209), Util.GetRemappedColorFloat(80), 0, 1)},
 		{ DrinkBase.gin, Color.green},
 		{ DrinkBase.whiskey, new Vector4(Util.GetRemappedColorFloat(183), Util.GetRemappedColorFloat(97), 0, 1)},
-		
+		{ DrinkBase.wine, Color.red}
 		//rgb(139,69,19)
 	};
 
