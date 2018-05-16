@@ -230,7 +230,7 @@ public class PlayerInput : MonoBehaviour
 		#region Restart
 		i_restart = player.GetButtonDown("Restart");
 		if(i_restart){
-			SceneManager.LoadScene("main");
+			SceneManager.LoadScene("intro");
 		}
 		#endregion
 
