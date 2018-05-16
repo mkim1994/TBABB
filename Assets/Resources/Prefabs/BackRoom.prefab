@@ -857,7 +857,7 @@ Transform:
   m_LocalScale: {x: 20.000017, y: 1.0000005, z: 20}
   m_Children: []
   m_Father: {fileID: 4076660850717252}
-  m_RootOrder: 10
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 90.00001}
 --- !u!4 &4033648241379688
 Transform:
@@ -896,9 +896,12 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 4434402675904172}
   - {fileID: 4814103905171634}
   - {fileID: 4210652995946826}
+  - {fileID: 4434402675904172}
+  - {fileID: 4980167718657300}
+  - {fileID: 4300772546610548}
+  - {fileID: 4566422993134864}
   - {fileID: 4719885742189110}
   - {fileID: 4657206845743570}
   - {fileID: 4757780315747114}
@@ -908,9 +911,6 @@ Transform:
   - {fileID: 4191619771727268}
   - {fileID: 4019382906041384}
   - {fileID: 4878937171061238}
-  - {fileID: 4980167718657300}
-  - {fileID: 4300772546610548}
-  - {fileID: 4566422993134864}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -952,7 +952,7 @@ Transform:
   m_LocalScale: {x: 20.000008, y: 1.0000005, z: 20}
   m_Children: []
   m_Father: {fileID: 4076660850717252}
-  m_RootOrder: 9
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
 --- !u!4 &4197295834562080
 Transform:
@@ -973,13 +973,13 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1548425346618524}
-  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -378.42, y: 13.67, z: -0.94}
+  m_LocalRotation: {x: 0.7558237, y: -0.0041630785, z: 0.0057040174, w: 0.65473706}
+  m_LocalPosition: {x: -377.68, y: 13.67, z: 4.22}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4076660850717252}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 98.199005, y: -1.2739868, z: -0.47299194}
 --- !u!4 &4222256221357552
 Transform:
   m_ObjectHideFlags: 1
@@ -1004,7 +1004,7 @@ Transform:
   m_LocalScale: {x: 20, y: 1, z: 20}
   m_Children: []
   m_Father: {fileID: 4076660850717252}
-  m_RootOrder: 7
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4295994378940808
 Transform:
@@ -1039,14 +1039,14 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1791577383623980}
-  m_LocalRotation: {x: -0, y: -0.1932069, z: -0, w: 0.9811581}
-  m_LocalPosition: {x: -378.071, y: 2.437, z: 0.578}
+  m_LocalRotation: {x: -0, y: 0.97948265, z: -0, w: 0.20152858}
+  m_LocalPosition: {x: -378.02, y: 2.437, z: 2.59}
   m_LocalScale: {x: 0.070000045, y: 0.07, z: 0.070000045}
   m_Children:
   - {fileID: 4710748423827638}
   m_Father: {fileID: 4076660850717252}
-  m_RootOrder: 13
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 156.74701, z: 0}
 --- !u!4 &4345717488260330
 Transform:
   m_ObjectHideFlags: 1
@@ -1081,11 +1081,11 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1626134015100050}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -378.3, y: 0, z: -1.21}
+  m_LocalPosition: {x: -377.55997, y: 0, z: 3.3909998}
   m_LocalScale: {x: 1.5, y: 1, z: 1.5}
   m_Children: []
   m_Father: {fileID: 4076660850717252}
-  m_RootOrder: 0
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4449992652058270
 Transform:
@@ -1174,14 +1174,14 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1086604069290248}
-  m_LocalRotation: {x: -0, y: -0.39392936, z: -0, w: 0.91914076}
-  m_LocalPosition: {x: -379.23972, y: 2.447, z: 0.75654364}
+  m_LocalRotation: {x: -0, y: 0.9157638, z: -0, w: 0.40171722}
+  m_LocalPosition: {x: -376.91998, y: 2.447, z: 2.7685437}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4524548434084242}
   m_Father: {fileID: 4076660850717252}
-  m_RootOrder: 14
-  m_LocalEulerAnglesHint: {x: 0, y: -46.398003, z: 0}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 132.62901, z: 0}
 --- !u!4 &4571613744229308
 Transform:
   m_ObjectHideFlags: 1
@@ -1222,7 +1222,7 @@ Transform:
   - {fileID: 4759478300826180}
   - {fileID: 4837481565519154}
   m_Father: {fileID: 4076660850717252}
-  m_RootOrder: 6
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4588158544428640
 Transform:
@@ -1283,13 +1283,13 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1920285133890714}
-  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: -378.5, y: 4.16, z: 4.24}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -377.75998, y: 4.16, z: -1.14}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4076660850717252}
-  m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4668836227434010
 Transform:
   m_ObjectHideFlags: 1
@@ -1328,7 +1328,7 @@ Transform:
   m_LocalScale: {x: 20, y: 1, z: 20}
   m_Children: []
   m_Father: {fileID: 4076660850717252}
-  m_RootOrder: 8
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
 --- !u!4 &4710748423827638
 Transform:
@@ -1368,7 +1368,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4076660850717252}
-  m_RootOrder: 3
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4722314149116490
 Transform:
@@ -1397,7 +1397,7 @@ Transform:
   - {fileID: 4551430559107604}
   - {fileID: 4501888802579758}
   m_Father: {fileID: 4076660850717252}
-  m_RootOrder: 5
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4759478300826180
 Transform:
@@ -1423,7 +1423,7 @@ Transform:
   m_LocalScale: {x: 1.5, y: 1, z: 1.5}
   m_Children: []
   m_Father: {fileID: 4076660850717252}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4830742514668690
 Transform:
@@ -1464,7 +1464,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1.0000005, z: 1.0000005}
   m_Children: []
   m_Father: {fileID: 4076660850717252}
-  m_RootOrder: 11
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!4 &4950486222161172
 Transform:
@@ -1485,8 +1485,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1204942817802020}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -378.071, y: 2.437, z: 0.578}
+  m_LocalRotation: {x: -0, y: 1, z: -0, w: -0.00003889529}
+  m_LocalPosition: {x: -377.86, y: 2.437, z: 2.35}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4449992652058270}
@@ -1502,8 +1502,8 @@ Transform:
   - {fileID: 4713525508295094}
   - {fileID: 4549101638097446}
   m_Father: {fileID: 4076660850717252}
-  m_RootOrder: 12
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 180.004, z: 0}
 --- !u!4 &4999687292756170
 Transform:
   m_ObjectHideFlags: 1
@@ -3018,23 +3018,23 @@ Light:
   m_Enabled: 1
   serializedVersion: 8
   m_Type: 0
-  m_Color: {r: 1, g: 0.5955882, b: 0.5955882, a: 1}
-  m_Intensity: 16.2
-  m_Range: 26.47
-  m_SpotAngle: 25.5
+  m_Color: {r: 0.9411765, g: 0.45627013, b: 0.38754323, a: 1}
+  m_Intensity: 16.4
+  m_Range: 24.47
+  m_SpotAngle: 20.40902
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 0
+    m_Type: 1
     m_Resolution: -1
     m_CustomResolution: -1
-    m_Strength: 1
-    m_Bias: 0.05
-    m_NormalBias: 0.4
+    m_Strength: 0.32
+    m_Bias: 0
+    m_NormalBias: 0
     m_NearPlane: 0.2
-  m_Cookie: {fileID: 0}
+  m_Cookie: {fileID: 2800000, guid: 3335c258731774d379ee86ea4116be70, type: 3}
   m_DrawHalo: 0
   m_Flare: {fileID: 0}
-  m_RenderMode: 0
+  m_RenderMode: 1
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -3055,9 +3055,9 @@ Light:
   serializedVersion: 8
   m_Type: 0
   m_Color: {r: 1, g: 0.5955882, b: 0.5955882, a: 1}
-  m_Intensity: 10.02
-  m_Range: 14.4
-  m_SpotAngle: 34
+  m_Intensity: 16.13
+  m_Range: 15.45
+  m_SpotAngle: 37.009533
   m_CookieSize: 10
   m_Shadows:
     m_Type: 1
@@ -3067,7 +3067,7 @@ Light:
     m_Bias: 0.05
     m_NormalBias: 0.4
     m_NearPlane: 0.2
-  m_Cookie: {fileID: 0}
+  m_Cookie: {fileID: 2800000, guid: 3335c258731774d379ee86ea4116be70, type: 3}
   m_DrawHalo: 0
   m_Flare: {fileID: 0}
   m_RenderMode: 0
@@ -3103,20 +3103,21 @@ MonoBehaviour:
   tweenEndTime: 0.5
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
-  myChildDropzone: {fileID: 0}
+  glassType: 0
+  glassServeState: 0
   focalPoint: {fileID: 0}
   myIceList: []
-  hasLiquid: 0
-  hasIce: 0
   isFull: 0
+  hasIce: 0
   isDirty: 0
+  isInServeZone: 0
+  CanBePouredInto: 0
+  myServiceDropzone: {fileID: 0}
   liquid: {fileID: 0}
   liquidSurfaceParent: {fileID: 0}
   liquidSurfaceChild: {fileID: 0}
-  _playerLookVec2: {x: 0, y: 0}
-  _playerLookSens: 0
-  _playerLookX: 0
-  glassType: 0
+  leftHandPourPos: {x: -0.14, y: -0.5, z: 1.75}
+  rightHandPourPos: {x: 0.14, y: -0.5, z: 1.75}
 --- !u!114 &114014811561724770
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3139,20 +3140,21 @@ MonoBehaviour:
   tweenEndTime: 0.5
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
-  myChildDropzone: {fileID: 0}
+  glassType: 0
+  glassServeState: 0
   focalPoint: {fileID: 0}
   myIceList: []
-  hasLiquid: 0
-  hasIce: 0
   isFull: 0
+  hasIce: 0
   isDirty: 0
+  isInServeZone: 0
+  CanBePouredInto: 0
+  myServiceDropzone: {fileID: 0}
   liquid: {fileID: 0}
   liquidSurfaceParent: {fileID: 0}
   liquidSurfaceChild: {fileID: 0}
-  _playerLookVec2: {x: 0, y: 0}
-  _playerLookSens: 0
-  _playerLookX: 0
-  glassType: 0
+  leftHandPourPos: {x: -0.14, y: -0.5, z: 1.75}
+  rightHandPourPos: {x: 0.14, y: -0.5, z: 1.75}
 --- !u!114 &114037663575935744
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3175,20 +3177,21 @@ MonoBehaviour:
   tweenEndTime: 0.5
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
-  myChildDropzone: {fileID: 0}
+  glassType: 0
+  glassServeState: 0
   focalPoint: {fileID: 0}
   myIceList: []
-  hasLiquid: 0
-  hasIce: 0
   isFull: 0
+  hasIce: 0
   isDirty: 0
+  isInServeZone: 0
+  CanBePouredInto: 0
+  myServiceDropzone: {fileID: 0}
   liquid: {fileID: 0}
   liquidSurfaceParent: {fileID: 0}
   liquidSurfaceChild: {fileID: 0}
-  _playerLookVec2: {x: 0, y: 0}
-  _playerLookSens: 0
-  _playerLookX: 0
-  glassType: 0
+  leftHandPourPos: {x: -0.14, y: -0.5, z: 1.75}
+  rightHandPourPos: {x: 0.14, y: -0.5, z: 1.75}
 --- !u!114 &114065130116942882
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3211,20 +3214,21 @@ MonoBehaviour:
   tweenEndTime: 0.5
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
-  myChildDropzone: {fileID: 0}
+  glassType: 0
+  glassServeState: 0
   focalPoint: {fileID: 0}
   myIceList: []
-  hasLiquid: 0
-  hasIce: 0
   isFull: 0
+  hasIce: 0
   isDirty: 0
+  isInServeZone: 0
+  CanBePouredInto: 0
+  myServiceDropzone: {fileID: 0}
   liquid: {fileID: 0}
   liquidSurfaceParent: {fileID: 0}
   liquidSurfaceChild: {fileID: 0}
-  _playerLookVec2: {x: 0, y: 0}
-  _playerLookSens: 0
-  _playerLookX: 0
-  glassType: 0
+  leftHandPourPos: {x: -0.14, y: -0.5, z: 1.75}
+  rightHandPourPos: {x: 0.14, y: -0.5, z: 1.75}
 --- !u!114 &114079367694435086
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3247,7 +3251,6 @@ MonoBehaviour:
   tweenEndTime: 0.75
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
-  myChildDropzone: {fileID: 0}
   _rightHandStartPos: {x: 0.64, y: -0.48, z: 2}
   _leftHandStartPos: {x: -0.64, y: -0.48, z: 2}
   _signRightHandPos: {x: 0.25, y: -0.5, z: 2}
@@ -3288,20 +3291,21 @@ MonoBehaviour:
   tweenEndTime: 0.5
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
-  myChildDropzone: {fileID: 0}
+  glassType: 0
+  glassServeState: 0
   focalPoint: {fileID: 0}
   myIceList: []
-  hasLiquid: 0
-  hasIce: 0
   isFull: 0
+  hasIce: 0
   isDirty: 0
+  isInServeZone: 0
+  CanBePouredInto: 0
+  myServiceDropzone: {fileID: 0}
   liquid: {fileID: 0}
   liquidSurfaceParent: {fileID: 0}
   liquidSurfaceChild: {fileID: 0}
-  _playerLookVec2: {x: 0, y: 0}
-  _playerLookSens: 0
-  _playerLookX: 0
-  glassType: 0
+  leftHandPourPos: {x: -0.14, y: -0.5, z: 1.75}
+  rightHandPourPos: {x: 0.14, y: -0.5, z: 1.75}
 --- !u!114 &114290680596550120
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3335,20 +3339,21 @@ MonoBehaviour:
   tweenEndTime: 0.5
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
-  myChildDropzone: {fileID: 0}
+  glassType: 0
+  glassServeState: 0
   focalPoint: {fileID: 0}
   myIceList: []
-  hasLiquid: 0
-  hasIce: 0
   isFull: 0
+  hasIce: 0
   isDirty: 0
+  isInServeZone: 0
+  CanBePouredInto: 0
+  myServiceDropzone: {fileID: 0}
   liquid: {fileID: 0}
   liquidSurfaceParent: {fileID: 0}
   liquidSurfaceChild: {fileID: 0}
-  _playerLookVec2: {x: 0, y: 0}
-  _playerLookSens: 0
-  _playerLookX: 0
-  glassType: 0
+  leftHandPourPos: {x: -0.14, y: -0.5, z: 1.75}
+  rightHandPourPos: {x: 0.14, y: -0.5, z: 1.75}
 --- !u!114 &114500089631043706
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3371,20 +3376,21 @@ MonoBehaviour:
   tweenEndTime: 0.5
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
-  myChildDropzone: {fileID: 0}
+  glassType: 0
+  glassServeState: 0
   focalPoint: {fileID: 0}
   myIceList: []
-  hasLiquid: 0
-  hasIce: 0
   isFull: 0
+  hasIce: 0
   isDirty: 0
+  isInServeZone: 0
+  CanBePouredInto: 0
+  myServiceDropzone: {fileID: 0}
   liquid: {fileID: 0}
   liquidSurfaceParent: {fileID: 0}
   liquidSurfaceChild: {fileID: 0}
-  _playerLookVec2: {x: 0, y: 0}
-  _playerLookSens: 0
-  _playerLookX: 0
-  glassType: 0
+  leftHandPourPos: {x: -0.14, y: -0.5, z: 1.75}
+  rightHandPourPos: {x: 0.14, y: -0.5, z: 1.75}
 --- !u!114 &114519512956008262
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3418,20 +3424,21 @@ MonoBehaviour:
   tweenEndTime: 0.5
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
-  myChildDropzone: {fileID: 0}
+  glassType: 0
+  glassServeState: 0
   focalPoint: {fileID: 0}
   myIceList: []
-  hasLiquid: 0
-  hasIce: 0
   isFull: 0
+  hasIce: 0
   isDirty: 0
+  isInServeZone: 0
+  CanBePouredInto: 0
+  myServiceDropzone: {fileID: 0}
   liquid: {fileID: 0}
   liquidSurfaceParent: {fileID: 0}
   liquidSurfaceChild: {fileID: 0}
-  _playerLookVec2: {x: 0, y: 0}
-  _playerLookSens: 0
-  _playerLookX: 0
-  glassType: 0
+  leftHandPourPos: {x: -0.14, y: -0.5, z: 1.75}
+  rightHandPourPos: {x: 0.14, y: -0.5, z: 1.75}
 --- !u!114 &114690532066021690
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3454,20 +3461,21 @@ MonoBehaviour:
   tweenEndTime: 0.5
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
-  myChildDropzone: {fileID: 0}
+  glassType: 0
+  glassServeState: 0
   focalPoint: {fileID: 0}
   myIceList: []
-  hasLiquid: 0
-  hasIce: 0
   isFull: 0
+  hasIce: 0
   isDirty: 0
+  isInServeZone: 0
+  CanBePouredInto: 0
+  myServiceDropzone: {fileID: 0}
   liquid: {fileID: 0}
   liquidSurfaceParent: {fileID: 0}
   liquidSurfaceChild: {fileID: 0}
-  _playerLookVec2: {x: 0, y: 0}
-  _playerLookSens: 0
-  _playerLookX: 0
-  glassType: 0
+  leftHandPourPos: {x: -0.14, y: -0.5, z: 1.75}
+  rightHandPourPos: {x: 0.14, y: -0.5, z: 1.75}
 --- !u!114 &114715897975605938
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3490,20 +3498,21 @@ MonoBehaviour:
   tweenEndTime: 0.5
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
-  myChildDropzone: {fileID: 0}
+  glassType: 0
+  glassServeState: 0
   focalPoint: {fileID: 0}
   myIceList: []
-  hasLiquid: 0
-  hasIce: 0
   isFull: 0
+  hasIce: 0
   isDirty: 0
+  isInServeZone: 0
+  CanBePouredInto: 0
+  myServiceDropzone: {fileID: 0}
   liquid: {fileID: 0}
   liquidSurfaceParent: {fileID: 0}
   liquidSurfaceChild: {fileID: 0}
-  _playerLookVec2: {x: 0, y: 0}
-  _playerLookSens: 0
-  _playerLookX: 0
-  glassType: 0
+  leftHandPourPos: {x: -0.14, y: -0.5, z: 1.75}
+  rightHandPourPos: {x: 0.14, y: -0.5, z: 1.75}
 --- !u!114 &114852177014634790
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3526,7 +3535,6 @@ MonoBehaviour:
   tweenEndTime: 0.75
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
-  myChildDropzone: {fileID: 0}
   _notepad: {fileID: 0}
   _leftHandStartPos: {x: -0.96, y: -0.52, z: 2}
   _rightHandStartPos: {x: 0.96, y: -0.52, z: 2}
@@ -3559,20 +3567,21 @@ MonoBehaviour:
   tweenEndTime: 0.5
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
-  myChildDropzone: {fileID: 0}
+  glassType: 0
+  glassServeState: 0
   focalPoint: {fileID: 0}
   myIceList: []
-  hasLiquid: 0
-  hasIce: 0
   isFull: 0
+  hasIce: 0
   isDirty: 0
+  isInServeZone: 0
+  CanBePouredInto: 0
+  myServiceDropzone: {fileID: 0}
   liquid: {fileID: 0}
   liquidSurfaceParent: {fileID: 0}
   liquidSurfaceChild: {fileID: 0}
-  _playerLookVec2: {x: 0, y: 0}
-  _playerLookSens: 0
-  _playerLookX: 0
-  glassType: 0
+  leftHandPourPos: {x: -0.14, y: -0.5, z: 1.75}
+  rightHandPourPos: {x: 0.14, y: -0.5, z: 1.75}
 --- !u!114 &114906497808827730
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3595,20 +3604,21 @@ MonoBehaviour:
   tweenEndTime: 0.5
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
-  myChildDropzone: {fileID: 0}
+  glassType: 0
+  glassServeState: 0
   focalPoint: {fileID: 0}
   myIceList: []
-  hasLiquid: 0
-  hasIce: 0
   isFull: 0
+  hasIce: 0
   isDirty: 0
+  isInServeZone: 0
+  CanBePouredInto: 0
+  myServiceDropzone: {fileID: 0}
   liquid: {fileID: 0}
   liquidSurfaceParent: {fileID: 0}
   liquidSurfaceChild: {fileID: 0}
-  _playerLookVec2: {x: 0, y: 0}
-  _playerLookSens: 0
-  _playerLookX: 0
-  glassType: 0
+  leftHandPourPos: {x: -0.14, y: -0.5, z: 1.75}
+  rightHandPourPos: {x: 0.14, y: -0.5, z: 1.75}
 --- !u!114 &114914319534837424
 MonoBehaviour:
   m_ObjectHideFlags: 1
