@@ -68,13 +68,13 @@ position: 114,209
                 <<set $stateIzzy = 5>>
             <<endif>>
         <<elseif $progressIzzy is 2>>
+            <<set $progressIzzy = 3>>
             Customer: I swear I have to start carrying around a water bottle.
             Customer: Part-time's a bit tough on me.
             [[Where do you work?|3IzzyE]]
             [[Tough?|3IzzyE]]
         <<elseif $progressIzzy is 3>>
             Customer: Gonna stay here a bit just to cool off, if you won't mind.
-            <<set $progressIzzy = 4>>
         <<endif>>
     <<endif>>
 <<endif>>
@@ -140,7 +140,7 @@ Customer: Maybe some soda would be nice, though.
 title: 3IzzyE
 tags: 
 colorID: 0
-position: 182,507
+position: 38,483
 ---
 Customer: Working construction at the moment.
 Customer: I know, I don't look the part, haha.
@@ -166,7 +166,7 @@ Customer: This is a lot better.
 title: 3IzzyG
 tags: 
 colorID: 0
-position: 198,758
+position: 78,735
 ---
 Customer: Haha, ouch!
 Customer: Not the type to mince words, are you?
@@ -243,7 +243,6 @@ Customer: Hope they're doing well.
 <<finishedDrink Izzy>>
 <<leave Izzy 30>>
 <<unacceptDrink Izzy>>
-<<set $progressIzzy = 3>>
 ===
 title: 3IzzyM
 tags: 
@@ -255,5 +254,4 @@ Customer: Ah...
 Customer: Sorry to hear that.
 <<leave Izzy 30>>
 <<unacceptDrink Izzy>>
-<<set $progressIzzy = 3>>
 ===
