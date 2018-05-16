@@ -337,7 +337,8 @@ public class Glass : Pickupable
 	{
  		if (myServiceDropzone != null)
 		{
-			if (myServiceDropzone.MyCoaster().myCustomer.IsCustomerPresent() && CurrentState == ReadyToServeState)
+			if (myServiceDropzone.MyCoaster().myCustomer.IsCustomerPresent() && CurrentState == ReadyToServeState
+			    && !Services.GameManager.dialogue.isDialogueRunning)
 			{
 				unservedPos = myServiceDropzone.transform.parent.position;
 				servedPos = myServiceDropzone.MyCoaster().ServedTargetTransform.position;		

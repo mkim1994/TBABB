@@ -1000,7 +1000,7 @@ MonoBehaviour:
   - {fileID: 114759723005359630}
   - {fileID: 114701428772346422}
   gameControlsContainer: {fileID: 0}
-  debugMode: 0
+  debugMode: 1
 --- !u!114 &114851884131165540
 MonoBehaviour:
   m_ObjectHideFlags: 1

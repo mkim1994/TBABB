@@ -8,6 +8,9 @@ using UnityEngine.UI;
 
 public class DualWield : ActionUI
 {
+
+	private Notepad notepad;
+	
 	private PlayerInput _myPlayer;
 	private enum MyState
 	{
@@ -31,6 +34,7 @@ public class DualWield : ActionUI
 		_myPlayer = Services.GameManager.playerInput;
 		fsm = new FSM<DualWield>(this);
 		fsm.TransitionTo<NoDualWield>();
+		notepad = FindObjectOfType<Notepad>();
 	}
 	
 	// Update is called once per frame
@@ -83,8 +87,16 @@ public class DualWield : ActionUI
 		{
 			base.OnEnter();
 			Context._myState = MyState.Writing;
-			Context.dualWieldControls.SetActive(true);
-			Context.dualWieldText.text = Context.writingText;
+			if (!Services.GameManager.dayManager.noteSigned)
+			{
+				Context.dualWieldText.text = Context.writingText;
+				Context.dualWieldControls.SetActive(true);
+			} else if (Services.GameManager.dayManager.noteSigned)
+			{
+				Context.dualWieldText.text = "";
+				Context.dualWieldControls.SetActive(false);
+			}
+
 		}
 
 		public override void Update()
@@ -92,6 +104,12 @@ public class DualWield : ActionUI
 			if (!Context._myPlayer.isDualWield)
 			{
 				TransitionTo<NoDualWield>();
+			}
+			
+			if (Services.GameManager.dayManager.noteSigned)
+			{
+				Context.dualWieldText.text = "";
+				Context.dualWieldControls.SetActive(false);
 			}
 		}
 	}
