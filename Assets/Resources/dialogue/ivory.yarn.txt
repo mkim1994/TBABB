@@ -30,12 +30,14 @@ position: 114,209
                 Customer: And you pour it into a glass.
                 <<setsprite Ivory sneaky>>
                 Customer: It's not that hard, is it?
+                <<unacceptDrink Ivory>>
                 <<setsprite Ivory idle>>
             <<else>>
                 <<if $drinkScoreIvory <= 10>>
                     <<setsprite Ivory unhappy>>
                     Customer: This isn't enough...
                     Customer: Get me more, won't you?
+                    <<unacceptDrink Ivory>>
                 <<else>>
                     <<if $drinkScoreIvory >= 80>>
                         <<set $stateIvory = 1>>
@@ -53,6 +55,7 @@ position: 114,209
                         <<set $hasOrderedIvory = true>>
                         Customer: Does this even have whiskey in it?
                         Customer: Just get me whiskey, can't be that hard.
+                        <<unacceptDrink Ivory>>
                     <<endif>>
                 <<endif>>
             <<endif>>
@@ -105,6 +108,7 @@ Customer: I've missed this.
 <<finishedDrink Ivory>>
 Customer: Well. 
 Customer: See you around.
+<<unacceptDrink Ivory>>
 <<setsprite Ivory sneaky>>
 Customer: Maybe I'll come again tomorrow.
 <<set $stateIvory = 5>>
@@ -129,6 +133,7 @@ Customer: I've missed this.
 <<finishedDrink Ivory>>
 Customer: Well. 
 Customer: See you around.
+<<unacceptDrink Ivory>>
 <<setsprite Ivory sneaky>>
 Customer: Maybe I'll come again tomorrow.
 <<set $stateIvory = 5>>
@@ -220,6 +225,7 @@ position: -15,575
                         <<set $hasOrderedIvory = true>>
                         Customer: Seriously, not that hard.
                         Customer: You already did it yesterday.
+                        <<unacceptDrink Ivory>>
                     <<endif>>
                 <<endif>>
             <<endif>>
@@ -270,6 +276,7 @@ position: -15,575
                 <<setsprite Ivory unhappy>>
                 Customer: Seriously, not that hard.
                 Customer: It's a repeat order.
+                <<unacceptDrink Ivory>>
             <<endif>>
         <<endif>>
     <<elseif $progressIvory is 3>>
@@ -298,6 +305,7 @@ Customer: ...Think I need another one.
 <<finishedDrink Ivory>>
 Customer: Can you get me another shot of whiskey?
 Customer: On the rocks, of course.
+<<unacceptDrink Ivory>>
 <<set $stateIvory = 0>>
 ===
 title: 2IvoryB
@@ -317,6 +325,7 @@ Customer: ...Think I need another one.
 <<finishedDrink Ivory>>
 Customer: Can you get me another shot of whiskey?
 Customer: On the rocks, of course.
+<<unacceptDrink Ivory>>
 <<set $stateIvory = 0>>
 ===
 title: 2IvoryC
@@ -345,6 +354,7 @@ Customer: ...Think I need another one.
 Customer: Can you get me another shot of whiskey?
 <<setsprite Ivory sneaky>>
 Customer: On the rocks, of course.
+<<unacceptDrink Ivory>>
 <<setsprite Ivory idle>>
 <<set $stateIvory = 0>>
 ===
@@ -441,6 +451,7 @@ Customer: I'll just go home and see what happens.
 <<setsprite Ivory sad>>
 <<finishedDrink Ivory>>
 Customer: See you if my roommate doesn't kill me.
+<<unacceptDrink Ivory>>
 <<set $stateIvory = 5>>
 ===
 title: 2IvoryI
@@ -461,5 +472,6 @@ Customer: And then I'll just go home and see what happens.
 <<setsprite Ivory sad>>
 <<finishedDrink Ivory>>
 Customer: See you if my roommate doesn't kill me.
+<<unacceptDrink Ivory>>
 <<set $stateIvory = 5>>
 ===

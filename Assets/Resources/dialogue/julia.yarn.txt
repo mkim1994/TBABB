@@ -38,10 +38,12 @@ position: 123,40
                 Customer: Seriously?
                 <<set $hasOrderedJulia = true>>
                 Customer: I can tell you're new, but please.
+                <<unacceptDrink Julia>>
             <<else>>
                 <<if $drinkScoreJulia <= 10>>
                     <<setsprite Julia disappointed>>
                     Customer: Don't be shy, pour me more.
+                    <<unacceptDrink Julia>>
                 <<else>>
                     <<if $drinkScoreJulia >= 80>>
                         <<set $stateJulia = 2>>
@@ -84,6 +86,7 @@ position: 123,40
                         <<set $hasOrderedJulia = true>>
                         <<setsprite Julia annoyed>>
                         Customer: Did you even listen to what I asked for?
+                        <<unacceptDrink Julia>>
                     <<endif>>
                 <<endif>>
             <<endif>>
@@ -150,6 +153,7 @@ position: -48,341
                 Customer: Seriously?
                 <<set $hasOrderedJulia = true>>
                 Customer: I can tell you're new, but please.
+                <<unacceptDrink Julia>>
             <<else>>
                 <<if $drinkScoreJulia <= 10>>
                     <<setspriet Julia annoyed>>
@@ -191,6 +195,7 @@ position: -48,341
                         <<set $hasOrderedJulia = true>>
                         <<setsprite Julia annoyed>>
                         Customer: Did you even listen to what I asked for?
+                        <<unacceptDrink Julia>>
                     <<endif>>
                 <<endif>>
             <<endif>>

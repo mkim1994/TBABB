@@ -116,6 +116,12 @@ public class NPC : MonoBehaviour
         finishedDrink = true;
     }
 
+    [YarnCommand("unacceptDrink")]
+    public void UnacceptDrink()
+    {
+        EventManager.Instance.Fire(new DrinkRejectedEvent());
+    }
+
     IEnumerator DelayFor(float seconds){
         yield return new WaitForSeconds(seconds);
         while(Services.GameManager.dialogue.isDialogueRunning && Services.GameManager.dialogue.currentNodeName.Contains(characterName)){

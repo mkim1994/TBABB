@@ -14,7 +14,7 @@ public class Dropzone : MonoBehaviour
 	public bool isForServing;
 	public Coaster myCoaster;
 	private List<Coaster> coasters = new List<Coaster>();
-	[HideInInspector]public List<GameObject> objectsInMe = new List<GameObject>();
+	public List<GameObject> objectsInMe = new List<GameObject>();
 
 	void Start ()
 	{

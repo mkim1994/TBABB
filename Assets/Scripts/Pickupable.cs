@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
+
 public class Pickupable : MonoBehaviour
 {
     public bool isForDropzoneOnly;   
@@ -22,13 +23,13 @@ public class Pickupable : MonoBehaviour
     public List<Sequence> tweenSequences = new List<Sequence>();
     public Vector3 origPos;
     private Dropzone myChildDropzone;
-     
+      
     protected virtual void Start()
     {
         CreateDropzone();
         origPos = transform.position;
         EventManager.Instance.Register<DayEndEvent>(ReturnHome);
-    }
+     }
 
 
     public virtual void Update(){
@@ -262,7 +263,11 @@ public class Pickupable : MonoBehaviour
         transform.position = origPos;
         pickedUp = false;
         transform.eulerAngles = Vector3.zero;
-        StartCoroutine(ChangeToWorldLayer(1f));
+        if (gameObject.activeInHierarchy)
+        {
+            StartCoroutine(ChangeToWorldLayer(1f));
+        }
+
 //        if(GetComponent<Glass>() != null){
 //            Glass glass = GetComponent<Glass>();
 //            glass.ClearIce();

@@ -1,10 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using System.Xml.Schema;
 using UnityEngine;
 using DG.Tweening;
-using NUnit.Framework;
-using Vuforia;
 
 public class Glass : Pickupable
 {
@@ -184,10 +181,8 @@ public class Glass : Pickupable
 	{
 		Sequence sequence = DOTween.Sequence();
 		sequence.AppendCallback(()=>DeclareActiveTween());
-		Debug.Log("In hand pour!");
-		Debug.Log(pourPos);
 		sequence.Append(transform.DOLocalMove(pourPos, tweenTime, false));
-		sequence.OnComplete(() => DeclareInactiveTween());	
+//		sequence.OnComplete(() => DeclareInactiveTween());	
 	}
 
 	public void ReceiveInHandPour(Bottle bottleInHand, int handNum)
@@ -206,8 +201,6 @@ public class Glass : Pickupable
 	{
 		if (_targetDropzone.GetComponentInParent<Coaster>() != null)
 		{
-			Debug.Log("Target dropzone has coaster!");
-//			dropOffset = new Vector3(0, -0.10f, 0);
 		}
 		else
 		{
@@ -360,7 +353,7 @@ public class Glass : Pickupable
 
 	public void UnServe(GameEvent e)
 	{
-		if (CurrentState == ServedState && !myServiceDropzone.MyCoaster().myCustomer.HasAcceptedDrink())
+		if (CurrentState == ServedState)
 		{
 			DrinkRejectedEvent drinkRejectedEvent = (DrinkRejectedEvent) e;	
 			Sequence sequence = DOTween.Sequence();
@@ -400,7 +393,7 @@ public class Glass : Pickupable
 	 */
 	private class GlassState : FSM<Glass>.State
 	{
-		
+
 	}
 
 	private class NotReadyToServe : GlassState
@@ -460,12 +453,16 @@ public class Glass : Pickupable
 			Context.CurrentState = this;
 			Context.glassServeState = GlassServeState.Served;
 			EventManager.Instance.Register<DrinkRejectedEvent>(Context.UnServe);
+			Context.myServiceDropzone.GetComponent<Collider>().enabled = false;
 		}
 
 		public override void OnExit()
 		{
 			base.OnExit();			
 			EventManager.Instance.Unregister<DrinkRejectedEvent>(Context.UnServe);
+			Context.liquid.isEvaluated = false;
+			Debug.Log("Exiting Served State!");
+			Context.myServiceDropzone.GetComponent<Collider>().enabled = true;
 		}
 	}
 	

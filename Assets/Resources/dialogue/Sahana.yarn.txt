@@ -41,6 +41,7 @@ position: -886,101
                 Customer: That's still possible in a bar, right?
                 <<setsprite Sahana distressed>>
                 Customer: ...Right?
+                <<unacceptDrink Sahana>>
             <<else>>
                 <<if $drinkScoreSahana <= 10>>
                     <<setsprite Sahana thoughtful>>
@@ -49,6 +50,7 @@ position: -886,101
                     Customer: I guess this amount is fine...?
                     <<setsprite Sahana idle>>
                     Customer: ...No, actually, get me more please.
+                    <<unacceptDrink Sahana>>
                 <<else>>
                     <<set $stateSahana = 1>>
                     <<set $progressSahana = 1>>
@@ -83,6 +85,7 @@ position: -886,101
                 Customer: I think that's all I needed right now.
                 <<setsprite Sahana happy>>
                 Customer: Thank you again--bye.
+                <<unacceptDrink Sahana>>
                 <<set $stateSahana = 5>>
             <<else>>
                 <<set $drunkSahana += 1>>
@@ -171,6 +174,7 @@ Customer: ...
 <<setsprite Sahana distressed>>
 Customer: I'm so sorry, I don't know what I just said.
 Customer: I'm going to leave now, bye!
+<<unacceptDrink Sahana>>
 <<set $stateSahana = 5>>
 ===
 title: 2SahanaB2
@@ -198,6 +202,7 @@ Customer: ...
 Customer: I'm so sorry, I don't know what I just said.
 Customer: I'm. Going to leave now.
 Customer: Bye.
+<<unacceptDrink Sahana>>
 <<set $stateSahana = 5>>
 ===
 title: 3OrderSahana

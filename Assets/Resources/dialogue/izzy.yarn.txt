@@ -30,10 +30,12 @@ position: 114,209
             <<if $drinkScoreIzzy is 0>>
                 <<set $preemptiveIzzy = false>>
                 Customer: Just soda.
+                <<unacceptDrink Izzy>>
                 <<set $hasOrderedIzzy = true>>
             <<else>>
                 <<if $drinkScoreIzzy <= 10>>
                     Customer: A little more please?
+                    <<unacceptDrink Izzy>>
                 <<else>>
                     <<set $stateIzzy = 1>>
                     <<set $progressIzzy = 1>>
@@ -62,6 +64,7 @@ position: 114,209
                 Customer: I'm not here to get slipped a drink.
                 Customer: Not anymore.
                 Customer: Bye.
+                <<unacceptDrink Izzy>>
                 <<set $stateIzzy = 5>>
             <<endif>>
         <<elseif $progressIzzy is 2>>
@@ -239,6 +242,7 @@ position: 926,1152
 Customer: Hope they're doing well.
 <<finishedDrink Izzy>>
 <<leave Izzy 30>>
+<<unacceptDrink Izzy>>
 <<set $progressIzzy = 3>>
 ===
 title: 3IzzyM
@@ -250,5 +254,6 @@ position: 674,1362
 Customer: Ah...
 Customer: Sorry to hear that.
 <<leave Izzy 30>>
+<<unacceptDrink Izzy>>
 <<set $progressIzzy = 3>>
 ===

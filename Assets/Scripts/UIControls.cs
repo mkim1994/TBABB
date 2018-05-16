@@ -71,14 +71,14 @@ public class UIControls : MonoBehaviour {
 	
 	void Update(){
 
-		if (!isLookingAtNPC)
-		{
-			DropzoneOnlyRay();		
-		}
-		if (!isLookingAtEmptyDropzone)
-		{
-			UIRay();		
-		}
+		DropzoneOnlyRay();		
+//		if (!isLookingAtNPC)
+//		{
+//		}
+		UIRay();		
+//		if (!isLookingAtEmptyDropzone)
+//		{
+//		}
 		
 		//find the objects in hand
  
@@ -287,21 +287,21 @@ public class UIControls : MonoBehaviour {
 					isLookingAtEmptyDropzone = true;
 					if (distanceToObj <= Services.GameManager.playerInput.maxInteractionDist)
 					{
-						if (leftHandObj != null)
-						{
-							// leftHandPickUpImage.enabled = true;
-							leftHandActionImage.enabled = true;
-							leftHandControlsText[0].text = buttonAndKeyStrings[2 + stringOffset];
-							leftHandControlsText[1].text = "put back";
-						}
-
-						if (rightHandObj != null)
-						{
-							// rightHandPickUpImage.enabled = true;
-							rightHandActionImage.enabled = true;
-							rightHandControlsText[0].text = buttonAndKeyStrings[3 + stringOffset];
-							rightHandControlsText[1].text = "put back";
-						}
+//						if (leftHandObj != null)
+//						{
+//							// leftHandPickUpImage.enabled = true;
+//							leftHandActionImage.enabled = true;
+//							leftHandControlsText[0].text = buttonAndKeyStrings[2 + stringOffset];
+//							leftHandControlsText[1].text = "put back";
+//						}
+//
+//						if (rightHandObj != null)
+//						{
+//							// rightHandPickUpImage.enabled = true;
+//							rightHandActionImage.enabled = true;
+//							rightHandControlsText[0].text = buttonAndKeyStrings[3 + stringOffset];
+//							rightHandControlsText[1].text = "put back";
+//						}
 					}
 				}
 				else
@@ -387,8 +387,8 @@ public class UIControls : MonoBehaviour {
 					} 
 				}
 				centerText.text = targetObj;
-				if (distanceToObj <= Services.GameManager.playerInput.maxInteractionDist)
-				{
+//				if (distanceToObj <= Services.GameManager.playerInput.maxInteractionDist)
+//				{
 //					if (dropzoneBeingLookedAt != null)
 //					{
 //						if (dropzoneBeingLookedAt.objectsInMe.Count > 0)
@@ -423,12 +423,12 @@ public class UIControls : MonoBehaviour {
 //							}					
 //						}
 //					}
-				}
+//				}
 
-				else
-				{
-					ClearUI();
-				}
+//				else
+//				{
+//					ClearUI();
+//				}
 			}
 
 			else if (hitObj.GetComponent<IceMaker>() != null && !isExceptionTextRequired)
@@ -499,12 +499,16 @@ public class UIControls : MonoBehaviour {
 			else if (hitObj.GetComponent<NPC>() != null)
 			{
 				isLookingAtNPC = true;
- 				if (!isExceptionTextRequired)
+				if (!isExceptionTextRequired)
 				{
 					centerText.text = hitObj.GetComponent<NPC>().characterName;				
 				}
-				if (distanceToObj < Services.GameManager.playerInput.maxTalkingDist)
+				else
 				{
+//					ClearUI();
+				}
+//				if (distanceToObj < Services.GameManager.playerInput.maxTalkingDist)
+//				{
 //					if (!Services.GameManager.dialogue.isDialogueRunning)
 //					{
 //						//Customer is not talking
@@ -543,33 +547,28 @@ public class UIControls : MonoBehaviour {
 //						botCenterImg.SetActive(false);
 //						bottomCenterText.text = "";
 //					} 
-				}
-				else
-				{
-					ClearUI();
-				}
+//				}
 			} 
 			//ray hits dropzone
 
 			else if (hitObj.GetComponent<Dropzone>() != null && !hitObj.GetComponent<Dropzone>().isOccupied)
 			{
- 				
-				if (distanceToObj <= Services.GameManager.playerInput.maxInteractionDist)
-				{
-					// leftHandPickUpImage.enabled = true;
-					leftHandActionImage.enabled = true;
-					leftHandControlsText[0].text = buttonAndKeyStrings[2 + stringOffset];
-					leftHandControlsText[1].text = "put back";
-					// rightHandPickUpImage.enabled = true;
-					rightHandActionImage.enabled = true;
-					rightHandControlsText[0].text = buttonAndKeyStrings[3 + stringOffset];
-					rightHandControlsText[1].text = "put back";
-				}
-				
-				else
-				{
-					ClearUI();
-				}
+//				if (distanceToObj <= Services.GameManager.playerInput.maxInteractionDist)
+//				{
+//					// leftHandPickUpImage.enabled = true;
+//					leftHandActionImage.enabled = true;
+//					leftHandControlsText[0].text = buttonAndKeyStrings[2 + stringOffset];
+//					leftHandControlsText[1].text = "put back";
+//					// rightHandPickUpImage.enabled = true;
+//					rightHandActionImage.enabled = true;
+//					rightHandControlsText[0].text = buttonAndKeyStrings[3 + stringOffset];
+//					rightHandControlsText[1].text = "put back";
+//				}
+//				
+//				else
+//				{
+//					ClearUI();
+//				}
 			} 
 			//ray hits light switch
 			else if (hitObj.GetComponent<LightSwitch>() != null && !isExceptionTextRequired)
