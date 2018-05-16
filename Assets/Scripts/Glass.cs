@@ -32,7 +32,7 @@ public class Glass : Pickupable
 	public bool isDirty;
 	public bool isInServeZone = false;
 	private Coaster coaster;
-	[HideInInspector]public bool CanBePouredInto;
+	public bool CanBePouredInto;
 	public Dropzone myServiceDropzone;
 	private Vector3 unservedPos;
 	private Vector3 servedPos;
@@ -347,7 +347,9 @@ public class Glass : Pickupable
 				myServiceDropzone.MyCoaster().transform.DOLocalMove(servedPos, 0.5f);
 				sequence.Append(transform.DOLocalMove(servedPos + dropOffset, 0.5f, false));
 				sequence.AppendCallback(() => fsm.TransitionTo<Served>());
+				sequence.AppendCallback(()=>GetComponent<Collider>().enabled = false);
 				sequence.OnComplete(() => DeclareInactiveTween());
+//				GetComponent<Collider>().enabled = false;
 			}
 		}
  	}
@@ -362,7 +364,9 @@ public class Glass : Pickupable
 			sequence.AppendCallback(() => Services.TweenManager.tweensAreActive = true);
 			sequence.Append(transform.DOLocalMove(unservedPos + dropOffset, 0.5f, false));
 			sequence.AppendCallback(() => fsm.TransitionTo<ReadyToServe>());
-			sequence.OnComplete(() => DeclareInactiveTween());				
+			sequence.AppendCallback(()=>GetComponent<Collider>().enabled = true);
+			sequence.OnComplete(() => DeclareInactiveTween());
+//			GetComponent<Collider>().enabled = true;
 		}
 	}
 	

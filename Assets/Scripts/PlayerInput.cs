@@ -213,7 +213,7 @@ public class PlayerInput : MonoBehaviour
 		{
 			if (pickupableInRightHand.GetComponent<Bottle>() != null && pickupable.GetComponent<Glass>() !=null)
 			{
-				canPourWithRight = true;
+				canPourWithRight = true;								
 			}	
 		}
 		else

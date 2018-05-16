@@ -99,7 +99,7 @@ public class ActionUI : MonoBehaviour
 					}
 				}
 			}
-			else if (Context.player.npc != null && Context.player.pickupable == null)
+			else if (Context.player.npc != null && Context.player.pickupable == null && !Services.GameManager.dialogue.isDialogueRunning)
 			{
 				TransitionTo<NpcState>();
 			} else if (Context.player.backdoor != null || Context.player.lightSwitch != null)
@@ -120,18 +120,16 @@ public class ActionUI : MonoBehaviour
 		}
 
 		public override void Update()
-		{
+		{ 
 			if (Context.player.npc == null)
 			{
 				TransitionTo<Nothing>();
 			}
-
 			if (Services.GameManager.dialogue.isDialogueRunning)
 			{
 				Context.HideImage();
 				Context.text.text = "";
-			}
-			else
+			} else if (!Services.GameManager.dialogue.isDialogueRunning)
 			{
 				Context.text.text = Context.talkText;
 				Context.ShowImage();
