@@ -6203,8 +6203,8 @@ MonoBehaviour:
   tweenEndTime: 0.75
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
-  _rightHandStartPos: {x: 0.64, y: -0.48, z: 2}
-  _leftHandStartPos: {x: -0.64, y: -0.48, z: 2}
+  _rightHandStartPos: {x: 0.621, y: 0.029, z: 1.291}
+  _leftHandStartPos: {x: -0.665, y: 0, z: 1.338}
   _signRightHandPos: {x: 0.25, y: -0.5, z: 2}
   _signLeftHandPos: {x: -0.0425, y: -0.5, z: 2}
   _rightHandStartRot: {x: 113.12, y: 14.5, z: 154.96}

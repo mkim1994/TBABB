@@ -67,22 +67,20 @@ public class Notepad : Pickupable {
 	    s.Append(transform.DOLocalMove(_signLeftHandPos, 1f));
         s.Append(transform.DOLocalMove(_leftHandStartPos, 0.75f));
 	    Sequence r = DOTween.Sequence();
-	    r.Append(transform.DOLocalRotate(_signLeftHandRot, 1f));
-	    r.Append(transform.DOLocalRotate(_signLeftHandRot, 1f));
+//	    r.Append(transform.DOLocalRotate(_signLeftHandRot, 1f));
+//	    r.Append(transform.DOLocalRotate(_signLeftHandRot, 1f));
 //	    r.Append(transform.DOLocalRotate(_leftHandStartRot, 0.75f));
     }
 
 	public void ReadNoteLeftHand()
-	{
-		
+	{	
 		Sequence s = DOTween.Sequence();
 		s.AppendCallback(() => Services.TweenManager.tweensAreActive = true);
-		s.Append(transform.DOLocalMove(_signLeftHandPos, 1f));		
-		s.Append(transform.DOLocalMove(_signLeftHandPos, 5f));
-		s.Append(transform.DOLocalMove(_leftHandStartPos, 0.75f));
-		s.OnComplete(() => Services.TweenManager.tweensAreActive = false);
+		s.Append(transform.DOLocalMove(_signLeftHandPos + Vector3.back, 1f));		
+//		s.Append(transform.DOLocalMove(_signLeftHandPos, 5f));
+//		s.Append(transform.DOLocalMove(_leftHandStartPos, 0.75f));
 	}
-	
+
 	public void ReadNoteRightHand()
 	{		
 		Sequence s = DOTween.Sequence();
@@ -90,7 +88,6 @@ public class Notepad : Pickupable {
 		s.Append(transform.DOLocalMove(_signRightHandPos, 1f));		
 		s.Append(transform.DOLocalMove(_signRightHandPos, 5f));
 		s.Append(transform.DOLocalMove(_rightHandStartPos, 0.75f));
-		s.OnComplete(() => Services.TweenManager.tweensAreActive = false);
 	}
 
 

@@ -22,6 +22,7 @@ public class PlayerInput : MonoBehaviour
 	private TweenManagerDelegate _tweenManagerDelegate;
 
 	public delegate void StartPourDelegate(Bottle bottle, int num);
+
 	private StartPourDelegate _startPourDelegate;
 
 	private IEnumerator tweenManagerCoroutine;
@@ -73,6 +74,8 @@ public class PlayerInput : MonoBehaviour
 	[SerializeField]private float interactionTimer = 0f;
 	private float minHoldTime = 0.5f;
 	private float minTapTime = 0.01f;
+	private float restartIsPressedSeconds = 0;
+	private float restartIsPressedMaxSeconds = 3;
 	Vector3 startLookAngle;
 	public bool canPourWithLeft = false;
 	public bool canPourWithRight = false;
@@ -228,9 +231,15 @@ public class PlayerInput : MonoBehaviour
 		}
 
 		#region Restart
-		i_restart = player.GetButtonDown("Restart");
-		if(i_restart){
-			SceneManager.LoadScene("intro");
+		i_restart = player.GetButton("Restart");
+		if(i_restart)
+		{
+			restartIsPressedSeconds += Time.deltaTime;
+			if (restartIsPressedSeconds >= restartIsPressedMaxSeconds)
+			{
+				SceneManager.LoadScene("intro");
+				restartIsPressedSeconds = 0;
+			}
 		}
 		#endregion
 
@@ -488,6 +497,7 @@ public class PlayerInput : MonoBehaviour
 
 		//Lefthand pickup
 		if(i_endUseLeft && !Services.TweenManager.tweensAreActive && !isTwoHandedPouring){
+			
 			if(pickupable != null && pickupableInLeftHand == null){ //PICK UP WITH LEFT HAND, CHECK IF LEFT HAND IS EMPTY
 				if (targetDropzone != null)
 				{

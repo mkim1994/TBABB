@@ -2473,7 +2473,7 @@ MonoBehaviour:
     m_Bits: 512
   nonPickupableLayerMask:
     serializedVersion: 2
-    m_Bits: 5120
+    m_Bits: 5121
   coasterLayerMask:
     serializedVersion: 2
     m_Bits: 0
