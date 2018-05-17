@@ -1148,10 +1148,9 @@ public class PlayerInput : MonoBehaviour
 				isTwoHandedPouring = true;
 			}
 		}
-		else if (isTwoHandedPouring && (i_endUseRight || i_endUseLeft))
+		else if (isTwoHandedPouring && (!i_useLeft && !i_useRight))
 		{	
 			isTwoHandedPouring = false;
-			Debug.Log("This should NOT be called!");
 			switch (_interactionState)
 			{
 				case InteractionState.LeftHasBottle_RightHasGlass:
@@ -1187,7 +1186,11 @@ public class PlayerInput : MonoBehaviour
 						pickupableInRightHand.RotateToZeroTween();
 						pickupableInRightHand.EndPourTween();
 					}
-					StartCoroutine(UtilCoroutines.WaitThenSetTweensToInactive(pickupableInLeftHand.tweenEndTime, _tweenManagerDelegate));
+
+					if (pickupableInLeftHand != null && _tweenManagerDelegate != null)
+					{
+						StartCoroutine(UtilCoroutines.WaitThenSetTweensToInactive(pickupableInLeftHand.tweenEndTime, _tweenManagerDelegate));					
+					}
 					break;
 				case InteractionState.LeftHasGlass_RightHasBottle:
 					if(startPourCoroutine != null){
@@ -1221,7 +1224,11 @@ public class PlayerInput : MonoBehaviour
 						pickupableInRightHand.RotateToZeroTween();
 						pickupableInRightHand.EndPourTween();
 					}
-					StartCoroutine(UtilCoroutines.WaitThenSetTweensToInactive(pickupableInLeftHand.tweenEndTime, _tweenManagerDelegate));
+
+					if (pickupableInRightHand != null && _tweenManagerDelegate != null)
+					{
+						StartCoroutine(UtilCoroutines.WaitThenSetTweensToInactive(pickupableInRightHand.tweenEndTime, _tweenManagerDelegate));					
+					}
 					break;
 				default:
 					break;
