@@ -4,7 +4,8 @@ using Rewired;
 using UnityEngine;
 using UnityEngine.UI;
 using DG.Tweening;
-  
+using Yarn.Analysis;
+
 public class ActionUI : MonoBehaviour
 {
 	private float newScale = 0.4f;
@@ -20,10 +21,12 @@ public class ActionUI : MonoBehaviour
 	}
 
 	[SerializeField] private ActionState _actionState;
-	[SerializeField] private Text text;
+	public Text actionText;
 	[SerializeField] private Image image;
 	private string talkText = "talk";
 	private string lightText = "end the day";
+	public string cantLeaveBecCustomersText = "there are still customers to serve";
+	public string dontStealFromPatronText = "don't steal from the patron";
 	private string doorText = "start the day";
 	private string serveText = "serve";
 	
@@ -38,15 +41,15 @@ public class ActionUI : MonoBehaviour
 	// Update is called once per frame
 	void Update () {
 		fsm.Update();
-
-		if (!Services.GameManager.dayManager.dayHasEnded)
-		{
-			lightText = "end the day\n(there are still customers to serve)";
-		}
-		else
-		{
-			lightText = "end the day";
-		}
+	
+//		if (!Services.GameManager.dayManager.dayHasEnded)
+//		{
+//			lightText = "end the day\n(there are still customers to serve)";
+//		}
+//		else
+//		{
+//			lightText = "end the day";
+//		}
 	}
 	
 	protected void ShowImage()
@@ -71,7 +74,17 @@ public class ActionUI : MonoBehaviour
 		b.Append(image.transform.DOScaleY(origScale, 0.25f));	
 	}
 
-	
+	public void ChangeTextOnButtonPress(Text oldTextObject, string newText)
+	{
+		oldTextObject.text = newText;
+	}
+
+	public IEnumerator ChangeToDefaultLightswitchText()
+	{
+		yield return new WaitForSeconds(3);
+		actionText.text = lightText;
+	}
+
 	private class ActionUiState : FSM<ActionUI>.State {
 	}
 
@@ -80,7 +93,7 @@ public class ActionUI : MonoBehaviour
 		public override void OnEnter()
 		{
 			base.OnEnter();
-			Context.text.text = "";
+			Context.actionText.text = "";
 			Context.HideImage();
 			Context._actionState = ActionState.Nothing;
 		}
@@ -114,7 +127,7 @@ public class ActionUI : MonoBehaviour
 		public override void OnEnter()
 		{
 			base.OnEnter();
-			Context.text.text = Context.talkText;
+			Context.actionText.text = Context.talkText;
 			Context.ShowImage();
 			Context._actionState = ActionState.NPC;
 		}
@@ -128,10 +141,10 @@ public class ActionUI : MonoBehaviour
 			if (Services.GameManager.dialogue.isDialogueRunning)
 			{
 				Context.HideImage();
-				Context.text.text = "";
+				Context.actionText.text = "";
 			} else if (!Services.GameManager.dialogue.isDialogueRunning)
 			{
-				Context.text.text = Context.talkText;
+				Context.actionText.text = Context.talkText;
 				Context.ShowImage();
 			}
 		}
@@ -147,13 +160,14 @@ public class ActionUI : MonoBehaviour
 
 			if (Context.player.backdoor != null)
 			{
-				Context.text.text = Context.doorText;				
+				Context.actionText.text = Context.doorText;				
 			}
 
 			if (Context.player.lightSwitch != null)
 			{
-				Context.text.text = Context.lightText;
+				Context.actionText.text = Context.lightText;				
 			}
+
 		}
 
 		public override void Update()
@@ -162,6 +176,15 @@ public class ActionUI : MonoBehaviour
 			if (Context.player.backdoor == null && Context.player.lightSwitch == null)
 			{
 				TransitionTo<Nothing>();
+			}
+
+			if (Context.player.lightSwitch != null)
+			{
+				if (Context.player.i_talk)
+				{
+					Context.ChangeTextOnButtonPress(Context.actionText, Context.dontStealFromPatronText);
+					Context.StartCoroutine(Context.ChangeToDefaultLightswitchText());
+				}
 			}
 		}
 	}
@@ -173,7 +196,7 @@ public class ActionUI : MonoBehaviour
 			base.OnEnter();
 			Context.ShowImage();
 			Context._actionState = ActionState.Serve;
-			Context.text.text = Context.serveText;
+			Context.actionText.text = Context.serveText;
 		}
 		
 		public override void Update()

@@ -1399,8 +1399,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _actionState: 0
-  text: {fileID: 114869748426350914}
+  actionText: {fileID: 114869748426350914}
   image: {fileID: 114125971101656922}
+  cantLeaveBecCustomersText: there are still customers to serve
+  dontStealFromPatronText: don't steal from the patron
 --- !u!114 &114103415790718196
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2401,8 +2403,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _actionState: 0
-  text: {fileID: 0}
+  actionText: {fileID: 0}
   image: {fileID: 0}
+  cantLeaveBecCustomersText: there are still customers to serve
+  dontStealFromPatronText: don't steal from the patron
   _myState: 0
   dualWieldText: {fileID: 114467932124016912}
   dualWieldControls: {fileID: 1838272636646386}
@@ -2454,6 +2458,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d16bc231d7a9d4d4290ca16737e4fe57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  actionUi: {fileID: 114094798746320028}
   isTwoHandedPouring: 0
   myFirstPersonCam: {fileID: 20219987243707838}
   lookVector: {x: 0, y: 0}

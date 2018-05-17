@@ -28,7 +28,7 @@ public class Pickupable : MonoBehaviour
     {
         CreateDropzone();
         origPos = transform.position;
-        EventManager.Instance.Register<DayEndEvent>(ReturnHome);
+//        EventManager.Instance.Register<DayEndEvent>(ReturnHome);
      }
 
 
@@ -57,7 +57,7 @@ public class Pickupable : MonoBehaviour
             //pick up with left hand
             transform.SetParent(Services.GameManager.player.transform.GetChild(0));
             Services.GameManager.player.GetComponent<PlayerInput>().pickupableInLeftHand = this;
-            PickupTween(leftHandPos, Vector3.zero);
+            PickupTween(leftHandPos, Vector3.zero);            
         } else if(pickedUp){
             transform.SetParent(null);
             Services.GameManager.player.GetComponent<PlayerInput>().pickupableInLeftHand = null;
@@ -72,11 +72,10 @@ public class Pickupable : MonoBehaviour
         if(!pickedUp){
             transform.SetParent(Services.GameManager.player.transform.GetChild(0));
             Services.GameManager.player.GetComponent<PlayerInput>().pickupableInRightHand = this;
-            PickupTween(rightHandPos, Vector3.zero);
+            PickupTween(rightHandPos, Vector3.zero);            
         } else if(pickedUp){
             transform.SetParent(null);
             Services.GameManager.player.GetComponent<PlayerInput>().pickupableInRightHand = null;
-            
             if(targetDropzone != null){
                 DropTween(dropPos, dropOffset, targetDropzone);
             }
@@ -135,12 +134,19 @@ public class Pickupable : MonoBehaviour
 //             targetDropzone.isOccupied = false;
 //         }
         Sequence sequence = DOTween.Sequence();
+
         sequence.Append(transform.DOLocalMove(moveToPos, pickupDropTime, false));
         transform.DOLocalRotate(Vector3.zero, pickupDropTime, RotateMode.Fast);
+//        sequence.AppendCallback(() => GetComponent<Collider>().enabled = false);
         sequence.OnComplete(() => DeclareInactiveTween());
         // Debug.Log("Pickup Tween called!");
         StartCoroutine(ChangeToFirstPersonLayer(pickupDropTime));
         pickedUp = true;
+        if (targetDropzone != null)
+        {
+            targetDropzone.isOccupied = false;        
+        }
+
         tweenSequences.Add(sequence);
     }
 
@@ -150,6 +156,7 @@ public class Pickupable : MonoBehaviour
         Sequence sequence = DOTween.Sequence();
         sequence.Append(transform.DOLocalMove(dropPos + dropOffset, pickupDropTime, false));
         transform.DOLocalRotate(Vector3.zero, pickupDropTime, RotateMode.Fast);
+//        sequence.AppendCallback(() => GetComponent<Collider>().enabled = true);
         sequence.OnComplete(() => DeclareInactiveTween());
         StartCoroutine(ChangeToWorldLayer(pickupDropTime));
         pickedUp = false;
@@ -255,7 +262,7 @@ public class Pickupable : MonoBehaviour
 
     private void OnDestroy()
     {
-        EventManager.Instance.Unregister<DayEndEvent>(ReturnHome);
+//        EventManager.Instance.Unregister<DayEndEvent>(ReturnHome);
     }
 
     public virtual void ReturnHome(GameEvent e){

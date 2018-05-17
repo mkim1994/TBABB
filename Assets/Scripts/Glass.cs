@@ -114,7 +114,7 @@ public class Glass : Pickupable
 			//pick up with left hand
 			transform.SetParent(Services.GameManager.player.transform.GetChild(0));
 			Services.GameManager.player.GetComponent<PlayerInput>().pickupableInLeftHand = this;
-			PickupTween(leftHandPos, Vector3.zero);
+			PickupTween(leftHandPos, Vector3.zero);			
 		} else if(pickedUp){
 			transform.SetParent(null);
 			Services.GameManager.player.GetComponent<PlayerInput>().pickupableInLeftHand = null;
@@ -129,7 +129,7 @@ public class Glass : Pickupable
 		if(!pickedUp && CurrentState != ServedState){
 			transform.SetParent(Services.GameManager.player.transform.GetChild(0));
 			Services.GameManager.player.GetComponent<PlayerInput>().pickupableInRightHand = this;
-			PickupTween(rightHandPos, Vector3.zero);
+			PickupTween(rightHandPos, Vector3.zero);			
 		} else if(pickedUp){
 			transform.SetParent(null);
 			Services.GameManager.player.GetComponent<PlayerInput>().pickupableInRightHand = null;
@@ -212,6 +212,7 @@ public class Glass : Pickupable
 		Sequence sequence = DOTween.Sequence();
 		sequence.Append(transform.DOLocalMove(dropPos + dropOffset, pickupDropTime, false));
 		transform.DOLocalRotate(Vector3.zero, pickupDropTime, RotateMode.Fast);
+//		sequence.AppendCallback(() => GetComponent<Collider>().enabled = true);
 		sequence.OnComplete(() => DeclareInactiveTween());
 		StartCoroutine(ChangeToWorldLayer(pickupDropTime));
 		pickedUp = false;
@@ -365,6 +366,7 @@ public class Glass : Pickupable
 			sequence.Append(transform.DOLocalMove(unservedPos + dropOffset, 0.5f, false));
 			sequence.AppendCallback(() => fsm.TransitionTo<ReadyToServe>());
 			sequence.AppendCallback(()=>GetComponent<Collider>().enabled = true);
+			myServiceDropzone.isOccupied = true;
 			sequence.OnComplete(() => DeclareInactiveTween());
 //			GetComponent<Collider>().enabled = true;
 		}
