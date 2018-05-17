@@ -57,6 +57,7 @@ GameObject:
   - component: {fileID: 114463414118065734}
   - component: {fileID: 114329892309512404}
   - component: {fileID: 65193202090467062}
+  - component: {fileID: 114046542931338518}
   m_Layer: 10
   m_Name: Izzy
   m_TagString: Untagged
@@ -796,6 +797,38 @@ MonoBehaviour:
     sprite: {fileID: 21300000, guid: 0d6f89ab2fa414a99b892622b25adbc7, type: 3}
   - name: disappointed
     sprite: {fileID: 21300000, guid: 80ddff6e803974eb49d0bfac89f5ecfa, type: 3}
+--- !u!114 &114046542931338518
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1193415755231760}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 38c717a794b9f4e66802ee51e19eaf8a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sprites:
+  - name: idle
+    sprite: {fileID: 21300000, guid: 5d7f551890c7c4695b0f7b1e67ec8683, type: 3}
+  - name: annoyed
+    sprite: {fileID: 21300000, guid: 9f1f5a72a58a043bda6cea7a3c7d9047, type: 3}
+  - name: distressed
+    sprite: {fileID: 21300000, guid: 928b515edaea04176a8eb88a9ec31fd8, type: 3}
+  - name: happy
+    sprite: {fileID: 21300000, guid: 83e2a6791e59c4a29a7062bd212177e0, type: 3}
+  - name: mad
+    sprite: {fileID: 21300000, guid: 8f09f96a28b1f4c5a9bcc9bb120a819b, type: 3}
+  - name: nostalgic
+    sprite: {fileID: 21300000, guid: f22fa29ca1d55448c9120a6e3103fdb6, type: 3}
+  - name: sneaky
+    sprite: {fileID: 21300000, guid: 4abeac43f9cbf45e0bb2d4fd882b57f2, type: 3}
+  - name: surprised
+    sprite: {fileID: 21300000, guid: a37a8078fe9f049569163b5bdede9273, type: 3}
+  - name: thoughtful
+    sprite: {fileID: 21300000, guid: 33d31c4f910cd4e3f85635bbfb71890a, type: 3}
+  - name: awkward
+    sprite: {fileID: 21300000, guid: 08a9db91df5654cb887bf785e890fe7d, type: 3}
 --- !u!114 &114060954286683180
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1168,7 +1201,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   daysvisiting:
   - 0
-  - 90
+  - 20
   - 90
   - 90
   - 90

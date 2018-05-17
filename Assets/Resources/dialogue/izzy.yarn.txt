@@ -1,7 +1,7 @@
 title: 3Izzy
 tags: 
 colorID: 0
-position: 114,209
+position: 114,207
 ---
 <<if $drinkScoreIzzy is -1 and $stateIzzy is -1>>
     <<set $hasOrderedIzzy = false>>
@@ -9,6 +9,7 @@ position: 114,209
     <<order Izzy 0 n 0 n 0 n 0>>
     <<set $stateIzzy = 0>>
     Customer: Hey.
+    <<setsprite Izzy surprised>>
     Customer: Did the old bartender leave?
     [[Yes.|3IzzyA]]
     [[You a regular?|3IzzyB]]
@@ -16,12 +17,20 @@ position: 114,209
     <<if $progressIzzy is 0>>
         <<if $drinkScoreIzzy is -1>>
             <<set $hasOrderedIzzy = true>>
+            <<setsprite Izzy idle>>
             Customer: Soda, I guess.
         <<else>>
             <<if $hasOrderedIzzy is false>>
                 <<set $preemptiveIzzy = true>>
-                Customer: Uhh. Haha.
+                <<setsprite Izzy surprised>>
+                Customer: Uhh.
+                <<setsprite Izzy awkward>>
+                Customer: Haha.
+                <<setsprite Izzy idle>>
                 Customer: I'm not in the habit of ordering anything here.
+                <<setsprite Izzy awkward>>
+                Customer: I mean, I used to be, but not anymore.
+                <<setsprite Izzy idle>>
                 Customer: So no thanks.
                 Customer: Never seen you before. Did the old bartender leave?
                 [[Yes.|3IzzyA]]
@@ -29,17 +38,21 @@ position: 114,209
             <<endif>>
             <<if $drinkScoreIzzy is 0>>
                 <<set $preemptiveIzzy = false>>
+                <<setsprite Izzy annoyed>>
                 Customer: Just soda.
                 <<unacceptDrink Izzy>>
                 <<set $hasOrderedIzzy = true>>
             <<else>>
                 <<if $drinkScoreIzzy <= 10>>
+                    <<setsprite Izzy annoyed>>
                     Customer: A little more please?
                     <<unacceptDrink Izzy>>
                 <<else>>
                     <<set $stateIzzy = 1>>
                     <<set $progressIzzy = 1>>
+                    <<setsprite Izzy happy>>
                     Customer: Thanks.
+                    <<setsprite Izzy idle>>
                 <<endif>>
             <<endif>>
         <<endif>>
@@ -48,33 +61,45 @@ position: 114,209
             <<set $progressIzzy = 2>>
             <<if $drinkAlcoholIzzy is 0>>
                 <<if $preemptiveIzzy is true>>
+                    <<setsprite Izzy awkward>>
                     Customer: Surprised you didn't just give me straight up beer.
+                    <<setsprite Izzy idle>>
                     Customer: Glad I look like a sober guy though.
                 <<else>>
+                    <<setsprite Izzy happy>>
                     Customer: Nice simple soda.
+                    <<setsprite Izzy idle>>
                 <<endif>>
             <<else>>
                 <<set $drunkIzzy += 1>>
+                <<setsprite Izzy surprised>>
                 Customer: This...isn't soda.
                 <<if $preemptiveIzzy is true>>
                 <<else>>
+                    <<setsprite Izzy annoyed>>
                     Customer: I literally just asked for soda.
                 <<endif>>
+                <<setsprite Izzy sad>>
                 Customer: Listen, I only recently stopped drinking.
+                <<setsprite Izzy mad>>
                 Customer: I'm not here to get slipped a drink.
                 Customer: Not anymore.
+                <<setsprite Izzy sad>>
                 Customer: Bye.
                 <<unacceptDrink Izzy>>
                 <<set $stateIzzy = 5>>
             <<endif>>
         <<elseif $progressIzzy is 2>>
             <<set $progressIzzy = 3>>
+            <<setsprite Izzy awkward>>
             Customer: I swear I have to start carrying around a water bottle.
             Customer: Part-time's a bit tough on me.
             [[Where do you work?|3IzzyE]]
             [[Tough?|3IzzyE]]
         <<elseif $progressIzzy is 3>>
+            <<setsprite Izzy awkward>>
             Customer: Gonna stay here a bit just to cool off, if you won't mind.
+            <<setsprite Izzy idle>>
         <<endif>>
     <<endif>>
 <<endif>>
@@ -82,27 +107,33 @@ position: 114,209
 title: 3IzzyA
 tags: 
 colorID: 0
-position: 432,112
+position: 432,110
 ---
+<<setsprite Izzy happy>>
 Customer: Grats on getting the job!
+<<setsprite Izzy awkward>>
 Customer: Though I noticed this bar cycles through bartenders a lot.
+<<setsprite Izzy idle>>
 Customer: Think I could get a job here?
+<<setsprite Izzy surprised>>
 Customer: ...Not that I'd take your job.
+<<setsprite Izzy awkward>>
 Customer: It's just...
 [[Job search not going well?|3IzzyC]]
 [[Is there anything you need?|3IzzyD]]
-
-<<order Izzy 0 n 0 n 0 n 0>>
-<<set $hasOrderedIzzy = true>>
 ===
 title: 3IzzyB
 tags: 
 colorID: 0
-position: 432,351
+position: 432,349
 ---
+<<setsprite Izzy idle>>
 Customer: Used to be.
+<<setsprite Izzy happy>>
 Customer: Now I come by every other week or so to chill.
+<<setsprite Izzy distressed>>
 Customer: This week's gonna be especially bad though...
+<<setsprite Izzy annoyed>>
 Customer: Hah...looking for jobs. Yay.
 
 [[The search not going well?|3IzzyC]]
@@ -118,22 +149,28 @@ position: -106,216
 title: 3IzzyC
 tags: 
 colorID: 0
-position: 694,128
+position: 731,51
 ---
+<<setsprite Izzy sneaky>>
 Customer: How'd you guess?
+<<setsprite Izzy distressed>>
 Customer: What's new though.
+<<setsprite Izzy idle>>
 Customer: Thirsty for money, just hire me please.
 <<set $hasOrderedIzzy = true>>
+<<setsprite Izzy awkward>>
 Customer: ...I'm actually thirsty though, can you get me some soda?
 <<order Izzy 0 n 0 n 0 n 0>>
 ===
 title: 3IzzyD
 tags: 
 colorID: 0
-position: 737,377
+position: 737,375
 ---
+<<setsprite Izzy idle>>
 Customer: Ah, nothing, just your company is fine.
 <<set $hasOrderedIzzy = true>>
+<<setsprite Izzy awkward>>
 Customer: Maybe some soda would be nice, though.
 <<order Izzy 0 n 0 n 0 n 0>>
 ===
@@ -142,12 +179,20 @@ tags:
 colorID: 0
 position: 38,483
 ---
+<<setsprite Izzy idle>>
 Customer: Working construction at the moment.
+<<setsprite Izzy awkward>>
 Customer: I know, I don't look the part, haha.
 Customer: Had to rush to a job interview after.
+<<setsprite Izzy sneaky>>
 Customer: Not at all glamorous, but it's money.
+<<setsprite Izzy idle>>
 Customer: I used to be quite the frail kid--still am, I guess.
-Customer: ...Do I stink?
+Customer: I don't really have the stamina for the job, so.
+<<setsprite Izzy thoughtful>>
+Customer: ...
+<<setsprite Izzy distressed>>
+Customer: Do I stink?
 [[You smell fine.|3IzzyF]]
 [[Yep.|3IzzyG]]
 ===
@@ -156,9 +201,13 @@ tags:
 colorID: 0
 position: 433,602
 ---
-Customer: You're being nice!
+<<setsprite Izzy awkward>>
+Customer: You're being too nice!
+<<setsprite Izzy happy>>
 Customer: My little sis gets all cranky about it when I get home.
+<<setsprite Izzy thoughtful>>
 Customer: But she used to get cranky about something else entirely before, so...
+<<setsprite Izzy nostalgic>>
 Customer: This is a lot better.
 [[Something else?|3IzzyH]]
 [[Sister?|3IzzyI]]
@@ -168,11 +217,17 @@ tags:
 colorID: 0
 position: 78,735
 ---
+<<setsprite Izzy happy>>
 Customer: Haha, ouch!
+<<setsprite Izzy awkward>>
 Customer: Not the type to mince words, are you?
+<<setsprite Izzy idle>>
 Customer: I'm used to it...
+<<setsprite Izzy happy>>
 Customer: My little sis get all cranky about it when I get home.
+<<setsprite Izzy thoughtful>>
 Customer: But she used to get cranky about something else entirely before, so...
+<<setsprite Izzy nostalgic>>
 Customer: This is a lot better.
 [[Something else?|3IzzyH]]
 [[Sister?|3IzzyI]]
@@ -182,13 +237,21 @@ tags:
 colorID: 0
 position: 749,674
 ---
+<<setsprite Izzy sad>>
 Customer: Ahh. Yeah.
+<<setsprite Izzy sneaky>>
 Customer: My little drinking problem.
+<<setsprite Izzy sad>>
 Customer: I used to come home really late.
+<<setsprite Izzy awkward>>
 Customer: Sometimes didn't even get through the door, haha.
+<<setsprite Izzy thoughtful>>
 Customer: She'd find me passed out in the morning the next day.
+<<setsprite Izzy nostalgic>>
 Customer: It's a lot better now.
+<<setsprite Izzy happy>>
 Customer: Now she finds me passed out in my bed because I'm tired from work!
+<<setsprite Izzy awkward>>
 Customer: Haha.
 [[You're lucky to have her.|3IzzyJ]]
 [[She's lucky to have you.|3IzzyK]]
@@ -196,15 +259,23 @@ Customer: Haha.
 title: 3IzzyI
 tags: 
 colorID: 0
-position: 460,911
+position: 207,1096
 ---
+<<setsprite Izzy thoughtful>>
 Customer: Ahh. Yeah.
+<<setsprite Izzy nostalgic>>
 Customer: My little gremlin of a sister.
+<<setsprite Izzy sad>>
 Customer: I used to come home really late.
+<<setsprite Izzy awkward>>
 Customer: Sometimes didn't even get through the door, haha.
+<<setsprite Izzy thoughtful>>
 Customer: She'd find me passed out in the morning the next day.
+<<setsprite Izzy nostalgic>>
 Customer: It's a lot better now.
+<<setsprite Izzy happy>>
 Customer: Now she finds me passed out in my bed because I'm tired from work!
+<<setsprite Izzy awkward>>
 Customer: Haha.
 [[You're lucky to have her.|3IzzyJ]]
 [[She's lucky to have you.|3IzzyK]]
@@ -214,9 +285,13 @@ tags:
 colorID: 0
 position: 804,941
 ---
+<<setsprite Izzy happy>>
 Customer: Hah, don't I know it.
+<<setsprite Izzy thoughtful>>
 Customer: Life's been a bit scattered ever since our mom died, but...
+<<setsprite Izzy nostalgic>>
 Customer: Yeah, I'm lucky to have her.
+<<setsprite Izzy idle>>
 Customer: How about you? You got family?
 [[Yeah.|3IzzyL]]
 [[No.|3IzzyM]]
@@ -226,10 +301,15 @@ tags:
 colorID: 0
 position: 594,1147
 ---
+<<setsprite Izzy happy>>
 Customer: Hah, you think so?
+<<setsprite Izzy awkward>>
 Customer: I would think it's the other way around.
+<<setsprite Izzy thoughtful>>
 Customer: Life's been a bit scattered ever since our mom died, but...
+<<setsprite Izzy nostalgic>>
 Customer: I guess we're both lucky to have each other.
+<<setsprite Izzy idle>>
 Customer: How about you? You got family?
 [[Yeah.|3IzzyL]]
 [[No.|3IzzyM]]
@@ -237,9 +317,11 @@ Customer: How about you? You got family?
 title: 3IzzyL
 tags: 
 colorID: 0
-position: 926,1152
+position: 926,1150
 ---
+<<setsprite Izzy happy>>
 Customer: Hope they're doing well.
+<<setsprite Izzy idle>>
 <<finishedDrink Izzy>>
 <<leave Izzy 30>>
 <<unacceptDrink Izzy>>
@@ -249,9 +331,11 @@ tags:
 colorID: 0
 position: 674,1362
 ---
-<<finishedDrink Izzy>>
+<<setsprite Izzy surprised>>
 Customer: Ah...
+<<setsprite Izzy sad>>
 Customer: Sorry to hear that.
+<<finishedDrink Izzy>>
 <<leave Izzy 30>>
 <<unacceptDrink Izzy>>
 ===

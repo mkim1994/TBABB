@@ -128,6 +128,7 @@ public class NPC : MonoBehaviour
             yield return null;
         }
         Services.GameManager.dialogue.variableStorage.SetValue("$state" + characterName, new Yarn.Value(5));
+        UnacceptDrink();
         //yield return new WaitForSeconds(5f);
         /*might want to change this so the light fades out instead of complete darkness where they are*/
     }

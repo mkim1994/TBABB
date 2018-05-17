@@ -156,8 +156,9 @@ position: -48,341
                 <<unacceptDrink Julia>>
             <<else>>
                 <<if $drinkScoreJulia <= 10>>
-                    <<setspriet Julia annoyed>>
+                    <<setsprite Julia annoyed>>
                     Customer: Don't be shy, pour me more.
+                    <<unacceptDrink Julia>>
                 <<else>>
                     <<if $drinkScoreJulia >= 80>>
                         <<set $stateJulia = 2>>
