@@ -187,6 +187,7 @@ position: -15,575
                 <<set $hasOrderedIvory = true>>
                 <<setsprite Ivory annoyed>>
                 Customer: Just get me a glass of whiskey with ice and we're good to go.
+                <<unacceptDrink Ivory>>
             <<else>>
                 <<if $drinkScoreIvory <= 10>>
                     <<setsprite Ivory unhappy>>
