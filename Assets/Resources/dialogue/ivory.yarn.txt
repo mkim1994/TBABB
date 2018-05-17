@@ -108,8 +108,8 @@ Customer: I've missed this.
 <<finishedDrink Ivory>>
 Customer: Well. 
 Customer: See you around.
-<<unacceptDrink Ivory>>
 <<setsprite Ivory sneaky>>
+<<unacceptDrink Ivory>>
 Customer: Maybe I'll come again tomorrow.
 <<set $stateIvory = 5>>
 ===
@@ -192,6 +192,7 @@ position: -15,575
                     <<setsprite Ivory unhappy>>
                     Customer: This isn't enough...
                     Customer: Get me more, won't you?
+                    <<unacceptDrink Ivory>>
                 <<else>>
                     <<if $drinkScoreIvory >= 80>>
                         <<set $stateIvory = 1>>
@@ -255,6 +256,7 @@ position: -15,575
                 <<setsprite Ivory unhappy>>
                 Customer: This isn't enough...
                 Customer: Get me more, won't you?
+                <<unacceptDrink Ivory>>
             <<elseif $drinkScoreIvory >= 80>>
                 <<set $stateIvory = 1>>
                 <<setsprite Ivory happy>>

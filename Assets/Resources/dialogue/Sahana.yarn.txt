@@ -36,7 +36,8 @@ position: -886,101
             <<if $drinkScoreSahana is 0>>
                 <<set $preemptiveSahana = false>>
                 <<setsprite Sahana nostalgic>>
-                Customer: I think I just want something non-alcoholic.
+                Customer: I think I just want something non-alcoholic...maybe?
+                Customer: I'm actually not sure but.
                 <<set $hasOrderedSahana = true>>
                 Customer: That's still possible in a bar, right?
                 <<setsprite Sahana distressed>>
@@ -72,7 +73,7 @@ position: -886,101
                     Customer: So this was a welcome surprise.
                 <<else>>
                     <<setsprite Sahana nostalgic>>
-                    Customer: This doesn't taste bitter at all.
+                    Customer: Oh, this is sweet.
                     <<setsprite Sahana happy>>
                     Customer: Thank you.
                 <<endif>>
@@ -127,7 +128,8 @@ Customer: Haha, yes...
 <<order Sahana 0 n 0 n 0 n 0>>
 <<set $hasOrderedSahana = true>>
 <<setsprite Sahana idle>>
-Customer: Uhm... give me anything, just no alcohol.
+Customer: Uhm... give me anything, just no alcohol...maybe?
+Customer: Maybe alcohol. Or no. I don't know.
 ===
 title: 2SahanaB
 tags: 
@@ -142,7 +144,9 @@ Customer: I might try it but...
 <<order Sahana 0 n 0 n 0 n 0>>
 <<set $hasOrderedSahana = true>>
 <<setsprite Sahana idle>>
-Customer: Nevermind, give me anything, just no alcohol.
+Customer: Uhm... give me anything, just no alcohol...maybe?
+Customer: Maybe alcohol. Or no. I don't know.
+
 ===
 title: 2SahanaA2
 tags: 
@@ -252,6 +256,7 @@ position: -1022,610
                     Customer: I guess this amount is fine...?
                     <<setsprite Sahana idle>>
                     Customer: ...No, actually, get me more please.
+                    <<unacceptDrink Sahana>>
                 <<else>>
                     <<set $stateSahana = 1>>
                     <<set $progressSahana = 1>>
@@ -269,6 +274,7 @@ position: -1022,610
                 <<setsprite Sahana thoughtful>>
                 Customer: Get me drunk.
                 Customer: Wine, beer, whatever.
+                <<unacceptDrink Sahana>>
                 <<set $stateSahana = 0>>
             <<else>>
                 <<set $stateSahana = 1>>
@@ -293,12 +299,14 @@ position: -1022,610
                 <<if $drinkScoreSahana is 0>>
                     <<setsprite Sahana annoyed>>
                     Customer: Please, just get me drunk.
+                    <<unacceptDrink Sahana>>
                 <<else>>
                     <<if $drinkScoreSahana <= 10>>
                         <<setsprite Sahana mad>>
                         Customer: No, this amount isn't enough.
                         <<setsprite Sahana annoyed>>
                         Customer: I'm not a total idiot.
+                        <<unacceptDrink Sahana>>
                     <<else>>
                         <<set $stateSahana = 1>>
                         <<set $progressSahana = 3>>
@@ -326,12 +334,14 @@ position: -1022,610
                 <<if $drinkScoreSahana is 0>>
                     <<setsprite Sahana sneaky>>
                     Customer: Alcohol! In glass!
+                    <<unacceptDrink Sahana>>
                 <<else>>
                     <<if $drinkScoreSahana <= 10>>
                         <<setsprite Sahana mad>>
                         Customer: No, this amount isn't enough!
                         <<setsprite Sahana annoyed>>
                         Customer: I'm not a total idiot.
+                        <<unacceptDrink Sahana>>
                     <<else>>
                         <<set $stateSahana = 1>>
                         <<set $progressSahana = 5>>
@@ -403,10 +413,11 @@ Customer: My boss was insufferable.
 Customer: I got no fucking respect from anyone.
 <<setsprite Sahana mad>>
 Customer: Fuck, just thinking about it pisses me off.
-<<setspriet Sahana sneaky>>
+<<setsprite Sahana sneaky>>
 <<finishedDrink Sahana>>
 Customer: People drink more when they're pissed, right?
 Customer: Please get me drunk more, whatever's fine.
+<<unacceptDrink Sahana>>
 <<order Sahana 0 n 0 n 0 n 0>>
 <<set $stateSahana = 0>>
 ===
@@ -420,9 +431,10 @@ Customer: I'm thinking about it.
 <<setsprite Sahana mad>>
 Customer: No, fuck it, I'm doing it!
 <<setsprite Sahana sneaky>>
+<<finishedDrink Sahana>>
 Customer: Just like how I'm...going...to get another drink.
 Customer: Please get me more. Whatever's fine.
-<<finishedDrink Sahana>>
+<<unacceptDrink Sahana>>
 <<order Sahana 0 n 0 n 0 n 0>>
 <<set $stateSahana = 0>>
 ===
@@ -443,6 +455,7 @@ position: -291,862
     Customer: More please.
 <<endif>>
 <<finishedDrink Sahana>>
+<<unacceptDrink Sahana>>
 <<order Sahana 0 n 0 n 0 n 0>>
 <<set $stateSahana = 0>>
 ===
@@ -469,6 +482,7 @@ position: -545,869
     Customer: Give me more!
 <<endif>>
 <<finishedDrink Sahana>>
+<<unacceptDrink Sahana>>
 <<order Sahana 0 n 0 n 0 n 0>>
 <<set $stateSahana = 0>>
 ===
@@ -489,6 +503,8 @@ position: -955,1031
     Customer: I guess...I'm having second thoughts...
     Customer: I...I think I have to leave.
     Customer: Good-bye.
+    <<finishedDrink Sahana>>
+    <<unacceptDrink Sahana>>
     <<set $stateSahana = 5>>
 <<endif>>
 ===
@@ -524,6 +540,7 @@ Customer: Some low life barking orders at me.
 <<finishedDrink Sahana>>
 Customer: I didn't come here to get sassed.
 Customer: Bye.
+<<unacceptDrink Sahana>>
 <<set $stateSahana = 5>>
 ===
 title: 3SahanaJ
@@ -584,6 +601,7 @@ Customer: I'm going to go home.
 Customer: Going to sleep on that road trip.
 <<setsprite Sahana happy>>
 Customer: Thank you.
+<<unacceptDrink Sahana>>
 <<set $stateSahana = 5>>
 ===
 title: 3SahanaL
@@ -606,6 +624,7 @@ Customer: ...I'm going to go home now.
 Customer: Going to sleep on that road trip idea.
 <<setsprite Sahana happy>>
 Customer: Thank you.
+<<unacceptDrink Sahana>>
 <<set $stateSahana = 5>>
 ===
 title: 3SahanaM
@@ -630,5 +649,6 @@ Customer: ...I'm going to go home now.
 Customer: Going to sleep on that road trip idea.
 <<setsprite Sahana happy>>
 Customer: Thank you.
+<<unacceptDrink Sahana>>
 <<set $stateSahana = 5>>
 ===
