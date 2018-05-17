@@ -54,23 +54,26 @@ public class Dropzone : MonoBehaviour
 	{
 		if (trigger.gameObject.GetComponent<Pickupable>() != null && !trigger.gameObject.GetComponent<Pickupable>().isForDropzoneOnly)
 		{
-			float distance = Vector3.Distance(trigger.transform.position, transform.parent.position);
-			_distance = distance;
-//			Debug.Log(trigger.name + " " + distance);
-			if (!objectsInMe.Contains(trigger.gameObject) && objectsInMe.Count<1 && distance <= 0.16f)
+			if (!trigger.gameObject.GetComponent<Pickupable>().pickedUp)
 			{
-				objectsInMe.Add(trigger.gameObject);
-				if (objectsInMe[0].GetComponent<Glass>() != null && isForServing)
+				float distance = Vector3.Distance(trigger.transform.position, transform.parent.position);
+				_distance = distance;
+	//			Debug.Log(trigger.name + " " + distance);
+				if (!objectsInMe.Contains(trigger.gameObject) && objectsInMe.Count<1 && distance <= 0.16f)
 				{
-					objectsInMe[0].GetComponent<Glass>().isInServeZone = true;
-					objectsInMe[0].GetComponent<Glass>().myServiceDropzone = this;
-				}
-				isOccupied = true;
-			} else if (objectsInMe.Count > 0)
-			{
-				if (trigger.gameObject.GetComponent<Pickupable>().pickedUp)
+					objectsInMe.Add(trigger.gameObject);
+					if (objectsInMe[0].GetComponent<Glass>() != null && isForServing)
+					{
+						objectsInMe[0].GetComponent<Glass>().isInServeZone = true;
+						objectsInMe[0].GetComponent<Glass>().myServiceDropzone = this;
+					}
+					isOccupied = true;
+				} else if (objectsInMe.Count > 0)
 				{
-					isOccupied = false;
+					if (trigger.gameObject.GetComponent<Pickupable>().pickedUp)
+					{
+						isOccupied = false;
+					}
 				}
 			}
 		}

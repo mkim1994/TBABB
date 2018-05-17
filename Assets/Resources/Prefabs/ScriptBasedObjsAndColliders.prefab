@@ -73682,8 +73682,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isForDropzoneOnly: 0
   pickupDropTime: 0.25
-  leftHandPos: {x: -1, y: -0.89, z: 2}
-  rightHandPos: {x: 1, y: -0.89, z: 2}
+  leftHandPos: {x: -1, y: -0.89, z: 1}
+  rightHandPos: {x: 1, y: -0.89, z: 1}
   targetDropzone: {fileID: 0}
   startPos: {x: 0, y: 0, z: 0}
   dropPos: {x: 0, y: 0, z: 0}
