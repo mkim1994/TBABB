@@ -5,6 +5,7 @@ using UnityEngine;
 public class TweenManager : MonoBehaviour {
 
 	public bool tweensAreActive;
+	
 
 	private void FixedUpdate()
 	{

@@ -44,6 +44,7 @@ public class Bottle : Pickupable {
  		Sequence sequence = DOTween.Sequence();
 		sequence.Append(transform.DOLocalMove(startPos, tweenEndTime, false)).SetEase(Ease.InOutSine);
 		sequence.AppendCallback(() => Services.GameManager.playerInput.isPourTweenDone = false);
+//		sequence.OnComplete(() => Services.GameManager.playerInput.isPouringTweenStarting = false);
 //		sequence.OnComplete(() => DeclareInactiveTween());			
 		tweenSequences.Add(sequence);
 	}
