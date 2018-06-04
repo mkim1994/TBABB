@@ -4,11 +4,9 @@ using System.Reflection;
 using DG.Tweening;
 using UnityEngine;
 using Rewired;
-using Rewired.ComponentControls.Data;
 #if UNITY_EDITOR
 using UnityEditor;
 #endif
-using UnityEngine.Networking;
 using UnityEngine.SceneManagement;
 
 [RequireComponent(typeof(CharacterController))]
@@ -50,7 +48,7 @@ public class PlayerInput : MonoBehaviour
 	private Vector3 moveVector;
 	public Vector2 lookVector;
 	public int playerId = 0; 
-	[HideInInspector]public Player player;
+	[HideInInspector]public Player rewiredPlayer;
 	private CharacterController cc;
 //	[SerializeField]Coaster targetCoaster;
 	[HideInInspector] public NPC npc;
@@ -118,7 +116,7 @@ public class PlayerInput : MonoBehaviour
 	void Awake(){
 		Cursor.visible = false;
 		Cursor.lockState = CursorLockMode.Locked;
-		player = ReInput.players.GetPlayer(playerId);
+		rewiredPlayer = ReInput.players.GetPlayer(playerId);
 		cc = GetComponent<CharacterController>();
 		myCam = GetComponentInChildren<Camera>();
 //		lookSensitivityAtStart = lookSensitivity;
@@ -152,7 +150,7 @@ public class PlayerInput : MonoBehaviour
 		if (isInputEnabled)
 		{
 			GetInput();
-			ProcessInput();
+//			ProcessInput();
 			if(!Services.TweenManager.tweensAreActive){
 				ProcessMouseLook();
 				ProcessMovement();
@@ -232,7 +230,7 @@ public class PlayerInput : MonoBehaviour
 		}
 
 		#region Restart
-		i_restart = player.GetButton("Restart");
+		i_restart = rewiredPlayer.GetButton("Restart");
 		if(i_restart)
 		{
 			restartIsPressedSeconds += Time.deltaTime;
@@ -247,23 +245,24 @@ public class PlayerInput : MonoBehaviour
   	}
 
 	private void GetInput(){
-		moveVector.x = player.GetAxis("Move Horizontal");
-		moveVector.z = player.GetAxis("Move Vertical");
-		lookVector.x = player.GetAxis("Look Horizontal");
-		lookVector.y = player.GetAxis("Look Vertical");
+		moveVector.x = rewiredPlayer.GetAxis("Move Horizontal");
+		moveVector.z = rewiredPlayer.GetAxis("Move Vertical");
+		lookVector.x = rewiredPlayer.GetAxis("Look Horizontal");
+		lookVector.y = rewiredPlayer.GetAxis("Look Vertical");
  		// i_pickupLeft = player.GetButtonDown("Pick Up Left");
 		// i_pickupRight = player.GetButtonDown("Pick Up Right");
-		i_startUseLeft = player.GetButtonDown("Use Left");
-		i_startUseRight = player.GetButtonDown("Use Right");
-		i_useLeft = player.GetButton("Use Left");
-		i_endUseLeft = player.GetButtonUp("Use Left");
-		i_useRight = player.GetButton("Use Right");
-		i_endUseRight = player.GetButtonUp("Use Right");
-		i_restart = player.GetButtonDown("Restart");
-		i_talk = player.GetButtonDown("Talk");
-		i_choose1 = player.GetButtonDown("Choose1");
-		i_choose2 = player.GetButtonDown("Choose2");
+		i_startUseLeft = rewiredPlayer.GetButtonDown("Use Left");
+		i_startUseRight = rewiredPlayer.GetButtonDown("Use Right");
+		i_useLeft = rewiredPlayer.GetButton("Use Left");
+		i_endUseLeft = rewiredPlayer.GetButtonUp("Use Left");
+		i_useRight = rewiredPlayer.GetButton("Use Right");
+		i_endUseRight = rewiredPlayer.GetButtonUp("Use Right");
+		i_restart = rewiredPlayer.GetButtonDown("Restart");
+		i_talk = rewiredPlayer.GetButtonDown("Talk");
+		i_choose1 = rewiredPlayer.GetButtonDown("Choose1");
+		i_choose2 = rewiredPlayer.GetButtonDown("Choose2");
 	}
+	
 	private void ProcessMovement(){
 		#region Movement
 		//which direction you'll move in
@@ -1095,7 +1094,7 @@ public class PlayerInput : MonoBehaviour
 
 		#region Two-handed Interactions
 
-		if (player.GetButtonDown("Use Left") && player.GetButtonDown("Use Right") && !Services.TweenManager.tweensAreActive)
+		if (rewiredPlayer.GetButtonDown("Use Left") && rewiredPlayer.GetButtonDown("Use Right") && !Services.TweenManager.tweensAreActive)
 		{
 			if (i_useLeft && i_useRight && !isTwoHandedPouring)
 			{
