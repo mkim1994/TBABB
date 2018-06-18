@@ -2,40 +2,51 @@
 using Rewired;
 using UnityEngine;
 using DG.Tweening;
+using NUnit.Framework.Constraints;
 
 public class Hand : MonoBehaviour
 {
 	// tween values
-	[SerializeField]private Transform _pickupMarker;
+	[SerializeField] private Transform _pickupMarker;
 	private float _pickupDropTime = 0.75f;
+	private float _shortPressTime = 0.5f;
+	private float _longPressTime = 1f;
 	private HandManager _handManager;
 	private bool _isTweening;
-	
+
 	public bool IsTweening
 	{
 		get { return _isTweening; }
 		set { _isTweening = value; }
 	}
-	
+
 	//references to objects for pickup
-	[HideInInspector]public Pickupable SeenPickupable;
+	[HideInInspector] public Pickupable SeenPickupable;
 	public Pickupable HeldPickupable;
 	public Bottle HeldBottle;
 	public Rag HeldRag;
 	public Glass HeldGlass;
 	public Vector3 DropPos;
-	
+
 	//behavior tree
 	private Tree<Hand> _tree;
-	
+	private FSM<Hand> _fsm;
+
 	//misc bools
-	[SerializeField]private bool _canPickup;
-	[SerializeField]private bool _canDrop;
-	
+	[SerializeField] private bool _canPickup;
+	[SerializeField] private bool _canDrop;
+	[SerializeField] private bool _canPour;
+
 	public bool CanDrop
 	{
 		get { return _canDrop; }
 		set { _canDrop = value; }
+	} 
+	
+	public bool CanPour
+	{
+		get { return _canPour; }
+		set { _canPour = value; }
 	}
 
 
@@ -44,13 +55,13 @@ public class Hand : MonoBehaviour
 		Left,
 		Right
 	}
-	
-	[SerializeField]private MyHand _myHand;
+
+	[SerializeField] private MyHand _myHand;
 
 	private Player _rewiredPlayer;
 
 	// Use this for initialization
-	void Start ()
+	void Start()
 	{
 		_rewiredPlayer = Services.GameManager.playerInput.rewiredPlayer;
 		_handManager = GetComponent<HandManager>();
@@ -61,34 +72,49 @@ public class Hand : MonoBehaviour
 			new Sequence<Hand>(
 				new IsEmpty(),
 				new Not<Hand>(new TweenIsActive()),
-				new AllowPickup(),
+				new PickupAction(),
 				new DisallowDrop()
 			),
 
 			//HELD behavior
+
+			//Holding Bottle
 			new Sequence<Hand>(
-				new IsHolding(),
+				new IsHoldingBottle(),
 				new Not<Hand>(new TweenIsActive()),
 				new DisallowPickup(), //can't pick up if holding something
 				new IsInDropRange(),
-				new AllowDrop()
+				new DropAction(),
+				new IsLookingAtGlass(),
+				new PourAction()
+			),
+
+			//Holding glass
+			new Sequence<Hand>(
+				new IsHoldingGlass(),
+				new Not<Hand>(new TweenIsActive()),
+				new DisallowPickup(), //can't pick up if holding something
+				new IsInDropRange(),
+				new DropAction()
 			)
-			
+
+
 		));
 	}
-	
+
 	// Update is called once per frame
-	void Update () {
-		
+	void Update()
+	{
+
 	}
 
 	public void OnUpdate()
 	{
 		_tree.Update(this);
-		
+
 		if (_myHand == MyHand.Left)
 		{
-			LeftHandInteractions();	
+			LeftHandInteractions();
 		}
 		else
 		{
@@ -98,31 +124,32 @@ public class Hand : MonoBehaviour
 
 	void LeftHandInteractions()
 	{
-		if (_rewiredPlayer.GetButtonShortPressDown("Use Left"))
+		if (_rewiredPlayer.GetButtonShortPressUp("Use Left"))
 		{
 			//Pick Up with left hand
-			PickupObject(_pickupMarker.localPosition);
-			DropObject(DropPos);
-			
-		} else if (_rewiredPlayer.GetButtonLongPress("Use Left"))
+//			PickupObject(_pickupMarker.localPosition);
+//			DropObject(DropPos);
+ 		}
+		else if (_rewiredPlayer.GetButtonLongPress("Use Left"))
 		{
-			Debug.Log("Long Press LEFT is held down!");
-		}
+ 		}
 	}
 
 	void RightHandInteractions()
 	{
-		if (_rewiredPlayer.GetButtonShortPressDown("Use Right"))
+		if (_rewiredPlayer.GetButtonShortPressUp("Use Right"))
 		{
-			
-		} else if (_rewiredPlayer.GetButtonLongPress("Use Right"))
+
+		}
+		else if (_rewiredPlayer.GetButtonLongPress("Use Right"))
 		{
 			Debug.Log("Long Press RIGHT is held down!");
 		}
 	}
-	
-	public virtual void PickupObject(Vector3 newPos){
-		if (SeenPickupable != null && _canPickup)
+
+	public virtual void PickupObject(Vector3 newPos)
+	{
+		if (SeenPickupable != null)
 		{
 			_isTweening = true;
 			SeenPickupable.transform.SetParent(transform.GetChild(0));
@@ -146,6 +173,16 @@ public class Hand : MonoBehaviour
 			dropSequence.Append(HeldPickupable.transform.DOMove(DropPos, _pickupDropTime));
 			dropSequence.AppendCallback(() => HeldPickupable = null);
 			dropSequence.OnComplete(() => _isTweening = false);
+			
+		}
+	}
+
+	public void Pour(Bottle bottleInHand, int handNum)
+	{
+		//left is 0, right is 1
+		if (bottleInHand != null)
+		{
+			_handManager.SeenGlass.ReceivePourFromBottle(bottleInHand, handNum);		
 		}
 	}
 
@@ -156,20 +193,36 @@ public class Hand : MonoBehaviour
 		{
 			if (context.HeldPickupable == null)
 			{
-	 			return true;			
+				return true;
 			}
+
 			return false;
 		}
 	}
 
-	private class IsHolding : Node<Hand>
+	private class IsHoldingBottle : Node<Hand>
 	{
 		public override bool Update(Hand context)
 		{
 			if (context.HeldPickupable != null)
 			{
-				return true;			
+				if (context.HeldPickupable.GetComponent<Bottle>() != null)
+					return true;
 			}
+			return false;
+		}
+	}
+
+	private class IsHoldingGlass : Node<Hand>
+	{
+		public override bool Update(Hand context)
+		{
+			if (context.HeldPickupable != null)
+			{
+				if (context.HeldPickupable.GetComponent<Glass>() != null)
+					return true;
+			}
+
 			return false;
 		}
 	}
@@ -181,9 +234,20 @@ public class Hand : MonoBehaviour
 			return Vector3.Distance(context.DropPos, context.transform.position) <= context._handManager._maxInteractionDist;
 		}
 	}
-	
 
-	//Action
+	private class IsLookingAtGlass : Node<Hand>
+	{
+		public override bool Update(Hand context)
+		{
+			if (context._handManager.IsLookingAtGlass)
+			{
+				return true;
+			}
+			return false;
+		}
+	}
+
+//Action
 	private class DisallowPickup : Node<Hand>
 	{
 		public override bool Update(Hand context)
@@ -193,24 +257,79 @@ public class Hand : MonoBehaviour
 		}
 	}
 
-	private class AllowPickup : Node<Hand>
+	private class PickupAction : Node<Hand>
 	{
 		public override bool Update(Hand context)
 		{
-			context._canPickup = true;
+			if (context._myHand == MyHand.Left)
+			{
+				if (context._rewiredPlayer.GetButtonTimedPressUp("Use Left", 0f, context._shortPressTime))
+				{
+					context.PickupObject(context._pickupMarker.localPosition);
+				} else if (context._rewiredPlayer.GetButtonTimedPress("Use Left", context._longPressTime))
+				{
+					Debug.Log("Do nothing");	
+				}
+			}
+			else
+			{
+				if (context._rewiredPlayer.GetButtonTimedPressUp("Use Right", 0f, context._shortPressTime))
+				{
+					context.PickupObject(context._pickupMarker.localPosition);
+				} else if (context._rewiredPlayer.GetButtonTimedPress("Use Left", context._longPressTime))
+				{
+					Debug.Log("Do nothing");	
+				}
+			}
 			return true;
 		}
 	}
 
-	private class AllowDrop : Node<Hand>
+	private class DropAction : Node<Hand>
 	{
 		public override bool Update(Hand context)
 		{
-			context._canDrop = true;
+			if (context._myHand == MyHand.Left)
+			{
+				if (context._rewiredPlayer.GetButtonTimedPressUp("Use Left", 0f, context._shortPressTime))
+				{
+					context.DropObject(context.DropPos);
+				} else if (context._rewiredPlayer.GetButtonTimedPress("Use Left", context._longPressTime))
+				{
+					Debug.Log("Do nothing");	
+				}
+			}
+			else
+			{
+				if (context._rewiredPlayer.GetButtonTimedPressUp("Use Right", 0f, context._shortPressTime))
+				{
+					context.DropObject(context.DropPos);
+				} else if (context._rewiredPlayer.GetButtonTimedPress("Use Right", context._longPressTime))
+				{
+					Debug.Log("Do nothing");	
+				}
+			}
 			return true;
 		}
 	}
-	
+
+	private class PourAction : Node<Hand>
+	{
+		public override bool Update(Hand context)
+		{
+			if (context._rewiredPlayer.GetButtonTimedPress("Use Left", context._longPressTime))
+			{
+				context.Pour(context.HeldBottle, 0);	
+				Debug.Log("Pouring with " + context._myHand);
+			} else if (context._rewiredPlayer.GetButtonTimedPress("Use Right", context._longPressTime))
+			{
+				context.Pour(context.HeldBottle, 1);
+				Debug.Log("Pouring with " + context._myHand);
+			}
+			return true;
+		}
+	}
+
 	private class DisallowDrop: Node<Hand>
 	{
 		public override bool Update(Hand context)
@@ -239,7 +358,41 @@ public class Hand : MonoBehaviour
 	
 //	private class IsInPickupRange 
 
+	//Finite State Machine
 	
+	private class HandState : FSM<Hand>.State
+	{
+		
+	}
+
+	private class EmptyState : HandState
+	{
+		public override void OnEnter()
+		{
+			base.OnEnter();
+		}
+
+		public override void Update()
+		{
+			base.Update();
+		}
+	}
+
+	private class HoldingState : HandState
+	{
+		public override void OnEnter()
+		{
+			base.OnEnter();
+		}
+
+		public override void Update()
+		{
+			base.Update();
+		}
+	}
+
+
+
 }
 
 //NODES

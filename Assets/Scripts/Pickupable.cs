@@ -40,15 +40,14 @@ public class Pickupable : MonoBehaviour
     }
     public void CreateDropzone()
     {
-        GameObject dropzoneGO = Instantiate(Resources.Load("Prefabs/dropzoneParent"), transform.position, Quaternion.identity) as GameObject;
-        // Debug.Log("Dropzone created for " + gameObject.name);
-        myChildDropzone = dropzoneGO.GetComponentInChildren<Dropzone>();
+//        GameObject dropzoneGO = Instantiate(Resources.Load("Prefabs/dropzoneParent"), transform.position, Quaternion.identity) as GameObject;
+//        myChildDropzone = dropzoneGO.GetComponentInChildren<Dropzone>();
         if (isForDropzoneOnly)
         {
             SetupDropzoneThenDestroySelf();
         } else if (!isForDropzoneOnly)
         {
-            myChildDropzone.isOccupied = true;
+//            myChildDropzone.isOccupied = true;
         }
     }
 
@@ -225,7 +224,7 @@ public class Pickupable : MonoBehaviour
         if (gameObject.GetComponentInChildren<Liquid>() != null)
         {
              Liquid _liquid = gameObject.GetComponentInChildren<Liquid>();
-            _liquid.isEvaluated = false;
+            _liquid.isEvaluated = false;    
         }
         for (int i = 0; i < children; ++i)
         {
@@ -255,8 +254,8 @@ public class Pickupable : MonoBehaviour
 
     private void SetupDropzoneThenDestroySelf()
     {
-        myChildDropzone.objectsInMe.Clear();
-        myChildDropzone.isOccupied = false;
+//        myChildDropzone.objectsInMe.Clear();
+//        myChildDropzone.isOccupied = false;
         Destroy(gameObject);
     }
 

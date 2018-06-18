@@ -6,6 +6,14 @@ public class HandManager : MonoBehaviour
 {
 
 	[SerializeField]private Pickupable _seenPickupable;
+	[SerializeField]private Glass _seenGlass;
+	
+	public Glass SeenGlass
+	{
+		get { return _seenGlass; }
+		private set { _seenGlass = value; }
+	}
+
 	private Camera _myCamera;
 	[SerializeField]private Hand _leftHand;
 	[SerializeField]private Hand _rightHand;
@@ -19,6 +27,14 @@ public class HandManager : MonoBehaviour
 	{
 		get { return _isInDropRange; }
 		private set { _isInDropRange = value; }
+	}
+
+	private bool _isLookingAtGlass;
+
+	public bool IsLookingAtGlass
+	{
+		get { return _isLookingAtGlass; }
+		set { _isLookingAtGlass = value; }
 	}
 
 	// Use this for initialization
@@ -55,11 +71,17 @@ public class HandManager : MonoBehaviour
 				_leftHand.SeenPickupable = _seenPickupable;
 				_rightHand.SeenPickupable = _seenPickupable;
 				
+				//check what kind of pickupable it is
+				if (_seenPickupable.GetComponent<Glass>() != null)
+				{
+					_isLookingAtGlass = true;
+				}
 			} 
 			else if (	hitObj.GetComponent<Pickupable>() == null || 
 			           	Vector3.Distance(transform.position, hitObj.transform.position) > _maxInteractionDist ){
 							
 				_seenPickupable = null;
+				_seenGlass = null;
 				_leftHand.SeenPickupable = null;
 				_rightHand.SeenPickupable = null;
 			} 	
