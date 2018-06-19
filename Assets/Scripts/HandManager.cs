@@ -44,14 +44,14 @@ public class HandManager : MonoBehaviour
 	}
 
 	//layer masks
-	[SerializeField]private LayerMask _layerMask;
-	[SerializeField] private LayerMask _dropzoneLayerMask;
+	[SerializeField]private LayerMask _pickupableLayerMask;
+	[SerializeField] private LayerMask _dropLayerMask;
 	
 	// Update is called once per frame
 	void Update ()
 	{
 		PickupableRay();
-		DropzoneRay();
+		DropRay();
 		_leftHand.OnUpdate();
 		_rightHand.OnUpdate();
 	}
@@ -61,7 +61,7 @@ public class HandManager : MonoBehaviour
 		float rayDist = Mathf.Infinity;
 		RaycastHit hit = new RaycastHit();
 		
-		if(Physics.Raycast(ray, out hit, rayDist, _layerMask)){
+		if(Physics.Raycast(ray, out hit, rayDist, _pickupableLayerMask)){
 			GameObject hitObj = hit.transform.gameObject; //if you're actually looking at something
 //			 Debug.Log(hitObj);				  
 			if(	hitObj.GetComponent<Pickupable>() != null && 
@@ -88,23 +88,27 @@ public class HandManager : MonoBehaviour
 		}
 	}
 
-	private void DropzoneRay()
+	private void DropRay()
 	{
 		Ray ray = new Ray(_myCamera.transform.position, _myCamera.transform.forward);
 		float rayDist = Mathf.Infinity;
 		RaycastHit hit = new RaycastHit();
 
-		if (Physics.Raycast(ray, out hit, rayDist, _dropzoneLayerMask))
+		if (Physics.Raycast(ray, out hit, rayDist, _dropLayerMask))
 		{
+			Debug.Log(hit.transform.name);
 			_leftHand.DropPos = hit.point;
 			_rightHand.DropPos = hit.point;
-			if (Vector3.Distance(hit.point, transform.position) <= _maxInteractionDist)
+			
+			if (Vector3.Distance(hit.point, transform.position) <= _maxInteractionDist
+			    && hit.transform.gameObject.layer == 9)
 			{
-				_isInDropRange = true;
+				_isInDropRange = true;				
 			}
-			else if (Vector3.Distance(hit.point, transform.position) > _maxInteractionDist)
+			else if (Vector3.Distance(hit.point, transform.position) > _maxInteractionDist
+			         || hit.transform.gameObject.layer != 9)
 			{
-				_isInDropRange = false;
+				_isInDropRange = false;				
 			}
 		}
 	}

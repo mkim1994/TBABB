@@ -67,10 +67,11 @@ public class Hand : MonoBehaviour
 		_handManager = GetComponent<HandManager>();
 
 		_tree = new Tree<Hand>(new Selector<Hand>(
-
+			
 			//EMPTY behavior (hand is not holding anything)
 			new Sequence<Hand>(
 				new IsEmpty(),
+				new IsLookingAtPickupable(),
 				new Not<Hand>(new TweenIsActive()),
 				new PickupAction(),
 				new DisallowDrop()
@@ -187,6 +188,18 @@ public class Hand : MonoBehaviour
 	}
 
 	//conditions
+	private class IsLookingAtPickupable : Node<Hand>
+	{
+		public override bool Update(Hand context)
+		{
+			if (context.SeenPickupable != null)
+			{
+				return true;
+			}
+			return false;
+		}
+	}
+
 	private class IsEmpty : Node<Hand>
 	{
 		public override bool Update(Hand context)
@@ -222,7 +235,6 @@ public class Hand : MonoBehaviour
 				if (context.HeldPickupable.GetComponent<Glass>() != null)
 					return true;
 			}
-
 			return false;
 		}
 	}

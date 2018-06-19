@@ -1687,6 +1687,10 @@ MonoBehaviour:
   HeldBottle: {fileID: 0}
   HeldRag: {fileID: 0}
   HeldGlass: {fileID: 0}
+  DropPos: {x: 0, y: 0, z: 0}
+  _canPickup: 0
+  _canDrop: 0
+  _canPour: 0
   _myHand: 1
 --- !u!114 &114125971101656922
 MonoBehaviour:
@@ -1878,11 +1882,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _seenPickupable: {fileID: 0}
+  _seenGlass: {fileID: 0}
   _leftHand: {fileID: 114516129546434590}
   _rightHand: {fileID: 114124953579263730}
-  _layerMask:
+  _maxInteractionDist: 4
+  _isInDropRange: 0
+  _pickupableLayerMask:
     serializedVersion: 2
-    m_Bits: 4294955487
+    m_Bits: 1
+  _dropLayerMask:
+    serializedVersion: 2
+    m_Bits: 4609
 --- !u!114 &114274765598093880
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2450,6 +2460,10 @@ MonoBehaviour:
   HeldBottle: {fileID: 0}
   HeldRag: {fileID: 0}
   HeldGlass: {fileID: 0}
+  DropPos: {x: 0, y: 0, z: 0}
+  _canPickup: 0
+  _canDrop: 0
+  _canPour: 0
   _myHand: 0
 --- !u!114 &114516392780531308
 MonoBehaviour:
