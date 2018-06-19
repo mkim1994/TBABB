@@ -96,17 +96,17 @@ public class HandManager : MonoBehaviour
 
 		if (Physics.Raycast(ray, out hit, rayDist, _dropLayerMask))
 		{
-			Debug.Log(hit.transform.name);
+//			Debug.Log(hit.transform.name);
 			_leftHand.DropPos = hit.point;
 			_rightHand.DropPos = hit.point;
 			
 			if (Vector3.Distance(hit.point, transform.position) <= _maxInteractionDist
-			    && hit.transform.gameObject.layer == 9)
+			    && hit.transform.gameObject.layer == 9) //only set to true if object is of Dropzone Layer
 			{
 				_isInDropRange = true;				
 			}
 			else if (Vector3.Distance(hit.point, transform.position) > _maxInteractionDist
-			         || hit.transform.gameObject.layer != 9)
+				 || hit.transform.gameObject.layer != 9) 
 			{
 				_isInDropRange = false;				
 			}

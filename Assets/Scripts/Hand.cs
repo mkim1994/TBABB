@@ -83,7 +83,6 @@ public class Hand : MonoBehaviour
 			new Sequence<Hand>(
 				new IsHoldingBottle(),
 				new Not<Hand>(new TweenIsActive()),
-				new DisallowPickup(), //can't pick up if holding something
 				new IsInDropRange(),
 				new DropAction(),
 				new IsLookingAtGlass(),
@@ -165,7 +164,7 @@ public class Hand : MonoBehaviour
 
 	public virtual void DropObject(Vector3 newPos)
 	{
-		if (_canDrop && HeldPickupable != null)
+		if (HeldPickupable != null)
 		{
 			_isTweening = true;
 			HeldPickupable.transform.SetParent(null);
@@ -280,7 +279,7 @@ public class Hand : MonoBehaviour
 					context.PickupObject(context._pickupMarker.localPosition);
 				} else if (context._rewiredPlayer.GetButtonTimedPress("Use Left", context._longPressTime))
 				{
-					Debug.Log("Do nothing");	
+					Debug.Log("PICKUP ACTION NODE: LEFT HAND");	
 				}
 			}
 			else
@@ -290,7 +289,7 @@ public class Hand : MonoBehaviour
 					context.PickupObject(context._pickupMarker.localPosition);
 				} else if (context._rewiredPlayer.GetButtonTimedPress("Use Left", context._longPressTime))
 				{
-					Debug.Log("Do nothing");	
+					Debug.Log("PICKUP ACTION NODE: RIGHT HAND");	
 				}
 			}
 			return true;
@@ -308,7 +307,7 @@ public class Hand : MonoBehaviour
 					context.DropObject(context.DropPos);
 				} else if (context._rewiredPlayer.GetButtonTimedPress("Use Left", context._longPressTime))
 				{
-					Debug.Log("Do nothing");	
+					Debug.Log("DROP ACTION NODE: Do nothing (left hand)");	
 				}
 			}
 			else
@@ -318,7 +317,7 @@ public class Hand : MonoBehaviour
 					context.DropObject(context.DropPos);
 				} else if (context._rewiredPlayer.GetButtonTimedPress("Use Right", context._longPressTime))
 				{
-					Debug.Log("Do nothing");	
+					Debug.Log("DROP ACTION NODE: Do nothing (right hand)");	
 				}
 			}
 			return true;
