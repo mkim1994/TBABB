@@ -2,7 +2,10 @@
 using Rewired;
 using UnityEngine;
 using DG.Tweening;
-using NUnit.Framework.Constraints;
+
+//ISSUE: It is possible to pick up an object as it's tweening. 
+//Effect is the other hand thinks it has picked something up.
+//Solution: needs a reference to the other hand to say it's tweening
 
 public class Hand : MonoBehaviour
 {
@@ -354,6 +357,7 @@ public class Hand : MonoBehaviour
 	{
 		public override bool Update(Hand context)
 		{
+			Debug.Log(context._myHand + "IS TWEENING IS " + context._isTweening);
 			return context._isTweening;
 		}
 	}

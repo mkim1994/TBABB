@@ -1,9 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using BehaviorTree;
 
 public class HandManager : MonoBehaviour
 {
+	
+	//behavior tree
+	private Tree<HandManager> _tree;
+	private FSM<HandManager> _fsm;
 
 	[SerializeField]private Pickupable _seenPickupable;
 	[SerializeField]private Glass _seenGlass;
@@ -41,6 +46,9 @@ public class HandManager : MonoBehaviour
 	void Start ()
 	{
 		_myCamera = Camera.main;
+
+		_tree = new Tree<HandManager>(new Selector<HandManager>()
+		);
 	}
 
 	//layer masks
@@ -54,6 +62,7 @@ public class HandManager : MonoBehaviour
 		DropRay();
 		_leftHand.OnUpdate();
 		_rightHand.OnUpdate();
+		_tree.Update(this);
 	}
 	
 	private void PickupableRay(){
