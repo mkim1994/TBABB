@@ -17,6 +17,7 @@ public class Hand : MonoBehaviour
 	private HandManager _handManager;
 	private bool _isTweening;
 
+	
 	public bool IsTweening
 	{
 		get { return _isTweening; }
@@ -30,7 +31,9 @@ public class Hand : MonoBehaviour
 	public Rag HeldRag;
 	public Glass HeldGlass;
 	public Vector3 DropPos;
-
+	
+	//reference to other hand
+	
 	//behavior tree
 	private Tree<Hand> _tree;
 	private FSM<Hand> _fsm;
@@ -67,8 +70,8 @@ public class Hand : MonoBehaviour
 	void Start()
 	{
 		_rewiredPlayer = Services.GameManager.playerInput.rewiredPlayer;
-		_handManager = GetComponent<HandManager>();
-
+		_handManager = Services.HandManager;
+		
 		_tree = new Tree<Hand>(new Selector<Hand>(
 			
 			//EMPTY behavior (hand is not holding anything)
@@ -155,7 +158,7 @@ public class Hand : MonoBehaviour
 		if (SeenPickupable != null)
 		{
 			_isTweening = true;
-			SeenPickupable.transform.SetParent(transform.GetChild(0));
+			SeenPickupable.transform.SetParent(_handManager.FirstPersonCharacter.transform);
 			SeenPickupable.transform.localRotation = _pickupMarker.localRotation;
 			Pickupable _myPickupable = SeenPickupable;
 			Sequence sequence = DOTween.Sequence();
@@ -190,6 +193,16 @@ public class Hand : MonoBehaviour
 	}
 
 	//conditions
+
+	private class IsOtherHandTweening : Node<Hand>
+	{
+		public override bool Update(Hand context)
+		{
+
+			return false;
+		}
+	}
+
 	private class IsLookingAtPickupable : Node<Hand>
 	{
 		public override bool Update(Hand context)

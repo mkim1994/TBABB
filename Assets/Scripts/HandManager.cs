@@ -6,13 +6,32 @@ using BehaviorTree;
 public class HandManager : MonoBehaviour
 {
 	
+	[SerializeField]private Hand _leftHand;
+	[SerializeField]private Hand _rightHand;
+
+	public Hand LeftHand
+	{
+		get { return _leftHand; }
+	}
+
+	public Hand RightHand
+	{
+		get { return _rightHand; }
+	}
+
 	//behavior tree
 	private Tree<HandManager> _tree;
 	private FSM<HandManager> _fsm;
-
+	
 	[SerializeField]private Pickupable _seenPickupable;
 	[SerializeField]private Glass _seenGlass;
-	
+	[SerializeField] private FirstPersonCharacter _firstPersonCharacter;
+
+	public FirstPersonCharacter FirstPersonCharacter
+	{
+		get { return _firstPersonCharacter; }
+	}
+
 	public Glass SeenGlass
 	{
 		get { return _seenGlass; }
@@ -20,11 +39,10 @@ public class HandManager : MonoBehaviour
 	}
 
 	private Camera _myCamera;
-	[SerializeField]private Hand _leftHand;
-	[SerializeField]private Hand _rightHand;
+	
 	[HideInInspector]public float _maxInteractionDist = 4f;
 	private Vector3 _dropPos;
-	
+		
 	//bools
 	[SerializeField]private bool _isInDropRange;
 
@@ -63,6 +81,7 @@ public class HandManager : MonoBehaviour
 		_leftHand.OnUpdate();
 		_rightHand.OnUpdate();
 		_tree.Update(this);
+//		_fsm.Update();
 	}
 	
 	private void PickupableRay(){
@@ -121,4 +140,14 @@ public class HandManager : MonoBehaviour
 			}
 		}
 	}
+
+//	private class IsLeftHandTweening : Node<HandManager>
+//	{
+//		public override bool Update(HandManager context)
+//		{
+//			
+//			return false;
+//		}
+//	}
+
 }

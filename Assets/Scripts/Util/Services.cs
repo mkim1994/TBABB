@@ -14,5 +14,6 @@ public static class Services {
     public static CustomerDictionary CustomerDictionary { get; set; }
     public static ControllerDetection ControllerDetection { get; set; }
     public static AudioLoopScript AudioLoopScript { get; set; }
+    public static HandManager HandManager { get; set; }
  
 }
