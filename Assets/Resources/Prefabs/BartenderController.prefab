@@ -1864,14 +1864,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _pickupMarker: {fileID: 4781041225479668}
   SeenPickupable: {fileID: 0}
-  HeldPickupable: {fileID: 0}
   HeldBottle: {fileID: 0}
+  HeldPickupable: {fileID: 0}
   HeldRag: {fileID: 0}
   HeldGlass: {fileID: 0}
   DropPos: {x: 0, y: 0, z: 0}
   _canPickup: 0
-  _canDrop: 0
-  _canPour: 0
   _myHand: 1
 --- !u!114 &114214793512003096
 MonoBehaviour:
@@ -1957,14 +1955,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _pickupMarker: {fileID: 4092372548631860}
   SeenPickupable: {fileID: 0}
-  HeldPickupable: {fileID: 0}
   HeldBottle: {fileID: 0}
+  HeldPickupable: {fileID: 0}
   HeldRag: {fileID: 0}
   HeldGlass: {fileID: 0}
   DropPos: {x: 0, y: 0, z: 0}
   _canPickup: 0
-  _canDrop: 0
-  _canPour: 0
   _myHand: 0
 --- !u!114 &114274765598093880
 MonoBehaviour:

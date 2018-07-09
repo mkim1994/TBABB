@@ -19,6 +19,19 @@ public class HandManager : MonoBehaviour
 		get { return _rightHand; }
 	}
 
+	private Bottle _rightHeldBottle;
+	private Bottle _leftHeldBottle;
+	
+	public Bottle RightHeldBottle
+	{
+		get { return _rightHeldBottle; }
+	}
+
+	public Bottle LeftHeldBottle
+	{
+		get { return _leftHeldBottle; }
+	}
+
 	//behavior tree
 	private Tree<HandManager> _tree;
 	private FSM<HandManager> _fsm;
@@ -49,7 +62,6 @@ public class HandManager : MonoBehaviour
 	public bool IsInDropRange
 	{
 		get { return _isInDropRange; }
-		private set { _isInDropRange = value; }
 	}
 
 	private bool _isLookingAtGlass;
@@ -57,7 +69,6 @@ public class HandManager : MonoBehaviour
 	public bool IsLookingAtGlass
 	{
 		get { return _isLookingAtGlass; }
-		set { _isLookingAtGlass = value; }
 	}
 
 	// Use this for initialization
@@ -76,12 +87,14 @@ public class HandManager : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
 	{
+		ClassifyPickupableType();
 		PickupableRay();
 		DropRay();
 		_leftHand.OnUpdate();
 		_rightHand.OnUpdate();
 		_tree.Update(this);
 //		_fsm.Update();
+
 	}
 	
 	private void PickupableRay(){
@@ -103,6 +116,7 @@ public class HandManager : MonoBehaviour
 				if (_seenPickupable.GetComponent<Glass>() != null)
 				{
 					_isLookingAtGlass = true;
+					_seenGlass = _seenPickupable.GetComponent<Glass>();
 				}
 			} 
 			else if (	hitObj.GetComponent<Pickupable>() == null || 
@@ -112,6 +126,10 @@ public class HandManager : MonoBehaviour
 				_seenGlass = null;
 				_leftHand.SeenPickupable = null;
 				_rightHand.SeenPickupable = null;
+				if (_seenGlass == null)
+				{
+					_isLookingAtGlass = false;
+				}
 			} 	
 		}
 	}
@@ -137,6 +155,23 @@ public class HandManager : MonoBehaviour
 				 || hit.transform.gameObject.layer != 9) 
 			{
 				_isInDropRange = false;				
+			}
+		}
+	}
+
+	private void ClassifyPickupableType()
+	{
+		if (_rightHand.HeldPickupable != null)
+		{
+			if (_rightHand.HeldPickupable.GetComponent<Bottle>() != null)
+			{
+				_rightHand.HeldBottle = _rightHand.HeldPickupable.GetComponent<Bottle>();
+			}
+		} else if (_leftHand.HeldPickupable != null)
+		{
+			if (_leftHand.HeldPickupable.GetComponent<Bottle>() != null)
+			{
+				_leftHand.HeldBottle = _leftHand.HeldPickupable.GetComponent<Bottle>();
 			}
 		}
 	}

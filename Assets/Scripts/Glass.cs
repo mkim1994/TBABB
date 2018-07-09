@@ -139,8 +139,8 @@ public class Glass : Pickupable
 			}
 		}
 	}
-
- 	public void ReceivePourFromBottle(Bottle bottleInHand, int handNum)
+	
+	public void ReceivePourFromBottle(Bottle bottleInHand, int handNum)
 	{
 		//left hand is 0, right hand is 1		
 		if (bottleInHand.myDrinkBase != DrinkBase.none && bottleInHand.myMixer == Mixer.none)
