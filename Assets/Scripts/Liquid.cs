@@ -18,7 +18,7 @@ public class Liquid : MonoBehaviour {
 	private SkinnedMeshRenderer myLiquid;
 	private float myLiquidVolume = 100;
 	[SerializeField]private float pourRate = 1;
-	[SerializeField] private GameObject liquidSurf;
+	[SerializeField] private GameObject _liquidSurface;
 	public float totalVolume;
 	[HideInInspector]public DrinkBase myDrinkBase;
 	[HideInInspector]public Mixer myMixer;
@@ -59,7 +59,7 @@ public class Liquid : MonoBehaviour {
 		if (GetComponent<MeshRenderer>() != null)
 		{
 			meshRenderer = GetComponent<MeshRenderer>();
-			meshRenderer.enabled = false;
+//			meshRenderer.enabled = false;
 		}
 
 //		if (gameObject.GetComponent<SkinnedMeshRenderer>() != null)
@@ -199,6 +199,12 @@ public class Liquid : MonoBehaviour {
 
  	}
 
+	public void ReceivePour()
+	{
+		Debug.Log("liquid is rising!");
+		_liquidSurface.transform.localPosition += Vector3.up * Time.deltaTime;
+	}
+
 	private void EmptyDrinkWhenCustomerFinished()
 	{
 		if (myCustomer != null)
@@ -224,11 +230,11 @@ public class Liquid : MonoBehaviour {
 //		transform.localScale = new Vector3(1, 1, 1);
 //		myLiquidVolume = liquidSurf.transform.localPosition.y;
 		meshRenderer.enabled = true;
-		if (liquidSurf.transform.localPosition.y <= myMaxVolume)
+		if (_liquidSurface.transform.localPosition.y <= myMaxVolume)
 		{
-			liquidSurf.transform.Translate(Vector3.up * pourRate * Time.deltaTime, Space.Self);		
+			_liquidSurface.transform.Translate(Vector3.up * pourRate * Time.deltaTime, Space.Self);		
 		}
-		myLiquidVolume = liquidSurf.transform.localPosition.y;
+		myLiquidVolume = _liquidSurface.transform.localPosition.y;
  		height = remapRange(myLiquidVolume, 0, myMaxVolume, 0, 100);
 //		myLiquid.SetBlendShapeWeight(0, myLiquidVolume);
  		thisCocktail = new DrinkProfile (sodaVolume/totalVolume, tonicVolume/totalVolume, vermouthVolume/totalVolume, lemonJuiceVolume/totalVolume, 0, 0, 0, 0, 0, 0, 0, 
@@ -268,7 +274,7 @@ public class Liquid : MonoBehaviour {
 		alcoholVolume = 0;
 		abv = 0;
 		myLiquidVolume = 0;
-		liquidSurf.transform.localPosition = Vector3.zero;
+		_liquidSurface.transform.localPosition = Vector3.zero;
 	}
 
 	float remapRange(float oldValue, float oldMin, float oldMax, float newMin, float newMax )

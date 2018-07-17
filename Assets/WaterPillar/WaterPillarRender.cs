@@ -34,9 +34,7 @@ public class WaterPillarRender : MonoBehaviour {
 	private void OnEnable() {
 		meshRenderer = gameObject.GetComponent<MeshRenderer>();
 	}
-	private void OnDisable(){
-
-	}
+	
 	// Update is called once per frame
 	void Update () {
 		meshRenderer.sharedMaterial.SetMatrix("_MatrixToSurface", ReferenceSurface.worldToLocalMatrix);

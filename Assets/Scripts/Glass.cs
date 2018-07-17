@@ -36,7 +36,7 @@ public class Glass : Pickupable
 	public Dropzone myServiceDropzone;
 	private Vector3 unservedPos;
 	private Vector3 servedPos;
-	[HideInInspector]public Liquid liquid;
+	[HideInInspector]public Liquid Liquid;
 
 	[HideInInspector]public GameObject liquidSurfaceParent;
 	[HideInInspector]public GameObject liquidSurfaceChild;
@@ -63,10 +63,10 @@ public class Glass : Pickupable
 		fsm = new FSM<Glass>(this);
 		fsm.TransitionTo<NotReadyToServe>();
 		_playerLookSens = Services.GameManager.playerInput.lookSensitivity;
-		liquid = GetComponentInChildren<Liquid>();
-		if (liquid != null)
+		Liquid = GetComponentInChildren<Liquid>();
+		if (Liquid != null)
 		{
-			liquid._glassType = glassType;		
+			Liquid._glassType = glassType;		
 		}
 
 	}
@@ -84,9 +84,9 @@ public class Glass : Pickupable
 		}
 
 		if(myIceList.Count >= 3){
-			liquid.hasIce = true;
+			Liquid.hasIce = true;
 		} else {
-			liquid.hasIce = false;
+			Liquid.hasIce = false;
 		}
 	
 	}
@@ -96,7 +96,7 @@ public class Glass : Pickupable
 	{
 		get
 		{
-			if (liquid.totalVolume >= 100f)
+			if (Liquid.totalVolume >= 100f)
 			{
 				isFull = true;
 			}
@@ -108,7 +108,7 @@ public class Glass : Pickupable
 			return isFull;
 		}
 	}
-	
+
 	public override void InteractLeftHand(){
 		if(!pickedUp && CurrentState != ServedState){
 			//pick up with left hand
@@ -146,7 +146,7 @@ public class Glass : Pickupable
 		if (bottleInHand.myDrinkBase != DrinkBase.none && bottleInHand.myMixer == Mixer.none)
 		{
 			Debug.Log(bottleInHand.myDrinkBase);
-			liquid.AddIngredient(bottleInHand.myDrinkBase);
+			Liquid.AddIngredient(bottleInHand.myDrinkBase);
 			if (pickedUp)
 			{
 //				base.RotateTween(leftHandPourRot);
@@ -162,7 +162,7 @@ public class Glass : Pickupable
 		}
 		else if (bottleInHand.myMixer != Mixer.none && bottleInHand.myDrinkBase == DrinkBase.none)
 		{
-			liquid.AddMixer(bottleInHand.myMixer);
+			Liquid.AddMixer(bottleInHand.myMixer);
 			if (pickedUp)
 			{
 				if (handNum == 0)
@@ -189,11 +189,11 @@ public class Glass : Pickupable
 	{
 		if (bottleInHand.myDrinkBase != DrinkBase.none && bottleInHand.myMixer == Mixer.none)
 		{
-			liquid.AddIngredient(bottleInHand.myDrinkBase);
+			Liquid.AddIngredient(bottleInHand.myDrinkBase);
 		}
 		else if (bottleInHand.myMixer != Mixer.none && bottleInHand.myDrinkBase == DrinkBase.none)
 		{
-			liquid.AddMixer(bottleInHand.myMixer);
+			Liquid.AddMixer(bottleInHand.myMixer);
 		}
 	}
 
@@ -229,8 +229,8 @@ public class Glass : Pickupable
 	public void EndPourFromBottle()
 	{
 //		Liquid liquid = GetComponentInChildren<Liquid>();
-		liquid.isBeingPoured = false;
-		liquid.isEvaluated = false;
+		Liquid.isBeingPoured = false;
+		Liquid.isEvaluated = false;
 //		liquid.EvaluateDrinkInCoaster();
 //		liquid.isPouring = false;
 	}
@@ -254,7 +254,7 @@ public class Glass : Pickupable
 
 	public void GenericEmpty()
 	{
-		liquid.EmptyLiquid();
+		Liquid.EmptyLiquid();
 		ClearIce();
 	}
 
@@ -270,7 +270,7 @@ public class Glass : Pickupable
 		Sequence rotateSequence = DOTween.Sequence();
 		rotateSequence.Append(transform.DOLocalRotate(leftHandPourRot, 0.5f, RotateMode.Fast));
 		rotateSequence.Append(transform.DOLocalRotate(Vector3.zero, 0.5f, RotateMode.Fast));
-		rotateSequence.OnComplete(() => liquid.EmptyLiquid()); 
+		rotateSequence.OnComplete(() => Liquid.EmptyLiquid()); 
 		// rotateSequence.OnComplete(()=>ClearIce());
 		ClearIce();
  	}
@@ -287,7 +287,7 @@ public class Glass : Pickupable
 		Sequence rotateSequence = DOTween.Sequence();
 		rotateSequence.Append(transform.DOLocalRotate(rightHandPourRot, 0.5f, RotateMode.Fast));
 		rotateSequence.Append(transform.DOLocalRotate(Vector3.zero, 0.5f, RotateMode.Fast));
-		rotateSequence.OnComplete(() => liquid.EmptyLiquid());
+		rotateSequence.OnComplete(() => Liquid.EmptyLiquid());
 		// rotateSequence.OnComplete(()=>ClearIce());
 		ClearIce();
 //		liquid.empty;
@@ -384,11 +384,11 @@ public class Glass : Pickupable
 		ClearIce();
 		fsm.TransitionTo<NotReadyToServe>();
 		hasIce = false;
-		liquid.isEvaluated = false;
-		liquid.EmptyLiquid();
+		Liquid.isEvaluated = false;
+		Liquid.EmptyLiquid();
 //		glassServeState = Glass.GlassServeState.NotReadyToServe;
-		liquid.myDrinkBase = DrinkBase.none;
-		liquid.myMixer = Mixer.none;
+		Liquid.myDrinkBase = DrinkBase.none;
+		Liquid.myMixer = Mixer.none;
 		// if (GetComponent<Bottle>() == null)
 		// {
 		//     glass.liquid.transform.localScale = new Vector3(0, 0, 0);
@@ -454,7 +454,7 @@ public class Glass : Pickupable
 		{
 			Debug.Log("Served!");
 			base.OnEnter();			
-			Context.liquid.TalkToCoaster();
+			Context.Liquid.TalkToCoaster();
 			Context.CanBePouredInto = false;
 			Context.ServedState = this;
 			Context.CurrentState = this;
@@ -467,7 +467,7 @@ public class Glass : Pickupable
 		{
 			base.OnExit();			
 			EventManager.Instance.Unregister<DrinkRejectedEvent>(Context.UnServe);
-			Context.liquid.isEvaluated = false;
+			Context.Liquid.isEvaluated = false;
 			Debug.Log("Exiting Served State!");
 			Context.myServiceDropzone.GetComponent<Collider>().enabled = true;
 		}

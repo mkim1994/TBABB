@@ -134,7 +134,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1990981567063706}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.213, y: 1.6474999, z: 9.989}
+  m_LocalPosition: {x: -3.3112767, y: 2.1870003, z: 10.8378935}
   m_LocalScale: {x: 0.72233, y: 0.72233, z: 0.72233}
   m_Children:
   - {fileID: 4983605418241212}
@@ -210,6 +210,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 2100000, guid: 1c5225c36c15c35418ac47c9b336bfe9, type: 2}
   m_StaticBatchInfo:
@@ -244,8 +245,9 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 2100000, guid: 798f8dec2f7fd43a2b038c46d82aa375, type: 2}
+  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -278,6 +280,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 0}
   m_StaticBatchInfo:
@@ -352,6 +355,7 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &114164318089383750
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -399,7 +403,7 @@ MonoBehaviour:
   _glassType: 0
   height: 0
   pourRate: 0.25
-  liquidSurf: {fileID: 1290422401134344}
+  _liquidSurface: {fileID: 1661520654507394}
   totalVolume: 0
   myDrinkBase: 0
   myMixer: 0
@@ -424,6 +428,7 @@ MonoBehaviour:
   spiciness: 0
   alcoholVolume: 0
   abv: 0
+  myCustomer: {fileID: 0}
   drinkParts: []
   otherLiquid: {fileID: 0}
   otherLiquidMask: {fileID: 0}
@@ -454,20 +459,21 @@ MonoBehaviour:
   tweenEndTime: 0.5
   pickedUp: 0
   origPos: {x: 0, y: 0, z: 0}
-  myChildDropzone: {fileID: 0}
+  glassType: 0
+  glassServeState: 0
   focalPoint: {fileID: 1324262859443550}
   myIceList: []
-  hasLiquid: 0
-  hasIce: 0
   isFull: 0
+  hasIce: 0
   isDirty: 0
-  liquid: {fileID: 0}
+  isInServeZone: 0
+  CanBePouredInto: 0
+  myServiceDropzone: {fileID: 0}
+  Liquid: {fileID: 0}
   liquidSurfaceParent: {fileID: 1661520654507394}
   liquidSurfaceChild: {fileID: 0}
-  _playerLookVec2: {x: 0, y: 0}
-  _playerLookSens: 0
-  _playerLookX: 0
-  glassType: 0
+  leftHandPourPos: {x: -0.14, y: -0.5, z: 1.75}
+  rightHandPourPos: {x: 0.14, y: -0.5, z: 1.75}
 --- !u!136 &136314839369854642
 CapsuleCollider:
   m_ObjectHideFlags: 1

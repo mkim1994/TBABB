@@ -37,13 +37,7 @@ public class Hand : MonoBehaviour
 	
 	//reference to other hand
 
-	private Hand _otherHand;
-
-	public Hand OtherHand
-	{
-		get { return _otherHand; }
-		set { _otherHand = value; }
-	}
+	[SerializeField]private Hand _otherHand;
 
 	//behavior tree
 	private Tree<Hand> _tree;
@@ -75,6 +69,7 @@ public class Hand : MonoBehaviour
 		_rewiredPlayer = Services.GameManager.playerInput.rewiredPlayer;
 		_handManager = Services.HandManager;
 
+		//We get reference to the OtherHands. 
 		if (_myHand == MyHand.Left)
 		{
 			_otherHand = _handManager.RightHand;
@@ -87,6 +82,7 @@ public class Hand : MonoBehaviour
 		_tree = new Tree<Hand>(new Selector<Hand>(
 			
 			//EMPTY behavior (hand is not holding anything)
+			//// Pick up object
 			new Sequence<Hand>(
 				new IsEmpty(),
 				new IsLookingAtPickupable(),
@@ -98,7 +94,7 @@ public class Hand : MonoBehaviour
 
 			//HELD behavior
 
-			//Holding Bottle
+			////Holding Bottle
 			new Sequence<Hand>(
 				new IsHoldingBottle(),
 				new Not<Hand>(new IsTweenActive()),
@@ -197,18 +193,16 @@ public class Hand : MonoBehaviour
 			dropSequence.Append(HeldPickupable.transform.DOMove(DropPos, _pickupDropTime));
 			dropSequence.AppendCallback(() => HeldPickupable = null);
 			dropSequence.OnComplete(() => _isTweening = false);
-			
 		}
 	}
 
 	public void Pour(Bottle bottleInHand, int handNum)
 	{
 		//left is 0, right is 1
- 		if (bottleInHand != null)
-		{
+ 	
 //			Debug.Log(_handManager.SeenGlass);
-			_handManager.SeenGlass.ReceivePourFromBottle(bottleInHand, handNum);		
-		}
+//		_handManager.SeenGlass.ReceivePourFromBottle(bottleInHand, handNum);		
+		_handManager.SeenGlass.Liquid.ReceivePour();
 	}
 
 	//conditions
@@ -305,7 +299,6 @@ public class Hand : MonoBehaviour
 					context.PickupObject(context._pickupMarker.localPosition);
 				} else if (context._rewiredPlayer.GetButtonTimedPress("Use Left", context._longPressTime))
 				{
-					Debug.Log("PICKUP ACTION NODE: LEFT HAND");	
 				}
 			}
 			else
@@ -315,7 +308,6 @@ public class Hand : MonoBehaviour
 					context.PickupObject(context._pickupMarker.localPosition);
 				} else if (context._rewiredPlayer.GetButtonTimedPress("Use Left", context._longPressTime))
 				{
-					Debug.Log("PICKUP ACTION NODE: RIGHT HAND");	
 				}
 			}
 			return true;
@@ -333,8 +325,7 @@ public class Hand : MonoBehaviour
 					context.DropObject(context.DropPos);
 				} else if (context._rewiredPlayer.GetButtonTimedPress("Use Left", context._longPressTime))
 				{
-					Debug.Log("DROP ACTION NODE: Do nothing (left hand)");	
-				}
+ 				}
 			}
 			else
 			{
@@ -343,8 +334,7 @@ public class Hand : MonoBehaviour
 					context.DropObject(context.DropPos);
 				} else if (context._rewiredPlayer.GetButtonTimedPress("Use Right", context._longPressTime))
 				{
-					Debug.Log("DROP ACTION NODE: Do nothing (right hand)");	
-				}
+ 				}
 			}
 			return true;
 		}
