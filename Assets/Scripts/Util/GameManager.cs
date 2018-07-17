@@ -62,6 +62,7 @@ public class GameManager : MonoBehaviour {
 		Services.ControllerDetection = new ControllerDetection();
 		Services.ControllerDetection.Start();
 		Services.AudioLoopScript = FindObjectOfType<AudioLoopScript>();
+		Services.HandManager = FindObjectOfType<HandManager>();
 
 		//Services.Materials = Resources.Load<MaterialDB>("Art/Materials");
 		//Services.SceneStackManager = new SceneStackManager<TransitionData>(sceneRoot, Services.Prefabs.Scenes);

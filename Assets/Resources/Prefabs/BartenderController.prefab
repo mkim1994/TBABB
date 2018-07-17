@@ -18,8 +18,6 @@ GameObject:
   - component: {fileID: 114060667386522798}
   - component: {fileID: 114094798746320028}
   - component: {fileID: 114667602971023438}
-  - component: {fileID: 114124953579263730}
-  - component: {fileID: 114516129546434590}
   - component: {fileID: 114266671698647788}
   m_Layer: 15
   m_Name: BartenderController
@@ -42,6 +40,7 @@ GameObject:
   - component: {fileID: 114748969170267936}
   - component: {fileID: 114110072887769014}
   - component: {fileID: 114494071740702374}
+  - component: {fileID: 114011942522482878}
   m_Layer: 15
   m_Name: FirstPersonCharacter
   m_TagString: MainCamera
@@ -690,6 +689,7 @@ GameObject:
   - component: {fileID: 33092903407893568}
   - component: {fileID: 65455370813779228}
   - component: {fileID: 23563705522381784}
+  - component: {fileID: 114185927539524562}
   m_Layer: 15
   m_Name: RightHandMarker
   m_TagString: Untagged
@@ -1161,6 +1161,7 @@ GameObject:
   - component: {fileID: 33652007675621074}
   - component: {fileID: 65735002917542036}
   - component: {fileID: 23397157081319264}
+  - component: {fileID: 114269212164873656}
   m_Layer: 15
   m_Name: LeftHandMarker
   m_TagString: Untagged
@@ -1416,6 +1417,17 @@ Light:
   m_UseColorTemperature: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &114011942522482878
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100002}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f0dec6866bfb1d24a9bca59b0fd19dc9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114014743992344670
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1708,28 +1720,6 @@ MonoBehaviour:
   layerMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!114 &114124953579263730
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100000}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 19da5c7bde100c84090068d40eab091c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _pickupMarker: {fileID: 4781041225479668}
-  SeenPickupable: {fileID: 0}
-  HeldPickupable: {fileID: 0}
-  HeldBottle: {fileID: 0}
-  HeldRag: {fileID: 0}
-  HeldGlass: {fileID: 0}
-  DropPos: {x: 0, y: 0, z: 0}
-  _canPickup: 0
-  _canDrop: 0
-  _canPour: 0
-  _myHand: 1
 --- !u!114 &114125971101656922
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1861,6 +1851,26 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &114185927539524562
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1434033485234130}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19da5c7bde100c84090068d40eab091c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _pickupMarker: {fileID: 4781041225479668}
+  SeenPickupable: {fileID: 0}
+  HeldBottle: {fileID: 0}
+  HeldPickupable: {fileID: 0}
+  HeldRag: {fileID: 0}
+  HeldGlass: {fileID: 0}
+  DropPos: {x: 0, y: 0, z: 0}
+  _canPickup: 0
+  _myHand: 1
 --- !u!114 &114214793512003096
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1919,10 +1929,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6edb177dfe2516489c7495b7cb1f713, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _leftHand: {fileID: 114269212164873656}
+  _rightHand: {fileID: 114185927539524562}
   _seenPickupable: {fileID: 0}
   _seenGlass: {fileID: 0}
-  _leftHand: {fileID: 114516129546434590}
-  _rightHand: {fileID: 114124953579263730}
+  _firstPersonCharacter: {fileID: 114011942522482878}
   _maxInteractionDist: 4
   _isInDropRange: 0
   _pickupableLayerMask:
@@ -1931,6 +1942,26 @@ MonoBehaviour:
   _dropLayerMask:
     serializedVersion: 2
     m_Bits: 4609
+--- !u!114 &114269212164873656
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1970147742744940}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19da5c7bde100c84090068d40eab091c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _pickupMarker: {fileID: 4092372548631860}
+  SeenPickupable: {fileID: 0}
+  HeldBottle: {fileID: 0}
+  HeldPickupable: {fileID: 0}
+  HeldRag: {fileID: 0}
+  HeldGlass: {fileID: 0}
+  DropPos: {x: 0, y: 0, z: 0}
+  _canPickup: 0
+  _myHand: 0
 --- !u!114 &114274765598093880
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2481,28 +2512,6 @@ MonoBehaviour:
   m_EffectColor: {r: 0, g: 0, b: 0, a: 0.34509805}
   m_EffectDistance: {x: 1, y: -1}
   m_UseGraphicAlpha: 1
---- !u!114 &114516129546434590
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100000}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 19da5c7bde100c84090068d40eab091c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _pickupMarker: {fileID: 4092372548631860}
-  SeenPickupable: {fileID: 0}
-  HeldPickupable: {fileID: 0}
-  HeldBottle: {fileID: 0}
-  HeldRag: {fileID: 0}
-  HeldGlass: {fileID: 0}
-  DropPos: {x: 0, y: 0, z: 0}
-  _canPickup: 0
-  _canDrop: 0
-  _canPour: 0
-  _myHand: 0
 --- !u!114 &114516392780531308
 MonoBehaviour:
   m_ObjectHideFlags: 1
