@@ -59,7 +59,7 @@ public class Liquid : MonoBehaviour {
 		if (GetComponent<MeshRenderer>() != null)
 		{
 			meshRenderer = GetComponent<MeshRenderer>();
-//			meshRenderer.enabled = false;
+			meshRenderer.enabled = false;
 		}
 
 //		if (gameObject.GetComponent<SkinnedMeshRenderer>() != null)
@@ -120,7 +120,7 @@ public class Liquid : MonoBehaviour {
 
 		if (isBeingPoured)
 		{
-			GrowVertical();		
+			MixDrink();		
 			if(myDrinkBase == DrinkBase.none){
 				AddMixer(myMixer);
 				switch (myMixer){
@@ -201,7 +201,6 @@ public class Liquid : MonoBehaviour {
 
 	public void ReceivePour()
 	{
-		Debug.Log("liquid is rising!");
 		_liquidSurface.transform.localPosition += Vector3.up * Time.deltaTime;
 	}
 
@@ -224,8 +223,7 @@ public class Liquid : MonoBehaviour {
 		}
 	}
 
-	public void GrowVertical(){
-
+	public void MixDrink(){
 // 		height = Mathf.Clamp(height, 0, 100);
 //		transform.localScale = new Vector3(1, 1, 1);
 //		myLiquidVolume = liquidSurf.transform.localPosition.y;
@@ -292,8 +290,45 @@ public class Liquid : MonoBehaviour {
 //			Debug.Log(_drinkBase);
 			myDrinkProfile = Services.DrinkDictionary.drinkBases[_drinkBase];		
 			myDrinkBase = _drinkBase;
-			waterPillar.SetMaterialColorOnPour(_drinkBase);
+//			waterPillar.SetMaterialColorOnPour(_drinkBase);
+			switch (myDrinkBase){
+				case DrinkBase.whiskey:
+					whiskeyVolume = height - totalVolume + whiskeyVolume;
+					IncrementFlavor(myDrinkProfile, whiskeyVolume);
+					break;
+				case DrinkBase.gin:
+					ginVolume = height - totalVolume + ginVolume;
+					IncrementFlavor(myDrinkProfile, ginVolume);
+					break;
+				case DrinkBase.tequila:
+					tequilaVolume = height - totalVolume + tequilaVolume;
+					IncrementFlavor(myDrinkProfile, tequilaVolume);
+					break;
+				case DrinkBase.vodka:
+					vodkaVolume = height - totalVolume + vodkaVolume;
+					IncrementFlavor(myDrinkProfile, vodkaVolume);		
+					break;
+				case DrinkBase.rum:
+					rumVolume = height - totalVolume + rumVolume;
+					IncrementFlavor(myDrinkProfile, rumVolume);
+					break;
+				case DrinkBase.beer:
+					beerVolume = height - totalVolume + beerVolume;
+					IncrementFlavor(myDrinkProfile, beerVolume);
+					break;
+				case DrinkBase.wine:
+					wineVolume = height - totalVolume + wineVolume;
+					IncrementFlavor(myDrinkProfile, wineVolume);
+					break;
+				case DrinkBase.brandy:
+					brandyVolume = height - totalVolume + brandyVolume;
+					IncrementFlavor(myDrinkProfile, brandyVolume);
+					break;
+				default:
+					break;
+			}
 		}
+		MixDrink();
 	}
 
 	public void AddMixer(Mixer _mixer){
@@ -304,7 +339,7 @@ public class Liquid : MonoBehaviour {
 			myMixer = _mixer;
 			waterPillar.SetMaterialColorOnPour(DrinkBase.none, _mixer);
 		}
-
+		MixDrink();
 	}
 
 	private float GetSmokiness(){

@@ -199,10 +199,10 @@ public class Hand : MonoBehaviour
 	public void Pour(Bottle bottleInHand, int handNum)
 	{
 		//left is 0, right is 1
- 	
+		Debug.Log(bottleInHand.myDrinkBase);
 //			Debug.Log(_handManager.SeenGlass);
 //		_handManager.SeenGlass.ReceivePourFromBottle(bottleInHand, handNum);		
-		_handManager.SeenGlass.Liquid.ReceivePour();
+		_handManager.SeenGlass.Liquid.AddIngredient(bottleInHand.myDrinkBase);
 	}
 
 	//conditions
@@ -278,12 +278,7 @@ public class Hand : MonoBehaviour
 	{
 		public override bool Update(Hand context)
 		{
-			if (context._handManager.IsLookingAtGlass)
-			{
-				Debug.Log("IS LOOKING AT GLASS!");
-				return true;
-			}
-			return false;
+			return context._handManager.IsLookingAtGlass;
 		}
 	}
 
