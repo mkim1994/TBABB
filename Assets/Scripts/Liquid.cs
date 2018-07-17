@@ -337,7 +337,31 @@ public class Liquid : MonoBehaviour {
 			myDrinkProfile = Services.MixerDictionary.mixers[_mixer];
 	//		mixerBeingPoured = _mixer;
 			myMixer = _mixer;
-			waterPillar.SetMaterialColorOnPour(DrinkBase.none, _mixer);
+//			waterPillar.SetMaterialColorOnPour(DrinkBase.none, _mixer);
+			switch (myMixer){
+				case Mixer.soda:
+					sodaVolume = height - totalVolume + sodaVolume;
+					IncrementFlavor(myDrinkProfile, sodaVolume);
+					break;
+				case Mixer.tonic:
+					tonicVolume = height - totalVolume + tonicVolume;
+					IncrementFlavor(myDrinkProfile, tonicVolume);
+					break;
+				case Mixer.vermouth:
+					vermouthVolume = height - totalVolume + vermouthVolume;
+					IncrementFlavor(myDrinkProfile, vermouthVolume);
+					break;
+				case Mixer.orange_juice:
+					orangeJuiceVolume = height - totalVolume + orangeJuiceVolume;
+					IncrementFlavor(myDrinkProfile, orangeJuiceVolume);
+					break;
+				case Mixer.lemon_juice:
+					lemonJuiceVolume = height - totalVolume + lemonJuiceVolume;
+					IncrementFlavor(myDrinkProfile, lemonJuiceVolume);
+					break;
+				default:
+					break;
+			}
 		}
 		MixDrink();
 	}

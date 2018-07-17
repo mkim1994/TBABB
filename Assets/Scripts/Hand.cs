@@ -201,8 +201,16 @@ public class Hand : MonoBehaviour
 		//left is 0, right is 1
 		Debug.Log(bottleInHand.myDrinkBase);
 //			Debug.Log(_handManager.SeenGlass);
-//		_handManager.SeenGlass.ReceivePourFromBottle(bottleInHand, handNum);		
-		_handManager.SeenGlass.Liquid.AddIngredient(bottleInHand.myDrinkBase);
+//		_handManager.SeenGlass.ReceivePourFromBottle(bottleInHand, handNum);	
+		if (bottleInHand.myDrinkBase != DrinkBase.none)
+		{
+			_handManager.SeenGlass.Liquid.AddIngredient(bottleInHand.myDrinkBase);		
+		}
+		else
+		{
+			_handManager.SeenGlass.Liquid.AddMixer(bottleInHand.myMixer);		
+		}
+
 	}
 
 	//conditions
