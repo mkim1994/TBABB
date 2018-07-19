@@ -118,82 +118,82 @@ public class Liquid : MonoBehaviour {
 			}
  		}
 
-		if (isBeingPoured)
-		{
-			MixDrink();		
-			if(myDrinkBase == DrinkBase.none){
-				AddMixer(myMixer);
-				switch (myMixer){
-					case Mixer.soda:
-						sodaVolume = height - totalVolume + sodaVolume;
-						IncrementFlavor(myDrinkProfile, sodaVolume);
-						break;
-					case Mixer.tonic:
-						tonicVolume = height - totalVolume + tonicVolume;
-						IncrementFlavor(myDrinkProfile, tonicVolume);
-						break;
-					case Mixer.vermouth:
-						vermouthVolume = height - totalVolume + vermouthVolume;
-						IncrementFlavor(myDrinkProfile, vermouthVolume);
-						break;
-					case Mixer.orange_juice:
-						orangeJuiceVolume = height - totalVolume + orangeJuiceVolume;
-						IncrementFlavor(myDrinkProfile, orangeJuiceVolume);
-						break;
-					case Mixer.lemon_juice:
-						lemonJuiceVolume = height - totalVolume + lemonJuiceVolume;
-						IncrementFlavor(myDrinkProfile, lemonJuiceVolume);
-						break;
-					default:
-						break;
-				}
-			}
-
-			else if(myDrinkBase != DrinkBase.none){
-				AddIngredient(myDrinkBase);
-				switch (myDrinkBase){
-					case DrinkBase.whiskey:
-						whiskeyVolume = height - totalVolume + whiskeyVolume;
-						IncrementFlavor(myDrinkProfile, whiskeyVolume);
-						break;
-					case DrinkBase.gin:
-						ginVolume = height - totalVolume + ginVolume;
-						IncrementFlavor(myDrinkProfile, ginVolume);
-						break;
-					case DrinkBase.tequila:
-						tequilaVolume = height - totalVolume + tequilaVolume;
-						IncrementFlavor(myDrinkProfile, tequilaVolume);
-						break;
-					case DrinkBase.vodka:
-						vodkaVolume = height - totalVolume + vodkaVolume;
-						IncrementFlavor(myDrinkProfile, vodkaVolume);		
-						break;
-					case DrinkBase.rum:
-						rumVolume = height - totalVolume + rumVolume;
-						IncrementFlavor(myDrinkProfile, rumVolume);
-						break;
-					case DrinkBase.beer:
-						beerVolume = height - totalVolume + beerVolume;
-						IncrementFlavor(myDrinkProfile, beerVolume);
-						break;
-					case DrinkBase.wine:
-						wineVolume = height - totalVolume + wineVolume;
-						IncrementFlavor(myDrinkProfile, wineVolume);
-						break;
-					case DrinkBase.brandy:
-						brandyVolume = height - totalVolume + brandyVolume;
-						IncrementFlavor(myDrinkProfile, brandyVolume);
-						break;
-					default:
-						break;
-				}
-			}			
-		}
-		else
-		{
-			myDrinkBase = DrinkBase.none;
-			myMixer = Mixer.none;
-		}
+//		if (isBeingPoured)
+//		{
+//			MixDrink();		
+//			if(myDrinkBase == DrinkBase.none){
+//				AddMixer(myMixer);
+//				switch (myMixer){
+//					case Mixer.soda:
+//						sodaVolume = height - totalVolume + sodaVolume;
+//						IncrementFlavor(myDrinkProfile, sodaVolume);
+//						break;
+//					case Mixer.tonic:
+//						tonicVolume = height - totalVolume + tonicVolume;
+//						IncrementFlavor(myDrinkProfile, tonicVolume);
+//						break;
+//					case Mixer.vermouth:
+//						vermouthVolume = height - totalVolume + vermouthVolume;
+//						IncrementFlavor(myDrinkProfile, vermouthVolume);
+//						break;
+//					case Mixer.orange_juice:
+//						orangeJuiceVolume = height - totalVolume + orangeJuiceVolume;
+//						IncrementFlavor(myDrinkProfile, orangeJuiceVolume);
+//						break;
+//					case Mixer.lemon_juice:
+//						lemonJuiceVolume = height - totalVolume + lemonJuiceVolume;
+//						IncrementFlavor(myDrinkProfile, lemonJuiceVolume);
+//						break;
+//					default:
+//						break;
+//				}
+//			}
+//
+//			else if(myDrinkBase != DrinkBase.none){
+//				AddIngredient(myDrinkBase);
+//				switch (myDrinkBase){
+//					case DrinkBase.whiskey:
+//						whiskeyVolume = height - totalVolume + whiskeyVolume;
+//						IncrementFlavor(myDrinkProfile, whiskeyVolume);
+//						break;
+//					case DrinkBase.gin:
+//						ginVolume = height - totalVolume + ginVolume;
+//						IncrementFlavor(myDrinkProfile, ginVolume);
+//						break;
+//					case DrinkBase.tequila:
+//						tequilaVolume = height - totalVolume + tequilaVolume;
+//						IncrementFlavor(myDrinkProfile, tequilaVolume);
+//						break;
+//					case DrinkBase.vodka:
+//						vodkaVolume = height - totalVolume + vodkaVolume;
+//						IncrementFlavor(myDrinkProfile, vodkaVolume);		
+//						break;
+//					case DrinkBase.rum:
+//						rumVolume = height - totalVolume + rumVolume;
+//						IncrementFlavor(myDrinkProfile, rumVolume);
+//						break;
+//					case DrinkBase.beer:
+//						beerVolume = height - totalVolume + beerVolume;
+//						IncrementFlavor(myDrinkProfile, beerVolume);
+//						break;
+//					case DrinkBase.wine:
+//						wineVolume = height - totalVolume + wineVolume;
+//						IncrementFlavor(myDrinkProfile, wineVolume);
+//						break;
+//					case DrinkBase.brandy:
+//						brandyVolume = height - totalVolume + brandyVolume;
+//						IncrementFlavor(myDrinkProfile, brandyVolume);
+//						break;
+//					default:
+//						break;
+//				}
+//			}			
+//		}
+//		else
+//		{
+//			myDrinkBase = DrinkBase.none;
+//			myMixer = Mixer.none;
+//		}
 
 //		TalkToCoaster ();
 
@@ -285,53 +285,142 @@ public class Liquid : MonoBehaviour {
 	}
 
 	public void AddIngredient(DrinkBase _drinkBase){
-		if (Services.DrinkDictionary.drinkBases.ContainsKey(_drinkBase))
-		{
-//			Debug.Log(_drinkBase);
-			myDrinkProfile = Services.DrinkDictionary.drinkBases[_drinkBase];		
-			myDrinkBase = _drinkBase;
+		Debug.Log("AddIngredient()" + _drinkBase);
+		myDrinkProfile = Services.DrinkDictionary.drinkBases[_drinkBase];		
+		myDrinkBase = _drinkBase;
+ 
 //			waterPillar.SetMaterialColorOnPour(_drinkBase);
-			switch (myDrinkBase){
-				case DrinkBase.whiskey:
-					whiskeyVolume = height - totalVolume + whiskeyVolume;
-					IncrementFlavor(myDrinkProfile, whiskeyVolume);
-					break;
-				case DrinkBase.gin:
-					ginVolume = height - totalVolume + ginVolume;
-					IncrementFlavor(myDrinkProfile, ginVolume);
-					break;
-				case DrinkBase.tequila:
-					tequilaVolume = height - totalVolume + tequilaVolume;
-					IncrementFlavor(myDrinkProfile, tequilaVolume);
-					break;
-				case DrinkBase.vodka:
-					vodkaVolume = height - totalVolume + vodkaVolume;
-					IncrementFlavor(myDrinkProfile, vodkaVolume);		
-					break;
-				case DrinkBase.rum:
-					rumVolume = height - totalVolume + rumVolume;
-					IncrementFlavor(myDrinkProfile, rumVolume);
-					break;
-				case DrinkBase.beer:
-					beerVolume = height - totalVolume + beerVolume;
-					IncrementFlavor(myDrinkProfile, beerVolume);
-					break;
-				case DrinkBase.wine:
-					wineVolume = height - totalVolume + wineVolume;
-					IncrementFlavor(myDrinkProfile, wineVolume);
-					break;
-				case DrinkBase.brandy:
-					brandyVolume = height - totalVolume + brandyVolume;
-					IncrementFlavor(myDrinkProfile, brandyVolume);
-					break;
-				default:
-					break;
-			}
+		switch (_drinkBase){
+			case DrinkBase.whiskey:
+				whiskeyVolume = height - totalVolume + whiskeyVolume;
+				IncrementFlavor(myDrinkProfile, whiskeyVolume);
+				break;
+			case DrinkBase.gin:
+				ginVolume = height - totalVolume + ginVolume;
+				IncrementFlavor(myDrinkProfile, ginVolume);
+				break;
+			case DrinkBase.tequila:
+				tequilaVolume = height - totalVolume + tequilaVolume;
+				IncrementFlavor(myDrinkProfile, tequilaVolume);
+				break;
+			case DrinkBase.vodka:
+				vodkaVolume = height - totalVolume + vodkaVolume;
+				IncrementFlavor(myDrinkProfile, vodkaVolume);		
+				break;
+			case DrinkBase.rum:
+				rumVolume = height - totalVolume + rumVolume;
+				IncrementFlavor(myDrinkProfile, rumVolume);
+				break;
+			case DrinkBase.beer:
+				beerVolume = height - totalVolume + beerVolume;
+				IncrementFlavor(myDrinkProfile, beerVolume);
+				break;
+			case DrinkBase.wine:
+				wineVolume = height - totalVolume + wineVolume;
+				IncrementFlavor(myDrinkProfile, wineVolume);
+				break;
+			case DrinkBase.brandy:
+				brandyVolume = height - totalVolume + brandyVolume;
+				IncrementFlavor(myDrinkProfile, brandyVolume);
+				break;
+			case DrinkBase.soda:
+//				Debug.Log("hehehehe");
+				sodaVolume = height - totalVolume + sodaVolume;
+				IncrementFlavor(myDrinkProfile, sodaVolume);
+				break;
+			case DrinkBase.tonic:
+				tonicVolume = height - totalVolume + tonicVolume;
+				IncrementFlavor(myDrinkProfile, tonicVolume);
+				break;
+			case DrinkBase.vermouth:
+//				Debug.Log("hehehehe");
+				vermouthVolume = height - totalVolume + vermouthVolume;
+				IncrementFlavor(myDrinkProfile, vermouthVolume);
+				break;
+			case DrinkBase.orange_juice:
+				orangeJuiceVolume = height - totalVolume + orangeJuiceVolume;
+				IncrementFlavor(myDrinkProfile, orangeJuiceVolume);
+				break;
+			case DrinkBase.lemon_juice:
+				lemonJuiceVolume = height - totalVolume + lemonJuiceVolume;
+				IncrementFlavor(myDrinkProfile, lemonJuiceVolume);
+				break;
+			default:
+				break;
 		}
+//		if (Services.DrinkDictionary.drinkBases.ContainsKey(_drinkBase))
+//		{
+////			Debug.Log(_drinkBase);
+//			myDrinkProfile = Services.DrinkDictionary.drinkBases[_drinkBase];		
+//			myDrinkBase = _drinkBase;
+//			Debug.Log("AddIngredient()" + _drinkBase);
+//
+////			waterPillar.SetMaterialColorOnPour(_drinkBase);
+//			switch (_drinkBase){
+//				case DrinkBase.whiskey:
+//					whiskeyVolume = height - totalVolume + whiskeyVolume;
+//					IncrementFlavor(myDrinkProfile, whiskeyVolume);
+//					break;
+//				case DrinkBase.gin:
+//					ginVolume = height - totalVolume + ginVolume;
+//					IncrementFlavor(myDrinkProfile, ginVolume);
+//					break;
+//				case DrinkBase.tequila:
+//					tequilaVolume = height - totalVolume + tequilaVolume;
+//					IncrementFlavor(myDrinkProfile, tequilaVolume);
+//					break;
+//				case DrinkBase.vodka:
+//					vodkaVolume = height - totalVolume + vodkaVolume;
+//					IncrementFlavor(myDrinkProfile, vodkaVolume);		
+//					break;
+//				case DrinkBase.rum:
+//					rumVolume = height - totalVolume + rumVolume;
+//					IncrementFlavor(myDrinkProfile, rumVolume);
+//					break;
+//				case DrinkBase.beer:
+//					beerVolume = height - totalVolume + beerVolume;
+//					IncrementFlavor(myDrinkProfile, beerVolume);
+//					break;
+//				case DrinkBase.wine:
+//					wineVolume = height - totalVolume + wineVolume;
+//					IncrementFlavor(myDrinkProfile, wineVolume);
+//					break;
+//				case DrinkBase.brandy:
+//					brandyVolume = height - totalVolume + brandyVolume;
+//					IncrementFlavor(myDrinkProfile, brandyVolume);
+//					break;
+//				case DrinkBase.soda:
+//					Debug.Log("hehehehe");
+//					sodaVolume = height - totalVolume + sodaVolume;
+//					IncrementFlavor(myDrinkProfile, sodaVolume);
+//					break;
+//				case DrinkBase.tonic:
+//					tonicVolume = height - totalVolume + tonicVolume;
+//					IncrementFlavor(myDrinkProfile, tonicVolume);
+//					break;
+//				case DrinkBase.vermouth:
+//					Debug.Log("hehehehe");
+//					vermouthVolume = height - totalVolume + vermouthVolume;
+//					IncrementFlavor(myDrinkProfile, vermouthVolume);
+//					break;
+//				case DrinkBase.orange_juice:
+//					orangeJuiceVolume = height - totalVolume + orangeJuiceVolume;
+//					IncrementFlavor(myDrinkProfile, orangeJuiceVolume);
+//					break;
+//				case DrinkBase.lemon_juice:
+//					lemonJuiceVolume = height - totalVolume + lemonJuiceVolume;
+//					IncrementFlavor(myDrinkProfile, lemonJuiceVolume);
+//					break;
+//				default:
+//					break;
+//			}
+//		}
 		MixDrink();
 	}
 
 	public void AddMixer(Mixer _mixer){
+		Debug.Log("AddMixer() " + _mixer);
+
 		if (Services.MixerDictionary.mixers.ContainsKey(_mixer))
 		{
 			myDrinkProfile = Services.MixerDictionary.mixers[_mixer];

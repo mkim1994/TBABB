@@ -12,6 +12,18 @@ public enum Garnish {
 	chili_powder
 	
 }
+//public enum DrinkBase {
+//	none,
+//	whiskey,
+//	gin,
+//	tequila,
+//	vodka,
+//	rum,
+//	beer,
+//	wine,
+//	brandy,
+//}
+
 public enum DrinkBase {
 	none,
 	whiskey,
@@ -21,7 +33,12 @@ public enum DrinkBase {
 	rum,
 	beer,
 	wine,
-	brandy
+	brandy,
+	soda,
+	tonic,
+	orange_juice,
+	lemon_juice,
+	vermouth
 }
 
 public enum Mixer{
@@ -65,6 +82,11 @@ public class DrinkDictionary {
 		{ DrinkBase.wine, new DrinkProfile(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0.125f, 0f, 0.25f, 0f, 0, 0)},
 		{ DrinkBase.beer, new DrinkProfile(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0.05f, 0f, 0f, 0f, 0.2f, 0)},
 		{ DrinkBase.brandy, new DrinkProfile(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0.40f, 0f, 0.35f, 0f, 0.1f, 0)},
+		{ DrinkBase.soda, new DrinkProfile(1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0.75f, 0, 0, 0)},
+		{ DrinkBase.tonic, new DrinkProfile(0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)},
+		{ DrinkBase.vermouth, new DrinkProfile(0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0.14f, 0, 0.5f, 0, 0, 0)},
+		{ DrinkBase.orange_juice, new DrinkProfile(0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0.4f, 0f, 0, 0)},
+		{ DrinkBase.lemon_juice, new DrinkProfile(0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0.10f, 0.5f, 0, 0)}
  	};
 }
 
@@ -74,7 +96,7 @@ public class MixerDictionary {
 		{ Mixer.tonic, new DrinkProfile(0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)},
 		{ Mixer.vermouth, new DrinkProfile(0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0.14f, 0, 0.5f, 0, 0, 0)},
 		{ Mixer.orange_juice, new DrinkProfile(0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0.4f, 0f, 0, 0)},
-		{ Mixer.lemon_juice, new DrinkProfile(0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0.10f, 0.5f, 0, 0)},
+		{ Mixer.lemon_juice, new DrinkProfile(0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0.10f, 0.5f, 0, 0)}
 	};
 }
 

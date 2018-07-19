@@ -90,9 +90,9 @@ public class HandManager : MonoBehaviour
 		ClassifyPickupableType();
 		PickupableRay();
 		DropRay();
-		_leftHand.OnUpdate();
 		_rightHand.OnUpdate();
-		_tree.Update(this);
+		_leftHand.OnUpdate();
+//		_tree.Update(this);
 //		_fsm.Update();
 
 	}

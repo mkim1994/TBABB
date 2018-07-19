@@ -196,21 +196,26 @@ public class Hand : MonoBehaviour
 		}
 	}
 
-	public void Pour(Bottle bottleInHand, int handNum)
+	public void Pour(Bottle bottleInHand)
 	{
 		//left is 0, right is 1
-		Debug.Log(bottleInHand.myDrinkBase);
+		//the one on the right is always first????
+		
 //			Debug.Log(_handManager.SeenGlass);
 //		_handManager.SeenGlass.ReceivePourFromBottle(bottleInHand, handNum);	
-		if (bottleInHand.myDrinkBase != DrinkBase.none)
-		{
-			_handManager.SeenGlass.Liquid.AddIngredient(bottleInHand.myDrinkBase);		
-		}
-		else
-		{
-			_handManager.SeenGlass.Liquid.AddMixer(bottleInHand.myMixer);		
-		}
 
+		//		if (bottleInHand.myDrinkBase != DrinkBase.none)
+//		{
+//			_handManager.SeenGlass.Liquid.AddIngredient(bottleInHand.myDrinkBase);		
+//		}
+//		
+//		if (bottleInHand.myMixer != Mixer.none)
+//		{
+//			_handManager.SeenGlass.Liquid.AddMixer(bottleInHand.myMixer);		
+//		}
+//		Debug.Log(bottleInHand.myDrinkBase);
+		_handManager.SeenGlass.Liquid.AddIngredient(bottleInHand.myDrinkBase);
+		
 	}
 
 	//conditions
@@ -352,13 +357,13 @@ public class Hand : MonoBehaviour
 				case MyHand.Left:
 					if (context._rewiredPlayer.GetButtonTimedPress("Use Left", context._longPressTime))
 					{
- 						context.Pour(context.HeldBottle, 0);     
+ 						context.Pour(context.HeldBottle);     
 					}
 					break;
 				case MyHand.Right:
 					if (context._rewiredPlayer.GetButtonTimedPress("Use Right", context._longPressTime))
 					{
- 						context.Pour(context.HeldBottle, 1);
+ 						context.Pour(context.HeldBottle);
 					}
 					break;
 			}
