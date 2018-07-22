@@ -68,7 +68,6 @@ public class Glass : Pickupable
 		{
 			Liquid._glassType = glassType;		
 		}
-
 	}
 	
 	public override void Update()
@@ -336,9 +335,28 @@ public class Glass : Pickupable
 
 	public void Serve()
 	{
- 		if (myServiceDropzone != null)
+// 		if (myServiceDropzone != null)
+//		{
+//			if (myServiceDropzone.MyCoaster().myCustomer.IsCustomerPresent() && CurrentState == ReadyToServeState
+//			    && !Services.GameManager.dialogue.isDialogueRunning)
+//			{
+//				unservedPos = myServiceDropzone.transform.parent.position;
+//				servedPos = myServiceDropzone.MyCoaster().ServedTargetTransform.position;		
+//				DeclareActiveTween();
+//				Sequence sequence = DOTween.Sequence();
+//				myServiceDropzone.MyCoaster().transform.DOLocalMove(servedPos, 0.5f);
+//				sequence.Append(transform.DOLocalMove(servedPos + dropOffset, 0.5f, false));
+//				sequence.AppendCallback(() => fsm.TransitionTo<Served>());
+//				sequence.AppendCallback(()=>GetComponent<Collider>().enabled = false);
+//				sequence.OnComplete(() => DeclareInactiveTween());
+////				GetComponent<Collider>().enabled = false;
+//			}
+//		}
+		
+		if (coaster != null)
 		{
-			if (myServiceDropzone.MyCoaster().myCustomer.IsCustomerPresent() && CurrentState == ReadyToServeState
+			if (myServiceDropzone.MyCoaster().myCustomer.IsCustomerPresent() 
+			    && CurrentState == ReadyToServeState 
 			    && !Services.GameManager.dialogue.isDialogueRunning)
 			{
 				unservedPos = myServiceDropzone.transform.parent.position;
@@ -353,6 +371,8 @@ public class Glass : Pickupable
 //				GetComponent<Collider>().enabled = false;
 			}
 		}
+		
+		
  	}
 
 	public void UnServe(GameEvent e)
@@ -472,7 +492,14 @@ public class Glass : Pickupable
 			Context.myServiceDropzone.GetComponent<Collider>().enabled = true;
 		}
 	}
-	
+
+	private void OnTriggerEnter(Collider hit)
+	{
+		if (hit.gameObject.GetComponent<Coaster>() != null)
+		{
+			coaster = hit.gameObject.GetComponent<Coaster>();
+		}
+	}
 }
 
 public class DrinkRejectedEvent : GameEvent

@@ -16,7 +16,6 @@ public class Hand : MonoBehaviour
 	private float _longPressTime = 1f;
 	private HandManager _handManager;
 	private bool _isTweening;
-
 	
 	public bool IsTweening
 	{
@@ -25,7 +24,6 @@ public class Hand : MonoBehaviour
 
 	//references to objects for pickup
 	[HideInInspector] public Pickupable SeenPickupable;
-
 
 	public Bottle HeldBottle;
 	
@@ -193,6 +191,7 @@ public class Hand : MonoBehaviour
 			dropSequence.Append(HeldPickupable.transform.DOMove(DropPos, _pickupDropTime));
 			dropSequence.AppendCallback(() => HeldPickupable = null);
 			dropSequence.OnComplete(() => _isTweening = false);
+			
 		}
 	}
 
