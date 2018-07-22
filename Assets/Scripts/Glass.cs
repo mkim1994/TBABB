@@ -32,6 +32,12 @@ public class Glass : Pickupable
 	public bool isDirty;
 	public bool isInServeZone = false;
 	private Coaster coaster;
+
+	public Coaster Coaster
+	{
+		get { return coaster; }
+	}
+
 	public bool CanBePouredInto;
 	public Dropzone myServiceDropzone;
 	private Vector3 unservedPos;
@@ -406,6 +412,88 @@ public class Glass : Pickupable
 	/*
 	 * STATES *
 	 */
+//	private class GlassState : FSM<Glass>.State
+//	{
+//		
+//	}
+//
+//	private class NotReadyToServe : GlassState
+//	{
+//		public override void OnEnter()
+//		{
+//			base.OnEnter();
+//			Context.CanBePouredInto = true;
+//			Context.NotReadyToServeState = this;
+//			Context.CurrentState = this;
+//			Context.glassServeState = GlassServeState.NotReadyToServe;
+//		}
+//
+//		public override void Update()
+//		{
+//			base.Update();
+//			if (!Context.pickedUp && Context.isInServeZone)
+//			{
+//				TransitionTo<ReadyToServe>();
+//			}
+//		}
+//	}
+//
+//	private class ReadyToServe : GlassState
+//	{
+//		public override void OnEnter()
+//		{
+//			Debug.Log("Ready to serve!");
+//			base.OnEnter();
+//			Context.CanBePouredInto = true;
+//			Context.ReadyToServeState = this;
+//			Context.CurrentState = this;
+//			Context.glassServeState = GlassServeState.ReadyToServe;
+//		}
+//
+//		public override void Update()
+//		{
+//			base.Update();
+//		}
+//
+//		public override void OnExit()
+//		{
+//			base.OnExit();
+//		}
+//	}
+//	
+//	private class Served : GlassState
+//	{
+//		public override void OnEnter()
+//		{
+//			Debug.Log("Served!");
+//			base.OnEnter();			
+//			Context.Liquid.TalkToCoaster();
+//			Context.CanBePouredInto = false;
+//			Context.ServedState = this;
+//			Context.CurrentState = this;
+//			Context.glassServeState = GlassServeState.Served;
+//			EventManager.Instance.Register<DrinkRejectedEvent>(Context.UnServe);
+//			Context.myServiceDropzone.GetComponent<Collider>().enabled = false;
+//		}
+//
+//		public override void OnExit()
+//		{
+//			base.OnExit();			
+//			EventManager.Instance.Unregister<DrinkRejectedEvent>(Context.UnServe);
+//			Context.Liquid.isEvaluated = false;
+//			Debug.Log("Exiting Served State!");
+//			Context.myServiceDropzone.GetComponent<Collider>().enabled = true;
+//		}
+//	}
+//
+//	private void OnTriggerEnter(Collider hit)
+//	{
+//		if (hit.gameObject.GetComponent<Coaster>() != null)
+//		{
+//			coaster = hit.gameObject.GetComponent<Coaster>();
+//		}
+//	}
+	
 	private class GlassState : FSM<Glass>.State
 	{
 		
@@ -416,19 +504,11 @@ public class Glass : Pickupable
 		public override void OnEnter()
 		{
 			base.OnEnter();
-			Context.CanBePouredInto = true;
-			Context.NotReadyToServeState = this;
-			Context.CurrentState = this;
-			Context.glassServeState = GlassServeState.NotReadyToServe;
 		}
 
 		public override void Update()
 		{
 			base.Update();
-			if (!Context.pickedUp && Context.isInServeZone)
-			{
-				TransitionTo<ReadyToServe>();
-			}
 		}
 	}
 
@@ -436,12 +516,7 @@ public class Glass : Pickupable
 	{
 		public override void OnEnter()
 		{
-			Debug.Log("Ready to serve!");
 			base.OnEnter();
-			Context.CanBePouredInto = true;
-			Context.ReadyToServeState = this;
-			Context.CurrentState = this;
-			Context.glassServeState = GlassServeState.ReadyToServe;
 		}
 
 		public override void Update()
@@ -459,30 +534,19 @@ public class Glass : Pickupable
 	{
 		public override void OnEnter()
 		{
-			Debug.Log("Served!");
 			base.OnEnter();			
-			Context.Liquid.TalkToCoaster();
-			Context.CanBePouredInto = false;
-			Context.ServedState = this;
-			Context.CurrentState = this;
-			Context.glassServeState = GlassServeState.Served;
-			EventManager.Instance.Register<DrinkRejectedEvent>(Context.UnServe);
-			Context.myServiceDropzone.GetComponent<Collider>().enabled = false;
 		}
 
 		public override void OnExit()
 		{
 			base.OnExit();			
-			EventManager.Instance.Unregister<DrinkRejectedEvent>(Context.UnServe);
-			Context.Liquid.isEvaluated = false;
-			Debug.Log("Exiting Served State!");
-			Context.myServiceDropzone.GetComponent<Collider>().enabled = true;
 		}
 	}
 
 	private void OnTriggerEnter(Collider hit)
 	{
-		if (hit.gameObject.GetComponent<Coaster>() != null)
+		if (hit.gameObject.GetComponent<Coaster>() != null &&
+		    coaster == null)
 		{
 			coaster = hit.gameObject.GetComponent<Coaster>();
 		}

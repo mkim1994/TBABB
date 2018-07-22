@@ -12,28 +12,41 @@ public class NonHand : MonoBehaviour {
 	private Player _rewiredPlayer;
 	[SerializeField]private LayerMask _layerMask;
 	private Camera _myCam;
+	private Glass _glass;
 	private NPC _npc;
 	private Sink _sink;
 	private Backdoor _backdoor;
 	private IceMaker _iceMaker;
 	private LightSwitch _lightSwitch;
 
+	private float _maxInteractionDist;
+	private float _maxTalkDist;
+
 	private GameObject SeenInteractable;
 	// Use this for initialization
-	void Start () {
+	void Start ()
+	{
+
+		_maxInteractionDist = Services.GameManager.playerInput.maxInteractionDist;
+		_maxTalkDist = Services.GameManager.playerInput.maxTalkingDist;
+		
 		_rewiredPlayer = Services.GameManager.playerInput.rewiredPlayer;
 		_myCam = Camera.main;
 		_tree = new Tree<NonHand>(new Selector<NonHand>(
 			new Sequence<NonHand>(
 				new IsPlayerLookingAtNpc(),
 				new IsPlayerPressingButton(),
-				new PerformAction()
+				new Talk()
 			),
 			
 			new Sequence<NonHand>(
 				new IsPlayerLookingAtLightSwitch(),
 				new IsPlayerPressingButton(),
-				new PerformAction()
+				new EndDay()
+			),
+			
+			new Sequence<NonHand>(
+				new IsPlayerLookingAtGlass()
 			)
 		));
 	}
@@ -69,27 +82,41 @@ public class NonHand : MonoBehaviour {
 
 			//no distance check
 			if (hitObj.GetComponent<Backdoor>() != null &&
-			    Vector3.Distance(transform.position, hitObj.transform.position) <= 6)
+			    Vector3.Distance(transform.position, hitObj.transform.position) <= _maxInteractionDist)
 			{
 				_backdoor = hitObj.GetComponent<Backdoor>();
-			} else if (hitObj.GetComponent<Backdoor>() == null || Vector3.Distance(transform.position, hitObj.transform.position) > 6)
+			} else if (hitObj.GetComponent<Backdoor>() == null || 
+			           Vector3.Distance(transform.position, hitObj.transform.position) > _maxInteractionDist)
 			{
 				_backdoor = null;
 			}
-			if (hitObj.GetComponent<IceMaker>() != null && Vector3.Distance(transform.position, hit.point) <= 6)
+			if (hitObj.GetComponent<IceMaker>() != null && 
+			    Vector3.Distance(transform.position, hit.point) <= _maxInteractionDist)
 			{
 				_iceMaker = hitObj.GetComponent<IceMaker>();
-			} else if (hitObj.GetComponent<IceMaker>() == null || Vector3.Distance(transform.position, hitObj.transform.position) > 6)
+			} else if (hitObj.GetComponent<IceMaker>() == null || 
+			           Vector3.Distance(transform.position, hitObj.transform.position) > _maxInteractionDist)
 			{
 				_iceMaker = null;
 			}
 			if (hitObj.GetComponent<LightSwitch>() != null &&
-			    Vector3.Distance(transform.position, hitObj.transform.position) <= 6)
+			    Vector3.Distance(transform.position, hitObj.transform.position) <= _maxInteractionDist)
 			{
 				_lightSwitch = hitObj.GetComponent<LightSwitch>();
-			} else if (hitObj.GetComponent<LightSwitch>() == null || Vector3.Distance(transform.position, hitObj.transform.position) > 6)
+			} else if (hitObj.GetComponent<LightSwitch>() == null || 
+			           Vector3.Distance(transform.position, hitObj.transform.position) > _maxInteractionDist)
 			{
 				_lightSwitch = null;
+			}
+			
+			if(hitObj.GetComponent<Glass>() != null &&
+			   Vector3.Distance(transform.position, hitObj.transform.position) <= _maxInteractionDist)
+			{
+				_glass = hitObj.GetComponent<Glass>();
+			} else if (hitObj.GetComponent<Glass>() == null || 
+			           Vector3.Distance(transform.position, hitObj.transform.position) > _maxInteractionDist)
+			{
+				_glass = null;
 			}
 		}
 		else
@@ -99,6 +126,7 @@ public class NonHand : MonoBehaviour {
 			_sink = null;
 			_backdoor = null;
 			_iceMaker = null;
+			_glass = null;
 		}
 	}
 	//TREE LOGIC
@@ -128,7 +156,43 @@ public class NonHand : MonoBehaviour {
 		}
 	}
 
+	private class IsPlayerLookingAtGlass : Node<NonHand>
+	{
+		public override bool Update(NonHand context)
+		{
+			return context._glass != null;
+		}
+	}
+
 	////Actions
+
+	private class Talk : Node<NonHand>
+	{
+		public override bool Update(NonHand context)
+		{
+			context._npc.InitiateDialogue();
+			return true;
+		}
+	}
+
+	private class EndDay : Node<NonHand>
+	{
+		public override bool Update(NonHand context)
+		{
+			context._lightSwitch.EndDay();
+//			context._backdoor.
+			return true;
+		}
+	}
+
+	private class Serve : Node<NonHand>
+	{
+		public override bool Update(NonHand context)
+		{
+			return true;
+		}
+	}
+
 	private class PerformAction : Node<NonHand>
 	{
 		public override bool Update(NonHand context)
