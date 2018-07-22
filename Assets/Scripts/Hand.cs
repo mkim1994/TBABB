@@ -176,6 +176,7 @@ public class Hand : MonoBehaviour
 			Sequence sequence = DOTween.Sequence();
 			sequence.Append(SeenPickupable.transform.DOLocalMove(newPos, _pickupDropTime));
 			sequence.AppendCallback(() => HeldPickupable = _myPickupable);
+//			sequence.AppendCallback(() => HeldPickupable.ChangeToFirstPersonLayer(_pickupDropTime));
 			sequence.OnComplete(() => _isTweening = false);
 		}
 	}
@@ -189,6 +190,7 @@ public class Hand : MonoBehaviour
 			HeldPickupable.transform.rotation = Quaternion.identity;
 			Sequence dropSequence = DOTween.Sequence();
 			dropSequence.Append(HeldPickupable.transform.DOMove(DropPos, _pickupDropTime));
+//			dropSequence.AppendCallback(() => HeldPickupable.ChangeToWorldLayer(_pickupDropTime));
 			dropSequence.AppendCallback(() => HeldPickupable = null);
 			dropSequence.OnComplete(() => _isTweening = false);
 			
@@ -213,8 +215,8 @@ public class Hand : MonoBehaviour
 //			_handManager.SeenGlass.Liquid.AddMixer(bottleInHand.myMixer);		
 //		}
 //		Debug.Log(bottleInHand.myDrinkBase);
-		_handManager.SeenGlass.Liquid.AddIngredient(bottleInHand.myDrinkBase);
-		
+		if(bottleInHand != null)
+			_handManager.SeenGlass.Liquid.AddIngredient(bottleInHand.myDrinkBase);
 	}
 
 	//conditions

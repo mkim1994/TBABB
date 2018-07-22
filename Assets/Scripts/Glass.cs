@@ -355,21 +355,9 @@ public class Glass : Pickupable
 		
 		if (coaster != null)
 		{
-			if (myServiceDropzone.MyCoaster().myCustomer.IsCustomerPresent() 
-			    && CurrentState == ReadyToServeState 
-			    && !Services.GameManager.dialogue.isDialogueRunning)
-			{
-				unservedPos = myServiceDropzone.transform.parent.position;
-				servedPos = myServiceDropzone.MyCoaster().ServedTargetTransform.position;		
-				DeclareActiveTween();
-				Sequence sequence = DOTween.Sequence();
-				myServiceDropzone.MyCoaster().transform.DOLocalMove(servedPos, 0.5f);
-				sequence.Append(transform.DOLocalMove(servedPos + dropOffset, 0.5f, false));
-				sequence.AppendCallback(() => fsm.TransitionTo<Served>());
-				sequence.AppendCallback(()=>GetComponent<Collider>().enabled = false);
-				sequence.OnComplete(() => DeclareInactiveTween());
-//				GetComponent<Collider>().enabled = false;
-			}
+			Debug.Log("setting " + coaster.name + " as parent");
+			transform.SetParent(coaster.gameObject.transform);
+//				GetComponent<Collider>().enabled = false;	
 		}
 		
 		
@@ -420,14 +408,13 @@ public class Glass : Pickupable
 	 */
 	private class GlassState : FSM<Glass>.State
 	{
-
+		
 	}
 
 	private class NotReadyToServe : GlassState
 	{
 		public override void OnEnter()
 		{
-			Debug.Log("Not ready to serve!");
 			base.OnEnter();
 			Context.CanBePouredInto = true;
 			Context.NotReadyToServeState = this;

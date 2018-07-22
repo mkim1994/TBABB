@@ -15,5 +15,6 @@ public static class Services {
     public static ControllerDetection ControllerDetection { get; set; }
     public static AudioLoopScript AudioLoopScript { get; set; }
     public static HandManager HandManager { get; set; }
+    public static CoasterManager CoasterManager { get; set; }
  
 }

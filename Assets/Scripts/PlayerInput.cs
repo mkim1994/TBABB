@@ -1248,6 +1248,7 @@ public class PlayerInput : MonoBehaviour
 		
 		#region Talk
 		if(i_talk){
+			Debug.Log("TALKING");
 			if(npc != null && !Services.GameManager.dialogue.isDialogueRunning){
 				npc.InitiateDialogue();
 			} 
@@ -1279,18 +1280,29 @@ public class PlayerInput : MonoBehaviour
 
 			} 
 
+			// Original Serve() logic
+//			if (pickupable != null)
+//			{
+//				if (pickupable.GetComponent<Glass>() != null)
+//				{
+//					Glass glass = pickupable.GetComponent<Glass>();
+//					if (glass.isInServeZone && !glass.pickedUp && !Services.TweenManager.tweensAreActive)
+//					{
+//						glass.Serve();
+//					}       
+//				}
+//			}
+
+			// v2 Serve() 
 			if (pickupable != null)
 			{
 				if (pickupable.GetComponent<Glass>() != null)
 				{
 					Glass glass = pickupable.GetComponent<Glass>();
-					if (glass.isInServeZone && !glass.pickedUp && !Services.TweenManager.tweensAreActive)
-					{
-						glass.Serve();
-					}       
+					glass.Serve();
+					Debug.Log("serving!");
 				}
 			}
-
 
 			if (backdoor != null)
 			{
