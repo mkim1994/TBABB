@@ -100,7 +100,7 @@ public class Liquid : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-		
+		DetectCustomer();
 		EmptyDrinkWhenCustomerFinished();
 
 		totalVolume = whiskeyVolume + ginVolume + brandyVolume + vodkaVolume + wineVolume + beerVolume + tequilaVolume + rumVolume 
@@ -558,20 +558,38 @@ public class Liquid : MonoBehaviour {
     }
 
 	private void DetectCoasters(){
-		coasters.AddRange (FindObjectsOfType<Coaster> ());
+		coasters.AddRange (FindObjectsOfType<Coaster> ());	
+	}
+
+	private void DetectCustomer()
+	{
+		foreach (var coaster in coasters)
+		{
+			Debug.Log(Vector3.Distance(coaster.gameObject.transform.position, transform.position));
+			if (Vector3.Distance(coaster.gameObject.transform.position, transform.position) <= 0.5f)
+			{
+				myCustomer = coaster.myCustomer;			
+			}
+			else
+			{
+				myCustomer = null;
+			}
+
+		}
 	}
 
 	public void TalkToCoaster(){
 		foreach (var coaster in coasters) {
 			// Debug.Log("Distance to coaster " + Vector3.Distance (coaster.gameObject.transform.position, transform.position));
-			if (Vector3.Distance (coaster.gameObject.transform.position, transform.position) <= 0.01f) {
-				if(!isEvaluated && !GetComponentInParent<Pickupable>().pickedUp)
-				{
-					Assert.IsNotNull(coaster, "WARNING: no coaster!");
- 					coaster.EvaluateDrink (thisCocktail, this);
-					myCustomer = coaster.myCustomer;
-					isEvaluated = true;
-				}        
+			if (Vector3.Distance (coaster.gameObject.transform.position, transform.position) <= 0.1f) {
+//				if(!isEvaluated && !GetComponentInParent<Pickupable>().pickedUp)
+//				{
+//					Assert.IsNotNull(coaster, "WARNING: no coaster!");
+// 					coaster.EvaluateDrink (thisCocktail, this);
+//					myCustomer = coaster.myCustomer;
+//					isEvaluated = true;
+//				}    
+				myCustomer = coaster.myCustomer;
 			}
 		}
 	}
