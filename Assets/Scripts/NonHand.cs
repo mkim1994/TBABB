@@ -46,7 +46,9 @@ public class NonHand : MonoBehaviour {
 			),
 			
 			new Sequence<NonHand>(
-				new IsPlayerLookingAtGlass()
+				new IsPlayerLookingAtGlass(),
+				//new IsGlassReadyToServe()
+				new Serve()
 			)
 		));
 	}
@@ -189,6 +191,9 @@ public class NonHand : MonoBehaviour {
 	{
 		public override bool Update(NonHand context)
 		{
+			if (context._rewiredPlayer.GetButtonDown("Talk"))
+				Debug.Log("SERVING DRINK!");
+				context._glass.Liquid.TalkToCoaster();	
 			return true;
 		}
 	}
