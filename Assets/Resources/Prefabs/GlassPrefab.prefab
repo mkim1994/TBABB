@@ -401,34 +401,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hasIce: 0
   _glassType: 0
+  _myGlass: {fileID: 114969815638737844}
   height: 0
   pourRate: 0.25
   _liquidSurface: {fileID: 1661520654507394}
   totalVolume: 0
   myDrinkBase: 0
   myMixer: 0
-  coasters: []
-  sodaVolume: 0
-  tonicVolume: 0
-  vermouthVolume: 0
-  orangeJuiceVolume: 0
-  lemonJuiceVolume: 0
-  whiskeyVolume: 0
-  tequilaVolume: 0
-  rumVolume: 0
-  ginVolume: 0
-  beerVolume: 0
-  wineVolume: 0
-  brandyVolume: 0
-  vodkaVolume: 0
-  smokiness: 0
-  sweetness: 0
-  sourness: 0
-  bitterness: 0
-  spiciness: 0
-  alcoholVolume: 0
-  abv: 0
   myCustomer: {fileID: 0}
+  coasters: []
   drinkParts: []
   otherLiquid: {fileID: 0}
   otherLiquidMask: {fileID: 0}
