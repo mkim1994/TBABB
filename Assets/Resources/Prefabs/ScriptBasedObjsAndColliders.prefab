@@ -1083,7 +1083,7 @@ GameObject:
   - component: {fileID: 95318515063891808}
   - component: {fileID: 65142046523018810}
   - component: {fileID: 114611260694200056}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: coasterSHAY
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1707,7 +1707,7 @@ GameObject:
   - component: {fileID: 95334136909811650}
   - component: {fileID: 65787757373450532}
   - component: {fileID: 114392242314616394}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: coasterIVORY
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2529,7 +2529,7 @@ GameObject:
   - component: {fileID: 95918952758224022}
   - component: {fileID: 65494016478239852}
   - component: {fileID: 114177941391080592}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: coasterIZZY
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3376,6 +3376,23 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1275348096291120
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4350002016404364}
+  - component: {fileID: 65975062064908720}
+  - component: {fileID: 114724358464764740}
+  m_Layer: 2
+  m_Name: CoasterObjectDetector
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1279239537591110
 GameObject:
   m_ObjectHideFlags: 1
@@ -3921,24 +3938,6 @@ GameObject:
   - component: {fileID: 33355452329919516}
   - component: {fileID: 23743554858042508}
   - component: {fileID: 95476427246556386}
-  m_Layer: 0
-  m_Name: GlassModel
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!1 &1331606985336784
-GameObject:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 4831684069811618}
-  - component: {fileID: 33696991701844260}
-  - component: {fileID: 23793872410757860}
-  - component: {fileID: 95708200593231332}
   m_Layer: 0
   m_Name: GlassModel
   m_TagString: Untagged
@@ -5539,7 +5538,7 @@ GameObject:
   - component: {fileID: 95279852226987318}
   - component: {fileID: 65352286231436064}
   - component: {fileID: 114004630605309396}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: coasterJULIA
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6056,7 +6055,7 @@ GameObject:
   - component: {fileID: 95515169464673638}
   - component: {fileID: 65726944301690076}
   - component: {fileID: 114854816833454638}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: coasterSAHANA
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6094,24 +6093,6 @@ GameObject:
   - component: {fileID: 95296896929974258}
   m_Layer: 0
   m_Name: GlassModel
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!1 &1534652951731948
-GameObject:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 4156109575014694}
-  - component: {fileID: 54988420855137856}
-  - component: {fileID: 136345145032584980}
-  - component: {fileID: 114296457744320314}
-  m_Layer: 0
-  m_Name: GlassPrefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9068,25 +9049,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!1 &1845769376422150
-GameObject:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 4493863535495934}
-  - component: {fileID: 33271804292839064}
-  - component: {fileID: 23481432847065636}
-  - component: {fileID: 114789743492647660}
-  - component: {fileID: 114585783916711892}
-  m_Layer: 0
-  m_Name: Water_Pillar
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
 --- !u!1 &1847306759811836
 GameObject:
   m_ObjectHideFlags: 1
@@ -9723,24 +9685,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!1 &1899887666050444
-GameObject:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 4683272108598148}
-  - component: {fileID: 33165048255925428}
-  - component: {fileID: 23323190631211712}
-  - component: {fileID: 114294846241711540}
-  m_Layer: 0
-  m_Name: Water_Surface
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
 --- !u!1 &1902263154523090
 GameObject:
   m_ObjectHideFlags: 1
@@ -10064,21 +10008,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 0
---- !u!1 &1931196273438416
-GameObject:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 4914257997803690}
-  m_Layer: 0
-  m_Name: FocalPoint
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
 --- !u!1 &1933710297474920
 GameObject:
   m_ObjectHideFlags: 1
@@ -10632,21 +10561,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!1 &1984462038768662
-GameObject:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 4851457245510308}
-  m_Layer: 0
-  m_Name: SurfaceHolder
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
 --- !u!1 &1985871425768062
 GameObject:
   m_ObjectHideFlags: 1
@@ -10767,7 +10681,7 @@ GameObject:
   - component: {fileID: 33944970758073954}
   - component: {fileID: 23040820283448988}
   - component: {fileID: 114049610353460900}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: dropzone (84)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11986,23 +11900,6 @@ Transform:
   m_Father: {fileID: 4431814887362290}
   m_RootOrder: 186
   m_LocalEulerAnglesHint: {x: 0, y: -18.187, z: 0}
---- !u!4 &4156109575014694
-Transform:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1534652951731948}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.2038459, y: 1.6396002, z: 10.498481}
-  m_LocalScale: {x: 0.72233, y: 0.72233, z: 0.72233}
-  m_Children:
-  - {fileID: 4831684069811618}
-  - {fileID: 4914257997803690}
-  - {fileID: 4493863535495934}
-  - {fileID: 4851457245510308}
-  m_Father: {fileID: 4258624004506724}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4157074919921392
 Transform:
   m_ObjectHideFlags: 1
@@ -12912,7 +12809,6 @@ Transform:
   m_LocalPosition: {x: 0, y: 0.561, z: 0.23}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 4156109575014694}
   - {fileID: 4579393098323192}
   m_Father: {fileID: 4426755293192950}
   m_RootOrder: 2
@@ -13814,6 +13710,19 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4416996292432942}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4350002016404364
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1275348096291120}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4963408413334412}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4350605861181960
@@ -15335,19 +15244,6 @@ Transform:
   m_Father: {fileID: 4122822935053664}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &4493863535495934
-Transform:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1845769376422150}
-  m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.75023305, y: 0.75023365, z: 0.75023365}
-  m_Children: []
-  m_Father: {fileID: 4156109575014694}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!4 &4496999138523178
 Transform:
   m_ObjectHideFlags: 1
@@ -16035,7 +15931,7 @@ Transform:
   - {fileID: 4311777757026480}
   - {fileID: 4741425164044780}
   m_Father: {fileID: 4258624004506724}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4580944273164074
 Transform:
@@ -16715,19 +16611,6 @@ Transform:
   m_Father: {fileID: 4431814887362290}
   m_RootOrder: 162
   m_LocalEulerAnglesHint: {x: 0, y: 48.335003, z: 0}
---- !u!4 &4683272108598148
-Transform:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1899887666050444}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.003, z: 0.039}
-  m_LocalScale: {x: 0.09618961, y: 0.09618966, z: 0.09618966}
-  m_Children: []
-  m_Father: {fileID: 4851457245510308}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4686072699232870
 Transform:
   m_ObjectHideFlags: 1
@@ -17871,19 +17754,6 @@ Transform:
   m_Father: {fileID: 4431814887362290}
   m_RootOrder: 62
   m_LocalEulerAnglesHint: {x: 0, y: -19.643002, z: 0}
---- !u!4 &4831684069811618
-Transform:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1331606985336784}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.011003172, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 4156109575014694}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4832890423276586
 Transform:
   m_ObjectHideFlags: 1
@@ -17967,20 +17837,6 @@ Transform:
   m_Father: {fileID: 4431814887362290}
   m_RootOrder: 129
   m_LocalEulerAnglesHint: {x: 0, y: -82.46001, z: 0}
---- !u!4 &4851457245510308
-Transform:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1984462038768662}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 4683272108598148}
-  m_Father: {fileID: 4156109575014694}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4853113158091636
 Transform:
   m_ObjectHideFlags: 1
@@ -18539,19 +18395,6 @@ Transform:
   m_Father: {fileID: 4431814887362290}
   m_RootOrder: 142
   m_LocalEulerAnglesHint: {x: 0, y: 48.335003, z: 0}
---- !u!4 &4914257997803690
-Transform:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1931196273438416}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.924, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 4156109575014694}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4915656540177074
 Transform:
   m_ObjectHideFlags: 1
@@ -18950,7 +18793,8 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 3.69, z: 11.03}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 4350002016404364}
   m_Father: {fileID: 4426755293192950}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -22907,41 +22751,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!23 &23323190631211712
-MeshRenderer:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1899887666050444}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RenderingLayerMask: 4294967295
-  m_Materials:
-  - {fileID: 0}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_PreserveUVs: 1
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 0
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
 --- !u!23 &23324148909194448
 MeshRenderer:
   m_ObjectHideFlags: 1
@@ -24069,41 +23878,6 @@ MeshRenderer:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1665928982950220}
   m_Enabled: 0
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RenderingLayerMask: 4294967295
-  m_Materials:
-  - {fileID: 0}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 0
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
---- !u!23 &23481432847065636
-MeshRenderer:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1845769376422150}
-  m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -27183,41 +26957,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!23 &23793872410757860
-MeshRenderer:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1331606985336784}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RenderingLayerMask: 4294967295
-  m_Materials:
-  - {fileID: 2100000, guid: 1c5225c36c15c35418ac47c9b336bfe9, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 0
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
 --- !u!23 &23795676386689124
 MeshRenderer:
   m_ObjectHideFlags: 1
@@ -29899,13 +29638,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1463295354321538}
   m_Mesh: {fileID: 4300000, guid: 27d0ced3b7c5740c681e79e32c4b432b, type: 3}
---- !u!33 &33165048255925428
-MeshFilter:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1899887666050444}
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!33 &33165445417330040
 MeshFilter:
   m_ObjectHideFlags: 1
@@ -30179,13 +29911,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1554890322296084}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!33 &33271804292839064
-MeshFilter:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1845769376422150}
-  m_Mesh: {fileID: 4300000, guid: ac3f3c09a754fa549b16216bf78c388f, type: 3}
 --- !u!33 &33273452522728872
 MeshFilter:
   m_ObjectHideFlags: 1
@@ -31096,13 +30821,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1626860396132384}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!33 &33696991701844260
-MeshFilter:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1331606985336784}
-  m_Mesh: {fileID: 4300000, guid: 27d0ced3b7c5740c681e79e32c4b432b, type: 3}
 --- !u!33 &33697909058610376
 MeshFilter:
   m_ObjectHideFlags: 1
@@ -34460,21 +34178,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!54 &54988420855137856
-Rigidbody:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1534652951731948}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0
-  m_UseGravity: 0
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!54 &54988864471579478
 Rigidbody:
   m_ObjectHideFlags: 1
@@ -35666,6 +35369,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!65 &65975062064908720
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1275348096291120}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.4753823, y: 0.040993452, z: 0.46859264}
+  m_Center: {x: 0.0002707392, y: 0.04701531, z: -0.020688534}
 --- !u!65 &65983697705848976
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -38300,24 +38015,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!95 &95708200593231332
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1331606985336784}
-  m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: 27d0ced3b7c5740c681e79e32c4b432b, type: 3}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!95 &95708435687587112
 Animator:
   serializedVersion: 3
@@ -39466,13 +39163,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ec1663887ca1004a9b99df936493335, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myCustomer: {fileID: 0}
-  myDropzone: {fileID: 0}
-  isDrinkHere: 0
-  currentCustomer: 6
-  myDrinkGlass: {fileID: 0}
+  MyCustomer: {fileID: 0}
+  _myDetector: {fileID: 0}
+  IsDrinkHere: 0
+  CurrentCustomer: 6
+  MyPickupable: {fileID: 0}
   ServedTargetTransform: {fileID: 4296227469145866}
-  unservedPos: {x: 0, y: 0, z: 0}
+  UnservedPos: {x: 0, y: 0, z: 0}
 --- !u!114 &114006416854432356
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -39486,34 +39183,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hasIce: 0
   _glassType: 0
+  _myGlass: {fileID: 0}
   height: 0
   pourRate: 100
   _liquidSurface: {fileID: 0}
   totalVolume: 0
   myDrinkBase: 0
   myMixer: 0
-  coasters: []
-  sodaVolume: 0
-  tonicVolume: 0
-  vermouthVolume: 0
-  orangeJuiceVolume: 0
-  lemonJuiceVolume: 0
-  whiskeyVolume: 0
-  tequilaVolume: 0
-  rumVolume: 0
-  ginVolume: 0
-  beerVolume: 0
-  wineVolume: 0
-  brandyVolume: 0
-  vodkaVolume: 0
-  smokiness: 0
-  sweetness: 0
-  sourness: 0
-  bitterness: 0
-  spiciness: 0
-  alcoholVolume: 0
-  abv: 0
   myCustomer: {fileID: 0}
+  coasters: []
   drinkParts: []
   otherLiquid: {fileID: 0}
   otherLiquidMask: {fileID: 0}
@@ -39609,34 +39287,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hasIce: 0
   _glassType: 0
+  _myGlass: {fileID: 0}
   height: 0
   pourRate: 100
   _liquidSurface: {fileID: 0}
   totalVolume: 0
   myDrinkBase: 0
   myMixer: 0
-  coasters: []
-  sodaVolume: 0
-  tonicVolume: 0
-  vermouthVolume: 0
-  orangeJuiceVolume: 0
-  lemonJuiceVolume: 0
-  whiskeyVolume: 0
-  tequilaVolume: 0
-  rumVolume: 0
-  ginVolume: 0
-  beerVolume: 0
-  wineVolume: 0
-  brandyVolume: 0
-  vodkaVolume: 0
-  smokiness: 0
-  sweetness: 0
-  sourness: 0
-  bitterness: 0
-  spiciness: 0
-  alcoholVolume: 0
-  abv: 0
   myCustomer: {fileID: 0}
+  coasters: []
   drinkParts: []
   otherLiquid: {fileID: 0}
   otherLiquidMask: {fileID: 0}
@@ -39658,34 +39317,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hasIce: 0
   _glassType: 0
+  _myGlass: {fileID: 0}
   height: 0
   pourRate: 100
   _liquidSurface: {fileID: 0}
   totalVolume: 0
   myDrinkBase: 0
   myMixer: 0
-  coasters: []
-  sodaVolume: 0
-  tonicVolume: 0
-  vermouthVolume: 0
-  orangeJuiceVolume: 0
-  lemonJuiceVolume: 0
-  whiskeyVolume: 0
-  tequilaVolume: 0
-  rumVolume: 0
-  ginVolume: 0
-  beerVolume: 0
-  wineVolume: 0
-  brandyVolume: 0
-  vodkaVolume: 0
-  smokiness: 0
-  sweetness: 0
-  sourness: 0
-  bitterness: 0
-  spiciness: 0
-  alcoholVolume: 0
-  abv: 0
   myCustomer: {fileID: 0}
+  coasters: []
   drinkParts: []
   otherLiquid: {fileID: 0}
   otherLiquidMask: {fileID: 0}
@@ -39725,34 +39365,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hasIce: 0
   _glassType: 0
+  _myGlass: {fileID: 0}
   height: 0
   pourRate: 1
   _liquidSurface: {fileID: 0}
   totalVolume: 0
   myDrinkBase: 0
   myMixer: 0
-  coasters: []
-  sodaVolume: 0
-  tonicVolume: 0
-  vermouthVolume: 0
-  orangeJuiceVolume: 0
-  lemonJuiceVolume: 0
-  whiskeyVolume: 0
-  tequilaVolume: 0
-  rumVolume: 0
-  ginVolume: 0
-  beerVolume: 0
-  wineVolume: 0
-  brandyVolume: 0
-  vodkaVolume: 0
-  smokiness: 0
-  sweetness: 0
-  sourness: 0
-  bitterness: 0
-  spiciness: 0
-  alcoholVolume: 0
-  abv: 0
   myCustomer: {fileID: 0}
+  coasters: []
   drinkParts: []
   otherLiquid: {fileID: 0}
   otherLiquidMask: {fileID: 0}
@@ -39958,34 +39579,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hasIce: 0
   _glassType: 0
+  _myGlass: {fileID: 0}
   height: 0
   pourRate: 100
   _liquidSurface: {fileID: 0}
   totalVolume: 0
   myDrinkBase: 0
   myMixer: 0
-  coasters: []
-  sodaVolume: 0
-  tonicVolume: 0
-  vermouthVolume: 0
-  orangeJuiceVolume: 0
-  lemonJuiceVolume: 0
-  whiskeyVolume: 0
-  tequilaVolume: 0
-  rumVolume: 0
-  ginVolume: 0
-  beerVolume: 0
-  wineVolume: 0
-  brandyVolume: 0
-  vodkaVolume: 0
-  smokiness: 0
-  sweetness: 0
-  sourness: 0
-  bitterness: 0
-  spiciness: 0
-  alcoholVolume: 0
-  abv: 0
   myCustomer: {fileID: 0}
+  coasters: []
   drinkParts: []
   otherLiquid: {fileID: 0}
   otherLiquidMask: {fileID: 0}
@@ -40099,34 +39701,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hasIce: 0
   _glassType: 0
+  _myGlass: {fileID: 0}
   height: 0
   pourRate: 100
   _liquidSurface: {fileID: 0}
   totalVolume: 0
   myDrinkBase: 0
   myMixer: 0
-  coasters: []
-  sodaVolume: 0
-  tonicVolume: 0
-  vermouthVolume: 0
-  orangeJuiceVolume: 0
-  lemonJuiceVolume: 0
-  whiskeyVolume: 0
-  tequilaVolume: 0
-  rumVolume: 0
-  ginVolume: 0
-  beerVolume: 0
-  wineVolume: 0
-  brandyVolume: 0
-  vodkaVolume: 0
-  smokiness: 0
-  sweetness: 0
-  sourness: 0
-  bitterness: 0
-  spiciness: 0
-  alcoholVolume: 0
-  abv: 0
   myCustomer: {fileID: 0}
+  coasters: []
   drinkParts: []
   otherLiquid: {fileID: 0}
   otherLiquidMask: {fileID: 0}
@@ -40148,34 +39731,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hasIce: 0
   _glassType: 0
+  _myGlass: {fileID: 0}
   height: 0
   pourRate: 100
   _liquidSurface: {fileID: 0}
   totalVolume: 0
   myDrinkBase: 0
   myMixer: 0
-  coasters: []
-  sodaVolume: 0
-  tonicVolume: 0
-  vermouthVolume: 0
-  orangeJuiceVolume: 0
-  lemonJuiceVolume: 0
-  whiskeyVolume: 0
-  tequilaVolume: 0
-  rumVolume: 0
-  ginVolume: 0
-  beerVolume: 0
-  wineVolume: 0
-  brandyVolume: 0
-  vodkaVolume: 0
-  smokiness: 0
-  sweetness: 0
-  sourness: 0
-  bitterness: 0
-  spiciness: 0
-  alcoholVolume: 0
-  abv: 0
   myCustomer: {fileID: 0}
+  coasters: []
   drinkParts: []
   otherLiquid: {fileID: 0}
   otherLiquidMask: {fileID: 0}
@@ -40474,34 +40038,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hasIce: 0
   _glassType: 0
+  _myGlass: {fileID: 0}
   height: 0
   pourRate: 100
   _liquidSurface: {fileID: 0}
   totalVolume: 0
   myDrinkBase: 0
   myMixer: 0
-  coasters: []
-  sodaVolume: 0
-  tonicVolume: 0
-  vermouthVolume: 0
-  orangeJuiceVolume: 0
-  lemonJuiceVolume: 0
-  whiskeyVolume: 0
-  tequilaVolume: 0
-  rumVolume: 0
-  ginVolume: 0
-  beerVolume: 0
-  wineVolume: 0
-  brandyVolume: 0
-  vodkaVolume: 0
-  smokiness: 0
-  sweetness: 0
-  sourness: 0
-  bitterness: 0
-  spiciness: 0
-  alcoholVolume: 0
-  abv: 0
   myCustomer: {fileID: 0}
+  coasters: []
   drinkParts: []
   otherLiquid: {fileID: 0}
   otherLiquidMask: {fileID: 0}
@@ -40523,34 +40068,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hasIce: 0
   _glassType: 0
+  _myGlass: {fileID: 0}
   height: 0
   pourRate: 100
   _liquidSurface: {fileID: 0}
   totalVolume: 0
   myDrinkBase: 0
   myMixer: 0
-  coasters: []
-  sodaVolume: 0
-  tonicVolume: 0
-  vermouthVolume: 0
-  orangeJuiceVolume: 0
-  lemonJuiceVolume: 0
-  whiskeyVolume: 0
-  tequilaVolume: 0
-  rumVolume: 0
-  ginVolume: 0
-  beerVolume: 0
-  wineVolume: 0
-  brandyVolume: 0
-  vodkaVolume: 0
-  smokiness: 0
-  sweetness: 0
-  sourness: 0
-  bitterness: 0
-  spiciness: 0
-  alcoholVolume: 0
-  abv: 0
   myCustomer: {fileID: 0}
+  coasters: []
   drinkParts: []
   otherLiquid: {fileID: 0}
   otherLiquidMask: {fileID: 0}
@@ -40590,34 +40116,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hasIce: 0
   _glassType: 0
+  _myGlass: {fileID: 0}
   height: 0
   pourRate: 100
   _liquidSurface: {fileID: 0}
   totalVolume: 0
   myDrinkBase: 0
   myMixer: 0
-  coasters: []
-  sodaVolume: 0
-  tonicVolume: 0
-  vermouthVolume: 0
-  orangeJuiceVolume: 0
-  lemonJuiceVolume: 0
-  whiskeyVolume: 0
-  tequilaVolume: 0
-  rumVolume: 0
-  ginVolume: 0
-  beerVolume: 0
-  wineVolume: 0
-  brandyVolume: 0
-  vodkaVolume: 0
-  smokiness: 0
-  sweetness: 0
-  sourness: 0
-  bitterness: 0
-  spiciness: 0
-  alcoholVolume: 0
-  abv: 0
   myCustomer: {fileID: 0}
+  coasters: []
   drinkParts: []
   otherLiquid: {fileID: 0}
   otherLiquidMask: {fileID: 0}
@@ -40639,34 +40146,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hasIce: 0
   _glassType: 0
+  _myGlass: {fileID: 0}
   height: 0
   pourRate: 100
   _liquidSurface: {fileID: 0}
   totalVolume: 0
   myDrinkBase: 0
   myMixer: 0
-  coasters: []
-  sodaVolume: 0
-  tonicVolume: 0
-  vermouthVolume: 0
-  orangeJuiceVolume: 0
-  lemonJuiceVolume: 0
-  whiskeyVolume: 0
-  tequilaVolume: 0
-  rumVolume: 0
-  ginVolume: 0
-  beerVolume: 0
-  wineVolume: 0
-  brandyVolume: 0
-  vodkaVolume: 0
-  smokiness: 0
-  sweetness: 0
-  sourness: 0
-  bitterness: 0
-  spiciness: 0
-  alcoholVolume: 0
-  abv: 0
   myCustomer: {fileID: 0}
+  coasters: []
   drinkParts: []
   otherLiquid: {fileID: 0}
   otherLiquidMask: {fileID: 0}
@@ -40688,34 +40176,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hasIce: 0
   _glassType: 0
+  _myGlass: {fileID: 0}
   height: 0
   pourRate: 100
   _liquidSurface: {fileID: 0}
   totalVolume: 0
   myDrinkBase: 0
   myMixer: 0
-  coasters: []
-  sodaVolume: 0
-  tonicVolume: 0
-  vermouthVolume: 0
-  orangeJuiceVolume: 0
-  lemonJuiceVolume: 0
-  whiskeyVolume: 0
-  tequilaVolume: 0
-  rumVolume: 0
-  ginVolume: 0
-  beerVolume: 0
-  wineVolume: 0
-  brandyVolume: 0
-  vodkaVolume: 0
-  smokiness: 0
-  sweetness: 0
-  sourness: 0
-  bitterness: 0
-  spiciness: 0
-  alcoholVolume: 0
-  abv: 0
   myCustomer: {fileID: 0}
+  coasters: []
   drinkParts: []
   otherLiquid: {fileID: 0}
   otherLiquidMask: {fileID: 0}
@@ -40912,34 +40381,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hasIce: 0
   _glassType: 0
+  _myGlass: {fileID: 0}
   height: 0
   pourRate: 100
   _liquidSurface: {fileID: 0}
   totalVolume: 0
   myDrinkBase: 0
   myMixer: 0
-  coasters: []
-  sodaVolume: 0
-  tonicVolume: 0
-  vermouthVolume: 0
-  orangeJuiceVolume: 0
-  lemonJuiceVolume: 0
-  whiskeyVolume: 0
-  tequilaVolume: 0
-  rumVolume: 0
-  ginVolume: 0
-  beerVolume: 0
-  wineVolume: 0
-  brandyVolume: 0
-  vodkaVolume: 0
-  smokiness: 0
-  sweetness: 0
-  sourness: 0
-  bitterness: 0
-  spiciness: 0
-  alcoholVolume: 0
-  abv: 0
   myCustomer: {fileID: 0}
+  coasters: []
   drinkParts: []
   otherLiquid: {fileID: 0}
   otherLiquidMask: {fileID: 0}
@@ -41016,34 +40466,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hasIce: 0
   _glassType: 0
+  _myGlass: {fileID: 0}
   height: 0
   pourRate: 100
   _liquidSurface: {fileID: 0}
   totalVolume: 0
   myDrinkBase: 0
   myMixer: 0
-  coasters: []
-  sodaVolume: 0
-  tonicVolume: 0
-  vermouthVolume: 0
-  orangeJuiceVolume: 0
-  lemonJuiceVolume: 0
-  whiskeyVolume: 0
-  tequilaVolume: 0
-  rumVolume: 0
-  ginVolume: 0
-  beerVolume: 0
-  wineVolume: 0
-  brandyVolume: 0
-  vodkaVolume: 0
-  smokiness: 0
-  sweetness: 0
-  sourness: 0
-  bitterness: 0
-  spiciness: 0
-  alcoholVolume: 0
-  abv: 0
   myCustomer: {fileID: 0}
+  coasters: []
   drinkParts: []
   otherLiquid: {fileID: 0}
   otherLiquidMask: {fileID: 0}
@@ -41102,34 +40533,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hasIce: 0
   _glassType: 0
+  _myGlass: {fileID: 0}
   height: 0
   pourRate: 100
   _liquidSurface: {fileID: 0}
   totalVolume: 0
   myDrinkBase: 0
   myMixer: 0
-  coasters: []
-  sodaVolume: 0
-  tonicVolume: 0
-  vermouthVolume: 0
-  orangeJuiceVolume: 0
-  lemonJuiceVolume: 0
-  whiskeyVolume: 0
-  tequilaVolume: 0
-  rumVolume: 0
-  ginVolume: 0
-  beerVolume: 0
-  wineVolume: 0
-  brandyVolume: 0
-  vodkaVolume: 0
-  smokiness: 0
-  sweetness: 0
-  sourness: 0
-  bitterness: 0
-  spiciness: 0
-  alcoholVolume: 0
-  abv: 0
   myCustomer: {fileID: 0}
+  coasters: []
   drinkParts: []
   otherLiquid: {fileID: 0}
   otherLiquidMask: {fileID: 0}
@@ -41169,34 +40581,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hasIce: 0
   _glassType: 0
+  _myGlass: {fileID: 0}
   height: 0
   pourRate: 100
   _liquidSurface: {fileID: 0}
   totalVolume: 0
   myDrinkBase: 0
   myMixer: 0
-  coasters: []
-  sodaVolume: 0
-  tonicVolume: 0
-  vermouthVolume: 0
-  orangeJuiceVolume: 0
-  lemonJuiceVolume: 0
-  whiskeyVolume: 0
-  tequilaVolume: 0
-  rumVolume: 0
-  ginVolume: 0
-  beerVolume: 0
-  wineVolume: 0
-  brandyVolume: 0
-  vodkaVolume: 0
-  smokiness: 0
-  sweetness: 0
-  sourness: 0
-  bitterness: 0
-  spiciness: 0
-  alcoholVolume: 0
-  abv: 0
   myCustomer: {fileID: 0}
+  coasters: []
   drinkParts: []
   otherLiquid: {fileID: 0}
   otherLiquidMask: {fileID: 0}
@@ -41366,34 +40759,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hasIce: 0
   _glassType: 0
+  _myGlass: {fileID: 0}
   height: 0
   pourRate: 100
   _liquidSurface: {fileID: 0}
   totalVolume: 0
   myDrinkBase: 0
   myMixer: 0
-  coasters: []
-  sodaVolume: 0
-  tonicVolume: 0
-  vermouthVolume: 0
-  orangeJuiceVolume: 0
-  lemonJuiceVolume: 0
-  whiskeyVolume: 0
-  tequilaVolume: 0
-  rumVolume: 0
-  ginVolume: 0
-  beerVolume: 0
-  wineVolume: 0
-  brandyVolume: 0
-  vodkaVolume: 0
-  smokiness: 0
-  sweetness: 0
-  sourness: 0
-  bitterness: 0
-  spiciness: 0
-  alcoholVolume: 0
-  abv: 0
   myCustomer: {fileID: 0}
+  coasters: []
   drinkParts: []
   otherLiquid: {fileID: 0}
   otherLiquidMask: {fileID: 0}
@@ -41413,13 +40787,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ec1663887ca1004a9b99df936493335, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myCustomer: {fileID: 0}
-  myDropzone: {fileID: 0}
-  isDrinkHere: 0
-  currentCustomer: 4
-  myDrinkGlass: {fileID: 0}
+  MyCustomer: {fileID: 0}
+  _myDetector: {fileID: 0}
+  IsDrinkHere: 0
+  CurrentCustomer: 4
+  MyPickupable: {fileID: 0}
   ServedTargetTransform: {fileID: 4853708486890166}
-  unservedPos: {x: 0, y: 0, z: 0}
+  UnservedPos: {x: 0, y: 0, z: 0}
 --- !u!114 &114178041845213692
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -41820,34 +41194,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hasIce: 0
   _glassType: 0
+  _myGlass: {fileID: 0}
   height: 0
   pourRate: 100
   _liquidSurface: {fileID: 0}
   totalVolume: 0
   myDrinkBase: 0
   myMixer: 0
-  coasters: []
-  sodaVolume: 0
-  tonicVolume: 0
-  vermouthVolume: 0
-  orangeJuiceVolume: 0
-  lemonJuiceVolume: 0
-  whiskeyVolume: 0
-  tequilaVolume: 0
-  rumVolume: 0
-  ginVolume: 0
-  beerVolume: 0
-  wineVolume: 0
-  brandyVolume: 0
-  vodkaVolume: 0
-  smokiness: 0
-  sweetness: 0
-  sourness: 0
-  bitterness: 0
-  spiciness: 0
-  alcoholVolume: 0
-  abv: 0
   myCustomer: {fileID: 0}
+  coasters: []
   drinkParts: []
   otherLiquid: {fileID: 0}
   otherLiquidMask: {fileID: 0}
@@ -41887,34 +41242,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hasIce: 0
   _glassType: 0
+  _myGlass: {fileID: 0}
   height: 0
   pourRate: 100
   _liquidSurface: {fileID: 0}
   totalVolume: 0
   myDrinkBase: 0
   myMixer: 0
-  coasters: []
-  sodaVolume: 0
-  tonicVolume: 0
-  vermouthVolume: 0
-  orangeJuiceVolume: 0
-  lemonJuiceVolume: 0
-  whiskeyVolume: 0
-  tequilaVolume: 0
-  rumVolume: 0
-  ginVolume: 0
-  beerVolume: 0
-  wineVolume: 0
-  brandyVolume: 0
-  vodkaVolume: 0
-  smokiness: 0
-  sweetness: 0
-  sourness: 0
-  bitterness: 0
-  spiciness: 0
-  alcoholVolume: 0
-  abv: 0
   myCustomer: {fileID: 0}
+  coasters: []
   drinkParts: []
   otherLiquid: {fileID: 0}
   otherLiquidMask: {fileID: 0}
@@ -41991,34 +41327,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hasIce: 0
   _glassType: 0
+  _myGlass: {fileID: 0}
   height: 0
   pourRate: 100
   _liquidSurface: {fileID: 0}
   totalVolume: 0
   myDrinkBase: 0
   myMixer: 0
-  coasters: []
-  sodaVolume: 0
-  tonicVolume: 0
-  vermouthVolume: 0
-  orangeJuiceVolume: 0
-  lemonJuiceVolume: 0
-  whiskeyVolume: 0
-  tequilaVolume: 0
-  rumVolume: 0
-  ginVolume: 0
-  beerVolume: 0
-  wineVolume: 0
-  brandyVolume: 0
-  vodkaVolume: 0
-  smokiness: 0
-  sweetness: 0
-  sourness: 0
-  bitterness: 0
-  spiciness: 0
-  alcoholVolume: 0
-  abv: 0
   myCustomer: {fileID: 0}
+  coasters: []
   drinkParts: []
   otherLiquid: {fileID: 0}
   otherLiquidMask: {fileID: 0}
@@ -42114,34 +41431,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hasIce: 0
   _glassType: 0
+  _myGlass: {fileID: 0}
   height: 0
   pourRate: 100
   _liquidSurface: {fileID: 0}
   totalVolume: 0
   myDrinkBase: 0
   myMixer: 0
-  coasters: []
-  sodaVolume: 0
-  tonicVolume: 0
-  vermouthVolume: 0
-  orangeJuiceVolume: 0
-  lemonJuiceVolume: 0
-  whiskeyVolume: 0
-  tequilaVolume: 0
-  rumVolume: 0
-  ginVolume: 0
-  beerVolume: 0
-  wineVolume: 0
-  brandyVolume: 0
-  vodkaVolume: 0
-  smokiness: 0
-  sweetness: 0
-  sourness: 0
-  bitterness: 0
-  spiciness: 0
-  alcoholVolume: 0
-  abv: 0
   myCustomer: {fileID: 0}
+  coasters: []
   drinkParts: []
   otherLiquid: {fileID: 0}
   otherLiquidMask: {fileID: 0}
@@ -42236,34 +41534,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hasIce: 0
   _glassType: 0
+  _myGlass: {fileID: 0}
   height: 0
   pourRate: 100
   _liquidSurface: {fileID: 0}
   totalVolume: 0
   myDrinkBase: 0
   myMixer: 0
-  coasters: []
-  sodaVolume: 0
-  tonicVolume: 0
-  vermouthVolume: 0
-  orangeJuiceVolume: 0
-  lemonJuiceVolume: 0
-  whiskeyVolume: 0
-  tequilaVolume: 0
-  rumVolume: 0
-  ginVolume: 0
-  beerVolume: 0
-  wineVolume: 0
-  brandyVolume: 0
-  vodkaVolume: 0
-  smokiness: 0
-  sweetness: 0
-  sourness: 0
-  bitterness: 0
-  spiciness: 0
-  alcoholVolume: 0
-  abv: 0
   myCustomer: {fileID: 0}
+  coasters: []
   drinkParts: []
   otherLiquid: {fileID: 0}
   otherLiquidMask: {fileID: 0}
@@ -42322,34 +41601,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hasIce: 0
   _glassType: 0
+  _myGlass: {fileID: 0}
   height: 0
   pourRate: 100
   _liquidSurface: {fileID: 0}
   totalVolume: 0
   myDrinkBase: 0
   myMixer: 0
-  coasters: []
-  sodaVolume: 0
-  tonicVolume: 0
-  vermouthVolume: 0
-  orangeJuiceVolume: 0
-  lemonJuiceVolume: 0
-  whiskeyVolume: 0
-  tequilaVolume: 0
-  rumVolume: 0
-  ginVolume: 0
-  beerVolume: 0
-  wineVolume: 0
-  brandyVolume: 0
-  vodkaVolume: 0
-  smokiness: 0
-  sweetness: 0
-  sourness: 0
-  bitterness: 0
-  spiciness: 0
-  alcoholVolume: 0
-  abv: 0
   myCustomer: {fileID: 0}
+  coasters: []
   drinkParts: []
   otherLiquid: {fileID: 0}
   otherLiquidMask: {fileID: 0}
@@ -42500,34 +41760,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hasIce: 0
   _glassType: 0
+  _myGlass: {fileID: 0}
   height: 0
   pourRate: 100
   _liquidSurface: {fileID: 0}
   totalVolume: 0
   myDrinkBase: 0
   myMixer: 0
-  coasters: []
-  sodaVolume: 0
-  tonicVolume: 0
-  vermouthVolume: 0
-  orangeJuiceVolume: 0
-  lemonJuiceVolume: 0
-  whiskeyVolume: 0
-  tequilaVolume: 0
-  rumVolume: 0
-  ginVolume: 0
-  beerVolume: 0
-  wineVolume: 0
-  brandyVolume: 0
-  vodkaVolume: 0
-  smokiness: 0
-  sweetness: 0
-  sourness: 0
-  bitterness: 0
-  spiciness: 0
-  alcoholVolume: 0
-  abv: 0
   myCustomer: {fileID: 0}
+  coasters: []
   drinkParts: []
   otherLiquid: {fileID: 0}
   otherLiquidMask: {fileID: 0}
@@ -42789,34 +42030,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hasIce: 0
   _glassType: 0
+  _myGlass: {fileID: 0}
   height: 0
   pourRate: 100
   _liquidSurface: {fileID: 0}
   totalVolume: 0
   myDrinkBase: 0
   myMixer: 0
-  coasters: []
-  sodaVolume: 0
-  tonicVolume: 0
-  vermouthVolume: 0
-  orangeJuiceVolume: 0
-  lemonJuiceVolume: 0
-  whiskeyVolume: 0
-  tequilaVolume: 0
-  rumVolume: 0
-  ginVolume: 0
-  beerVolume: 0
-  wineVolume: 0
-  brandyVolume: 0
-  vodkaVolume: 0
-  smokiness: 0
-  sweetness: 0
-  sourness: 0
-  bitterness: 0
-  spiciness: 0
-  alcoholVolume: 0
-  abv: 0
   myCustomer: {fileID: 0}
+  coasters: []
   drinkParts: []
   otherLiquid: {fileID: 0}
   otherLiquidMask: {fileID: 0}
@@ -42838,34 +42060,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hasIce: 0
   _glassType: 0
+  _myGlass: {fileID: 0}
   height: 0
   pourRate: 100
   _liquidSurface: {fileID: 0}
   totalVolume: 0
   myDrinkBase: 0
   myMixer: 0
-  coasters: []
-  sodaVolume: 0
-  tonicVolume: 0
-  vermouthVolume: 0
-  orangeJuiceVolume: 0
-  lemonJuiceVolume: 0
-  whiskeyVolume: 0
-  tequilaVolume: 0
-  rumVolume: 0
-  ginVolume: 0
-  beerVolume: 0
-  wineVolume: 0
-  brandyVolume: 0
-  vodkaVolume: 0
-  smokiness: 0
-  sweetness: 0
-  sourness: 0
-  bitterness: 0
-  spiciness: 0
-  alcoholVolume: 0
-  abv: 0
   myCustomer: {fileID: 0}
+  coasters: []
   drinkParts: []
   otherLiquid: {fileID: 0}
   otherLiquidMask: {fileID: 0}
@@ -42924,34 +42127,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hasIce: 0
   _glassType: 0
+  _myGlass: {fileID: 0}
   height: 0
   pourRate: 100
   _liquidSurface: {fileID: 0}
   totalVolume: 0
   myDrinkBase: 0
   myMixer: 0
-  coasters: []
-  sodaVolume: 0
-  tonicVolume: 0
-  vermouthVolume: 0
-  orangeJuiceVolume: 0
-  lemonJuiceVolume: 0
-  whiskeyVolume: 0
-  tequilaVolume: 0
-  rumVolume: 0
-  ginVolume: 0
-  beerVolume: 0
-  wineVolume: 0
-  brandyVolume: 0
-  vodkaVolume: 0
-  smokiness: 0
-  sweetness: 0
-  sourness: 0
-  bitterness: 0
-  spiciness: 0
-  alcoholVolume: 0
-  abv: 0
   myCustomer: {fileID: 0}
+  coasters: []
   drinkParts: []
   otherLiquid: {fileID: 0}
   otherLiquidMask: {fileID: 0}
@@ -42973,34 +42157,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hasIce: 0
   _glassType: 0
+  _myGlass: {fileID: 0}
   height: 0
   pourRate: 100
   _liquidSurface: {fileID: 0}
   totalVolume: 0
   myDrinkBase: 0
   myMixer: 0
-  coasters: []
-  sodaVolume: 0
-  tonicVolume: 0
-  vermouthVolume: 0
-  orangeJuiceVolume: 0
-  lemonJuiceVolume: 0
-  whiskeyVolume: 0
-  tequilaVolume: 0
-  rumVolume: 0
-  ginVolume: 0
-  beerVolume: 0
-  wineVolume: 0
-  brandyVolume: 0
-  vodkaVolume: 0
-  smokiness: 0
-  sweetness: 0
-  sourness: 0
-  bitterness: 0
-  spiciness: 0
-  alcoholVolume: 0
-  abv: 0
   myCustomer: {fileID: 0}
+  coasters: []
   drinkParts: []
   otherLiquid: {fileID: 0}
   otherLiquidMask: {fileID: 0}
@@ -43212,19 +42377,6 @@ MonoBehaviour:
   liquidSurfaceChild: {fileID: 0}
   leftHandPourPos: {x: -0.14, y: -0.5, z: 1.75}
   rightHandPourPos: {x: 0.14, y: -0.5, z: 1.75}
---- !u!114 &114294846241711540
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1899887666050444}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cec92ff97983fc842985c6b1f374bf87, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  meshRenderer: {fileID: 23323190631211712}
-  myMaterial: {fileID: 2100000, guid: 798f8dec2f7fd43a2b038c46d82aa375, type: 2}
 --- !u!114 &114295636516154154
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -43259,43 +42411,6 @@ MonoBehaviour:
   myServiceDropzone: {fileID: 0}
   Liquid: {fileID: 0}
   liquidSurfaceParent: {fileID: 0}
-  liquidSurfaceChild: {fileID: 0}
-  leftHandPourPos: {x: -0.14, y: -0.5, z: 1.75}
-  rightHandPourPos: {x: 0.14, y: -0.5, z: 1.75}
---- !u!114 &114296457744320314
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1534652951731948}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 95edbbad3d2bee744a787b7918c34047, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isForDropzoneOnly: 0
-  pickupDropTime: 0.25
-  leftHandPos: {x: -1, y: -0.89, z: 2}
-  rightHandPos: {x: 1, y: -0.89, z: 2}
-  targetDropzone: {fileID: 0}
-  startPos: {x: 0, y: 0, z: 0}
-  dropPos: {x: 0, y: 0, z: 0}
-  tweenTime: 0.75
-  tweenEndTime: 0.5
-  pickedUp: 0
-  origPos: {x: 0, y: 0, z: 0}
-  glassType: 0
-  glassServeState: 0
-  focalPoint: {fileID: 1931196273438416}
-  myIceList: []
-  isFull: 0
-  hasIce: 0
-  isDirty: 0
-  isInServeZone: 0
-  CanBePouredInto: 0
-  myServiceDropzone: {fileID: 0}
-  Liquid: {fileID: 0}
-  liquidSurfaceParent: {fileID: 1984462038768662}
   liquidSurfaceChild: {fileID: 0}
   leftHandPourPos: {x: -0.14, y: -0.5, z: 1.75}
   rightHandPourPos: {x: 0.14, y: -0.5, z: 1.75}
@@ -43349,34 +42464,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hasIce: 0
   _glassType: 0
+  _myGlass: {fileID: 0}
   height: 0
   pourRate: 100
   _liquidSurface: {fileID: 0}
   totalVolume: 0
   myDrinkBase: 0
   myMixer: 0
-  coasters: []
-  sodaVolume: 0
-  tonicVolume: 0
-  vermouthVolume: 0
-  orangeJuiceVolume: 0
-  lemonJuiceVolume: 0
-  whiskeyVolume: 0
-  tequilaVolume: 0
-  rumVolume: 0
-  ginVolume: 0
-  beerVolume: 0
-  wineVolume: 0
-  brandyVolume: 0
-  vodkaVolume: 0
-  smokiness: 0
-  sweetness: 0
-  sourness: 0
-  bitterness: 0
-  spiciness: 0
-  alcoholVolume: 0
-  abv: 0
   myCustomer: {fileID: 0}
+  coasters: []
   drinkParts: []
   otherLiquid: {fileID: 0}
   otherLiquidMask: {fileID: 0}
@@ -43544,34 +42640,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hasIce: 0
   _glassType: 0
+  _myGlass: {fileID: 0}
   height: 0
   pourRate: 100
   _liquidSurface: {fileID: 0}
   totalVolume: 0
   myDrinkBase: 0
   myMixer: 0
-  coasters: []
-  sodaVolume: 0
-  tonicVolume: 0
-  vermouthVolume: 0
-  orangeJuiceVolume: 0
-  lemonJuiceVolume: 0
-  whiskeyVolume: 0
-  tequilaVolume: 0
-  rumVolume: 0
-  ginVolume: 0
-  beerVolume: 0
-  wineVolume: 0
-  brandyVolume: 0
-  vodkaVolume: 0
-  smokiness: 0
-  sweetness: 0
-  sourness: 0
-  bitterness: 0
-  spiciness: 0
-  alcoholVolume: 0
-  abv: 0
   myCustomer: {fileID: 0}
+  coasters: []
   drinkParts: []
   otherLiquid: {fileID: 0}
   otherLiquidMask: {fileID: 0}
@@ -43811,34 +42888,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hasIce: 0
   _glassType: 0
+  _myGlass: {fileID: 0}
   height: 0
   pourRate: 1
   _liquidSurface: {fileID: 0}
   totalVolume: 0
   myDrinkBase: 0
   myMixer: 0
-  coasters: []
-  sodaVolume: 0
-  tonicVolume: 0
-  vermouthVolume: 0
-  orangeJuiceVolume: 0
-  lemonJuiceVolume: 0
-  whiskeyVolume: 0
-  tequilaVolume: 0
-  rumVolume: 0
-  ginVolume: 0
-  beerVolume: 0
-  wineVolume: 0
-  brandyVolume: 0
-  vodkaVolume: 0
-  smokiness: 0
-  sweetness: 0
-  sourness: 0
-  bitterness: 0
-  spiciness: 0
-  alcoholVolume: 0
-  abv: 0
   myCustomer: {fileID: 0}
+  coasters: []
   drinkParts: []
   otherLiquid: {fileID: 0}
   otherLiquidMask: {fileID: 0}
@@ -43860,34 +42918,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hasIce: 0
   _glassType: 0
+  _myGlass: {fileID: 0}
   height: 0
   pourRate: 100
   _liquidSurface: {fileID: 0}
   totalVolume: 0
   myDrinkBase: 0
   myMixer: 0
-  coasters: []
-  sodaVolume: 0
-  tonicVolume: 0
-  vermouthVolume: 0
-  orangeJuiceVolume: 0
-  lemonJuiceVolume: 0
-  whiskeyVolume: 0
-  tequilaVolume: 0
-  rumVolume: 0
-  ginVolume: 0
-  beerVolume: 0
-  wineVolume: 0
-  brandyVolume: 0
-  vodkaVolume: 0
-  smokiness: 0
-  sweetness: 0
-  sourness: 0
-  bitterness: 0
-  spiciness: 0
-  alcoholVolume: 0
-  abv: 0
   myCustomer: {fileID: 0}
+  coasters: []
   drinkParts: []
   otherLiquid: {fileID: 0}
   otherLiquidMask: {fileID: 0}
@@ -43964,34 +43003,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hasIce: 0
   _glassType: 0
+  _myGlass: {fileID: 0}
   height: 0
   pourRate: 100
   _liquidSurface: {fileID: 0}
   totalVolume: 0
   myDrinkBase: 0
   myMixer: 0
-  coasters: []
-  sodaVolume: 0
-  tonicVolume: 0
-  vermouthVolume: 0
-  orangeJuiceVolume: 0
-  lemonJuiceVolume: 0
-  whiskeyVolume: 0
-  tequilaVolume: 0
-  rumVolume: 0
-  ginVolume: 0
-  beerVolume: 0
-  wineVolume: 0
-  brandyVolume: 0
-  vodkaVolume: 0
-  smokiness: 0
-  sweetness: 0
-  sourness: 0
-  bitterness: 0
-  spiciness: 0
-  alcoholVolume: 0
-  abv: 0
   myCustomer: {fileID: 0}
+  coasters: []
   drinkParts: []
   otherLiquid: {fileID: 0}
   otherLiquidMask: {fileID: 0}
@@ -44050,34 +43070,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hasIce: 0
   _glassType: 0
+  _myGlass: {fileID: 0}
   height: 0
   pourRate: 100
   _liquidSurface: {fileID: 0}
   totalVolume: 0
   myDrinkBase: 0
   myMixer: 0
-  coasters: []
-  sodaVolume: 0
-  tonicVolume: 0
-  vermouthVolume: 0
-  orangeJuiceVolume: 0
-  lemonJuiceVolume: 0
-  whiskeyVolume: 0
-  tequilaVolume: 0
-  rumVolume: 0
-  ginVolume: 0
-  beerVolume: 0
-  wineVolume: 0
-  brandyVolume: 0
-  vodkaVolume: 0
-  smokiness: 0
-  sweetness: 0
-  sourness: 0
-  bitterness: 0
-  spiciness: 0
-  alcoholVolume: 0
-  abv: 0
   myCustomer: {fileID: 0}
+  coasters: []
   drinkParts: []
   otherLiquid: {fileID: 0}
   otherLiquidMask: {fileID: 0}
@@ -44135,34 +43136,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hasIce: 0
   _glassType: 0
+  _myGlass: {fileID: 0}
   height: 0
   pourRate: 1
   _liquidSurface: {fileID: 0}
   totalVolume: 0
   myDrinkBase: 0
   myMixer: 0
-  coasters: []
-  sodaVolume: 0
-  tonicVolume: 0
-  vermouthVolume: 0
-  orangeJuiceVolume: 0
-  lemonJuiceVolume: 0
-  whiskeyVolume: 0
-  tequilaVolume: 0
-  rumVolume: 0
-  ginVolume: 0
-  beerVolume: 0
-  wineVolume: 0
-  brandyVolume: 0
-  vodkaVolume: 0
-  smokiness: 0
-  sweetness: 0
-  sourness: 0
-  bitterness: 0
-  spiciness: 0
-  alcoholVolume: 0
-  abv: 0
   myCustomer: {fileID: 0}
+  coasters: []
   drinkParts: []
   otherLiquid: {fileID: 0}
   otherLiquidMask: {fileID: 0}
@@ -44292,13 +43274,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ec1663887ca1004a9b99df936493335, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myCustomer: {fileID: 0}
-  myDropzone: {fileID: 0}
-  isDrinkHere: 0
-  currentCustomer: 0
-  myDrinkGlass: {fileID: 0}
+  MyCustomer: {fileID: 0}
+  _myDetector: {fileID: 1275348096291120}
+  IsDrinkHere: 0
+  CurrentCustomer: 0
+  MyPickupable: {fileID: 0}
   ServedTargetTransform: {fileID: 4064785347417318}
-  unservedPos: {x: 0, y: 0, z: 0}
+  UnservedPos: {x: 0, y: 0, z: 0}
 --- !u!114 &114397172574929294
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -44312,34 +43294,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hasIce: 0
   _glassType: 0
+  _myGlass: {fileID: 0}
   height: 0
   pourRate: 100
   _liquidSurface: {fileID: 0}
   totalVolume: 0
   myDrinkBase: 0
   myMixer: 0
-  coasters: []
-  sodaVolume: 0
-  tonicVolume: 0
-  vermouthVolume: 0
-  orangeJuiceVolume: 0
-  lemonJuiceVolume: 0
-  whiskeyVolume: 0
-  tequilaVolume: 0
-  rumVolume: 0
-  ginVolume: 0
-  beerVolume: 0
-  wineVolume: 0
-  brandyVolume: 0
-  vodkaVolume: 0
-  smokiness: 0
-  sweetness: 0
-  sourness: 0
-  bitterness: 0
-  spiciness: 0
-  alcoholVolume: 0
-  abv: 0
   myCustomer: {fileID: 0}
+  coasters: []
   drinkParts: []
   otherLiquid: {fileID: 0}
   otherLiquidMask: {fileID: 0}
@@ -44398,34 +43361,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hasIce: 0
   _glassType: 0
+  _myGlass: {fileID: 0}
   height: 0
   pourRate: 100
   _liquidSurface: {fileID: 0}
   totalVolume: 0
   myDrinkBase: 0
   myMixer: 0
-  coasters: []
-  sodaVolume: 0
-  tonicVolume: 0
-  vermouthVolume: 0
-  orangeJuiceVolume: 0
-  lemonJuiceVolume: 0
-  whiskeyVolume: 0
-  tequilaVolume: 0
-  rumVolume: 0
-  ginVolume: 0
-  beerVolume: 0
-  wineVolume: 0
-  brandyVolume: 0
-  vodkaVolume: 0
-  smokiness: 0
-  sweetness: 0
-  sourness: 0
-  bitterness: 0
-  spiciness: 0
-  alcoholVolume: 0
-  abv: 0
   myCustomer: {fileID: 0}
+  coasters: []
   drinkParts: []
   otherLiquid: {fileID: 0}
   otherLiquidMask: {fileID: 0}
@@ -44539,34 +43483,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hasIce: 0
   _glassType: 0
+  _myGlass: {fileID: 0}
   height: 0
   pourRate: 100
   _liquidSurface: {fileID: 0}
   totalVolume: 0
   myDrinkBase: 0
   myMixer: 0
-  coasters: []
-  sodaVolume: 0
-  tonicVolume: 0
-  vermouthVolume: 0
-  orangeJuiceVolume: 0
-  lemonJuiceVolume: 0
-  whiskeyVolume: 0
-  tequilaVolume: 0
-  rumVolume: 0
-  ginVolume: 0
-  beerVolume: 0
-  wineVolume: 0
-  brandyVolume: 0
-  vodkaVolume: 0
-  smokiness: 0
-  sweetness: 0
-  sourness: 0
-  bitterness: 0
-  spiciness: 0
-  alcoholVolume: 0
-  abv: 0
   myCustomer: {fileID: 0}
+  coasters: []
   drinkParts: []
   otherLiquid: {fileID: 0}
   otherLiquidMask: {fileID: 0}
@@ -44588,34 +43513,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hasIce: 0
   _glassType: 0
+  _myGlass: {fileID: 0}
   height: 0
   pourRate: 100
   _liquidSurface: {fileID: 0}
   totalVolume: 0
   myDrinkBase: 0
   myMixer: 0
-  coasters: []
-  sodaVolume: 0
-  tonicVolume: 0
-  vermouthVolume: 0
-  orangeJuiceVolume: 0
-  lemonJuiceVolume: 0
-  whiskeyVolume: 0
-  tequilaVolume: 0
-  rumVolume: 0
-  ginVolume: 0
-  beerVolume: 0
-  wineVolume: 0
-  brandyVolume: 0
-  vodkaVolume: 0
-  smokiness: 0
-  sweetness: 0
-  sourness: 0
-  bitterness: 0
-  spiciness: 0
-  alcoholVolume: 0
-  abv: 0
   myCustomer: {fileID: 0}
+  coasters: []
   drinkParts: []
   otherLiquid: {fileID: 0}
   otherLiquidMask: {fileID: 0}
@@ -44776,34 +43682,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hasIce: 0
   _glassType: 0
+  _myGlass: {fileID: 0}
   height: 0
   pourRate: 100
   _liquidSurface: {fileID: 0}
   totalVolume: 0
   myDrinkBase: 0
   myMixer: 0
-  coasters: []
-  sodaVolume: 0
-  tonicVolume: 0
-  vermouthVolume: 0
-  orangeJuiceVolume: 0
-  lemonJuiceVolume: 0
-  whiskeyVolume: 0
-  tequilaVolume: 0
-  rumVolume: 0
-  ginVolume: 0
-  beerVolume: 0
-  wineVolume: 0
-  brandyVolume: 0
-  vodkaVolume: 0
-  smokiness: 0
-  sweetness: 0
-  sourness: 0
-  bitterness: 0
-  spiciness: 0
-  alcoholVolume: 0
-  abv: 0
   myCustomer: {fileID: 0}
+  coasters: []
   drinkParts: []
   otherLiquid: {fileID: 0}
   otherLiquidMask: {fileID: 0}
@@ -44825,34 +43712,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hasIce: 0
   _glassType: 0
+  _myGlass: {fileID: 0}
   height: 0
   pourRate: 100
   _liquidSurface: {fileID: 0}
   totalVolume: 0
   myDrinkBase: 0
   myMixer: 0
-  coasters: []
-  sodaVolume: 0
-  tonicVolume: 0
-  vermouthVolume: 0
-  orangeJuiceVolume: 0
-  lemonJuiceVolume: 0
-  whiskeyVolume: 0
-  tequilaVolume: 0
-  rumVolume: 0
-  ginVolume: 0
-  beerVolume: 0
-  wineVolume: 0
-  brandyVolume: 0
-  vodkaVolume: 0
-  smokiness: 0
-  sweetness: 0
-  sourness: 0
-  bitterness: 0
-  spiciness: 0
-  alcoholVolume: 0
-  abv: 0
   myCustomer: {fileID: 0}
+  coasters: []
   drinkParts: []
   otherLiquid: {fileID: 0}
   otherLiquidMask: {fileID: 0}
@@ -44994,34 +43862,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hasIce: 0
   _glassType: 0
+  _myGlass: {fileID: 0}
   height: 0
   pourRate: 100
   _liquidSurface: {fileID: 0}
   totalVolume: 0
   myDrinkBase: 0
   myMixer: 0
-  coasters: []
-  sodaVolume: 0
-  tonicVolume: 0
-  vermouthVolume: 0
-  orangeJuiceVolume: 0
-  lemonJuiceVolume: 0
-  whiskeyVolume: 0
-  tequilaVolume: 0
-  rumVolume: 0
-  ginVolume: 0
-  beerVolume: 0
-  wineVolume: 0
-  brandyVolume: 0
-  vodkaVolume: 0
-  smokiness: 0
-  sweetness: 0
-  sourness: 0
-  bitterness: 0
-  spiciness: 0
-  alcoholVolume: 0
-  abv: 0
   myCustomer: {fileID: 0}
+  coasters: []
   drinkParts: []
   otherLiquid: {fileID: 0}
   otherLiquidMask: {fileID: 0}
@@ -45209,34 +44058,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hasIce: 0
   _glassType: 0
+  _myGlass: {fileID: 0}
   height: 0
   pourRate: 100
   _liquidSurface: {fileID: 0}
   totalVolume: 0
   myDrinkBase: 0
   myMixer: 0
-  coasters: []
-  sodaVolume: 0
-  tonicVolume: 0
-  vermouthVolume: 0
-  orangeJuiceVolume: 0
-  lemonJuiceVolume: 0
-  whiskeyVolume: 0
-  tequilaVolume: 0
-  rumVolume: 0
-  ginVolume: 0
-  beerVolume: 0
-  wineVolume: 0
-  brandyVolume: 0
-  vodkaVolume: 0
-  smokiness: 0
-  sweetness: 0
-  sourness: 0
-  bitterness: 0
-  spiciness: 0
-  alcoholVolume: 0
-  abv: 0
   myCustomer: {fileID: 0}
+  coasters: []
   drinkParts: []
   otherLiquid: {fileID: 0}
   otherLiquidMask: {fileID: 0}
@@ -45295,34 +44125,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hasIce: 0
   _glassType: 0
+  _myGlass: {fileID: 0}
   height: 0
   pourRate: 100
   _liquidSurface: {fileID: 0}
   totalVolume: 0
   myDrinkBase: 0
   myMixer: 0
-  coasters: []
-  sodaVolume: 0
-  tonicVolume: 0
-  vermouthVolume: 0
-  orangeJuiceVolume: 0
-  lemonJuiceVolume: 0
-  whiskeyVolume: 0
-  tequilaVolume: 0
-  rumVolume: 0
-  ginVolume: 0
-  beerVolume: 0
-  wineVolume: 0
-  brandyVolume: 0
-  vodkaVolume: 0
-  smokiness: 0
-  sweetness: 0
-  sourness: 0
-  bitterness: 0
-  spiciness: 0
-  alcoholVolume: 0
-  abv: 0
   myCustomer: {fileID: 0}
+  coasters: []
   drinkParts: []
   otherLiquid: {fileID: 0}
   otherLiquidMask: {fileID: 0}
@@ -45381,34 +44192,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hasIce: 0
   _glassType: 0
+  _myGlass: {fileID: 0}
   height: 0
   pourRate: 100
   _liquidSurface: {fileID: 0}
   totalVolume: 0
   myDrinkBase: 0
   myMixer: 0
-  coasters: []
-  sodaVolume: 0
-  tonicVolume: 0
-  vermouthVolume: 0
-  orangeJuiceVolume: 0
-  lemonJuiceVolume: 0
-  whiskeyVolume: 0
-  tequilaVolume: 0
-  rumVolume: 0
-  ginVolume: 0
-  beerVolume: 0
-  wineVolume: 0
-  brandyVolume: 0
-  vodkaVolume: 0
-  smokiness: 0
-  sweetness: 0
-  sourness: 0
-  bitterness: 0
-  spiciness: 0
-  alcoholVolume: 0
-  abv: 0
   myCustomer: {fileID: 0}
+  coasters: []
   drinkParts: []
   otherLiquid: {fileID: 0}
   otherLiquidMask: {fileID: 0}
@@ -45504,34 +44296,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hasIce: 0
   _glassType: 0
+  _myGlass: {fileID: 0}
   height: 0
   pourRate: 100
   _liquidSurface: {fileID: 0}
   totalVolume: 0
   myDrinkBase: 0
   myMixer: 0
-  coasters: []
-  sodaVolume: 0
-  tonicVolume: 0
-  vermouthVolume: 0
-  orangeJuiceVolume: 0
-  lemonJuiceVolume: 0
-  whiskeyVolume: 0
-  tequilaVolume: 0
-  rumVolume: 0
-  ginVolume: 0
-  beerVolume: 0
-  wineVolume: 0
-  brandyVolume: 0
-  vodkaVolume: 0
-  smokiness: 0
-  sweetness: 0
-  sourness: 0
-  bitterness: 0
-  spiciness: 0
-  alcoholVolume: 0
-  abv: 0
   myCustomer: {fileID: 0}
+  coasters: []
   drinkParts: []
   otherLiquid: {fileID: 0}
   otherLiquidMask: {fileID: 0}
@@ -45627,34 +44400,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hasIce: 0
   _glassType: 0
+  _myGlass: {fileID: 0}
   height: 0
   pourRate: 100
   _liquidSurface: {fileID: 0}
   totalVolume: 0
   myDrinkBase: 0
   myMixer: 0
-  coasters: []
-  sodaVolume: 0
-  tonicVolume: 0
-  vermouthVolume: 0
-  orangeJuiceVolume: 0
-  lemonJuiceVolume: 0
-  whiskeyVolume: 0
-  tequilaVolume: 0
-  rumVolume: 0
-  ginVolume: 0
-  beerVolume: 0
-  wineVolume: 0
-  brandyVolume: 0
-  vodkaVolume: 0
-  smokiness: 0
-  sweetness: 0
-  sourness: 0
-  bitterness: 0
-  spiciness: 0
-  alcoholVolume: 0
-  abv: 0
   myCustomer: {fileID: 0}
+  coasters: []
   drinkParts: []
   otherLiquid: {fileID: 0}
   otherLiquidMask: {fileID: 0}
@@ -45787,34 +44541,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hasIce: 0
   _glassType: 0
+  _myGlass: {fileID: 0}
   height: 0
   pourRate: 100
   _liquidSurface: {fileID: 0}
   totalVolume: 0
   myDrinkBase: 0
   myMixer: 0
-  coasters: []
-  sodaVolume: 0
-  tonicVolume: 0
-  vermouthVolume: 0
-  orangeJuiceVolume: 0
-  lemonJuiceVolume: 0
-  whiskeyVolume: 0
-  tequilaVolume: 0
-  rumVolume: 0
-  ginVolume: 0
-  beerVolume: 0
-  wineVolume: 0
-  brandyVolume: 0
-  vodkaVolume: 0
-  smokiness: 0
-  sweetness: 0
-  sourness: 0
-  bitterness: 0
-  spiciness: 0
-  alcoholVolume: 0
-  abv: 0
   myCustomer: {fileID: 0}
+  coasters: []
   drinkParts: []
   otherLiquid: {fileID: 0}
   otherLiquidMask: {fileID: 0}
@@ -46039,34 +44774,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hasIce: 0
   _glassType: 0
+  _myGlass: {fileID: 0}
   height: 0
   pourRate: 100
   _liquidSurface: {fileID: 0}
   totalVolume: 0
   myDrinkBase: 0
   myMixer: 0
-  coasters: []
-  sodaVolume: 0
-  tonicVolume: 0
-  vermouthVolume: 0
-  orangeJuiceVolume: 0
-  lemonJuiceVolume: 0
-  whiskeyVolume: 0
-  tequilaVolume: 0
-  rumVolume: 0
-  ginVolume: 0
-  beerVolume: 0
-  wineVolume: 0
-  brandyVolume: 0
-  vodkaVolume: 0
-  smokiness: 0
-  sweetness: 0
-  sourness: 0
-  bitterness: 0
-  spiciness: 0
-  alcoholVolume: 0
-  abv: 0
   myCustomer: {fileID: 0}
+  coasters: []
   drinkParts: []
   otherLiquid: {fileID: 0}
   otherLiquidMask: {fileID: 0}
@@ -46143,34 +44859,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hasIce: 0
   _glassType: 0
+  _myGlass: {fileID: 0}
   height: 0
   pourRate: 100
   _liquidSurface: {fileID: 0}
   totalVolume: 0
   myDrinkBase: 0
   myMixer: 0
-  coasters: []
-  sodaVolume: 0
-  tonicVolume: 0
-  vermouthVolume: 0
-  orangeJuiceVolume: 0
-  lemonJuiceVolume: 0
-  whiskeyVolume: 0
-  tequilaVolume: 0
-  rumVolume: 0
-  ginVolume: 0
-  beerVolume: 0
-  wineVolume: 0
-  brandyVolume: 0
-  vodkaVolume: 0
-  smokiness: 0
-  sweetness: 0
-  sourness: 0
-  bitterness: 0
-  spiciness: 0
-  alcoholVolume: 0
-  abv: 0
   myCustomer: {fileID: 0}
+  coasters: []
   drinkParts: []
   otherLiquid: {fileID: 0}
   otherLiquidMask: {fileID: 0}
@@ -46284,34 +44981,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hasIce: 0
   _glassType: 0
+  _myGlass: {fileID: 0}
   height: 0
   pourRate: 100
   _liquidSurface: {fileID: 0}
   totalVolume: 0
   myDrinkBase: 0
   myMixer: 0
-  coasters: []
-  sodaVolume: 0
-  tonicVolume: 0
-  vermouthVolume: 0
-  orangeJuiceVolume: 0
-  lemonJuiceVolume: 0
-  whiskeyVolume: 0
-  tequilaVolume: 0
-  rumVolume: 0
-  ginVolume: 0
-  beerVolume: 0
-  wineVolume: 0
-  brandyVolume: 0
-  vodkaVolume: 0
-  smokiness: 0
-  sweetness: 0
-  sourness: 0
-  bitterness: 0
-  spiciness: 0
-  alcoholVolume: 0
-  abv: 0
   myCustomer: {fileID: 0}
+  coasters: []
   drinkParts: []
   otherLiquid: {fileID: 0}
   otherLiquidMask: {fileID: 0}
@@ -46370,34 +45048,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hasIce: 0
   _glassType: 0
+  _myGlass: {fileID: 0}
   height: 0
   pourRate: 100
   _liquidSurface: {fileID: 0}
   totalVolume: 0
   myDrinkBase: 0
   myMixer: 0
-  coasters: []
-  sodaVolume: 0
-  tonicVolume: 0
-  vermouthVolume: 0
-  orangeJuiceVolume: 0
-  lemonJuiceVolume: 0
-  whiskeyVolume: 0
-  tequilaVolume: 0
-  rumVolume: 0
-  ginVolume: 0
-  beerVolume: 0
-  wineVolume: 0
-  brandyVolume: 0
-  vodkaVolume: 0
-  smokiness: 0
-  sweetness: 0
-  sourness: 0
-  bitterness: 0
-  spiciness: 0
-  alcoholVolume: 0
-  abv: 0
   myCustomer: {fileID: 0}
+  coasters: []
   drinkParts: []
   otherLiquid: {fileID: 0}
   otherLiquidMask: {fileID: 0}
@@ -46419,34 +45078,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hasIce: 0
   _glassType: 0
+  _myGlass: {fileID: 0}
   height: 0
   pourRate: 100
   _liquidSurface: {fileID: 0}
   totalVolume: 0
   myDrinkBase: 0
   myMixer: 0
-  coasters: []
-  sodaVolume: 0
-  tonicVolume: 0
-  vermouthVolume: 0
-  orangeJuiceVolume: 0
-  lemonJuiceVolume: 0
-  whiskeyVolume: 0
-  tequilaVolume: 0
-  rumVolume: 0
-  ginVolume: 0
-  beerVolume: 0
-  wineVolume: 0
-  brandyVolume: 0
-  vodkaVolume: 0
-  smokiness: 0
-  sweetness: 0
-  sourness: 0
-  bitterness: 0
-  spiciness: 0
-  alcoholVolume: 0
-  abv: 0
   myCustomer: {fileID: 0}
+  coasters: []
   drinkParts: []
   otherLiquid: {fileID: 0}
   otherLiquidMask: {fileID: 0}
@@ -46468,34 +45108,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hasIce: 0
   _glassType: 0
+  _myGlass: {fileID: 0}
   height: 0
   pourRate: 100
   _liquidSurface: {fileID: 0}
   totalVolume: 0
   myDrinkBase: 0
   myMixer: 0
-  coasters: []
-  sodaVolume: 0
-  tonicVolume: 0
-  vermouthVolume: 0
-  orangeJuiceVolume: 0
-  lemonJuiceVolume: 0
-  whiskeyVolume: 0
-  tequilaVolume: 0
-  rumVolume: 0
-  ginVolume: 0
-  beerVolume: 0
-  wineVolume: 0
-  brandyVolume: 0
-  vodkaVolume: 0
-  smokiness: 0
-  sweetness: 0
-  sourness: 0
-  bitterness: 0
-  spiciness: 0
-  alcoholVolume: 0
-  abv: 0
   myCustomer: {fileID: 0}
+  coasters: []
   drinkParts: []
   otherLiquid: {fileID: 0}
   otherLiquidMask: {fileID: 0}
@@ -46591,34 +45212,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hasIce: 0
   _glassType: 0
+  _myGlass: {fileID: 0}
   height: 0
   pourRate: 100
   _liquidSurface: {fileID: 0}
   totalVolume: 0
   myDrinkBase: 0
   myMixer: 0
-  coasters: []
-  sodaVolume: 0
-  tonicVolume: 0
-  vermouthVolume: 0
-  orangeJuiceVolume: 0
-  lemonJuiceVolume: 0
-  whiskeyVolume: 0
-  tequilaVolume: 0
-  rumVolume: 0
-  ginVolume: 0
-  beerVolume: 0
-  wineVolume: 0
-  brandyVolume: 0
-  vodkaVolume: 0
-  smokiness: 0
-  sweetness: 0
-  sourness: 0
-  bitterness: 0
-  spiciness: 0
-  alcoholVolume: 0
-  abv: 0
   myCustomer: {fileID: 0}
+  coasters: []
   drinkParts: []
   otherLiquid: {fileID: 0}
   otherLiquidMask: {fileID: 0}
@@ -46658,34 +45260,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hasIce: 0
   _glassType: 0
+  _myGlass: {fileID: 0}
   height: 0
   pourRate: 100
   _liquidSurface: {fileID: 0}
   totalVolume: 0
   myDrinkBase: 0
   myMixer: 0
-  coasters: []
-  sodaVolume: 0
-  tonicVolume: 0
-  vermouthVolume: 0
-  orangeJuiceVolume: 0
-  lemonJuiceVolume: 0
-  whiskeyVolume: 0
-  tequilaVolume: 0
-  rumVolume: 0
-  ginVolume: 0
-  beerVolume: 0
-  wineVolume: 0
-  brandyVolume: 0
-  vodkaVolume: 0
-  smokiness: 0
-  sweetness: 0
-  sourness: 0
-  bitterness: 0
-  spiciness: 0
-  alcoholVolume: 0
-  abv: 0
   myCustomer: {fileID: 0}
+  coasters: []
   drinkParts: []
   otherLiquid: {fileID: 0}
   otherLiquidMask: {fileID: 0}
@@ -46707,34 +45290,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hasIce: 0
   _glassType: 0
+  _myGlass: {fileID: 0}
   height: 0
   pourRate: 100
   _liquidSurface: {fileID: 0}
   totalVolume: 0
   myDrinkBase: 0
   myMixer: 0
-  coasters: []
-  sodaVolume: 0
-  tonicVolume: 0
-  vermouthVolume: 0
-  orangeJuiceVolume: 0
-  lemonJuiceVolume: 0
-  whiskeyVolume: 0
-  tequilaVolume: 0
-  rumVolume: 0
-  ginVolume: 0
-  beerVolume: 0
-  wineVolume: 0
-  brandyVolume: 0
-  vodkaVolume: 0
-  smokiness: 0
-  sweetness: 0
-  sourness: 0
-  bitterness: 0
-  spiciness: 0
-  alcoholVolume: 0
-  abv: 0
   myCustomer: {fileID: 0}
+  coasters: []
   drinkParts: []
   otherLiquid: {fileID: 0}
   otherLiquidMask: {fileID: 0}
@@ -46821,34 +45385,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hasIce: 0
   _glassType: 0
+  _myGlass: {fileID: 0}
   height: 0
   pourRate: 100
   _liquidSurface: {fileID: 0}
   totalVolume: 0
   myDrinkBase: 0
   myMixer: 0
-  coasters: []
-  sodaVolume: 0
-  tonicVolume: 0
-  vermouthVolume: 0
-  orangeJuiceVolume: 0
-  lemonJuiceVolume: 0
-  whiskeyVolume: 0
-  tequilaVolume: 0
-  rumVolume: 0
-  ginVolume: 0
-  beerVolume: 0
-  wineVolume: 0
-  brandyVolume: 0
-  vodkaVolume: 0
-  smokiness: 0
-  sweetness: 0
-  sourness: 0
-  bitterness: 0
-  spiciness: 0
-  alcoholVolume: 0
-  abv: 0
   myCustomer: {fileID: 0}
+  coasters: []
   drinkParts: []
   otherLiquid: {fileID: 0}
   otherLiquidMask: {fileID: 0}
@@ -46870,34 +45415,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hasIce: 0
   _glassType: 0
+  _myGlass: {fileID: 0}
   height: 0
   pourRate: 100
   _liquidSurface: {fileID: 0}
   totalVolume: 0
   myDrinkBase: 0
   myMixer: 0
-  coasters: []
-  sodaVolume: 0
-  tonicVolume: 0
-  vermouthVolume: 0
-  orangeJuiceVolume: 0
-  lemonJuiceVolume: 0
-  whiskeyVolume: 0
-  tequilaVolume: 0
-  rumVolume: 0
-  ginVolume: 0
-  beerVolume: 0
-  wineVolume: 0
-  brandyVolume: 0
-  vodkaVolume: 0
-  smokiness: 0
-  sweetness: 0
-  sourness: 0
-  bitterness: 0
-  spiciness: 0
-  alcoholVolume: 0
-  abv: 0
   myCustomer: {fileID: 0}
+  coasters: []
   drinkParts: []
   otherLiquid: {fileID: 0}
   otherLiquidMask: {fileID: 0}
@@ -46919,83 +45445,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hasIce: 0
   _glassType: 0
+  _myGlass: {fileID: 0}
   height: 0
   pourRate: 100
   _liquidSurface: {fileID: 0}
   totalVolume: 0
   myDrinkBase: 0
   myMixer: 0
-  coasters: []
-  sodaVolume: 0
-  tonicVolume: 0
-  vermouthVolume: 0
-  orangeJuiceVolume: 0
-  lemonJuiceVolume: 0
-  whiskeyVolume: 0
-  tequilaVolume: 0
-  rumVolume: 0
-  ginVolume: 0
-  beerVolume: 0
-  wineVolume: 0
-  brandyVolume: 0
-  vodkaVolume: 0
-  smokiness: 0
-  sweetness: 0
-  sourness: 0
-  bitterness: 0
-  spiciness: 0
-  alcoholVolume: 0
-  abv: 0
   myCustomer: {fileID: 0}
-  drinkParts: []
-  otherLiquid: {fileID: 0}
-  otherLiquidMask: {fileID: 0}
-  myMask: {fileID: 0}
-  isBeingPoured: 0
-  isEvaluated: 0
-  waterPillar: {fileID: 0}
-  waterSurface: {fileID: 0}
---- !u!114 &114585783916711892
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1845769376422150}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8a433c2afe0a76e4bb72e41952f91ec8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  hasIce: 0
-  _glassType: 0
-  height: 0
-  pourRate: 0.25
-  _liquidSurface: {fileID: 1984462038768662}
-  totalVolume: 0
-  myDrinkBase: 0
-  myMixer: 0
   coasters: []
-  sodaVolume: 0
-  tonicVolume: 0
-  vermouthVolume: 0
-  orangeJuiceVolume: 0
-  lemonJuiceVolume: 0
-  whiskeyVolume: 0
-  tequilaVolume: 0
-  rumVolume: 0
-  ginVolume: 0
-  beerVolume: 0
-  wineVolume: 0
-  brandyVolume: 0
-  vodkaVolume: 0
-  smokiness: 0
-  sweetness: 0
-  sourness: 0
-  bitterness: 0
-  spiciness: 0
-  alcoholVolume: 0
-  abv: 0
-  myCustomer: {fileID: 0}
   drinkParts: []
   otherLiquid: {fileID: 0}
   otherLiquidMask: {fileID: 0}
@@ -47109,34 +45567,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hasIce: 0
   _glassType: 0
+  _myGlass: {fileID: 0}
   height: 0
   pourRate: 100
   _liquidSurface: {fileID: 0}
   totalVolume: 0
   myDrinkBase: 0
   myMixer: 0
-  coasters: []
-  sodaVolume: 0
-  tonicVolume: 0
-  vermouthVolume: 0
-  orangeJuiceVolume: 0
-  lemonJuiceVolume: 0
-  whiskeyVolume: 0
-  tequilaVolume: 0
-  rumVolume: 0
-  ginVolume: 0
-  beerVolume: 0
-  wineVolume: 0
-  brandyVolume: 0
-  vodkaVolume: 0
-  smokiness: 0
-  sweetness: 0
-  sourness: 0
-  bitterness: 0
-  spiciness: 0
-  alcoholVolume: 0
-  abv: 0
   myCustomer: {fileID: 0}
+  coasters: []
   drinkParts: []
   otherLiquid: {fileID: 0}
   otherLiquidMask: {fileID: 0}
@@ -47304,13 +45743,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ec1663887ca1004a9b99df936493335, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myCustomer: {fileID: 0}
-  myDropzone: {fileID: 0}
-  isDrinkHere: 0
-  currentCustomer: 8
-  myDrinkGlass: {fileID: 0}
+  MyCustomer: {fileID: 0}
+  _myDetector: {fileID: 0}
+  IsDrinkHere: 0
+  CurrentCustomer: 8
+  MyPickupable: {fileID: 0}
   ServedTargetTransform: {fileID: 0}
-  unservedPos: {x: 0, y: 0, z: 0}
+  UnservedPos: {x: 0, y: 0, z: 0}
 --- !u!114 &114612432989769300
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -47324,34 +45763,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hasIce: 0
   _glassType: 0
+  _myGlass: {fileID: 0}
   height: 0
   pourRate: 100
   _liquidSurface: {fileID: 0}
   totalVolume: 0
   myDrinkBase: 0
   myMixer: 0
-  coasters: []
-  sodaVolume: 0
-  tonicVolume: 0
-  vermouthVolume: 0
-  orangeJuiceVolume: 0
-  lemonJuiceVolume: 0
-  whiskeyVolume: 0
-  tequilaVolume: 0
-  rumVolume: 0
-  ginVolume: 0
-  beerVolume: 0
-  wineVolume: 0
-  brandyVolume: 0
-  vodkaVolume: 0
-  smokiness: 0
-  sweetness: 0
-  sourness: 0
-  bitterness: 0
-  spiciness: 0
-  alcoholVolume: 0
-  abv: 0
   myCustomer: {fileID: 0}
+  coasters: []
   drinkParts: []
   otherLiquid: {fileID: 0}
   otherLiquidMask: {fileID: 0}
@@ -47521,34 +45941,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hasIce: 0
   _glassType: 0
+  _myGlass: {fileID: 0}
   height: 0
   pourRate: 100
   _liquidSurface: {fileID: 0}
   totalVolume: 0
   myDrinkBase: 0
   myMixer: 0
-  coasters: []
-  sodaVolume: 0
-  tonicVolume: 0
-  vermouthVolume: 0
-  orangeJuiceVolume: 0
-  lemonJuiceVolume: 0
-  whiskeyVolume: 0
-  tequilaVolume: 0
-  rumVolume: 0
-  ginVolume: 0
-  beerVolume: 0
-  wineVolume: 0
-  brandyVolume: 0
-  vodkaVolume: 0
-  smokiness: 0
-  sweetness: 0
-  sourness: 0
-  bitterness: 0
-  spiciness: 0
-  alcoholVolume: 0
-  abv: 0
   myCustomer: {fileID: 0}
+  coasters: []
   drinkParts: []
   otherLiquid: {fileID: 0}
   otherLiquidMask: {fileID: 0}
@@ -47699,34 +46100,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hasIce: 0
   _glassType: 0
+  _myGlass: {fileID: 0}
   height: 0
   pourRate: 100
   _liquidSurface: {fileID: 0}
   totalVolume: 0
   myDrinkBase: 0
   myMixer: 0
-  coasters: []
-  sodaVolume: 0
-  tonicVolume: 0
-  vermouthVolume: 0
-  orangeJuiceVolume: 0
-  lemonJuiceVolume: 0
-  whiskeyVolume: 0
-  tequilaVolume: 0
-  rumVolume: 0
-  ginVolume: 0
-  beerVolume: 0
-  wineVolume: 0
-  brandyVolume: 0
-  vodkaVolume: 0
-  smokiness: 0
-  sweetness: 0
-  sourness: 0
-  bitterness: 0
-  spiciness: 0
-  alcoholVolume: 0
-  abv: 0
   myCustomer: {fileID: 0}
+  coasters: []
   drinkParts: []
   otherLiquid: {fileID: 0}
   otherLiquidMask: {fileID: 0}
@@ -47859,34 +46241,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hasIce: 0
   _glassType: 0
+  _myGlass: {fileID: 0}
   height: 0
   pourRate: 100
   _liquidSurface: {fileID: 0}
   totalVolume: 0
   myDrinkBase: 0
   myMixer: 0
-  coasters: []
-  sodaVolume: 0
-  tonicVolume: 0
-  vermouthVolume: 0
-  orangeJuiceVolume: 0
-  lemonJuiceVolume: 0
-  whiskeyVolume: 0
-  tequilaVolume: 0
-  rumVolume: 0
-  ginVolume: 0
-  beerVolume: 0
-  wineVolume: 0
-  brandyVolume: 0
-  vodkaVolume: 0
-  smokiness: 0
-  sweetness: 0
-  sourness: 0
-  bitterness: 0
-  spiciness: 0
-  alcoholVolume: 0
-  abv: 0
   myCustomer: {fileID: 0}
+  coasters: []
   drinkParts: []
   otherLiquid: {fileID: 0}
   otherLiquidMask: {fileID: 0}
@@ -48269,34 +46632,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hasIce: 0
   _glassType: 0
+  _myGlass: {fileID: 0}
   height: 0
   pourRate: 100
   _liquidSurface: {fileID: 0}
   totalVolume: 0
   myDrinkBase: 0
   myMixer: 0
-  coasters: []
-  sodaVolume: 0
-  tonicVolume: 0
-  vermouthVolume: 0
-  orangeJuiceVolume: 0
-  lemonJuiceVolume: 0
-  whiskeyVolume: 0
-  tequilaVolume: 0
-  rumVolume: 0
-  ginVolume: 0
-  beerVolume: 0
-  wineVolume: 0
-  brandyVolume: 0
-  vodkaVolume: 0
-  smokiness: 0
-  sweetness: 0
-  sourness: 0
-  bitterness: 0
-  spiciness: 0
-  alcoholVolume: 0
-  abv: 0
   myCustomer: {fileID: 0}
+  coasters: []
   drinkParts: []
   otherLiquid: {fileID: 0}
   otherLiquidMask: {fileID: 0}
@@ -48355,34 +46699,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hasIce: 0
   _glassType: 0
+  _myGlass: {fileID: 0}
   height: 0
   pourRate: 100
   _liquidSurface: {fileID: 0}
   totalVolume: 0
   myDrinkBase: 0
   myMixer: 0
-  coasters: []
-  sodaVolume: 0
-  tonicVolume: 0
-  vermouthVolume: 0
-  orangeJuiceVolume: 0
-  lemonJuiceVolume: 0
-  whiskeyVolume: 0
-  tequilaVolume: 0
-  rumVolume: 0
-  ginVolume: 0
-  beerVolume: 0
-  wineVolume: 0
-  brandyVolume: 0
-  vodkaVolume: 0
-  smokiness: 0
-  sweetness: 0
-  sourness: 0
-  bitterness: 0
-  spiciness: 0
-  alcoholVolume: 0
-  abv: 0
   myCustomer: {fileID: 0}
+  coasters: []
   drinkParts: []
   otherLiquid: {fileID: 0}
   otherLiquidMask: {fileID: 0}
@@ -48478,34 +46803,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hasIce: 0
   _glassType: 0
+  _myGlass: {fileID: 0}
   height: 0
   pourRate: 100
   _liquidSurface: {fileID: 0}
   totalVolume: 0
   myDrinkBase: 0
   myMixer: 0
-  coasters: []
-  sodaVolume: 0
-  tonicVolume: 0
-  vermouthVolume: 0
-  orangeJuiceVolume: 0
-  lemonJuiceVolume: 0
-  whiskeyVolume: 0
-  tequilaVolume: 0
-  rumVolume: 0
-  ginVolume: 0
-  beerVolume: 0
-  wineVolume: 0
-  brandyVolume: 0
-  vodkaVolume: 0
-  smokiness: 0
-  sweetness: 0
-  sourness: 0
-  bitterness: 0
-  spiciness: 0
-  alcoholVolume: 0
-  abv: 0
   myCustomer: {fileID: 0}
+  coasters: []
   drinkParts: []
   otherLiquid: {fileID: 0}
   otherLiquidMask: {fileID: 0}
@@ -48527,34 +46833,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hasIce: 0
   _glassType: 0
+  _myGlass: {fileID: 0}
   height: 0
   pourRate: 100
   _liquidSurface: {fileID: 0}
   totalVolume: 0
   myDrinkBase: 0
   myMixer: 0
-  coasters: []
-  sodaVolume: 0
-  tonicVolume: 0
-  vermouthVolume: 0
-  orangeJuiceVolume: 0
-  lemonJuiceVolume: 0
-  whiskeyVolume: 0
-  tequilaVolume: 0
-  rumVolume: 0
-  ginVolume: 0
-  beerVolume: 0
-  wineVolume: 0
-  brandyVolume: 0
-  vodkaVolume: 0
-  smokiness: 0
-  sweetness: 0
-  sourness: 0
-  bitterness: 0
-  spiciness: 0
-  alcoholVolume: 0
-  abv: 0
   myCustomer: {fileID: 0}
+  coasters: []
   drinkParts: []
   otherLiquid: {fileID: 0}
   otherLiquidMask: {fileID: 0}
@@ -48594,34 +46881,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hasIce: 0
   _glassType: 0
+  _myGlass: {fileID: 0}
   height: 0
   pourRate: 100
   _liquidSurface: {fileID: 0}
   totalVolume: 0
   myDrinkBase: 0
   myMixer: 0
-  coasters: []
-  sodaVolume: 0
-  tonicVolume: 0
-  vermouthVolume: 0
-  orangeJuiceVolume: 0
-  lemonJuiceVolume: 0
-  whiskeyVolume: 0
-  tequilaVolume: 0
-  rumVolume: 0
-  ginVolume: 0
-  beerVolume: 0
-  wineVolume: 0
-  brandyVolume: 0
-  vodkaVolume: 0
-  smokiness: 0
-  sweetness: 0
-  sourness: 0
-  bitterness: 0
-  spiciness: 0
-  alcoholVolume: 0
-  abv: 0
   myCustomer: {fileID: 0}
+  coasters: []
   drinkParts: []
   otherLiquid: {fileID: 0}
   otherLiquidMask: {fileID: 0}
@@ -48643,34 +46911,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hasIce: 0
   _glassType: 0
+  _myGlass: {fileID: 0}
   height: 0
   pourRate: 100
   _liquidSurface: {fileID: 0}
   totalVolume: 0
   myDrinkBase: 0
   myMixer: 0
-  coasters: []
-  sodaVolume: 0
-  tonicVolume: 0
-  vermouthVolume: 0
-  orangeJuiceVolume: 0
-  lemonJuiceVolume: 0
-  whiskeyVolume: 0
-  tequilaVolume: 0
-  rumVolume: 0
-  ginVolume: 0
-  beerVolume: 0
-  wineVolume: 0
-  brandyVolume: 0
-  vodkaVolume: 0
-  smokiness: 0
-  sweetness: 0
-  sourness: 0
-  bitterness: 0
-  spiciness: 0
-  alcoholVolume: 0
-  abv: 0
   myCustomer: {fileID: 0}
+  coasters: []
   drinkParts: []
   otherLiquid: {fileID: 0}
   otherLiquidMask: {fileID: 0}
@@ -48729,34 +46978,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hasIce: 0
   _glassType: 0
+  _myGlass: {fileID: 0}
   height: 0
   pourRate: 100
   _liquidSurface: {fileID: 0}
   totalVolume: 0
   myDrinkBase: 0
   myMixer: 0
-  coasters: []
-  sodaVolume: 0
-  tonicVolume: 0
-  vermouthVolume: 0
-  orangeJuiceVolume: 0
-  lemonJuiceVolume: 0
-  whiskeyVolume: 0
-  tequilaVolume: 0
-  rumVolume: 0
-  ginVolume: 0
-  beerVolume: 0
-  wineVolume: 0
-  brandyVolume: 0
-  vodkaVolume: 0
-  smokiness: 0
-  sweetness: 0
-  sourness: 0
-  bitterness: 0
-  spiciness: 0
-  alcoholVolume: 0
-  abv: 0
   myCustomer: {fileID: 0}
+  coasters: []
   drinkParts: []
   otherLiquid: {fileID: 0}
   otherLiquidMask: {fileID: 0}
@@ -48783,6 +47013,17 @@ MonoBehaviour:
   myCoaster: {fileID: 0}
   objectsInMe: []
   _distance: 0
+--- !u!114 &114724358464764740
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1275348096291120}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: adba086fdb5ab2b4d829d3b61bee6ecd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114724574896592266
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -49028,13 +47269,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ec1663887ca1004a9b99df936493335, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myCustomer: {fileID: 0}
-  myDropzone: {fileID: 0}
-  isDrinkHere: 0
-  currentCustomer: 2
-  myDrinkGlass: {fileID: 0}
+  MyCustomer: {fileID: 0}
+  _myDetector: {fileID: 0}
+  IsDrinkHere: 0
+  CurrentCustomer: 0
+  MyPickupable: {fileID: 0}
   ServedTargetTransform: {fileID: 0}
-  unservedPos: {x: 0, y: 0, z: 0}
+  UnservedPos: {x: 0, y: 0, z: 0}
 --- !u!114 &114745405518901062
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -49159,34 +47400,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hasIce: 0
   _glassType: 0
+  _myGlass: {fileID: 0}
   height: 0
   pourRate: 100
   _liquidSurface: {fileID: 0}
   totalVolume: 0
   myDrinkBase: 0
   myMixer: 0
-  coasters: []
-  sodaVolume: 0
-  tonicVolume: 0
-  vermouthVolume: 0
-  orangeJuiceVolume: 0
-  lemonJuiceVolume: 0
-  whiskeyVolume: 0
-  tequilaVolume: 0
-  rumVolume: 0
-  ginVolume: 0
-  beerVolume: 0
-  wineVolume: 0
-  brandyVolume: 0
-  vodkaVolume: 0
-  smokiness: 0
-  sweetness: 0
-  sourness: 0
-  bitterness: 0
-  spiciness: 0
-  alcoholVolume: 0
-  abv: 0
   myCustomer: {fileID: 0}
+  coasters: []
   drinkParts: []
   otherLiquid: {fileID: 0}
   otherLiquidMask: {fileID: 0}
@@ -49226,34 +47448,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hasIce: 0
   _glassType: 0
+  _myGlass: {fileID: 0}
   height: 0
   pourRate: 100
   _liquidSurface: {fileID: 0}
   totalVolume: 0
   myDrinkBase: 0
   myMixer: 0
-  coasters: []
-  sodaVolume: 0
-  tonicVolume: 0
-  vermouthVolume: 0
-  orangeJuiceVolume: 0
-  lemonJuiceVolume: 0
-  whiskeyVolume: 0
-  tequilaVolume: 0
-  rumVolume: 0
-  ginVolume: 0
-  beerVolume: 0
-  wineVolume: 0
-  brandyVolume: 0
-  vodkaVolume: 0
-  smokiness: 0
-  sweetness: 0
-  sourness: 0
-  bitterness: 0
-  spiciness: 0
-  alcoholVolume: 0
-  abv: 0
   myCustomer: {fileID: 0}
+  coasters: []
   drinkParts: []
   otherLiquid: {fileID: 0}
   otherLiquidMask: {fileID: 0}
@@ -49330,34 +47533,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hasIce: 0
   _glassType: 0
+  _myGlass: {fileID: 0}
   height: 0
   pourRate: 100
   _liquidSurface: {fileID: 0}
   totalVolume: 0
   myDrinkBase: 0
   myMixer: 0
-  coasters: []
-  sodaVolume: 0
-  tonicVolume: 0
-  vermouthVolume: 0
-  orangeJuiceVolume: 0
-  lemonJuiceVolume: 0
-  whiskeyVolume: 0
-  tequilaVolume: 0
-  rumVolume: 0
-  ginVolume: 0
-  beerVolume: 0
-  wineVolume: 0
-  brandyVolume: 0
-  vodkaVolume: 0
-  smokiness: 0
-  sweetness: 0
-  sourness: 0
-  bitterness: 0
-  spiciness: 0
-  alcoholVolume: 0
-  abv: 0
   myCustomer: {fileID: 0}
+  coasters: []
   drinkParts: []
   otherLiquid: {fileID: 0}
   otherLiquidMask: {fileID: 0}
@@ -49453,34 +47637,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hasIce: 0
   _glassType: 0
+  _myGlass: {fileID: 0}
   height: 0
   pourRate: 100
   _liquidSurface: {fileID: 0}
   totalVolume: 0
   myDrinkBase: 0
   myMixer: 0
-  coasters: []
-  sodaVolume: 0
-  tonicVolume: 0
-  vermouthVolume: 0
-  orangeJuiceVolume: 0
-  lemonJuiceVolume: 0
-  whiskeyVolume: 0
-  tequilaVolume: 0
-  rumVolume: 0
-  ginVolume: 0
-  beerVolume: 0
-  wineVolume: 0
-  brandyVolume: 0
-  vodkaVolume: 0
-  smokiness: 0
-  sweetness: 0
-  sourness: 0
-  bitterness: 0
-  spiciness: 0
-  alcoholVolume: 0
-  abv: 0
   myCustomer: {fileID: 0}
+  coasters: []
   drinkParts: []
   otherLiquid: {fileID: 0}
   otherLiquidMask: {fileID: 0}
@@ -49598,25 +47763,6 @@ MonoBehaviour:
   liquidSurfaceChild: {fileID: 0}
   leftHandPourPos: {x: -0.14, y: -0.5, z: 1.75}
   rightHandPourPos: {x: 0.14, y: -0.5, z: 1.75}
---- !u!114 &114789743492647660
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1845769376422150}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b45aae53d3162f648b8a57b892a3776a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ReferenceSurface: {fileID: 4683272108598148}
-  waterSurface: {fileID: 114294846241711540}
-  myMaterial: {fileID: 2100000, guid: 5f42c214d58f5469b93c7a1fc0474fa1, type: 2}
-  myColor: {x: 1, y: 1, z: 1, w: 1}
-  _r: 0
-  _g: 0
-  _b: 0
-  _a: 0
 --- !u!114 &114794530593459208
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -49778,34 +47924,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hasIce: 0
   _glassType: 0
+  _myGlass: {fileID: 0}
   height: 0
   pourRate: 100
   _liquidSurface: {fileID: 0}
   totalVolume: 0
   myDrinkBase: 0
   myMixer: 0
-  coasters: []
-  sodaVolume: 0
-  tonicVolume: 0
-  vermouthVolume: 0
-  orangeJuiceVolume: 0
-  lemonJuiceVolume: 0
-  whiskeyVolume: 0
-  tequilaVolume: 0
-  rumVolume: 0
-  ginVolume: 0
-  beerVolume: 0
-  wineVolume: 0
-  brandyVolume: 0
-  vodkaVolume: 0
-  smokiness: 0
-  sweetness: 0
-  sourness: 0
-  bitterness: 0
-  spiciness: 0
-  alcoholVolume: 0
-  abv: 0
   myCustomer: {fileID: 0}
+  coasters: []
   drinkParts: []
   otherLiquid: {fileID: 0}
   otherLiquidMask: {fileID: 0}
@@ -50085,34 +48212,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hasIce: 0
   _glassType: 0
+  _myGlass: {fileID: 0}
   height: 0
   pourRate: 100
   _liquidSurface: {fileID: 0}
   totalVolume: 0
   myDrinkBase: 0
   myMixer: 0
-  coasters: []
-  sodaVolume: 0
-  tonicVolume: 0
-  vermouthVolume: 0
-  orangeJuiceVolume: 0
-  lemonJuiceVolume: 0
-  whiskeyVolume: 0
-  tequilaVolume: 0
-  rumVolume: 0
-  ginVolume: 0
-  beerVolume: 0
-  wineVolume: 0
-  brandyVolume: 0
-  vodkaVolume: 0
-  smokiness: 0
-  sweetness: 0
-  sourness: 0
-  bitterness: 0
-  spiciness: 0
-  alcoholVolume: 0
-  abv: 0
   myCustomer: {fileID: 0}
+  coasters: []
   drinkParts: []
   otherLiquid: {fileID: 0}
   otherLiquidMask: {fileID: 0}
@@ -50189,34 +48297,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hasIce: 0
   _glassType: 0
+  _myGlass: {fileID: 0}
   height: 0
   pourRate: 100
   _liquidSurface: {fileID: 0}
   totalVolume: 0
   myDrinkBase: 0
   myMixer: 0
-  coasters: []
-  sodaVolume: 0
-  tonicVolume: 0
-  vermouthVolume: 0
-  orangeJuiceVolume: 0
-  lemonJuiceVolume: 0
-  whiskeyVolume: 0
-  tequilaVolume: 0
-  rumVolume: 0
-  ginVolume: 0
-  beerVolume: 0
-  wineVolume: 0
-  brandyVolume: 0
-  vodkaVolume: 0
-  smokiness: 0
-  sweetness: 0
-  sourness: 0
-  bitterness: 0
-  spiciness: 0
-  alcoholVolume: 0
-  abv: 0
   myCustomer: {fileID: 0}
+  coasters: []
   drinkParts: []
   otherLiquid: {fileID: 0}
   otherLiquidMask: {fileID: 0}
@@ -50365,13 +48454,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ec1663887ca1004a9b99df936493335, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myCustomer: {fileID: 0}
-  myDropzone: {fileID: 0}
-  isDrinkHere: 0
-  currentCustomer: 2
-  myDrinkGlass: {fileID: 0}
+  MyCustomer: {fileID: 0}
+  _myDetector: {fileID: 0}
+  IsDrinkHere: 0
+  CurrentCustomer: 2
+  MyPickupable: {fileID: 0}
   ServedTargetTransform: {fileID: 4405680572985040}
-  unservedPos: {x: 0, y: 0, z: 0}
+  UnservedPos: {x: 0, y: 0, z: 0}
 --- !u!114 &114857302405143700
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -50459,34 +48548,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hasIce: 0
   _glassType: 0
+  _myGlass: {fileID: 0}
   height: 0
   pourRate: 1
   _liquidSurface: {fileID: 0}
   totalVolume: 0
   myDrinkBase: 0
   myMixer: 0
-  coasters: []
-  sodaVolume: 0
-  tonicVolume: 0
-  vermouthVolume: 0
-  orangeJuiceVolume: 0
-  lemonJuiceVolume: 0
-  whiskeyVolume: 0
-  tequilaVolume: 0
-  rumVolume: 0
-  ginVolume: 0
-  beerVolume: 0
-  wineVolume: 0
-  brandyVolume: 0
-  vodkaVolume: 0
-  smokiness: 0
-  sweetness: 0
-  sourness: 0
-  bitterness: 0
-  spiciness: 0
-  alcoholVolume: 0
-  abv: 0
   myCustomer: {fileID: 0}
+  coasters: []
   drinkParts: []
   otherLiquid: {fileID: 0}
   otherLiquidMask: {fileID: 0}
@@ -50637,34 +48707,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hasIce: 0
   _glassType: 0
+  _myGlass: {fileID: 0}
   height: 0
   pourRate: 100
   _liquidSurface: {fileID: 0}
   totalVolume: 0
   myDrinkBase: 0
   myMixer: 0
-  coasters: []
-  sodaVolume: 0
-  tonicVolume: 0
-  vermouthVolume: 0
-  orangeJuiceVolume: 0
-  lemonJuiceVolume: 0
-  whiskeyVolume: 0
-  tequilaVolume: 0
-  rumVolume: 0
-  ginVolume: 0
-  beerVolume: 0
-  wineVolume: 0
-  brandyVolume: 0
-  vodkaVolume: 0
-  smokiness: 0
-  sweetness: 0
-  sourness: 0
-  bitterness: 0
-  spiciness: 0
-  alcoholVolume: 0
-  abv: 0
   myCustomer: {fileID: 0}
+  coasters: []
   drinkParts: []
   otherLiquid: {fileID: 0}
   otherLiquidMask: {fileID: 0}
@@ -50797,34 +48848,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hasIce: 0
   _glassType: 0
+  _myGlass: {fileID: 0}
   height: 0
   pourRate: 100
   _liquidSurface: {fileID: 0}
   totalVolume: 0
   myDrinkBase: 0
   myMixer: 0
-  coasters: []
-  sodaVolume: 0
-  tonicVolume: 0
-  vermouthVolume: 0
-  orangeJuiceVolume: 0
-  lemonJuiceVolume: 0
-  whiskeyVolume: 0
-  tequilaVolume: 0
-  rumVolume: 0
-  ginVolume: 0
-  beerVolume: 0
-  wineVolume: 0
-  brandyVolume: 0
-  vodkaVolume: 0
-  smokiness: 0
-  sweetness: 0
-  sourness: 0
-  bitterness: 0
-  spiciness: 0
-  alcoholVolume: 0
-  abv: 0
   myCustomer: {fileID: 0}
+  coasters: []
   drinkParts: []
   otherLiquid: {fileID: 0}
   otherLiquidMask: {fileID: 0}
@@ -50864,34 +48896,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hasIce: 0
   _glassType: 0
+  _myGlass: {fileID: 0}
   height: 0
   pourRate: 1
   _liquidSurface: {fileID: 0}
   totalVolume: 0
   myDrinkBase: 0
   myMixer: 0
-  coasters: []
-  sodaVolume: 0
-  tonicVolume: 0
-  vermouthVolume: 0
-  orangeJuiceVolume: 0
-  lemonJuiceVolume: 0
-  whiskeyVolume: 0
-  tequilaVolume: 0
-  rumVolume: 0
-  ginVolume: 0
-  beerVolume: 0
-  wineVolume: 0
-  brandyVolume: 0
-  vodkaVolume: 0
-  smokiness: 0
-  sweetness: 0
-  sourness: 0
-  bitterness: 0
-  spiciness: 0
-  alcoholVolume: 0
-  abv: 0
   myCustomer: {fileID: 0}
+  coasters: []
   drinkParts: []
   otherLiquid: {fileID: 0}
   otherLiquidMask: {fileID: 0}
@@ -50913,34 +48926,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hasIce: 0
   _glassType: 0
+  _myGlass: {fileID: 0}
   height: 0
   pourRate: 100
   _liquidSurface: {fileID: 0}
   totalVolume: 0
   myDrinkBase: 0
   myMixer: 0
-  coasters: []
-  sodaVolume: 0
-  tonicVolume: 0
-  vermouthVolume: 0
-  orangeJuiceVolume: 0
-  lemonJuiceVolume: 0
-  whiskeyVolume: 0
-  tequilaVolume: 0
-  rumVolume: 0
-  ginVolume: 0
-  beerVolume: 0
-  wineVolume: 0
-  brandyVolume: 0
-  vodkaVolume: 0
-  smokiness: 0
-  sweetness: 0
-  sourness: 0
-  bitterness: 0
-  spiciness: 0
-  alcoholVolume: 0
-  abv: 0
   myCustomer: {fileID: 0}
+  coasters: []
   drinkParts: []
   otherLiquid: {fileID: 0}
   otherLiquidMask: {fileID: 0}
@@ -51018,34 +49012,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hasIce: 0
   _glassType: 0
+  _myGlass: {fileID: 0}
   height: 0
   pourRate: 100
   _liquidSurface: {fileID: 0}
   totalVolume: 0
   myDrinkBase: 0
   myMixer: 0
-  coasters: []
-  sodaVolume: 0
-  tonicVolume: 0
-  vermouthVolume: 0
-  orangeJuiceVolume: 0
-  lemonJuiceVolume: 0
-  whiskeyVolume: 0
-  tequilaVolume: 0
-  rumVolume: 0
-  ginVolume: 0
-  beerVolume: 0
-  wineVolume: 0
-  brandyVolume: 0
-  vodkaVolume: 0
-  smokiness: 0
-  sweetness: 0
-  sourness: 0
-  bitterness: 0
-  spiciness: 0
-  alcoholVolume: 0
-  abv: 0
   myCustomer: {fileID: 0}
+  coasters: []
   drinkParts: []
   otherLiquid: {fileID: 0}
   otherLiquidMask: {fileID: 0}
@@ -51189,34 +49164,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hasIce: 0
   _glassType: 0
+  _myGlass: {fileID: 0}
   height: 0
   pourRate: 100
   _liquidSurface: {fileID: 0}
   totalVolume: 0
   myDrinkBase: 0
   myMixer: 0
-  coasters: []
-  sodaVolume: 0
-  tonicVolume: 0
-  vermouthVolume: 0
-  orangeJuiceVolume: 0
-  lemonJuiceVolume: 0
-  whiskeyVolume: 0
-  tequilaVolume: 0
-  rumVolume: 0
-  ginVolume: 0
-  beerVolume: 0
-  wineVolume: 0
-  brandyVolume: 0
-  vodkaVolume: 0
-  smokiness: 0
-  sweetness: 0
-  sourness: 0
-  bitterness: 0
-  spiciness: 0
-  alcoholVolume: 0
-  abv: 0
   myCustomer: {fileID: 0}
+  coasters: []
   drinkParts: []
   otherLiquid: {fileID: 0}
   otherLiquidMask: {fileID: 0}
@@ -51293,34 +49249,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hasIce: 0
   _glassType: 0
+  _myGlass: {fileID: 0}
   height: 0
   pourRate: 0.25
   _liquidSurface: {fileID: 0}
   totalVolume: 0
   myDrinkBase: 0
   myMixer: 0
-  coasters: []
-  sodaVolume: 0
-  tonicVolume: 0
-  vermouthVolume: 0
-  orangeJuiceVolume: 0
-  lemonJuiceVolume: 0
-  whiskeyVolume: 0
-  tequilaVolume: 0
-  rumVolume: 0
-  ginVolume: 0
-  beerVolume: 0
-  wineVolume: 0
-  brandyVolume: 0
-  vodkaVolume: 0
-  smokiness: 0
-  sweetness: 0
-  sourness: 0
-  bitterness: 0
-  spiciness: 0
-  alcoholVolume: 0
-  abv: 0
   myCustomer: {fileID: 0}
+  coasters: []
   drinkParts: []
   otherLiquid: {fileID: 0}
   otherLiquidMask: {fileID: 0}
@@ -51360,34 +49297,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hasIce: 0
   _glassType: 0
+  _myGlass: {fileID: 0}
   height: 0
   pourRate: 100
   _liquidSurface: {fileID: 0}
   totalVolume: 0
   myDrinkBase: 0
   myMixer: 0
-  coasters: []
-  sodaVolume: 0
-  tonicVolume: 0
-  vermouthVolume: 0
-  orangeJuiceVolume: 0
-  lemonJuiceVolume: 0
-  whiskeyVolume: 0
-  tequilaVolume: 0
-  rumVolume: 0
-  ginVolume: 0
-  beerVolume: 0
-  wineVolume: 0
-  brandyVolume: 0
-  vodkaVolume: 0
-  smokiness: 0
-  sweetness: 0
-  sourness: 0
-  bitterness: 0
-  spiciness: 0
-  alcoholVolume: 0
-  abv: 0
   myCustomer: {fileID: 0}
+  coasters: []
   drinkParts: []
   otherLiquid: {fileID: 0}
   otherLiquidMask: {fileID: 0}
@@ -51409,34 +49327,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hasIce: 0
   _glassType: 0
+  _myGlass: {fileID: 0}
   height: 0
   pourRate: 100
   _liquidSurface: {fileID: 0}
   totalVolume: 0
   myDrinkBase: 0
   myMixer: 0
-  coasters: []
-  sodaVolume: 0
-  tonicVolume: 0
-  vermouthVolume: 0
-  orangeJuiceVolume: 0
-  lemonJuiceVolume: 0
-  whiskeyVolume: 0
-  tequilaVolume: 0
-  rumVolume: 0
-  ginVolume: 0
-  beerVolume: 0
-  wineVolume: 0
-  brandyVolume: 0
-  vodkaVolume: 0
-  smokiness: 0
-  sweetness: 0
-  sourness: 0
-  bitterness: 0
-  spiciness: 0
-  alcoholVolume: 0
-  abv: 0
   myCustomer: {fileID: 0}
+  coasters: []
   drinkParts: []
   otherLiquid: {fileID: 0}
   otherLiquidMask: {fileID: 0}
@@ -51495,34 +49394,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hasIce: 0
   _glassType: 0
+  _myGlass: {fileID: 0}
   height: 0
   pourRate: 100
   _liquidSurface: {fileID: 0}
   totalVolume: 0
   myDrinkBase: 0
   myMixer: 0
-  coasters: []
-  sodaVolume: 0
-  tonicVolume: 0
-  vermouthVolume: 0
-  orangeJuiceVolume: 0
-  lemonJuiceVolume: 0
-  whiskeyVolume: 0
-  tequilaVolume: 0
-  rumVolume: 0
-  ginVolume: 0
-  beerVolume: 0
-  wineVolume: 0
-  brandyVolume: 0
-  vodkaVolume: 0
-  smokiness: 0
-  sweetness: 0
-  sourness: 0
-  bitterness: 0
-  spiciness: 0
-  alcoholVolume: 0
-  abv: 0
   myCustomer: {fileID: 0}
+  coasters: []
   drinkParts: []
   otherLiquid: {fileID: 0}
   otherLiquidMask: {fileID: 0}
@@ -51631,34 +49511,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hasIce: 0
   _glassType: 0
+  _myGlass: {fileID: 0}
   height: 0
   pourRate: 100
   _liquidSurface: {fileID: 0}
   totalVolume: 0
   myDrinkBase: 0
   myMixer: 0
-  coasters: []
-  sodaVolume: 0
-  tonicVolume: 0
-  vermouthVolume: 0
-  orangeJuiceVolume: 0
-  lemonJuiceVolume: 0
-  whiskeyVolume: 0
-  tequilaVolume: 0
-  rumVolume: 0
-  ginVolume: 0
-  beerVolume: 0
-  wineVolume: 0
-  brandyVolume: 0
-  vodkaVolume: 0
-  smokiness: 0
-  sweetness: 0
-  sourness: 0
-  bitterness: 0
-  spiciness: 0
-  alcoholVolume: 0
-  abv: 0
   myCustomer: {fileID: 0}
+  coasters: []
   drinkParts: []
   otherLiquid: {fileID: 0}
   otherLiquidMask: {fileID: 0}
@@ -51902,34 +49763,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hasIce: 0
   _glassType: 0
+  _myGlass: {fileID: 0}
   height: 0
   pourRate: 100
   _liquidSurface: {fileID: 0}
   totalVolume: 0
   myDrinkBase: 0
   myMixer: 0
-  coasters: []
-  sodaVolume: 0
-  tonicVolume: 0
-  vermouthVolume: 0
-  orangeJuiceVolume: 0
-  lemonJuiceVolume: 0
-  whiskeyVolume: 0
-  tequilaVolume: 0
-  rumVolume: 0
-  ginVolume: 0
-  beerVolume: 0
-  wineVolume: 0
-  brandyVolume: 0
-  vodkaVolume: 0
-  smokiness: 0
-  sweetness: 0
-  sourness: 0
-  bitterness: 0
-  spiciness: 0
-  alcoholVolume: 0
-  abv: 0
   myCustomer: {fileID: 0}
+  coasters: []
   drinkParts: []
   otherLiquid: {fileID: 0}
   otherLiquidMask: {fileID: 0}
@@ -51988,34 +49830,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hasIce: 0
   _glassType: 0
+  _myGlass: {fileID: 0}
   height: 0
   pourRate: 100
   _liquidSurface: {fileID: 0}
   totalVolume: 0
   myDrinkBase: 0
   myMixer: 0
-  coasters: []
-  sodaVolume: 0
-  tonicVolume: 0
-  vermouthVolume: 0
-  orangeJuiceVolume: 0
-  lemonJuiceVolume: 0
-  whiskeyVolume: 0
-  tequilaVolume: 0
-  rumVolume: 0
-  ginVolume: 0
-  beerVolume: 0
-  wineVolume: 0
-  brandyVolume: 0
-  vodkaVolume: 0
-  smokiness: 0
-  sweetness: 0
-  sourness: 0
-  bitterness: 0
-  spiciness: 0
-  alcoholVolume: 0
-  abv: 0
   myCustomer: {fileID: 0}
+  coasters: []
   drinkParts: []
   otherLiquid: {fileID: 0}
   otherLiquidMask: {fileID: 0}
@@ -52091,34 +49914,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hasIce: 0
   _glassType: 0
+  _myGlass: {fileID: 0}
   height: 0
   pourRate: 100
   _liquidSurface: {fileID: 0}
   totalVolume: 0
   myDrinkBase: 0
   myMixer: 0
-  coasters: []
-  sodaVolume: 0
-  tonicVolume: 0
-  vermouthVolume: 0
-  orangeJuiceVolume: 0
-  lemonJuiceVolume: 0
-  whiskeyVolume: 0
-  tequilaVolume: 0
-  rumVolume: 0
-  ginVolume: 0
-  beerVolume: 0
-  wineVolume: 0
-  brandyVolume: 0
-  vodkaVolume: 0
-  smokiness: 0
-  sweetness: 0
-  sourness: 0
-  bitterness: 0
-  spiciness: 0
-  alcoholVolume: 0
-  abv: 0
   myCustomer: {fileID: 0}
+  coasters: []
   drinkParts: []
   otherLiquid: {fileID: 0}
   otherLiquidMask: {fileID: 0}
@@ -52140,34 +49944,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hasIce: 0
   _glassType: 0
+  _myGlass: {fileID: 0}
   height: 0
   pourRate: 100
   _liquidSurface: {fileID: 0}
   totalVolume: 0
   myDrinkBase: 0
   myMixer: 0
-  coasters: []
-  sodaVolume: 0
-  tonicVolume: 0
-  vermouthVolume: 0
-  orangeJuiceVolume: 0
-  lemonJuiceVolume: 0
-  whiskeyVolume: 0
-  tequilaVolume: 0
-  rumVolume: 0
-  ginVolume: 0
-  beerVolume: 0
-  wineVolume: 0
-  brandyVolume: 0
-  vodkaVolume: 0
-  smokiness: 0
-  sweetness: 0
-  sourness: 0
-  bitterness: 0
-  spiciness: 0
-  alcoholVolume: 0
-  abv: 0
   myCustomer: {fileID: 0}
+  coasters: []
   drinkParts: []
   otherLiquid: {fileID: 0}
   otherLiquidMask: {fileID: 0}
@@ -52281,34 +50066,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hasIce: 0
   _glassType: 0
+  _myGlass: {fileID: 0}
   height: 0
   pourRate: 100
   _liquidSurface: {fileID: 0}
   totalVolume: 0
   myDrinkBase: 0
   myMixer: 0
-  coasters: []
-  sodaVolume: 0
-  tonicVolume: 0
-  vermouthVolume: 0
-  orangeJuiceVolume: 0
-  lemonJuiceVolume: 0
-  whiskeyVolume: 0
-  tequilaVolume: 0
-  rumVolume: 0
-  ginVolume: 0
-  beerVolume: 0
-  wineVolume: 0
-  brandyVolume: 0
-  vodkaVolume: 0
-  smokiness: 0
-  sweetness: 0
-  sourness: 0
-  bitterness: 0
-  spiciness: 0
-  alcoholVolume: 0
-  abv: 0
   myCustomer: {fileID: 0}
+  coasters: []
   drinkParts: []
   otherLiquid: {fileID: 0}
   otherLiquidMask: {fileID: 0}
@@ -53589,19 +51355,6 @@ CapsuleCollider:
   m_GameObject: {fileID: 1000501129404288}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
-  m_Radius: 0.23617028
-  m_Height: 1
-  m_Direction: 1
-  m_Center: {x: 0, y: 0.46, z: 0}
---- !u!136 &136345145032584980
-CapsuleCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1534652951731948}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.23617028
   m_Height: 1

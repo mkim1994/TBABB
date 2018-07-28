@@ -504,11 +504,11 @@ public class PlayerInput : MonoBehaviour
 					if (targetDropzone.GetComponentInParent<Coaster>() != null) //PICKUP ITEM ON COASTER
 					{
 						Coaster targetCoaster = targetDropzone.GetComponentInParent<Coaster>();
-						if (targetCoaster.myCustomer.IsCustomerPresent() && !targetCoaster.myCustomer.HasAcceptedDrink()) //if  customer is present and customer HAS NOT accepted drink, then you can get it
+						if (targetCoaster.MyCustomer.IsCustomerPresent() && !targetCoaster.MyCustomer.HasAcceptedDrink()) //if  customer is present and customer HAS NOT accepted drink, then you can get it
 						{ 
 							pickupable.InteractLeftHand();
   						}
-						else if(!targetCoaster.myCustomer.insideBar)
+						else if(!targetCoaster.MyCustomer.insideBar)
 						{
 							pickupable.InteractLeftHand();
   						}
@@ -534,10 +534,10 @@ public class PlayerInput : MonoBehaviour
 					else
 					{
 						Coaster targetCoaster = targetDropzone.GetComponentInParent<Coaster>();
-						if (!targetCoaster.myCustomer.IsCustomerPresent())
+						if (!targetCoaster.MyCustomer.IsCustomerPresent())
 						{
  							GetComponent<UIControls>().ChangeCenterTextWithLinger("no one to serve");
-						} else if (targetCoaster.myCustomer.IsCustomerPresent() && !targetCoaster.myCustomer.HasAcceptedDrink())
+						} else if (targetCoaster.MyCustomer.IsCustomerPresent() && !targetCoaster.MyCustomer.HasAcceptedDrink())
 						{
 							if(!Services.GameManager.dialogue.isDialogueRunning){
 								Debug.Log("Dropped " + pickupableInLeftHand);
@@ -635,7 +635,7 @@ public class PlayerInput : MonoBehaviour
 					if (targetDropzone.GetComponentInParent<Coaster>() != null)// has a coaster
 					{
 						Coaster targetCoaster = targetDropzone.GetComponentInParent<Coaster>();
-						if (targetCoaster.myCustomer.IsCustomerPresent() && !targetCoaster.myCustomer.HasAcceptedDrink()) //if  customer is present and customer HAS NOT accepted drink, then you can pour into it
+						if (targetCoaster.MyCustomer.IsCustomerPresent() && !targetCoaster.MyCustomer.HasAcceptedDrink()) //if  customer is present and customer HAS NOT accepted drink, then you can pour into it
 						{ 
 							if (pickupable.GetComponent<Glass>() != null &&
 							    !pickupable.pickedUp &&
@@ -705,7 +705,7 @@ public class PlayerInput : MonoBehaviour
 					if (targetDropzone.GetComponentInParent<Coaster>() != null)
 					{ 
 						Coaster targetCoaster = targetDropzone.GetComponentInParent<Coaster>();
-						if (targetCoaster.myCustomer.IsCustomerPresent() && !targetCoaster.myCustomer.HasAcceptedDrink()) 
+						if (targetCoaster.MyCustomer.IsCustomerPresent() && !targetCoaster.MyCustomer.HasAcceptedDrink()) 
 							//if customer is present, and has not accepted the drink, then end properly 
 						{ 
 							if (pickupableInLeftHand.GetComponent<Bottle>() != null && isPouring)
@@ -803,11 +803,11 @@ public class PlayerInput : MonoBehaviour
 					 if (targetDropzone.GetComponentInParent<Coaster>() != null)
 					 {
 						 Coaster targetCoaster = targetDropzone.GetComponentInParent<Coaster>();
-						 if (targetCoaster.myCustomer.IsCustomerPresent() && !targetCoaster.myCustomer.HasAcceptedDrink()) //if  customer is present and customer HAS NOT accepted drink, then you can get it
+						 if (targetCoaster.MyCustomer.IsCustomerPresent() && !targetCoaster.MyCustomer.HasAcceptedDrink()) //if  customer is present and customer HAS NOT accepted drink, then you can get it
 						 {
 							pickupable.InteractRightHand();						
  						 }
-						 else if(!targetCoaster.myCustomer.insideBar)
+						 else if(!targetCoaster.MyCustomer.insideBar)
 						 {
 							 pickupable.InteractRightHand();
 						 }
@@ -833,10 +833,10 @@ public class PlayerInput : MonoBehaviour
 					else
 					{
 						Coaster targetCoaster = targetDropzone.GetComponentInParent<Coaster>();
-						if (!targetCoaster.myCustomer.IsCustomerPresent())
+						if (!targetCoaster.MyCustomer.IsCustomerPresent())
 						{
  							GetComponent<UIControls>().ChangeCenterTextWithLinger("no one to serve");
-						} else if (targetCoaster.myCustomer.IsCustomerPresent() && !targetCoaster.myCustomer.HasAcceptedDrink())
+						} else if (targetCoaster.MyCustomer.IsCustomerPresent() && !targetCoaster.MyCustomer.HasAcceptedDrink())
 						{
 							if(!Services.GameManager.dialogue.isDialogueRunning){
 								pickupableInRightHand.dropPos = dropPos;
@@ -936,7 +936,7 @@ public class PlayerInput : MonoBehaviour
 					if (targetDropzone.GetComponentInParent<Coaster>() != null)
 					{
 						Coaster targetCoaster = targetDropzone.GetComponentInParent<Coaster>();
-						if (targetCoaster.myCustomer.IsCustomerPresent() && !targetCoaster.myCustomer.HasAcceptedDrink())
+						if (targetCoaster.MyCustomer.IsCustomerPresent() && !targetCoaster.MyCustomer.HasAcceptedDrink())
 						{
 							if (pickupable.GetComponent<Glass>() != null && 
 							    pickupableInRightHand.GetComponent<Bottle>() != null && 
@@ -1004,7 +1004,7 @@ public class PlayerInput : MonoBehaviour
 					if (targetDropzone.GetComponentInParent<Coaster>() != null)
 					{ 
 						Coaster targetCoaster = targetDropzone.GetComponentInParent<Coaster>();
-						if (targetCoaster.myCustomer.IsCustomerPresent() && !targetCoaster.myCustomer.HasAcceptedDrink()) 
+						if (targetCoaster.MyCustomer.IsCustomerPresent() && !targetCoaster.MyCustomer.HasAcceptedDrink()) 
 							//if customer is present, and has not accepted the drink, then end properly 
 						{ 
  							if (pickupableInRightHand.GetComponent<Bottle>() != null && isPouring)

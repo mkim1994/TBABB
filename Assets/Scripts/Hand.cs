@@ -91,6 +91,15 @@ public class Hand : MonoBehaviour
 			),
 
 			//HELD behavior
+			
+			//Holding glass
+			new Sequence<Hand>(
+				new IsHoldingGlass(),
+				new Not<Hand>(new IsTweenActive()),
+//				new DisallowPickup(), //can't pick up if holding something
+				new IsInDropRange(),
+				new DropAction()
+			),
 
 			////Holding Bottle
 			new Sequence<Hand>(
@@ -106,15 +115,6 @@ public class Hand : MonoBehaviour
 				new IsHoldingBottle(),
 				new IsLookingAtGlass(),
 				new PourAction()	
-			),
-
-			//Holding glass
-			new Sequence<Hand>(
-				new IsHoldingGlass(),
-				new Not<Hand>(new IsTweenActive()),
-//				new DisallowPickup(), //can't pick up if holding something
-				new IsInDropRange(),
-				new DropAction()
 			)
 		));
 	}
@@ -175,6 +175,7 @@ public class Hand : MonoBehaviour
 			Pickupable _myPickupable = SeenPickupable;
 			Sequence sequence = DOTween.Sequence();
 			sequence.Append(SeenPickupable.transform.DOLocalMove(newPos, _pickupDropTime));
+			sequence.AppendCallback(() => HeldPickupable.pickedUp = true);
 			sequence.AppendCallback(() => HeldPickupable = _myPickupable);
 //			sequence.AppendCallback(() => HeldPickupable.ChangeToFirstPersonLayer(_pickupDropTime));
 			sequence.OnComplete(() => _isTweening = false);
@@ -189,11 +190,11 @@ public class Hand : MonoBehaviour
 			HeldPickupable.transform.SetParent(null);
 			HeldPickupable.transform.rotation = Quaternion.identity;
 			Sequence dropSequence = DOTween.Sequence();
+			dropSequence.AppendCallback(() => HeldPickupable.pickedUp = false);
 			dropSequence.Append(HeldPickupable.transform.DOMove(DropPos, _pickupDropTime));
 //			dropSequence.AppendCallback(() => HeldPickupable.ChangeToWorldLayer(_pickupDropTime));
 			dropSequence.AppendCallback(() => HeldPickupable = null);
 			dropSequence.OnComplete(() => _isTweening = false);
-			
 		}
 	}
 

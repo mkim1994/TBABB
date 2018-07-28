@@ -77,7 +77,6 @@ public class Dropzone : MonoBehaviour
 				}
 			}
 		}
-		
 	}
 
 	void OnTriggerExit(Collider exiter)

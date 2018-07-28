@@ -9,6 +9,7 @@ public class Liquid : MonoBehaviour {
 
 	public bool hasIce;
 	public Glass.GlassType _glassType;
+	[SerializeField]private Glass _myGlass;
 	private float myMaxVolume;
  	private int ice = 0;
  	private DrinkProfile myDrinkProfile;
@@ -22,6 +23,8 @@ public class Liquid : MonoBehaviour {
 	public float totalVolume;
 	[HideInInspector]public DrinkBase myDrinkBase;
 	[HideInInspector]public Mixer myMixer;
+	public NPC myCustomer;
+	private Coaster myCoaster;
 	public List<Coaster> coasters = new List<Coaster> ();
 // 	DrinkBase baseBeingPoured;
 	Garnish garnishBeingApplied;
@@ -31,7 +34,6 @@ public class Liquid : MonoBehaviour {
  	float smokiness, sweetness, sourness, bitterness, spiciness;
 	float alcoholVolume, abv;
 
-	public NPC myCustomer;
 
 	public List<float> drinkParts = new List<float>();
 
@@ -100,7 +102,6 @@ public class Liquid : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-		DetectCustomer();
 		EmptyDrinkWhenCustomerFinished();
 
 		totalVolume = whiskeyVolume + ginVolume + brandyVolume + vodkaVolume + wineVolume + beerVolume + tequilaVolume + rumVolume 
@@ -561,21 +562,32 @@ public class Liquid : MonoBehaviour {
 		coasters.AddRange (FindObjectsOfType<Coaster> ());	
 	}
 
-	private void DetectCustomer()
-	{
-		foreach (var coaster in coasters)
-		{
-			Debug.Log(Vector3.Distance(coaster.gameObject.transform.position, transform.position));
-			if (Vector3.Distance(coaster.gameObject.transform.position, transform.position) <= 0.5f)
-			{
-				myCustomer = coaster.myCustomer;			
+	public Coaster MyCoaster(){
+		Coaster nearest = coasters[0];
+		float shortestDist = Vector3.Distance(coasters[0].transform.position, transform.position);
+		for(int i = 0; i < coasters.Count; i++){			
+			if(Vector3.Distance(coasters[i].transform.position, transform.position) <= shortestDist){
+				shortestDist = Vector3.Distance(coasters[i].transform.position, transform.position);
+				nearest = coasters[i];
 			}
-			else
-			{
-				myCustomer = null;
-			}
-
 		}
+		return nearest;
+	}
+	
+	public void DetectCustomer()
+	{
+//		foreach (var coaster in coasters)
+//		{
+//			Debug.Log(Vector3.Distance(coaster.gameObject.transform.position, transform.position));
+//			if (Vector3.Distance(coaster.gameObject.transform.position, transform.position) <= 5f)
+//			{
+//				myCustomer = coaster.MyCustomer;			
+//			}
+//			else
+//			{
+//				myCustomer = null;
+//			}
+//		}
 	}
 
 	public void TalkToCoaster(){
@@ -589,7 +601,6 @@ public class Liquid : MonoBehaviour {
 //					myCustomer = coaster.myCustomer;
 //					isEvaluated = true;
 //				}    
-				myCustomer = coaster.myCustomer;
 			}
 		}
 	}
