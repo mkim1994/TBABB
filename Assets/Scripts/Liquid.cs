@@ -9,6 +9,7 @@ public class Liquid : MonoBehaviour {
 
 	public bool hasIce;
 	public Glass.GlassType _glassType;
+	[SerializeField]private Glass _myGlass;
 	private float myMaxVolume;
  	private int ice = 0;
  	private DrinkProfile myDrinkProfile;
@@ -18,20 +19,21 @@ public class Liquid : MonoBehaviour {
 	private SkinnedMeshRenderer myLiquid;
 	private float myLiquidVolume = 100;
 	[SerializeField]private float pourRate = 1;
-	[SerializeField] private GameObject liquidSurf;
+	[SerializeField] private GameObject _liquidSurface;
 	public float totalVolume;
 	[HideInInspector]public DrinkBase myDrinkBase;
 	[HideInInspector]public Mixer myMixer;
+	public NPC myCustomer;
+	private Coaster myCoaster;
 	public List<Coaster> coasters = new List<Coaster> ();
 // 	DrinkBase baseBeingPoured;
 	Garnish garnishBeingApplied;
 //	Mixer mixerBeingPoured;
-	[SerializeField]float sodaVolume, tonicVolume, vermouthVolume, orangeJuiceVolume, lemonJuiceVolume;
-	[SerializeField]float whiskeyVolume, tequilaVolume, rumVolume, ginVolume, beerVolume, wineVolume, brandyVolume, vodkaVolume;
- 	[SerializeField]float smokiness, sweetness, sourness, bitterness, spiciness;
-	[SerializeField]float alcoholVolume, abv;
+	float sodaVolume, tonicVolume, vermouthVolume, orangeJuiceVolume, lemonJuiceVolume;
+	float whiskeyVolume, tequilaVolume, rumVolume, ginVolume, beerVolume, wineVolume, brandyVolume, vodkaVolume;
+ 	float smokiness, sweetness, sourness, bitterness, spiciness;
+	float alcoholVolume, abv;
 
-	public NPC myCustomer;
 
 	public List<float> drinkParts = new List<float>();
 
@@ -100,7 +102,6 @@ public class Liquid : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-		
 		EmptyDrinkWhenCustomerFinished();
 
 		totalVolume = whiskeyVolume + ginVolume + brandyVolume + vodkaVolume + wineVolume + beerVolume + tequilaVolume + rumVolume 
@@ -118,86 +119,91 @@ public class Liquid : MonoBehaviour {
 			}
  		}
 
-		if (isBeingPoured)
-		{
-			GrowVertical();		
-			if(myDrinkBase == DrinkBase.none){
-				AddMixer(myMixer);
-				switch (myMixer){
-					case Mixer.soda:
-						sodaVolume = height - totalVolume + sodaVolume;
-						IncrementFlavor(myDrinkProfile, sodaVolume);
-						break;
-					case Mixer.tonic:
-						tonicVolume = height - totalVolume + tonicVolume;
-						IncrementFlavor(myDrinkProfile, tonicVolume);
-						break;
-					case Mixer.vermouth:
-						vermouthVolume = height - totalVolume + vermouthVolume;
-						IncrementFlavor(myDrinkProfile, vermouthVolume);
-						break;
-					case Mixer.orange_juice:
-						orangeJuiceVolume = height - totalVolume + orangeJuiceVolume;
-						IncrementFlavor(myDrinkProfile, orangeJuiceVolume);
-						break;
-					case Mixer.lemon_juice:
-						lemonJuiceVolume = height - totalVolume + lemonJuiceVolume;
-						IncrementFlavor(myDrinkProfile, lemonJuiceVolume);
-						break;
-					default:
-						break;
-				}
-			}
-
-			else if(myDrinkBase != DrinkBase.none){
-				AddIngredient(myDrinkBase);
-				switch (myDrinkBase){
-					case DrinkBase.whiskey:
-						whiskeyVolume = height - totalVolume + whiskeyVolume;
-						IncrementFlavor(myDrinkProfile, whiskeyVolume);
-						break;
-					case DrinkBase.gin:
-						ginVolume = height - totalVolume + ginVolume;
-						IncrementFlavor(myDrinkProfile, ginVolume);
-						break;
-					case DrinkBase.tequila:
-						tequilaVolume = height - totalVolume + tequilaVolume;
-						IncrementFlavor(myDrinkProfile, tequilaVolume);
-						break;
-					case DrinkBase.vodka:
-						vodkaVolume = height - totalVolume + vodkaVolume;
-						IncrementFlavor(myDrinkProfile, vodkaVolume);		
-						break;
-					case DrinkBase.rum:
-						rumVolume = height - totalVolume + rumVolume;
-						IncrementFlavor(myDrinkProfile, rumVolume);
-						break;
-					case DrinkBase.beer:
-						beerVolume = height - totalVolume + beerVolume;
-						IncrementFlavor(myDrinkProfile, beerVolume);
-						break;
-					case DrinkBase.wine:
-						wineVolume = height - totalVolume + wineVolume;
-						IncrementFlavor(myDrinkProfile, wineVolume);
-						break;
-					case DrinkBase.brandy:
-						brandyVolume = height - totalVolume + brandyVolume;
-						IncrementFlavor(myDrinkProfile, brandyVolume);
-						break;
-					default:
-						break;
-				}
-			}			
-		}
-		else
-		{
-			myDrinkBase = DrinkBase.none;
-			myMixer = Mixer.none;
-		}
+//		if (isBeingPoured)
+//		{
+//			MixDrink();		
+//			if(myDrinkBase == DrinkBase.none){
+//				AddMixer(myMixer);
+//				switch (myMixer){
+//					case Mixer.soda:
+//						sodaVolume = height - totalVolume + sodaVolume;
+//						IncrementFlavor(myDrinkProfile, sodaVolume);
+//						break;
+//					case Mixer.tonic:
+//						tonicVolume = height - totalVolume + tonicVolume;
+//						IncrementFlavor(myDrinkProfile, tonicVolume);
+//						break;
+//					case Mixer.vermouth:
+//						vermouthVolume = height - totalVolume + vermouthVolume;
+//						IncrementFlavor(myDrinkProfile, vermouthVolume);
+//						break;
+//					case Mixer.orange_juice:
+//						orangeJuiceVolume = height - totalVolume + orangeJuiceVolume;
+//						IncrementFlavor(myDrinkProfile, orangeJuiceVolume);
+//						break;
+//					case Mixer.lemon_juice:
+//						lemonJuiceVolume = height - totalVolume + lemonJuiceVolume;
+//						IncrementFlavor(myDrinkProfile, lemonJuiceVolume);
+//						break;
+//					default:
+//						break;
+//				}
+//			}
+//
+//			else if(myDrinkBase != DrinkBase.none){
+//				AddIngredient(myDrinkBase);
+//				switch (myDrinkBase){
+//					case DrinkBase.whiskey:
+//						whiskeyVolume = height - totalVolume + whiskeyVolume;
+//						IncrementFlavor(myDrinkProfile, whiskeyVolume);
+//						break;
+//					case DrinkBase.gin:
+//						ginVolume = height - totalVolume + ginVolume;
+//						IncrementFlavor(myDrinkProfile, ginVolume);
+//						break;
+//					case DrinkBase.tequila:
+//						tequilaVolume = height - totalVolume + tequilaVolume;
+//						IncrementFlavor(myDrinkProfile, tequilaVolume);
+//						break;
+//					case DrinkBase.vodka:
+//						vodkaVolume = height - totalVolume + vodkaVolume;
+//						IncrementFlavor(myDrinkProfile, vodkaVolume);		
+//						break;
+//					case DrinkBase.rum:
+//						rumVolume = height - totalVolume + rumVolume;
+//						IncrementFlavor(myDrinkProfile, rumVolume);
+//						break;
+//					case DrinkBase.beer:
+//						beerVolume = height - totalVolume + beerVolume;
+//						IncrementFlavor(myDrinkProfile, beerVolume);
+//						break;
+//					case DrinkBase.wine:
+//						wineVolume = height - totalVolume + wineVolume;
+//						IncrementFlavor(myDrinkProfile, wineVolume);
+//						break;
+//					case DrinkBase.brandy:
+//						brandyVolume = height - totalVolume + brandyVolume;
+//						IncrementFlavor(myDrinkProfile, brandyVolume);
+//						break;
+//					default:
+//						break;
+//				}
+//			}			
+//		}
+//		else
+//		{
+//			myDrinkBase = DrinkBase.none;
+//			myMixer = Mixer.none;
+//		}
 
 //		TalkToCoaster ();
 
  	}
+
+	public void ReceivePour()
+	{
+		_liquidSurface.transform.localPosition += Vector3.up * Time.deltaTime;
+	}
 
 	private void EmptyDrinkWhenCustomerFinished()
 	{
@@ -218,17 +224,16 @@ public class Liquid : MonoBehaviour {
 		}
 	}
 
-	public void GrowVertical(){
-
+	public void MixDrink(){
 // 		height = Mathf.Clamp(height, 0, 100);
 //		transform.localScale = new Vector3(1, 1, 1);
 //		myLiquidVolume = liquidSurf.transform.localPosition.y;
 		meshRenderer.enabled = true;
-		if (liquidSurf.transform.localPosition.y <= myMaxVolume)
+		if (_liquidSurface.transform.localPosition.y <= myMaxVolume)
 		{
-			liquidSurf.transform.Translate(Vector3.up * pourRate * Time.deltaTime, Space.Self);		
+			_liquidSurface.transform.Translate(Vector3.up * pourRate * Time.deltaTime, Space.Self);		
 		}
-		myLiquidVolume = liquidSurf.transform.localPosition.y;
+		myLiquidVolume = _liquidSurface.transform.localPosition.y;
  		height = remapRange(myLiquidVolume, 0, myMaxVolume, 0, 100);
 //		myLiquid.SetBlendShapeWeight(0, myLiquidVolume);
  		thisCocktail = new DrinkProfile (sodaVolume/totalVolume, tonicVolume/totalVolume, vermouthVolume/totalVolume, lemonJuiceVolume/totalVolume, 0, 0, 0, 0, 0, 0, 0, 
@@ -268,7 +273,7 @@ public class Liquid : MonoBehaviour {
 		alcoholVolume = 0;
 		abv = 0;
 		myLiquidVolume = 0;
-		liquidSurf.transform.localPosition = Vector3.zero;
+		_liquidSurface.transform.localPosition = Vector3.zero;
 	}
 
 	float remapRange(float oldValue, float oldMin, float oldMax, float newMin, float newMax )
@@ -281,24 +286,174 @@ public class Liquid : MonoBehaviour {
 	}
 
 	public void AddIngredient(DrinkBase _drinkBase){
-		if (Services.DrinkDictionary.drinkBases.ContainsKey(_drinkBase))
-		{
-//			Debug.Log(_drinkBase);
-			myDrinkProfile = Services.DrinkDictionary.drinkBases[_drinkBase];		
-			myDrinkBase = _drinkBase;
-			waterPillar.SetMaterialColorOnPour(_drinkBase);
+		Debug.Log("AddIngredient()" + _drinkBase);
+		myDrinkProfile = Services.DrinkDictionary.drinkBases[_drinkBase];		
+		myDrinkBase = _drinkBase;
+ 
+//			waterPillar.SetMaterialColorOnPour(_drinkBase);
+		switch (_drinkBase){
+			case DrinkBase.whiskey:
+				whiskeyVolume = height - totalVolume + whiskeyVolume;
+				IncrementFlavor(myDrinkProfile, whiskeyVolume);
+				break;
+			case DrinkBase.gin:
+				ginVolume = height - totalVolume + ginVolume;
+				IncrementFlavor(myDrinkProfile, ginVolume);
+				break;
+			case DrinkBase.tequila:
+				tequilaVolume = height - totalVolume + tequilaVolume;
+				IncrementFlavor(myDrinkProfile, tequilaVolume);
+				break;
+			case DrinkBase.vodka:
+				vodkaVolume = height - totalVolume + vodkaVolume;
+				IncrementFlavor(myDrinkProfile, vodkaVolume);		
+				break;
+			case DrinkBase.rum:
+				rumVolume = height - totalVolume + rumVolume;
+				IncrementFlavor(myDrinkProfile, rumVolume);
+				break;
+			case DrinkBase.beer:
+				beerVolume = height - totalVolume + beerVolume;
+				IncrementFlavor(myDrinkProfile, beerVolume);
+				break;
+			case DrinkBase.wine:
+				wineVolume = height - totalVolume + wineVolume;
+				IncrementFlavor(myDrinkProfile, wineVolume);
+				break;
+			case DrinkBase.brandy:
+				brandyVolume = height - totalVolume + brandyVolume;
+				IncrementFlavor(myDrinkProfile, brandyVolume);
+				break;
+			case DrinkBase.soda:
+//				Debug.Log("hehehehe");
+				sodaVolume = height - totalVolume + sodaVolume;
+				IncrementFlavor(myDrinkProfile, sodaVolume);
+				break;
+			case DrinkBase.tonic:
+				tonicVolume = height - totalVolume + tonicVolume;
+				IncrementFlavor(myDrinkProfile, tonicVolume);
+				break;
+			case DrinkBase.vermouth:
+//				Debug.Log("hehehehe");
+				vermouthVolume = height - totalVolume + vermouthVolume;
+				IncrementFlavor(myDrinkProfile, vermouthVolume);
+				break;
+			case DrinkBase.orange_juice:
+				orangeJuiceVolume = height - totalVolume + orangeJuiceVolume;
+				IncrementFlavor(myDrinkProfile, orangeJuiceVolume);
+				break;
+			case DrinkBase.lemon_juice:
+				lemonJuiceVolume = height - totalVolume + lemonJuiceVolume;
+				IncrementFlavor(myDrinkProfile, lemonJuiceVolume);
+				break;
+			default:
+				break;
 		}
+//		if (Services.DrinkDictionary.drinkBases.ContainsKey(_drinkBase))
+//		{
+////			Debug.Log(_drinkBase);
+//			myDrinkProfile = Services.DrinkDictionary.drinkBases[_drinkBase];		
+//			myDrinkBase = _drinkBase;
+//			Debug.Log("AddIngredient()" + _drinkBase);
+//
+////			waterPillar.SetMaterialColorOnPour(_drinkBase);
+//			switch (_drinkBase){
+//				case DrinkBase.whiskey:
+//					whiskeyVolume = height - totalVolume + whiskeyVolume;
+//					IncrementFlavor(myDrinkProfile, whiskeyVolume);
+//					break;
+//				case DrinkBase.gin:
+//					ginVolume = height - totalVolume + ginVolume;
+//					IncrementFlavor(myDrinkProfile, ginVolume);
+//					break;
+//				case DrinkBase.tequila:
+//					tequilaVolume = height - totalVolume + tequilaVolume;
+//					IncrementFlavor(myDrinkProfile, tequilaVolume);
+//					break;
+//				case DrinkBase.vodka:
+//					vodkaVolume = height - totalVolume + vodkaVolume;
+//					IncrementFlavor(myDrinkProfile, vodkaVolume);		
+//					break;
+//				case DrinkBase.rum:
+//					rumVolume = height - totalVolume + rumVolume;
+//					IncrementFlavor(myDrinkProfile, rumVolume);
+//					break;
+//				case DrinkBase.beer:
+//					beerVolume = height - totalVolume + beerVolume;
+//					IncrementFlavor(myDrinkProfile, beerVolume);
+//					break;
+//				case DrinkBase.wine:
+//					wineVolume = height - totalVolume + wineVolume;
+//					IncrementFlavor(myDrinkProfile, wineVolume);
+//					break;
+//				case DrinkBase.brandy:
+//					brandyVolume = height - totalVolume + brandyVolume;
+//					IncrementFlavor(myDrinkProfile, brandyVolume);
+//					break;
+//				case DrinkBase.soda:
+//					Debug.Log("hehehehe");
+//					sodaVolume = height - totalVolume + sodaVolume;
+//					IncrementFlavor(myDrinkProfile, sodaVolume);
+//					break;
+//				case DrinkBase.tonic:
+//					tonicVolume = height - totalVolume + tonicVolume;
+//					IncrementFlavor(myDrinkProfile, tonicVolume);
+//					break;
+//				case DrinkBase.vermouth:
+//					Debug.Log("hehehehe");
+//					vermouthVolume = height - totalVolume + vermouthVolume;
+//					IncrementFlavor(myDrinkProfile, vermouthVolume);
+//					break;
+//				case DrinkBase.orange_juice:
+//					orangeJuiceVolume = height - totalVolume + orangeJuiceVolume;
+//					IncrementFlavor(myDrinkProfile, orangeJuiceVolume);
+//					break;
+//				case DrinkBase.lemon_juice:
+//					lemonJuiceVolume = height - totalVolume + lemonJuiceVolume;
+//					IncrementFlavor(myDrinkProfile, lemonJuiceVolume);
+//					break;
+//				default:
+//					break;
+//			}
+//		}
+		MixDrink();
 	}
 
 	public void AddMixer(Mixer _mixer){
+		Debug.Log("AddMixer() " + _mixer);
+
 		if (Services.MixerDictionary.mixers.ContainsKey(_mixer))
 		{
 			myDrinkProfile = Services.MixerDictionary.mixers[_mixer];
 	//		mixerBeingPoured = _mixer;
 			myMixer = _mixer;
-			waterPillar.SetMaterialColorOnPour(DrinkBase.none, _mixer);
+//			waterPillar.SetMaterialColorOnPour(DrinkBase.none, _mixer);
+			switch (myMixer){
+				case Mixer.soda:
+					sodaVolume = height - totalVolume + sodaVolume;
+					IncrementFlavor(myDrinkProfile, sodaVolume);
+					break;
+				case Mixer.tonic:
+					tonicVolume = height - totalVolume + tonicVolume;
+					IncrementFlavor(myDrinkProfile, tonicVolume);
+					break;
+				case Mixer.vermouth:
+					vermouthVolume = height - totalVolume + vermouthVolume;
+					IncrementFlavor(myDrinkProfile, vermouthVolume);
+					break;
+				case Mixer.orange_juice:
+					orangeJuiceVolume = height - totalVolume + orangeJuiceVolume;
+					IncrementFlavor(myDrinkProfile, orangeJuiceVolume);
+					break;
+				case Mixer.lemon_juice:
+					lemonJuiceVolume = height - totalVolume + lemonJuiceVolume;
+					IncrementFlavor(myDrinkProfile, lemonJuiceVolume);
+					break;
+				default:
+					break;
+			}
 		}
-
+		MixDrink();
 	}
 
 	private float GetSmokiness(){
@@ -404,21 +559,56 @@ public class Liquid : MonoBehaviour {
     }
 
 	private void DetectCoasters(){
-		coasters.AddRange (FindObjectsOfType<Coaster> ());
+		coasters.AddRange (FindObjectsOfType<Coaster> ());	
+	}
+
+	public Coaster MyCoaster(){
+		Coaster nearest = coasters[0];
+		float shortestDist = Vector3.Distance(coasters[0].transform.position, transform.position);
+		for(int i = 0; i < coasters.Count; i++){			
+			if(Vector3.Distance(coasters[i].transform.position, transform.position) <= shortestDist){
+				shortestDist = Vector3.Distance(coasters[i].transform.position, transform.position);
+				nearest = coasters[i];
+			}
+		}
+		return nearest;
+	}
+	
+	public void DetectCustomer()
+	{
+//		foreach (var coaster in coasters)
+//		{
+//			Debug.Log(Vector3.Distance(coaster.gameObject.transform.position, transform.position));
+//			if (Vector3.Distance(coaster.gameObject.transform.position, transform.position) <= 5f)
+//			{
+//				myCustomer = coaster.MyCustomer;			
+//			}
+//			else
+//			{
+//				myCustomer = null;
+//			}
+//		}
 	}
 
 	public void TalkToCoaster(){
 		foreach (var coaster in coasters) {
-			// Debug.Log("Distance to coaster " + Vector3.Distance (coaster.gameObject.transform.position, transform.position));
-			if (Vector3.Distance (coaster.gameObject.transform.position, transform.position) <= 0.01f) {
-				if(!isEvaluated && !GetComponentInParent<Pickupable>().pickedUp)
-				{
-					Assert.IsNotNull(coaster, "WARNING: no coaster!");
- 					coaster.EvaluateDrink (thisCocktail, this);
-					myCustomer = coaster.myCustomer;
-					isEvaluated = true;
-				}        
+			if (coaster._pickupablesInMe.Contains(transform.parent.GetComponent<Pickupable>()) 
+				&& coaster.MyCustomer.isReadyToServe)
+			{
+				myCustomer = coaster.MyCustomer;
+				coaster.EvaluateDrink (thisCocktail, this);
+				isEvaluated = true;
 			}
+
+// 				Debug.Log("Distance to coaster " + Vector3.Distance (coaster.gameObject.transform.position, transform.position));
+//				if(!isEvaluated && !GetComponentInParent<Pickupable>().pickedUp)
+//				{
+//					Assert.IsNotNull(coaster, "WARNING: no coaster!");
+// 					coaster.EvaluateDrink (thisCocktail, this);
+//					myCustomer = coaster.myCustomer;
+//					isEvaluated = true;
+//				}    
+			
 		}
 	}
 

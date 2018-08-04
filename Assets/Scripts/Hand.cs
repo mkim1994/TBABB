@@ -2,6 +2,7 @@
 using Rewired;
 using UnityEngine;
 using DG.Tweening;
+using JetBrains.Annotations;
 
 //ISSUE: It is possible to pick up an object as it's tweening. 
 //Effect is the other hand thinks it has picked something up.
@@ -16,7 +17,6 @@ public class Hand : MonoBehaviour
 	private float _longPressTime = 1f;
 	private HandManager _handManager;
 	private bool _isTweening;
-
 	
 	public bool IsTweening
 	{
@@ -25,7 +25,6 @@ public class Hand : MonoBehaviour
 
 	//references to objects for pickup
 	[HideInInspector] public Pickupable SeenPickupable;
-
 
 	public Bottle HeldBottle;
 	
@@ -37,13 +36,7 @@ public class Hand : MonoBehaviour
 	
 	//reference to other hand
 
-	private Hand _otherHand;
-
-	public Hand OtherHand
-	{
-		get { return _otherHand; }
-		set { _otherHand = value; }
-	}
+	[SerializeField]private Hand _otherHand;
 
 	//behavior tree
 	private Tree<Hand> _tree;
@@ -75,6 +68,7 @@ public class Hand : MonoBehaviour
 		_rewiredPlayer = Services.GameManager.playerInput.rewiredPlayer;
 		_handManager = Services.HandManager;
 
+		//We get reference to the OtherHands. 
 		if (_myHand == MyHand.Left)
 		{
 			_otherHand = _handManager.RightHand;
@@ -87,6 +81,7 @@ public class Hand : MonoBehaviour
 		_tree = new Tree<Hand>(new Selector<Hand>(
 			
 			//EMPTY behavior (hand is not holding anything)
+			//// Pick up object
 			new Sequence<Hand>(
 				new IsEmpty(),
 				new IsLookingAtPickupable(),
@@ -97,30 +92,52 @@ public class Hand : MonoBehaviour
 			),
 
 			//HELD behavior
-
-			//Holding Bottle
-			new Sequence<Hand>(
-				new IsHoldingBottle(),
-				new Not<Hand>(new IsTweenActive()),
-				new IsInDropRange(),
-				new Not<Hand>(new IsLookingAtGlass()),
-				new DropAction()
-//				new PourAction()
-			),
 			
-			new Sequence<Hand>(
-				new IsHoldingBottle(),
-				new IsLookingAtGlass(),
-				new PourAction()	
-			),
-
 			//Holding glass
 			new Sequence<Hand>(
 				new IsHoldingGlass(),
 				new Not<Hand>(new IsTweenActive()),
 //				new DisallowPickup(), //can't pick up if holding something
 				new IsInDropRange(),
+				new Not<Hand>(new IsLookingAtCoaster()),
 				new DropAction()
+			),
+
+			////Holding Bottle
+			new Sequence<Hand>(
+				new IsHoldingBottle(),
+				new Not<Hand>(new IsTweenActive()),
+				new IsInDropRange(),
+				new Not<Hand>(new IsLookingAtGlass()),
+				new Not<Hand>(new IsLookingAtCoaster()),
+				new DropAction()
+//				new PourAction()
+			),
+			
+			//Looking At Coaster
+			//Bottle to Coaster Drop
+			new Sequence<Hand>(
+				new IsHoldingBottle(),
+				new Not<Hand>(new IsTweenActive()),
+				new IsInDropRange(),
+				new Not<Hand>(new IsLookingAtGlass()),
+				new IsLookingAtCoaster(),
+				new CoasterDropAction()				
+			),
+			
+			//Glass to Coaster Drop
+			new Sequence<Hand>(
+				new IsHoldingGlass(),
+				new Not<Hand>(new IsTweenActive()),
+				new IsInDropRange(),
+				new IsLookingAtCoaster(),
+				new CoasterDropAction()
+			),
+			
+			new Sequence<Hand>(
+				new IsHoldingBottle(),
+				new IsLookingAtGlass(),
+				new PourAction()	
 			)
 		));
 	}
@@ -181,7 +198,9 @@ public class Hand : MonoBehaviour
 			Pickupable _myPickupable = SeenPickupable;
 			Sequence sequence = DOTween.Sequence();
 			sequence.Append(SeenPickupable.transform.DOLocalMove(newPos, _pickupDropTime));
+			sequence.AppendCallback(() => HeldPickupable.pickedUp = true);
 			sequence.AppendCallback(() => HeldPickupable = _myPickupable);
+//			sequence.AppendCallback(() => HeldPickupable.ChangeToFirstPersonLayer(_pickupDropTime));
 			sequence.OnComplete(() => _isTweening = false);
 		}
 	}
@@ -190,25 +209,39 @@ public class Hand : MonoBehaviour
 	{
 		if (HeldPickupable != null)
 		{
+			Debug.Log(newPos);
 			_isTweening = true;
 			HeldPickupable.transform.SetParent(null);
 			HeldPickupable.transform.rotation = Quaternion.identity;
 			Sequence dropSequence = DOTween.Sequence();
-			dropSequence.Append(HeldPickupable.transform.DOMove(DropPos, _pickupDropTime));
+			dropSequence.AppendCallback(() => HeldPickupable.pickedUp = false);
+			dropSequence.Append(HeldPickupable.transform.DOMove(newPos, _pickupDropTime));
+//			dropSequence.AppendCallback(() => HeldPickupable.ChangeToWorldLayer(_pickupDropTime));
 			dropSequence.AppendCallback(() => HeldPickupable = null);
 			dropSequence.OnComplete(() => _isTweening = false);
-			
 		}
 	}
 
-	public void Pour(Bottle bottleInHand, int handNum)
+	public void Pour(Bottle bottleInHand)
 	{
 		//left is 0, right is 1
- 		if (bottleInHand != null)
-		{
+		//the one on the right is always first????
+		
 //			Debug.Log(_handManager.SeenGlass);
-			_handManager.SeenGlass.ReceivePourFromBottle(bottleInHand, handNum);		
-		}
+//		_handManager.SeenGlass.ReceivePourFromBottle(bottleInHand, handNum);	
+
+		//		if (bottleInHand.myDrinkBase != DrinkBase.none)
+//		{
+//			_handManager.SeenGlass.Liquid.AddIngredient(bottleInHand.myDrinkBase);		
+//		}
+//		
+//		if (bottleInHand.myMixer != Mixer.none)
+//		{
+//			_handManager.SeenGlass.Liquid.AddMixer(bottleInHand.myMixer);		
+//		}
+//		Debug.Log(bottleInHand.myDrinkBase);
+		if(bottleInHand != null)
+			_handManager.SeenGlass.Liquid.AddIngredient(bottleInHand.myDrinkBase);
 	}
 
 	//conditions
@@ -218,6 +251,14 @@ public class Hand : MonoBehaviour
 		public override bool Update(Hand context)
 		{
  			return context._otherHand.IsTweening;
+		}
+	}
+
+	private class IsLookingAtCoaster : Node<Hand>
+	{
+		public override bool Update(Hand context)
+		{
+			return context._handManager.IsLookingAtCoaster;
 		}
 	}
 
@@ -284,16 +325,12 @@ public class Hand : MonoBehaviour
 	{
 		public override bool Update(Hand context)
 		{
-			if (context._handManager.IsLookingAtGlass)
-			{
-				Debug.Log("IS LOOKING AT GLASS!");
-				return true;
-			}
-			return false;
+			return context._handManager.IsLookingAtGlass;
 		}
 	}
 
 //Action
+
 	private class PickupAction : Node<Hand>
 	{
 		public override bool Update(Hand context)
@@ -305,7 +342,6 @@ public class Hand : MonoBehaviour
 					context.PickupObject(context._pickupMarker.localPosition);
 				} else if (context._rewiredPlayer.GetButtonTimedPress("Use Left", context._longPressTime))
 				{
-					Debug.Log("PICKUP ACTION NODE: LEFT HAND");	
 				}
 			}
 			else
@@ -315,13 +351,38 @@ public class Hand : MonoBehaviour
 					context.PickupObject(context._pickupMarker.localPosition);
 				} else if (context._rewiredPlayer.GetButtonTimedPress("Use Left", context._longPressTime))
 				{
-					Debug.Log("PICKUP ACTION NODE: RIGHT HAND");	
 				}
 			}
 			return true;
 		}
 	}
 
+	private class CoasterDropAction : Node<Hand>
+	{
+		public override bool Update(Hand context)
+		{
+			if (context._myHand == MyHand.Left)
+			{
+				if (context._rewiredPlayer.GetButtonTimedPressUp("Use Left", 0f, context._shortPressTime))
+				{
+ 					context.DropObject(context._handManager.CoasterPosition);
+				} else if (context._rewiredPlayer.GetButtonTimedPress("Use Left", context._longPressTime))
+				{
+				}
+			}
+			else
+			{
+				if (context._rewiredPlayer.GetButtonTimedPressUp("Use Right", 0f, context._shortPressTime))
+				{
+					context.DropObject(context._handManager.CoasterPosition);
+				} else if (context._rewiredPlayer.GetButtonTimedPress("Use Right", context._longPressTime))
+				{
+				}
+			}
+			return true;
+		}
+	}
+	
 	private class DropAction : Node<Hand>
 	{
 		public override bool Update(Hand context)
@@ -330,21 +391,19 @@ public class Hand : MonoBehaviour
 			{
 				if (context._rewiredPlayer.GetButtonTimedPressUp("Use Left", 0f, context._shortPressTime))
 				{
-					context.DropObject(context.DropPos);
+ 					context.DropObject(context.DropPos);
 				} else if (context._rewiredPlayer.GetButtonTimedPress("Use Left", context._longPressTime))
 				{
-					Debug.Log("DROP ACTION NODE: Do nothing (left hand)");	
-				}
+ 				}
 			}
 			else
 			{
 				if (context._rewiredPlayer.GetButtonTimedPressUp("Use Right", 0f, context._shortPressTime))
 				{
-					context.DropObject(context.DropPos);
+ 					context.DropObject(context.DropPos);
 				} else if (context._rewiredPlayer.GetButtonTimedPress("Use Right", context._longPressTime))
 				{
-					Debug.Log("DROP ACTION NODE: Do nothing (right hand)");	
-				}
+ 				}
 			}
 			return true;
 		}
@@ -359,13 +418,13 @@ public class Hand : MonoBehaviour
 				case MyHand.Left:
 					if (context._rewiredPlayer.GetButtonTimedPress("Use Left", context._longPressTime))
 					{
- 						context.Pour(context.HeldBottle, 0);     
+ 						context.Pour(context.HeldBottle);     
 					}
 					break;
 				case MyHand.Right:
 					if (context._rewiredPlayer.GetButtonTimedPress("Use Right", context._longPressTime))
 					{
- 						context.Pour(context.HeldBottle, 1);
+ 						context.Pour(context.HeldBottle);
 					}
 					break;
 			}

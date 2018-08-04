@@ -1,18 +1,16 @@
 fileFormatVersion: 2
-guid: 6ffe8365171a3204698c4de86c5d1f73
-timeCreated: 1519885222
+guid: ac3f3c09a754fa549b16216bf78c388f
+timeCreated: 1523408179
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
-    100000: Pipe
-    100002: //RootNode
-    400000: Pipe
-    400002: //RootNode
-    2100000: TransparentAura
-    2300000: Pipe
-    3300000: Pipe
-    4300000: Pipe
+    100000: //RootNode
+    400000: //RootNode
+    2100000: No Name
+    2300000: //RootNode
+    3300000: //RootNode
+    4300000: Cylinder001
   externalObjects: {}
   materials:
     importMaterials: 1

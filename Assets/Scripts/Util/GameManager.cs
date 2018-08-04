@@ -56,6 +56,7 @@ public class GameManager : MonoBehaviour {
 		Services.EventManager = new EventManager();
 		Services.Prefabs = Resources.Load<PrefabDB>("Prefabs/Prefabs");
 		Services.TweenManager = FindObjectOfType<TweenManager>();
+		Services.CoasterManager = FindObjectOfType<CoasterManager>();
 		Services.DrinkDictionary = new DrinkDictionary(); 
 		Services.MixerDictionary = new MixerDictionary();
 		Services.CustomerDictionary = new CustomerDictionary();
