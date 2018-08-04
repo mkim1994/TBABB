@@ -1083,7 +1083,7 @@ GameObject:
   - component: {fileID: 95318515063891808}
   - component: {fileID: 65142046523018810}
   - component: {fileID: 114611260694200056}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: coasterSHAY
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1707,7 +1707,7 @@ GameObject:
   - component: {fileID: 95334136909811650}
   - component: {fileID: 65787757373450532}
   - component: {fileID: 114392242314616394}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: coasterIVORY
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2529,7 +2529,7 @@ GameObject:
   - component: {fileID: 95918952758224022}
   - component: {fileID: 65494016478239852}
   - component: {fileID: 114177941391080592}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: coasterIZZY
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3386,7 +3386,7 @@ GameObject:
   - component: {fileID: 4350002016404364}
   - component: {fileID: 65975062064908720}
   - component: {fileID: 114724358464764740}
-  m_Layer: 2
+  m_Layer: 16
   m_Name: CoasterObjectDetector
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5538,7 +5538,7 @@ GameObject:
   - component: {fileID: 95279852226987318}
   - component: {fileID: 65352286231436064}
   - component: {fileID: 114004630605309396}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: coasterJULIA
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6055,7 +6055,7 @@ GameObject:
   - component: {fileID: 95515169464673638}
   - component: {fileID: 65726944301690076}
   - component: {fileID: 114854816833454638}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: coasterSAHANA
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -39170,6 +39170,7 @@ MonoBehaviour:
   MyPickupable: {fileID: 0}
   ServedTargetTransform: {fileID: 4296227469145866}
   UnservedPos: {x: 0, y: 0, z: 0}
+  _pickupablesInMe: []
 --- !u!114 &114006416854432356
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -40794,6 +40795,7 @@ MonoBehaviour:
   MyPickupable: {fileID: 0}
   ServedTargetTransform: {fileID: 4853708486890166}
   UnservedPos: {x: 0, y: 0, z: 0}
+  _pickupablesInMe: []
 --- !u!114 &114178041845213692
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -43281,6 +43283,7 @@ MonoBehaviour:
   MyPickupable: {fileID: 0}
   ServedTargetTransform: {fileID: 4064785347417318}
   UnservedPos: {x: 0, y: 0, z: 0}
+  _pickupablesInMe: []
 --- !u!114 &114397172574929294
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -45750,6 +45753,7 @@ MonoBehaviour:
   MyPickupable: {fileID: 0}
   ServedTargetTransform: {fileID: 0}
   UnservedPos: {x: 0, y: 0, z: 0}
+  _pickupablesInMe: []
 --- !u!114 &114612432989769300
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -47276,6 +47280,7 @@ MonoBehaviour:
   MyPickupable: {fileID: 0}
   ServedTargetTransform: {fileID: 0}
   UnservedPos: {x: 0, y: 0, z: 0}
+  _pickupablesInMe: []
 --- !u!114 &114745405518901062
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -48461,6 +48466,7 @@ MonoBehaviour:
   MyPickupable: {fileID: 0}
   ServedTargetTransform: {fileID: 4405680572985040}
   UnservedPos: {x: 0, y: 0, z: 0}
+  _pickupablesInMe: []
 --- !u!114 &114857302405143700
 MonoBehaviour:
   m_ObjectHideFlags: 1

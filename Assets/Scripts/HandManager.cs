@@ -6,7 +6,13 @@ using BehaviorTree;
 public class HandManager : MonoBehaviour
 {
 	public Vector3 CoasterPosition;
-	
+	private GameObject _coaster;
+
+	public GameObject Coaster
+	{
+		get { return _coaster; }
+	}
+
 	[SerializeField]private Hand _leftHand;
 	[SerializeField]private Hand _rightHand;
 
@@ -160,10 +166,12 @@ public class HandManager : MonoBehaviour
 				{
 					_isLookingAtCoaster = true;
 					CoasterPosition = hit.transform.position;
+					_coaster = hit.transform.gameObject;
 				}
 				else
 				{
 					_isLookingAtCoaster = false;
+					_coaster = null;
 				}
 			}
 			else if (Vector3.Distance(hit.point, transform.position) > _maxInteractionDist
@@ -171,6 +179,7 @@ public class HandManager : MonoBehaviour
 			{
 				_isInDropRange = false;
 				_isLookingAtCoaster = false;
+				_coaster = null;
 			}
 		}
 	}

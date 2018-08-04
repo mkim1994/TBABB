@@ -215,7 +215,7 @@ public class Hand : MonoBehaviour
 			HeldPickupable.transform.rotation = Quaternion.identity;
 			Sequence dropSequence = DOTween.Sequence();
 			dropSequence.AppendCallback(() => HeldPickupable.pickedUp = false);
-			dropSequence.Append(HeldPickupable.transform.DOMove(DropPos, _pickupDropTime));
+			dropSequence.Append(HeldPickupable.transform.DOMove(newPos, _pickupDropTime));
 //			dropSequence.AppendCallback(() => HeldPickupable.ChangeToWorldLayer(_pickupDropTime));
 			dropSequence.AppendCallback(() => HeldPickupable = null);
 			dropSequence.OnComplete(() => _isTweening = false);
@@ -374,7 +374,7 @@ public class Hand : MonoBehaviour
 			{
 				if (context._rewiredPlayer.GetButtonTimedPressUp("Use Right", 0f, context._shortPressTime))
 				{
- 					context.DropObject(context._handManager.CoasterPosition);
+					context.DropObject(context._handManager.CoasterPosition);
 				} else if (context._rewiredPlayer.GetButtonTimedPress("Use Right", context._longPressTime))
 				{
 				}
