@@ -5,6 +5,7 @@ using BehaviorTree;
 
 public class HandManager : MonoBehaviour
 {
+	public Vector3 CoasterPosition;
 	
 	[SerializeField]private Hand _leftHand;
 	[SerializeField]private Hand _rightHand;
@@ -57,18 +58,23 @@ public class HandManager : MonoBehaviour
 	private Vector3 _dropPos;
 		
 	//bools
-	[SerializeField]private bool _isInDropRange;
+	private bool _isInDropRange;
+	private bool _isLookingAtGlass;
+	private bool _isLookingAtCoaster;
 
 	public bool IsInDropRange
 	{
 		get { return _isInDropRange; }
 	}
 
-	private bool _isLookingAtGlass;
-
 	public bool IsLookingAtGlass
 	{
 		get { return _isLookingAtGlass; }
+	}
+
+	public bool IsLookingAtCoaster
+	{
+		get { return _isLookingAtCoaster; }
 	}
 
 	// Use this for initialization
@@ -142,19 +148,29 @@ public class HandManager : MonoBehaviour
 
 		if (Physics.Raycast(ray, out hit, rayDist, _dropLayerMask))
 		{
-//			Debug.Log(hit.transform.name);
 			_leftHand.DropPos = hit.point;
 			_rightHand.DropPos = hit.point;
 			
 			if (Vector3.Distance(hit.point, transform.position) <= _maxInteractionDist
-			    && hit.transform.gameObject.layer == 9) //only set to true if object is of Dropzone Layer
+			    && (hit.transform.gameObject.layer == 9
+			    || hit.transform.gameObject.layer == 11)) //only set to true if object is of Dropzone Layer
 			{
-				_isInDropRange = true;				
+				_isInDropRange = true;
+				if (hit.transform.gameObject.GetComponent<Coaster>() != null)
+				{
+					_isLookingAtCoaster = true;
+					CoasterPosition = hit.transform.position;
+				}
+				else
+				{
+					_isLookingAtCoaster = false;
+				}
 			}
 			else if (Vector3.Distance(hit.point, transform.position) > _maxInteractionDist
-				 || hit.transform.gameObject.layer != 9) 
+			         || hit.transform.gameObject.layer != 9) 
 			{
-				_isInDropRange = false;				
+				_isInDropRange = false;
+				_isLookingAtCoaster = false;
 			}
 		}
 	}

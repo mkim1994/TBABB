@@ -32,7 +32,7 @@ public class CoasterPickupableDetector : MonoBehaviour
 			_timeInsideMe += Time.deltaTime;
 			if (!_myCoasterParent._pickupablesInMe.Contains(trigger.GetComponent<Pickupable>()) 
 			    && _myCoasterParent._pickupablesInMe.Count<1 && distance <= 0.16f
-			    && _timeInsideMe > _minTimeToDetect)
+			    && _timeInsideMe >= _minTimeToDetect)
 			{		
 				_myCoasterParent._pickupablesInMe.Add(trigger.GetComponent<Pickupable>());
 				_myCoasterParent.IsOccupied = true;

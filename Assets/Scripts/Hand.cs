@@ -2,6 +2,7 @@
 using Rewired;
 using UnityEngine;
 using DG.Tweening;
+using JetBrains.Annotations;
 
 //ISSUE: It is possible to pick up an object as it's tweening. 
 //Effect is the other hand thinks it has picked something up.
@@ -98,6 +99,7 @@ public class Hand : MonoBehaviour
 				new Not<Hand>(new IsTweenActive()),
 //				new DisallowPickup(), //can't pick up if holding something
 				new IsInDropRange(),
+				new Not<Hand>(new IsLookingAtCoaster()),
 				new DropAction()
 			),
 
@@ -107,8 +109,29 @@ public class Hand : MonoBehaviour
 				new Not<Hand>(new IsTweenActive()),
 				new IsInDropRange(),
 				new Not<Hand>(new IsLookingAtGlass()),
+				new Not<Hand>(new IsLookingAtCoaster()),
 				new DropAction()
 //				new PourAction()
+			),
+			
+			//Looking At Coaster
+			//Bottle to Coaster Drop
+			new Sequence<Hand>(
+				new IsHoldingBottle(),
+				new Not<Hand>(new IsTweenActive()),
+				new IsInDropRange(),
+				new Not<Hand>(new IsLookingAtGlass()),
+				new IsLookingAtCoaster(),
+				new CoasterDropAction()				
+			),
+			
+			//Glass to Coaster Drop
+			new Sequence<Hand>(
+				new IsHoldingGlass(),
+				new Not<Hand>(new IsTweenActive()),
+				new IsInDropRange(),
+				new IsLookingAtCoaster(),
+				new CoasterDropAction()
 			),
 			
 			new Sequence<Hand>(
@@ -186,6 +209,7 @@ public class Hand : MonoBehaviour
 	{
 		if (HeldPickupable != null)
 		{
+			Debug.Log(newPos);
 			_isTweening = true;
 			HeldPickupable.transform.SetParent(null);
 			HeldPickupable.transform.rotation = Quaternion.identity;
@@ -227,6 +251,14 @@ public class Hand : MonoBehaviour
 		public override bool Update(Hand context)
 		{
  			return context._otherHand.IsTweening;
+		}
+	}
+
+	private class IsLookingAtCoaster : Node<Hand>
+	{
+		public override bool Update(Hand context)
+		{
+			return context._handManager.IsLookingAtCoaster;
 		}
 	}
 
@@ -298,6 +330,7 @@ public class Hand : MonoBehaviour
 	}
 
 //Action
+
 	private class PickupAction : Node<Hand>
 	{
 		public override bool Update(Hand context)
@@ -324,6 +357,32 @@ public class Hand : MonoBehaviour
 		}
 	}
 
+	private class CoasterDropAction : Node<Hand>
+	{
+		public override bool Update(Hand context)
+		{
+			if (context._myHand == MyHand.Left)
+			{
+				if (context._rewiredPlayer.GetButtonTimedPressUp("Use Left", 0f, context._shortPressTime))
+				{
+ 					context.DropObject(context._handManager.CoasterPosition);
+				} else if (context._rewiredPlayer.GetButtonTimedPress("Use Left", context._longPressTime))
+				{
+				}
+			}
+			else
+			{
+				if (context._rewiredPlayer.GetButtonTimedPressUp("Use Right", 0f, context._shortPressTime))
+				{
+ 					context.DropObject(context._handManager.CoasterPosition);
+				} else if (context._rewiredPlayer.GetButtonTimedPress("Use Right", context._longPressTime))
+				{
+				}
+			}
+			return true;
+		}
+	}
+	
 	private class DropAction : Node<Hand>
 	{
 		public override bool Update(Hand context)
@@ -332,7 +391,7 @@ public class Hand : MonoBehaviour
 			{
 				if (context._rewiredPlayer.GetButtonTimedPressUp("Use Left", 0f, context._shortPressTime))
 				{
-					context.DropObject(context.DropPos);
+ 					context.DropObject(context.DropPos);
 				} else if (context._rewiredPlayer.GetButtonTimedPress("Use Left", context._longPressTime))
 				{
  				}
@@ -341,7 +400,7 @@ public class Hand : MonoBehaviour
 			{
 				if (context._rewiredPlayer.GetButtonTimedPressUp("Use Right", 0f, context._shortPressTime))
 				{
-					context.DropObject(context.DropPos);
+ 					context.DropObject(context.DropPos);
 				} else if (context._rewiredPlayer.GetButtonTimedPress("Use Right", context._longPressTime))
 				{
  				}
