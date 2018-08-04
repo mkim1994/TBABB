@@ -151,6 +151,7 @@ public class PlayerInput : MonoBehaviour
 		{
 			GetInput();
 //			ProcessInput();
+			ProcessDialogueSelectionInput();
 			if(!Services.TweenManager.tweensAreActive){
 				ProcessMouseLook();
 				ProcessMovement();
@@ -294,12 +295,24 @@ public class PlayerInput : MonoBehaviour
 		#endregion
 	}
 
+	private void ProcessDialogueSelectionInput()
+	{
+		if(i_choose1){
+			Services.GameManager.dialogue.GetComponent<DialogueUI>().ChooseOption(0);
+		}
+
+		if(i_choose2){
+			Services.GameManager.dialogue.GetComponent<DialogueUI>().ChooseOption(1);
+		}
+	}
+
 	private void ProcessInput(){
 		if (Input.GetKeyDown(KeyCode.T))
 		{
 			EventManager.Instance.Fire(new DrinkRejectedEvent());
 		}
 
+		
 		#region Pick Up Left / Drop Left
 // 		if(i_pickupLeft && !Services.TweenManager.tweensAreActive){
 // 			if(pickupable != null && pickupableInLeftHand == null){ //PICK UP WITH LEFT HAND, CHECK IF LEFT HAND IS EMPTY
