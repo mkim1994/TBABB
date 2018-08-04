@@ -192,8 +192,11 @@ public class NonHand : MonoBehaviour {
 		public override bool Update(NonHand context)
 		{
 			if (context._rewiredPlayer.GetButtonDown("Talk"))
+			{
 				Debug.Log("SERVING DRINK!");
-				context._glass.Liquid.TalkToCoaster();	
+				context._glass.Liquid.TalkToCoaster();           	
+			}
+
 			return true;
 		}
 	}

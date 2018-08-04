@@ -8,8 +8,7 @@ public class CoasterManager : MonoBehaviour {
 	void Start(){
 		coasters.AddRange(FindObjectsOfType<Coaster>());
 	}
-
 	
-
+	
 	
 }

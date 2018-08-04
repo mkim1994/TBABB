@@ -592,8 +592,15 @@ public class Liquid : MonoBehaviour {
 
 	public void TalkToCoaster(){
 		foreach (var coaster in coasters) {
-			// Debug.Log("Distance to coaster " + Vector3.Distance (coaster.gameObject.transform.position, transform.position));
-			if (Vector3.Distance (coaster.gameObject.transform.position, transform.position) <= 0.1f) {
+			if (coaster._pickupablesInMe.Contains(transform.parent.GetComponent<Pickupable>()) 
+				&& coaster.MyCustomer.isReadyToServe)
+			{
+				myCustomer = coaster.MyCustomer;
+				coaster.EvaluateDrink (thisCocktail, this);
+				isEvaluated = true;
+			}
+
+// 				Debug.Log("Distance to coaster " + Vector3.Distance (coaster.gameObject.transform.position, transform.position));
 //				if(!isEvaluated && !GetComponentInParent<Pickupable>().pickedUp)
 //				{
 //					Assert.IsNotNull(coaster, "WARNING: no coaster!");
@@ -601,7 +608,7 @@ public class Liquid : MonoBehaviour {
 //					myCustomer = coaster.myCustomer;
 //					isEvaluated = true;
 //				}    
-			}
+			
 		}
 	}
 
