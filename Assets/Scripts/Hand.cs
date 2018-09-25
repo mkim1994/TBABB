@@ -3,6 +3,7 @@ using Rewired;
 using UnityEngine;
 using DG.Tweening;
 using JetBrains.Annotations;
+using Rewired.Platforms;
 
 //ISSUE: It is possible to pick up an object as it's tweening. 
 //Effect is the other hand thinks it has picked something up.
@@ -122,6 +123,9 @@ public class Hand : MonoBehaviour
 				new IsInDropRange(),
 				new Not<Hand>(new IsLookingAtGlass()),
 				new IsLookingAtCoaster(),
+				new Not<Hand>(new IsCoasterOccupied()),
+				new Not<Hand>(new IsOtherHandTweening()),
+				new Not<Hand>(new IsCoasterPreOccupied()),
 				new CoasterDropAction()				
 			),
 			
@@ -131,6 +135,9 @@ public class Hand : MonoBehaviour
 				new Not<Hand>(new IsTweenActive()),
 				new IsInDropRange(),
 				new IsLookingAtCoaster(),
+				new Not<Hand>(new IsCoasterOccupied()),
+				new Not<Hand>(new IsOtherHandTweening()),
+				new Not<Hand>(new IsCoasterPreOccupied()),
 				new CoasterDropAction()
 			),
 			
@@ -245,6 +252,22 @@ public class Hand : MonoBehaviour
 	}
 
 	//conditions
+
+	private class IsCoasterOccupied : Node<Hand>
+	{
+		public override bool Update(Hand context)
+		{
+			return context._handManager.Coaster.GetComponent<Coaster>().IsOccupied;
+		}
+	}
+
+	private class IsCoasterPreOccupied : Node<Hand>
+	{
+		public override bool Update(Hand context)
+		{
+			return context._handManager.Coaster.GetComponentInChildren<CoasterPickupableDetector>().PreOccupied;
+		}
+	}
 
 	private class IsOtherHandTweening : Node<Hand>
 	{

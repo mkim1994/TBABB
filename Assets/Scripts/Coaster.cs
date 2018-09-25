@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Rewired.Utils.Libraries.TinyJson;
 using UnityEngine;
 using Yarn;
 
@@ -17,6 +18,8 @@ public class Coaster : MonoBehaviour
 	public Vector3 UnservedPos; 
 	private float _minAcceptableVolume = 25f;
 	public List<Pickupable> _pickupablesInMe = new List<Pickupable>();
+	[SerializeField]private bool _isOccupied;
+
 
 	void Start()
 	{
@@ -259,8 +262,6 @@ public class Coaster : MonoBehaviour
 			}				 
 		} 
  	}
-
-	private bool _isOccupied;
 
 	public bool IsOccupied
 	{
