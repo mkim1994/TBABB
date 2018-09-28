@@ -48,6 +48,7 @@ public class NonHand : MonoBehaviour {
 			
 			new Sequence<NonHand>(
 				new IsPlayerLookingAtGlass(),
+				new Not<NonHand>(new IsDialogueRunning()),
 				//new IsGlassReadyToServe()
 				new Serve()
 			)
