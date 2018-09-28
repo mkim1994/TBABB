@@ -98,6 +98,7 @@ public class Hand : MonoBehaviour
 			new Sequence<Hand>(
 				new IsHoldingGlass(),
 				new Not<Hand>(new IsTweenActive()),
+				new Not<Hand>(new IsOtherHandTweening()),
 //				new DisallowPickup(), //can't pick up if holding something
 				new IsInDropRange(),
 				new Not<Hand>(new IsLookingAtCoaster()),
@@ -108,6 +109,7 @@ public class Hand : MonoBehaviour
 			new Sequence<Hand>(
 				new IsHoldingBottle(),
 				new Not<Hand>(new IsTweenActive()),
+				new Not<Hand>(new IsOtherHandTweening()),
 				new IsInDropRange(),
 				new Not<Hand>(new IsLookingAtGlass()),
 				new Not<Hand>(new IsLookingAtCoaster()),
@@ -125,7 +127,7 @@ public class Hand : MonoBehaviour
 				new IsLookingAtCoaster(),
 				new Not<Hand>(new IsCoasterOccupied()),
 				new Not<Hand>(new IsOtherHandTweening()),
-				new Not<Hand>(new IsCoasterPreOccupied()),
+//				new Not<Hand>(new IsCoasterPreOccupied()),
 				new CoasterDropAction()				
 			),
 			
@@ -137,7 +139,7 @@ public class Hand : MonoBehaviour
 				new IsLookingAtCoaster(),
 				new Not<Hand>(new IsCoasterOccupied()),
 				new Not<Hand>(new IsOtherHandTweening()),
-				new Not<Hand>(new IsCoasterPreOccupied()),
+//				new Not<Hand>(new IsCoasterPreOccupied()),
 				new CoasterDropAction()
 			),
 			
@@ -389,6 +391,7 @@ public class Hand : MonoBehaviour
 				if (context._rewiredPlayer.GetButtonTimedPressUp("Use Left", 0f, context._shortPressTime))
 				{
  					context.DropObject(context._handManager.CoasterPosition);
+					context._handManager.Coaster.GetComponent<Coaster>().IsOccupied = true;
 				} else if (context._rewiredPlayer.GetButtonTimedPress("Use Left", context._longPressTime))
 				{
 				}
@@ -398,6 +401,7 @@ public class Hand : MonoBehaviour
 				if (context._rewiredPlayer.GetButtonTimedPressUp("Use Right", 0f, context._shortPressTime))
 				{
 					context.DropObject(context._handManager.CoasterPosition);
+					context._handManager.Coaster.GetComponent<Coaster>().IsOccupied = true;
 				} else if (context._rewiredPlayer.GetButtonTimedPress("Use Right", context._longPressTime))
 				{
 				}

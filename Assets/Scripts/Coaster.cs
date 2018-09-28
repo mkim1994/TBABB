@@ -6,19 +6,20 @@ using Yarn;
 
 public class Coaster : MonoBehaviour
 {
-	public NPC MyCustomer;
-	private Dropzone _myDropzone;
+	public bool IsOccupied;
+	private GameObject _myDetector;
 	private DrinkProfile _currentOrder;
-	[SerializeField]private GameObject _myDetector;
-	public bool IsDrinkHere = false;
+	private Dropzone _myDropzone;
+	private float _minAcceptableVolume = 25f;
+
+	public NPC MyCustomer;
+	[HideInInspector]public bool IsDrinkHere = false;
 	public Customer CurrentCustomer;
 	public DrinkProfile DrinkOnCoaster;
 	public Pickupable MyPickupable;
 	public Transform ServedTargetTransform;
 	public Vector3 UnservedPos; 
-	private float _minAcceptableVolume = 25f;
 	public List<Pickupable> _pickupablesInMe = new List<Pickupable>();
-	[SerializeField]private bool _isOccupied;
 
 
 	void Start()
@@ -262,12 +263,6 @@ public class Coaster : MonoBehaviour
 			}				 
 		} 
  	}
-
-	public bool IsOccupied
-	{
-		get { return _isOccupied; }
-		set { _isOccupied = value; }
-	}
 
 	public void TakeOrder (DrinkProfile _customerOrder)
 	{
