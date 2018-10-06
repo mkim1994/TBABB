@@ -13,7 +13,7 @@ public class Hand : MonoBehaviour
 {
 	// tween values
 	[SerializeField] private Transform _pickupMarker;
-	private float _pickupDropTime = 0.75f;
+	[SerializeField]private float _pickupDropTime = 0.75f;
 	private float _shortPressTime = 0.5f;
 	private float _longPressTime = 1f;
 	private HandManager _handManager;
@@ -25,7 +25,7 @@ public class Hand : MonoBehaviour
 	}
 
 	//references to objects for pickup
-	[HideInInspector] public Pickupable SeenPickupable;
+	public Pickupable SeenPickupable;
 
 	public Bottle HeldBottle;
 	
@@ -207,7 +207,7 @@ public class Hand : MonoBehaviour
 			Pickupable _myPickupable = SeenPickupable;
 			Sequence sequence = DOTween.Sequence();
 			sequence.Append(SeenPickupable.transform.DOLocalMove(newPos, _pickupDropTime));
-			sequence.AppendCallback(() => HeldPickupable.pickedUp = true);
+			sequence.AppendCallback(() => HeldPickupable.PickedUp = true);
 			sequence.AppendCallback(() => HeldPickupable = _myPickupable);
 //			sequence.AppendCallback(() => HeldPickupable.ChangeToFirstPersonLayer(_pickupDropTime));
 			sequence.OnComplete(() => _isTweening = false);
@@ -223,7 +223,7 @@ public class Hand : MonoBehaviour
 			HeldPickupable.transform.SetParent(null);
 			HeldPickupable.transform.rotation = Quaternion.identity;
 			Sequence dropSequence = DOTween.Sequence();
-			dropSequence.AppendCallback(() => HeldPickupable.pickedUp = false);
+			dropSequence.AppendCallback(() => HeldPickupable.PickedUp = false);
 			dropSequence.Append(HeldPickupable.transform.DOMove(newPos, _pickupDropTime));
 //			dropSequence.AppendCallback(() => HeldPickupable.ChangeToWorldLayer(_pickupDropTime));
 			dropSequence.AppendCallback(() => HeldPickupable = null);
@@ -365,6 +365,7 @@ public class Hand : MonoBehaviour
 				if (context._rewiredPlayer.GetButtonTimedPressUp("Use Left", 0f, context._shortPressTime))
 				{
 					context.PickupObject(context._pickupMarker.localPosition);
+					context.SeenPickupable.ChangeToFirstPersonLayer(context._pickupDropTime);
 				} else if (context._rewiredPlayer.GetButtonTimedPress("Use Left", context._longPressTime))
 				{
 				}
@@ -374,6 +375,7 @@ public class Hand : MonoBehaviour
 				if (context._rewiredPlayer.GetButtonTimedPressUp("Use Right", 0f, context._shortPressTime))
 				{
 					context.PickupObject(context._pickupMarker.localPosition);
+					context.SeenPickupable.ChangeToFirstPersonLayer(context._pickupDropTime);
 				} else if (context._rewiredPlayer.GetButtonTimedPress("Use Left", context._longPressTime))
 				{
 				}
@@ -392,6 +394,7 @@ public class Hand : MonoBehaviour
 				{
  					context.DropObject(context._handManager.CoasterPosition);
 					context._handManager.Coaster.GetComponent<Coaster>().IsOccupied = true;
+					context.HeldPickupable.ChangeToWorldLayer(context._pickupDropTime);
 				} else if (context._rewiredPlayer.GetButtonTimedPress("Use Left", context._longPressTime))
 				{
 				}
@@ -402,6 +405,7 @@ public class Hand : MonoBehaviour
 				{
 					context.DropObject(context._handManager.CoasterPosition);
 					context._handManager.Coaster.GetComponent<Coaster>().IsOccupied = true;
+					context.HeldPickupable.ChangeToWorldLayer(context._pickupDropTime);
 				} else if (context._rewiredPlayer.GetButtonTimedPress("Use Right", context._longPressTime))
 				{
 				}
@@ -419,6 +423,7 @@ public class Hand : MonoBehaviour
 				if (context._rewiredPlayer.GetButtonTimedPressUp("Use Left", 0f, context._shortPressTime))
 				{
  					context.DropObject(context.DropPos);
+					context.HeldPickupable.ChangeToWorldLayer(context._pickupDropTime);
 				} else if (context._rewiredPlayer.GetButtonTimedPress("Use Left", context._longPressTime))
 				{
  				}
@@ -428,6 +433,7 @@ public class Hand : MonoBehaviour
 				if (context._rewiredPlayer.GetButtonTimedPressUp("Use Right", 0f, context._shortPressTime))
 				{
  					context.DropObject(context.DropPos);
+					context.HeldPickupable.ChangeToWorldLayer(context._pickupDropTime);
 				} else if (context._rewiredPlayer.GetButtonTimedPress("Use Right", context._longPressTime))
 				{
  				}

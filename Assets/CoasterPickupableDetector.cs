@@ -45,7 +45,7 @@ public class CoasterPickupableDetector : MonoBehaviour
 
 	void OnTriggerStay(Collider trigger)
 	{
-		if (trigger.GetComponent<Pickupable>() != null && !trigger.GetComponent<Pickupable>().pickedUp)
+		if (trigger.GetComponent<Pickupable>() != null && !trigger.GetComponent<Pickupable>().PickedUp)
 		{
 			float distance = Vector3.Distance(trigger.transform.position, transform.parent.position);
 	

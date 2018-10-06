@@ -81,11 +81,21 @@ public class Glass : Pickupable
 //		_playerLookVec2 = Services.GameManager.playerInput.lookVector;
 		fsm.Update();
 		
- 		if(pickedUp && !Services.TweenManager.tweensAreActive){
-//			transform.rotation = Quaternion.identity;
-//			_playerLookX -= _playerLookVec2.y * _playerLookSens;
-//			_playerLookX = Mathf.Clamp (_playerLookX, -75f, -25f);
-//			transform.localRotation = Quaternion.Euler (_playerLookX, 0, 0);	 
+// 		if(PickedUp && !Services.TweenManager.tweensAreActive){
+////			transform.rotation = Quaternion.identity;
+////			_playerLookX -= _playerLookVec2.y * _playerLookSens;
+////			_playerLookX = Mathf.Clamp (_playerLookX, -75f, -25f);
+////			transform.localRotation = Quaternion.Euler (_playerLookX, 0, 0);	 
+//		}
+		
+		//Change gameobject render layer on pickup and drop.
+		if (PickedUp)
+		{
+			ChangeLayerToFirstPerson();
+		}
+		else
+		{
+			ChangeLayerToWorld();
 		}
 
 		if(myIceList.Count >= 3){
@@ -115,12 +125,12 @@ public class Glass : Pickupable
 	}
 
 	public override void InteractLeftHand(){
-		if(!pickedUp && CurrentState != ServedState){
+		if(!PickedUp && CurrentState != ServedState){
 			//pick up with left hand
 			transform.SetParent(Services.GameManager.player.transform.GetChild(0));
 			Services.GameManager.player.GetComponent<PlayerInput>().pickupableInLeftHand = this;
 			PickupTween(leftHandPos, Vector3.zero);			
-		} else if(pickedUp){
+		} else if(PickedUp){
 			transform.SetParent(null);
 			Services.GameManager.player.GetComponent<PlayerInput>().pickupableInLeftHand = null;
  
@@ -131,11 +141,11 @@ public class Glass : Pickupable
 	}
 
 	public override void InteractRightHand(){
-		if(!pickedUp && CurrentState != ServedState){
+		if(!PickedUp && CurrentState != ServedState){
 			transform.SetParent(Services.GameManager.player.transform.GetChild(0));
 			Services.GameManager.player.GetComponent<PlayerInput>().pickupableInRightHand = this;
 			PickupTween(rightHandPos, Vector3.zero);			
-		} else if(pickedUp){
+		} else if(PickedUp){
 			transform.SetParent(null);
 			Services.GameManager.player.GetComponent<PlayerInput>().pickupableInRightHand = null;
             
@@ -152,7 +162,7 @@ public class Glass : Pickupable
 		{
 			Debug.Log(bottleInHand.myDrinkBase);
 			Liquid.AddIngredient(bottleInHand.myDrinkBase);
-			if (pickedUp)
+			if (PickedUp)
 			{
 //				base.RotateTween(leftHandPourRot);
 				if (handNum == 0)
@@ -168,7 +178,7 @@ public class Glass : Pickupable
 		else if (bottleInHand.myMixer != Mixer.none && bottleInHand.myDrinkBase == DrinkBase.none)
 		{
 			Liquid.AddMixer(bottleInHand.myMixer);
-			if (pickedUp)
+			if (PickedUp)
 			{
 				if (handNum == 0)
 				{
@@ -220,7 +230,7 @@ public class Glass : Pickupable
 //		sequence.AppendCallback(() => GetComponent<Collider>().enabled = true);
 		sequence.OnComplete(() => DeclareInactiveTween());
 		StartCoroutine(ChangeToWorldLayer(pickupDropTime));
-		pickedUp = false;
+		PickedUp = false;
 	}
 
 	public override void StartPourTween(Vector3 moveToPos)
@@ -392,7 +402,7 @@ public class Glass : Pickupable
 	public override void ReturnHome(GameEvent e){
 		DayEndEvent dayEndEvent = e as DayEndEvent;
 		transform.position = origPos;
-		pickedUp = false;
+		PickedUp = false;
 		transform.eulerAngles = Vector3.zero;
 		StartCoroutine(ChangeToWorldLayer(1f));
 		ClearIce();

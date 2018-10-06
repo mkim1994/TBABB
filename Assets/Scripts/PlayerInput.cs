@@ -651,7 +651,7 @@ public class PlayerInput : MonoBehaviour
 						if (targetCoaster.MyCustomer.IsCustomerPresent() && !targetCoaster.MyCustomer.HasAcceptedDrink()) //if  customer is present and customer HAS NOT accepted drink, then you can pour into it
 						{ 
 							if (pickupable.GetComponent<Glass>() != null &&
-							    !pickupable.pickedUp &&
+							    !pickupable.PickedUp &&
 							    pickupableInLeftHand.GetComponent<Bottle>() != null && 
 							    interactionTimer >= minHoldTime)
 							{
@@ -682,7 +682,7 @@ public class PlayerInput : MonoBehaviour
 					{
 						if (pickupable.GetComponent<Glass>() != null && 
 						    pickupableInLeftHand.GetComponent<Bottle>() != null && 
-						    !pickupable.pickedUp &&
+						    !pickupable.PickedUp &&
 						    interactionTimer >= minHoldTime)
 						{
 							Bottle bottle = pickupableInLeftHand.GetComponent<Bottle>();
@@ -953,7 +953,7 @@ public class PlayerInput : MonoBehaviour
 						{
 							if (pickupable.GetComponent<Glass>() != null && 
 							    pickupableInRightHand.GetComponent<Bottle>() != null && 
-							    !pickupable.pickedUp &&
+							    !pickupable.PickedUp &&
 							    interactionTimer >= minHoldTime)
 							{								
 								Bottle bottle = pickupableInRightHand.GetComponent<Bottle>();
@@ -982,7 +982,7 @@ public class PlayerInput : MonoBehaviour
 					else // no coaster
 					{
 						if (pickupable.GetComponent<Glass>() != null && pickupableInRightHand.GetComponent<Bottle>() != null
-							&& !pickupable.pickedUp && interactionTimer >= minHoldTime )
+							&& !pickupable.PickedUp && interactionTimer >= minHoldTime )
 						{
  							Bottle bottle = pickupableInRightHand.GetComponent<Bottle>();
 							Glass glass = pickupable.GetComponent<Glass>();

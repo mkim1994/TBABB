@@ -68,12 +68,12 @@ public class Pen : Pickupable
 	}
 	
 	public override void InteractLeftHand(){
-		if(!pickedUp){
+		if(!PickedUp){
 			//pick up with left hand
 			transform.SetParent(Services.GameManager.player.transform.GetChild(0));
 			Services.GameManager.player.GetComponent<PlayerInput>().pickupableInLeftHand = this;
 			PickupTween(_leftHandStartPos, _leftHandStartRot);
-		} else if(pickedUp){
+		} else if(PickedUp){
 			transform.SetParent(null);
 			Services.GameManager.player.GetComponent<PlayerInput>().pickupableInLeftHand = null;
  
@@ -84,11 +84,11 @@ public class Pen : Pickupable
 	}
 
 	public override void InteractRightHand(){
-		if(!pickedUp){
+		if(!PickedUp){
 			transform.SetParent(Services.GameManager.player.transform.GetChild(0));
 			Services.GameManager.player.GetComponent<PlayerInput>().pickupableInRightHand = this;
 			PickupTween(_rightHandStartPos, _rightHandStartRot);
-		} else if(pickedUp){
+		} else if(PickedUp){
 			transform.SetParent(null);
 			Services.GameManager.player.GetComponent<PlayerInput>().pickupableInRightHand = null;
             
@@ -106,7 +106,7 @@ public class Pen : Pickupable
 		sequence.OnComplete(() => DeclareInactiveTween());
 		// Debug.Log("Pickup Tween called!");
 		StartCoroutine(ChangeToFirstPersonLayer(pickupDropTime));
-		pickedUp = true;
+		PickedUp = true;
 		tweenSequences.Add(sequence);
 	}
 }

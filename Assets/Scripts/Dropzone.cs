@@ -54,7 +54,7 @@ public class Dropzone : MonoBehaviour
 	{
 		if (trigger.gameObject.GetComponent<Pickupable>() != null && !trigger.gameObject.GetComponent<Pickupable>().isForDropzoneOnly)
 		{
-			if (!trigger.gameObject.GetComponent<Pickupable>().pickedUp)
+			if (!trigger.gameObject.GetComponent<Pickupable>().PickedUp)
 			{
 				float distance = Vector3.Distance(trigger.transform.position, transform.parent.position);
 				_distance = distance;
@@ -70,7 +70,7 @@ public class Dropzone : MonoBehaviour
 					isOccupied = true;
 				} else if (objectsInMe.Count > 0)
 				{
-					if (trigger.gameObject.GetComponent<Pickupable>().pickedUp)
+					if (trigger.gameObject.GetComponent<Pickupable>().PickedUp)
 					{
 						isOccupied = false;
 					}
