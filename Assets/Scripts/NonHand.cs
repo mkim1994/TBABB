@@ -36,6 +36,7 @@ public class NonHand : MonoBehaviour {
 			new Sequence<NonHand>(
 				new IsPlayerLookingAtNpc(),
 				new IsPlayerPressingButton(),
+				new Not<NonHand>(new IsDialogueRunning()),
 				new Talk()
 			),
 			
@@ -47,6 +48,7 @@ public class NonHand : MonoBehaviour {
 			
 			new Sequence<NonHand>(
 				new IsPlayerLookingAtGlass(),
+				new Not<NonHand>(new IsDialogueRunning()),
 				//new IsGlassReadyToServe()
 				new Serve()
 			)
@@ -163,6 +165,14 @@ public class NonHand : MonoBehaviour {
 		public override bool Update(NonHand context)
 		{
 			return context._glass != null;
+		}
+	}
+
+	private class IsDialogueRunning : Node<NonHand>
+	{
+		public override bool Update(NonHand context)
+		{
+			return Services.GameManager.dialogue.isDialogueRunning;
 		}
 	}
 

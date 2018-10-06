@@ -19,7 +19,7 @@ public class Pickupable : MonoBehaviour
     public Vector3 dropPos;
     public float tweenTime;
     public float tweenEndTime;
-    public bool pickedUp = false;
+    public bool PickedUp = false;
     public List<Sequence> tweenSequences = new List<Sequence>();
     public Vector3 origPos;
     private Dropzone myChildDropzone;
@@ -33,11 +33,20 @@ public class Pickupable : MonoBehaviour
 
 
     public virtual void Update(){
-        if(pickedUp && !Services.TweenManager.tweensAreActive){
-            // transform.rotation = Quaternion.identity;
-            // transform.localPosition = new Vector3(transform.localPosition.x, transform.localPosition.y, offsetZ);
-         }
+//        if(pickedUp && !Services.TweenManager.tweensAreActive){
+//            // transform.rotation = Quaternion.identity;
+//            // transform.localPosition = new Vector3(transform.localPosition.x, transform.localPosition.y, offsetZ);
+//         }
+        if (PickedUp)
+        {
+            ChangeLayerToFirstPerson();
+        }
+        else
+        {
+            ChangeLayerToWorld();
+        }
     }
+
     public void CreateDropzone()
     {
 //        GameObject dropzoneGO = Instantiate(Resources.Load("Prefabs/dropzoneParent"), transform.position, Quaternion.identity) as GameObject;
@@ -52,12 +61,12 @@ public class Pickupable : MonoBehaviour
     }
 
     public virtual void InteractLeftHand(){
-        if(!pickedUp){
+        if(!PickedUp){
             //pick up with left hand
             transform.SetParent(Services.GameManager.player.transform.GetChild(0));
             Services.GameManager.player.GetComponent<PlayerInput>().pickupableInLeftHand = this;
             PickupTween(leftHandPos, Vector3.zero);            
-        } else if(pickedUp){
+        } else if(PickedUp){
             transform.SetParent(null);
             Services.GameManager.player.GetComponent<PlayerInput>().pickupableInLeftHand = null;
  
@@ -68,11 +77,11 @@ public class Pickupable : MonoBehaviour
 	}
 
     public virtual void InteractRightHand(){
-        if(!pickedUp){
+        if(!PickedUp){
             transform.SetParent(Services.GameManager.player.transform.GetChild(0));
             Services.GameManager.player.GetComponent<PlayerInput>().pickupableInRightHand = this;
             PickupTween(rightHandPos, Vector3.zero);            
-        } else if(pickedUp){
+        } else if(PickedUp){
             transform.SetParent(null);
             Services.GameManager.player.GetComponent<PlayerInput>().pickupableInRightHand = null;
             if(targetDropzone != null){
@@ -82,30 +91,30 @@ public class Pickupable : MonoBehaviour
     }
 
     public virtual void SwapLeftHand(){
-        if(pickedUp){
+        if(PickedUp){
             transform.SetParent(null);
             Services.GameManager.player.GetComponent<PlayerInput>().pickupableInLeftHand = null;
             DropTween(dropPos, dropOffset, targetDropzone);               
-            pickedUp = false;
+            PickedUp = false;
         }
-        else if(!pickedUp){
+        else if(!PickedUp){
             Services.GameManager.player.GetComponent<PlayerInput>().pickupableInLeftHand = this;
-            pickedUp = true;
+            PickedUp = true;
             transform.SetParent(Services.GameManager.player.transform.GetChild(0));
             PickupTween(leftHandPos, Vector3.zero);
         }
     }
 
     public virtual void SwapRightHand(){
-        if(pickedUp){
+        if(PickedUp){
             transform.SetParent(null);
             Services.GameManager.player.GetComponent<PlayerInput>().pickupableInRightHand = null;
             DropTween(dropPos, dropOffset, targetDropzone);             
-            pickedUp = false;
+            PickedUp = false;
         }
-        else if(!pickedUp){
+        else if(!PickedUp){
             Services.GameManager.player.GetComponent<PlayerInput>().pickupableInRightHand = this;
-            pickedUp = true;
+            PickedUp = true;
             transform.SetParent(Services.GameManager.player.transform.GetChild(0));
             PickupTween(rightHandPos, Vector3.zero);
         }
@@ -140,7 +149,7 @@ public class Pickupable : MonoBehaviour
         sequence.OnComplete(() => DeclareInactiveTween());
         // Debug.Log("Pickup Tween called!");
         StartCoroutine(ChangeToFirstPersonLayer(pickupDropTime));
-        pickedUp = true;
+        PickedUp = true;
         if (targetDropzone != null)
         {
             targetDropzone.isOccupied = false;        
@@ -158,7 +167,7 @@ public class Pickupable : MonoBehaviour
 //        sequence.AppendCallback(() => GetComponent<Collider>().enabled = true);
         sequence.OnComplete(() => DeclareInactiveTween());
         StartCoroutine(ChangeToWorldLayer(pickupDropTime));
-        pickedUp = false;
+        PickedUp = false;
         tweenSequences.Add(sequence);
     }
 
@@ -169,7 +178,7 @@ public class Pickupable : MonoBehaviour
         transform.DOLocalRotate(Vector3.zero, pickupDropTime, RotateMode.Fast);
         sequence.OnComplete(() => DeclareInactiveTween());
         StartCoroutine(ChangeToWorldLayer(pickupDropTime));
-        pickedUp = false;
+        PickedUp = false;
         tweenSequences.Add(sequence);
     }
 
@@ -209,23 +218,20 @@ public class Pickupable : MonoBehaviour
     }
 
     public void SetPickedUpToTrue(){
-        pickedUp = true;
+        PickedUp = true;
     }
 
     public virtual IEnumerator ChangeToFirstPersonLayer(float delay)
     {
         yield return new WaitForSeconds(delay);
         int children = transform.childCount;
-        startPos = transform.localPosition;
-//        if (targetDropzone != null)
-//        {
-//            targetDropzone.isOccupied = false;
-//        }
         if (gameObject.GetComponentInChildren<Liquid>() != null)
         {
              Liquid _liquid = gameObject.GetComponentInChildren<Liquid>();
             _liquid.isEvaluated = false;    
         }
+
+        gameObject.layer = 13;
         for (int i = 0; i < children; ++i)
         {
             transform.GetChild(i).gameObject.layer = 13;
@@ -235,16 +241,51 @@ public class Pickupable : MonoBehaviour
         }
     }
 
+    public virtual void ChangeLayerToFirstPerson()
+    {
+        if (gameObject.GetComponentInChildren<Liquid>() != null)
+        {
+            Liquid _liquid = gameObject.GetComponentInChildren<Liquid>();
+            _liquid.isEvaluated = false;    
+        }
+
+        if (gameObject.layer != 13)
+        {
+            int children = transform.childCount;
+            gameObject.layer = 13;
+            for (int i = 0; i < children; ++i)
+            {
+                transform.GetChild(i).gameObject.layer = 13;
+        
+    //            grandchildren.transform.GetChild(i).gameObject.layer = 13;
+    
+            }
+        }
+    }
+
     public virtual IEnumerator ChangeToWorldLayer(float delay)
     {
         yield return new WaitForSeconds(delay);
-        startPos = transform.localPosition;
         int children = transform.childCount;
+        gameObject.layer = 12;
         for (int i = 0; i < children; ++i)
         {
             transform.GetChild(i).gameObject.layer = 12;
         }
+    }
 
+    public virtual void ChangeLayerToWorld()
+    {
+        int children = transform.childCount;
+
+        if (gameObject.layer != 0)
+        {
+            gameObject.layer = 0;
+            for (int i = 0; i < children; ++i)
+            {
+                transform.GetChild(i).gameObject.layer = 0;
+            }
+        }
     }
 
     protected virtual void ResetEvaluationStatus()
@@ -267,7 +308,7 @@ public class Pickupable : MonoBehaviour
     public virtual void ReturnHome(GameEvent e){
         DayEndEvent dayEndEvent = e as DayEndEvent;
         transform.position = origPos;
-        pickedUp = false;
+        PickedUp = false;
         transform.eulerAngles = Vector3.zero;
         if (gameObject.activeInHierarchy)
         {
