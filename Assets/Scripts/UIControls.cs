@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.Remoting.Metadata.W3cXsd2001;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.UI;
@@ -340,30 +341,34 @@ public class UIControls : MonoBehaviour {
 					switch (targetBottle.myDrinkBase){
 						case DrinkBase.beer:
 							targetObj = "beer";
-						break;
+							break;
 						case DrinkBase.brandy:
 							targetObj = "brandy";
-						break;
+							break;
 						case DrinkBase.gin:
 							targetObj = "gin";
-						break;
+							break;
 						case DrinkBase.rum:
 							targetObj = "rum";
-						break;
+							break;
 						case DrinkBase.tequila:
 							targetObj = "tequila";
-						break;
+							break;
 						case DrinkBase.vodka:
 							targetObj = "vodka";
-						break;
+							break;
 						case DrinkBase.whiskey:
 							targetObj = "whiskey";
-						break;
+							break;
 						case DrinkBase.wine:
 							targetObj = "wine";
 						break;
-						default:
-						break;
+						case DrinkBase.soda:
+							targetObj = "soda";
+							break;
+						case DrinkBase.vermouth:
+							targetObj = "vermouth";
+							break;
 					} 
 				} else if (targetBottle.myMixer != Mixer.none){
 					switch (targetBottle.myMixer){
