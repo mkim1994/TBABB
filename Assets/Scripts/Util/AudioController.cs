@@ -7,7 +7,6 @@ public class AudioController : MonoBehaviour {
     public AudioSource bgmIvory, bgmJulia, bgmSahana, bgmYun, bgmIzzy;
     public AudioSource signhum, dooropen, doorclose, doorbell, spotlightsfx;
 
-    [HideInInspector]
     public AudioSource currentlyPlayingBgm;
     public bool muteAudio;
 	// Use this for initialization

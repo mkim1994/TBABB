@@ -204,7 +204,7 @@ public class NonHand : MonoBehaviour {
 			if (context._rewiredPlayer.GetButtonDown("Talk"))
 			{
 				Debug.Log("SERVING DRINK!");
-				context._glass.Liquid.TalkToCoaster();           	
+				context._glass.Liquid.Serve();           	
 			}
 
 			return true;

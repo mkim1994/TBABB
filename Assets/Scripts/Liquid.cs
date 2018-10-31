@@ -205,25 +205,6 @@ public class Liquid : MonoBehaviour {
 		_liquidSurface.transform.localPosition += Vector3.up * Time.deltaTime;
 	}
 
-	private void EmptyDrinkWhenCustomerFinished()
-	{
-		if (myCustomer != null)
-		{
-			if (myCustomer.finishedDrink)
-			{
-				if (transform.parent != null)
-				{
-					if (transform.parent.GetComponent<Glass>() != null)
-					{
-						myCustomer.finishedDrink = false;
-						EmptyLiquid();
-						transform.parent.GetComponent<Glass>().ClearIce();
-					}
-				}
-			}
-		}
-	}
-
 	public void MixDrink(){
 // 		height = Mathf.Clamp(height, 0, 100);
 //		transform.localScale = new Vector3(1, 1, 1);
@@ -286,7 +267,7 @@ public class Liquid : MonoBehaviour {
 	}
 
 	public void AddIngredient(DrinkBase _drinkBase){
-		Debug.Log("AddIngredient()" + _drinkBase);
+//		Debug.Log("AddIngredient()" + _drinkBase);
 		myDrinkProfile = Services.DrinkDictionary.drinkBases[_drinkBase];		
 		myDrinkBase = _drinkBase;
  
@@ -590,12 +571,19 @@ public class Liquid : MonoBehaviour {
 //		}
 	}
 
-	public void TalkToCoaster(){
+	public void Serve(){
 		foreach (var coaster in coasters) {
+			//if coaster contains a Pickupable
+			//and if the coaster's Customer is readyto serve,
+			//then evaluate the drink.
 			if (coaster._pickupablesInMe.Contains(transform.parent.GetComponent<Pickupable>()) 
 				&& coaster.MyCustomer.isReadyToServe)
 			{
 				myCustomer = coaster.MyCustomer;
+				if (_myGlass != null)
+				{
+					_myGlass.IsServed = true;
+				}
 				coaster.EvaluateDrink (thisCocktail, this);
 				isEvaluated = true;
 			}
@@ -609,6 +597,26 @@ public class Liquid : MonoBehaviour {
 //					isEvaluated = true;
 //				}    
 			
+		}
+	}
+	
+	private void EmptyDrinkWhenCustomerFinished()
+	{
+		if (myCustomer != null)
+		{
+			if (myCustomer.finishedDrink)
+			{
+				if (transform.parent != null)
+				{
+					if (transform.parent.GetComponent<Glass>() != null)
+					{
+						myCustomer.finishedDrink = false;
+						EmptyLiquid();
+						_myGlass.IsServed = false;
+						transform.parent.GetComponent<Glass>().ClearIce();
+					}
+				}
+			}
 		}
 	}
 

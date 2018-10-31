@@ -5,6 +5,21 @@ using DG.Tweening;
 
 public class Pickupable : MonoBehaviour
 {
+    private bool _isOnCoaster;
+    private bool _isServed;
+
+    public bool IsServed
+    {
+        get { return _isServed; }
+        set { _isServed = value; }
+    }
+
+    public bool IsOnCoaster
+    {
+        get { return _isOnCoaster; }
+        set { _isOnCoaster = value; }
+    }
+
     public bool isForDropzoneOnly;   
     public float pickupDropTime;
     protected float offsetZ = 2f;

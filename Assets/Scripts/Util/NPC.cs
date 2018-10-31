@@ -36,8 +36,7 @@ public class NPC : MonoBehaviour
     public bool isTalking;
 
     private Color originalColor;
-
-    [HideInInspector]
+    
     public AudioSource bgm;
 
     public bool finishedDrink;
@@ -239,17 +238,23 @@ public class NPC : MonoBehaviour
         Debug.Log("initiating dialogue");
         if (isReadyToTalk)
         {
-            if(bgm.isPlaying && Services.GameManager.audioController.currentlyPlayingBgm != bgm){
-                Services.GameManager.audioController.currentlyPlayingBgm.DOFade(0f, 1f);
-                Services.GameManager.audioController.currentlyPlayingBgm = bgm;
-                bgm.DOFade(1f, 1f);
+            if(bgm.isPlaying ){
+                if (Services.GameManager.audioController.currentlyPlayingBgm != bgm)
+                {
+                    Services.GameManager.audioController.currentlyPlayingBgm.DOFade(0f, 1f);
+                    Services.GameManager.audioController.currentlyPlayingBgm = bgm;
+                    bgm.DOFade(1f, 1f);
+                    Debug.Log(">>>>>>>CHANGING TRACK>>>>>>" + Services.GameManager.audioController.currentlyPlayingBgm);                
+                }
             } else if(!bgm.isPlaying)
             {
                 if (Services.GameManager.audioController.currentlyPlayingBgm != null)
                 {
                     Services.GameManager.audioController.currentlyPlayingBgm.DOFade(0f, 1f);
+                    Debug.Log(">>>>>>>CHANGING TRACK NESTED IF>>>>>>" + Services.GameManager.audioController.currentlyPlayingBgm);
                 }
                 Services.GameManager.audioController.currentlyPlayingBgm = bgm;
+                Debug.Log(">>>>>>>PLAYING FROM NONE>>>>>>" + Services.GameManager.audioController.currentlyPlayingBgm);
                 bgm.Play();
 
             }

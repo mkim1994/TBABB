@@ -182,8 +182,8 @@ public class ActionUI : MonoBehaviour
 			{
 				if (Context.player.i_talk)
 				{
-					Context.ChangeTextOnButtonPress(Context.actionText, Context.dontStealFromPatronText);
-					Context.StartCoroutine(Context.ChangeToDefaultLightswitchText());
+					Context.ChangeTextOnButtonPress(Context.actionText, Context.cantLeaveBecCustomersText);
+//					Context.StartCoroutine(Context.ChangeToDefaultLightswitchText());
 				}
 			}
 		}

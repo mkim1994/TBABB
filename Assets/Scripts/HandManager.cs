@@ -52,6 +52,12 @@ public class HandManager : MonoBehaviour
 		get { return _firstPersonCharacter; }
 	}
 
+	public Pickupable SeenPickupable
+	{
+		get { return _seenPickupable; }
+		set { _seenPickupable = value; }
+	}
+
 	public Glass SeenGlass
 	{
 		get { return _seenGlass; }
