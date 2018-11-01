@@ -64,6 +64,8 @@ public class Glass : Pickupable
 	protected override void Start()
 	{
 		base.Start();
+		EventManager.Instance.Register<DrinkRejectedEvent>(UnServe);
+
 		CreateDropzone();
 		origPos = transform.position;
 		fsm = new FSM<Glass>(this);
@@ -368,32 +370,31 @@ public class Glass : Pickupable
 ////				GetComponent<Collider>().enabled = false;
 //			}
 //		}
-		
-		if (coaster != null)
+		if (transform.parent != null)
 		{
-			Debug.Log("setting " + coaster.name + " as parent");
-			transform.SetParent(coaster.gameObject.transform);
-//				GetComponent<Collider>().enabled = false;	
+			Sequence serveSequence = DOTween.Sequence();
+			serveSequence.Append(transform.parent.DOMove(transform.parent.GetComponent<Coaster>().ServedTargetTransform.position, 0.5f, false));
 		}
-		
-		
- 	}
+		else
+		{
+			Debug.LogError("Glass has no coaster parent!");
+		}
+	}
 
 	public void UnServe(GameEvent e)
 	{
-		if (CurrentState == ServedState)
+		DrinkRejectedEvent drinkRejectedEvent = (DrinkRejectedEvent) e;			
+		if (transform.parent != null)
 		{
-			DrinkRejectedEvent drinkRejectedEvent = (DrinkRejectedEvent) e;	
-			Sequence sequence = DOTween.Sequence();
-			myServiceDropzone.MyCoaster().transform.DOLocalMove(unservedPos, 0.5f);
-			sequence.AppendCallback(() => Services.TweenManager.tweensAreActive = true);
-			sequence.Append(transform.DOLocalMove(unservedPos + dropOffset, 0.5f, false));
-			sequence.AppendCallback(() => fsm.TransitionTo<ReadyToServe>());
-			sequence.AppendCallback(()=>GetComponent<Collider>().enabled = true);
-			myServiceDropzone.isOccupied = true;
-			sequence.OnComplete(() => DeclareInactiveTween());
-//			GetComponent<Collider>().enabled = true;
+			Sequence serveSequence = DOTween.Sequence();
+			serveSequence.Append(transform.parent.DOMove(transform.parent.GetComponent<Coaster>().UnservedPos, 0.5f, false));
+			serveSequence.OnComplete(()=>IsServed = false);
 		}
+		else
+		{
+			Debug.LogError("Glass has no coaster parent!");
+		}
+//			GetComponent<Collider>().enabled = true;
 	}
 	
 //	public void ReturnHome(GameEvent e){

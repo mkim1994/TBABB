@@ -92,6 +92,8 @@ public class HandManager : MonoBehaviour
 	// Use this for initialization
 	void Start ()
 	{
+		EventManager.Instance.Register<DayEndEvent>(DropEverything);
+
 		_myCamera = Camera.main;
 
 		_tree = new Tree<HandManager>(new Selector<HandManager>()
@@ -205,6 +207,11 @@ public class HandManager : MonoBehaviour
 				_leftHand.HeldBottle = _leftHand.HeldPickupable.GetComponent<Bottle>();
 			}
 		}
+	}
+
+	public void DropEverything(GameEvent e)
+	{
+		
 	}
 
 //	private class IsLeftHandTweening : Node<HandManager>
