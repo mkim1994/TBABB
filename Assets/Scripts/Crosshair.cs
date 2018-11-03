@@ -10,6 +10,7 @@ public class Crosshair : MonoBehaviour
 {
 	[SerializeField] private Image _rButton;
 	[SerializeField] private Image _lButton;
+	[SerializeField] private Image _cButton;
 	[SerializeField] private Text _r1text;
 	[SerializeField] private Text _l1text;
 	[SerializeField] private Image _crosshairCenter;
@@ -45,13 +46,15 @@ public class Crosshair : MonoBehaviour
 	[SerializeField]private bool _hasShrunkenRight = false;
 	
 	// Use this for initialization
-	void Start ()
+	void Start()
 	{
 		fsm = new FSM<Crosshair>(this);
 		fsm.TransitionTo<LookingAtNothing>();
 		_player = Services.GameManager.playerInput;
- 	}
-	
+//		ChangeUIOnControllerConnect();
+//		ChangeUIOnControllerDisconnect();
+	}
+
 	// Update is called once per frame
 	void Update () {
 		fsm.Update();
@@ -80,6 +83,22 @@ public class Crosshair : MonoBehaviour
 			_r1text.enabled = true;
 			_l1text.enabled = true;
 		}
+	}
+	
+	public void ChangeUIOnControllerConnect()
+	{
+		_lButton.sprite = UIControls.GetSprite("icon_trigger1");
+		_rButton.sprite = UIControls.GetSprite("icon_trigger1");
+		_cButton.sprite = UIControls.GetSprite("icon_x");
+//		botCenterImg.GetComponent<Image>().sprite = GetSprite("icon_x");
+	}
+
+	public void ChangeUIOnControllerDisconnect()
+	{
+ 		_lButton.sprite = UIControls.GetSprite("icon_lmb");
+		_rButton.sprite = UIControls.GetSprite("icon_rmb");
+		_cButton.sprite = UIControls.GetSprite("icon_rect_key");
+//		_.GetComponent<Image>().sprite = UIControls.GetSprite("icon_key");
 	}
 		
 	private void ShowCrosshairLeft()
@@ -204,6 +223,9 @@ public class Crosshair : MonoBehaviour
 		public override void Update()
 		{
 			base.Update();
+			
+			
+			
 			if (Context._player.canPourWithRight && Context._player.canPourWithLeft)
 			{
 				Context._crosshairRight.sprite = UIControls.GetSprite("action_right");

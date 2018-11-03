@@ -23,12 +23,12 @@ public class ControllerDetection
         isConnected = true;
         if (Services.GameManager.uiControls != null)
         {
-            Services.GameManager.uiControls.ChangeUIOnControllerConnect();
+            Services.GameManager.player.GetComponent<Crosshair>().ChangeUIOnControllerConnect();
             Services.GameManager.playerInput.isUsingController = true;
             Services.GameManager.playerInput.lookSensitivity = Services.GameManager.playerInput.controllerSens;
             Services.GameManager.playerInput.lookSensitivityAtStart = Services.GameManager.playerInput.controllerSens;
             Services.GameManager.playerInput.aimAssistSensitivity =
-                Services.GameManager.playerInput.controllerSens * Services.GameManager.playerInput.aimAssistFactor;
+            Services.GameManager.playerInput.controllerSens * Services.GameManager.playerInput.aimAssistFactor;
         }
     }
     
@@ -39,7 +39,7 @@ public class ControllerDetection
         isConnected = false;
         if (Services.GameManager.uiControls != null)
         {
-            Services.GameManager.uiControls.ChangeUIOnControllerDisconnect();
+            Services.GameManager.player.GetComponent<Crosshair>().ChangeUIOnControllerDisconnect();
             Services.GameManager.playerInput.isUsingController = false;
             Services.GameManager.playerInput.lookSensitivity = Services.GameManager.playerInput.mouseSens;
             Services.GameManager.playerInput.lookSensitivityAtStart = Services.GameManager.playerInput.mouseSens;
