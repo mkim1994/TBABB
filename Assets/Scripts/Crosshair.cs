@@ -51,8 +51,17 @@ public class Crosshair : MonoBehaviour
 		fsm = new FSM<Crosshair>(this);
 		fsm.TransitionTo<LookingAtNothing>();
 		_player = Services.GameManager.playerInput;
-//		ChangeUIOnControllerConnect();
-//		ChangeUIOnControllerDisconnect();
+		if (_player.isUsingController)
+		{
+			SetUiToController();
+		}
+		else
+		{
+			SetUiToMouseAndKeyboard();
+		}
+
+//		ChangeUiOnControllerConnect();
+//		ChangeUiOnControllerDisconnect();
 	}
 
 	// Update is called once per frame
@@ -85,7 +94,7 @@ public class Crosshair : MonoBehaviour
 		}
 	}
 	
-	public void ChangeUIOnControllerConnect()
+	public void SetUiToController()
 	{
 		_lButton.sprite = UIControls.GetSprite("icon_trigger1");
 		_rButton.sprite = UIControls.GetSprite("icon_trigger1");
@@ -93,7 +102,7 @@ public class Crosshair : MonoBehaviour
 //		botCenterImg.GetComponent<Image>().sprite = GetSprite("icon_x");
 	}
 
-	public void ChangeUIOnControllerDisconnect()
+	public void SetUiToMouseAndKeyboard()
 	{
  		_lButton.sprite = UIControls.GetSprite("icon_lmb");
 		_rButton.sprite = UIControls.GetSprite("icon_rmb");

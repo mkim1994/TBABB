@@ -90,7 +90,7 @@ public class PlayerInput : MonoBehaviour
 	[SerializeField]float verticalLook = 0f;
 
 	[HideInInspector]public bool isInputEnabled = true;
-	[HideInInspector]public bool isUsingController = false;
+	public bool isUsingController;
 	[HideInInspector]public bool isPourTweenDone = false;
 	public bool isDualWield = false;
 
