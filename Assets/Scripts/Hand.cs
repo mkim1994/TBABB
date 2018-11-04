@@ -380,6 +380,7 @@ public class Hand : MonoBehaviour
 	{
 		public override bool Update(Hand context)
 		{
+			context._crosshair.ShowPourUi(context._myHand);
 			return context._handManager.IsLookingAtGlass;
 		}
 	}

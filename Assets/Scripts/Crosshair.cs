@@ -23,6 +23,8 @@ public class Crosshair : MonoBehaviour
 	private string iceMakerText = "hold to get ice";
 	private string sinkText = "hold to wash";
 	private string pourText = "hold to pour";
+
+	private HandManager _handManager;
 	
 	private enum CrosshairState {
 		Nothing,
@@ -42,6 +44,7 @@ public class Crosshair : MonoBehaviour
 	// Use this for initialization
 	void Start()
 	{
+		_handManager = Services.HandManager;
 		fsm = new FSM<Crosshair>(this);
 //		fsm.TransitionTo<LookingAtNothing>();
 		_player = Services.GameManager.playerInput;
@@ -114,6 +117,18 @@ public class Crosshair : MonoBehaviour
 		}
 	}
 
+	public void ShowCrosshair(Hand.MyHand myHand)
+	{
+		if (myHand == Hand.MyHand.Left)
+		{
+			ShowCrosshairLeft();
+		}
+		else
+		{
+			ShowCrosshairRight();
+		}
+	}
+
 	public void ShowCrosshairRight()
 	{
 		_hasShrunkenRight = false;
@@ -182,6 +197,21 @@ public class Crosshair : MonoBehaviour
 		}
 	}
 
+	public void ShowPourUi(Hand.MyHand myHand)
+	{
+		ShowCrosshair(myHand);
+		if (myHand == Hand.MyHand.Left)
+		{
+			_leftText.text = "pour" + " " + _handManager.LeftHand.HeldBottle.myDrinkBase;
+			ShowImage(_lButton);
+		}
+		else
+		{
+			_rightText.text = "pour " + _handManager.RightHand.HeldBottle.myDrinkBase;
+			ShowImage(_rButton);	
+		}
+	}
+
 	public void ShowDropUi(Hand.MyHand myHand)
 	{
 		if (myHand == Hand.MyHand.Left)
@@ -190,8 +220,7 @@ public class Crosshair : MonoBehaviour
 			_leftText.text = "drop";
 			ShowImage(_lButton);
 		}
-
-		if (myHand == Hand.MyHand.Right)
+		else
 		{
 			ShowCrosshairRight();	
 			_rightText.text = "drop";
@@ -203,12 +232,14 @@ public class Crosshair : MonoBehaviour
 	{
 		if (myHand == Hand.MyHand.Left)
 		{
+			_leftText.text = "pick up";
 			_crosshairLeft.sprite = UIControls.GetSprite("pickup_left");
 			ShowImage(_lButton);
 			ShowCrosshairLeft();
 		}
 		else
 		{
+			_rightText.text = "pick up";
 			_crosshairRight.sprite = UIControls.GetSprite("pickup_right");
 			ShowImage(_rButton);
 			ShowCrosshairRight();
