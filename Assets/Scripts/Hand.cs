@@ -42,6 +42,9 @@ public class Hand : MonoBehaviour
 	//behavior tree
 	private Tree<Hand> _tree;
 	private FSM<Hand> _fsm;
+	
+	//reference to crosshair
+	private Crosshair _crosshair;
 
 	//misc bools
 	[SerializeField] private bool _canPickup;
@@ -53,7 +56,7 @@ public class Hand : MonoBehaviour
 //		set { _canDrop = value; }
 //	} 
 	
-	private enum MyHand
+	public enum MyHand
 	{
 		Left,
 		Right
@@ -68,6 +71,7 @@ public class Hand : MonoBehaviour
 	{
 		_rewiredPlayer = Services.GameManager.playerInput.rewiredPlayer;
 		_handManager = Services.HandManager;
+		_crosshair = Services.GameManager.player.GetComponent<Crosshair>();
 
 		//We get reference to the OtherHands. 
 		if (_myHand == MyHand.Left)
@@ -99,6 +103,7 @@ public class Hand : MonoBehaviour
 			
 			//Holding glass
 			new Sequence<Hand>(
+				new IsHoldingPickupable(),
 				new IsHoldingGlass(),
 				new Not<Hand>(new IsTweenActive()),
 				new Not<Hand>(new IsOtherHandTweening()),
@@ -110,6 +115,7 @@ public class Hand : MonoBehaviour
 
 			////Holding Bottle
 			new Sequence<Hand>(
+				new IsHoldingPickupable(),
 				new IsHoldingBottle(),
 				new Not<Hand>(new IsTweenActive()),
 				new Not<Hand>(new IsOtherHandTweening()),
@@ -174,32 +180,6 @@ public class Hand : MonoBehaviour
 //		}
 	}
 
-	void LeftHandInteractions()
-	{
-		if (_rewiredPlayer.GetButtonShortPressUp("Use Left"))
-		{
-			//Pick Up with left hand
-//			PickupObject(_pickupMarker.localPosition);
-//			DropObject(DropPos);
- 		}
-		else if (_rewiredPlayer.GetButtonLongPress("Use Left"))
-		{
- 		}
-	}
-
-	void RightHandInteractions()
-	{
-		if (_rewiredPlayer.GetButtonShortPressUp("Use Right"))
-		{
-			Debug.Log("Long Press RIGHT is held down!");
-
-		}
-		else if (_rewiredPlayer.GetButtonLongPress("Use Right"))
-		{
-			Debug.Log("Long Press RIGHT is held down!");
-		}
-	}
-
 	public virtual void PickupObject(Vector3 newPos)
 	{
 		if (SeenPickupable != null)
@@ -255,6 +235,8 @@ public class Hand : MonoBehaviour
 		if(bottleInHand != null)
 			_handManager.SeenGlass.Liquid.AddIngredient(bottleInHand.myDrinkBase);
 	}
+	
+	//
 
 	//conditions
 	private class IsPickupableServed : Node<Hand>
@@ -265,12 +247,12 @@ public class Hand : MonoBehaviour
 		}
 	}
 
-	private class IsPickupableOnCoaster : Node<Hand>
+	/*private class IsPickupableOnCoaster : Node<Hand>
 	{
 		public override bool Update(Hand context)
 		{
 //			return context._handManager.SeenPickupable
-			Debug.Log("Is SeenPickupable on coaster? " + context._handManager.SeenPickupable.IsOnCoaster);
+//			Debug.Log("Is SeenPickupable on coaster? " + context._handManager.SeenPickupable.IsOnCoaster);
 			return context._handManager.SeenPickupable.IsOnCoaster;
 		}
 	}
@@ -279,10 +261,10 @@ public class Hand : MonoBehaviour
 	{
 		public override bool Update(Hand context)
 		{
-			Debug.Log("Is Customer Talking? " + Services.GameManager.dialogue.isDialogueRunning);
+//			Debug.Log("Is Customer Talking? " + Services.GameManager.dialogue.isDialogueRunning);
 			return Services.GameManager.dialogue.isDialogueRunning;
 		}
-	}
+	}*/
 
 	private class IsCoasterOccupied : Node<Hand>
 	{
@@ -322,10 +304,14 @@ public class Hand : MonoBehaviour
 		{
 			if (context.SeenPickupable != null)
 			{
+				context._crosshair.ShowPickupUi(context._myHand);
 				return true;
 			}
+			context._crosshair.HideUi(context._myHand);
 			return false;
 		}
+
+		
 	}
 
 	private class IsEmpty : Node<Hand>
@@ -337,6 +323,18 @@ public class Hand : MonoBehaviour
 				return true;
 			}
 
+			return false;
+		}
+	}
+
+	private class IsHoldingPickupable : Node<Hand>
+	{
+		public override bool Update(Hand context)
+		{
+			if (context.HeldPickupable != null)
+			{
+				return true;
+			}
 			return false;
 		}
 	}
@@ -353,7 +351,7 @@ public class Hand : MonoBehaviour
 			return false;
 		}
 	}
-
+	
 	private class IsHoldingGlass : Node<Hand>
 	{
 		public override bool Update(Hand context)
@@ -361,7 +359,10 @@ public class Hand : MonoBehaviour
 			if (context.HeldPickupable != null)
 			{
 				if (context.HeldPickupable.GetComponent<Glass>() != null)
-					return true;
+				{
+					
+				}
+				return true;
 			}
 			return false;
 		}
@@ -394,7 +395,8 @@ public class Hand : MonoBehaviour
 				if (context._rewiredPlayer.GetButtonTimedPressUp("Use Left", 0f, context._shortPressTime))
 				{
 					context.PickupObject(context._pickupMarker.localPosition);
-					context.SeenPickupable.ChangeToFirstPersonLayer(context._pickupDropTime);
+					context.SeenPickupable.ChangeToFirstPersonLayer(context._pickupDropTime);					
+		
 					if (context.SeenPickupable.IsOnCoaster)
 					{
 						context.SeenPickupable.IsOnCoaster = false;
@@ -411,6 +413,7 @@ public class Hand : MonoBehaviour
 				{
 					context.PickupObject(context._pickupMarker.localPosition);
 					context.SeenPickupable.ChangeToFirstPersonLayer(context._pickupDropTime);
+								
 					if (context.SeenPickupable.IsOnCoaster)
 					{
 						context.SeenPickupable.IsOnCoaster = false;
@@ -532,6 +535,7 @@ public class Hand : MonoBehaviour
 	{
 		public override bool Update(Hand context)
 		{
+			context._crosshair.ShowDropUi(context._myHand);
 			return context._handManager.IsInDropRange;
 		}
 	}
