@@ -37,7 +37,9 @@ public class CoasterPickupableDetector : MonoBehaviour
 				if (_myCoasterParent._pickupablesInMe.Contains(exiter.GetComponent<Pickupable>()))
 				{
 					_myCoasterParent.IsOccupied = false;
+//					_myCoasterParent._pickupablesInMe[0].transform.SetParent(null);
 					_myCoasterParent._pickupablesInMe.Remove(exiter.GetComponent<Pickupable>());
+					
 				}
 			}
 		}
@@ -57,6 +59,7 @@ public class CoasterPickupableDetector : MonoBehaviour
 			    )
 			{		
 				_myCoasterParent._pickupablesInMe.Add(trigger.GetComponent<Pickupable>());
+				_myCoasterParent._pickupablesInMe[0].transform.SetParent(_myCoasterParent.transform);
 //				_myCoasterParent.IsOccupied = true;
 			} 
 //			else if (_myCoasterParent._pickupablesInMe.Count > 0)

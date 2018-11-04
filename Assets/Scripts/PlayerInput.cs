@@ -90,7 +90,7 @@ public class PlayerInput : MonoBehaviour
 	[SerializeField]float verticalLook = 0f;
 
 	[HideInInspector]public bool isInputEnabled = true;
-	[HideInInspector]public bool isUsingController = false;
+	public bool isUsingController;
 	[HideInInspector]public bool isPourTweenDone = false;
 	public bool isDualWield = false;
 
@@ -1448,25 +1448,25 @@ public class PlayerInput : MonoBehaviour
 
 			//no distance check
 			if (hitObj.GetComponent<Backdoor>() != null &&
-				Vector3.Distance(transform.position, hitObj.transform.position) <= 6)
+				Vector3.Distance(transform.position, hitObj.transform.position) <= Services.GameManager.playerInput.maxInteractionDist)
 			{
 				backdoor = hitObj.GetComponent<Backdoor>();
-			} else if (hitObj.GetComponent<Backdoor>() == null || Vector3.Distance(transform.position, hitObj.transform.position) > 6)
+			} else if (hitObj.GetComponent<Backdoor>() == null || Vector3.Distance(transform.position, hitObj.transform.position) > Services.GameManager.playerInput.maxInteractionDist)
 			{
 				backdoor = null;
 			}
-			if (hitObj.GetComponent<IceMaker>() != null && Vector3.Distance(transform.position, hit.point) <= 6)
+			if (hitObj.GetComponent<IceMaker>() != null && Vector3.Distance(transform.position, hit.point) <= Services.GameManager.playerInput.maxInteractionDist)
 			{
 				iceMaker = hitObj.GetComponent<IceMaker>();
-			} else if (hitObj.GetComponent<IceMaker>() == null || Vector3.Distance(transform.position, hitObj.transform.position) > 6)
+			} else if (hitObj.GetComponent<IceMaker>() == null || Vector3.Distance(transform.position, hitObj.transform.position) > Services.GameManager.playerInput.maxInteractionDist)
 			{
 				iceMaker = null;
 			}
 			if (hitObj.GetComponent<LightSwitch>() != null &&
-			    Vector3.Distance(transform.position, hitObj.transform.position) <= 6)
+			    Vector3.Distance(transform.position, hitObj.transform.position) <= Services.GameManager.playerInput.maxInteractionDist)
 			{
 				lightSwitch = hitObj.GetComponent<LightSwitch>();
-			} else if (hitObj.GetComponent<LightSwitch>() == null || Vector3.Distance(transform.position, hitObj.transform.position) > 6)
+			} else if (hitObj.GetComponent<LightSwitch>() == null || Vector3.Distance(transform.position, hitObj.transform.position) > Services.GameManager.playerInput.maxInteractionDist)
 			{
 				lightSwitch = null;
 			}

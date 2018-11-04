@@ -4911,6 +4911,7 @@ GameObject:
   - component: {fileID: 4354111813155604}
   - component: {fileID: 65886348536374970}
   - component: {fileID: 114921732884872150}
+  - component: {fileID: 65993441224777686}
   m_Layer: 12
   m_Name: LightSwitch
   m_TagString: Untagged
@@ -11477,6 +11478,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.9, y: 4.37, z: 2.19}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!65 &65993441224777686
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1965413850520964}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.32695866, y: 0.4536395, z: 0.06569338}
+  m_Center: {x: 0.005162716, y: -0.0041925907, z: 0.031423807}
 --- !u!65 &65997284858352668
 BoxCollider:
   m_ObjectHideFlags: 1

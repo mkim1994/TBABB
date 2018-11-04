@@ -82,10 +82,13 @@ public class Hand : MonoBehaviour
 		_tree = new Tree<Hand>(new Selector<Hand>(
 			
 			//EMPTY behavior (hand is not holding anything)
-			//// Pick up object
+
 			new Sequence<Hand>(
 				new IsEmpty(),
 				new IsLookingAtPickupable(),
+//				new IsPickupableOnCoaster(),
+				new Not<Hand>(new IsPickupableServed()),
+//				new Not<Hand>(new IsCustomerTalking()),
 				new Not<Hand>(new IsTweenActive()),
 				new Not<Hand>(new IsOtherHandTweening()),
 				new PickupAction()
@@ -254,6 +257,32 @@ public class Hand : MonoBehaviour
 	}
 
 	//conditions
+	private class IsPickupableServed : Node<Hand>
+	{
+		public override bool Update(Hand context)
+		{
+			return context._handManager.SeenPickupable.IsServed;
+		}
+	}
+
+	private class IsPickupableOnCoaster : Node<Hand>
+	{
+		public override bool Update(Hand context)
+		{
+//			return context._handManager.SeenPickupable
+			Debug.Log("Is SeenPickupable on coaster? " + context._handManager.SeenPickupable.IsOnCoaster);
+			return context._handManager.SeenPickupable.IsOnCoaster;
+		}
+	}
+
+	private class IsCustomerTalking : Node<Hand>
+	{
+		public override bool Update(Hand context)
+		{
+			Debug.Log("Is Customer Talking? " + Services.GameManager.dialogue.isDialogueRunning);
+			return Services.GameManager.dialogue.isDialogueRunning;
+		}
+	}
 
 	private class IsCoasterOccupied : Node<Hand>
 	{
@@ -366,6 +395,12 @@ public class Hand : MonoBehaviour
 				{
 					context.PickupObject(context._pickupMarker.localPosition);
 					context.SeenPickupable.ChangeToFirstPersonLayer(context._pickupDropTime);
+					if (context.SeenPickupable.IsOnCoaster)
+					{
+						context.SeenPickupable.IsOnCoaster = false;
+						context.SeenPickupable.IsServed = false;
+					}
+
 				} else if (context._rewiredPlayer.GetButtonTimedPress("Use Left", context._longPressTime))
 				{
 				}
@@ -376,6 +411,11 @@ public class Hand : MonoBehaviour
 				{
 					context.PickupObject(context._pickupMarker.localPosition);
 					context.SeenPickupable.ChangeToFirstPersonLayer(context._pickupDropTime);
+					if (context.SeenPickupable.IsOnCoaster)
+					{
+						context.SeenPickupable.IsOnCoaster = false;
+						context.SeenPickupable.IsServed = false;
+					}
 				} else if (context._rewiredPlayer.GetButtonTimedPress("Use Left", context._longPressTime))
 				{
 				}
@@ -394,6 +434,7 @@ public class Hand : MonoBehaviour
 				{
  					context.DropObject(context._handManager.CoasterPosition);
 					context._handManager.Coaster.GetComponent<Coaster>().IsOccupied = true;
+					context._handManager.LeftHand.HeldPickupable.IsOnCoaster = true;
 					context.HeldPickupable.ChangeToWorldLayer(context._pickupDropTime);
 				} else if (context._rewiredPlayer.GetButtonTimedPress("Use Left", context._longPressTime))
 				{
@@ -405,6 +446,7 @@ public class Hand : MonoBehaviour
 				{
 					context.DropObject(context._handManager.CoasterPosition);
 					context._handManager.Coaster.GetComponent<Coaster>().IsOccupied = true;
+					context._handManager.RightHand.HeldPickupable.IsOnCoaster = true;
 					context.HeldPickupable.ChangeToWorldLayer(context._pickupDropTime);
 				} else if (context._rewiredPlayer.GetButtonTimedPress("Use Right", context._longPressTime))
 				{

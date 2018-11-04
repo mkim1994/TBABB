@@ -52,6 +52,12 @@ public class HandManager : MonoBehaviour
 		get { return _firstPersonCharacter; }
 	}
 
+	public Pickupable SeenPickupable
+	{
+		get { return _seenPickupable; }
+		set { _seenPickupable = value; }
+	}
+
 	public Glass SeenGlass
 	{
 		get { return _seenGlass; }
@@ -86,6 +92,8 @@ public class HandManager : MonoBehaviour
 	// Use this for initialization
 	void Start ()
 	{
+		EventManager.Instance.Register<DayEndEvent>(DropEverything);
+
 		_myCamera = Camera.main;
 
 		_tree = new Tree<HandManager>(new Selector<HandManager>()
@@ -199,6 +207,11 @@ public class HandManager : MonoBehaviour
 				_leftHand.HeldBottle = _leftHand.HeldPickupable.GetComponent<Bottle>();
 			}
 		}
+	}
+
+	public void DropEverything(GameEvent e)
+	{
+		
 	}
 
 //	private class IsLeftHandTweening : Node<HandManager>

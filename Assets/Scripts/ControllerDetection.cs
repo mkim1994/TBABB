@@ -21,15 +21,22 @@ public class ControllerDetection
     void OnControllerConnected(ControllerStatusChangedEventArgs args) {
 //      Debug.Log("A controller was connected! Name = " + args.name + " Id = " + args.controllerId + " Type = " + args.controllerType);
         isConnected = true;
-        if (Services.GameManager.uiControls != null)
-        {
-            Services.GameManager.uiControls.ChangeUIOnControllerConnect();
-            Services.GameManager.playerInput.isUsingController = true;
-            Services.GameManager.playerInput.lookSensitivity = Services.GameManager.playerInput.controllerSens;
-            Services.GameManager.playerInput.lookSensitivityAtStart = Services.GameManager.playerInput.controllerSens;
-            Services.GameManager.playerInput.aimAssistSensitivity =
-                Services.GameManager.playerInput.controllerSens * Services.GameManager.playerInput.aimAssistFactor;
-        }
+//        Services.GameManager.player.GetComponent<Crosshair>().ChangeUiOnControllerConnect();
+        Services.GameManager.playerInput.isUsingController = true;
+        Services.GameManager.playerInput.lookSensitivity = Services.GameManager.playerInput.controllerSens;
+        Services.GameManager.playerInput.lookSensitivityAtStart = Services.GameManager.playerInput.controllerSens;
+        Services.GameManager.playerInput.aimAssistSensitivity = Services.GameManager.playerInput.controllerSens * Services.GameManager.playerInput.aimAssistFactor;
+        Services.GameManager.player.GetComponent<Crosshair>().SetUiToController();
+
+//        if (Services.GameManager.uiControls != null)
+//        {
+//            Services.GameManager.player.GetComponent<Crosshair>().ChangeUIOnControllerConnect();
+//            Services.GameManager.playerInput.isUsingController = true;
+//            Services.GameManager.playerInput.lookSensitivity = Services.GameManager.playerInput.controllerSens;
+//            Services.GameManager.playerInput.lookSensitivityAtStart = Services.GameManager.playerInput.controllerSens;
+//            Services.GameManager.playerInput.aimAssistSensitivity =
+//            Services.GameManager.playerInput.controllerSens * Services.GameManager.playerInput.aimAssistFactor;
+//        }
     }
     
     // This function will be called when a controller is fully disconnected
@@ -37,14 +44,21 @@ public class ControllerDetection
     void OnControllerDisconnected(ControllerStatusChangedEventArgs args) {
 //        Debug.Log("A controller was disconnected! Name = " + args.name + " Id = " + args.controllerId + " Type = " + args.controllerType);
         isConnected = false;
-        if (Services.GameManager.uiControls != null)
-        {
-            Services.GameManager.uiControls.ChangeUIOnControllerDisconnect();
-            Services.GameManager.playerInput.isUsingController = false;
-            Services.GameManager.playerInput.lookSensitivity = Services.GameManager.playerInput.mouseSens;
-            Services.GameManager.playerInput.lookSensitivityAtStart = Services.GameManager.playerInput.mouseSens;
-            Services.GameManager.playerInput.aimAssistSensitivity = Services.GameManager.playerInput.mouseSens * Services.GameManager.playerInput.aimAssistFactor;
-         }
+//        Services.GameManager.player.GetComponent<Crosshair>().ChangeUiOnControllerDisconnect();
+        Services.GameManager.playerInput.isUsingController = false;
+        Services.GameManager.playerInput.lookSensitivity = Services.GameManager.playerInput.mouseSens;
+        Services.GameManager.playerInput.lookSensitivityAtStart = Services.GameManager.playerInput.mouseSens;
+        Services.GameManager.playerInput.aimAssistSensitivity = Services.GameManager.playerInput.mouseSens * Services.GameManager.playerInput.aimAssistFactor;
+        Services.GameManager.player.GetComponent<Crosshair>().SetUiToMouseAndKeyboard();
+
+//        if (Services.GameManager.uiControls != null)
+//        {
+//            Services.GameManager.player.GetComponent<Crosshair>().ChangeUIOnControllerDisconnect();
+//            Services.GameManager.playerInput.isUsingController = false;
+//            Services.GameManager.playerInput.lookSensitivity = Services.GameManager.playerInput.mouseSens;
+//            Services.GameManager.playerInput.lookSensitivityAtStart = Services.GameManager.playerInput.mouseSens;
+//            Services.GameManager.playerInput.aimAssistSensitivity = Services.GameManager.playerInput.mouseSens * Services.GameManager.playerInput.aimAssistFactor;
+//         }
     }
     
     // This function will be called when a controller is about to be disconnected
