@@ -83,6 +83,7 @@ public class Hand : MonoBehaviour
 			_otherHand = _handManager.LeftHand;
 		}
 
+		//BEHAVIOR TREE NODES
 		_tree = new Tree<Hand>(new Selector<Hand>(
 			
 			//EMPTY behavior (hand is not holding anything)
@@ -101,6 +102,7 @@ public class Hand : MonoBehaviour
 
 			//HELD behavior
 			
+			
 			//Holding glass
 			new Sequence<Hand>(
 				new IsHoldingPickupable(),
@@ -112,8 +114,15 @@ public class Hand : MonoBehaviour
 				new Not<Hand>(new IsLookingAtCoaster()),
 				new DropAction()
 			),
-
 			////Holding Bottle
+
+			new Sequence<Hand>(
+				new IsHoldingPickupable(),
+				new IsHoldingBottle(),
+				new IsLookingAtGlass(),
+				new PourAction()	
+			),
+
 			new Sequence<Hand>(
 				new IsHoldingPickupable(),
 				new IsHoldingBottle(),
@@ -150,13 +159,8 @@ public class Hand : MonoBehaviour
 				new Not<Hand>(new IsOtherHandTweening()),
 //				new Not<Hand>(new IsCoasterPreOccupied()),
 				new CoasterDropAction()
-			),
-			
-			new Sequence<Hand>(
-				new IsHoldingBottle(),
-				new IsLookingAtGlass(),
-				new PourAction()	
 			)
+			
 		));
 	}
 
@@ -274,14 +278,6 @@ public class Hand : MonoBehaviour
 		}
 	}
 
-	private class IsCoasterPreOccupied : Node<Hand>
-	{
-		public override bool Update(Hand context)
-		{
-			return context._handManager.Coaster.GetComponentInChildren<CoasterPickupableDetector>().PreOccupied;
-		}
-	}
-
 	private class IsOtherHandTweening : Node<Hand>
 	{
 		public override bool Update(Hand context)
@@ -310,8 +306,22 @@ public class Hand : MonoBehaviour
 			context._crosshair.HideUi(context._myHand);
 			return false;
 		}
-
-		
+	}
+	
+	private class IsLookingAtGlass : Node<Hand>
+	{
+		public override bool Update(Hand context)
+		{
+			if (context._handManager.IsLookingAtGlass)
+			{
+				context._crosshair.ShowPourUi(context._myHand);
+			}
+			else
+			{
+//				context._crosshair.HideUi(context._myHand);
+			}
+			return context._handManager.IsLookingAtGlass;
+		}
 	}
 
 	private class IsEmpty : Node<Hand>
@@ -322,7 +332,6 @@ public class Hand : MonoBehaviour
 			{
 				return true;
 			}
-
 			return false;
 		}
 	}
@@ -343,10 +352,13 @@ public class Hand : MonoBehaviour
 	{
 		public override bool Update(Hand context)
 		{
+
 			if (context.HeldPickupable != null)
 			{
 				if (context.HeldPickupable.GetComponent<Bottle>() != null)
-					return true;
+				{
+					return true;			
+				}
 			}
 			return false;
 		}
@@ -360,9 +372,8 @@ public class Hand : MonoBehaviour
 			{
 				if (context.HeldPickupable.GetComponent<Glass>() != null)
 				{
-					
-				}
-				return true;
+					return true;
+				} 
 			}
 			return false;
 		}
@@ -375,13 +386,28 @@ public class Hand : MonoBehaviour
 			return Vector3.Distance(context.DropPos, context.transform.position) <= context._handManager._maxInteractionDist;
 		}
 	}
-
-	private class IsLookingAtGlass : Node<Hand>
+	
+	private class IsTweenActive : Node<Hand>
 	{
 		public override bool Update(Hand context)
 		{
-			context._crosshair.ShowPourUi(context._myHand);
-			return context._handManager.IsLookingAtGlass;
+			return context._isTweening;
+		}
+	}
+
+	private class IsInDropRange : Node<Hand>
+	{
+		public override bool Update(Hand context)
+		{
+			if (context._handManager.IsInDropRange)
+			{
+				context._crosshair.ShowDropUi(context._myHand);
+			}
+			else
+			{
+				context._crosshair.HideUi(context._myHand);	
+			}
+			return context._handManager.IsInDropRange;
 		}
 	}
 
@@ -510,35 +536,6 @@ public class Hand : MonoBehaviour
 			return true;
 		}
 
-	}
-
-	private class CanDrop: Node<Hand>
-	{
-		public override bool Update(Hand context)
-		{
-			if (context.HeldPickupable == null)
-			{
-				return false;
-			}
-			return true;
-		}
-	}
-
-	private class IsTweenActive : Node<Hand>
-	{
-		public override bool Update(Hand context)
-		{
-			return context._isTweening;
-		}
-	}
-
-	private class IsInDropRange : Node<Hand>
-	{
-		public override bool Update(Hand context)
-		{
-			context._crosshair.ShowDropUi(context._myHand);
-			return context._handManager.IsInDropRange;
-		}
 	}
 	
 //	private class IsInPickupRange 

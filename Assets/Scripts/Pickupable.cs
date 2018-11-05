@@ -5,6 +5,7 @@ using DG.Tweening;
 
 public class Pickupable : MonoBehaviour
 {
+    public string MyName; 
     private bool _isOnCoaster;
     private bool _isServed;
 

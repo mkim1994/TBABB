@@ -202,12 +202,12 @@ public class Crosshair : MonoBehaviour
 		ShowCrosshair(myHand);
 		if (myHand == Hand.MyHand.Left)
 		{
-			_leftText.text = "pour" + " " + _handManager.LeftHand.HeldBottle.myDrinkBase;
+			_leftText.text = "pour" + " " + _handManager.LeftHand.HeldBottle.MyName;
 			ShowImage(_lButton);
 		}
 		else
 		{
-			_rightText.text = "pour " + _handManager.RightHand.HeldBottle.myDrinkBase;
+			_rightText.text = "pour " + _handManager.RightHand.HeldBottle.MyName;
 			ShowImage(_rButton);	
 		}
 	}
@@ -217,13 +217,13 @@ public class Crosshair : MonoBehaviour
 		if (myHand == Hand.MyHand.Left)
 		{
 			ShowCrosshairLeft();		
-			_leftText.text = "drop";
+			_leftText.text = "drop " + _handManager.LeftHand.HeldPickupable.MyName;
 			ShowImage(_lButton);
 		}
 		else
 		{
 			ShowCrosshairRight();	
-			_rightText.text = "drop";
+			_rightText.text = "drop " + _handManager.RightHand.HeldPickupable.MyName;
 			ShowImage(_rButton);	
 		}
 	}
@@ -232,14 +232,14 @@ public class Crosshair : MonoBehaviour
 	{
 		if (myHand == Hand.MyHand.Left)
 		{
-			_leftText.text = "pick up";
+			_leftText.text = "pick up " + _handManager.SeenPickupable.MyName;
 			_crosshairLeft.sprite = UIControls.GetSprite("pickup_left");
 			ShowImage(_lButton);
 			ShowCrosshairLeft();
 		}
 		else
 		{
-			_rightText.text = "pick up";
+			_rightText.text = "pick up " + _handManager.SeenPickupable.MyName;
 			_crosshairRight.sprite = UIControls.GetSprite("pickup_right");
 			ShowImage(_rButton);
 			ShowCrosshairRight();
