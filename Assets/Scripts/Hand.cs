@@ -117,10 +117,10 @@ public class Hand : MonoBehaviour
 			////Holding Bottle
 
 			new Sequence<Hand>(
-				new IsHoldingPickupable(),
+//				new IsHoldingPickupable(),
 				new IsHoldingBottle(),
 				new IsLookingAtGlass(),
-				new PourAction()	
+				new PourAction()
 			),
 
 			new Sequence<Hand>(

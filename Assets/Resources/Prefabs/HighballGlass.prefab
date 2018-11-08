@@ -108,7 +108,7 @@ GameObject:
   - component: {fileID: 136314839369854642}
   - component: {fileID: 114969815638737844}
   m_Layer: 0
-  m_Name: GlassPrefab
+  m_Name: HighballGlass
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -429,7 +429,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95edbbad3d2bee744a787b7918c34047, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MyName: 
+  MyName: highball glass
   isForDropzoneOnly: 0
   pickupDropTime: 0.25
   leftHandPos: {x: -1, y: -0.89, z: 2}
