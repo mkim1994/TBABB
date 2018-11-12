@@ -1,11 +1,8 @@
-﻿using System.Diagnostics.SymbolStore;
-using BehaviorTree;
+﻿using BehaviorTree;
+using Boo.Lang;
 using Rewired;
 using UnityEngine;
 using DG.Tweening;
-using JetBrains.Annotations;
-using Rewired.Platforms;
-using Rewired.UI.ControlMapper;
 
 //ISSUE: It is possible to pick up an object as it's tweening. 
 //Effect is the other hand thinks it has picked something up.
@@ -14,6 +11,8 @@ using Rewired.UI.ControlMapper;
 public class Hand : MonoBehaviour
 {
 	// tween values
+	private List<Sequence> _startPourSeqList = new List<Sequence>();
+	private List<Sequence> _endPourSeqList = new List<Sequence>();
 	[SerializeField] private Transform _pickupMarker;
 	[SerializeField]private float _pickupDropTime = 0.75f;
 	private float _shortPressTime = 0.5f;
@@ -43,7 +42,8 @@ public class Hand : MonoBehaviour
 	[SerializeField]private Hand _otherHand;
 
 	//behavior tree
-	private Tree<Hand> _tree;
+	private Tree<Hand> _actionTree;
+	private Tree<Hand> _uiTree;
 	private FSM<Hand> _fsm;
 	
 	//reference to crosshair
@@ -87,7 +87,7 @@ public class Hand : MonoBehaviour
 		}
 
 		//BEHAVIOR TREE NODES
-		_tree = new Tree<Hand>(new Selector<Hand>(
+		_actionTree = new Tree<Hand>(new Selector<Hand>(
 			
 			//EMPTY behavior (hand is not holding anything)
 
@@ -114,28 +114,52 @@ public class Hand : MonoBehaviour
 				new Not<Hand>(new IsTweenActive()),
 				new Not<Hand>(new IsOtherHandTweening()),
 //				new DisallowPickup(), //can't pick up if holding something
-				new IsInDropRange(),
+				new IsInInteractionRange(),
 				new Not<Hand>(new IsLookingAtCoaster()),
 				new DropAction()
 			),
 			////Holding Bottle
-
+			
 			new Sequence<Hand>(
 //				new IsHoldingPickupable(),
-				new IsLongPressingUseButton(),
+				new IsUseButtonHeldDown(),
+//				new IsLongPressingUseButton(),
 				new IsHoldingBottle(),
 				new IsLookingAtGlass(),
-				new PourAction()
-//				new EndPourAction()
+				new Not<Hand>(new IsPouring()), 
+//				new Not<Hand>(new IsTweenActive()),
+				new PourTween()
 			),
+			
+//			new Sequence<Hand>(
+//				new IsPouring(),
+//				new Not<Hand>(new IsLookingAtGlass()),
+//				new EndPourTween()
+//			),
+			
+			//POUR won't end if you let go of Use Left/Right when IsPouring is still false, or before pouring actually starts.
+			//So EndPourTween() is never called. 
+			new Sequence<Hand>(
+//				new IsLongPressingUseButtonUp(),
+				new IsUseButtonUp(),
+				new EndPourTween()
+			),
+					
+			new Sequence<Hand>(
+				new IsPouring(),
+				new IsLookingAtGlass(),
+				new AddIngredientToGlass()
+			),
+			
 
 			new Sequence<Hand>(
 				new IsShortPressingUseButton(),
 				new IsHoldingPickupable(),
 				new IsHoldingBottle(),
+				new Not<Hand>(new IsPouring()),
 				new Not<Hand>(new IsTweenActive()),
 				new Not<Hand>(new IsOtherHandTweening()),
-				new IsInDropRange(),
+				new IsInInteractionRange(),
 				new Not<Hand>(new IsLookingAtGlass()),
 				new Not<Hand>(new IsLookingAtCoaster()),
 				new DropAction()
@@ -147,8 +171,9 @@ public class Hand : MonoBehaviour
 			new Sequence<Hand>(
 				new IsShortPressingUseButton(),
 				new IsHoldingBottle(),
+				new Not<Hand>(new IsPouring()),
 				new Not<Hand>(new IsTweenActive()),
-				new IsInDropRange(),
+				new IsInInteractionRange(),
 				new Not<Hand>(new IsLookingAtGlass()),
 				new IsLookingAtCoaster(),
 				new Not<Hand>(new IsCoasterOccupied()),
@@ -162,18 +187,66 @@ public class Hand : MonoBehaviour
 				new IsShortPressingUseButton(),
 				new IsHoldingGlass(),
 				new Not<Hand>(new IsTweenActive()),
-				new IsInDropRange(),
+				new IsInInteractionRange(),
 				new IsLookingAtCoaster(),
 				new Not<Hand>(new IsCoasterOccupied()),
 				new Not<Hand>(new IsOtherHandTweening()),
 //				new Not<Hand>(new IsCoasterPreOccupied()),
 				new CoasterDropAction()
 			)
+		));
+		
+		_uiTree = new Tree<Hand>(new Selector<Hand>(
+			//Show UI
 			
-//			new Sequence<Hand>(
-//				new IsHoldingBottle(),
+			//Hand is empty, can pick up.
+			new Sequence<Hand>(
+				new IsEmpty(),
+				new IsLookingAtPickupable(),
+				new Not<Hand>(new IsPickupableServed()),
+				new Not<Hand>(new IsTweenActive()),
+				new Not<Hand>(new IsOtherHandTweening()),
+				new ShowPickupUi()
+			),	
+			
+			//Hand is holding glass, can drop
+			new Sequence<Hand>(
+				new IsHoldingPickupable(),
+				new IsHoldingGlass(),
+				new Not<Hand>(new IsTweenActive()),
+				new Not<Hand>(new IsOtherHandTweening()),
+//				new DisallowPickup(), //can't pick up if holding something
+				new IsInInteractionRange(),
+				new Not<Hand>(new IsLookingAtCoaster()),
+				new ShowDropUi()
+			),
+			
+			//Hand is holding bottle, pour possible
+			new Sequence<Hand>(
+//				new IsHoldingPickupable(),
+				new IsHoldingBottle(),
+				new IsLookingAtGlass(),
+				new ShowPourUi()
 //				new EndPourAction()
-//			)
+			),
+			
+			//Hand is holding bottle, pour impossible, drop possible
+			new Sequence<Hand>(
+				new IsHoldingPickupable(),
+				new IsHoldingBottle(),
+				new Not<Hand>(new IsTweenActive()),
+				new Not<Hand>(new IsOtherHandTweening()),
+				new IsInInteractionRange(),
+				new Not<Hand>(new IsLookingAtGlass()),
+				new Not<Hand>(new IsLookingAtCoaster()),
+				new ShowDropUi()
+//				new PourAction()
+			),
+			
+			// if all of the above fail, hide UI.
+			new Sequence<Hand>(
+				new HideUi()
+			)
 		));
 	}
 
@@ -185,7 +258,8 @@ public class Hand : MonoBehaviour
 
 	public void OnUpdate()
 	{
-		_tree.Update(this);
+		_actionTree.Update(this);
+		_uiTree.Update(this);
 
 //		if (_myHand == MyHand.Left)
 //		{
@@ -218,7 +292,7 @@ public class Hand : MonoBehaviour
 	{
 		if (HeldPickupable != null)
 		{
-			Debug.Log(newPos);
+//			Debug.Log(newPos);
 			_isTweening = true;
 			HeldPickupable.transform.SetParent(null);
 			HeldPickupable.transform.rotation = Quaternion.identity;
@@ -231,70 +305,108 @@ public class Hand : MonoBehaviour
 		}
 	}
 	
-//	[HideInInspector]public Vector3 leftHandPourRot = new Vector3(80f, 25, 0);
-//	[HideInInspector]public Vector3 rightHandPourRot = new Vector3(80, -25, 6.915f);
-	
+	public void CompletePourTween()
+	{
+		_isPouring = true;
+		_isTweening = false;
+//		Debug.Log("Pouring begins!");
+	}
+
 	public void Pour(Bottle bottleInHand)
 	{
-		if (_myHand == MyHand.Left)
+		if (_endPourSeqList.Count > 0)
 		{
-			_handManager.SeenGlass.Liquid.AddIngredient(bottleInHand.myDrinkBase);
-//			if (bottleInHand != null && !_isPouring)
-//			{
-//				Sequence moveSequence = DOTween.Sequence();
-//				moveSequence.AppendCallback(() => _isPouring = true);
-//				moveSequence.Append(bottleInHand.transform.DOLocalMove(bottleInHand.leftHandPourPos, 0.75f, false));
-//				Sequence rotateSequence = DOTween.Sequence();
-//				rotateSequence.Append(bottleInHand.transform.DOLocalRotate(bottleInHand.leftHandPourRot, 0.75f));
-//				Debug.Log("Pour tween created!");
-//			}
+			foreach (var sequence in _endPourSeqList)
+			{
+				sequence.Kill();
+			}
+//			Debug.Log("Killing end tweeens!");
 		}
 		else
 		{
-			_handManager.SeenGlass.Liquid.AddIngredient(bottleInHand.myDrinkBase);
-//			if (bottleInHand != null && !_isPouring)
-//			{
-//				Sequence moveSequence = DOTween.Sequence();
-//				moveSequence.AppendCallback(() => _isPouring = true);
-//				moveSequence.Append(bottleInHand.transform.DOLocalMove(bottleInHand.rightHandPourPos, 0.75f, false));
-//				Sequence rotateSequence = DOTween.Sequence();
-//				rotateSequence.Append(bottleInHand.transform.DOLocalRotate(bottleInHand.rightHandPourRot, 0.75f));
+//			Debug.LogError("No end pour tweens to kill!");
+		}
+		_endPourSeqList.Clear();
+		if (_myHand == MyHand.Left)
+		{
+//			_handManager.SeenGlass.Liquid.AddIngredient(bottleInHand.myDrinkBase);
+			if (bottleInHand != null
+			    && _startPourSeqList.Count == 0)
+			{
+				_isTweening = true;
+				Sequence moveSequence = DOTween.Sequence();
+				_startPourSeqList.Add(moveSequence);
+				moveSequence.Append(bottleInHand.transform.DOLocalMove(bottleInHand.leftHandPourPos, 0.75f));
+				moveSequence.OnComplete(() => CompletePourTween());
+				Sequence rotateSequence = DOTween.Sequence();
+				_startPourSeqList.Add(rotateSequence);
+				rotateSequence.Append(bottleInHand.transform.DOLocalRotate(bottleInHand.leftHandPourRot, 0.75f));
 //				Debug.Log("Pour tween created!");
-//			}
+			}
+		}
+		else
+		{
+//			_handManager.SeenGlass.Liquid.AddIngredient(bottleInHand.myDrinkBase);
+			if (bottleInHand != null
+			    && _startPourSeqList.Count == 0)
+			{
+				_isTweening = true;
+				Sequence moveSequence = DOTween.Sequence();
+				_startPourSeqList.Add(moveSequence);
+				moveSequence.Append(bottleInHand.transform.DOLocalMove(bottleInHand.rightHandPourPos, 0.75f));
+				moveSequence.OnComplete(() => _isTweening = false);
+				Sequence rotateSequence = DOTween.Sequence();
+				_startPourSeqList.Add(rotateSequence);
+				rotateSequence.Append(bottleInHand.transform.DOLocalRotate(bottleInHand.rightHandPourRot, 0.75f));
+//				Debug.Log("Pour tween created!");
+			}
 		}
 	}
 
 	public void EndPour(Bottle bottleInHand)
 	{
-		if (_myHand == MyHand.Left)
+		if (bottleInHand != null)
 		{
-			if (bottleInHand != null && _isPouring)
+			//first, kill all previous tweens.
+			if (_startPourSeqList.Count > 0)
 			{
-				Sequence moveSequence = DOTween.Sequence();
-				moveSequence.Append(bottleInHand.transform.DOLocalMove(transform.localPosition, 0.75f));
-				moveSequence.OnComplete(() => _isPouring = false);
-				Sequence rotateSequence = DOTween.Sequence();
-				rotateSequence.Append(bottleInHand.transform.DOLocalRotate(transform.localEulerAngles, 0.75f));
-				Debug.Log("Pour tween ending!");
+				foreach (var sequence in _startPourSeqList)
+				{
+					sequence.Kill();
+				}
 			}
-		}
-		else
-		{
-			if (bottleInHand != null && _isPouring)
+			else
 			{
-				Sequence moveSequence = DOTween.Sequence();
-				moveSequence.Append(bottleInHand.transform.DOLocalMove(transform.localPosition, 0.75f));
-				moveSequence.OnComplete(() => _isPouring = false);
-				Sequence rotateSequence = DOTween.Sequence();
-				rotateSequence.Append(bottleInHand.transform.DOLocalRotate(transform.localEulerAngles, 0.75f));
-				Debug.Log("Pour tween ending!");
+				Debug.LogError("No start pour tweens to kill!");
 			}
+			_startPourSeqList.Clear();
+			_isPouring = false;
+			_isTweening = false;
+			Sequence moveSequence = DOTween.Sequence();
+			_endPourSeqList.Add(moveSequence);
+			moveSequence.OnPlay(() => _isTweening = true);
+			moveSequence.Append(bottleInHand.transform.DOLocalMove(transform.localPosition, 0.75f));
+			moveSequence.OnComplete(() => _isTweening = false);
+			Sequence rotateSequence = DOTween.Sequence();
+			_endPourSeqList.Add(rotateSequence);
+			rotateSequence.Append(bottleInHand.transform.DOLocalRotate(transform.localEulerAngles, 0.75f));
+			Debug.Log("Pour tween ending!");
 		}
+		
 	}
 	
 	//
 
 	//conditions
+
+	private class IsPouring : Node<Hand>
+	{
+		public override bool Update(Hand context)
+		{
+			return context._isPouring;
+		}
+	}
+
 	private class IsPickupableServed : Node<Hand>
 	{
 		public override bool Update(Hand context)
@@ -352,10 +464,10 @@ public class Hand : MonoBehaviour
 		{
 			if (context.SeenPickupable != null)
 			{
-				context._crosshair.ShowPickupUi(context._myHand);
+//				context._crosshair.ShowPickupUi(context._myHand);
 				return true;
 			}
-			context._crosshair.HideUi(context._myHand);
+//			context._crosshair.HideUi(context._myHand);
 			return false;
 		}
 	}
@@ -366,7 +478,7 @@ public class Hand : MonoBehaviour
 		{
 			if (context._handManager.IsLookingAtGlass)
 			{
-				context._crosshair.ShowPourUi(context._myHand);
+//				context._crosshair.ShowPourUi(context._myHand);
 			}
 			else
 			{
@@ -447,17 +559,17 @@ public class Hand : MonoBehaviour
 		}
 	}
 
-	private class IsInDropRange : Node<Hand>
+	private class IsInInteractionRange : Node<Hand>
 	{
 		public override bool Update(Hand context)
 		{
 			if (context._handManager.IsInDropRange)
 			{
-				context._crosshair.ShowDropUi(context._myHand);
+//				context._crosshair.ShowDropUi(context._myHand);
 			}
 			else
 			{
-				context._crosshair.HideUi(context._myHand);	
+//				context._crosshair.HideUi(context._myHand);	
 			}
 			return context._handManager.IsInDropRange;
 		}
@@ -474,7 +586,33 @@ public class Hand : MonoBehaviour
 			return context._rewiredPlayer.GetButtonTimedPressUp("Use Right", 0f, context._shortPressTime);
 		}
 	}
+	
+	private class IsUseButtonHeldDown : Node<Hand>
+	{
+		public override bool Update(Hand context)
+		{
+			if (context._myHand == MyHand.Left)
+			{
+				return context._rewiredPlayer.GetButton("Use Left");
+			}
+			return context._rewiredPlayer.GetButton("Use Right");
+		}
+	}
 
+	private class IsUseButtonUp : Node<Hand>
+	{
+		public override bool Update(Hand context)
+		{
+			if (context._myHand == MyHand.Left)
+			{
+//				return context._rewiredPlayer.GetButtonUp("Use Left");
+				return context._rewiredPlayer.GetButtonUp("Use Left");		
+			}
+//			return context._rewiredPlayer.GetButtonUp("Use Right");
+			return context._rewiredPlayer.GetButtonUp("Use Right");			
+		}
+	}
+	
 	private class IsLongPressingUseButton : Node<Hand>
 	{
 		public override bool Update(Hand context)
@@ -486,12 +624,63 @@ public class Hand : MonoBehaviour
 			return context._rewiredPlayer.GetButtonTimedPress("Use Right", context._longPressTime);	
 		}
 	}
+
+	private class IsLongPressingUseButtonUp : Node<Hand>
+	{
+		public override bool Update(Hand context)
+		{
+			if (context._myHand == MyHand.Left)
+			{
+//				return context._rewiredPlayer.GetButtonUp("Use Left");
+				return context._rewiredPlayer.GetButtonTimedPressUp("Use Left", context._longPressTime);		
+			}
+//			return context._rewiredPlayer.GetButtonUp("Use Right");
+			return context._rewiredPlayer.GetButtonTimedPressUp("Use Right", context._longPressTime);			
+		}
+	}
+	
+
+
+//UI Nodes
+
+	private class ShowDropUi : Node<Hand>
+	{
+		public override bool Update(Hand context)
+		{
+			context._crosshair.ShowDropUi(context._myHand);
+			return true;
+		}
+	}
+
+	private class ShowPickupUi : Node<Hand>
+	{
+		public override bool Update(Hand context)
+		{
+			context._crosshair.ShowPickupUi(context._myHand);
+			return true;
+		}
+	}
+
+	private class ShowPourUi : Node<Hand>
+	{
+		public override bool Update(Hand context)
+		{
+			context._crosshair.ShowPourUi(context._myHand);
+			return true;
+		}
+	}
+
+	private class HideUi : Node<Hand>
+	{
+		public override bool Update(Hand context)
+		{
+			context._crosshair.HideUi(context._myHand);
+			return true;
+		}
+	}
 	
 //Action
-
-
-
-
+	
 	private class PickupAction : Node<Hand>
 	{
 		public override bool Update(Hand context)
@@ -591,16 +780,13 @@ public class Hand : MonoBehaviour
 	{
 		public override bool Update(Hand context)
 		{
-			if (context._myHand == MyHand.Left)
-			{
-				context.DropObject(context.DropPos);
-				context.HeldPickupable.ChangeToWorldLayer(context._pickupDropTime);
-			}
+			context.DropObject(context.DropPos);
+			context.HeldPickupable.ChangeToWorldLayer(context._pickupDropTime);
 			return true;
 		}
 	}
 
-	private class PourAction : Node<Hand>
+	private class PourTween : Node<Hand>
 	{
 		public override bool Update(Hand context)
 		{
@@ -626,11 +812,20 @@ public class Hand : MonoBehaviour
 		}
 	}
 
-	private class EndPourAction : Node<Hand>
+	private class EndPourTween : Node<Hand>
 	{
 		public override bool Update(Hand context)
 		{
 			context.EndPour(context.HeldBottle);
+			return true;
+		}
+	}
+
+	private class AddIngredientToGlass : Node<Hand>
+	{
+		public override bool Update(Hand context)
+		{
+			context._handManager.SeenGlass.Liquid.AddIngredient(context.HeldBottle.myDrinkBase);
 			return true;
 		}
 	}

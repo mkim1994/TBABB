@@ -217,13 +217,13 @@ public class Crosshair : MonoBehaviour
 		if (myHand == Hand.MyHand.Left)
 		{
 			ShowCrosshairLeft();		
-			_leftText.text = "drop " + _handManager.LeftHand.HeldPickupable.MyName;
+			_leftText.text = "put back " + _handManager.LeftHand.HeldPickupable.MyName;
 			ShowImage(_lButton);
 		}
 		else
 		{
 			ShowCrosshairRight();	
-			_rightText.text = "drop " + _handManager.RightHand.HeldPickupable.MyName;
+			_rightText.text = "put back " + _handManager.RightHand.HeldPickupable.MyName;
 			ShowImage(_rButton);	
 		}
 	}
