@@ -383,12 +383,15 @@ public class Glass : Pickupable
 
 	public void UnServe(GameEvent e)
 	{
-		DrinkRejectedEvent drinkRejectedEvent = (DrinkRejectedEvent) e;			
+		DrinkRejectedEvent drinkRejectedEvent = (DrinkRejectedEvent) e;
 		if (transform.parent != null)
 		{
-			Sequence serveSequence = DOTween.Sequence();
-			serveSequence.Append(transform.parent.DOMove(transform.parent.GetComponent<Coaster>().UnservedPos, 0.5f, false));
-			serveSequence.OnComplete(()=>IsServed = false);
+			if (transform.parent.GetComponent<Coaster>() != null)
+			{
+				Sequence serveSequence = DOTween.Sequence();
+				serveSequence.Append(transform.parent.DOMove(transform.parent.GetComponent<Coaster>().UnservedPos, 0.5f, false));
+				serveSequence.OnComplete(()=>IsServed = false);
+			}
 		}
 		else
 		{
@@ -407,7 +410,7 @@ public class Glass : Pickupable
 		transform.eulerAngles = Vector3.zero;
 		StartCoroutine(ChangeToWorldLayer(1f));
 		ClearIce();
-		fsm.TransitionTo<NotReadyToServe>();
+//		fsm.TransitionTo<NotReadyToServe>();
 		hasIce = false;
 		Liquid.isEvaluated = false;
 		Liquid.EmptyLiquid();

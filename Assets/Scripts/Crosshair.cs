@@ -8,16 +8,10 @@ using Rewired.Utils.Libraries.TinyJson;
 
 public class Crosshair : MonoBehaviour
 {
-	[SerializeField] private Image _rButton;
-	[SerializeField] private Image _lButton;
-	[SerializeField] private Image _cButton;
-	[SerializeField] private Text _r1text;
-	[SerializeField] private Text _l1text;
-	[SerializeField] private Image _crosshairCenter;
-	[SerializeField] private Image _crosshairRight;
-	[SerializeField] private Image _crosshairLeft;
-	[SerializeField] private Text _leftText;
-	[SerializeField] private Text _rightText;
+	public Image _rButton, _lButton,_cButton;
+	public Text _r1text, _l1text;
+	public Image _crosshairCenter, _crosshairRight,_crosshairLeft;
+	public Text _leftText, _rightText;
 	private FSM<Crosshair> fsm;
 	private float noTargetAlpha;
 	private float targetSightedAlpha;
@@ -29,6 +23,8 @@ public class Crosshair : MonoBehaviour
 	private string iceMakerText = "hold to get ice";
 	private string sinkText = "hold to wash";
 	private string pourText = "hold to pour";
+
+	private HandManager _handManager;
 	
 	private enum CrosshairState {
 		Nothing,
@@ -41,15 +37,16 @@ public class Crosshair : MonoBehaviour
 	[SerializeField] private CrosshairState _xhairState;
 	
 	[SerializeField]private bool _hasShrunkenLeft = false;
-	[SerializeField] private bool _hasGrownLeft = false;
+	[SerializeField]private bool _hasGrownLeft = false;
 	[SerializeField]private bool _hasGrownRight = false;
 	[SerializeField]private bool _hasShrunkenRight = false;
 	
 	// Use this for initialization
 	void Start()
 	{
+		_handManager = Services.HandManager;
 		fsm = new FSM<Crosshair>(this);
-		fsm.TransitionTo<LookingAtNothing>();
+//		fsm.TransitionTo<LookingAtNothing>();
 		_player = Services.GameManager.playerInput;
 		if (_player.isUsingController)
 		{
@@ -66,7 +63,7 @@ public class Crosshair : MonoBehaviour
 
 	// Update is called once per frame
 	void Update () {
-		fsm.Update();
+//		fsm.Update();
 
 		if (Services.TweenManager.tweensAreActive)
 		{
@@ -110,7 +107,7 @@ public class Crosshair : MonoBehaviour
 //		_.GetComponent<Image>().sprite = UIControls.GetSprite("icon_key");
 	}
 		
-	private void ShowCrosshairLeft()
+	public void ShowCrosshairLeft()
 	{
 		_hasShrunkenLeft = false;
 		if (!_hasGrownLeft)
@@ -120,7 +117,19 @@ public class Crosshair : MonoBehaviour
 		}
 	}
 
-	private void ShowCrosshairRight()
+	public void ShowCrosshair(Hand.MyHand myHand)
+	{
+		if (myHand == Hand.MyHand.Left)
+		{
+			ShowCrosshairLeft();
+		}
+		else
+		{
+			ShowCrosshairRight();
+		}
+	}
+
+	public void ShowCrosshairRight()
 	{
 		_hasShrunkenRight = false;
 		if (!_hasGrownRight)
@@ -130,7 +139,7 @@ public class Crosshair : MonoBehaviour
 		}
 	}
 
-	private void HideCrosshairLeft()
+	public void HideCrosshairLeft()
 	{
 		_hasGrownLeft = false;
 		if (!_hasShrunkenLeft)
@@ -140,7 +149,7 @@ public class Crosshair : MonoBehaviour
 		}
 	}
 
-	private void HideCrosshairRight()
+	public void HideCrosshairRight()
 	{
 		_hasGrownRight = false;
 		if (!_hasShrunkenRight)
@@ -150,7 +159,7 @@ public class Crosshair : MonoBehaviour
 		}
 	}
 
-	private void ShowImage(Image imgToShow)
+	public void ShowImage(Image imgToShow)
 	{
 		imgToShow.DOColor(new Color(1, 1, 1, 1), 0.1f);
 		
@@ -170,6 +179,71 @@ public class Crosshair : MonoBehaviour
 		
 		Sequence b = DOTween.Sequence();
 		b.Append(imgToHide.transform.DOScaleY(origScale, 0.25f));	
+	}
+	
+	public void HideUi(Hand.MyHand myHand)
+	{
+		if (myHand == Hand.MyHand.Left)
+		{
+			_leftText.text = "";
+			HideCrosshairLeft();
+			HideImage(_lButton);
+		}
+		else
+		{
+			_rightText.text = "";
+			HideCrosshairRight();
+			HideImage(_rButton);
+		}
+	}
+
+	public void ShowPourUi(Hand.MyHand myHand)
+	{
+		ShowCrosshair(myHand);
+		if (myHand == Hand.MyHand.Left)
+		{
+			_leftText.text = "pour" + " " + _handManager.LeftHand.HeldBottle.MyName;
+			ShowImage(_lButton);
+		}
+		else
+		{
+			_rightText.text = "pour " + _handManager.RightHand.HeldBottle.MyName;
+			ShowImage(_rButton);	
+		}
+	}
+
+	public void ShowDropUi(Hand.MyHand myHand)
+	{
+		if (myHand == Hand.MyHand.Left)
+		{
+			ShowCrosshairLeft();		
+			_leftText.text = "put back " + _handManager.LeftHand.HeldPickupable.MyName;
+			ShowImage(_lButton);
+		}
+		else
+		{
+			ShowCrosshairRight();	
+			_rightText.text = "put back " + _handManager.RightHand.HeldPickupable.MyName;
+			ShowImage(_rButton);	
+		}
+	}
+
+	public void ShowPickupUi(Hand.MyHand myHand)
+	{
+		if (myHand == Hand.MyHand.Left)
+		{
+			_leftText.text = "pick up " + _handManager.SeenPickupable.MyName;
+			_crosshairLeft.sprite = UIControls.GetSprite("pickup_left");
+			ShowImage(_lButton);
+			ShowCrosshairLeft();
+		}
+		else
+		{
+			_rightText.text = "pick up " + _handManager.SeenPickupable.MyName;
+			_crosshairRight.sprite = UIControls.GetSprite("pickup_right");
+			ShowImage(_rButton);
+			ShowCrosshairRight();
+		}
 	}
 
 	private class LookingAtState : FSM<Crosshair>.State
@@ -198,16 +272,20 @@ public class Crosshair : MonoBehaviour
 			if (Context._player.iceMaker != null || Context._player.sink != null)
 			{
 				TransitionTo<LookingAtActionable>();
-			} else if (Context._player.canPourWithLeft)
+			} 
+//			else if (Context._player.canPourWithLeft)
+//			{
+//				TransitionTo<LookingAtPickupable>();
+//			} 
+//			else if (Context._player.canPourWithRight)
+//			{
+//				TransitionTo<LookingAtPickupable>();
+//			} 
+			else if (Context._player.pickupable != null)
 			{
 				TransitionTo<LookingAtPickupable>();
-			} else if (Context._player.canPourWithRight)
-			{
-				TransitionTo<LookingAtPickupable>();
-			} else if (Context._player.pickupable != null)
-			{
-				TransitionTo<LookingAtPickupable>();
-			} else if (Context._player.targetDropzone != null &&
+			} 
+			else if (Context._player.targetDropzone != null &&
 			           (Context._player.pickupableInLeftHand != null || Context._player.pickupableInRightHand != null))
 			{
 				TransitionTo<LookingAtDropzone>();

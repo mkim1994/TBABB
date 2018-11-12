@@ -29,10 +29,10 @@ public class Liquid : MonoBehaviour {
 // 	DrinkBase baseBeingPoured;
 	Garnish garnishBeingApplied;
 //	Mixer mixerBeingPoured;
-	float sodaVolume, tonicVolume, vermouthVolume, orangeJuiceVolume, lemonJuiceVolume;
-	float whiskeyVolume, tequilaVolume, rumVolume, ginVolume, beerVolume, wineVolume, brandyVolume, vodkaVolume;
- 	float smokiness, sweetness, sourness, bitterness, spiciness;
-	float alcoholVolume, abv;
+	[SerializeField]float sodaVolume, tonicVolume, vermouthVolume, orangeJuiceVolume, lemonJuiceVolume;
+	[SerializeField]float whiskeyVolume, tequilaVolume, rumVolume, ginVolume, beerVolume, wineVolume, brandyVolume, vodkaVolume;
+ 	[SerializeField]float smokiness, sweetness, sourness, bitterness, spiciness;
+	[SerializeField]float alcoholVolume, abv;
 
 
 	public List<float> drinkParts = new List<float>();
