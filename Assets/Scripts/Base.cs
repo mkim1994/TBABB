@@ -248,8 +248,41 @@ public class Util
 		Color result = (color1 + color2)/2;
 		return result;
 	}
-	
-	
+
+	public static Color GetColorFromDrinkProfile(DrinkProfile drinkProfile)
+	{
+		Color newColor = new Vector4(
+			(
+				(drinkProfile.whiskeyRate * LiquidColors.DrinkToColorDictionary[DrinkBase.whiskey].x) +
+				(drinkProfile.sodaRate * LiquidColors.DrinkToColorDictionary[DrinkBase.soda].x)+
+				(drinkProfile.ginRate * LiquidColors.DrinkToColorDictionary[DrinkBase.gin].x)+
+				(drinkProfile.vermouthRate * LiquidColors.DrinkToColorDictionary[DrinkBase.vermouth].x) +
+				(drinkProfile.wineRate * LiquidColors.DrinkToColorDictionary[DrinkBase.wine].x)
+			),
+			(
+				(drinkProfile.whiskeyRate * LiquidColors.DrinkToColorDictionary[DrinkBase.whiskey].y) +
+				(drinkProfile.sodaRate * LiquidColors.DrinkToColorDictionary[DrinkBase.soda].y) +
+				(drinkProfile.ginRate * LiquidColors.DrinkToColorDictionary[DrinkBase.gin].y) +
+				(drinkProfile.vermouthRate * LiquidColors.DrinkToColorDictionary[DrinkBase.vermouth].y) +
+				(drinkProfile.wineRate * LiquidColors.DrinkToColorDictionary[DrinkBase.wine].y)
+			),
+			(
+				(drinkProfile.whiskeyRate * LiquidColors.DrinkToColorDictionary[DrinkBase.whiskey].z) +
+				(drinkProfile.sodaRate * LiquidColors.DrinkToColorDictionary[DrinkBase.soda].z) +
+				(drinkProfile.ginRate * LiquidColors.DrinkToColorDictionary[DrinkBase.gin].z) +
+				(drinkProfile.vermouthRate * LiquidColors.DrinkToColorDictionary[DrinkBase.vermouth].z) +
+				(drinkProfile.wineRate * LiquidColors.DrinkToColorDictionary[DrinkBase.wine].z)
+			),
+			1
+		);
+		Debug.Log("Whiskey Rate: " + drinkProfile.whiskeyRate);
+		Debug.Log("Wine Rate: " + drinkProfile.wineRate);
+		Debug.Log("Soda Rate: " + drinkProfile.sodaRate);
+		Debug.Log("Vermouth Rate: " + drinkProfile.vermouthRate);
+		Debug.Log("Gin Rate: " + drinkProfile.ginRate);
+		Debug.Log("new Color: " + newColor);
+		return newColor;
+	}
 }
 
 public class LiquidColors
@@ -260,8 +293,11 @@ public class LiquidColors
 		{ DrinkBase.brandy, new Vector4(Util.GetRemappedColorFloat(209), Util.GetRemappedColorFloat(80), 0, 1)},
 		{ DrinkBase.gin, Color.green},
 		{ DrinkBase.whiskey, new Vector4(Util.GetRemappedColorFloat(183), Util.GetRemappedColorFloat(97), 0, 1)},
-		{ DrinkBase.wine, Color.red}
+		{ DrinkBase.wine, Color.red},
+		{ DrinkBase.soda, Color.magenta},
+		{ DrinkBase.vermouth, Color.white }
 		//rgb(139,69,19)
+		
 	};
 
 	public static Dictionary<Mixer, Vector4> MixerToColorDictionary = new Dictionary<Mixer, Vector4>()
@@ -269,7 +305,6 @@ public class LiquidColors
 		{ Mixer.soda, new Vector4(Util.GetRemappedColorFloat(139), Util.GetRemappedColorFloat(69), Util.GetRemappedColorFloat(19), 1)},
 		{ Mixer.vermouth, Color.gray }
 	};
-
 }
 
 

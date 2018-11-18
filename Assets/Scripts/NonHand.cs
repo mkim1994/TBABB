@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Security.Cryptography.X509Certificates;
 using Rewired;
 using UnityEngine;
 using BehaviorTree;
@@ -8,10 +9,15 @@ using Yarn;
 
 public class NonHand : MonoBehaviour {
 
-	private Tree<NonHand> _tree;
+	private Tree<NonHand> _actionTree;
+	private Tree<NonHand> _uiTree;
 	private Player _rewiredPlayer;
 	[SerializeField]private LayerMask _layerMask;
 	private Camera _myCam;
+	
+	//Action Variables
+	public Fixture Fixture;
+	
 	private Glass _glass;
 	private NPC _npc;
 	private Sink _sink;
@@ -19,20 +25,31 @@ public class NonHand : MonoBehaviour {
 	private IceMaker _iceMaker;
 	private LightSwitch _lightSwitch;
 
+	//UI Variables
+	public string SeenNpcName;
+	public string SeenFixtureName;
+	public string SeenGlassName;
+	public string SeenSinkName;
+	public string SeenBackDoorName;
+	public string SeenIceMakerName;
+	public string SeenLightSwitchName;
+
 	private float _maxInteractionDist;
 	private float _maxTalkDist;
+	private float _maxCenterTextDist;
 
-	private GameObject SeenInteractable;
+	private GameObject _seenInteractable;
 	// Use this for initialization
 	void Start ()
 	{
 
 		_maxInteractionDist = Services.GameManager.playerInput.maxInteractionDist;
 		_maxTalkDist = Services.GameManager.playerInput.maxTalkingDist;
+		_maxCenterTextDist = Services.GameManager.playerInput.MaxCenterTextDist;
 		
 		_rewiredPlayer = Services.GameManager.playerInput.rewiredPlayer;
 		_myCam = Camera.main;
-		_tree = new Tree<NonHand>(new Selector<NonHand>(
+		_actionTree = new Tree<NonHand>(new Selector<NonHand>(
 			new Sequence<NonHand>(
 				new IsPlayerLookingAtNpc(),
 				new IsPlayerPressingButton(),
@@ -53,15 +70,83 @@ public class NonHand : MonoBehaviour {
 				new Serve()
 			)
 		));
+
+		_uiTree = new Tree<NonHand>(new Selector<NonHand>(
+			new Sequence<NonHand>(
+				
+			)
+		));
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		InteractionRay();
-		_tree.Update(this);
+		UiCenterTextRay();
+		_actionTree.Update(this);
 	}
 	
 	//WHAT IS PLAYER LOOKING AT LOGIC
+	private void UiCenterTextRay()
+	{
+		Ray ray = new Ray(_myCam.transform.position, _myCam.transform.forward);
+		float rayDist = Mathf.Infinity;
+		RaycastHit hit = new RaycastHit();
+		
+		if(Physics.Raycast(ray, out hit, rayDist, _layerMask)){
+			GameObject hitObj = hit.transform.gameObject; //if you're actually looking at something
+			if (hitObj.GetComponent<Fixture>() != null)
+			{
+				Fixture = hitObj.GetComponent<Fixture>();
+			}
+			else
+			{
+				Fixture = null;
+			}
+
+			if(hitObj.GetComponent<NPC>() != null)
+			{
+				NPC npc = hitObj.GetComponent<NPC>();
+				SeenNpcName = npc.characterName;
+			}
+
+			if (hitObj.GetComponent<Fixture>() != null)
+			{
+				Fixture fixture = hitObj.GetComponent<Fixture>();
+				SeenFixtureName = fixture.MyName;
+			}
+
+			if (hitObj.GetComponent<Sink>() != null)
+			{
+				Sink sink = hitObj.GetComponent<Sink>();
+				SeenSinkName = sink.MyName;
+			} 
+
+			//no distance check
+			if (hitObj.GetComponent<Backdoor>() != null)
+			{
+				Backdoor backdoor = hitObj.GetComponent<Backdoor>();
+			} 
+			
+			if (hitObj.GetComponent<IceMaker>() != null)
+			{
+			} else if (hitObj.GetComponent<IceMaker>() == null)
+			{
+			}
+			if (hitObj.GetComponent<LightSwitch>() != null)
+			{
+			} else if (hitObj.GetComponent<LightSwitch>() == null)
+			{
+			}
+			
+			if(hitObj.GetComponent<Glass>() != null)
+			{
+			} else if (hitObj.GetComponent<Glass>() == null)
+			{
+			}
+			
+		}
+	}
+
 	private void InteractionRay(){
 		Ray ray = new Ray(_myCam.transform.position, _myCam.transform.forward);
 		float rayDist = Mathf.Infinity;
@@ -69,9 +154,9 @@ public class NonHand : MonoBehaviour {
 		
 		if(Physics.Raycast(ray, out hit, rayDist, _layerMask)){
 			GameObject hitObj = hit.transform.gameObject; //if you're actually looking at something
-			if(hitObj.GetComponent<NPC>() != null && Vector3.Distance(transform.position, hitObj.transform.position) <= Services.GameManager.playerInput.maxTalkingDist){ //check if object looked at can be picked up
+			if(hitObj.GetComponent<NPC>() != null && Vector3.Distance(transform.position, hitObj.transform.position) <= _maxTalkDist){ //check if object looked at can be picked up
 				_npc = hitObj.GetComponent<NPC>(); //if it's NPC and close enough, assign it to NPC.				  
-			} else if (hitObj.GetComponent<NPC>() == null || Vector3.Distance(transform.position, hitObj.transform.position) > Services.GameManager.playerInput.maxTalkingDist){
+			} else if (hitObj.GetComponent<NPC>() == null || Vector3.Distance(transform.position, hitObj.transform.position) > _maxTalkDist){
 				_npc = null;
 			}
 			
@@ -79,7 +164,7 @@ public class NonHand : MonoBehaviour {
 			    Vector3.Distance(transform.position, hitObj.transform.position) <= Services.GameManager.playerInput.maxInteractionDist)
 			{
 				_sink = hitObj.GetComponent<Sink>();
-			} else if (hitObj.GetComponent<Sink>() == null || Vector3.Distance(transform.position, hitObj.transform.position) > Services.GameManager.playerInput.maxInteractionDist)
+			} else if (hitObj.GetComponent<Sink>() == null || Vector3.Distance(transform.position, hitObj.transform.position) > _maxInteractionDist)
 			{
 				_sink = null;
 			}
@@ -203,7 +288,6 @@ public class NonHand : MonoBehaviour {
 		{
 			if (context._rewiredPlayer.GetButtonDown("Talk"))
 			{
-				Debug.Log("SERVING DRINK!");
 				context._glass.Liquid.Serve(); 
 				context._glass.Serve();
 			}

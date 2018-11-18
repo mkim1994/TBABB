@@ -4,16 +4,15 @@ using System.Configuration;
 using DG.Tweening;
 using UnityEngine;
 
-[ExecuteInEditMode]
 [RequireComponent(typeof(MeshRenderer))]
 public class WaterPillarRender : MonoBehaviour {
 	public Transform ReferenceSurface;
 	[SerializeField] private WaterSurface waterSurface;
 	private MeshRenderer meshRenderer;
 	[SerializeField] private Material myMaterial;
-//	[SerializeField]private Liquid liquid;
+	[SerializeField]private Liquid _liquid;
 
-	[SerializeField] private Vector4 myColor;
+	private Vector4 myColor;
 	private LiquidColors _colors;
 
 	[SerializeField]private float _r;
@@ -28,7 +27,8 @@ public class WaterPillarRender : MonoBehaviour {
 		meshRenderer = gameObject.GetComponent<MeshRenderer>();
 		Material matCopy = new Material(myMaterial);
 		meshRenderer.material = matCopy;
-		myColor = Color.white;
+		myColor = Color.black;
+		meshRenderer.material.color = myColor;
 	}
 	
 	private void OnEnable() {
@@ -41,28 +41,20 @@ public class WaterPillarRender : MonoBehaviour {
         meshRenderer.sharedMaterial.SetFloat("_WaterHeight", ReferenceSurface.position.y);	
 	}
 
-	public void SetMaterialColorOnPour(DrinkBase _drinkBase = DrinkBase.none, Mixer _mixer = Mixer.none)
+	public void SetMaterialColorOnPour(Color newColor)
 	{
-		if (_mixer == Mixer.none)
-		{
-			Debug.Log("Adding drinkbase color!");
-			myColor = Util.AddColors(LiquidColors.DrinkToColorDictionary[_drinkBase], myColor);
-			meshRenderer.material.color = myColor;
-			waterSurface.meshRenderer.material.color = myColor;
-			_r = myColor.x;
-			_g = myColor.y;
-			_b = myColor.z;
-		}
-		else if (_drinkBase == DrinkBase.none)
-		{
-			Debug.Log("Adding mixer color!");
-			myColor = Util.AddColors(LiquidColors.MixerToColorDictionary[_mixer], myColor);
-			meshRenderer.material.color = myColor;
-			waterSurface.meshRenderer.material.color = myColor;
-			_r = myColor.x;
-			_g = myColor.y;
-			_b = myColor.z;
-		}
+//		if (_mixer == Mixer.none)
+//		{
+//			Debug.Log("Adding drinkbase color!");
+//			myColor = Util.AddColors(LiquidColors.DrinkToColorDictionary[_drinkBase], myColor);
+//			meshRenderer.material.color = myColor;
+//			waterSurface.meshRenderer.material.color = myColor;
+//			_r = myColor.x;
+//			_g = myColor.y;
+//			_b = myColor.z;
+//		}
+		meshRenderer.material.color = newColor;
+		waterSurface.meshRenderer.material.color = newColor;
 	}
 
 }

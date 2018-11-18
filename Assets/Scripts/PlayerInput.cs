@@ -70,6 +70,7 @@ public class PlayerInput : MonoBehaviour
 //	public List<GameObject> pickupableGOs = new List<GameObject>();
 	public float maxInteractionDist = 6f;
 	public float maxTalkingDist = 8f;
+	public float MaxCenterTextDist = Mathf.Infinity; 
 	[SerializeField]private float interactionTimer = 0f;
 	private float minHoldTime = 0.5f;
 	private float minTapTime = 0.01f;

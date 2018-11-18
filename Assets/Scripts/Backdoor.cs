@@ -2,11 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Backdoor : MonoBehaviour {
+public class Backdoor : Fixture {
 
 	// Use this for initialization
-	void Start () {
-		
+	void Start ()
+	{
+		MyName = "door";
 	}
 	
 	// Update is called once per frame

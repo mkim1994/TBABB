@@ -2,11 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Sink : MonoBehaviour {
+public class Sink : Fixture {
 
 	// Use this for initialization
-	void Start () {
-		
+	void Start ()
+	{
+		MyName = "sink";
 	}
 	
 	// Update is called once per frame

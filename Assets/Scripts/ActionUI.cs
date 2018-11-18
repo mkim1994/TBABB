@@ -12,6 +12,8 @@ public class ActionUI : MonoBehaviour
 	private float origScale = 0.1f;
 	private FSM<ActionUI> fsm;
 	private PlayerInput player;
+	private NonHand _nonHand;
+
 	private enum ActionState
 	{
 		Nothing,
@@ -34,6 +36,7 @@ public class ActionUI : MonoBehaviour
 	void Start ()
 	{
 		player = Services.GameManager.playerInput;
+		_nonHand = player.GetComponent<NonHand>();
 		fsm = new FSM<ActionUI>(this);
 		fsm.TransitionTo<Nothing>();
  	}
@@ -115,7 +118,9 @@ public class ActionUI : MonoBehaviour
 			else if (Context.player.npc != null && Context.player.pickupable == null && !Services.GameManager.dialogue.isDialogueRunning)
 			{
 				TransitionTo<NpcState>();
-			} else if (Context.player.backdoor != null || Context.player.lightSwitch != null)
+			} 
+//			else if (Context.player.backdoor != null || Context.player.lightSwitch != null)
+			else if (Context._nonHand.Fixture != null)
 			{
 				TransitionTo<FixtureState>();
 			} 
@@ -124,16 +129,20 @@ public class ActionUI : MonoBehaviour
 
 	private class NpcState : ActionUiState
 	{
+		private string _seenNpcName;
+		
 		public override void OnEnter()
 		{
 			base.OnEnter();
-			Context.actionText.text = Context.talkText;
+//			Context.actionText.text = Context.talkText + " to " + _seenNpcName;
 			Context.ShowImage();
 			Context._actionState = ActionState.NPC;
 		}
 
 		public override void Update()
 		{ 
+			_seenNpcName = Services.GameManager.player.GetComponent<NonHand>().SeenNpcName;
+
 			if (Context.player.npc == null)
 			{
 				TransitionTo<Nothing>();
@@ -144,7 +153,7 @@ public class ActionUI : MonoBehaviour
 				Context.actionText.text = "";
 			} else if (!Services.GameManager.dialogue.isDialogueRunning)
 			{
-				Context.actionText.text = Context.talkText;
+				Context.actionText.text = Context.talkText + " to " + _seenNpcName;
 				Context.ShowImage();
 			}
 		}
@@ -158,22 +167,23 @@ public class ActionUI : MonoBehaviour
 			Context.ShowImage();
 			Context._actionState = ActionState.Fixture;
 
-			if (Context.player.backdoor != null)
-			{
-				Context.actionText.text = Context.doorText;				
-			}
+//			if (Context.player.backdoor != null)
+//			{
+//				Context.actionText.text = Context.doorText;				
+//			}
+//
+//			if (Context.player.lightSwitch != null)
+//			{
+//				Context.actionText.text = Context.lightText;				
+//			}
 
-			if (Context.player.lightSwitch != null)
-			{
-				Context.actionText.text = Context.lightText;				
-			}
-
+			Context.actionText.text = Context._nonHand.SeenFixtureName;
 		}
 
 		public override void Update()
 		{
 			base.Update();
-			if (Context.player.backdoor == null && Context.player.lightSwitch == null)
+			if (Context._nonHand.Fixture == null)
 			{
 				TransitionTo<Nothing>();
 			}

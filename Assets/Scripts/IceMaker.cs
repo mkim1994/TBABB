@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class IceMaker : MonoBehaviour {
+public class IceMaker : Fixture {
 
 	public Spawner iceSpawner;
 
@@ -12,7 +12,9 @@ public class IceMaker : MonoBehaviour {
 	public Vector3 glassDropPos;
 	
  	// Use this for initialization
-	void Start () {
+	void Start ()
+	{
+		MyName = "ice maker";
 		glassDropPos = glassDropPoint.transform.position;
 		iceSpawnpointPos = iceSpawnpoint.transform.position;
 	}

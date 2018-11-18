@@ -218,10 +218,11 @@ public class Liquid : MonoBehaviour {
  		height = remapRange(myLiquidVolume, 0, myMaxVolume, 0, 100);
 //		myLiquid.SetBlendShapeWeight(0, myLiquidVolume);
  		thisCocktail = new DrinkProfile (sodaVolume/totalVolume, tonicVolume/totalVolume, vermouthVolume/totalVolume, lemonJuiceVolume/totalVolume, 0, 0, 0, 0, 0, 0, 0, 
-		whiskeyVolume/totalVolume, ginVolume/totalVolume, tequilaVolume/totalVolume, vodkaVolume/totalVolume, rumVolume/totalVolume, beerVolume/totalVolume, 
-		wineVolume/totalVolume, brandyVolume/totalVolume, abv, 
-		smokiness, sweetness, sourness, bitterness, spiciness);
- 	}
+			whiskeyVolume/totalVolume, ginVolume/totalVolume, tequilaVolume/totalVolume, vodkaVolume/totalVolume, rumVolume/totalVolume, beerVolume/totalVolume, 
+			wineVolume/totalVolume, brandyVolume/totalVolume, abv, 
+			smokiness, sweetness, sourness, bitterness, spiciness);
+		waterPillar.SetMaterialColorOnPour(Util.GetColorFromDrinkProfile(thisCocktail));
+	}
 
 	public void LetItPour()
 	{
@@ -270,8 +271,8 @@ public class Liquid : MonoBehaviour {
 //		Debug.Log("AddIngredient()" + _drinkBase);
 		myDrinkProfile = Services.DrinkDictionary.drinkBases[_drinkBase];		
 		myDrinkBase = _drinkBase;
- 
-//			waterPillar.SetMaterialColorOnPour(_drinkBase);
+
+//		waterPillar.SetMaterialColorOnPour();
 		switch (_drinkBase){
 			case DrinkBase.whiskey:
 				whiskeyVolume = height - totalVolume + whiskeyVolume;

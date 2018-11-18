@@ -200,7 +200,9 @@ public class HandManager : MonoBehaviour
 			{
 				_rightHand.HeldBottle = _rightHand.HeldPickupable.GetComponent<Bottle>();
 			}
-		} else if (_leftHand.HeldPickupable != null)
+		} 
+		
+		if (_leftHand.HeldPickupable != null)
 		{
 			if (_leftHand.HeldPickupable.GetComponent<Bottle>() != null)
 			{

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class LightSwitch : MonoBehaviour
+public class LightSwitch : Fixture
 {
 	private DayCycleManager dayCycleManager;
 
@@ -11,6 +11,7 @@ public class LightSwitch : MonoBehaviour
 	// Use this for initialization
 	void Start ()
 	{
+		MyName = "light switch";
 		dayCycleManager = Services.GameManager.dayManager;
 	}
 	
