@@ -21,6 +21,7 @@ public class Hand : MonoBehaviour
 	private HandManager _handManager;
 	private bool _isTweening;
 	private bool _isPouring = false;
+	private bool _isDropping;
 	
 	public bool IsTweening
 	{
@@ -114,6 +115,7 @@ public class Hand : MonoBehaviour
 				new IsHoldingGlass(),
 				new Not<Hand>(new IsTweenActive()),
 				new Not<Hand>(new IsOtherHandTweening()),
+//				new Not<Hand>(new Is),
 //				new DisallowPickup(), //can't pick up if holding something
 				new IsInInteractionRange(),
 				new Not<Hand>(new IsLookingAtCoaster()),
@@ -140,6 +142,8 @@ public class Hand : MonoBehaviour
 				new IsUseButtonHeldDown(),
 				new IsHoldingBottle(),
 				new IsLookingAtGlass(),
+//				new Not<Hand>(new IsTweenActive()),
+				new Not<Hand>(new IsDropping()),
 				new Not<Hand>(new IsPouring()), 
 				new PourTween()
 			),
@@ -148,6 +152,7 @@ public class Hand : MonoBehaviour
 			//So EndPourTween() is never called. 
 			new Sequence<Hand>(
 				new DidPourTweenStart(),
+				new Not<Hand>(new IsDropping()),
 				new IsUseButtonUp(),
 				new EndPourTween()
 			),
@@ -284,8 +289,9 @@ public class Hand : MonoBehaviour
 	{
 		if (HeldPickupable != null)
 		{
-			Debug.Log("Dropping object to " + newPos);
+//			Debug.Log("Dropping object to " + newPos);
 			_isTweening = true;
+			_isDropping = true;
 			HeldPickupable.transform.SetParent(null);
 			HeldPickupable.transform.rotation = Quaternion.identity;
 			Sequence dropSequence = DOTween.Sequence();
@@ -293,7 +299,9 @@ public class Hand : MonoBehaviour
 			dropSequence.Append(HeldPickupable.transform.DOMove(newPos, _pickupDropTime));
 //			dropSequence.AppendCallback(() => HeldPickupable.ChangeToWorldLayer(_pickupDropTime));
 			dropSequence.AppendCallback(() => HeldPickupable = null);
+			dropSequence.AppendCallback(() => _isDropping = false);
 			dropSequence.OnComplete(() => _isTweening = false);
+			
 		}
 	}
 	
@@ -365,6 +373,7 @@ public class Hand : MonoBehaviour
 //				Debug.Log("Pour tween created!");
 			}
 		}
+		Debug.Log("Pouring!");
 	}
 
 	public void EndPour(Bottle bottleInHand)
@@ -408,6 +417,13 @@ public class Hand : MonoBehaviour
 	//
 
 	//conditions
+	private class IsDropping : Node<Hand>
+	{
+		public override bool Update(Hand context)
+		{
+			return context._isDropping;
+		}
+	}
 
 	private class DidPourTweenStart : Node<Hand>
 	{
@@ -802,6 +818,7 @@ public class Hand : MonoBehaviour
 		{
 			context.DropObject(context.DropPos);
 			context.HeldPickupable.ChangeToWorldLayer(context._pickupDropTime);
+			Debug.Log("Dropping object!");
 			return true;
 		}
 	}

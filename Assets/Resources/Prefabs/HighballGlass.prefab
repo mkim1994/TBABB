@@ -31,7 +31,7 @@ GameObject:
   m_IsActive: 1
 --- !u!1 &1290422401134344
 GameObject:
-  m_ObjectHideFlags: 1
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 5
@@ -81,21 +81,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!1 &1661520654507394
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 4566988490672254}
-  m_Layer: 0
-  m_Name: SurfaceHolder
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
 --- !u!1 &1990981567063706
 GameObject:
   m_ObjectHideFlags: 0
@@ -134,29 +119,15 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1990981567063706}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.62, y: 2.2006001, z: 10.8}
+  m_LocalPosition: {x: -1.2314541, y: 2.209, z: 10.57327}
   m_LocalScale: {x: 0.72233, y: 0.72233, z: 0.72233}
   m_Children:
   - {fileID: 4983605418241212}
   - {fileID: 4032724506753408}
   - {fileID: 4824746657177538}
-  - {fileID: 4566988490672254}
+  - {fileID: 4879397641198434}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &4566988490672254
-Transform:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1661520654507394}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.011, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 4879397641198434}
-  m_Father: {fileID: 4175873300679116}
-  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4824746657177538
 Transform:
@@ -178,11 +149,11 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1290422401134344}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0.039}
-  m_LocalScale: {x: 0.09618961, y: 0.09618966, z: 0.09618966}
+  m_LocalPosition: {x: 0, y: -0.010999871, z: 0.038999606}
+  m_LocalScale: {x: 0.09618961, y: 0.096189655, z: 0.096189655}
   m_Children: []
-  m_Father: {fileID: 4566988490672254}
-  m_RootOrder: 0
+  m_Father: {fileID: 4175873300679116}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4983605418241212
 Transform:
@@ -370,7 +341,7 @@ MonoBehaviour:
   ReferenceSurface: {fileID: 4879397641198434}
   waterSurface: {fileID: 114174024066571672}
   myMaterial: {fileID: 2100000, guid: 5f42c214d58f5469b93c7a1fc0474fa1, type: 2}
-  myColor: {x: 1, y: 1, z: 1, w: 1}
+  _liquid: {fileID: 0}
   _r: 0
   _g: 0
   _b: 0
@@ -404,20 +375,40 @@ MonoBehaviour:
   _myGlass: {fileID: 114969815638737844}
   height: 0
   pourRate: 0.25
-  _liquidSurface: {fileID: 1661520654507394}
+  _liquidSurface: {fileID: 1290422401134344}
   totalVolume: 0
   myDrinkBase: 0
   myMixer: 0
   myCustomer: {fileID: 0}
   coasters: []
+  sodaVolume: 0
+  tonicVolume: 0
+  vermouthVolume: 0
+  orangeJuiceVolume: 0
+  lemonJuiceVolume: 0
+  whiskeyVolume: 0
+  tequilaVolume: 0
+  rumVolume: 0
+  ginVolume: 0
+  beerVolume: 0
+  wineVolume: 0
+  brandyVolume: 0
+  vodkaVolume: 0
+  smokiness: 0
+  sweetness: 0
+  sourness: 0
+  bitterness: 0
+  spiciness: 0
+  alcoholVolume: 0
+  abv: 0
   drinkParts: []
   otherLiquid: {fileID: 0}
   otherLiquidMask: {fileID: 0}
   myMask: {fileID: 0}
   isBeingPoured: 0
   isEvaluated: 0
-  waterPillar: {fileID: 0}
-  waterSurface: {fileID: 0}
+  waterPillar: {fileID: 114164318089383750}
+  waterSurface: {fileID: 114174024066571672}
 --- !u!114 &114969815638737844
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -452,7 +443,7 @@ MonoBehaviour:
   CanBePouredInto: 0
   myServiceDropzone: {fileID: 0}
   Liquid: {fileID: 0}
-  liquidSurfaceParent: {fileID: 1661520654507394}
+  liquidSurfaceParent: {fileID: 0}
   liquidSurfaceChild: {fileID: 0}
   leftHandPourPos: {x: -0.14, y: -0.5, z: 1.75}
   rightHandPourPos: {x: 0.14, y: -0.5, z: 1.75}

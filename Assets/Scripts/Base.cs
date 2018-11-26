@@ -275,12 +275,12 @@ public class Util
 			),
 			1
 		);
-		Debug.Log("Whiskey Rate: " + drinkProfile.whiskeyRate);
-		Debug.Log("Wine Rate: " + drinkProfile.wineRate);
-		Debug.Log("Soda Rate: " + drinkProfile.sodaRate);
-		Debug.Log("Vermouth Rate: " + drinkProfile.vermouthRate);
-		Debug.Log("Gin Rate: " + drinkProfile.ginRate);
-		Debug.Log("new Color: " + newColor);
+//		Debug.Log("Whiskey Rate: " + drinkProfile.whiskeyRate);
+//		Debug.Log("Wine Rate: " + drinkProfile.wineRate);
+//		Debug.Log("Soda Rate: " + drinkProfile.sodaRate);
+//		Debug.Log("Vermouth Rate: " + drinkProfile.vermouthRate);
+//		Debug.Log("Gin Rate: " + drinkProfile.ginRate);
+//		Debug.Log("new Color: " + newColor);
 		return newColor;
 	}
 }
